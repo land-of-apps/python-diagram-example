@@ -5,7 +5,16 @@
 Domain-driven e-commerce for Django
 ===================================
 
+Notes to run the sandbox:
+::
 
+      git clone https://github.com/land-of-apps//django-oscar.git
+      cd django-oscar
+      virtualenv --python=python3 oscar
+      source ./oscar/bin/activate
+      make sandbox
+      sandbox/manage.py runserver
+      
 Oscar is an e-commerce framework for Django designed for building domain-driven
 sites.  It is structured such that any part of the core functionality can be
 customised to suit the needs of your project.  This allows a wide range of
