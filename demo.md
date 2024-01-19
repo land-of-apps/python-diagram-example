@@ -17,6 +17,8 @@ Prompts:
 
 1c) Locate where in my code base new user registration occurs. I plan to update the website form and the relevant backend code where a new user registers and add a simple offline captcha for this project.  
 
+1d) What parts of my code based are involved when a new user registers for my service. I want to find the files and functions involved where users register their account with my service so that I can add a simple offline captcha to the form the user fills out. 
+
 Provide a solution with the least amount of code modification to add an open source Django library that can do a simple math based offline captcha to the the registration form (src/oscar/apps/customer/forms.py), to add a new field and associated validation, and the associated registration view. 
 
 Using the django-simple-math-captcha library, provide a simple example update to the custom registration template to render the captcha field, handle form validation, and display an error if the captcha is incorrect.
