@@ -1,7 +1,10 @@
 
 ```
-virtualenv --python=python3 oscar
-source ./oscar/bin/activate
+python -m venv venv
+source venv/bin/activate
+python -m pip install --upgrade pip
+pip install -e .\[test\]
+pip install -r requirements.txt
 make sandbox
 sandbox/manage.py runserver
 ```
