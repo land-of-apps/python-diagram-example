@@ -19,6 +19,6 @@ Prompts:
 
 1d) What areas of my codebase are involved when a new user registers for my service. I want to find the files and functions involved where users register their account with my service so that I can add a simple offline captcha to the user registration form.
 
-Provide a solution with the least amount of code modification adding an open source Django library that can do a simple offline captcha to the the registration form (src/oscar/apps/customer/forms.py), to add a new field and associated validation, and the associated registration view. 
+2) Provide a solution with the least amount of code modification adding an open source Django library that can do a simple offline captcha to the the registration form (src/oscar/apps/customer/forms.py), to add a new field and the associated registration html template. 
 
-Using the django-simple-captcha library, provide a basic example update to the custom registration template to render the captcha field, handle form validation, and display an error if the captcha is incorrect.
+3) Using the django-simple-captcha library, provide a basic example update to the custom registration template to render the captcha field, handle form validation, and display an error if the captcha is incorrect.
