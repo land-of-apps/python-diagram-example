@@ -6,7 +6,7 @@ python -m pip install --upgrade pip
 pip install -e .\[test\]
 pip install -r requirements.txt
 make sandbox
-sandbox/manage.py runserver
+python sandbox/manage.py runserver
 ```
 
 Prompts:
