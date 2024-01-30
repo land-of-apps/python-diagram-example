@@ -11,7 +11,7 @@ python sandbox/manage.py runserver
 
 Prompts:
 
-1a) Where are the the files or functions where user registration happens in my code base? I want to modify the specific places in the code where a new user registration validation occurs in order to add a simple offline captcha for Django.  
+1a) Where are the the files or functions where user registration happens in my code base? I want to modify the specific places in the code where a new user registration validation occurs. Provide a solution with the least amount of code modification adding an open source Django library in order to add a simple offline captcha for Django.  
 
 1b) Identify in my code base where new user registration occurs.  I plan to modify the specific places in the code where a new user registration occurs in order to update the form and add a simple offline captcha for this project.  
 
