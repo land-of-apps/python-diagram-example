@@ -1,0 +1,130 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('0316', 1, 0, 'Category 316', '', NULL, NULL, '', 'category-316', true, true) RETURNING \"catalogue_category\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('0317', 1, 0, 'Category 317', '', NULL, NULL, '', 'category-317', true, true) RETURNING \"catalogue_category\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"catalogue_product\" (\"structure\", \"is_public\", \"upc\", \"parent_id\", \"title\", \"slug\", \"description\", \"meta_title\", \"meta_description\", \"product_class_id\", \"rating\", \"date_created\", \"date_updated\", \"is_discountable\") VALUES ('standalone', true, '978080213020322', NULL, 'A confederacy of dunces', 'a-confederacy-of-dunces', '', NULL, NULL, 22, NULL, '2024-07-22T17:28:56.943114+00:00'::timestamptz, '2024-07-22T17:28:56.943127+00:00'::timestamptz, true) RETURNING \"catalogue_product\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"catalogue_product\" (\"structure\", \"is_public\", \"upc\", \"parent_id\", \"title\", \"slug\", \"description\", \"meta_title\", \"meta_description\", \"product_class_id\", \"rating\", \"date_created\", \"date_updated\", \"is_discountable\") VALUES ('standalone', true, '978080213020323', NULL, 'A confederacy of dunces', 'a-confederacy-of-dunces', '', NULL, NULL, 23, NULL, '2024-07-22T17:28:56.988981+00:00'::timestamptz, '2024-07-22T17:28:56.988993+00:00'::timestamptz, true) RETURNING \"catalogue_product\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('', NULL, false, 'example_368@example.com', 'joseph', 'winterbottom', false, true, '2024-07-22T17:28:57.011290+00:00'::timestamptz, 'the_j_meister nummer 368', '') RETURNING \"myauth_user\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"wishlists_line\" (\"wishlist_id\", \"product_id\", \"quantity\", \"title\") VALUES (32, 27, 1, 'A confederacy of dunces') RETURNING \"wishlists_line\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"wishlists_wishlist\" (\"owner_id\", \"name\", \"key\", \"visibility\", \"date_created\") VALUES (704, 'Wishlist 23', '3w15mk', 'Private', '2024-07-22T17:28:57.020088+00:00'::timestamptz) RETURNING \"wishlists_wishlist\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"wishlists_wishlist\" (\"owner_id\", \"name\", \"key\", \"visibility\", \"date_created\") VALUES (704, 'Wishlist 24', 'l7hw8i', 'Private', '2024-07-22T17:28:57.022616+00:00'::timestamptz) RETURNING \"wishlists_wishlist\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"wishlists_wishlist\" WHERE \"wishlists_wishlist\".\"key\" = '3w15mk' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"wishlists_wishlist\" WHERE \"wishlists_wishlist\".\"key\" = 'l7hw8i' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" IN (27) AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" IN (28) AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 12 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 13 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"customer_productalert\".\"id\", \"customer_productalert\".\"product_id\", \"customer_productalert\".\"user_id\", \"customer_productalert\".\"email\", \"customer_productalert\".\"key\", \"customer_productalert\".\"status\", \"customer_productalert\".\"date_created\", \"customer_productalert\".\"date_confirmed\", \"customer_productalert\".\"date_cancelled\", \"customer_productalert\".\"date_closed\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" IN (27) AND \"customer_productalert\".\"status\" = 'Active') ORDER BY \"customer_productalert\".\"date_created\" DESC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"customer_productalert\".\"id\", \"customer_productalert\".\"product_id\", \"customer_productalert\".\"user_id\", \"customer_productalert\".\"email\", \"customer_productalert\".\"key\", \"customer_productalert\".\"status\", \"customer_productalert\".\"date_created\", \"customer_productalert\".\"date_confirmed\", \"customer_productalert\".\"date_cancelled\", \"customer_productalert\".\"date_closed\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" IN (28) AND \"customer_productalert\".\"status\" = 'Active') ORDER BY \"customer_productalert\".\"date_created\" DESC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 27"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 28"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"wishlists_line\".\"id\", \"wishlists_line\".\"wishlist_id\", \"wishlists_line\".\"product_id\", \"wishlists_line\".\"quantity\", \"wishlists_line\".\"title\" FROM \"wishlists_line\" WHERE (\"wishlists_line\".\"wishlist_id\" = 32 AND \"wishlists_line\".\"product_id\" = 27) ORDER BY \"wishlists_line\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 12"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 13"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"catalogue_product\" SET \"structure\" = 'standalone', \"is_public\" = true, \"upc\" = '978080213020322', \"parent_id\" = NULL, \"title\" = 'A confederacy of dunces', \"slug\" = 'a-confederacy-of-dunces', \"description\" = '', \"meta_title\" = NULL, \"meta_description\" = NULL, \"product_class_id\" = 22, \"rating\" = NULL, \"date_created\" = '2024-07-22T17:28:56.943114+00:00'::timestamptz, \"date_updated\" = '2024-07-22T17:28:56.961160+00:00'::timestamptz, \"is_discountable\" = true WHERE \"catalogue_product\".\"id\" = 27"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"catalogue_product\" SET \"structure\" = 'standalone', \"is_public\" = true, \"upc\" = '978080213020323', \"parent_id\" = NULL, \"title\" = 'A confederacy of dunces', \"slug\" = 'a-confederacy-of-dunces', \"description\" = '', \"meta_title\" = NULL, \"meta_description\" = NULL, \"product_class_id\" = 23, \"rating\" = NULL, \"date_created\" = '2024-07-22T17:28:56.988981+00:00'::timestamptz, \"date_updated\" = '2024-07-22T17:28:57.010084+00:00'::timestamptz, \"is_discountable\" = true WHERE \"catalogue_product\".\"id\" = 28"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"customer_productalert\" SET \"user_id\" = 704, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_368@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"myauth_user\" SET \"password\" = 'md5$V4qmNFvvpGUUj7KGpkd8ed$a70fb4c120a99e3cffe210302dd1583a', \"last_login\" = NULL, \"is_superuser\" = false, \"email\" = 'example_368@example.com', \"first_name\" = 'joseph', \"last_name\" = 'winterbottom', \"is_staff\" = false, \"is_active\" = true, \"date_joined\" = '2024-07-22T17:28:57.011290+00:00'::timestamptz, \"username\" = 'the_j_meister nummer 368', \"extra_field\" = '' WHERE \"myauth_user\".\"id\" = 704"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"slug\" = 'books' ORDER BY \"catalogue_productclass\".\"name\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"slug\" = 'books-2' ORDER BY \"catalogue_productclass\".\"name\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"partner_partner\".\"id\", \"partner_partner\".\"code\", \"partner_partner\".\"name\" FROM \"partner_partner\" WHERE \"partner_partner\".\"code\" = 'gardners' ORDER BY \"partner_partner\".\"name\" ASC, \"partner_partner\".\"code\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"partner_partner\".\"id\", \"partner_partner\".\"code\", \"partner_partner\".\"name\" FROM \"partner_partner\" WHERE \"partner_partner\".\"code\" = 'gardners-2' ORDER BY \"partner_partner\".\"name\" ASC, \"partner_partner\".\"code\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "oscar/core"
+  }
+]

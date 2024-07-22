@@ -1,0 +1,178 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "customer",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractUser",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:115"
+                      },
+                      {
+                        "name": "_migrate_alerts_to_user",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:103"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "address",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractUserAddress",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:580"
+                      },
+                      {
+                        "name": "_ensure_defaults_integrity",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:593"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "AbstractAddress",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "generate_hash",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:384"
+                      },
+                      {
+                        "name": "get_address_field_values",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:377"
+                      },
+                      {
+                        "name": "get_field_values",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:359"
+                      },
+                      {
+                        "name": "join_fields",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:395"
+                      },
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:277"
+                      },
+                      {
+                        "name": "_update_search_text",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:326"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "models",
+        "type": "package",
+        "children": [
+          {
+            "name": "fields",
+            "type": "package",
+            "children": [
+              {
+                "name": "UppercaseCharField",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "to_python",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/models/fields/__init__.py:86"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"address_country\".\"iso_3166_1_a2\", \"address_country\".\"iso_3166_1_a3\", \"address_country\".\"iso_3166_1_numeric\", \"address_country\".\"printable_name\", \"address_country\".\"name\", \"address_country\".\"display_order\", \"address_country\".\"is_shipping_country\" FROM \"address_country\" WHERE \"address_country\".\"iso_3166_1_a2\" = 'GB' LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SAVEPOINT \"s8669432832_x2312\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"address_country\" (\"iso_3166_1_a2\", \"iso_3166_1_a3\", \"iso_3166_1_numeric\", \"printable_name\", \"name\", \"display_order\", \"is_shipping_country\") VALUES ('GB', '', '', 'UNITED KINGDOM', '', 0, false)"
+      },
+      {
+        "type": "query",
+        "name": "RELEASE SAVEPOINT \"s8669432832_x2312\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('', NULL, false, 'example_275@example.com', 'joseph', 'winterbottom', false, true, '2024-07-22T17:27:50.500945+00:00'::timestamptz, 'the_j_meister nummer 275', '') RETURNING \"myauth_user\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"customer_productalert\" SET \"user_id\" = 606, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_275@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"myauth_user\" SET \"password\" = 'md5$po5ttwN05qB3u4vJCMsGtX$607b4ff8b42419e2a173b5a7dd196453', \"last_login\" = NULL, \"is_superuser\" = false, \"email\" = 'example_275@example.com', \"first_name\" = 'joseph', \"last_name\" = 'winterbottom', \"is_staff\" = false, \"is_active\" = true, \"date_joined\" = '2024-07-22T17:27:50.500945+00:00'::timestamptz, \"username\" = 'the_j_meister nummer 275', \"extra_field\" = '' WHERE \"myauth_user\".\"id\" = 606"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"address_useraddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\", \"phone_number\", \"notes\", \"user_id\", \"is_default_for_shipping\", \"is_default_for_billing\", \"num_orders_as_shipping_address\", \"num_orders_as_billing_address\", \"hash\", \"date_created\") VALUES ('Dr', 'Barry', 'Barrington', '1 King Road', '', '', 'London', '', 'SW1 9RE', 'GB', 'Barry Barrington 1 King Road London SW1 9RE UNITED KINGDOM', '+493513296645', '', 606, false, false, 0, 0, '2668616117', '2024-07-22T17:27:50.506998+00:00'::timestamptz) RETURNING \"address_useraddress\".\"id\""
+      }
+    ]
+  }
+]

@@ -1,0 +1,139 @@
+{
+  "events": [
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"order_ordernote\" (\"order_id\", \"user_id\", \"note_type\", \"message\", \"date_created\", \"date_updated\") VALUES (161, NULL, 'System', 'test', '2024-07-22T17:28:41.605413+00:00'::timestamptz, '2024-07-22T17:28:41.605423+00:00'::timestamptz) RETURNING \"order_ordernote\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.0006721670000047197,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14012094784,
+        "value": "<OrderNote: 'test' (None)>",
+        "name": "self",
+        "class": "oscar.apps.order.models.OrderNote"
+      },
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractOrderNote",
+      "method_id": "is_editable",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 432
+    },
+    {
+      "return_value": {
+        "object_id": 4341173008,
+        "value": "False",
+        "class": "builtins.bool"
+      },
+      "parent_id": 3,
+      "elapsed": 0.0000019073486328125,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Order note tests",
+    "recording": {
+      "defined_class": "tests.integration.order.test_models.OrderNoteTests",
+      "method_id": "test_system_notes_are_not_editable"
+    },
+    "source_location": "tests/integration/order/test_models.py:133",
+    "name": "Order note tests system notes are not editable",
+    "feature": "System notes are not editable",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "order",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractOrderNote",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "is_editable",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:432"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"order_ordernote\" (\"order_id\", \"user_id\", \"note_type\", \"message\", \"date_created\", \"date_updated\") VALUES (161, NULL, 'System', 'test', '2024-07-22T17:28:41.605413+00:00'::timestamptz, '2024-07-22T17:28:41.605423+00:00'::timestamptz) RETURNING \"order_ordernote\".\"id\""
+        }
+      ]
+    }
+  ]
+}

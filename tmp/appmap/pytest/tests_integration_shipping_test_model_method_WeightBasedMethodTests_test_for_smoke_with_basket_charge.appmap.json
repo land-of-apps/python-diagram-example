@@ -1,0 +1,421 @@
+{
+  "events": [
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341172976,
+          "value": "True",
+          "name": "empty",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.test.factories",
+      "method_id": "create_basket",
+      "path": "src/oscar/test/factories/__init__.py",
+      "lineno": 155
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Open', '2024-07-22T17:28:49.585358+00:00'::timestamptz, NULL, NULL) RETURNING \"basket_basket\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0.0007700419999991936,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14028737264,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0009851455688476562,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14028719488,
+        "value": "<WeightBased: Standard>",
+        "name": "self",
+        "class": "oscar.apps.shipping.models.WeightBased"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14028737264,
+          "value": "<Basket: Open basket (owner: None, lines: 0)>",
+          "name": "basket",
+          "class": "oscar.apps.basket.models.Basket"
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.shipping.abstract_models.AbstractWeightBased",
+      "method_id": "calculate",
+      "path": "src/oscar/apps/shipping/abstract_models.py",
+      "lineno": 122
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14028737168,
+        "value": "<oscar.apps.shipping.scales.Scale object at 0x3442d8a90>",
+        "name": "self",
+        "class": "oscar.apps.shipping.scales.Scale"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14028737264,
+          "value": "<Basket: Open basket (owner: None, lines: 0)>",
+          "name": "basket",
+          "class": "oscar.apps.basket.models.Basket"
+        }
+      ],
+      "id": 6,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.shipping.scales.Scale",
+      "method_id": "weigh_basket",
+      "path": "src/oscar/apps/shipping/scales.py",
+      "lineno": 33
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14028737264,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "all_lines",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 14028734720,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 7,
+      "elapsed": 9.5367431640625e-7,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\", \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\", \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"basket_line\" INNER JOIN \"catalogue_product\" ON (\"basket_line\".\"product_id\" = \"catalogue_product\".\"id\") INNER JOIN \"partner_stockrecord\" ON (\"basket_line\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE \"basket_line\".\"basket_id\" = 625 ORDER BY \"basket_line\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 9,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 9,
+      "elapsed": 0.0008393750000266209,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14028749936,
+        "value": "Decimal('0.0')",
+        "class": "decimal.Decimal"
+      },
+      "parent_id": 6,
+      "elapsed": 0.0053558349609375,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14028719488,
+        "value": "<WeightBased: Standard>",
+        "name": "self",
+        "class": "oscar.apps.shipping.models.WeightBased"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14028749936,
+          "value": "Decimal('0.0')",
+          "name": "weight",
+          "class": "decimal.Decimal"
+        }
+      ],
+      "id": 12,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.shipping.abstract_models.AbstractWeightBased",
+      "method_id": "get_charge",
+      "path": "src/oscar/apps/shipping/abstract_models.py",
+      "lineno": 135
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"shipping_weightband\" WHERE \"shipping_weightband\".\"method_id\" = 3 LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 13,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 13,
+      "elapsed": 0.0005841669999995247,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14028759536,
+        "value": "Decimal('0.00')",
+        "class": "decimal.Decimal"
+      },
+      "parent_id": 12,
+      "elapsed": 0.0008530616760253906,
+      "id": 15,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14028737264,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "id": 16,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "all_lines",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 14028734720,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 16,
+      "elapsed": 0,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14028703344,
+        "value": "Price(currency=None, excl_tax=Decimal('0.00'), incl_tax=Decimal('0.00'), tax=Decimal('0.00'))",
+        "class": "oscar.core.prices.Price"
+      },
+      "parent_id": 5,
+      "elapsed": 0.007338047027587891,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Weight based method tests",
+    "recording": {
+      "defined_class": "tests.integration.shipping.test_model_method.WeightBasedMethodTests",
+      "method_id": "test_for_smoke_with_basket_charge"
+    },
+    "source_location": "tests/integration/shipping/test_model_method.py:171",
+    "name": "Weight based method tests for smoke with basket charge",
+    "feature": "For smoke with basket charge",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "test",
+          "type": "package",
+          "children": [
+            {
+              "name": "factories",
+              "type": "class",
+              "children": [
+                {
+                  "name": "create_basket",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/test/factories/__init__.py:155"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "shipping",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractWeightBased",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "calculate",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/shipping/abstract_models.py:122"
+                        },
+                        {
+                          "name": "get_charge",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/shipping/abstract_models.py:135"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "scales",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Scale",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "weigh_basket",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/shipping/scales.py:33"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "basket",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractBasket",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "all_lines",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/abstract_models.py:130"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Open', '2024-07-22T17:28:49.585358+00:00'::timestamptz, NULL, NULL) RETURNING \"basket_basket\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\", \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\", \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"basket_line\" INNER JOIN \"catalogue_product\" ON (\"basket_line\".\"product_id\" = \"catalogue_product\".\"id\") INNER JOIN \"partner_stockrecord\" ON (\"basket_line\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE \"basket_line\".\"basket_id\" = 625 ORDER BY \"basket_line\".\"id\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"shipping_weightband\" WHERE \"shipping_weightband\".\"method_id\" = 3 LIMIT 1"
+        }
+      ]
+    }
+  ]
+}

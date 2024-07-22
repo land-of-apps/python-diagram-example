@@ -1,0 +1,761 @@
+{
+  "events": [
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.0",
+        "path_info": "/catalogue/category/1_wrong-but-valid-slug_1_106/",
+        "normalized_path_info": "/catalogue/category/{category_slug}_106{pk}/",
+        "headers": {
+          "Host": "testserver"
+        }
+      },
+      "message": [
+        {
+          "object_id": 5321566608,
+          "value": "'1_wrong-but-valid-slug_1'",
+          "name": "category_slug",
+          "class": "builtins.str"
+        },
+        {
+          "object_id": 5323333680,
+          "value": "'106'",
+          "name": "pk",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4415473264,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x1072ec670>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 5324448912,
+          "value": "<WSGIRequest: GET '/catalogue/category/1_wrong-but-valid-slug_1_106/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "opt",
+          "object_id": 5324450016,
+          "value": "<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x13d4f1820>>",
+          "name": "user",
+          "class": "django.utils.functional.SimpleLazyObject"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 5324518720,
+          "value": "{'request': <WSGIRequest: GET '/catalogue/category/1_wrong-but-valid-slug_1_106/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x13d4f1820>>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "user",
+              "class": "django.utils.functional.SimpleLazyObject"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "return_value": {
+        "object_id": 5324438448,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x13d5c7bb0>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 2,
+      "elapsed": 0.000030040740966796875,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5323512176,
+        "value": "<oscar.apps.catalogue.views.ProductCategoryView object at 0x13d4e5970>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.views.ProductCategoryView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5324448912,
+          "value": "<WSGIRequest: GET '/catalogue/category/1_wrong-but-valid-slug_1_106/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 5323488768,
+          "value": "{'category_slug': '1_wrong-but-valid-slug_1', 'pk': '106'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "category_slug",
+              "class": "builtins.str"
+            },
+            {
+              "name": "pk",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.views.ProductCategoryView",
+      "method_id": "get",
+      "path": "src/oscar/apps/catalogue/views.py",
+      "lineno": 168
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5323512176,
+        "value": "<oscar.apps.catalogue.views.ProductCategoryView object at 0x13d4e5970>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.views.ProductCategoryView"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.views.ProductCategoryView",
+      "method_id": "get_category",
+      "path": "src/oscar/apps/catalogue/views.py",
+      "lineno": 196
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 106 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 6,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 6,
+      "elapsed": 0.0006506250000057889,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5324504992,
+        "value": "<Category: Products>",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parent_id": 5,
+      "elapsed": 0.0009970664978027344,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5323512176,
+        "value": "<oscar.apps.catalogue.views.ProductCategoryView object at 0x13d4e5970>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.views.ProductCategoryView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5324504992,
+          "value": "<Category: Products>",
+          "name": "category",
+          "class": "oscar.apps.catalogue.models.Category"
+        },
+        {
+          "kind": "req",
+          "object_id": 5324448912,
+          "value": "<WSGIRequest: GET '/catalogue/category/1_wrong-but-valid-slug_1_106/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 9,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.views.ProductCategoryView",
+      "method_id": "is_viewable",
+      "path": "src/oscar/apps/catalogue/views.py",
+      "lineno": 193
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 9,
+      "elapsed": 9.5367431640625e-7,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5323512176,
+        "value": "<oscar.apps.catalogue.views.ProductCategoryView object at 0x13d4e5970>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.views.ProductCategoryView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5324483136,
+          "value": "'/catalogue/category/1_wrong-but-valid-slug_1_106/'",
+          "name": "current_path",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 5324504992,
+          "value": "<Category: Products>",
+          "name": "category",
+          "class": "oscar.apps.catalogue.models.Category"
+        }
+      ],
+      "id": 11,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.views.ProductCategoryView",
+      "method_id": "redirect_if_necessary",
+      "path": "src/oscar/apps/catalogue/views.py",
+      "lineno": 199
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5324504992,
+        "value": "<Category: Products>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 12,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 305
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5324504992,
+        "value": "<Category: Products>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 13,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "_get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 288
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5324504992,
+        "value": "<Category: Products>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 14,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "return_value": {
+        "object_id": 5323615152,
+        "value": "'products'",
+        "class": "builtins.str"
+      },
+      "parent_id": 14,
+      "elapsed": 0.0000011920928955078125,
+      "id": 15,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5320638160,
+        "value": "'/catalogue/category/products_106/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 13,
+      "elapsed": 0.00009012222290039062,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5320638160,
+        "value": "'/catalogue/category/products_106/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 12,
+      "elapsed": 0.00013327598571777344,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5324504656,
+        "value": "<HttpResponsePermanentRedirect status_code=301, \"text/html; charset=utf-8\", url=\"/catalogue/category/products_106/\">",
+        "class": "django.http.response.HttpResponsePermanentRedirect"
+      },
+      "parent_id": 11,
+      "elapsed": 0.0002090930938720703,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5324504656,
+        "value": "<HttpResponsePermanentRedirect status_code=301, \"text/html; charset=utf-8\", url=\"/catalogue/category/products_106/\">",
+        "class": "django.http.response.HttpResponsePermanentRedirect"
+      },
+      "parent_id": 4,
+      "elapsed": 0.0014119148254394531,
+      "id": 19,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5324494832,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x13d5d57f0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5324448912,
+          "value": "<WSGIRequest: GET '/catalogue/category/1_wrong-but-valid-slug_1_106/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 5324504656,
+          "value": "<HttpResponsePermanentRedirect status_code=301, \"text/html; charset=utf-8\", url=\"/catalogue/category/products_106/\">",
+          "name": "response",
+          "class": "django.http.response.HttpResponsePermanentRedirect"
+        }
+      ],
+      "id": 20,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 63
+    },
+    {
+      "return_value": {
+        "object_id": 5324504656,
+        "value": "<HttpResponsePermanentRedirect status_code=301, \"text/html; charset=utf-8\", url=\"/catalogue/category/products_106/\">",
+        "class": "django.http.response.HttpResponsePermanentRedirect"
+      },
+      "parent_id": 20,
+      "elapsed": 0.0000019073486328125,
+      "id": 21,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_response": {
+        "status_code": 301,
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Location": "/catalogue/category/products_106/",
+          "Vary": "Cookie",
+          "Content-Length": "0"
+        }
+      },
+      "parent_id": 1,
+      "elapsed": 0.002030959000002497,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5324477008,
+        "value": "<Category: Products>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 23,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 305
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5324477008,
+        "value": "<Category: Products>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 24,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "_get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 288
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5324477008,
+        "value": "<Category: Products>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 25,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "return_value": {
+        "object_id": 5323658224,
+        "value": "'products'",
+        "class": "builtins.str"
+      },
+      "parent_id": 25,
+      "elapsed": 7.152557373046875e-7,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5323328176,
+        "value": "'/catalogue/category/products_106/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 24,
+      "elapsed": 0.00007796287536621094,
+      "id": 27,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5323328176,
+        "value": "'/catalogue/category/products_106/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 23,
+      "elapsed": 0.0001227855682373047,
+      "id": 28,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Product category view",
+    "recording": {
+      "defined_class": "tests.functional.catalogue.test_catalogue.TestProductCategoryView",
+      "method_id": "test_enforces_canonical_url"
+    },
+    "source_location": "tests/functional/catalogue/test_catalogue.py:129",
+    "name": "Product category view enforces canonical url",
+    "feature": "Enforces canonical url",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "partner",
+              "type": "package",
+              "children": [
+                {
+                  "name": "strategy",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Selector",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "strategy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/strategy.py:37"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "views",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "ProductCategoryView",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/views.py:168"
+                        },
+                        {
+                          "name": "get_category",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/views.py:196"
+                        },
+                        {
+                          "name": "is_viewable",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/views.py:193"
+                        },
+                        {
+                          "name": "redirect_if_necessary",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/views.py:199"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractCategory",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get_absolute_url",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:305"
+                        },
+                        {
+                          "name": "_get_absolute_url",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:288"
+                        },
+                        {
+                          "name": "get_full_slug",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:184"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "basket",
+              "type": "package",
+              "children": [
+                {
+                  "name": "middleware",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "BasketMiddleware",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "process_response",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/middleware.py:63"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /catalogue/category/{category_slug}_106{pk}/"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 106 LIMIT 21"
+        }
+      ]
+    }
+  ]
+}

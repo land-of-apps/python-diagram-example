@@ -1,0 +1,157 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "dashboard",
+            "type": "package",
+            "children": [
+              {
+                "name": "nav",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "default_access_fn",
+                    "type": "function",
+                    "static": true,
+                    "location": "src/oscar/apps/dashboard/nav.py:100"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core",
+        "type": "package",
+        "children": [
+          {
+            "name": "application",
+            "type": "package",
+            "children": [
+              {
+                "name": "OscarConfigMixin",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "get_permissions",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/core/application.py:101"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "views",
+        "type": "package",
+        "children": [
+          {
+            "name": "decorators",
+            "type": "class",
+            "children": [
+              {
+                "name": "check_permissions",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/views/decorators.py:10"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "django",
+    "type": "package",
+    "children": [
+      {
+        "name": "contrib",
+        "type": "package",
+        "children": [
+          {
+            "name": "auth",
+            "type": "package",
+            "children": [
+              {
+                "name": "models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "PermissionsMixin",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "has_perms",
+                        "type": "function",
+                        "labels": [
+                          "security.authorization"
+                        ],
+                        "static": false,
+                        "location": "venv/lib/python3.8/site-packages/django/contrib/auth/models.py:313"
+                      },
+                      {
+                        "name": "has_perm",
+                        "type": "function",
+                        "labels": [
+                          "security.authorization"
+                        ],
+                        "static": false,
+                        "location": "venv/lib/python3.8/site-packages/django/contrib/auth/models.py:298"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "backends",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "ModelBackend",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "has_perm",
+                        "type": "function",
+                        "labels": [
+                          "security.authorization"
+                        ],
+                        "static": false,
+                        "location": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py:112"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"django_content_type\".\"app_label\", \"auth_permission\".\"codename\" FROM \"auth_permission\" INNER JOIN \"myauth_user_user_permissions\" ON (\"auth_permission\".\"id\" = \"myauth_user_user_permissions\".\"permission_id\") INNER JOIN \"django_content_type\" ON (\"auth_permission\".\"content_type_id\" = \"django_content_type\".\"id\") WHERE \"myauth_user_user_permissions\".\"user_id\" = 669"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"django_content_type\".\"app_label\", \"auth_permission\".\"codename\" FROM \"auth_permission\" INNER JOIN \"auth_group_permissions\" ON (\"auth_permission\".\"id\" = \"auth_group_permissions\".\"permission_id\") INNER JOIN \"auth_group\" ON (\"auth_group_permissions\".\"group_id\" = \"auth_group\".\"id\") INNER JOIN \"myauth_user_groups\" ON (\"auth_group\".\"id\" = \"myauth_user_groups\".\"group_id\") INNER JOIN \"django_content_type\" ON (\"auth_permission\".\"content_type_id\" = \"django_content_type\".\"id\") WHERE \"myauth_user_groups\".\"user_id\" = 669"
+      }
+    ]
+  }
+]

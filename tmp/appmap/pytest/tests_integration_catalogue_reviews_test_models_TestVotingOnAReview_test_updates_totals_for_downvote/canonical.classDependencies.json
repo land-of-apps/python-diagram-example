@@ -1,0 +1,26 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"reviews_vote\" (\"review_id\", \"user_id\", \"delta\", \"date_created\") VALUES (65, 640,  -1, '2024-07-22T17:28:04.013009+00:00'::timestamptz) RETURNING \"reviews_vote\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT SUM(\"reviews_productreview\".\"score\") AS \"sum\", COUNT(\"reviews_productreview\".\"id\") AS \"count\" FROM \"reviews_productreview\" WHERE (\"reviews_productreview\".\"product_id\" = 749 AND \"reviews_productreview\".\"status\" = 1)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT SUM(\"reviews_vote\".\"delta\") AS \"score\", COUNT(\"reviews_vote\".\"id\") AS \"total_votes\" FROM \"reviews_vote\" WHERE \"reviews_vote\".\"review_id\" = 65"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"catalogue_product\" SET \"structure\" = 'standalone', \"is_public\" = true, \"upc\" = NULL, \"parent_id\" = NULL, \"title\" = 'Dùｍϻϒ title', \"slug\" = 'dumu03fbu03a5-title', \"description\" = '', \"meta_title\" = NULL, \"meta_description\" = NULL, \"product_class_id\" = 568, \"rating\" = 3.0, \"date_created\" = '2024-07-22T17:28:04.004355+00:00'::timestamptz, \"date_updated\" = '2024-07-22T17:28:04.016107+00:00'::timestamptz, \"is_discountable\" = true WHERE \"catalogue_product\".\"id\" = 749"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"reviews_productreview\" SET \"product_id\" = 749, \"score\" = 3, \"title\" = 'This is nice', \"body\" = 'This is the body', \"user_id\" = 639, \"name\" = '', \"email\" = '', \"homepage\" = '', \"status\" = 1, \"total_votes\" = 1, \"delta_votes\" =  -1, \"date_created\" = '2024-07-22T17:28:04.009714+00:00'::timestamptz WHERE \"reviews_productreview\".\"id\" = 65"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  }
+]

@@ -1,0 +1,488 @@
+{
+  "events": [
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"order_shippingevent\" (\"order_id\", \"event_type_id\", \"notes\", \"date_created\") VALUES (167, 33, '', '2024-07-22T17:28:42.078789+00:00'::timestamptz) RETURNING \"order_shippingevent\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.0006485840000038934,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14012529824,
+        "value": "<ShippingEventQuantity: Dùｍϻϒ title - quantity 3>",
+        "name": "self",
+        "class": "oscar.apps.order.abstract_models.ShippingEventQuantity"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14012526464,
+          "value": "{'force_insert': True, 'using': 'default'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "force_insert",
+              "class": "builtins.bool"
+            },
+            {
+              "name": "using",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.ShippingEventQuantity",
+      "method_id": "save",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 1137
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14012529680,
+        "value": "<Line: Product 'Dùｍϻϒ title', quantity '4'>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Line"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14012482512,
+          "value": "<ShippingEventType: Order placed>",
+          "name": "event_type",
+          "class": "oscar.apps.order.models.ShippingEventType"
+        },
+        {
+          "kind": "req",
+          "object_id": 4341392008,
+          "value": "3",
+          "name": "quantity",
+          "class": "builtins.int"
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractLine",
+      "method_id": "is_shipping_event_permitted",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 753
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14012529680,
+        "value": "<Line: Product 'Dùｍϻϒ title', quantity '4'>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Line"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14012482512,
+          "value": "<ShippingEventType: Order placed>",
+          "name": "event_type",
+          "class": "oscar.apps.order.models.ShippingEventType"
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractLine",
+      "method_id": "shipping_event_quantity",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 766
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT SUM(\"order_shippingeventquantity\".\"quantity\") AS \"quantity__sum\" FROM \"order_shippingeventquantity\" INNER JOIN \"order_shippingevent\" ON (\"order_shippingeventquantity\".\"event_id\" = \"order_shippingevent\".\"id\") WHERE (\"order_shippingeventquantity\".\"line_id\" = 169 AND \"order_shippingevent\".\"event_type_id\" = 33)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 6,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 6,
+      "elapsed": 0.0006383749999940846,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341391912,
+        "value": "0",
+        "class": "builtins.int"
+      },
+      "parent_id": 5,
+      "elapsed": 0.001230001449584961,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 4,
+      "elapsed": 0.0012927055358886719,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"order_shippingeventquantity\" (\"event_id\", \"line_id\", \"quantity\") VALUES (10, 169, 3) RETURNING \"order_shippingeventquantity\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 10,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 10,
+      "elapsed": 0.0004075839999870823,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 3,
+      "elapsed": 0.0019168853759765625,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"order_shippingevent\" (\"order_id\", \"event_type_id\", \"notes\", \"date_created\") VALUES (167, 33, '', '2024-07-22T17:28:42.083157+00:00'::timestamptz) RETURNING \"order_shippingevent\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 13,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 13,
+      "elapsed": 0.0004522500000234686,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14012546160,
+        "value": "<ShippingEventQuantity: Dùｍϻϒ title - quantity 4>",
+        "name": "self",
+        "class": "oscar.apps.order.abstract_models.ShippingEventQuantity"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14012536640,
+          "value": "{'force_insert': True, 'using': 'default'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "force_insert",
+              "class": "builtins.bool"
+            },
+            {
+              "name": "using",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 15,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.ShippingEventQuantity",
+      "method_id": "save",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 1137
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14012529680,
+        "value": "<Line: Product 'Dùｍϻϒ title', quantity '4'>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Line"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14012482512,
+          "value": "<ShippingEventType: Order placed>",
+          "name": "event_type",
+          "class": "oscar.apps.order.models.ShippingEventType"
+        },
+        {
+          "kind": "req",
+          "object_id": 4341392040,
+          "value": "4",
+          "name": "quantity",
+          "class": "builtins.int"
+        }
+      ],
+      "id": 16,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractLine",
+      "method_id": "is_shipping_event_permitted",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 753
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14012529680,
+        "value": "<Line: Product 'Dùｍϻϒ title', quantity '4'>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Line"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14012482512,
+          "value": "<ShippingEventType: Order placed>",
+          "name": "event_type",
+          "class": "oscar.apps.order.models.ShippingEventType"
+        }
+      ],
+      "id": 17,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractLine",
+      "method_id": "shipping_event_quantity",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 766
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT SUM(\"order_shippingeventquantity\".\"quantity\") AS \"quantity__sum\" FROM \"order_shippingeventquantity\" INNER JOIN \"order_shippingevent\" ON (\"order_shippingeventquantity\".\"event_id\" = \"order_shippingevent\".\"id\") WHERE (\"order_shippingeventquantity\".\"line_id\" = 169 AND \"order_shippingevent\".\"event_type_id\" = 33)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 18,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 18,
+      "elapsed": 0.0006276670000033846,
+      "id": 19,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341392008,
+        "value": "3",
+        "class": "builtins.int"
+      },
+      "parent_id": 17,
+      "elapsed": 0.001093149185180664,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341173008,
+        "value": "False",
+        "class": "builtins.bool"
+      },
+      "parent_id": 16,
+      "elapsed": 0.001149892807006836,
+      "id": 21,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "exceptions": [
+        {
+          "class": "oscar.apps.order.exceptions.InvalidShippingEvent",
+          "message": "",
+          "object_id": 14011825792
+        }
+      ],
+      "parent_id": 15,
+      "elapsed": 0.0012159347534179688,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Line tests",
+    "recording": {
+      "defined_class": "tests.integration.order.test_models.LineTests",
+      "method_id": "test_inconsistent_shipping_status_setting"
+    },
+    "source_location": "tests/integration/order/test_models.py:226",
+    "name": "Line tests inconsistent shipping status setting",
+    "feature": "Inconsistent shipping status setting",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "order",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "ShippingEventQuantity",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:1137"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "AbstractLine",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "is_shipping_event_permitted",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:753"
+                        },
+                        {
+                          "name": "shipping_event_quantity",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:766"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"order_shippingevent\" (\"order_id\", \"event_type_id\", \"notes\", \"date_created\") VALUES (167, 33, '', '2024-07-22T17:28:42.078789+00:00'::timestamptz) RETURNING \"order_shippingevent\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT SUM(\"order_shippingeventquantity\".\"quantity\") AS \"quantity__sum\" FROM \"order_shippingeventquantity\" INNER JOIN \"order_shippingevent\" ON (\"order_shippingeventquantity\".\"event_id\" = \"order_shippingevent\".\"id\") WHERE (\"order_shippingeventquantity\".\"line_id\" = 169 AND \"order_shippingevent\".\"event_type_id\" = 33)"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"order_shippingeventquantity\" (\"event_id\", \"line_id\", \"quantity\") VALUES (10, 169, 3) RETURNING \"order_shippingeventquantity\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"order_shippingevent\" (\"order_id\", \"event_type_id\", \"notes\", \"date_created\") VALUES (167, 33, '', '2024-07-22T17:28:42.083157+00:00'::timestamptz) RETURNING \"order_shippingevent\".\"id\""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,518 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14008467904,
+        "value": "<oscar.apps.order.processing.EventHandler object at 0x342f841c0>",
+        "name": "self",
+        "class": "oscar.apps.order.processing.EventHandler"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14008517440,
+          "value": "<PaymentEventType: Settled>",
+          "name": "event_type",
+          "class": "oscar.apps.order.models.PaymentEventType"
+        },
+        {
+          "kind": "req",
+          "object_id": 14008536032,
+          "value": "<QuerySet [<Line: Product 'Dùｍϻϒ title', quantity '5'>]>",
+          "name": "lines",
+          "class": "django.db.models.query.QuerySet"
+        },
+        {
+          "kind": "req",
+          "object_id": 14008182528,
+          "value": "[2]",
+          "name": "line_quantities",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.int"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.processing.EventHandler",
+      "method_id": "calculate_payment_event_subtotal",
+      "path": "src/oscar/apps/order/processing.py",
+      "lineno": 136
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_line\".\"id\", \"order_line\".\"order_id\", \"order_line\".\"partner_id\", \"order_line\".\"partner_name\", \"order_line\".\"partner_sku\", \"order_line\".\"partner_line_reference\", \"order_line\".\"partner_line_notes\", \"order_line\".\"stockrecord_id\", \"order_line\".\"product_id\", \"order_line\".\"title\", \"order_line\".\"upc\", \"order_line\".\"quantity\", \"order_line\".\"line_price_incl_tax\", \"order_line\".\"line_price_excl_tax\", \"order_line\".\"line_price_before_discounts_incl_tax\", \"order_line\".\"line_price_before_discounts_excl_tax\", \"order_line\".\"unit_price_incl_tax\", \"order_line\".\"unit_price_excl_tax\", \"order_line\".\"tax_code\", \"order_line\".\"status\" FROM \"order_line\" WHERE \"order_line\".\"order_id\" = 148 ORDER BY \"order_line\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0.0004817919999879905,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14008571792,
+        "value": "<Line: Product 'Dùｍϻϒ title', quantity '5'>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Line"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14008517440,
+          "value": "<PaymentEventType: Settled>",
+          "name": "event_type",
+          "class": "oscar.apps.order.models.PaymentEventType"
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractLine",
+      "method_id": "payment_event_quantity",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 827
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT SUM(\"order_paymenteventquantity\".\"quantity\") AS \"quantity__sum\" FROM \"order_paymenteventquantity\" INNER JOIN \"order_paymentevent\" ON (\"order_paymenteventquantity\".\"event_id\" = \"order_paymentevent\".\"id\") WHERE (\"order_paymenteventquantity\".\"line_id\" = 150 AND \"order_paymentevent\".\"event_type_id\" = 9)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.0015985000000000582,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341391912,
+        "value": "0",
+        "class": "builtins.int"
+      },
+      "parent_id": 4,
+      "elapsed": 0.002115964889526367,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_lineprice\".\"id\", \"order_lineprice\".\"order_id\", \"order_lineprice\".\"line_id\", \"order_lineprice\".\"quantity\", \"order_lineprice\".\"price_incl_tax\", \"order_lineprice\".\"price_excl_tax\", \"order_lineprice\".\"shipping_incl_tax\", \"order_lineprice\".\"shipping_excl_tax\", \"order_lineprice\".\"tax_code\" FROM \"order_lineprice\" WHERE \"order_lineprice\".\"line_id\" = 150 ORDER BY \"order_lineprice\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 8,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 8,
+      "elapsed": 0.0028117499999780193,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14008552784,
+        "value": "Decimal('20.00')",
+        "class": "decimal.Decimal"
+      },
+      "parent_id": 1,
+      "elapsed": 0.007428884506225586,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14008467904,
+        "value": "<oscar.apps.order.processing.EventHandler object at 0x342f841c0>",
+        "name": "self",
+        "class": "oscar.apps.order.processing.EventHandler"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14008534496,
+          "value": "<Order: #100563>",
+          "name": "order",
+          "class": "oscar.apps.order.models.Order"
+        },
+        {
+          "kind": "req",
+          "object_id": 14008517440,
+          "value": "<PaymentEventType: Settled>",
+          "name": "event_type",
+          "class": "oscar.apps.order.models.PaymentEventType"
+        },
+        {
+          "kind": "req",
+          "object_id": 14008552784,
+          "value": "Decimal('20.00')",
+          "name": "amount",
+          "class": "decimal.Decimal"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lines",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "line_quantities",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14008115008,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 11,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.processing.EventHandler",
+      "method_id": "create_payment_event",
+      "path": "src/oscar/apps/order/processing.py",
+      "lineno": 254
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"order_paymentevent\" (\"order_id\", \"amount\", \"reference\", \"event_type_id\", \"shipping_event_id\", \"date_created\") VALUES (148, 20.00, '', 9, NULL, '2024-07-22T17:28:40.154649+00:00'::timestamptz) RETURNING \"order_paymentevent\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 12,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 12,
+      "elapsed": 0.0006025829999884991,
+      "id": 13,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"order_paymenteventquantity\" (\"event_id\", \"line_id\", \"quantity\") VALUES (5, 150, 2) RETURNING \"order_paymenteventquantity\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 14,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 14,
+      "elapsed": 0.0004710409999972853,
+      "id": 15,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14008571360,
+        "value": "<PaymentEvent: Payment event for order #100563>",
+        "class": "oscar.apps.order.models.PaymentEvent"
+      },
+      "parent_id": 11,
+      "elapsed": 0.0016047954559326172,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14008467904,
+        "value": "<oscar.apps.order.processing.EventHandler object at 0x342f841c0>",
+        "name": "self",
+        "class": "oscar.apps.order.processing.EventHandler"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14008517440,
+          "value": "<PaymentEventType: Settled>",
+          "name": "event_type",
+          "class": "oscar.apps.order.models.PaymentEventType"
+        },
+        {
+          "kind": "req",
+          "object_id": 14008536032,
+          "value": "<QuerySet [<Line: Product 'Dùｍϻϒ title', quantity '5'>]>",
+          "name": "lines",
+          "class": "django.db.models.query.QuerySet"
+        },
+        {
+          "kind": "req",
+          "object_id": 14007657984,
+          "value": "[3]",
+          "name": "line_quantities",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.int"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 17,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.processing.EventHandler",
+      "method_id": "calculate_payment_event_subtotal",
+      "path": "src/oscar/apps/order/processing.py",
+      "lineno": 136
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14008571792,
+        "value": "<Line: Product 'Dùｍϻϒ title', quantity '5'>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Line"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14008517440,
+          "value": "<PaymentEventType: Settled>",
+          "name": "event_type",
+          "class": "oscar.apps.order.models.PaymentEventType"
+        }
+      ],
+      "id": 18,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractLine",
+      "method_id": "payment_event_quantity",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 827
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT SUM(\"order_paymenteventquantity\".\"quantity\") AS \"quantity__sum\" FROM \"order_paymenteventquantity\" INNER JOIN \"order_paymentevent\" ON (\"order_paymenteventquantity\".\"event_id\" = \"order_paymentevent\".\"id\") WHERE (\"order_paymenteventquantity\".\"line_id\" = 150 AND \"order_paymentevent\".\"event_type_id\" = 9)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 19,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 19,
+      "elapsed": 0.0012680419999924197,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341391976,
+        "value": "2",
+        "class": "builtins.int"
+      },
+      "parent_id": 18,
+      "elapsed": 0.001834869384765625,
+      "id": 21,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_lineprice\".\"id\", \"order_lineprice\".\"order_id\", \"order_lineprice\".\"line_id\", \"order_lineprice\".\"quantity\", \"order_lineprice\".\"price_incl_tax\", \"order_lineprice\".\"price_excl_tax\", \"order_lineprice\".\"shipping_incl_tax\", \"order_lineprice\".\"shipping_excl_tax\", \"order_lineprice\".\"tax_code\" FROM \"order_lineprice\" WHERE \"order_lineprice\".\"line_id\" = 150 ORDER BY \"order_lineprice\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 22,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 22,
+      "elapsed": 0.0006460000000174659,
+      "id": 23,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14008591952,
+        "value": "Decimal('30.00')",
+        "class": "decimal.Decimal"
+      },
+      "parent_id": 17,
+      "elapsed": 0.003056049346923828,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Total calculation",
+    "recording": {
+      "defined_class": "tests.integration.order.test_event_handler.TestTotalCalculation",
+      "method_id": "test_normal_payment_sequence"
+    },
+    "source_location": "tests/integration/order/test_event_handler.py:265",
+    "name": "Total calculation normal payment sequence",
+    "feature": "Normal payment sequence",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "order",
+              "type": "package",
+              "children": [
+                {
+                  "name": "processing",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "EventHandler",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "calculate_payment_event_subtotal",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/processing.py:136"
+                        },
+                        {
+                          "name": "create_payment_event",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/processing.py:254"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractLine",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "payment_event_quantity",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:827"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"order_line\".\"id\", \"order_line\".\"order_id\", \"order_line\".\"partner_id\", \"order_line\".\"partner_name\", \"order_line\".\"partner_sku\", \"order_line\".\"partner_line_reference\", \"order_line\".\"partner_line_notes\", \"order_line\".\"stockrecord_id\", \"order_line\".\"product_id\", \"order_line\".\"title\", \"order_line\".\"upc\", \"order_line\".\"quantity\", \"order_line\".\"line_price_incl_tax\", \"order_line\".\"line_price_excl_tax\", \"order_line\".\"line_price_before_discounts_incl_tax\", \"order_line\".\"line_price_before_discounts_excl_tax\", \"order_line\".\"unit_price_incl_tax\", \"order_line\".\"unit_price_excl_tax\", \"order_line\".\"tax_code\", \"order_line\".\"status\" FROM \"order_line\" WHERE \"order_line\".\"order_id\" = 148 ORDER BY \"order_line\".\"id\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT SUM(\"order_paymenteventquantity\".\"quantity\") AS \"quantity__sum\" FROM \"order_paymenteventquantity\" INNER JOIN \"order_paymentevent\" ON (\"order_paymenteventquantity\".\"event_id\" = \"order_paymentevent\".\"id\") WHERE (\"order_paymenteventquantity\".\"line_id\" = 150 AND \"order_paymentevent\".\"event_type_id\" = 9)"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"order_lineprice\".\"id\", \"order_lineprice\".\"order_id\", \"order_lineprice\".\"line_id\", \"order_lineprice\".\"quantity\", \"order_lineprice\".\"price_incl_tax\", \"order_lineprice\".\"price_excl_tax\", \"order_lineprice\".\"shipping_incl_tax\", \"order_lineprice\".\"shipping_excl_tax\", \"order_lineprice\".\"tax_code\" FROM \"order_lineprice\" WHERE \"order_lineprice\".\"line_id\" = 150 ORDER BY \"order_lineprice\".\"id\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"order_paymentevent\" (\"order_id\", \"amount\", \"reference\", \"event_type_id\", \"shipping_event_id\", \"date_created\") VALUES (148, 20.00, '', 9, NULL, '2024-07-22T17:28:40.154649+00:00'::timestamptz) RETURNING \"order_paymentevent\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"order_paymenteventquantity\" (\"event_id\", \"line_id\", \"quantity\") VALUES (5, 150, 2) RETURNING \"order_paymenteventquantity\".\"id\""
+        }
+      ]
+    }
+  ]
+}

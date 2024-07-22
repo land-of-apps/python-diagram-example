@@ -1,0 +1,34 @@
+[
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueBrowseHtml#render",
+    "callee": "<templates>/SrcOscarTemplatesOscarPartialsAlert_MessagesHtml#render"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueBrowseHtml#render",
+    "callee": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"ancestors_are_public\" AND \"catalogue_category\".\"is_public\") ORDER BY \"catalogue_category\".\"path\" ASC"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueBrowseHtml#render",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueBrowseHtml#render",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "GET /catalogue/",
+    "callee": "<templates>/SrcOscarTemplatesOscarCatalogueBrowseHtml#render"
+  },
+  {
+    "caller": "GET /catalogue/",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"catalogue_product\" WHERE (\"catalogue_product\".\"is_public\" AND \"catalogue_product\".\"parent_id\" IS NULL)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  }
+]

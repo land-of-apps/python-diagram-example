@@ -1,0 +1,140 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "partner",
+            "type": "package",
+            "children": [
+              {
+                "name": "strategy",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "Selector",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "strategy",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/partner/strategy.py:37"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "voucher",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractVoucher",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/voucher/abstract_models.py:180"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "basket",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractBasket",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "merge",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/basket/abstract_models.py:353"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Open', '2024-07-22T17:27:54.859108+00:00'::timestamptz, NULL, NULL) RETURNING \"basket_basket\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"basket_basket\" SET \"owner_id\" = NULL, \"status\" = 'Open', \"date_created\" = '2024-07-22T17:27:54.859108+00:00'::timestamptz, \"date_merged\" = NULL, \"date_submitted\" = NULL WHERE \"basket_basket\".\"id\" = 298"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Open', '2024-07-22T17:27:54.864212+00:00'::timestamptz, NULL, NULL) RETURNING \"basket_basket\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"basket_basket\" SET \"owner_id\" = NULL, \"status\" = 'Open', \"date_created\" = '2024-07-22T17:27:54.864212+00:00'::timestamptz, \"date_merged\" = NULL, \"date_submitted\" = NULL WHERE \"basket_basket\".\"id\" = 299"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('My voucher', 'MYVOUCHER', 'Multi-use', '2024-07-21T17:25:18.456636+00:00'::timestamptz, '2024-08-01T17:25:18.456799+00:00'::timestamptz, 0, 0, 0.00, NULL, '2024-07-22T17:27:54.865874+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"basket_basket_vouchers\" (\"basket_id\", \"voucher_id\") VALUES (298, 3422) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\" FROM \"basket_line\" WHERE \"basket_line\".\"basket_id\" = 298 ORDER BY \"basket_line\".\"date_created\" ASC, \"basket_line\".\"id\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"basket_basket\" SET \"owner_id\" = NULL, \"status\" = 'Merged', \"date_created\" = '2024-07-22T17:27:54.859108+00:00'::timestamptz, \"date_merged\" = '2024-07-22T17:27:54.870907+00:00'::timestamptz, \"date_submitted\" = NULL WHERE \"basket_basket\".\"id\" = 298"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" INNER JOIN \"basket_basket_vouchers\" ON (\"voucher_voucher\".\"id\" = \"basket_basket_vouchers\".\"voucher_id\") WHERE \"basket_basket_vouchers\".\"basket_id\" = 298 ORDER BY \"voucher_voucher\".\"date_created\" DESC"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"basket_basket_vouchers\" WHERE (\"basket_basket_vouchers\".\"basket_id\" = 298 AND \"basket_basket_vouchers\".\"voucher_id\" IN (3422))"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"basket_basket_vouchers\" (\"basket_id\", \"voucher_id\") VALUES (299, 3422) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT COUNT(*) AS \"__count\" FROM \"voucher_voucher\" INNER JOIN \"basket_basket_vouchers\" ON (\"voucher_voucher\".\"id\" = \"basket_basket_vouchers\".\"voucher_id\") WHERE \"basket_basket_vouchers\".\"basket_id\" = 299"
+      }
+    ]
+  }
+]

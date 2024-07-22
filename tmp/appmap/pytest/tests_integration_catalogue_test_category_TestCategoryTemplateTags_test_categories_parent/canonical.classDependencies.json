@@ -1,0 +1,14 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"path\" = '0001' LIMIT 21"
+  },
+  {
+    "caller": "oscar/templatetags",
+    "callee": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" >= 2 AND \"catalogue_category\".\"path\"::text LIKE '00010001%' AND NOT (\"catalogue_category\".\"id\" = 372) AND \"catalogue_category\".\"ancestors_are_public\" AND \"catalogue_category\".\"is_public\") ORDER BY \"catalogue_category\".\"path\" ASC"
+  },
+  {
+    "caller": "oscar/templatetags",
+    "callee": "oscar/apps"
+  }
+]

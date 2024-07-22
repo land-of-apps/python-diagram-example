@@ -1,0 +1,2894 @@
+{
+  "events": [
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4416261456,
+          "value": "'Books > Science-Fiction > Star Trek'",
+          "name": "breadcrumb_str",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4333048048,
+          "value": "'>'",
+          "name": "separator",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_breadcrumbs",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 42
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813473024,
+          "value": "['Books', 'Science-Fiction', 'Star Trek']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 3
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813492928,
+          "value": "['Books', 'Science-Fiction']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813416896,
+          "value": "['Books']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 1 AND \"catalogue_category\".\"name\" = 'Books') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.0010645410000051925,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"depth\" = 1 ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 7,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 7,
+      "elapsed": 0.0006340829999942343,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813467696,
+        "value": "<Category: Books>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13813472384,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 9,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813467696,
+        "value": "<Category: Books>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 10,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "generate_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 211
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813493168,
+          "value": "'Books'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 11,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813493168,
+          "value": "'Books'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 12,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813493168,
+          "value": "'Books'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 13,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 13813523760,
+        "value": "'books'",
+        "class": "builtins.str"
+      },
+      "parent_id": 13,
+      "elapsed": 0.000011920928955078125,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813523760,
+        "value": "'books'",
+        "class": "builtins.str"
+      },
+      "parent_id": 12,
+      "elapsed": 0.00004315376281738281,
+      "id": 15,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813523760,
+        "value": "'books'",
+        "class": "builtins.str"
+      },
+      "parent_id": 11,
+      "elapsed": 0.00008082389831542969,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813523760,
+        "value": "'books'",
+        "class": "builtins.str"
+      },
+      "parent_id": 10,
+      "elapsed": 0.00011014938354492188,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('0001', 1, 0, 'Books', '', NULL, NULL, '', 'books', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 18,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 18,
+      "elapsed": 0.0012589170000012473,
+      "id": 19,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813467696,
+        "value": "<Category: Books>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 20,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813467696,
+        "value": "<Category: Books>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 21,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 13813506928,
+        "value": "<CategoryQuerySet [<Category: Books>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 21,
+      "elapsed": 0.00004982948303222656,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813539552,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813509424,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 23,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 13813173248,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 23,
+      "elapsed": 0.000005245208740234375,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813539552,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813509424,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 25,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 13813353408,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 25,
+      "elapsed": 0.000015020370483398438,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 315",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 27,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 27,
+      "elapsed": 0.001110084000004008,
+      "id": 28,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 315 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 29,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 29,
+      "elapsed": 0.0005096249999780866,
+      "id": 30,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 20,
+      "elapsed": 0.0040972232818603516,
+      "id": 31,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 9,
+      "elapsed": 0.005919933319091797,
+      "id": 32,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813428480,
+        "value": "[<Category: Books>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 4,
+      "elapsed": 0.008543014526367188,
+      "id": 33,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '0001'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 34,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 34,
+      "elapsed": 0.004095000000006621,
+      "id": 35,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813468656,
+        "value": "<Category: Books > Science-Fiction>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13813522496,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 36,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813468656,
+        "value": "<Category: Books > Science-Fiction>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 37,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "generate_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 211
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813490480,
+          "value": "'Science-Fiction'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 38,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813490480,
+          "value": "'Science-Fiction'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 39,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813490480,
+          "value": "'Science-Fiction'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 40,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 13813505520,
+        "value": "'science-fiction'",
+        "class": "builtins.str"
+      },
+      "parent_id": 40,
+      "elapsed": 0.00001621246337890625,
+      "id": 41,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813505520,
+        "value": "'science-fiction'",
+        "class": "builtins.str"
+      },
+      "parent_id": 39,
+      "elapsed": 0.00005221366882324219,
+      "id": 42,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813505520,
+        "value": "'science-fiction'",
+        "class": "builtins.str"
+      },
+      "parent_id": 38,
+      "elapsed": 0.00009703636169433594,
+      "id": 43,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813505520,
+        "value": "'science-fiction'",
+        "class": "builtins.str"
+      },
+      "parent_id": 37,
+      "elapsed": 0.00014281272888183594,
+      "id": 44,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('00010001', 2, 0, 'Science-Fiction', '', NULL, NULL, '', 'science-fiction', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 45,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 45,
+      "elapsed": 0.0005019580000009682,
+      "id": 46,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813468656,
+        "value": "<Category: Books > Science-Fiction>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 47,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813468656,
+        "value": "<Category: Books > Science-Fiction>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 48,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 13813509952,
+        "value": "<CategoryQuerySet [<Category: Books > Science-Fiction>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 48,
+      "elapsed": 0.00007891654968261719,
+      "id": 49,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813541520,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813539936,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 50,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 13813439296,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 50,
+      "elapsed": 0.0000059604644775390625,
+      "id": 51,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813541520,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813539936,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 52,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 13813459136,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 52,
+      "elapsed": 0.000013113021850585938,
+      "id": 53,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 316",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 54,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 54,
+      "elapsed": 0.0005285830000048009,
+      "id": 55,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 316 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 56,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 56,
+      "elapsed": 0.0005076249999831361,
+      "id": 57,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 47,
+      "elapsed": 0.007371187210083008,
+      "id": 58,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 36,
+      "elapsed": 0.010249853134155273,
+      "id": 59,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813428480,
+        "value": "[<Category: Books>, <Category: Books > Science-Fiction>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 2
+      },
+      "parent_id": 3,
+      "elapsed": 0.024532794952392578,
+      "id": 60,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '00010001'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 61,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 61,
+      "elapsed": 0.0005203750000077889,
+      "id": 62,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813466544,
+        "value": "<Category: Books > Science-Fiction > Star Trek>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13813562304,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 63,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813466544,
+        "value": "<Category: Books > Science-Fiction > Star Trek>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 64,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "generate_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 211
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813491952,
+          "value": "'Star Trek'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 65,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813491952,
+          "value": "'Star Trek'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 66,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813491952,
+          "value": "'Star Trek'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 67,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 13813526128,
+        "value": "'star-trek'",
+        "class": "builtins.str"
+      },
+      "parent_id": 67,
+      "elapsed": 0.00001621246337890625,
+      "id": 68,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813526128,
+        "value": "'star-trek'",
+        "class": "builtins.str"
+      },
+      "parent_id": 66,
+      "elapsed": 0.000049114227294921875,
+      "id": 69,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813526128,
+        "value": "'star-trek'",
+        "class": "builtins.str"
+      },
+      "parent_id": 65,
+      "elapsed": 0.00009083747863769531,
+      "id": 70,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813526128,
+        "value": "'star-trek'",
+        "class": "builtins.str"
+      },
+      "parent_id": 64,
+      "elapsed": 0.0001327991485595703,
+      "id": 71,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('000100010001', 3, 0, 'Star Trek', '', NULL, NULL, '', 'star-trek', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 72,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 72,
+      "elapsed": 0.0004862909999872045,
+      "id": 73,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813466544,
+        "value": "<Category: Books > Science-Fiction > Star Trek>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 74,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813466544,
+        "value": "<Category: Books > Science-Fiction > Star Trek>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 75,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 13813540992,
+        "value": "<CategoryQuerySet [<Category: Books > Science-Fiction > Star Trek>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 75,
+      "elapsed": 0.00007891654968261719,
+      "id": 76,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813613136,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813540032,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 77,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 13813257792,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 77,
+      "elapsed": 0.0000059604644775390625,
+      "id": 78,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813613136,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813540032,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 79,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 13813480320,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 79,
+      "elapsed": 0.000013113021850585938,
+      "id": 80,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 317",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 81,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 81,
+      "elapsed": 0.001533459000000903,
+      "id": 82,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 317 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 83,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 83,
+      "elapsed": 0.0006762499999979354,
+      "id": 84,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 74,
+      "elapsed": 0.0052661895751953125,
+      "id": 85,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 63,
+      "elapsed": 0.007828235626220703,
+      "id": 86,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813428480,
+        "value": "[<Category: Books>, <Category: Books > Science-Fiction>, <Category: Books > Science-Fiction > Star Trek>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 3
+      },
+      "parent_id": 2,
+      "elapsed": 0.03535318374633789,
+      "id": 87,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813466544,
+        "value": "<Category: Books > Science-Fiction > Star Trek>",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parent_id": 1,
+      "elapsed": 0.03722691535949707,
+      "id": 88,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4416261552,
+          "value": "'Books > Factual > Popular Science'",
+          "name": "breadcrumb_str",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4333048048,
+          "value": "'>'",
+          "name": "separator",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 89,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_breadcrumbs",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 42
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813492096,
+          "value": "['Books', 'Factual', 'Popular Science']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 3
+        }
+      ],
+      "id": 90,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813417408,
+          "value": "['Books', 'Factual']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 91,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813491968,
+          "value": "['Books']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 92,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 1 AND \"catalogue_category\".\"name\" = 'Books') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 93,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 93,
+      "elapsed": 0.0005199160000017855,
+      "id": 94,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813563328,
+        "value": "[<Category: Books>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 92,
+      "elapsed": 0.0007879734039306641,
+      "id": 95,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 2 AND \"catalogue_category\".\"path\" BETWEEN '00010000' AND '0001ZZZZ' AND \"catalogue_category\".\"name\" = 'Factual') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 96,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 96,
+      "elapsed": 0.0010097079999979997,
+      "id": 97,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 2 AND \"catalogue_category\".\"path\" BETWEEN '00010000' AND '0001ZZZZ') ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 98,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 98,
+      "elapsed": 0.0007123750000062046,
+      "id": 99,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '0001'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 100,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 100,
+      "elapsed": 0.0005725000000040836,
+      "id": 101,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813467264,
+        "value": "<Category: Books > Factual>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13813562816,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 102,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813467264,
+        "value": "<Category: Books > Factual>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 103,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "generate_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 211
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813546800,
+          "value": "'Factual'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 104,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813546800,
+          "value": "'Factual'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 105,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813546800,
+          "value": "'Factual'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 106,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 13813627312,
+        "value": "'factual'",
+        "class": "builtins.str"
+      },
+      "parent_id": 106,
+      "elapsed": 0.000018358230590820312,
+      "id": 107,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813627312,
+        "value": "'factual'",
+        "class": "builtins.str"
+      },
+      "parent_id": 105,
+      "elapsed": 0.000053882598876953125,
+      "id": 108,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813627312,
+        "value": "'factual'",
+        "class": "builtins.str"
+      },
+      "parent_id": 104,
+      "elapsed": 0.00009799003601074219,
+      "id": 109,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813627312,
+        "value": "'factual'",
+        "class": "builtins.str"
+      },
+      "parent_id": 103,
+      "elapsed": 0.00014591217041015625,
+      "id": 110,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('00010002', 2, 0, 'Factual', '', NULL, NULL, '', 'factual', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 111,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 111,
+      "elapsed": 0.000989500000002863,
+      "id": 112,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813467264,
+        "value": "<Category: Books > Factual>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 113,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813467264,
+        "value": "<Category: Books > Factual>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 114,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 13813613808,
+        "value": "<CategoryQuerySet [<Category: Books > Factual>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 114,
+      "elapsed": 0.00006985664367675781,
+      "id": 115,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813615776,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813614096,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 116,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 13813610880,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 116,
+      "elapsed": 0.000013113021850585938,
+      "id": 117,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813615776,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813614096,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 118,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 13813257792,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 118,
+      "elapsed": 0.00001621246337890625,
+      "id": 119,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 318",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 120,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 120,
+      "elapsed": 0.0007156249999979991,
+      "id": 121,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 318 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 122,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 122,
+      "elapsed": 0.0005954169999995429,
+      "id": 123,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 113,
+      "elapsed": 0.005365133285522461,
+      "id": 124,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 102,
+      "elapsed": 0.009114980697631836,
+      "id": 125,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813563328,
+        "value": "[<Category: Books>, <Category: Books > Factual>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 2
+      },
+      "parent_id": 91,
+      "elapsed": 0.014436006546020508,
+      "id": 126,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '00010002'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 127,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 127,
+      "elapsed": 0.0005270839999980126,
+      "id": 128,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813509472,
+        "value": "<Category: Books > Factual > Popular Science>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13813637504,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 129,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813509472,
+        "value": "<Category: Books > Factual > Popular Science>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 130,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "generate_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 211
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813543472,
+          "value": "'Popular Science'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 131,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813543472,
+          "value": "'Popular Science'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 132,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813543472,
+          "value": "'Popular Science'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 133,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 13813609200,
+        "value": "'popular-science'",
+        "class": "builtins.str"
+      },
+      "parent_id": 133,
+      "elapsed": 0.000016689300537109375,
+      "id": 134,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813609200,
+        "value": "'popular-science'",
+        "class": "builtins.str"
+      },
+      "parent_id": 132,
+      "elapsed": 0.000051975250244140625,
+      "id": 135,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813609200,
+        "value": "'popular-science'",
+        "class": "builtins.str"
+      },
+      "parent_id": 131,
+      "elapsed": 0.00009584426879882812,
+      "id": 136,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813609200,
+        "value": "'popular-science'",
+        "class": "builtins.str"
+      },
+      "parent_id": 130,
+      "elapsed": 0.00014019012451171875,
+      "id": 137,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('000100020001', 3, 0, 'Popular Science', '', NULL, NULL, '', 'popular-science', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 138,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 138,
+      "elapsed": 0.0016410419999886017,
+      "id": 139,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813509472,
+        "value": "<Category: Books > Factual > Popular Science>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 140,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813509472,
+        "value": "<Category: Books > Factual > Popular Science>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 141,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 13813615824,
+        "value": "<CategoryQuerySet [<Category: Books > Factual > Popular Science>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 141,
+      "elapsed": 0.00006699562072753906,
+      "id": 142,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813657808,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813614432,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 143,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 13813562496,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 143,
+      "elapsed": 0.000006198883056640625,
+      "id": 144,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813657808,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813614432,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 145,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 13813537856,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 145,
+      "elapsed": 0.000013828277587890625,
+      "id": 146,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 319",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 147,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 147,
+      "elapsed": 0.0006264169999781188,
+      "id": 148,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 319 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 149,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 149,
+      "elapsed": 0.0005276250000179061,
+      "id": 150,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 140,
+      "elapsed": 0.005380153656005859,
+      "id": 151,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 129,
+      "elapsed": 0.009306907653808594,
+      "id": 152,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813563328,
+        "value": "[<Category: Books>, <Category: Books > Factual>, <Category: Books > Factual > Popular Science>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 3
+      },
+      "parent_id": 90,
+      "elapsed": 0.026678085327148438,
+      "id": 153,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813509472,
+        "value": "<Category: Books > Factual > Popular Science>",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parent_id": 89,
+      "elapsed": 0.02822399139404297,
+      "id": 154,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT COUNT(*) AS \"__count\" FROM \"catalogue_category\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 155,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 155,
+      "elapsed": 0.0008264999999880729,
+      "id": 156,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813509472,
+        "value": "<Category: Books > Factual > Popular Science>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 157,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813509472,
+        "value": "<Category: Books > Factual > Popular Science>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 158,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13813656672,
+        "value": "'CATEGORY_URL_en-gb_319'",
+        "class": "builtins.str"
+      },
+      "parent_id": 158,
+      "elapsed": 0.000013113021850585938,
+      "id": 159,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813467264,
+        "value": "<Category: Books > Factual>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 160,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813467264,
+        "value": "<Category: Books > Factual>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 161,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13813694512,
+        "value": "'CATEGORY_URL_en-gb_318'",
+        "class": "builtins.str"
+      },
+      "parent_id": 161,
+      "elapsed": 0.000008106231689453125,
+      "id": 162,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813539072,
+        "value": "<Category: Books>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 163,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "return_value": {
+        "object_id": 13813472112,
+        "value": "'books'",
+        "class": "builtins.str"
+      },
+      "parent_id": 163,
+      "elapsed": 0,
+      "id": 164,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813639152,
+        "value": "'books/factual'",
+        "class": "builtins.str"
+      },
+      "parent_id": 160,
+      "elapsed": 0.0008697509765625,
+      "id": 165,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813695152,
+        "value": "'books/factual/popular-science'",
+        "class": "builtins.str"
+      },
+      "parent_id": 157,
+      "elapsed": 0.0025758743286132812,
+      "id": 166,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Category factory",
+    "recording": {
+      "defined_class": "tests.integration.catalogue.test_category.TestCategoryFactory",
+      "method_id": "test_can_create_multiple_categories"
+    },
+    "source_location": "tests/integration/catalogue/test_category.py:126",
+    "name": "Category factory can create multiple categories",
+    "feature": "Can create multiple categories",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "categories",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "create_from_breadcrumbs",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/catalogue/categories.py:42"
+                    },
+                    {
+                      "name": "create_from_sequence",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/catalogue/categories.py:6"
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractCategory",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:218"
+                        },
+                        {
+                          "name": "generate_slug",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:211"
+                        },
+                        {
+                          "name": "set_ancestors_are_public",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:230"
+                        },
+                        {
+                          "name": "get_descendants_and_self",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:275"
+                        },
+                        {
+                          "name": "get_full_slug",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:184"
+                        },
+                        {
+                          "name": "get_url_cache_key",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:283"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "ReverseStartsWith",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "process_lhs",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:71"
+                        },
+                        {
+                          "name": "process_rhs",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:68"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "utils",
+              "type": "class",
+              "children": [
+                {
+                  "name": "slugify",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:68"
+                },
+                {
+                  "name": "default_slugifier",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:57"
+                },
+                {
+                  "name": "cautious_slugify",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:20"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 1 AND \"catalogue_category\".\"name\" = 'Books') LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"depth\" = 1 ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('0001', 1, 0, 'Books', '', NULL, NULL, '', 'books', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 315"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 315 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '0001'"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('00010001', 2, 0, 'Science-Fiction', '', NULL, NULL, '', 'science-fiction', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 316"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 316 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '00010001'"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('000100010001', 3, 0, 'Star Trek', '', NULL, NULL, '', 'star-trek', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 317"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 317 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 2 AND \"catalogue_category\".\"path\" BETWEEN '00010000' AND '0001ZZZZ' AND \"catalogue_category\".\"name\" = 'Factual') LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 2 AND \"catalogue_category\".\"path\" BETWEEN '00010000' AND '0001ZZZZ') ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('00010002', 2, 0, 'Factual', '', NULL, NULL, '', 'factual', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 318"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 318 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '00010002'"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('000100020001', 3, 0, 'Popular Science', '', NULL, NULL, '', 'popular-science', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 319"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 319 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT COUNT(*) AS \"__count\" FROM \"catalogue_category\""
+        }
+      ]
+    }
+  ]
+}

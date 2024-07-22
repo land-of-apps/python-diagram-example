@@ -1,0 +1,346 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"analytics_productrecord\" (\"product_id\", \"num_views\", \"num_basket_additions\", \"num_purchases\", \"score\") VALUES (1013, 0, 0, 1, 0.0) RETURNING \"analytics_productrecord\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"analytics_productrecord\" (\"product_id\", \"num_views\", \"num_basket_additions\", \"num_purchases\", \"score\") VALUES (1014, 0, 0, 1, 0.0) RETURNING \"analytics_productrecord\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"basket_line\" (\"basket_id\", \"line_reference\", \"product_id\", \"stockrecord_id\", \"quantity\", \"price_currency\", \"price_excl_tax\", \"price_incl_tax\", \"tax_code\", \"date_created\", \"date_updated\") VALUES (515, '1013_698', 1013, 698, 1, 'GBP', 9.99, 9.99, NULL, '2024-07-22T17:28:32.922631+00:00'::timestamptz, '2024-07-22T17:28:32.922643+00:00'::timestamptz) RETURNING \"basket_line\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"basket_line\" (\"basket_id\", \"line_reference\", \"product_id\", \"stockrecord_id\", \"quantity\", \"price_currency\", \"price_excl_tax\", \"price_incl_tax\", \"tax_code\", \"date_created\", \"date_updated\") VALUES (516, '1014_699', 1014, 699, 1, 'GBP', 9.99, 9.99, NULL, '2024-07-22T17:28:32.989041+00:00'::timestamptz, '2024-07-22T17:28:32.989053+00:00'::timestamptz) RETURNING \"basket_line\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"catalogue_product\" (\"structure\", \"is_public\", \"upc\", \"parent_id\", \"title\", \"slug\", \"description\", \"meta_title\", \"meta_description\", \"product_class_id\", \"rating\", \"date_created\", \"date_updated\", \"is_discountable\") VALUES ('standalone', true, NULL, NULL, 'Dùｍϻϒ title', 'dumu03fbu03a5-title', '', NULL, NULL, 727, NULL, '2024-07-22T17:28:32.900710+00:00'::timestamptz, '2024-07-22T17:28:32.900722+00:00'::timestamptz, true) RETURNING \"catalogue_product\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"catalogue_product\" (\"structure\", \"is_public\", \"upc\", \"parent_id\", \"title\", \"slug\", \"description\", \"meta_title\", \"meta_description\", \"product_class_id\", \"rating\", \"date_created\", \"date_updated\", \"is_discountable\") VALUES ('standalone', true, NULL, NULL, 'Dùｍϻϒ title', 'dumu03fbu03a5-title', '', NULL, NULL, 727, NULL, '2024-07-22T17:28:32.970298+00:00'::timestamptz, '2024-07-22T17:28:32.970307+00:00'::timestamptz, true) RETURNING \"catalogue_product\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"order_line\" (\"order_id\", \"partner_id\", \"partner_name\", \"partner_sku\", \"partner_line_reference\", \"partner_line_notes\", \"stockrecord_id\", \"product_id\", \"title\", \"upc\", \"quantity\", \"line_price_incl_tax\", \"line_price_excl_tax\", \"line_price_before_discounts_incl_tax\", \"line_price_before_discounts_excl_tax\", \"unit_price_incl_tax\", \"unit_price_excl_tax\", \"tax_code\", \"status\") VALUES (97, 612, '', 'sku_1013_9338', '', '', 698, 1013, 'Dùｍϻϒ title', '', 1, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, NULL, 'a') RETURNING \"order_line\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"order_line\" (\"order_id\", \"partner_id\", \"partner_name\", \"partner_sku\", \"partner_line_reference\", \"partner_line_notes\", \"stockrecord_id\", \"product_id\", \"title\", \"upc\", \"quantity\", \"line_price_incl_tax\", \"line_price_excl_tax\", \"line_price_before_discounts_incl_tax\", \"line_price_before_discounts_excl_tax\", \"unit_price_incl_tax\", \"unit_price_excl_tax\", \"tax_code\", \"status\") VALUES (98, 613, 'p1', 'sku_1014_6209', '', '', 699, 1014, 'Dùｍϻϒ title', '', 1, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, NULL, 'a') RETURNING \"order_line\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"order_lineprice\" (\"order_id\", \"line_id\", \"quantity\", \"price_incl_tax\", \"price_excl_tax\", \"shipping_incl_tax\", \"shipping_excl_tax\", \"tax_code\") VALUES (97, 97, 1, 9.99, 9.99, 0, 0, NULL) RETURNING \"order_lineprice\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"order_lineprice\" (\"order_id\", \"line_id\", \"quantity\", \"price_incl_tax\", \"price_excl_tax\", \"shipping_incl_tax\", \"shipping_excl_tax\", \"tax_code\") VALUES (98, 98, 1, 9.99, 9.99, 0, 0, NULL) RETURNING \"order_lineprice\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"order_order\" (\"number\", \"site_id\", \"basket_id\", \"user_id\", \"billing_address_id\", \"currency\", \"total_incl_tax\", \"total_excl_tax\", \"shipping_incl_tax\", \"shipping_excl_tax\", \"shipping_tax_code\", \"shipping_address_id\", \"shipping_method\", \"shipping_code\", \"status\", \"guest_email\", \"date_placed\") VALUES ('A', 1, 515, NULL, NULL, 'GBP', 19.99, 19.99, 0.00, 0.00, NULL, NULL, 'Free shipping', 'free-shipping', 'A', '', '2024-07-22T17:28:32.942667+00:00'::timestamptz) RETURNING \"order_order\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"order_order\" (\"number\", \"site_id\", \"basket_id\", \"user_id\", \"billing_address_id\", \"currency\", \"total_incl_tax\", \"total_excl_tax\", \"shipping_incl_tax\", \"shipping_excl_tax\", \"shipping_tax_code\", \"shipping_address_id\", \"shipping_method\", \"shipping_code\", \"status\", \"guest_email\", \"date_placed\") VALUES ('B', 1, 516, NULL, NULL, 'GBP', 19.99, 19.99, 0.00, 0.00, NULL, NULL, 'Free shipping', 'free-shipping', 'A', '', '2024-07-22T17:28:33.005675+00:00'::timestamptz) RETURNING \"order_order\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"order_surcharge\" (\"order_id\", \"name\", \"code\", \"incl_tax\", \"excl_tax\", \"tax_code\") VALUES (97, 'Flat surcharge', 'flat-surcharge', 10.0, 10.0, NULL) RETURNING \"order_surcharge\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"order_surcharge\" (\"order_id\", \"name\", \"code\", \"incl_tax\", \"excl_tax\", \"tax_code\") VALUES (98, 'Flat surcharge', 'flat-surcharge', 10.0, 10.0, NULL) RETURNING \"order_surcharge\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x3708\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x3709\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x3711\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x3712\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SAVEPOINT \"s8669432832_x3708\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SAVEPOINT \"s8669432832_x3709\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SAVEPOINT \"s8669432832_x3711\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SAVEPOINT \"s8669432832_x3712\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"order_order\" WHERE \"order_order\".\"number\" = 'A' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"order_order\" WHERE \"order_order\".\"number\" = 'B' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\" FROM \"basket_line\" WHERE (\"basket_line\".\"basket_id\" = 515 AND \"basket_line\".\"basket_id\" = 515 AND \"basket_line\".\"line_reference\" = '1013_698' AND \"basket_line\".\"product_id\" = 1013 AND \"basket_line\".\"stockrecord_id\" = 698) LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\" FROM \"basket_line\" WHERE (\"basket_line\".\"basket_id\" = 516 AND \"basket_line\".\"basket_id\" = 516 AND \"basket_line\".\"line_reference\" = '1014_699' AND \"basket_line\".\"product_id\" = 1014 AND \"basket_line\".\"stockrecord_id\" = 699) LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\", \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\", \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"basket_line\" INNER JOIN \"catalogue_product\" ON (\"basket_line\".\"product_id\" = \"catalogue_product\".\"id\") INNER JOIN \"partner_stockrecord\" ON (\"basket_line\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE \"basket_line\".\"basket_id\" = 515 ORDER BY \"basket_line\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\", \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\", \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"basket_line\" INNER JOIN \"catalogue_product\" ON (\"basket_line\".\"product_id\" = \"catalogue_product\".\"id\") INNER JOIN \"partner_stockrecord\" ON (\"basket_line\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE \"basket_line\".\"basket_id\" = 516 ORDER BY \"basket_line\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"basket_lineattribute\".\"id\", \"basket_lineattribute\".\"line_id\", \"basket_lineattribute\".\"option_id\", \"basket_lineattribute\".\"value\" FROM \"basket_lineattribute\" WHERE \"basket_lineattribute\".\"line_id\" IN (425)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"basket_lineattribute\".\"id\", \"basket_lineattribute\".\"line_id\", \"basket_lineattribute\".\"option_id\", \"basket_lineattribute\".\"value\" FROM \"basket_lineattribute\" WHERE \"basket_lineattribute\".\"line_id\" IN (426)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\" FROM \"catalogue_product\" WHERE \"catalogue_product\".\"id\" = 1013 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\" FROM \"catalogue_product\" WHERE \"catalogue_product\".\"id\" = 1014 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"id\" = 727 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"catalogue_productimage\".\"id\", \"catalogue_productimage\".\"product_id\", \"catalogue_productimage\".\"original\", \"catalogue_productimage\".\"caption\", \"catalogue_productimage\".\"display_order\", \"catalogue_productimage\".\"date_created\" FROM \"catalogue_productimage\" WHERE \"catalogue_productimage\".\"product_id\" IN (1013) ORDER BY \"catalogue_productimage\".\"display_order\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"catalogue_productimage\".\"id\", \"catalogue_productimage\".\"product_id\", \"catalogue_productimage\".\"original\", \"catalogue_productimage\".\"caption\", \"catalogue_productimage\".\"display_order\", \"catalogue_productimage\".\"date_created\" FROM \"catalogue_productimage\" WHERE \"catalogue_productimage\".\"product_id\" IN (1014) ORDER BY \"catalogue_productimage\".\"display_order\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"customer_productalert\".\"id\", \"customer_productalert\".\"product_id\", \"customer_productalert\".\"user_id\", \"customer_productalert\".\"email\", \"customer_productalert\".\"key\", \"customer_productalert\".\"status\", \"customer_productalert\".\"date_created\", \"customer_productalert\".\"date_confirmed\", \"customer_productalert\".\"date_cancelled\", \"customer_productalert\".\"date_closed\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" IN (1013) AND \"customer_productalert\".\"status\" = 'Active') ORDER BY \"customer_productalert\".\"date_created\" DESC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"customer_productalert\".\"id\", \"customer_productalert\".\"product_id\", \"customer_productalert\".\"user_id\", \"customer_productalert\".\"email\", \"customer_productalert\".\"key\", \"customer_productalert\".\"status\", \"customer_productalert\".\"date_created\", \"customer_productalert\".\"date_confirmed\", \"customer_productalert\".\"date_cancelled\", \"customer_productalert\".\"date_closed\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" IN (1014) AND \"customer_productalert\".\"status\" = 'Active') ORDER BY \"customer_productalert\".\"date_created\" DESC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"django_site\".\"id\", \"django_site\".\"domain\", \"django_site\".\"name\" FROM \"django_site\" WHERE \"django_site\".\"id\" = 1 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"order_line\".\"id\", \"order_line\".\"order_id\", \"order_line\".\"partner_id\", \"order_line\".\"partner_name\", \"order_line\".\"partner_sku\", \"order_line\".\"partner_line_reference\", \"order_line\".\"partner_line_notes\", \"order_line\".\"stockrecord_id\", \"order_line\".\"product_id\", \"order_line\".\"title\", \"order_line\".\"upc\", \"order_line\".\"quantity\", \"order_line\".\"line_price_incl_tax\", \"order_line\".\"line_price_excl_tax\", \"order_line\".\"line_price_before_discounts_incl_tax\", \"order_line\".\"line_price_before_discounts_excl_tax\", \"order_line\".\"unit_price_incl_tax\", \"order_line\".\"unit_price_excl_tax\", \"order_line\".\"tax_code\", \"order_line\".\"status\" FROM \"order_line\" WHERE \"order_line\".\"order_id\" = 97 ORDER BY \"order_line\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"order_line\".\"id\", \"order_line\".\"order_id\", \"order_line\".\"partner_id\", \"order_line\".\"partner_name\", \"order_line\".\"partner_sku\", \"order_line\".\"partner_line_reference\", \"order_line\".\"partner_line_notes\", \"order_line\".\"stockrecord_id\", \"order_line\".\"product_id\", \"order_line\".\"title\", \"order_line\".\"upc\", \"order_line\".\"quantity\", \"order_line\".\"line_price_incl_tax\", \"order_line\".\"line_price_excl_tax\", \"order_line\".\"line_price_before_discounts_incl_tax\", \"order_line\".\"line_price_before_discounts_excl_tax\", \"order_line\".\"unit_price_incl_tax\", \"order_line\".\"unit_price_excl_tax\", \"order_line\".\"tax_code\", \"order_line\".\"status\" FROM \"order_line\" WHERE \"order_line\".\"order_id\" = 98 ORDER BY \"order_line\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_partner\".\"id\", \"partner_partner\".\"code\", \"partner_partner\".\"name\" FROM \"partner_partner\" WHERE \"partner_partner\".\"id\" = 612 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_partner\".\"id\", \"partner_partner\".\"code\", \"partner_partner\".\"name\" FROM \"partner_partner\" WHERE \"partner_partner\".\"id\" = 613 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_stockalert\".\"id\", \"partner_stockalert\".\"stockrecord_id\", \"partner_stockalert\".\"threshold\", \"partner_stockalert\".\"status\", \"partner_stockalert\".\"date_created\", \"partner_stockalert\".\"date_closed\" FROM \"partner_stockalert\" WHERE (\"partner_stockalert\".\"status\" = 'Open' AND \"partner_stockalert\".\"stockrecord_id\" = 698) LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_stockalert\".\"id\", \"partner_stockalert\".\"stockrecord_id\", \"partner_stockalert\".\"threshold\", \"partner_stockalert\".\"status\", \"partner_stockalert\".\"date_created\", \"partner_stockalert\".\"date_closed\" FROM \"partner_stockalert\" WHERE (\"partner_stockalert\".\"status\" = 'Open' AND \"partner_stockalert\".\"stockrecord_id\" = 699) LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"num_allocated\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"id\" = 698 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"num_allocated\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"id\" = 699 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 1013 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 1013"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 1014 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 1014"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" INNER JOIN \"basket_basket_vouchers\" ON (\"voucher_voucher\".\"id\" = \"basket_basket_vouchers\".\"voucher_id\") WHERE \"basket_basket_vouchers\".\"basket_id\" = 515 ORDER BY \"voucher_voucher\".\"date_created\" DESC FOR UPDATE"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" INNER JOIN \"basket_basket_vouchers\" ON (\"voucher_voucher\".\"id\" = \"basket_basket_vouchers\".\"voucher_id\") WHERE \"basket_basket_vouchers\".\"basket_id\" = 515 ORDER BY \"voucher_voucher\".\"date_created\" DESC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" INNER JOIN \"basket_basket_vouchers\" ON (\"voucher_voucher\".\"id\" = \"basket_basket_vouchers\".\"voucher_id\") WHERE \"basket_basket_vouchers\".\"basket_id\" = 516 ORDER BY \"voucher_voucher\".\"date_created\" DESC FOR UPDATE"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" INNER JOIN \"basket_basket_vouchers\" ON (\"voucher_voucher\".\"id\" = \"basket_basket_vouchers\".\"voucher_id\") WHERE \"basket_basket_vouchers\".\"basket_id\" = 516 ORDER BY \"voucher_voucher\".\"date_created\" DESC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"analytics_productrecord\" SET \"num_purchases\" = (\"analytics_productrecord\".\"num_purchases\" + 1) WHERE \"analytics_productrecord\".\"product_id\" = 1013"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"analytics_productrecord\" SET \"num_purchases\" = (\"analytics_productrecord\".\"num_purchases\" + 1) WHERE \"analytics_productrecord\".\"product_id\" = 1014"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"partner_stockrecord\" SET \"num_allocated\" = (COALESCE(\"partner_stockrecord\".\"num_allocated\", 0) + 1) WHERE \"partner_stockrecord\".\"id\" = 698"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"partner_stockrecord\" SET \"num_allocated\" = (COALESCE(\"partner_stockrecord\".\"num_allocated\", 0) + 1) WHERE \"partner_stockrecord\".\"id\" = 699"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"slug\" = 'dumu03fbu03a5-item-class' ORDER BY \"catalogue_productclass\".\"name\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"partner_partner\".\"id\", \"partner_partner\".\"code\", \"partner_partner\".\"name\" FROM \"partner_partner\" WHERE \"partner_partner\".\"code\" = '-2' ORDER BY \"partner_partner\".\"name\" ASC, \"partner_partner\".\"code\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"partner_partner\".\"id\", \"partner_partner\".\"code\", \"partner_partner\".\"name\" FROM \"partner_partner\" WHERE \"partner_partner\".\"code\" = 'p1' ORDER BY \"partner_partner\".\"name\" ASC, \"partner_partner\".\"code\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Open', '2024-07-22T17:28:32.893412+00:00'::timestamptz, NULL, NULL) RETURNING \"basket_basket\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Open', '2024-07-22T17:28:32.967135+00:00'::timestamptz, NULL, NULL) RETURNING \"basket_basket\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"catalogue_productclass\" (\"name\", \"slug\", \"requires_shipping\", \"track_stock\") VALUES ('Dùｍϻϒ item class', 'dumu03fbu03a5-item-class', true, true) RETURNING \"catalogue_productclass\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"partner_partner\" (\"code\", \"name\") VALUES ('-2', '') RETURNING \"partner_partner\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"partner_partner\" (\"code\", \"name\") VALUES ('p1', 'p1') RETURNING \"partner_partner\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"partner_stockrecord\" (\"product_id\", \"partner_id\", \"partner_sku\", \"price_currency\", \"price\", \"num_in_stock\", \"num_allocated\", \"low_stock_threshold\", \"date_created\", \"date_updated\", \"offer_name\") VALUES (1013, 612, 'sku_1013_9338', 'GBP', 9.99, NULL, NULL, NULL, '2024-07-22T17:28:32.906928+00:00'::timestamptz, '2024-07-22T17:28:32.906939+00:00'::timestamptz, NULL) RETURNING \"partner_stockrecord\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"partner_stockrecord\" (\"product_id\", \"partner_id\", \"partner_sku\", \"price_currency\", \"price\", \"num_in_stock\", \"num_allocated\", \"low_stock_threshold\", \"date_created\", \"date_updated\", \"offer_name\") VALUES (1014, 613, 'sku_1014_6209', 'GBP', 9.99, NULL, NULL, NULL, '2024-07-22T17:28:32.975656+00:00'::timestamptz, '2024-07-22T17:28:32.975666+00:00'::timestamptz, NULL) RETURNING \"partner_stockrecord\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x3706\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x3707\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x3710\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SAVEPOINT \"s8669432832_x3706\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SAVEPOINT \"s8669432832_x3707\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SAVEPOINT \"s8669432832_x3710\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SELECT 1 AS \"a\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 1013 LIMIT 1"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SELECT 1 AS \"a\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 1014 LIMIT 1"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"name\" = 'Dùｍϻϒ item class' LIMIT 21"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SELECT \"partner_partner\".\"id\", \"partner_partner\".\"code\", \"partner_partner\".\"name\" FROM \"partner_partner\" WHERE \"partner_partner\".\"name\" = '' LIMIT 21"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SELECT \"partner_partner\".\"id\", \"partner_partner\".\"code\", \"partner_partner\".\"name\" FROM \"partner_partner\" WHERE \"partner_partner\".\"name\" = 'p1' LIMIT 21"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 1013 ORDER BY \"partner_stockrecord\".\"id\" ASC LIMIT 1"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 1014 ORDER BY \"partner_stockrecord\".\"id\" ASC LIMIT 1"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "oscar/models"
+  }
+]

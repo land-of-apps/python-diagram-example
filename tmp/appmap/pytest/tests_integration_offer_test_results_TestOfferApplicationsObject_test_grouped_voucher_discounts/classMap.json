@@ -1,0 +1,274 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "voucher",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractVoucher",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/voucher/abstract_models.py:180"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "offer",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractConditionalOffer",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/offer/abstract_models.py:284"
+                      },
+                      {
+                        "name": "get_max_applications",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/offer/abstract_models.py:381"
+                      },
+                      {
+                        "name": "set_voucher",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/offer/abstract_models.py:375"
+                      },
+                      {
+                        "name": "get_voucher",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/offer/abstract_models.py:378"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "results",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "OfferApplications",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "add",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/offer/results.py:24"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "models",
+        "type": "package",
+        "children": [
+          {
+            "name": "fields",
+            "type": "package",
+            "children": [
+              {
+                "name": "autoslugfield",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AutoSlugField",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "pre_save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:169"
+                      },
+                      {
+                        "name": "create_slug",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:105"
+                      },
+                      {
+                        "name": "slugify_func",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:100"
+                      },
+                      {
+                        "name": "_slug_strip",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:81"
+                      },
+                      {
+                        "name": "get_queryset",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:93"
+                      },
+                      {
+                        "name": "get_internal_type",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:174"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "NullCharField",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "get_prep_value",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/models/fields/__init__.py:122"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core",
+        "type": "package",
+        "children": [
+          {
+            "name": "utils",
+            "type": "class",
+            "children": [
+              {
+                "name": "slugify",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:68"
+              },
+              {
+                "name": "default_slugifier",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:57"
+              },
+              {
+                "name": "cautious_slugify",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:20"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('My voucher', 'MYVOUCHER', 'Multi-use', '2024-07-21T17:25:18.456636+00:00'::timestamptz, '2024-08-01T17:25:18.456799+00:00'::timestamptz, 0, 0, 0.00, NULL, '2024-07-22T17:28:29.069453+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"offer_range\" (\"name\", \"slug\", \"description\", \"is_public\", \"includes_all_products\", \"proxy_class\", \"date_created\") VALUES ('Range 332', 'range-332', '', false, false, NULL, '2024-07-22T17:28:29.071144+00:00'::timestamptz) RETURNING \"offer_range\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"offer_range\" SET \"name\" = 'Range 332', \"slug\" = 'range-332', \"description\" = '', \"is_public\" = false, \"includes_all_products\" = false, \"proxy_class\" = NULL, \"date_created\" = '2024-07-22T17:28:29.071144+00:00'::timestamptz WHERE \"offer_range\".\"id\" = 545"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"offer_benefit\" (\"range_id\", \"type\", \"value\", \"max_affected_items\", \"proxy_class\") VALUES (545, 'Percentage', 10, NULL, NULL) RETURNING \"offer_benefit\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"offer_range\" (\"name\", \"slug\", \"description\", \"is_public\", \"includes_all_products\", \"proxy_class\", \"date_created\") VALUES ('Range 333', 'range-333', '', false, false, NULL, '2024-07-22T17:28:29.074088+00:00'::timestamptz) RETURNING \"offer_range\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"offer_range\" SET \"name\" = 'Range 333', \"slug\" = 'range-333', \"description\" = '', \"is_public\" = false, \"includes_all_products\" = false, \"proxy_class\" = NULL, \"date_created\" = '2024-07-22T17:28:29.074088+00:00'::timestamptz WHERE \"offer_range\".\"id\" = 546"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"offer_condition\" (\"range_id\", \"type\", \"value\", \"proxy_class\") VALUES (546, 'Count', 10, NULL) RETURNING \"offer_condition\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\" FROM \"offer_conditionaloffer\" WHERE \"offer_conditionaloffer\".\"slug\" = 'offer1' ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"offer_conditionaloffer\" (\"name\", \"slug\", \"description\", \"offer_type\", \"exclusive\", \"status\", \"condition_id\", \"benefit_id\", \"priority\", \"start_datetime\", \"end_datetime\", \"max_global_applications\", \"max_user_applications\", \"max_basket_applications\", \"max_discount\", \"total_discount\", \"num_applications\", \"num_orders\", \"redirect_url\", \"date_created\") VALUES ('offer1', 'offer1', '', 'Site', true, 'Open', 258, 256, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0.00, 0, 0, '', '2024-07-22T17:28:29.080447+00:00'::timestamptz) RETURNING \"offer_conditionaloffer\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"offer_range\" (\"name\", \"slug\", \"description\", \"is_public\", \"includes_all_products\", \"proxy_class\", \"date_created\") VALUES ('Range 334', 'range-334', '', false, false, NULL, '2024-07-22T17:28:29.081590+00:00'::timestamptz) RETURNING \"offer_range\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"offer_range\" SET \"name\" = 'Range 334', \"slug\" = 'range-334', \"description\" = '', \"is_public\" = false, \"includes_all_products\" = false, \"proxy_class\" = NULL, \"date_created\" = '2024-07-22T17:28:29.081590+00:00'::timestamptz WHERE \"offer_range\".\"id\" = 547"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"offer_benefit\" (\"range_id\", \"type\", \"value\", \"max_affected_items\", \"proxy_class\") VALUES (547, 'Percentage', 10, NULL, NULL) RETURNING \"offer_benefit\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"offer_range\" (\"name\", \"slug\", \"description\", \"is_public\", \"includes_all_products\", \"proxy_class\", \"date_created\") VALUES ('Range 335', 'range-335', '', false, false, NULL, '2024-07-22T17:28:29.083956+00:00'::timestamptz) RETURNING \"offer_range\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"offer_range\" SET \"name\" = 'Range 335', \"slug\" = 'range-335', \"description\" = '', \"is_public\" = false, \"includes_all_products\" = false, \"proxy_class\" = NULL, \"date_created\" = '2024-07-22T17:28:29.083956+00:00'::timestamptz WHERE \"offer_range\".\"id\" = 548"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"offer_condition\" (\"range_id\", \"type\", \"value\", \"proxy_class\") VALUES (548, 'Count', 10, NULL) RETURNING \"offer_condition\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\" FROM \"offer_conditionaloffer\" WHERE \"offer_conditionaloffer\".\"slug\" = 'offer2' ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"offer_conditionaloffer\" (\"name\", \"slug\", \"description\", \"offer_type\", \"exclusive\", \"status\", \"condition_id\", \"benefit_id\", \"priority\", \"start_datetime\", \"end_datetime\", \"max_global_applications\", \"max_user_applications\", \"max_basket_applications\", \"max_discount\", \"total_discount\", \"num_applications\", \"num_orders\", \"redirect_url\", \"date_created\") VALUES ('offer2', 'offer2', '', 'Site', true, 'Open', 259, 257, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0.00, 0, 0, '', '2024-07-22T17:28:29.089288+00:00'::timestamptz) RETURNING \"offer_conditionaloffer\".\"id\""
+      }
+    ]
+  }
+]

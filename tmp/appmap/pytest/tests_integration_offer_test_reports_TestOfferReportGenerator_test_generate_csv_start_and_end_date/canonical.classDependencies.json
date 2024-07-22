@@ -1,0 +1,10 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"order_orderdiscount\".\"offer_id\", SUM(\"order_orderdiscount\".\"amount\") AS \"total_discount\", (SELECT U0.\"id\" FROM \"offer_conditionaloffer\" U0 WHERE U0.\"id\" = (\"order_orderdiscount\".\"offer_id\") ORDER BY U0.\"priority\" DESC, U0.\"id\" ASC LIMIT 1) AS \"offer\", COALESCE((SELECT U0.\"name\" FROM \"offer_conditionaloffer\" U0 WHERE U0.\"id\" = (\"order_orderdiscount\".\"offer_id\") ORDER BY U0.\"priority\" DESC, U0.\"id\" ASC LIMIT 1), (SELECT U0.\"offer_name\" FROM \"order_orderdiscount\" U0 WHERE U0.\"id\" = (\"order_orderdiscount\".\"id\") ORDER BY U0.\"id\" ASC LIMIT 1)) AS \"display_offer_name\" FROM \"order_orderdiscount\" GROUP BY \"order_orderdiscount\".\"offer_id\", 3, 4 ORDER BY 2 DESC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  }
+]

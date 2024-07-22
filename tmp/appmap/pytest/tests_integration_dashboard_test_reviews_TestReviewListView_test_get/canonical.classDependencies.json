@@ -1,0 +1,38 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"reviews_productreview\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) FROM (SELECT DISTINCT \"reviews_productreview\".\"id\" AS \"col1\", \"reviews_productreview\".\"product_id\" AS \"col2\", \"reviews_productreview\".\"score\" AS \"col3\", \"reviews_productreview\".\"title\" AS \"col4\", \"reviews_productreview\".\"body\" AS \"col5\", \"reviews_productreview\".\"user_id\" AS \"col6\", \"reviews_productreview\".\"name\" AS \"col7\", \"reviews_productreview\".\"email\" AS \"col8\", \"reviews_productreview\".\"homepage\" AS \"col9\", \"reviews_productreview\".\"status\" AS \"col10\", \"reviews_productreview\".\"total_votes\" AS \"col11\", \"reviews_productreview\".\"delta_votes\" AS \"col12\", \"reviews_productreview\".\"date_created\" AS \"col13\" FROM \"reviews_productreview\" INNER JOIN \"myauth_user\" ON (\"reviews_productreview\".\"user_id\" = \"myauth_user\".\"id\") WHERE (UPPER(\"myauth_user\".\"first_name\"::text) LIKE UPPER('test%') OR UPPER(\"myauth_user\".\"last_name\"::text) LIKE UPPER('test%'))) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) FROM (SELECT DISTINCT \"reviews_productreview\".\"id\" AS \"col1\", \"reviews_productreview\".\"product_id\" AS \"col2\", \"reviews_productreview\".\"score\" AS \"col3\", \"reviews_productreview\".\"title\" AS \"col4\", \"reviews_productreview\".\"body\" AS \"col5\", \"reviews_productreview\".\"user_id\" AS \"col6\", \"reviews_productreview\".\"name\" AS \"col7\", \"reviews_productreview\".\"email\" AS \"col8\", \"reviews_productreview\".\"homepage\" AS \"col9\", \"reviews_productreview\".\"status\" AS \"col10\", \"reviews_productreview\".\"total_votes\" AS \"col11\", \"reviews_productreview\".\"delta_votes\" AS \"col12\", \"reviews_productreview\".\"date_created\" AS \"col13\" FROM \"reviews_productreview\" WHERE ((UPPER(\"reviews_productreview\".\"title\"::text) LIKE UPPER('%test%') OR UPPER(\"reviews_productreview\".\"body\"::text) LIKE UPPER('%test%')) AND \"reviews_productreview\".\"date_created\" < '2017-01-02T00:00:00-06:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) FROM (SELECT DISTINCT \"reviews_productreview\".\"id\" AS \"col1\", \"reviews_productreview\".\"product_id\" AS \"col2\", \"reviews_productreview\".\"score\" AS \"col3\", \"reviews_productreview\".\"title\" AS \"col4\", \"reviews_productreview\".\"body\" AS \"col5\", \"reviews_productreview\".\"user_id\" AS \"col6\", \"reviews_productreview\".\"name\" AS \"col7\", \"reviews_productreview\".\"email\" AS \"col8\", \"reviews_productreview\".\"homepage\" AS \"col9\", \"reviews_productreview\".\"status\" AS \"col10\", \"reviews_productreview\".\"total_votes\" AS \"col11\", \"reviews_productreview\".\"delta_votes\" AS \"col12\", \"reviews_productreview\".\"date_created\" AS \"col13\" FROM \"reviews_productreview\" WHERE ((UPPER(\"reviews_productreview\".\"title\"::text) LIKE UPPER('%test%') OR UPPER(\"reviews_productreview\".\"body\"::text) LIKE UPPER('%test%')) AND \"reviews_productreview\".\"date_created\" >= '2017-01-01T00:00:00-06:00'::timestamptz AND \"reviews_productreview\".\"date_created\" < '2018-01-01T00:00:00-06:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) FROM (SELECT DISTINCT \"reviews_productreview\".\"id\" AS \"col1\", \"reviews_productreview\".\"product_id\" AS \"col2\", \"reviews_productreview\".\"score\" AS \"col3\", \"reviews_productreview\".\"title\" AS \"col4\", \"reviews_productreview\".\"body\" AS \"col5\", \"reviews_productreview\".\"user_id\" AS \"col6\", \"reviews_productreview\".\"name\" AS \"col7\", \"reviews_productreview\".\"email\" AS \"col8\", \"reviews_productreview\".\"homepage\" AS \"col9\", \"reviews_productreview\".\"status\" AS \"col10\", \"reviews_productreview\".\"total_votes\" AS \"col11\", \"reviews_productreview\".\"delta_votes\" AS \"col12\", \"reviews_productreview\".\"date_created\" AS \"col13\" FROM \"reviews_productreview\" WHERE ((UPPER(\"reviews_productreview\".\"title\"::text) LIKE UPPER('%test%') OR UPPER(\"reviews_productreview\".\"body\"::text) LIKE UPPER('%test%')) AND \"reviews_productreview\".\"date_created\" >= '2017-01-01T00:00:00-06:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) FROM (SELECT DISTINCT \"reviews_productreview\".\"id\" AS \"col1\", \"reviews_productreview\".\"product_id\" AS \"col2\", \"reviews_productreview\".\"score\" AS \"col3\", \"reviews_productreview\".\"title\" AS \"col4\", \"reviews_productreview\".\"body\" AS \"col5\", \"reviews_productreview\".\"user_id\" AS \"col6\", \"reviews_productreview\".\"name\" AS \"col7\", \"reviews_productreview\".\"email\" AS \"col8\", \"reviews_productreview\".\"homepage\" AS \"col9\", \"reviews_productreview\".\"status\" AS \"col10\", \"reviews_productreview\".\"total_votes\" AS \"col11\", \"reviews_productreview\".\"delta_votes\" AS \"col12\", \"reviews_productreview\".\"date_created\" AS \"col13\" FROM \"reviews_productreview\" WHERE (UPPER(\"reviews_productreview\".\"title\"::text) LIKE UPPER('%test%') OR UPPER(\"reviews_productreview\".\"body\"::text) LIKE UPPER('%test%'))) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) FROM (SELECT DISTINCT \"reviews_productreview\".\"id\" AS \"col1\", \"reviews_productreview\".\"product_id\" AS \"col2\", \"reviews_productreview\".\"score\" AS \"col3\", \"reviews_productreview\".\"title\" AS \"col4\", \"reviews_productreview\".\"body\" AS \"col5\", \"reviews_productreview\".\"user_id\" AS \"col6\", \"reviews_productreview\".\"name\" AS \"col7\", \"reviews_productreview\".\"email\" AS \"col8\", \"reviews_productreview\".\"homepage\" AS \"col9\", \"reviews_productreview\".\"status\" AS \"col10\", \"reviews_productreview\".\"total_votes\" AS \"col11\", \"reviews_productreview\".\"delta_votes\" AS \"col12\", \"reviews_productreview\".\"date_created\" AS \"col13\" FROM \"reviews_productreview\" WHERE \"reviews_productreview\".\"status\" = 0) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/views"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"catalogue_product\" (\"structure\", \"is_public\", \"upc\", \"parent_id\", \"title\", \"slug\", \"description\", \"meta_title\", \"meta_description\", \"product_class_id\", \"rating\", \"date_created\", \"date_updated\", \"is_discountable\") VALUES ('standalone', true, NULL, NULL, 'Dùｍϻϒ title', 'dumu03fbu03a5-title', '', NULL, NULL, 701, NULL, '2024-07-22T17:28:26.185618+00:00'::timestamptz, '2024-07-22T17:28:26.185629+00:00'::timestamptz, true) RETURNING \"catalogue_product\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"catalogue_product\" (\"structure\", \"is_public\", \"upc\", \"parent_id\", \"title\", \"slug\", \"description\", \"meta_title\", \"meta_description\", \"product_class_id\", \"rating\", \"date_created\", \"date_updated\", \"is_discountable\") VALUES ('standalone', true, NULL, NULL, 'Dùｍϻϒ title', 'dumu03fbu03a5-title', '', NULL, NULL, 701, NULL, '2024-07-22T17:28:26.187626+00:00'::timestamptz, '2024-07-22T17:28:26.187634+00:00'::timestamptz, true) RETURNING \"catalogue_product\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_category\" INNER JOIN \"offer_range_included_categories\" ON (\"catalogue_category\".\"id\" = \"offer_range_included_categories\".\"category_id\") WHERE \"offer_range_included_categories\".\"range_id\" = 526 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_product\" T2 ON (\"catalogue_product\".\"parent_id\" = T2.\"id\") INNER JOIN \"offer_range_excluded_products\" ON (T2.\"id\" = \"offer_range_excluded_products\".\"product_id\") WHERE \"offer_range_excluded_products\".\"range_id\" = 526 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_product\" T2 ON (\"catalogue_product\".\"parent_id\" = T2.\"id\") INNER JOIN \"offer_rangeproduct\" ON (T2.\"id\" = \"offer_rangeproduct\".\"product_id\") WHERE \"offer_rangeproduct\".\"range_id\" = 526 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_productclass\" INNER JOIN \"offer_range_classes\" ON (\"catalogue_productclass\".\"id\" = \"offer_range_classes\".\"productclass_id\") WHERE \"offer_range_classes\".\"range_id\" = 526 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"slug\" = '123' ORDER BY \"catalogue_productclass\".\"name\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"catalogue_productclass\" (\"name\", \"slug\", \"requires_shipping\", \"track_stock\") VALUES ('123', '123', true, true) RETURNING \"catalogue_productclass\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x3577\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SAVEPOINT \"s8669432832_x3577\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"name\" = '123' LIMIT 21"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "oscar/models"
+  }
+]

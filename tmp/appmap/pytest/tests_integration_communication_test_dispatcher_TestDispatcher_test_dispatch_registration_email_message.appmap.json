@@ -1,0 +1,1287 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13826602224,
+        "value": "<User: testuser@example.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13826650368,
+          "value": "{'using': None}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "using",
+              "class": "builtins.NoneType"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "save",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 115
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('md5$KtcKlwjaxJ4OLKjCnOohQ8$92015c1688c594f062507059699271dd', NULL, false, 'testuser@example.com', '', '', false, true, '2024-07-22T17:28:06.009590+00:00'::timestamptz, 'testuser', '') RETURNING \"myauth_user\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0.0009630829999878188,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13826602224,
+        "value": "<User: testuser@example.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "_migrate_alerts_to_user",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 103
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"customer_productalert\" SET \"user_id\" = 647, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'testuser@example.com' AND \"customer_productalert\".\"status\" = 'Active')",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.0005465840000056232,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 4,
+      "elapsed": 0.0009419918060302734,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0021860599517822266,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394144240,
+        "value": "<oscar.models.fields.autoslugfield.AutoSlugField: code>",
+        "name": "self",
+        "class": "oscar.models.fields.autoslugfield.AutoSlugField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13826603040,
+          "value": "<CommunicationEventType: Registration>",
+          "name": "model_instance",
+          "class": "oscar.apps.communication.models.CommunicationEventType"
+        },
+        {
+          "kind": "req",
+          "object_id": 4341172976,
+          "value": "True",
+          "name": "add",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 9,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.autoslugfield.AutoSlugField",
+      "method_id": "pre_save",
+      "path": "src/oscar/models/fields/autoslugfield.py",
+      "lineno": 169
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394144240,
+        "value": "<oscar.models.fields.autoslugfield.AutoSlugField: code>",
+        "name": "self",
+        "class": "oscar.models.fields.autoslugfield.AutoSlugField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13826603040,
+          "value": "<CommunicationEventType: Registration>",
+          "name": "model_instance",
+          "class": "oscar.apps.communication.models.CommunicationEventType"
+        },
+        {
+          "kind": "req",
+          "object_id": 4341172976,
+          "value": "True",
+          "name": "add",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 10,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.autoslugfield.AutoSlugField",
+      "method_id": "create_slug",
+      "path": "src/oscar/models/fields/autoslugfield.py",
+      "lineno": 105
+    },
+    {
+      "return_value": {
+        "object_id": 4401784560,
+        "value": "'REGISTRATION'",
+        "class": "builtins.str"
+      },
+      "parent_id": 10,
+      "elapsed": 0.0000040531158447265625,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4401784560,
+        "value": "'REGISTRATION'",
+        "class": "builtins.str"
+      },
+      "parent_id": 9,
+      "elapsed": 0.00005412101745605469,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"communication_communicationeventtype\" (\"code\", \"name\", \"category\", \"email_subject_template\", \"email_body_template\", \"email_body_html_template\", \"sms_template\", \"date_created\", \"date_updated\") VALUES ('REGISTRATION', 'Registration', 'User related', NULL, NULL, NULL, NULL, '2024-07-22T17:28:06.012186+00:00'::timestamptz, '2024-07-22T17:28:06.012196+00:00'::timestamptz) RETURNING \"communication_communicationeventtype\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 13,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 13,
+      "elapsed": 0.0005124170000101458,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"django_site\".\"id\", \"django_site\".\"domain\", \"django_site\".\"name\" FROM \"django_site\" WHERE \"django_site\".\"domain\" = 'site-3.oscarcommerce.com' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 15,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 15,
+      "elapsed": 0.0006080419999818787,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SAVEPOINT \"s8669432832_x2862\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 17,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 17,
+      "elapsed": 0.0005247919999931128,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"django_site\".\"id\", \"django_site\".\"domain\", \"django_site\".\"name\" FROM \"django_site\" WHERE \"django_site\".\"id\" IS NULL LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 19,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 19,
+      "elapsed": 0.0005995419999749174,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"django_site\" (\"domain\", \"name\") VALUES ('site-3.oscarcommerce.com', '') RETURNING \"django_site\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 21,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 21,
+      "elapsed": 0.0006264579999992748,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "RELEASE SAVEPOINT \"s8669432832_x2862\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 23,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 23,
+      "elapsed": 0.001982625000010785,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5552993904,
+        "value": "<oscar.apps.communication.managers.CommunicationTypeManager object at 0x14afbf670>",
+        "name": "self",
+        "class": "oscar.apps.communication.managers.CommunicationTypeManager"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4401784560,
+          "value": "'REGISTRATION'",
+          "name": "code",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13826721920,
+          "value": "{'user': <User: testuser@example.com>, 'site': <Site: site-3.oscarcommerce.com>}",
+          "name": "context",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "user",
+              "class": "tests._site.myauth.models.User"
+            },
+            {
+              "name": "site",
+              "class": "django.contrib.sites.models.Site"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 25,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.communication.managers.CommunicationTypeManager",
+      "method_id": "get_and_render",
+      "path": "src/oscar/apps/communication/managers.py",
+      "lineno": 5
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394144240,
+        "value": "<oscar.models.fields.autoslugfield.AutoSlugField: code>",
+        "name": "self",
+        "class": "oscar.models.fields.autoslugfield.AutoSlugField"
+      },
+      "id": 26,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.autoslugfield.AutoSlugField",
+      "method_id": "get_internal_type",
+      "path": "src/oscar/models/fields/autoslugfield.py",
+      "lineno": 174
+    },
+    {
+      "return_value": {
+        "object_id": 4354738288,
+        "value": "'SlugField'",
+        "class": "builtins.str"
+      },
+      "parent_id": 26,
+      "elapsed": 9.5367431640625e-7,
+      "id": 27,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394144240,
+        "value": "<oscar.models.fields.autoslugfield.AutoSlugField: code>",
+        "name": "self",
+        "class": "oscar.models.fields.autoslugfield.AutoSlugField"
+      },
+      "id": 28,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.autoslugfield.AutoSlugField",
+      "method_id": "get_internal_type",
+      "path": "src/oscar/models/fields/autoslugfield.py",
+      "lineno": 174
+    },
+    {
+      "return_value": {
+        "object_id": 4354738288,
+        "value": "'SlugField'",
+        "class": "builtins.str"
+      },
+      "parent_id": 28,
+      "elapsed": 0,
+      "id": 29,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"communication_communicationeventtype\".\"id\", \"communication_communicationeventtype\".\"code\", \"communication_communicationeventtype\".\"name\", \"communication_communicationeventtype\".\"category\", \"communication_communicationeventtype\".\"email_subject_template\", \"communication_communicationeventtype\".\"email_body_template\", \"communication_communicationeventtype\".\"email_body_html_template\", \"communication_communicationeventtype\".\"sms_template\", \"communication_communicationeventtype\".\"date_created\", \"communication_communicationeventtype\".\"date_updated\" FROM \"communication_communicationeventtype\" WHERE \"communication_communicationeventtype\".\"code\" = 'REGISTRATION' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 30,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 30,
+      "elapsed": 0.0017650830000093265,
+      "id": 31,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13826751696,
+        "value": "<CommunicationEventType: Registration>",
+        "name": "self",
+        "class": "oscar.apps.communication.models.CommunicationEventType"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "ctx",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 32,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.communication.abstract_models.AbstractCommunicationEventType",
+      "method_id": "get_messages",
+      "path": "src/oscar/apps/communication/abstract_models.py",
+      "lineno": 140
+    },
+    {
+      "receiver": {
+        "object_id": 13269224560,
+        "value": "<Template template_string=\"{% load i18n %}{% tr...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/communication/emails/commtype_registration_subject.txt",
+      "id": 33,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarCommunicationEmailsCommtype_Registration_SubjectTxt",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 33,
+      "elapsed": 0.0002200829999878806,
+      "id": 34,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 13269225232,
+        "value": "<Template template_string=\"{% load i18n %}{% tr...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/communication/emails/commtype_registration_body.txt",
+      "id": 35,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarCommunicationEmailsCommtype_Registration_BodyTxt",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 35,
+      "elapsed": 0.00011933300001487623,
+      "id": 36,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 13269262832,
+        "value": "<Template template_string=\"{% load i18n %}<p>{%...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/communication/emails/commtype_registration_body.html",
+      "id": 37,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarCommunicationEmailsCommtype_Registration_BodyHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 37,
+      "elapsed": 0.00010479200000190758,
+      "id": 38,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13826766592,
+        "value": "{'subject': 'Thank you for registering.', 'body': 'Thank you for registering.', 'html': '<p>Thank you for registering.</p>', 'sms': ''}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "subject",
+            "class": "builtins.str"
+          },
+          {
+            "name": "body",
+            "class": "django.utils.safestring.SafeString"
+          },
+          {
+            "name": "html",
+            "class": "django.utils.safestring.SafeString"
+          },
+          {
+            "name": "sms",
+            "class": "builtins.str"
+          }
+        ],
+        "size": 4
+      },
+      "parent_id": 32,
+      "elapsed": 0.0005297660827636719,
+      "id": 39,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13826766592,
+        "value": "{'subject': 'Thank you for registering.', 'body': 'Thank you for registering.', 'html': '<p>Thank you for registering.</p>', 'sms': ''}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "subject",
+            "class": "builtins.str"
+          },
+          {
+            "name": "body",
+            "class": "django.utils.safestring.SafeString"
+          },
+          {
+            "name": "html",
+            "class": "django.utils.safestring.SafeString"
+          },
+          {
+            "name": "sms",
+            "class": "builtins.str"
+          }
+        ],
+        "size": 4
+      },
+      "parent_id": 25,
+      "elapsed": 0.0028650760650634766,
+      "id": 40,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13826603712,
+        "value": "<oscar.apps.communication.utils.Dispatcher object at 0x338213ac0>",
+        "name": "self",
+        "class": "oscar.apps.communication.utils.Dispatcher"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13826602224,
+          "value": "<User: testuser@example.com>",
+          "name": "user",
+          "class": "tests._site.myauth.models.User"
+        },
+        {
+          "kind": "req",
+          "object_id": 13826766592,
+          "value": "{'subject': 'Thank you for registering.', 'body': 'Thank you for registering.', 'html': '<p>Thank you for registering.</p>', 'sms': ''}",
+          "name": "messages",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "subject",
+              "class": "builtins.str"
+            },
+            {
+              "name": "body",
+              "class": "django.utils.safestring.SafeString"
+            },
+            {
+              "name": "html",
+              "class": "django.utils.safestring.SafeString"
+            },
+            {
+              "name": "sms",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 4
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "attachments",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 41,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.communication.utils.Dispatcher",
+      "method_id": "dispatch_user_messages",
+      "path": "src/oscar/apps/communication/utils.py",
+      "lineno": 43
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13826603712,
+        "value": "<oscar.apps.communication.utils.Dispatcher object at 0x338213ac0>",
+        "name": "self",
+        "class": "oscar.apps.communication.utils.Dispatcher"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13826602224,
+          "value": "<User: testuser@example.com>",
+          "name": "user",
+          "class": "tests._site.myauth.models.User"
+        },
+        {
+          "kind": "req",
+          "object_id": 13826766592,
+          "value": "{'subject': 'Thank you for registering.', 'body': 'Thank you for registering.', 'html': '<p>Thank you for registering.</p>', 'sms': ''}",
+          "name": "messages",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "subject",
+              "class": "builtins.str"
+            },
+            {
+              "name": "body",
+              "class": "django.utils.safestring.SafeString"
+            },
+            {
+              "name": "html",
+              "class": "django.utils.safestring.SafeString"
+            },
+            {
+              "name": "sms",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 4
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "attachments",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 42,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.communication.utils.Dispatcher",
+      "method_id": "send_user_email_messages",
+      "path": "src/oscar/apps/communication/utils.py",
+      "lineno": 84
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13826603712,
+        "value": "<oscar.apps.communication.utils.Dispatcher object at 0x338213ac0>",
+        "name": "self",
+        "class": "oscar.apps.communication.utils.Dispatcher"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13826609680,
+          "value": "'testuser@example.com'",
+          "name": "recipient_email",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13826766592,
+          "value": "{'subject': 'Thank you for registering.', 'body': 'Thank you for registering.', 'html': '<p>Thank you for registering.</p>', 'sms': ''}",
+          "name": "messages",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "subject",
+              "class": "builtins.str"
+            },
+            {
+              "name": "body",
+              "class": "django.utils.safestring.SafeString"
+            },
+            {
+              "name": "html",
+              "class": "django.utils.safestring.SafeString"
+            },
+            {
+              "name": "sms",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 4
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "from_email",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "attachments",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 43,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.communication.utils.Dispatcher",
+      "method_id": "send_email_messages",
+      "path": "src/oscar/apps/communication/utils.py",
+      "lineno": 102
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13826603712,
+        "value": "<oscar.apps.communication.utils.Dispatcher object at 0x338213ac0>",
+        "name": "self",
+        "class": "oscar.apps.communication.utils.Dispatcher"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "attachments",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 44,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.communication.utils.Dispatcher",
+      "method_id": "prepare_attachments",
+      "path": "src/oscar/apps/communication/utils.py",
+      "lineno": 145
+    },
+    {
+      "return_value": {
+        "object_id": 13826773312,
+        "value": "([], [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 44,
+      "elapsed": 0,
+      "id": 45,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13826277232,
+        "value": "<django.core.mail.message.EmailMultiAlternatives object at 0x3381c3f70>",
+        "class": "django.core.mail.message.EmailMultiAlternatives"
+      },
+      "parent_id": 43,
+      "elapsed": 0.00038814544677734375,
+      "id": 46,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13826603712,
+        "value": "<oscar.apps.communication.utils.Dispatcher object at 0x338213ac0>",
+        "name": "self",
+        "class": "oscar.apps.communication.utils.Dispatcher"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13826602224,
+          "value": "<User: testuser@example.com>",
+          "name": "user",
+          "class": "tests._site.myauth.models.User"
+        },
+        {
+          "kind": "req",
+          "object_id": 13826766592,
+          "value": "{'subject': 'Thank you for registering.', 'body': 'Thank you for registering.', 'html': '<p>Thank you for registering.</p>', 'sms': ''}",
+          "name": "messages",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "subject",
+              "class": "builtins.str"
+            },
+            {
+              "name": "body",
+              "class": "django.utils.safestring.SafeString"
+            },
+            {
+              "name": "html",
+              "class": "django.utils.safestring.SafeString"
+            },
+            {
+              "name": "sms",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 4
+        },
+        {
+          "kind": "req",
+          "object_id": 13826277232,
+          "value": "<django.core.mail.message.EmailMultiAlternatives object at 0x3381c3f70>",
+          "name": "email",
+          "class": "django.core.mail.message.EmailMultiAlternatives"
+        }
+      ],
+      "id": 47,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.communication.utils.Dispatcher",
+      "method_id": "create_email",
+      "path": "src/oscar/apps/communication/utils.py",
+      "lineno": 71
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"communication_email\" (\"user_id\", \"email\", \"subject\", \"body_text\", \"body_html\", \"date_sent\") VALUES (647, 'testuser@example.com', 'Thank you for registering.', 'Thank you for registering.', '<p>Thank you for registering.</p>', '2024-07-22T17:28:06.022092+00:00'::timestamptz) RETURNING \"communication_email\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 48,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 48,
+      "elapsed": 0.00215283299999669,
+      "id": 49,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13826603040,
+        "value": "<Email: Email to testuser@example.com with subject 'Thank you for registering.'>",
+        "class": "oscar.apps.communication.models.Email"
+      },
+      "parent_id": 47,
+      "elapsed": 0.002421140670776367,
+      "id": 50,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13826277232,
+        "value": "<django.core.mail.message.EmailMultiAlternatives object at 0x3381c3f70>",
+        "class": "django.core.mail.message.EmailMultiAlternatives"
+      },
+      "parent_id": 42,
+      "elapsed": 0.0029668807983398438,
+      "id": 51,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13826338240,
+        "value": "{'email': <django.core.mail.message.EmailMultiAlternatives object at 0x3381c3f70>}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "email",
+            "class": "django.core.mail.message.EmailMultiAlternatives"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 41,
+      "elapsed": 0.003039836883544922,
+      "id": 52,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT COUNT(*) AS \"__count\" FROM \"communication_email\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 53,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 53,
+      "elapsed": 0.0006738330000075621,
+      "id": 54,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"communication_email\".\"id\", \"communication_email\".\"user_id\", \"communication_email\".\"email\", \"communication_email\".\"subject\", \"communication_email\".\"body_text\", \"communication_email\".\"body_html\", \"communication_email\".\"date_sent\" FROM \"communication_email\" ORDER BY \"communication_email\".\"date_sent\" ASC LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 55,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 55,
+      "elapsed": 0.0005076669999937167,
+      "id": 56,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"id\" = 647 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 57,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 57,
+      "elapsed": 0.0005467919999944115,
+      "id": 58,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Dispatcher",
+    "recording": {
+      "defined_class": "tests.integration.communication.test_dispatcher.TestDispatcher",
+      "method_id": "test_dispatch_registration_email_message"
+    },
+    "source_location": "tests/integration/communication/test_dispatcher.py:49",
+    "name": "Dispatcher dispatch registration email message",
+    "feature": "Dispatch registration email message",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "customer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractUser",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/abstract_models.py:115"
+                        },
+                        {
+                          "name": "_migrate_alerts_to_user",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/abstract_models.py:103"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "communication",
+              "type": "package",
+              "children": [
+                {
+                  "name": "managers",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "CommunicationTypeManager",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get_and_render",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/communication/managers.py:5"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractCommunicationEventType",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get_messages",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/communication/abstract_models.py:140"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "utils",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Dispatcher",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "dispatch_user_messages",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/communication/utils.py:43"
+                        },
+                        {
+                          "name": "send_user_email_messages",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/communication/utils.py:84"
+                        },
+                        {
+                          "name": "send_email_messages",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/communication/utils.py:102"
+                        },
+                        {
+                          "name": "prepare_attachments",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/communication/utils.py:145"
+                        },
+                        {
+                          "name": "create_email",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/communication/utils.py:71"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "models",
+          "type": "package",
+          "children": [
+            {
+              "name": "fields",
+              "type": "package",
+              "children": [
+                {
+                  "name": "autoslugfield",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AutoSlugField",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "pre_save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/models/fields/autoslugfield.py:169"
+                        },
+                        {
+                          "name": "create_slug",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/models/fields/autoslugfield.py:105"
+                        },
+                        {
+                          "name": "get_internal_type",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/models/fields/autoslugfield.py:174"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('md5$KtcKlwjaxJ4OLKjCnOohQ8$92015c1688c594f062507059699271dd', NULL, false, 'testuser@example.com', '', '', false, true, '2024-07-22T17:28:06.009590+00:00'::timestamptz, 'testuser', '') RETURNING \"myauth_user\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"customer_productalert\" SET \"user_id\" = 647, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'testuser@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"communication_communicationeventtype\" (\"code\", \"name\", \"category\", \"email_subject_template\", \"email_body_template\", \"email_body_html_template\", \"sms_template\", \"date_created\", \"date_updated\") VALUES ('REGISTRATION', 'Registration', 'User related', NULL, NULL, NULL, NULL, '2024-07-22T17:28:06.012186+00:00'::timestamptz, '2024-07-22T17:28:06.012196+00:00'::timestamptz) RETURNING \"communication_communicationeventtype\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"django_site\".\"id\", \"django_site\".\"domain\", \"django_site\".\"name\" FROM \"django_site\" WHERE \"django_site\".\"domain\" = 'site-3.oscarcommerce.com' LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SAVEPOINT \"s8669432832_x2862\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"django_site\".\"id\", \"django_site\".\"domain\", \"django_site\".\"name\" FROM \"django_site\" WHERE \"django_site\".\"id\" IS NULL LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"django_site\" (\"domain\", \"name\") VALUES ('site-3.oscarcommerce.com', '') RETURNING \"django_site\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "RELEASE SAVEPOINT \"s8669432832_x2862\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"communication_communicationeventtype\".\"id\", \"communication_communicationeventtype\".\"code\", \"communication_communicationeventtype\".\"name\", \"communication_communicationeventtype\".\"category\", \"communication_communicationeventtype\".\"email_subject_template\", \"communication_communicationeventtype\".\"email_body_template\", \"communication_communicationeventtype\".\"email_body_html_template\", \"communication_communicationeventtype\".\"sms_template\", \"communication_communicationeventtype\".\"date_created\", \"communication_communicationeventtype\".\"date_updated\" FROM \"communication_communicationeventtype\" WHERE \"communication_communicationeventtype\".\"code\" = 'REGISTRATION' LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"communication_email\" (\"user_id\", \"email\", \"subject\", \"body_text\", \"body_html\", \"date_sent\") VALUES (647, 'testuser@example.com', 'Thank you for registering.', 'Thank you for registering.', '<p>Thank you for registering.</p>', '2024-07-22T17:28:06.022092+00:00'::timestamptz) RETURNING \"communication_email\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT COUNT(*) AS \"__count\" FROM \"communication_email\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"communication_email\".\"id\", \"communication_email\".\"user_id\", \"communication_email\".\"email\", \"communication_email\".\"subject\", \"communication_email\".\"body_text\", \"communication_email\".\"body_html\", \"communication_email\".\"date_sent\" FROM \"communication_email\" ORDER BY \"communication_email\".\"date_sent\" ASC LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"id\" = 647 LIMIT 21"
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarCommunicationEmailsCommtype_Registration_SubjectTxt",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarCommunicationEmailsCommtype_Registration_BodyTxt",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarCommunicationEmailsCommtype_Registration_BodyHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    }
+  ]
+}

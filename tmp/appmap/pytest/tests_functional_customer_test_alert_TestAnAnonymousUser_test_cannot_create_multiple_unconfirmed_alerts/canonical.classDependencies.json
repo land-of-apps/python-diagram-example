@@ -1,0 +1,134 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('0183', 1, 0, 'Category 183', '', NULL, NULL, '', 'category-183', true, true) RETURNING \"catalogue_category\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"catalogue_product\" (\"structure\", \"is_public\", \"upc\", \"parent_id\", \"title\", \"slug\", \"description\", \"meta_title\", \"meta_description\", \"product_class_id\", \"rating\", \"date_created\", \"date_updated\", \"is_discountable\") VALUES ('standalone', true, '978080213020183', NULL, 'A confederacy of dunces', 'a-confederacy-of-dunces', '', NULL, NULL, 266, NULL, '2024-07-22T17:26:56.894546+00:00'::timestamptz, '2024-07-22T17:26:56.894560+00:00'::timestamptz, true) RETURNING \"catalogue_product\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"catalogue_product\" (\"structure\", \"is_public\", \"upc\", \"parent_id\", \"title\", \"slug\", \"description\", \"meta_title\", \"meta_description\", \"product_class_id\", \"rating\", \"date_created\", \"date_updated\", \"is_discountable\") VALUES ('standalone', true, NULL, NULL, 'Dùｍϻϒ title', 'dumu03fbu03a5-title', '', NULL, NULL, 267, NULL, '2024-07-22T17:26:56.920131+00:00'::timestamptz, '2024-07-22T17:26:56.920142+00:00'::timestamptz, true) RETURNING \"catalogue_product\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"customer_productalert\" (\"product_id\", \"user_id\", \"email\", \"key\", \"status\", \"date_created\", \"date_confirmed\", \"date_cancelled\", \"date_closed\") VALUES (342, NULL, 'john@smith.com', '0zzxhqmms15113lkqys7ip7m458ej8npvh2cd3p4', 'Unconfirmed', '2024-07-22T17:26:56.914475+00:00'::timestamptz, NULL, NULL, NULL) RETURNING \"customer_productalert\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"customer_productalert\" WHERE (UPPER(\"customer_productalert\".\"email\"::text) = UPPER('john@smith.com') AND \"customer_productalert\".\"status\" = 'Unconfirmed')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" IN (342) AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" IN (343) AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 199 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"customer_productalert\".\"id\", \"customer_productalert\".\"product_id\", \"customer_productalert\".\"user_id\", \"customer_productalert\".\"email\", \"customer_productalert\".\"key\", \"customer_productalert\".\"status\", \"customer_productalert\".\"date_created\", \"customer_productalert\".\"date_confirmed\", \"customer_productalert\".\"date_cancelled\", \"customer_productalert\".\"date_closed\" FROM \"customer_productalert\" WHERE (UPPER(\"customer_productalert\".\"email\"::text) = UPPER('john@smith.com') AND \"customer_productalert\".\"product_id\" = 343 AND \"customer_productalert\".\"status\" = 'Active') LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"customer_productalert\".\"id\", \"customer_productalert\".\"product_id\", \"customer_productalert\".\"user_id\", \"customer_productalert\".\"email\", \"customer_productalert\".\"key\", \"customer_productalert\".\"status\", \"customer_productalert\".\"date_created\", \"customer_productalert\".\"date_confirmed\", \"customer_productalert\".\"date_cancelled\", \"customer_productalert\".\"date_closed\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" IN (342) AND \"customer_productalert\".\"status\" = 'Active') ORDER BY \"customer_productalert\".\"date_created\" DESC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"customer_productalert\".\"id\", \"customer_productalert\".\"product_id\", \"customer_productalert\".\"user_id\", \"customer_productalert\".\"email\", \"customer_productalert\".\"key\", \"customer_productalert\".\"status\", \"customer_productalert\".\"date_created\", \"customer_productalert\".\"date_confirmed\", \"customer_productalert\".\"date_cancelled\", \"customer_productalert\".\"date_closed\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" IN (343) AND \"customer_productalert\".\"status\" = 'Active') ORDER BY \"customer_productalert\".\"date_created\" DESC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 342"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 343"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 199"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"catalogue_product\" SET \"structure\" = 'standalone', \"is_public\" = true, \"upc\" = '978080213020183', \"parent_id\" = NULL, \"title\" = 'A confederacy of dunces', \"slug\" = 'a-confederacy-of-dunces', \"description\" = '', \"meta_title\" = NULL, \"meta_description\" = NULL, \"product_class_id\" = 266, \"rating\" = NULL, \"date_created\" = '2024-07-22T17:26:56.894546+00:00'::timestamptz, \"date_updated\" = '2024-07-22T17:26:56.913108+00:00'::timestamptz, \"is_discountable\" = true WHERE \"catalogue_product\".\"id\" = 342"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"slug\" = 'books' ORDER BY \"catalogue_productclass\".\"name\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"slug\" = 'dumu03fbu03a5-item-class' ORDER BY \"catalogue_productclass\".\"name\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"partner_partner\".\"id\", \"partner_partner\".\"code\", \"partner_partner\".\"name\" FROM \"partner_partner\" WHERE \"partner_partner\".\"code\" = '-2' ORDER BY \"partner_partner\".\"name\" ASC, \"partner_partner\".\"code\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"partner_partner\".\"id\", \"partner_partner\".\"code\", \"partner_partner\".\"name\" FROM \"partner_partner\" WHERE \"partner_partner\".\"code\" = 'gardners' ORDER BY \"partner_partner\".\"name\" ASC, \"partner_partner\".\"code\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"catalogue_productclass\" (\"name\", \"slug\", \"requires_shipping\", \"track_stock\") VALUES ('Dùｍϻϒ item class', 'dumu03fbu03a5-item-class', true, true) RETURNING \"catalogue_productclass\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"partner_partner\" (\"code\", \"name\") VALUES ('-2', '') RETURNING \"partner_partner\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"partner_stockrecord\" (\"product_id\", \"partner_id\", \"partner_sku\", \"price_currency\", \"price\", \"num_in_stock\", \"num_allocated\", \"low_stock_threshold\", \"date_created\", \"date_updated\", \"offer_name\") VALUES (343, 283, 'sku_343_6563', 'GBP', 9.99, 0, NULL, NULL, '2024-07-22T17:26:56.925689+00:00'::timestamptz, '2024-07-22T17:26:56.925702+00:00'::timestamptz, NULL) RETURNING \"partner_stockrecord\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x1158\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x1159\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SAVEPOINT \"s8669432832_x1158\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SAVEPOINT \"s8669432832_x1159\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"name\" = 'Dùｍϻϒ item class' LIMIT 21"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SELECT \"partner_partner\".\"id\", \"partner_partner\".\"code\", \"partner_partner\".\"name\" FROM \"partner_partner\" WHERE \"partner_partner\".\"name\" = '' LIMIT 21"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "oscar/models"
+  }
+]

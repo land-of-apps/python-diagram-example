@@ -1,0 +1,170 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14031577344,
+        "value": "<oscar.apps.shipping.scales.Scale object at 0x34458e100>",
+        "name": "self",
+        "class": "oscar.apps.shipping.scales.Scale"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14031747632,
+          "value": "<Basket: Open basket (owner: None, lines: 0)>",
+          "name": "basket",
+          "class": "oscar.apps.basket.models.Basket"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.shipping.scales.Scale",
+      "method_id": "weigh_basket",
+      "path": "src/oscar/apps/shipping/scales.py",
+      "lineno": 33
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14031747632,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "all_lines",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 14031620704,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 2,
+      "elapsed": 0.00001621246337890625,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14031702704,
+        "value": "Decimal('0.0')",
+        "class": "decimal.Decimal"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0006799697875976562,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      }
+    ],
+    "feature_group": "Scales",
+    "recording": {
+      "defined_class": "tests.integration.shipping.test_scales.TestScales",
+      "method_id": "test_returns_zero_for_empty_basket"
+    },
+    "source_location": "tests/integration/shipping/test_scales.py:26",
+    "name": "Scales returns zero for empty basket",
+    "feature": "Returns zero for empty basket",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "shipping",
+              "type": "package",
+              "children": [
+                {
+                  "name": "scales",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Scale",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "weigh_basket",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/shipping/scales.py:33"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "basket",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractBasket",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "all_lines",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/abstract_models.py:130"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

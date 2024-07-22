@@ -1,0 +1,5352 @@
+{
+  "events": [
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4416411184,
+          "value": "'A > B > C'",
+          "name": "breadcrumb_str",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4333048048,
+          "value": "'>'",
+          "name": "separator",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_breadcrumbs",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 42
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813970432,
+          "value": "['A', 'B', 'C']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 3
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813330240,
+          "value": "['A', 'B']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813831104,
+          "value": "['A']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 1 AND \"catalogue_category\".\"name\" = 'A') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.010579792000015686,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"depth\" = 1 ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 7,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 7,
+      "elapsed": 0.0007263329999886992,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813908768,
+        "value": "<Category: A>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13813847424,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 9,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813908768,
+        "value": "<Category: A>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 10,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "generate_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 211
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332744880,
+          "value": "'A'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 11,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332744880,
+          "value": "'A'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 12,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332744880,
+          "value": "'A'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 13,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 13813825904,
+        "value": "'a'",
+        "class": "builtins.str"
+      },
+      "parent_id": 13,
+      "elapsed": 0.000017881393432617188,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813825904,
+        "value": "'a'",
+        "class": "builtins.str"
+      },
+      "parent_id": 12,
+      "elapsed": 0.00006031990051269531,
+      "id": 15,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813825904,
+        "value": "'a'",
+        "class": "builtins.str"
+      },
+      "parent_id": 11,
+      "elapsed": 0.00019311904907226562,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813825904,
+        "value": "'a'",
+        "class": "builtins.str"
+      },
+      "parent_id": 10,
+      "elapsed": 0.0002262592315673828,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('0001', 1, 0, 'A', '', NULL, NULL, '', 'a', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 18,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 18,
+      "elapsed": 0.0006714579999993475,
+      "id": 19,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813908768,
+        "value": "<Category: A>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 20,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813908768,
+        "value": "<Category: A>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 21,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 13813908144,
+        "value": "<CategoryQuerySet [<Category: A>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 21,
+      "elapsed": 0.00004792213439941406,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813921584,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813920672,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 23,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 13813915072,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 23,
+      "elapsed": 0.0000069141387939453125,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813921584,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813920672,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 25,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 13813915456,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 25,
+      "elapsed": 0.000015974044799804688,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 326",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 27,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 27,
+      "elapsed": 0.0004440840000086155,
+      "id": 28,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 326 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 29,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 29,
+      "elapsed": 0.00037075000000186265,
+      "id": 30,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 20,
+      "elapsed": 0.0030031204223632812,
+      "id": 31,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 9,
+      "elapsed": 0.00426793098449707,
+      "id": 32,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813845824,
+        "value": "[<Category: A>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 4,
+      "elapsed": 0.01681995391845703,
+      "id": 33,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '0001'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 34,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 34,
+      "elapsed": 0.00047150000000328873,
+      "id": 35,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813790368,
+        "value": "<Category: A > B>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13813815168,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 36,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813790368,
+        "value": "<Category: A > B>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 37,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "generate_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 211
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332164720,
+          "value": "'B'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 38,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332164720,
+          "value": "'B'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 39,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332164720,
+          "value": "'B'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 40,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 13813887728,
+        "value": "'b'",
+        "class": "builtins.str"
+      },
+      "parent_id": 40,
+      "elapsed": 0.000016927719116210938,
+      "id": 41,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813887728,
+        "value": "'b'",
+        "class": "builtins.str"
+      },
+      "parent_id": 39,
+      "elapsed": 0.00005507469177246094,
+      "id": 42,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813887728,
+        "value": "'b'",
+        "class": "builtins.str"
+      },
+      "parent_id": 38,
+      "elapsed": 0.00009584426879882812,
+      "id": 43,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813887728,
+        "value": "'b'",
+        "class": "builtins.str"
+      },
+      "parent_id": 37,
+      "elapsed": 0.000141143798828125,
+      "id": 44,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('00010001', 2, 0, 'B', '', NULL, NULL, '', 'b', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 45,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 45,
+      "elapsed": 0.0004683329999863872,
+      "id": 46,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813790368,
+        "value": "<Category: A > B>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 47,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813790368,
+        "value": "<Category: A > B>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 48,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 13813920336,
+        "value": "<CategoryQuerySet [<Category: A > B>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 48,
+      "elapsed": 0.00008392333984375,
+      "id": 49,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813922928,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813921680,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 50,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 13813845696,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 50,
+      "elapsed": 0.0000069141387939453125,
+      "id": 51,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813922928,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813921680,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 52,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 13813912064,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 52,
+      "elapsed": 0.000014066696166992188,
+      "id": 53,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 327",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 54,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 54,
+      "elapsed": 0.000445500000012089,
+      "id": 55,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 327 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 56,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 56,
+      "elapsed": 0.00032970799998111033,
+      "id": 57,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 47,
+      "elapsed": 0.0037810802459716797,
+      "id": 58,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 36,
+      "elapsed": 0.00639796257019043,
+      "id": 59,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813845824,
+        "value": "[<Category: A>, <Category: A > B>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 2
+      },
+      "parent_id": 3,
+      "elapsed": 0.025119304656982422,
+      "id": 60,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '00010001'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 61,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 61,
+      "elapsed": 0.0007438750000119398,
+      "id": 62,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813908192,
+        "value": "<Category: A > B > C>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13814070720,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 63,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813908192,
+        "value": "<Category: A > B > C>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 64,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "generate_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 211
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332164592,
+          "value": "'C'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 65,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332164592,
+          "value": "'C'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 66,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332164592,
+          "value": "'C'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 67,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 13813887088,
+        "value": "'c'",
+        "class": "builtins.str"
+      },
+      "parent_id": 67,
+      "elapsed": 0.000013113021850585938,
+      "id": 68,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813887088,
+        "value": "'c'",
+        "class": "builtins.str"
+      },
+      "parent_id": 66,
+      "elapsed": 0.00004410743713378906,
+      "id": 69,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813887088,
+        "value": "'c'",
+        "class": "builtins.str"
+      },
+      "parent_id": 65,
+      "elapsed": 0.00008392333984375,
+      "id": 70,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813887088,
+        "value": "'c'",
+        "class": "builtins.str"
+      },
+      "parent_id": 64,
+      "elapsed": 0.00011920928955078125,
+      "id": 71,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('000100010001', 3, 0, 'C', '', NULL, NULL, '', 'c', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 72,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 72,
+      "elapsed": 0.0006162919999894712,
+      "id": 73,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813908192,
+        "value": "<Category: A > B > C>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 74,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813908192,
+        "value": "<Category: A > B > C>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 75,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 13813919952,
+        "value": "<CategoryQuerySet [<Category: A > B > C>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 75,
+      "elapsed": 0.00005125999450683594,
+      "id": 76,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813940576,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813923072,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 77,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 13813936256,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 77,
+      "elapsed": 0.000006198883056640625,
+      "id": 78,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813940576,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813923072,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 79,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 13813607552,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 79,
+      "elapsed": 0.0000171661376953125,
+      "id": 80,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 328",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 81,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 81,
+      "elapsed": 0.000676374999983409,
+      "id": 82,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 328 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 83,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 83,
+      "elapsed": 0.0004727500000001328,
+      "id": 84,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 74,
+      "elapsed": 0.004585981369018555,
+      "id": 85,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 63,
+      "elapsed": 0.0072939395904541016,
+      "id": 86,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813845824,
+        "value": "[<Category: A>, <Category: A > B>, <Category: A > B > C>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 3
+      },
+      "parent_id": 2,
+      "elapsed": 0.03504180908203125,
+      "id": 87,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813908192,
+        "value": "<Category: A > B > C>",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parent_id": 1,
+      "elapsed": 0.036452293395996094,
+      "id": 88,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4416411248,
+          "value": "'A > B > D'",
+          "name": "breadcrumb_str",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4333048048,
+          "value": "'>'",
+          "name": "separator",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 89,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_breadcrumbs",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 42
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813865344,
+          "value": "['A', 'B', 'D']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 3
+        }
+      ],
+      "id": 90,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813845824,
+          "value": "['A', 'B']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 91,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813969792,
+          "value": "['A']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 92,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 1 AND \"catalogue_category\".\"name\" = 'A') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 93,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 93,
+      "elapsed": 0.00042424999998047497,
+      "id": 94,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814069888,
+        "value": "[<Category: A>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 92,
+      "elapsed": 0.0006749629974365234,
+      "id": 95,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 2 AND \"catalogue_category\".\"path\" BETWEEN '00010000' AND '0001ZZZZ' AND \"catalogue_category\".\"name\" = 'B') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 96,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 96,
+      "elapsed": 0.0004975830000262249,
+      "id": 97,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814069888,
+        "value": "[<Category: A>, <Category: A > B>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 2
+      },
+      "parent_id": 91,
+      "elapsed": 0.0014882087707519531,
+      "id": 98,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 3 AND \"catalogue_category\".\"path\" BETWEEN '000100010000' AND '00010001ZZZZ' AND \"catalogue_category\".\"name\" = 'D') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 99,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 99,
+      "elapsed": 0.0005378749999920274,
+      "id": 100,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 3 AND \"catalogue_category\".\"path\" BETWEEN '000100010000' AND '00010001ZZZZ') ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 101,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 101,
+      "elapsed": 0.00051441599998725,
+      "id": 102,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '00010001'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 103,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 103,
+      "elapsed": 0.00047920800000156305,
+      "id": 104,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813911504,
+        "value": "<Category: A > B > D>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13814069120,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 105,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813911504,
+        "value": "<Category: A > B > D>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 106,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "generate_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 211
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332349808,
+          "value": "'D'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 107,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332349808,
+          "value": "'D'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 108,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332349808,
+          "value": "'D'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 109,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 13813960624,
+        "value": "'d'",
+        "class": "builtins.str"
+      },
+      "parent_id": 109,
+      "elapsed": 0.000015020370483398438,
+      "id": 110,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813960624,
+        "value": "'d'",
+        "class": "builtins.str"
+      },
+      "parent_id": 108,
+      "elapsed": 0.000050067901611328125,
+      "id": 111,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813960624,
+        "value": "'d'",
+        "class": "builtins.str"
+      },
+      "parent_id": 107,
+      "elapsed": 0.00009179115295410156,
+      "id": 112,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813960624,
+        "value": "'d'",
+        "class": "builtins.str"
+      },
+      "parent_id": 106,
+      "elapsed": 0.00013518333435058594,
+      "id": 113,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('000100010002', 3, 0, 'D', '', NULL, NULL, '', 'd', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 114,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 114,
+      "elapsed": 0.0004895410000074207,
+      "id": 115,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813911504,
+        "value": "<Category: A > B > D>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 116,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813911504,
+        "value": "<Category: A > B > D>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 117,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 13813942304,
+        "value": "<CategoryQuerySet [<Category: A > B > D>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 117,
+      "elapsed": 0.00004601478576660156,
+      "id": 118,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814018304,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813943264,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 119,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 13813958976,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 119,
+      "elapsed": 0.000007152557373046875,
+      "id": 120,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814018304,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813943264,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 121,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 13813863872,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 121,
+      "elapsed": 0.000013113021850585938,
+      "id": 122,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 329",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 123,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 123,
+      "elapsed": 0.0007244589999970685,
+      "id": 124,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 329 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 125,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 125,
+      "elapsed": 0.0004777089999947748,
+      "id": 126,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 116,
+      "elapsed": 0.0045299530029296875,
+      "id": 127,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 105,
+      "elapsed": 0.006818056106567383,
+      "id": 128,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814069888,
+        "value": "[<Category: A>, <Category: A > B>, <Category: A > B > D>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 3
+      },
+      "parent_id": 90,
+      "elapsed": 0.012051820755004883,
+      "id": 129,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813911504,
+        "value": "<Category: A > B > D>",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parent_id": 89,
+      "elapsed": 0.013704776763916016,
+      "id": 130,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4416411312,
+          "value": "'A > E > F'",
+          "name": "breadcrumb_str",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4333048048,
+          "value": "'>'",
+          "name": "separator",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 131,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_breadcrumbs",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 42
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13814059520,
+          "value": "['A', 'E', 'F']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 3
+        }
+      ],
+      "id": 132,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13814069888,
+          "value": "['A', 'E']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 133,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13814062720,
+          "value": "['A']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 134,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 1 AND \"catalogue_category\".\"name\" = 'A') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 135,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 135,
+      "elapsed": 0.0005027089999884993,
+      "id": 136,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813966400,
+        "value": "[<Category: A>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 134,
+      "elapsed": 0.000820159912109375,
+      "id": 137,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 2 AND \"catalogue_category\".\"path\" BETWEEN '00010000' AND '0001ZZZZ' AND \"catalogue_category\".\"name\" = 'E') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 138,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 138,
+      "elapsed": 0.001046542000011641,
+      "id": 139,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 2 AND \"catalogue_category\".\"path\" BETWEEN '00010000' AND '0001ZZZZ') ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 140,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 140,
+      "elapsed": 0.00046299999999632746,
+      "id": 141,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '0001'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 142,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 142,
+      "elapsed": 0.0004423329999951875,
+      "id": 143,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813923504,
+        "value": "<Category: A > E>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13813937088,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 144,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813923504,
+        "value": "<Category: A > E>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 145,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "generate_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 211
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332349936,
+          "value": "'E'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 146,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332349936,
+          "value": "'E'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 147,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332349936,
+          "value": "'E'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 148,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 13813996720,
+        "value": "'e'",
+        "class": "builtins.str"
+      },
+      "parent_id": 148,
+      "elapsed": 0.000013113021850585938,
+      "id": 149,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813996720,
+        "value": "'e'",
+        "class": "builtins.str"
+      },
+      "parent_id": 147,
+      "elapsed": 0.00004506111145019531,
+      "id": 150,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813996720,
+        "value": "'e'",
+        "class": "builtins.str"
+      },
+      "parent_id": 146,
+      "elapsed": 0.00008487701416015625,
+      "id": 151,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813996720,
+        "value": "'e'",
+        "class": "builtins.str"
+      },
+      "parent_id": 145,
+      "elapsed": 0.00012183189392089844,
+      "id": 152,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('00010002', 2, 0, 'E', '', NULL, NULL, '', 'e', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 153,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 153,
+      "elapsed": 0.0005430420000038794,
+      "id": 154,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813923504,
+        "value": "<Category: A > E>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 155,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813923504,
+        "value": "<Category: A > E>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 156,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 13813941776,
+        "value": "<CategoryQuerySet [<Category: A > E>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 156,
+      "elapsed": 0.00007486343383789062,
+      "id": 157,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814020800,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13814019456,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 158,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 13813688384,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 158,
+      "elapsed": 0.0000069141387939453125,
+      "id": 159,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814020800,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13814019456,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 160,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 13813915456,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 160,
+      "elapsed": 0.00001430511474609375,
+      "id": 161,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 330",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 162,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 162,
+      "elapsed": 0.0005646249999813335,
+      "id": 163,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 330 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 164,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 164,
+      "elapsed": 0.0007742500000063046,
+      "id": 165,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 155,
+      "elapsed": 0.0047607421875,
+      "id": 166,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 144,
+      "elapsed": 0.007214784622192383,
+      "id": 167,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813966400,
+        "value": "[<Category: A>, <Category: A > E>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 2
+      },
+      "parent_id": 133,
+      "elapsed": 0.011754035949707031,
+      "id": 168,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '00010002'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 169,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 169,
+      "elapsed": 0.0004849169999943115,
+      "id": 170,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813921824,
+        "value": "<Category: A > E > F>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13814049280,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 171,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813921824,
+        "value": "<Category: A > E > F>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 172,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "generate_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 211
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332349872,
+          "value": "'F'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 173,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332349872,
+          "value": "'F'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 174,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332349872,
+          "value": "'F'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 175,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 13814038832,
+        "value": "'f'",
+        "class": "builtins.str"
+      },
+      "parent_id": 175,
+      "elapsed": 0.000017881393432617188,
+      "id": 176,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814038832,
+        "value": "'f'",
+        "class": "builtins.str"
+      },
+      "parent_id": 174,
+      "elapsed": 0.000052928924560546875,
+      "id": 177,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814038832,
+        "value": "'f'",
+        "class": "builtins.str"
+      },
+      "parent_id": 173,
+      "elapsed": 0.00009703636169433594,
+      "id": 178,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814038832,
+        "value": "'f'",
+        "class": "builtins.str"
+      },
+      "parent_id": 172,
+      "elapsed": 0.00013899803161621094,
+      "id": 179,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('000100020001', 3, 0, 'F', '', NULL, NULL, '', 'f', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 180,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 180,
+      "elapsed": 0.0008453330000008918,
+      "id": 181,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813921824,
+        "value": "<Category: A > E > F>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 182,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813921824,
+        "value": "<Category: A > E > F>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 183,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 13814018784,
+        "value": "<CategoryQuerySet [<Category: A > E > F>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 183,
+      "elapsed": 0.00006413459777832031,
+      "id": 184,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814096464,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13814019072,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 185,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 13813914752,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 185,
+      "elapsed": 0.0000059604644775390625,
+      "id": 186,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814096464,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13814019072,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 187,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 13813966528,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 187,
+      "elapsed": 0.000014066696166992188,
+      "id": 188,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 331",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 189,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 189,
+      "elapsed": 0.0003688339999996515,
+      "id": 190,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 331 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 191,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 191,
+      "elapsed": 0.0008413340000004155,
+      "id": 192,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 182,
+      "elapsed": 0.00444483757019043,
+      "id": 193,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 171,
+      "elapsed": 0.014960050582885742,
+      "id": 194,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813966400,
+        "value": "[<Category: A>, <Category: A > E>, <Category: A > E > F>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 3
+      },
+      "parent_id": 132,
+      "elapsed": 0.0294797420501709,
+      "id": 195,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813921824,
+        "value": "<Category: A > E > F>",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parent_id": 131,
+      "elapsed": 0.03217005729675293,
+      "id": 196,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4416411376,
+          "value": "'A > E > G'",
+          "name": "breadcrumb_str",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4333048048,
+          "value": "'>'",
+          "name": "separator",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 197,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_breadcrumbs",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 42
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813993920,
+          "value": "['A', 'E', 'G']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 3
+        }
+      ],
+      "id": 198,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813815168,
+          "value": "['A', 'E']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 199,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813939392,
+          "value": "['A']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 200,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 1 AND \"catalogue_category\".\"name\" = 'A') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 201,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 201,
+      "elapsed": 0.0007008339999856616,
+      "id": 202,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814015616,
+        "value": "[<Category: A>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 200,
+      "elapsed": 0.0010039806365966797,
+      "id": 203,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 2 AND \"catalogue_category\".\"path\" BETWEEN '00010000' AND '0001ZZZZ' AND \"catalogue_category\".\"name\" = 'E') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 204,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 204,
+      "elapsed": 0.0005700000000103955,
+      "id": 205,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814015616,
+        "value": "[<Category: A>, <Category: A > E>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 2
+      },
+      "parent_id": 199,
+      "elapsed": 0.001953125,
+      "id": 206,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 3 AND \"catalogue_category\".\"path\" BETWEEN '000100020000' AND '00010002ZZZZ' AND \"catalogue_category\".\"name\" = 'G') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 207,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 207,
+      "elapsed": 0.0007509170000048471,
+      "id": 208,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 3 AND \"catalogue_category\".\"path\" BETWEEN '000100020000' AND '00010002ZZZZ') ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 209,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 209,
+      "elapsed": 0.0004952079999895886,
+      "id": 210,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '00010002'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 211,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 211,
+      "elapsed": 0.0004786249999995107,
+      "id": 212,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813941344,
+        "value": "<Category: A > E > G>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13814078528,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 213,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813941344,
+        "value": "<Category: A > E > G>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 214,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "generate_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 211
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332744816,
+          "value": "'G'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 215,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332744816,
+          "value": "'G'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 216,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332744816,
+          "value": "'G'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 217,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 13814079152,
+        "value": "'g'",
+        "class": "builtins.str"
+      },
+      "parent_id": 217,
+      "elapsed": 0.000012874603271484375,
+      "id": 218,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814079152,
+        "value": "'g'",
+        "class": "builtins.str"
+      },
+      "parent_id": 216,
+      "elapsed": 0.000046253204345703125,
+      "id": 219,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814079152,
+        "value": "'g'",
+        "class": "builtins.str"
+      },
+      "parent_id": 215,
+      "elapsed": 0.00008606910705566406,
+      "id": 220,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814079152,
+        "value": "'g'",
+        "class": "builtins.str"
+      },
+      "parent_id": 214,
+      "elapsed": 0.00012111663818359375,
+      "id": 221,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('000100020002', 3, 0, 'G', '', NULL, NULL, '', 'g', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 222,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 222,
+      "elapsed": 0.0006650409999906515,
+      "id": 223,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813941344,
+        "value": "<Category: A > E > G>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 224,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813941344,
+        "value": "<Category: A > E > G>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 225,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 13814021472,
+        "value": "<CategoryQuerySet [<Category: A > E > G>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 225,
+      "elapsed": 0.00006413459777832031,
+      "id": 226,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814098096,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13814096656,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 227,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 13814075712,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 227,
+      "elapsed": 0.0000059604644775390625,
+      "id": 228,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814098096,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13814096656,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 229,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 13813936256,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 229,
+      "elapsed": 0.000011920928955078125,
+      "id": 230,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 332",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 231,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 231,
+      "elapsed": 0.0007647909999946023,
+      "id": 232,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 332 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 233,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 233,
+      "elapsed": 0.0005508330000054684,
+      "id": 234,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 224,
+      "elapsed": 0.0049779415130615234,
+      "id": 235,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 213,
+      "elapsed": 0.007863998413085938,
+      "id": 236,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814015616,
+        "value": "[<Category: A>, <Category: A > E>, <Category: A > E > G>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 3
+      },
+      "parent_id": 198,
+      "elapsed": 0.014122247695922852,
+      "id": 237,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813941344,
+        "value": "<Category: A > E > G>",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parent_id": 197,
+      "elapsed": 0.016239166259765625,
+      "id": 238,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332149104,
+          "value": "'T'",
+          "name": "breadcrumb_str",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4333048048,
+          "value": "'>'",
+          "name": "separator",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 239,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_breadcrumbs",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 42
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813994176,
+          "value": "['T']",
+          "name": "bits",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 240,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.categories",
+      "method_id": "create_from_sequence",
+      "path": "src/oscar/apps/catalogue/categories.py",
+      "lineno": 6
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 1 AND \"catalogue_category\".\"name\" = 'T') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 241,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 241,
+      "elapsed": 0.0009653749999927186,
+      "id": 242,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"depth\" = 1 ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 243,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 243,
+      "elapsed": 0.0016992500000014843,
+      "id": 244,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814019936,
+        "value": "<Category: T>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13814125120,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 245,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814019936,
+        "value": "<Category: T>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 246,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "generate_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 211
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332149104,
+          "value": "'T'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 247,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332149104,
+          "value": "'T'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 248,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332149104,
+          "value": "'T'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 249,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 13814119152,
+        "value": "'t'",
+        "class": "builtins.str"
+      },
+      "parent_id": 249,
+      "elapsed": 0.000013113021850585938,
+      "id": 250,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814119152,
+        "value": "'t'",
+        "class": "builtins.str"
+      },
+      "parent_id": 248,
+      "elapsed": 0.0000438690185546875,
+      "id": 251,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814119152,
+        "value": "'t'",
+        "class": "builtins.str"
+      },
+      "parent_id": 247,
+      "elapsed": 0.00008296966552734375,
+      "id": 252,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814119152,
+        "value": "'t'",
+        "class": "builtins.str"
+      },
+      "parent_id": 246,
+      "elapsed": 0.00011229515075683594,
+      "id": 253,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('0002', 1, 0, 'T', '', NULL, NULL, '', 't', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 254,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 254,
+      "elapsed": 0.0027575000000013006,
+      "id": 255,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814019936,
+        "value": "<Category: T>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 256,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814019936,
+        "value": "<Category: T>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 257,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 13814095984,
+        "value": "<CategoryQuerySet [<Category: T>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 257,
+      "elapsed": 0.000051021575927734375,
+      "id": 258,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814150048,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13814097472,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 259,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 13814075712,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 259,
+      "elapsed": 0.0000059604644775390625,
+      "id": 260,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814150048,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13814097472,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 261,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 13813936256,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 261,
+      "elapsed": 0.000015020370483398438,
+      "id": 262,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 333",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 263,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 263,
+      "elapsed": 0.0006272919999901205,
+      "id": 264,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 333 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 265,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 265,
+      "elapsed": 0.0005151670000032027,
+      "id": 266,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 256,
+      "elapsed": 0.0035181045532226562,
+      "id": 267,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 245,
+      "elapsed": 0.006689786911010742,
+      "id": 268,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814163840,
+        "value": "[<Category: T>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.apps.catalogue.models.Category"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 240,
+      "elapsed": 0.010106801986694336,
+      "id": 269,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814019936,
+        "value": "<Category: T>",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parent_id": 239,
+      "elapsed": 0.010159969329833984,
+      "id": 270,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"name\" = 'A' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 271,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 271,
+      "elapsed": 0.0004585410000004231,
+      "id": 272,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET path='00020001'||SUBSTR(path, 5), depth=LENGTH('00020001'||SUBSTR(path, 5))/4 WHERE path LIKE '0001%'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 273,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 273,
+      "elapsed": 0.0006354999999871325,
+      "id": 274,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET numchild=numchild+1 WHERE path='0002'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 275,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 275,
+      "elapsed": 0.0005058749999875545,
+      "id": 276,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"name\" = 'A' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 277,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 277,
+      "elapsed": 0.0006098329999986163,
+      "id": 278,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814099920,
+        "value": "<Category: T > A>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 279,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814099920,
+        "value": "<Category: T > A>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 280,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13814157840,
+        "value": "'CATEGORY_URL_en-gb_326'",
+        "class": "builtins.str"
+      },
+      "parent_id": 280,
+      "elapsed": 0.00001621246337890625,
+      "id": 281,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"path\" = '0002' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 282,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 282,
+      "elapsed": 0.0006946669999763344,
+      "id": 283,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814097760,
+        "value": "<Category: T>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 284,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "return_value": {
+        "object_id": 4331749040,
+        "value": "'t'",
+        "class": "builtins.str"
+      },
+      "parent_id": 284,
+      "elapsed": 9.5367431640625e-7,
+      "id": 285,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814127472,
+        "value": "'t/a'",
+        "class": "builtins.str"
+      },
+      "parent_id": 279,
+      "elapsed": 0.0023360252380371094,
+      "id": 286,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"path\" IN ('0002') ORDER BY \"catalogue_category\".\"depth\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 287,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 287,
+      "elapsed": 0.0009479160000012143,
+      "id": 288,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"name\" = 'F' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 289,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 289,
+      "elapsed": 0.0008132500000215259,
+      "id": 290,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814099200,
+        "value": "<Category: T > A > E > F>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 291,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814099200,
+        "value": "<Category: T > A > E > F>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 292,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13814158560,
+        "value": "'CATEGORY_URL_en-gb_331'",
+        "class": "builtins.str"
+      },
+      "parent_id": 292,
+      "elapsed": 0.000012874603271484375,
+      "id": 293,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"path\" = '000200010002' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 294,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 294,
+      "elapsed": 0.0005852500000003147,
+      "id": 295,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814096320,
+        "value": "<Category: T > A > E>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 296,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814096320,
+        "value": "<Category: T > A > E>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 297,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13814159520,
+        "value": "'CATEGORY_URL_en-gb_330'",
+        "class": "builtins.str"
+      },
+      "parent_id": 297,
+      "elapsed": 0.000013113021850585938,
+      "id": 298,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"path\" = '00020001' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 299,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 299,
+      "elapsed": 0.0004675829999882808,
+      "id": 300,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814097328,
+        "value": "<Category: T > A>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 301,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814097328,
+        "value": "<Category: T > A>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 302,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13814160160,
+        "value": "'CATEGORY_URL_en-gb_326'",
+        "class": "builtins.str"
+      },
+      "parent_id": 302,
+      "elapsed": 0.000010967254638671875,
+      "id": 303,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814049904,
+        "value": "'t/a'",
+        "class": "builtins.str"
+      },
+      "parent_id": 301,
+      "elapsed": 0.0010082721710205078,
+      "id": 304,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814076592,
+        "value": "'t/a/e'",
+        "class": "builtins.str"
+      },
+      "parent_id": 296,
+      "elapsed": 0.003640890121459961,
+      "id": 305,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814056688,
+        "value": "'t/a/e/f'",
+        "class": "builtins.str"
+      },
+      "parent_id": 291,
+      "elapsed": 0.006565093994140625,
+      "id": 306,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"path\" IN ('0002', '00020001', '000200010002') ORDER BY \"catalogue_category\".\"depth\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 307,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 307,
+      "elapsed": 0.000917290999979059,
+      "id": 308,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"name\" = 'D' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 309,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 309,
+      "elapsed": 0.0005641250000110176,
+      "id": 310,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814098000,
+        "value": "<Category: T > A > B > D>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 311,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814098000,
+        "value": "<Category: T > A > B > D>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 312,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13814186432,
+        "value": "'CATEGORY_URL_en-gb_329'",
+        "class": "builtins.str"
+      },
+      "parent_id": 312,
+      "elapsed": 0.000014066696166992188,
+      "id": 313,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"path\" = '000200010001' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 314,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 314,
+      "elapsed": 0.0004470410000010361,
+      "id": 315,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814150192,
+        "value": "<Category: T > A > B>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 316,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814150192,
+        "value": "<Category: T > A > B>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 317,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13814186672,
+        "value": "'CATEGORY_URL_en-gb_327'",
+        "class": "builtins.str"
+      },
+      "parent_id": 317,
+      "elapsed": 0.000010967254638671875,
+      "id": 318,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"path\" = '00020001' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 319,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 319,
+      "elapsed": 0.0006633339999950749,
+      "id": 320,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814149280,
+        "value": "<Category: T > A>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 321,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814149280,
+        "value": "<Category: T > A>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 322,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13814187552,
+        "value": "'CATEGORY_URL_en-gb_326'",
+        "class": "builtins.str"
+      },
+      "parent_id": 322,
+      "elapsed": 0.00002288818359375,
+      "id": 323,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814138992,
+        "value": "'t/a'",
+        "class": "builtins.str"
+      },
+      "parent_id": 321,
+      "elapsed": 0.011390924453735352,
+      "id": 324,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814102512,
+        "value": "'t/a/b'",
+        "class": "builtins.str"
+      },
+      "parent_id": 316,
+      "elapsed": 0.017859935760498047,
+      "id": 325,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814164976,
+        "value": "'t/a/b/d'",
+        "class": "builtins.str"
+      },
+      "parent_id": 311,
+      "elapsed": 0.020653247833251953,
+      "id": 326,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"path\" IN ('0002', '00020001', '000200010001') ORDER BY \"catalogue_category\".\"depth\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 327,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 327,
+      "elapsed": 0.0006937080000000151,
+      "id": 328,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Category factory",
+    "recording": {
+      "defined_class": "tests.integration.catalogue.test_category.TestCategoryFactory",
+      "method_id": "test_updating_subtree_slugs_when_moving_category_to_new_parent"
+    },
+    "source_location": "tests/integration/catalogue/test_category.py:147",
+    "name": "Category factory updating subtree slugs when moving category to new parent",
+    "feature": "Updating subtree slugs when moving category to new parent",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "categories",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "create_from_breadcrumbs",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/catalogue/categories.py:42"
+                    },
+                    {
+                      "name": "create_from_sequence",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/catalogue/categories.py:6"
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractCategory",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:218"
+                        },
+                        {
+                          "name": "generate_slug",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:211"
+                        },
+                        {
+                          "name": "set_ancestors_are_public",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:230"
+                        },
+                        {
+                          "name": "get_descendants_and_self",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:275"
+                        },
+                        {
+                          "name": "get_full_slug",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:184"
+                        },
+                        {
+                          "name": "get_url_cache_key",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:283"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "ReverseStartsWith",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "process_lhs",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:71"
+                        },
+                        {
+                          "name": "process_rhs",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:68"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "utils",
+              "type": "class",
+              "children": [
+                {
+                  "name": "slugify",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:68"
+                },
+                {
+                  "name": "default_slugifier",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:57"
+                },
+                {
+                  "name": "cautious_slugify",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:20"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 1 AND \"catalogue_category\".\"name\" = 'A') LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"depth\" = 1 ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('0001', 1, 0, 'A', '', NULL, NULL, '', 'a', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 326"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 326 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '0001'"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('00010001', 2, 0, 'B', '', NULL, NULL, '', 'b', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 327"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 327 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '00010001'"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('000100010001', 3, 0, 'C', '', NULL, NULL, '', 'c', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 328"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 328 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 2 AND \"catalogue_category\".\"path\" BETWEEN '00010000' AND '0001ZZZZ' AND \"catalogue_category\".\"name\" = 'B') LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 3 AND \"catalogue_category\".\"path\" BETWEEN '000100010000' AND '00010001ZZZZ' AND \"catalogue_category\".\"name\" = 'D') LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 3 AND \"catalogue_category\".\"path\" BETWEEN '000100010000' AND '00010001ZZZZ') ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('000100010002', 3, 0, 'D', '', NULL, NULL, '', 'd', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 329"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 329 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 2 AND \"catalogue_category\".\"path\" BETWEEN '00010000' AND '0001ZZZZ' AND \"catalogue_category\".\"name\" = 'E') LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 2 AND \"catalogue_category\".\"path\" BETWEEN '00010000' AND '0001ZZZZ') ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('00010002', 2, 0, 'E', '', NULL, NULL, '', 'e', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 330"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 330 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '00010002'"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('000100020001', 3, 0, 'F', '', NULL, NULL, '', 'f', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 331"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 331 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 3 AND \"catalogue_category\".\"path\" BETWEEN '000100020000' AND '00010002ZZZZ' AND \"catalogue_category\".\"name\" = 'G') LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 3 AND \"catalogue_category\".\"path\" BETWEEN '000100020000' AND '00010002ZZZZ') ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('000100020002', 3, 0, 'G', '', NULL, NULL, '', 'g', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 332"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 332 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 1 AND \"catalogue_category\".\"name\" = 'T') LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('0002', 1, 0, 'T', '', NULL, NULL, '', 't', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 333"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 333 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"name\" = 'A' LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET path='00020001'||SUBSTR(path, 5), depth=LENGTH('00020001'||SUBSTR(path, 5))/4 WHERE path LIKE '0001%'"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET numchild=numchild+1 WHERE path='0002'"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"path\" = '0002' LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"path\" IN ('0002') ORDER BY \"catalogue_category\".\"depth\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"name\" = 'F' LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"path\" = '000200010002' LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"path\" = '00020001' LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"path\" IN ('0002', '00020001', '000200010002') ORDER BY \"catalogue_category\".\"depth\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"name\" = 'D' LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"path\" = '000200010001' LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"path\" IN ('0002', '00020001', '000200010001') ORDER BY \"catalogue_category\".\"depth\" ASC"
+        }
+      ]
+    }
+  ]
+}

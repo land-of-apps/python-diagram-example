@@ -1,0 +1,1626 @@
+{
+  "events": [
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5359888496,
+          "value": "<class 'tests._site.model_tests_app.models.CustomConditionModel'>",
+          "name": "condition_class",
+          "class": "django.db.models.base.ModelBase"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13927597888,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.custom",
+      "method_id": "create_condition",
+      "path": "src/oscar/apps/offer/custom.py",
+      "lineno": 39
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5359888496,
+          "value": "<class 'tests._site.model_tests_app.models.CustomConditionModel'>",
+          "name": "klass",
+          "class": "django.db.models.base.ModelBase"
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.custom",
+      "method_id": "_class_path",
+      "path": "src/oscar/apps/offer/custom.py",
+      "lineno": 11
+    },
+    {
+      "return_value": {
+        "object_id": 13927624576,
+        "value": "'tests._site.model_tests_app.models.CustomConditionModel'",
+        "class": "builtins.str"
+      },
+      "parent_id": 2,
+      "elapsed": 0.0000021457672119140625,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394951488,
+        "value": "<oscar.models.fields.NullCharField: proxy_class>",
+        "name": "self",
+        "class": "oscar.models.fields.NullCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13927624576,
+          "value": "'tests._site.model_tests_app.models.CustomConditionModel'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.NullCharField",
+      "method_id": "get_prep_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 122
+    },
+    {
+      "return_value": {
+        "object_id": 13927624576,
+        "value": "'tests._site.model_tests_app.models.CustomConditionModel'",
+        "class": "builtins.str"
+      },
+      "parent_id": 4,
+      "elapsed": 0.0000016689300537109375,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"offer_condition\" (\"range_id\", \"type\", \"value\", \"proxy_class\") VALUES (NULL, '', NULL, 'tests._site.model_tests_app.models.CustomConditionModel') RETURNING \"offer_condition\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 6,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 6,
+      "elapsed": 0.0010402080000062597,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13927605680,
+        "value": "<Condition: Test condition>",
+        "class": "oscar.apps.offer.models.Condition"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0013651847839355469,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394951488,
+        "value": "<oscar.models.fields.NullCharField: proxy_class>",
+        "name": "self",
+        "class": "oscar.models.fields.NullCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "value",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 9,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.NullCharField",
+      "method_id": "get_prep_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 122
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 9,
+      "elapsed": 9.5367431640625e-7,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"offer_condition\".\"id\", \"offer_condition\".\"range_id\", \"offer_condition\".\"type\", \"offer_condition\".\"value\", \"offer_condition\".\"proxy_class\" FROM \"offer_condition\" WHERE NOT (\"offer_condition\".\"proxy_class\" IS NULL)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 11,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 11,
+      "elapsed": 0.0006641660000070715,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394951488,
+        "value": "<oscar.models.fields.NullCharField: proxy_class>",
+        "name": "self",
+        "class": "oscar.models.fields.NullCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13927638496,
+          "value": "'tests._site.model_tests_app.models.CustomConditionModel'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "rest",
+          "object_id": 13927574464,
+          "value": "(Col(offer_condition, offer.Condition.proxy_class), <DatabaseWrapper vendor='postgresql' alias='default'>)",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13927852992,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 13,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.NullCharField",
+      "method_id": "from_db_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 117
+    },
+    {
+      "return_value": {
+        "object_id": 13927638496,
+        "value": "'tests._site.model_tests_app.models.CustomConditionModel'",
+        "class": "builtins.str"
+      },
+      "parent_id": 13,
+      "elapsed": 7.152557373046875e-7,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13927630976,
+        "value": "<Condition: Test condition>",
+        "name": "self",
+        "class": "oscar.apps.offer.models.Condition"
+      },
+      "id": 15,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.abstract_models.BaseOfferMixin",
+      "method_id": "proxy",
+      "path": "src/oscar/apps/offer/abstract_models.py",
+      "lineno": 36
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394636992,
+          "value": "'offer.conditions'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4394640368,
+          "value": "'CountCondition'",
+          "name": "classname",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 16,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_class",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 25
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394636992,
+          "value": "'offer.conditions'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13927649600,
+          "value": "['CountCondition']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 17,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 48
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394636992,
+          "value": "'offer.conditions'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13927649600,
+          "value": "['CountCondition']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "req",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 18,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "default_class_loader",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 53
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13927590368,
+          "value": "'oscar.apps.offer.conditions'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13927649600,
+          "value": "['CountCondition']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 19,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_import_module",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 135
+    },
+    {
+      "return_value": {
+        "object_id": 4395132464,
+        "value": "<module 'oscar.apps.offer.conditions' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/conditions.py'>",
+        "class": "builtins.module"
+      },
+      "parent_id": 19,
+      "elapsed": 0.0000030994415283203125,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394636992,
+          "value": "'offer.conditions'",
+          "name": "module_label",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 21,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_find_registered_app_name",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 183
+    },
+    {
+      "return_value": {
+        "object_id": 4379841280,
+        "value": "'oscar.apps.offer'",
+        "class": "builtins.str"
+      },
+      "parent_id": 21,
+      "elapsed": 0.0000030994415283203125,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13927652224,
+          "value": "[None, <module 'oscar.apps.offer.conditions' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/conditions.py'>]",
+          "name": "modules",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.NoneType"
+            },
+            {
+              "class": "builtins.module"
+            }
+          ],
+          "size": 2
+        },
+        {
+          "kind": "req",
+          "object_id": 13927649600,
+          "value": "['CountCondition']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 23,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_pluck_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 161
+    },
+    {
+      "return_value": {
+        "object_id": 13927219968,
+        "value": "[<class 'oscar.apps.offer.conditions.CountCondition'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 23,
+      "elapsed": 9.5367431640625e-7,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13927219968,
+        "value": "[<class 'oscar.apps.offer.conditions.CountCondition'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 18,
+      "elapsed": 0.00011324882507324219,
+      "id": 25,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13927219968,
+        "value": "[<class 'oscar.apps.offer.conditions.CountCondition'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 17,
+      "elapsed": 0.00014901161193847656,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5359577920,
+        "value": "<class 'oscar.apps.offer.conditions.CountCondition'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 16,
+      "elapsed": 0.0001919269561767578,
+      "id": 27,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394636992,
+          "value": "'offer.conditions'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4394640432,
+          "value": "'ValueCondition'",
+          "name": "classname",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 28,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_class",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 25
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394636992,
+          "value": "'offer.conditions'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13927653504,
+          "value": "['ValueCondition']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 29,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 48
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394636992,
+          "value": "'offer.conditions'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13927653504,
+          "value": "['ValueCondition']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "req",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 30,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "default_class_loader",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 53
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13927661776,
+          "value": "'oscar.apps.offer.conditions'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13927653504,
+          "value": "['ValueCondition']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 31,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_import_module",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 135
+    },
+    {
+      "return_value": {
+        "object_id": 4395132464,
+        "value": "<module 'oscar.apps.offer.conditions' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/conditions.py'>",
+        "class": "builtins.module"
+      },
+      "parent_id": 31,
+      "elapsed": 9.5367431640625e-7,
+      "id": 32,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394636992,
+          "value": "'offer.conditions'",
+          "name": "module_label",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 33,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_find_registered_app_name",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 183
+    },
+    {
+      "return_value": {
+        "object_id": 4379841280,
+        "value": "'oscar.apps.offer'",
+        "class": "builtins.str"
+      },
+      "parent_id": 33,
+      "elapsed": 0.0000019073486328125,
+      "id": 34,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13927656576,
+          "value": "[None, <module 'oscar.apps.offer.conditions' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/conditions.py'>]",
+          "name": "modules",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.NoneType"
+            },
+            {
+              "class": "builtins.module"
+            }
+          ],
+          "size": 2
+        },
+        {
+          "kind": "req",
+          "object_id": 13927653504,
+          "value": "['ValueCondition']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 35,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_pluck_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 161
+    },
+    {
+      "return_value": {
+        "object_id": 13927656000,
+        "value": "[<class 'oscar.apps.offer.conditions.ValueCondition'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 35,
+      "elapsed": 0,
+      "id": 36,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13927656000,
+        "value": "[<class 'oscar.apps.offer.conditions.ValueCondition'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 30,
+      "elapsed": 0.00009822845458984375,
+      "id": 37,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13927656000,
+        "value": "[<class 'oscar.apps.offer.conditions.ValueCondition'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 29,
+      "elapsed": 0.00013017654418945312,
+      "id": 38,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5359587616,
+        "value": "<class 'oscar.apps.offer.conditions.ValueCondition'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 28,
+      "elapsed": 0.00016307830810546875,
+      "id": 39,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394636992,
+          "value": "'offer.conditions'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4394637072,
+          "value": "'CoverageCondition'",
+          "name": "classname",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 40,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_class",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 25
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394636992,
+          "value": "'offer.conditions'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13927119104,
+          "value": "['CoverageCondition']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 41,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 48
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394636992,
+          "value": "'offer.conditions'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13927119104,
+          "value": "['CoverageCondition']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "req",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 42,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "default_class_loader",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 53
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13927589408,
+          "value": "'oscar.apps.offer.conditions'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13927119104,
+          "value": "['CoverageCondition']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 43,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_import_module",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 135
+    },
+    {
+      "return_value": {
+        "object_id": 4395132464,
+        "value": "<module 'oscar.apps.offer.conditions' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/conditions.py'>",
+        "class": "builtins.module"
+      },
+      "parent_id": 43,
+      "elapsed": 9.5367431640625e-7,
+      "id": 44,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394636992,
+          "value": "'offer.conditions'",
+          "name": "module_label",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 45,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_find_registered_app_name",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 183
+    },
+    {
+      "return_value": {
+        "object_id": 4379841280,
+        "value": "'oscar.apps.offer'",
+        "class": "builtins.str"
+      },
+      "parent_id": 45,
+      "elapsed": 0.0000016689300537109375,
+      "id": 46,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13927676672,
+          "value": "[None, <module 'oscar.apps.offer.conditions' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/conditions.py'>]",
+          "name": "modules",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.NoneType"
+            },
+            {
+              "class": "builtins.module"
+            }
+          ],
+          "size": 2
+        },
+        {
+          "kind": "req",
+          "object_id": 13927119104,
+          "value": "['CoverageCondition']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 47,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_pluck_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 161
+    },
+    {
+      "return_value": {
+        "object_id": 13927677056,
+        "value": "[<class 'oscar.apps.offer.conditions.CoverageCondition'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 47,
+      "elapsed": 0.0000011920928955078125,
+      "id": 48,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13927677056,
+        "value": "[<class 'oscar.apps.offer.conditions.CoverageCondition'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 42,
+      "elapsed": 0.00010180473327636719,
+      "id": 49,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13927677056,
+        "value": "[<class 'oscar.apps.offer.conditions.CoverageCondition'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 41,
+      "elapsed": 0.0002567768096923828,
+      "id": 50,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5359583056,
+        "value": "<class 'oscar.apps.offer.conditions.CoverageCondition'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 40,
+      "elapsed": 0.0002911090850830078,
+      "id": 51,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13927638496,
+          "value": "'tests._site.model_tests_app.models.CustomConditionModel'",
+          "name": "proxy_class",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 52,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.utils",
+      "method_id": "load_proxy",
+      "path": "src/oscar/apps/offer/utils.py",
+      "lineno": 29
+    },
+    {
+      "return_value": {
+        "object_id": 5359888496,
+        "value": "<class 'tests._site.model_tests_app.models.CustomConditionModel'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 52,
+      "elapsed": 0.000013828277587890625,
+      "id": 53,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13927605248,
+        "value": "<CustomConditionModel: Test condition>",
+        "class": "tests._site.model_tests_app.models.CustomConditionModel"
+      },
+      "parent_id": 15,
+      "elapsed": 0.0008261203765869141,
+      "id": 54,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"offer_range\".\"id\", \"offer_range\".\"name\", \"offer_range\".\"slug\", \"offer_range\".\"description\", \"offer_range\".\"is_public\", \"offer_range\".\"includes_all_products\", \"offer_range\".\"proxy_class\", \"offer_range\".\"date_created\" FROM \"offer_range\" WHERE \"offer_range\".\"id\" = 349 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 55,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 55,
+      "elapsed": 0.0005582910000043739,
+      "id": 56,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394985744,
+        "value": "<oscar.models.fields.NullCharField: proxy_class>",
+        "name": "self",
+        "class": "oscar.models.fields.NullCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "value",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "rest",
+          "object_id": 13927573952,
+          "value": "(Col(offer_range, offer.Range.proxy_class), <DatabaseWrapper vendor='postgresql' alias='default'>)",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13927613248,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 57,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.NullCharField",
+      "method_id": "from_db_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 117
+    },
+    {
+      "return_value": {
+        "object_id": 4331234032,
+        "value": "''",
+        "class": "builtins.str"
+      },
+      "parent_id": 57,
+      "elapsed": 7.152557373046875e-7,
+      "id": 58,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13927606688,
+        "value": "<ConditionForm bound=True, valid=True, fields=(range;type;value;custom_condition)>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.forms.ConditionForm"
+      },
+      "id": 59,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.forms.ConditionForm",
+      "method_id": "clean",
+      "path": "src/oscar/apps/dashboard/offers/forms.py",
+      "lineno": 139
+    },
+    {
+      "return_value": {
+        "object_id": 13927117312,
+        "value": "{'range': <Range: All products>, 'type': 'Count', 'value': Decimal('1'), 'custom_condition': ''}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "range",
+            "class": "oscar.apps.offer.models.Range"
+          },
+          {
+            "name": "type",
+            "class": "builtins.str"
+          },
+          {
+            "name": "value",
+            "class": "decimal.Decimal"
+          },
+          {
+            "name": "custom_condition",
+            "class": "builtins.str"
+          }
+        ],
+        "size": 4
+      },
+      "parent_id": 59,
+      "elapsed": 0.0000016689300537109375,
+      "id": 60,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"offer_range\" WHERE \"offer_range\".\"id\" = 349 LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 61,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 61,
+      "elapsed": 0.00048308300000599047,
+      "id": 62,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13927605344,
+        "value": "<Condition: Basket includes 1 item(s) from all products>",
+        "name": "self",
+        "class": "oscar.apps.offer.models.Condition"
+      },
+      "id": 63,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.abstract_models.AbstractCondition",
+      "method_id": "clean",
+      "path": "src/oscar/apps/offer/abstract_models.py",
+      "lineno": 864
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13927605344,
+        "value": "<Condition: Basket includes 1 item(s) from all products>",
+        "name": "self",
+        "class": "oscar.apps.offer.models.Condition"
+      },
+      "id": 64,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.abstract_models.AbstractCondition",
+      "method_id": "clean_count",
+      "path": "src/oscar/apps/offer/abstract_models.py",
+      "lineno": 872
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 64,
+      "elapsed": 0.0000019073486328125,
+      "id": 65,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 63,
+      "elapsed": 0.0009119510650634766,
+      "id": 66,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Condition form",
+    "recording": {
+      "defined_class": "tests.integration.dashboard.test_offer_forms.TestConditionForm",
+      "method_id": "test_clean_all_data"
+    },
+    "source_location": "tests/integration/dashboard/test_offer_forms.py:170",
+    "name": "Condition form clean all data",
+    "feature": "Clean all data",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "offer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "custom",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "create_condition",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/offer/custom.py:39"
+                    },
+                    {
+                      "name": "_class_path",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/offer/custom.py:11"
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "BaseOfferMixin",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "proxy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/abstract_models.py:36"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "AbstractCondition",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "clean",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/abstract_models.py:864"
+                        },
+                        {
+                          "name": "clean_count",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/abstract_models.py:872"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "utils",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "load_proxy",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/offer/utils.py:29"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "dashboard",
+              "type": "package",
+              "children": [
+                {
+                  "name": "offers",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "forms",
+                      "type": "package",
+                      "children": [
+                        {
+                          "name": "ConditionForm",
+                          "type": "class",
+                          "children": [
+                            {
+                              "name": "clean",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/forms.py:139"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "models",
+          "type": "package",
+          "children": [
+            {
+              "name": "fields",
+              "type": "package",
+              "children": [
+                {
+                  "name": "NullCharField",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "get_prep_value",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/models/fields/__init__.py:122"
+                    },
+                    {
+                      "name": "from_db_value",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/models/fields/__init__.py:117"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "loading",
+              "type": "class",
+              "children": [
+                {
+                  "name": "get_class",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:25"
+                },
+                {
+                  "name": "get_classes",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:48"
+                },
+                {
+                  "name": "default_class_loader",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:53"
+                },
+                {
+                  "name": "_import_module",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:135"
+                },
+                {
+                  "name": "_find_registered_app_name",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:183"
+                },
+                {
+                  "name": "_pluck_classes",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:161"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"offer_condition\" (\"range_id\", \"type\", \"value\", \"proxy_class\") VALUES (NULL, '', NULL, 'tests._site.model_tests_app.models.CustomConditionModel') RETURNING \"offer_condition\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"offer_condition\".\"id\", \"offer_condition\".\"range_id\", \"offer_condition\".\"type\", \"offer_condition\".\"value\", \"offer_condition\".\"proxy_class\" FROM \"offer_condition\" WHERE NOT (\"offer_condition\".\"proxy_class\" IS NULL)"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"offer_range\".\"id\", \"offer_range\".\"name\", \"offer_range\".\"slug\", \"offer_range\".\"description\", \"offer_range\".\"is_public\", \"offer_range\".\"includes_all_products\", \"offer_range\".\"proxy_class\", \"offer_range\".\"date_created\" FROM \"offer_range\" WHERE \"offer_range\".\"id\" = 349 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"offer_range\" WHERE \"offer_range\".\"id\" = 349 LIMIT 1"
+        }
+      ]
+    }
+  ]
+}

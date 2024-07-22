@@ -1,0 +1,98 @@
+[
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueBrowseHtml#render",
+    "callee": "<templates>/SrcOscarTemplatesOscarPartialsAlert_MessagesHtml#render"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueBrowseHtml#render",
+    "callee": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"ancestors_are_public\" AND \"catalogue_category\".\"is_public\") ORDER BY \"catalogue_category\".\"path\" ASC"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueBrowseHtml#render",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueBrowseHtml#render",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "GET /",
+    "callee": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('fcga386jusl8ns11x0orvlxbdenwih8a', 'e30:1sVwoM:xTaqXI44iYGET05iRaKQoGaFQDTs3bH6nFBzRwyHpVQ', '2024-08-05T17:26:58.905969+00:00'::timestamptz)"
+  },
+  {
+    "caller": "GET /",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x1247\""
+  },
+  {
+    "caller": "GET /",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x1248\""
+  },
+  {
+    "caller": "GET /",
+    "callee": "SAVEPOINT \"s8669432832_x1247\""
+  },
+  {
+    "caller": "GET /",
+    "callee": "SAVEPOINT \"s8669432832_x1248\""
+  },
+  {
+    "caller": "GET /",
+    "callee": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = 'fcga386jusl8ns11x0orvlxbdenwih8a' LIMIT 1"
+  },
+  {
+    "caller": "GET /",
+    "callee": "UPDATE \"django_session\" SET \"session_data\" = '.eJxVjDEOwjAMRe-SGVVxkiaGkTsgxsixDQWkIjWpGBB3p4gOsL73_n-aTHMb8lx1yhcxOwMYzeaXFuKbjh8lVxrP9_zQ0rS2bhW1O37BYan3a_z3MFAdlrlnDh4EggbXI1uMmFw4aaJERcRjHwtacc5vLSglWxxHBWQCVo1iXm-dOTlL:1sVwoM:jssXbC3O7YERSP7fD_czWf5eGnu9ooJYUuG2wXcbxtI', \"expire_date\" = '2024-08-05T17:26:58.909272+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = 'fcga386jusl8ns11x0orvlxbdenwih8a'"
+  },
+  {
+    "caller": "GET /",
+    "callee": "django/contrib"
+  },
+  {
+    "caller": "GET /",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "GET /catalogue/",
+    "callee": "<templates>/SrcOscarTemplatesOscarCatalogueBrowseHtml#render"
+  },
+  {
+    "caller": "GET /catalogue/",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "django/contrib",
+    "callee": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"email\" = 'example_76@example.com' LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"catalogue_product\" WHERE (\"catalogue_product\".\"is_public\" AND \"catalogue_product\".\"parent_id\" IS NULL)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"communication_notification\" WHERE (\"communication_notification\".\"date_read\" IS NULL AND \"communication_notification\".\"recipient_id\" = 186)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2024-07-22T17:26:58.911553+00:00'::timestamptz AND \"django_session\".\"session_key\" = 'fcga386jusl8ns11x0orvlxbdenwih8a') LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"id\" = 186 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"customer_productalert\" SET \"user_id\" = 186, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_76@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"myauth_user\" SET \"last_login\" = '2024-07-22T17:26:58.907414+00:00'::timestamptz WHERE \"myauth_user\".\"id\" = 186"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "django/contrib"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  }
+]

@@ -1,0 +1,128 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14025800240,
+        "value": "<oscar.apps.payment.forms.BankcardExpiryMonthField object at 0x34400ba30>",
+        "name": "self",
+        "class": "oscar.apps.payment.forms.BankcardExpiryMonthField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14025663808,
+          "value": "['01', 2023]",
+          "name": "value",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.int"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.payment.forms.BankcardExpiryMonthField",
+      "method_id": "clean",
+      "path": "src/oscar/apps/payment/forms.py",
+      "lineno": 139
+    },
+    {
+      "exceptions": [
+        {
+          "class": "django.core.exceptions.ValidationError",
+          "message": "['Select a valid choice. 2023 is not one of the available choices.']",
+          "object_id": 14025272480
+        }
+      ],
+      "parent_id": 1,
+      "elapsed": 0.000023126602172851562,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      }
+    ],
+    "feature_group": "Optional expiry month field",
+    "recording": {
+      "defined_class": "tests.integration.payment.test_forms.TestOptionalExpiryMonthField",
+      "method_id": "test_rejects_months_in_the_past"
+    },
+    "source_location": "tests/integration/payment/test_forms.py:91",
+    "name": "Optional expiry month field rejects months in the past",
+    "feature": "Rejects months in the past",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "payment",
+              "type": "package",
+              "children": [
+                {
+                  "name": "forms",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "BankcardExpiryMonthField",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "clean",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/payment/forms.py:139"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

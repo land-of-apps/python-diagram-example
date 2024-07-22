@@ -1,0 +1,148 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13775252832,
+        "value": "<WishList: test1@example.com's Wish List 'Default'>",
+        "name": "self",
+        "class": "oscar.apps.wishlists.models.WishList"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13775251104,
+          "value": "<User: >",
+          "name": "user",
+          "class": "tests._site.myauth.models.User"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.wishlists.abstract_models.AbstractWishList",
+      "method_id": "is_allowed_to_see",
+      "path": "src/oscar/apps/wishlists/abstract_models.py",
+      "lineno": 82
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"wishlists_wishlistsharedemail\" WHERE (\"wishlists_wishlistsharedemail\".\"wishlist_id\" = 31 AND \"wishlists_wishlistsharedemail\".\"email\" = '') LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0.0004012910000028569,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341173008,
+        "value": "False",
+        "class": "builtins.bool"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0007841587066650391,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "A shared wish list",
+    "recording": {
+      "defined_class": "tests.integration.test_wishlist.TestASharedWishList",
+      "method_id": "test_is_visible_to_anyone"
+    },
+    "source_location": "tests/integration/test_wishlist.py:28",
+    "name": "A shared wish list is visible to anyone",
+    "feature": "Is visible to anyone",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "wishlists",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractWishList",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "is_allowed_to_see",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/wishlists/abstract_models.py:82"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"wishlists_wishlistsharedemail\" WHERE (\"wishlists_wishlistsharedemail\".\"wishlist_id\" = 31 AND \"wishlists_wishlistsharedemail\".\"email\" = '') LIMIT 1"
+        }
+      ]
+    }
+  ]
+}

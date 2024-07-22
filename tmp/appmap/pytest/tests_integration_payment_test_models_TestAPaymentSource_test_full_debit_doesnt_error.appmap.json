@@ -1,0 +1,505 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14026586048,
+        "value": "<Source: Allocation of £0.00 from type Creditcard>",
+        "name": "self",
+        "class": "oscar.apps.payment.models.Source"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14026595552,
+          "value": "Decimal('100.00')",
+          "name": "amount",
+          "class": "decimal.Decimal"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4331234032,
+          "value": "''",
+          "name": "reference",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4331234032,
+          "value": "''",
+          "name": "status",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.payment.abstract_models.AbstractSource",
+      "method_id": "allocate",
+      "path": "src/oscar/apps/payment/abstract_models.py",
+      "lineno": 160
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14026586048,
+        "value": "<Source: Allocation of £100.00 from type Creditcard>",
+        "name": "self",
+        "class": "oscar.apps.payment.models.Source"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14026603200,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.payment.abstract_models.AbstractSource",
+      "method_id": "save",
+      "path": "src/oscar/apps/payment/abstract_models.py",
+      "lineno": 133
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"payment_source\" SET \"order_id\" = 198, \"source_type_id\" = 4, \"currency\" = 'GBP', \"amount_allocated\" = 100.00, \"amount_debited\" = 0.00, \"amount_refunded\" = 0.00, \"reference\" = '', \"label\" = '' WHERE \"payment_source\".\"id\" = 3",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 3,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 3,
+      "elapsed": 0.0008681669999930364,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 2,
+      "elapsed": 0.0012249946594238281,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14026586048,
+        "value": "<Source: Allocation of £100.00 from type Creditcard>",
+        "name": "self",
+        "class": "oscar.apps.payment.models.Source"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4395487024,
+          "value": "'Authorise'",
+          "name": "txn_type",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 14026595552,
+          "value": "Decimal('100.00')",
+          "name": "amount",
+          "class": "decimal.Decimal"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4331234032,
+          "value": "''",
+          "name": "reference",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4331234032,
+          "value": "''",
+          "name": "status",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 6,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.payment.abstract_models.AbstractSource",
+      "method_id": "_create_transaction",
+      "path": "src/oscar/apps/payment/abstract_models.py",
+      "lineno": 151
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"payment_transaction\" (\"source_id\", \"txn_type\", \"amount\", \"reference\", \"status\", \"date_created\") VALUES (3, 'Authorise', 100.00, '', '', '2024-07-22T17:28:48.682045+00:00'::timestamptz) RETURNING \"payment_transaction\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 7,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 7,
+      "elapsed": 0.0010002920000147242,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 6,
+      "elapsed": 0.0015311241149902344,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0033597946166992188,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14026586048,
+        "value": "<Source: Allocation of £100.00 from type Creditcard>",
+        "name": "self",
+        "class": "oscar.apps.payment.models.Source"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "amount",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4331234032,
+          "value": "''",
+          "name": "reference",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4331234032,
+          "value": "''",
+          "name": "status",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 11,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.payment.abstract_models.AbstractSource",
+      "method_id": "debit",
+      "path": "src/oscar/apps/payment/abstract_models.py",
+      "lineno": 172
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14026586048,
+        "value": "<Source: Allocation of £100.00 from type Creditcard>",
+        "name": "self",
+        "class": "oscar.apps.payment.models.Source"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14026546304,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 12,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.payment.abstract_models.AbstractSource",
+      "method_id": "save",
+      "path": "src/oscar/apps/payment/abstract_models.py",
+      "lineno": 133
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"payment_source\" SET \"order_id\" = 198, \"source_type_id\" = 4, \"currency\" = 'GBP', \"amount_allocated\" = 100.00, \"amount_debited\" = 100.00, \"amount_refunded\" = 0.00, \"reference\" = '', \"label\" = '' WHERE \"payment_source\".\"id\" = 3",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 13,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 13,
+      "elapsed": 0.000910749999974314,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 12,
+      "elapsed": 0.0011830329895019531,
+      "id": 15,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14026586048,
+        "value": "<Source: Allocation of £100.00 from type Creditcard>",
+        "name": "self",
+        "class": "oscar.apps.payment.models.Source"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4395487088,
+          "value": "'Debit'",
+          "name": "txn_type",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 14026597072,
+          "value": "Decimal('100.00')",
+          "name": "amount",
+          "class": "decimal.Decimal"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4331234032,
+          "value": "''",
+          "name": "reference",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4331234032,
+          "value": "''",
+          "name": "status",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 16,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.payment.abstract_models.AbstractSource",
+      "method_id": "_create_transaction",
+      "path": "src/oscar/apps/payment/abstract_models.py",
+      "lineno": 151
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"payment_transaction\" (\"source_id\", \"txn_type\", \"amount\", \"reference\", \"status\", \"date_created\") VALUES (3, 'Debit', 100.00, '', '', '2024-07-22T17:28:48.685089+00:00'::timestamptz) RETURNING \"payment_transaction\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 17,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 17,
+      "elapsed": 0.0011231659999850763,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 16,
+      "elapsed": 0.0013570785522460938,
+      "id": 19,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 11,
+      "elapsed": 0.002930879592895508,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "A payment source",
+    "recording": {
+      "defined_class": "tests.integration.payment.test_models.TestAPaymentSource",
+      "method_id": "test_full_debit_doesnt_error"
+    },
+    "source_location": "tests/integration/payment/test_models.py:84",
+    "name": "A payment source full debit doesnt error",
+    "feature": "Full debit doesnt error",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "payment",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractSource",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "allocate",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/payment/abstract_models.py:160"
+                        },
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/payment/abstract_models.py:133"
+                        },
+                        {
+                          "name": "_create_transaction",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/payment/abstract_models.py:151"
+                        },
+                        {
+                          "name": "debit",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/payment/abstract_models.py:172"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "UPDATE \"payment_source\" SET \"order_id\" = 198, \"source_type_id\" = 4, \"currency\" = 'GBP', \"amount_allocated\" = 100.00, \"amount_debited\" = 0.00, \"amount_refunded\" = 0.00, \"reference\" = '', \"label\" = '' WHERE \"payment_source\".\"id\" = 3"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"payment_transaction\" (\"source_id\", \"txn_type\", \"amount\", \"reference\", \"status\", \"date_created\") VALUES (3, 'Authorise', 100.00, '', '', '2024-07-22T17:28:48.682045+00:00'::timestamptz) RETURNING \"payment_transaction\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"payment_source\" SET \"order_id\" = 198, \"source_type_id\" = 4, \"currency\" = 'GBP', \"amount_allocated\" = 100.00, \"amount_debited\" = 100.00, \"amount_refunded\" = 0.00, \"reference\" = '', \"label\" = '' WHERE \"payment_source\".\"id\" = 3"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"payment_transaction\" (\"source_id\", \"txn_type\", \"amount\", \"reference\", \"status\", \"date_created\") VALUES (3, 'Debit', 100.00, '', '', '2024-07-22T17:28:48.685089+00:00'::timestamptz) RETURNING \"payment_transaction\".\"id\""
+        }
+      ]
+    }
+  ]
+}

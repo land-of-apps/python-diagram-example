@@ -1,0 +1,966 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14044382832,
+        "value": "<ProductQuerySet [<Product: second>, <Product: serious product>, <Product: Hubble Photo>, <Product: Hermes Bikini>]>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "keyrest",
+          "object_id": 14044320064,
+          "value": "{'subtitle': 'superhenk'}",
+          "name": "filter_kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "subtitle",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.ProductQuerySet",
+      "method_id": "filter_by_attributes",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 74
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14040422096,
+        "value": "{'subtitle': (None, 'superhenk')}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "subtitle",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "field_names",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 29
+    },
+    {
+      "return_value": {
+        "object_id": 14044298496,
+        "value": "dict_keys(['subtitle'])",
+        "class": "builtins.dict_keys"
+      },
+      "parent_id": 2,
+      "elapsed": 9.5367431640625e-7,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14040422096,
+        "value": "{'subtitle': (None, 'superhenk')}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "subtitle",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14044404320,
+          "value": "<QuerySet [('subtitle', 'text')]>",
+          "name": "attribute_types",
+          "class": "django.db.models.query.QuerySet"
+        },
+        {
+          "kind": "req",
+          "object_id": 14044382832,
+          "value": "<ProductQuerySet [<Product: second>, <Product: serious product>, <Product: Hubble Photo>, <Product: Hermes Bikini>]>",
+          "name": "queryset",
+          "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "fast_query",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 51
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\" FROM \"catalogue_productattribute\" WHERE \"catalogue_productattribute\".\"code\" IN ('subtitle') ORDER BY \"catalogue_productattribute\".\"code\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.0006527079999898433,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14040422096,
+        "value": "{'subtitle': (None, 'superhenk')}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "subtitle",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14044433472,
+          "value": "['text']",
+          "name": "types",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "req",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lookup",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "req",
+          "object_id": 4422368048,
+          "value": "'superhenk'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "_select_value",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 38
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14040422096,
+        "value": "{'subtitle': (None, 'superhenk')}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "subtitle",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14044500976,
+          "value": "'text'",
+          "name": "attribute_type",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 8,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "_selector",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 32
+    },
+    {
+      "return_value": {
+        "object_id": 14044173056,
+        "value": "'attribute_values__value_text'",
+        "class": "builtins.str"
+      },
+      "parent_id": 8,
+      "elapsed": 9.5367431640625e-7,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14044428176,
+        "value": "<Q: (AND: ('attribute_values__value_text', 'superhenk'))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 7,
+      "elapsed": 0.00015997886657714844,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14044426496,
+        "value": "<ProductQuerySet [<Product: second>]>",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parent_id": 4,
+      "elapsed": 0.0013766288757324219,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14044426496,
+        "value": "<ProductQuerySet [<Product: second>]>",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parent_id": 1,
+      "elapsed": 0.004509925842285156,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_productattributevalue\" ON (\"catalogue_product\".\"id\" = \"catalogue_productattributevalue\".\"product_id\") INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE (\"catalogue_productattributevalue\".\"value_text\" = 'superhenk' AND \"catalogue_productattribute\".\"code\" = 'subtitle') LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 13,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 13,
+      "elapsed": 0.000573458999980403,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14044403744,
+        "value": "<ProductQuerySet [<Product: second>, <Product: serious product>, <Product: Hubble Photo>, <Product: Hermes Bikini>]>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "keyrest",
+          "object_id": 14044345216,
+          "value": "{'subtitle': 'kekjo'}",
+          "name": "filter_kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "subtitle",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 15,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.ProductQuerySet",
+      "method_id": "filter_by_attributes",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 74
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14044174992,
+        "value": "{'subtitle': (None, 'kekjo')}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "subtitle",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "id": 16,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "field_names",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 29
+    },
+    {
+      "return_value": {
+        "object_id": 14044430144,
+        "value": "dict_keys(['subtitle'])",
+        "class": "builtins.dict_keys"
+      },
+      "parent_id": 16,
+      "elapsed": 9.5367431640625e-7,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14044174992,
+        "value": "{'subtitle': (None, 'kekjo')}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "subtitle",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14044438832,
+          "value": "<QuerySet [('subtitle', 'text')]>",
+          "name": "attribute_types",
+          "class": "django.db.models.query.QuerySet"
+        },
+        {
+          "kind": "req",
+          "object_id": 14044403744,
+          "value": "<ProductQuerySet [<Product: second>, <Product: serious product>, <Product: Hubble Photo>, <Product: Hermes Bikini>]>",
+          "name": "queryset",
+          "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+        }
+      ],
+      "id": 18,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "fast_query",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 51
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\" FROM \"catalogue_productattribute\" WHERE \"catalogue_productattribute\".\"code\" IN ('subtitle') ORDER BY \"catalogue_productattribute\".\"code\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 19,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 19,
+      "elapsed": 0.0003570830000114711,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14044174992,
+        "value": "{'subtitle': (None, 'kekjo')}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "subtitle",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14044504768,
+          "value": "['text']",
+          "name": "types",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "req",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lookup",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "req",
+          "object_id": 4422367024,
+          "value": "'kekjo'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 21,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "_select_value",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 38
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14044174992,
+        "value": "{'subtitle': (None, 'kekjo')}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "subtitle",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14044431600,
+          "value": "'text'",
+          "name": "attribute_type",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 22,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "_selector",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 32
+    },
+    {
+      "return_value": {
+        "object_id": 14044372144,
+        "value": "'attribute_values__value_text'",
+        "class": "builtins.str"
+      },
+      "parent_id": 22,
+      "elapsed": 9.5367431640625e-7,
+      "id": 23,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14044440992,
+        "value": "<Q: (AND: ('attribute_values__value_text', 'kekjo'))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 21,
+      "elapsed": 0.00013399124145507812,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14044440176,
+        "value": "<ProductQuerySet [<Product: serious product>]>",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parent_id": 18,
+      "elapsed": 0.0010030269622802734,
+      "id": 25,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14044440176,
+        "value": "<ProductQuerySet [<Product: serious product>]>",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parent_id": 15,
+      "elapsed": 0.004369020462036133,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_productattributevalue\" ON (\"catalogue_product\".\"id\" = \"catalogue_productattributevalue\".\"product_id\") INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE (\"catalogue_productattributevalue\".\"value_text\" = 'kekjo' AND \"catalogue_productattribute\".\"code\" = 'subtitle') LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 27,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 27,
+      "elapsed": 0.0004902080000022124,
+      "id": 28,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14044298256,
+        "value": "<ProductQuerySet [<Product: second>, <Product: serious product>, <Product: Hubble Photo>, <Product: Hermes Bikini>]>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "keyrest",
+          "object_id": 14044433408,
+          "value": "{'subtitle': True}",
+          "name": "filter_kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "subtitle",
+              "class": "builtins.bool"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 29,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.ProductQuerySet",
+      "method_id": "filter_by_attributes",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 74
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14044174352,
+        "value": "{'subtitle': (None, True)}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "subtitle",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "id": 30,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "field_names",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 29
+    },
+    {
+      "return_value": {
+        "object_id": 14044430288,
+        "value": "dict_keys(['subtitle'])",
+        "class": "builtins.dict_keys"
+      },
+      "parent_id": 30,
+      "elapsed": 0,
+      "id": 31,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14044174352,
+        "value": "{'subtitle': (None, True)}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "subtitle",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14044427312,
+          "value": "<QuerySet [('subtitle', 'text')]>",
+          "name": "attribute_types",
+          "class": "django.db.models.query.QuerySet"
+        },
+        {
+          "kind": "req",
+          "object_id": 14044298256,
+          "value": "<ProductQuerySet [<Product: second>, <Product: serious product>, <Product: Hubble Photo>, <Product: Hermes Bikini>]>",
+          "name": "queryset",
+          "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+        }
+      ],
+      "id": 32,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "fast_query",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 51
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\" FROM \"catalogue_productattribute\" WHERE \"catalogue_productattribute\".\"code\" IN ('subtitle') ORDER BY \"catalogue_productattribute\".\"code\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 33,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 33,
+      "elapsed": 0.00039170899998453024,
+      "id": 34,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14044174352,
+        "value": "{'subtitle': (None, True)}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "subtitle",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14044353664,
+          "value": "['text']",
+          "name": "types",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "req",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lookup",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "req",
+          "object_id": 4341172976,
+          "value": "True",
+          "name": "value",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 35,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "_select_value",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 38
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14044174352,
+        "value": "{'subtitle': (None, True)}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "subtitle",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14044430384,
+          "value": "'text'",
+          "name": "attribute_type",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 36,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "_selector",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 32
+    },
+    {
+      "return_value": {
+        "object_id": 14044370464,
+        "value": "'attribute_values__value_text'",
+        "class": "builtins.str"
+      },
+      "parent_id": 36,
+      "elapsed": 9.5367431640625e-7,
+      "id": 37,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14044427024,
+        "value": "<Q: (AND: ('attribute_values__value_text', True))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 35,
+      "elapsed": 0.00005817413330078125,
+      "id": 38,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14044428416,
+        "value": "<ProductQuerySet []>",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parent_id": 32,
+      "elapsed": 0.0008709430694580078,
+      "id": 39,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14044428416,
+        "value": "<ProductQuerySet []>",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parent_id": 29,
+      "elapsed": 0.003444194793701172,
+      "id": 40,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_productattributevalue\" ON (\"catalogue_product\".\"id\" = \"catalogue_productattributevalue\".\"product_id\") INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE (\"catalogue_productattributevalue\".\"value_text\" = 'True' AND \"catalogue_productattribute\".\"code\" = 'subtitle') LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 41,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 41,
+      "elapsed": 0.0006883750000099553,
+      "id": 42,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Product attribute queryset test",
+    "recording": {
+      "defined_class": "tests.unit.catalogue.test_product_attributes.ProductAttributeQuerysetTest",
+      "method_id": "test_text_value"
+    },
+    "source_location": "tests/unit/catalogue/test_product_attributes.py:382",
+    "name": "Product attribute queryset test text value",
+    "feature": "Text value",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "managers",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "ProductQuerySet",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "filter_by_attributes",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/managers.py:74"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "AttributeFilter",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "field_names",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/managers.py:29"
+                        },
+                        {
+                          "name": "fast_query",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/managers.py:51"
+                        },
+                        {
+                          "name": "_select_value",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/managers.py:38"
+                        },
+                        {
+                          "name": "_selector",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/managers.py:32"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\" FROM \"catalogue_productattribute\" WHERE \"catalogue_productattribute\".\"code\" IN ('subtitle') ORDER BY \"catalogue_productattribute\".\"code\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_productattributevalue\" ON (\"catalogue_product\".\"id\" = \"catalogue_productattributevalue\".\"product_id\") INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE (\"catalogue_productattributevalue\".\"value_text\" = 'superhenk' AND \"catalogue_productattribute\".\"code\" = 'subtitle') LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_productattributevalue\" ON (\"catalogue_product\".\"id\" = \"catalogue_productattributevalue\".\"product_id\") INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE (\"catalogue_productattributevalue\".\"value_text\" = 'kekjo' AND \"catalogue_productattribute\".\"code\" = 'subtitle') LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_productattributevalue\" ON (\"catalogue_product\".\"id\" = \"catalogue_productattributevalue\".\"product_id\") INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE (\"catalogue_productattributevalue\".\"value_text\" = 'True' AND \"catalogue_productattribute\".\"code\" = 'subtitle') LIMIT 1"
+        }
+      ]
+    }
+  ]
+}

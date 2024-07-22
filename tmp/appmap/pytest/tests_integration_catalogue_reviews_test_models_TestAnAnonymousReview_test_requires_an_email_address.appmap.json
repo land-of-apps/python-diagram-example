@@ -1,0 +1,280 @@
+{
+  "events": [
+    {
+      "static": true,
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.reviews.utils",
+      "method_id": "get_default_review_status",
+      "path": "src/oscar/apps/catalogue/reviews/utils.py",
+      "lineno": 6
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4379759472,
+          "value": "'reviews'",
+          "name": "app_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4393954864,
+          "value": "'ProductReview'",
+          "name": "model_name",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_model",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 225
+    },
+    {
+      "return_value": {
+        "object_id": 4699023472,
+        "value": "<class 'oscar.apps.catalogue.reviews.models.ProductReview'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 2,
+      "elapsed": 0.000006198883056640625,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341391944,
+        "value": "1",
+        "class": "builtins.int"
+      },
+      "parent_id": 1,
+      "elapsed": 0.000051975250244140625,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"catalogue_product\" WHERE \"catalogue_product\".\"id\" = 734 LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.000707667000000356,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4416878512,
+          "value": "'This product is lovely'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.validators",
+      "method_id": "non_whitespace",
+      "path": "src/oscar/core/validators.py",
+      "lineno": 106
+    },
+    {
+      "return_value": {
+        "object_id": 4416878512,
+        "value": "'This product is lovely'",
+        "class": "builtins.str"
+      },
+      "parent_id": 7,
+      "elapsed": 0.0000019073486328125,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818020576,
+        "value": "<ProductReview: This product is lovely>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.reviews.models.ProductReview"
+      },
+      "id": 9,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.reviews.abstract_models.AbstractProductReview",
+      "method_id": "clean",
+      "path": "src/oscar/apps/catalogue/reviews/abstract_models.py",
+      "lineno": 98
+    },
+    {
+      "exceptions": [
+        {
+          "class": "django.core.exceptions.ValidationError",
+          "message": "['Anonymous reviews must include a name and an email']",
+          "object_id": 13818016288
+        }
+      ],
+      "parent_id": 9,
+      "elapsed": 0.000014066696166992188,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "An anonymous review",
+    "recording": {
+      "defined_class": "tests.integration.catalogue.reviews.test_models.TestAnAnonymousReview",
+      "method_id": "test_requires_an_email_address"
+    },
+    "source_location": "tests/integration/catalogue/reviews/test_models.py:46",
+    "name": "An anonymous review requires an email address",
+    "feature": "Requires an email address",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "reviews",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "utils",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get_default_review_status",
+                          "type": "function",
+                          "static": true,
+                          "location": "src/oscar/apps/catalogue/reviews/utils.py:6"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "abstract_models",
+                      "type": "package",
+                      "children": [
+                        {
+                          "name": "AbstractProductReview",
+                          "type": "class",
+                          "children": [
+                            {
+                              "name": "clean",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/catalogue/reviews/abstract_models.py:98"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "loading",
+              "type": "class",
+              "children": [
+                {
+                  "name": "get_model",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:225"
+                }
+              ]
+            },
+            {
+              "name": "validators",
+              "type": "class",
+              "children": [
+                {
+                  "name": "non_whitespace",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/validators.py:106"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"catalogue_product\" WHERE \"catalogue_product\".\"id\" = 734 LIMIT 1"
+        }
+      ]
+    }
+  ]
+}

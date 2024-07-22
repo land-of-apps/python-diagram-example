@@ -1,0 +1,879 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13815239152,
+        "value": "<Product: testing>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Product"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13815136704,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProduct",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 590
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13815239152,
+        "value": "<Product: testing>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Product"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProduct",
+      "method_id": "get_title",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 674
+    },
+    {
+      "return_value": {
+        "object_id": 4409330288,
+        "value": "'testing'",
+        "class": "builtins.str"
+      },
+      "parent_id": 2,
+      "elapsed": 9.5367431640625e-7,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4409330288,
+          "value": "'testing'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4409330288,
+          "value": "'testing'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4409330288,
+          "value": "'testing'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 6,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 13815267248,
+        "value": "'testing'",
+        "class": "builtins.str"
+      },
+      "parent_id": 6,
+      "elapsed": 0.0000069141387939453125,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13815267248,
+        "value": "'testing'",
+        "class": "builtins.str"
+      },
+      "parent_id": 5,
+      "elapsed": 0.0000362396240234375,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13815267248,
+        "value": "'testing'",
+        "class": "builtins.str"
+      },
+      "parent_id": 4,
+      "elapsed": 0.00007104873657226562,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4393773328,
+        "value": "<oscar.models.fields.NullCharField: upc>",
+        "name": "self",
+        "class": "oscar.models.fields.NullCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4410329264,
+          "value": "'1234'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 10,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.NullCharField",
+      "method_id": "get_prep_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 122
+    },
+    {
+      "return_value": {
+        "object_id": 4410329264,
+        "value": "'1234'",
+        "class": "builtins.str"
+      },
+      "parent_id": 10,
+      "elapsed": 0.0000021457672119140625,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_product\" (\"structure\", \"is_public\", \"upc\", \"parent_id\", \"title\", \"slug\", \"description\", \"meta_title\", \"meta_description\", \"product_class_id\", \"rating\", \"date_created\", \"date_updated\", \"is_discountable\") VALUES ('standalone', true, '1234', NULL, 'testing', 'testing', '', NULL, NULL, 519, NULL, '2024-07-22T17:28:00.996967+00:00'::timestamptz, '2024-07-22T17:28:00.996978+00:00'::timestamptz, true) RETURNING \"catalogue_product\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 12,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 12,
+      "elapsed": 0.0003957080000134283,
+      "id": 13,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13815240784,
+        "value": "<oscar.apps.catalogue.product_attributes.ProductAttributesContainer object at 0x33773d850>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.product_attributes.ProductAttributesContainer"
+      },
+      "id": 14,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.product_attributes.ProductAttributesContainer",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/product_attributes.py",
+      "lineno": 207
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13815240784,
+        "value": "<oscar.apps.catalogue.product_attributes.ProductAttributesContainer object at 0x33773d850>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.product_attributes.ProductAttributesContainer"
+      },
+      "id": 15,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.product_attributes.ProductAttributesContainer",
+      "method_id": "get_all_attributes",
+      "path": "src/oscar/apps/catalogue/product_attributes.py",
+      "lineno": 198
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13815239152,
+        "value": "<Product: testing>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Product"
+      },
+      "id": 16,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProduct",
+      "method_id": "get_product_class",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 703
+    },
+    {
+      "return_value": {
+        "object_id": 13815241360,
+        "value": "<ProductClass: Clothing>",
+        "class": "oscar.apps.catalogue.models.ProductClass"
+      },
+      "parent_id": 16,
+      "elapsed": 0.0000019073486328125,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13815248992,
+        "value": "{}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.product_attributes.QuerysetCache",
+        "size": 0
+      },
+      "id": 18,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.product_attributes.QuerysetCache",
+      "method_id": "queryset",
+      "path": "src/oscar/apps/catalogue/product_attributes.py",
+      "lineno": 13
+    },
+    {
+      "return_value": {
+        "object_id": 13815206432,
+        "value": "<QuerySet [<ProductAttribute: Number of pages>]>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 18,
+      "elapsed": 9.5367431640625e-7,
+      "id": 19,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13815206432,
+        "value": "<QuerySet [<ProductAttribute: Number of pages>]>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 15,
+      "elapsed": 0.0011169910430908203,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_productattribute\".\"id\", \"catalogue_productattribute\".\"product_class_id\", \"catalogue_productattribute\".\"name\", \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\", \"catalogue_productattribute\".\"option_group_id\", \"catalogue_productattribute\".\"required\" FROM \"catalogue_productattribute\" WHERE \"catalogue_productattribute\".\"product_class_id\" = 519 ORDER BY \"catalogue_productattribute\".\"code\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 21,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 21,
+      "elapsed": 0.0019850829999938924,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13815240784,
+        "value": "<oscar.apps.catalogue.product_attributes.ProductAttributesContainer object at 0x33773d850>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.product_attributes.ProductAttributesContainer"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13815187392,
+          "value": "<ProductAttribute: Number of pages>",
+          "name": "attribute",
+          "class": "oscar.apps.catalogue.models.ProductAttribute"
+        }
+      ],
+      "id": 23,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.product_attributes.ProductAttributesContainer",
+      "method_id": "get_value_by_attribute",
+      "path": "src/oscar/apps/catalogue/product_attributes.py",
+      "lineno": 195
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13815239152,
+        "value": "<Product: testing>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Product"
+      },
+      "id": 24,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProduct",
+      "method_id": "get_attribute_values",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 735
+    },
+    {
+      "return_value": {
+        "object_id": 13815189408,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 24,
+      "elapsed": 0.00004506111145019531,
+      "id": 25,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13815250352,
+        "value": "{}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.product_attributes.QuerysetCache",
+        "size": 0
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13815091504,
+          "value": "'num_pages'",
+          "name": "code",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "default",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 26,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.product_attributes.QuerysetCache",
+      "method_id": "get",
+      "path": "src/oscar/apps/catalogue/product_attributes.py",
+      "lineno": 16
+    },
+    {
+      "sql_query": {
+        "sql": "DECLARE \"_django_curs_8669432832_sync_207\" NO SCROLL CURSOR WITHOUT HOLD FOR SELECT \"catalogue_productattributevalue\".\"id\", \"catalogue_productattributevalue\".\"attribute_id\", \"catalogue_productattributevalue\".\"product_id\", \"catalogue_productattributevalue\".\"value_text\", \"catalogue_productattributevalue\".\"value_integer\", \"catalogue_productattributevalue\".\"value_boolean\", \"catalogue_productattributevalue\".\"value_float\", \"catalogue_productattributevalue\".\"value_richtext\", \"catalogue_productattributevalue\".\"value_date\", \"catalogue_productattributevalue\".\"value_datetime\", \"catalogue_productattributevalue\".\"value_option_id\", \"catalogue_productattributevalue\".\"value_file\", \"catalogue_productattributevalue\".\"value_image\", \"catalogue_productattributevalue\".\"entity_content_type_id\", \"catalogue_productattributevalue\".\"entity_object_id\", \"catalogue_productattribute\".\"code\" AS \"code\", \"catalogue_productattribute\".\"id\", \"catalogue_productattribute\".\"product_class_id\", \"catalogue_productattribute\".\"name\", \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\", \"catalogue_productattribute\".\"option_group_id\", \"catalogue_productattribute\".\"required\" FROM \"catalogue_productattributevalue\" INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE \"catalogue_productattributevalue\".\"product_id\" = 692",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 27,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 27,
+      "elapsed": 0.0008244579999825419,
+      "id": 28,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 26,
+      "elapsed": 0.0019750595092773438,
+      "id": 29,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 23,
+      "elapsed": 0.003615856170654297,
+      "id": 30,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13815187392,
+        "value": "<ProductAttribute: Number of pages>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.ProductAttribute"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13815178096,
+          "value": "<ProductAttributeValue: Number of pages: None>",
+          "name": "value_obj",
+          "class": "oscar.apps.catalogue.models.ProductAttributeValue"
+        },
+        {
+          "kind": "req",
+          "object_id": 4341395112,
+          "value": "100",
+          "name": "value",
+          "class": "builtins.int"
+        }
+      ],
+      "id": 31,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProductAttribute",
+      "method_id": "bind_value",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 1020
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13815187392,
+        "value": "<ProductAttribute: Number of pages>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.ProductAttribute"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13815178096,
+          "value": "<ProductAttributeValue: Number of pages: None>",
+          "name": "value_obj",
+          "class": "oscar.apps.catalogue.models.ProductAttributeValue"
+        },
+        {
+          "kind": "req",
+          "object_id": 4341395112,
+          "value": "100",
+          "name": "value",
+          "class": "builtins.int"
+        }
+      ],
+      "id": 32,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProductAttribute",
+      "method_id": "_bind_value",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 1014
+    },
+    {
+      "return_value": {
+        "object_id": 13815178096,
+        "value": "<ProductAttributeValue: Number of pages: 100>",
+        "class": "oscar.apps.catalogue.models.ProductAttributeValue"
+      },
+      "parent_id": 32,
+      "elapsed": 0.0000040531158447265625,
+      "id": 33,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13815178096,
+        "value": "<ProductAttributeValue: Number of pages: 100>",
+        "class": "oscar.apps.catalogue.models.ProductAttributeValue"
+      },
+      "parent_id": 31,
+      "elapsed": 0.00009202957153320312,
+      "id": 34,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_productattributevalue\" (\"attribute_id\", \"product_id\", \"value_text\", \"value_integer\", \"value_boolean\", \"value_float\", \"value_richtext\", \"value_date\", \"value_datetime\", \"value_option_id\", \"value_file\", \"value_image\", \"entity_content_type_id\", \"entity_object_id\") VALUES (48, 692, NULL, 100, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL) RETURNING \"catalogue_productattributevalue\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 35,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 35,
+      "elapsed": 0.000518875000011576,
+      "id": 36,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13815240784,
+        "value": "<oscar.apps.catalogue.product_attributes.ProductAttributesContainer object at 0x33773d850>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.product_attributes.ProductAttributesContainer"
+      },
+      "id": 37,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.product_attributes.ProductAttributesContainer",
+      "method_id": "invalidate",
+      "path": "src/oscar/apps/catalogue/product_attributes.py",
+      "lineno": 122
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 37,
+      "elapsed": 0.0000019073486328125,
+      "id": 38,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 14,
+      "elapsed": 0.009398937225341797,
+      "id": 39,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 1,
+      "elapsed": 0.01020193099975586,
+      "id": 40,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Product creation tests",
+    "recording": {
+      "defined_class": "tests.integration.catalogue.test_product.ProductCreationTests",
+      "method_id": "test_create_products_with_attributes"
+    },
+    "source_location": "tests/integration/catalogue/test_product.py:34",
+    "name": "Product creation tests create products with attributes",
+    "feature": "Create products with attributes",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractProduct",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:590"
+                        },
+                        {
+                          "name": "get_title",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:674"
+                        },
+                        {
+                          "name": "get_product_class",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:703"
+                        },
+                        {
+                          "name": "get_attribute_values",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:735"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "AbstractProductAttribute",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "bind_value",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:1020"
+                        },
+                        {
+                          "name": "_bind_value",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:1014"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "product_attributes",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "ProductAttributesContainer",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/product_attributes.py:207"
+                        },
+                        {
+                          "name": "get_all_attributes",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/product_attributes.py:198"
+                        },
+                        {
+                          "name": "get_value_by_attribute",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/product_attributes.py:195"
+                        },
+                        {
+                          "name": "invalidate",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/product_attributes.py:122"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "QuerysetCache",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "queryset",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/product_attributes.py:13"
+                        },
+                        {
+                          "name": "get",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/product_attributes.py:16"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "utils",
+              "type": "class",
+              "children": [
+                {
+                  "name": "slugify",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:68"
+                },
+                {
+                  "name": "default_slugifier",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:57"
+                },
+                {
+                  "name": "cautious_slugify",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:20"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "models",
+          "type": "package",
+          "children": [
+            {
+              "name": "fields",
+              "type": "package",
+              "children": [
+                {
+                  "name": "NullCharField",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "get_prep_value",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/models/fields/__init__.py:122"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_product\" (\"structure\", \"is_public\", \"upc\", \"parent_id\", \"title\", \"slug\", \"description\", \"meta_title\", \"meta_description\", \"product_class_id\", \"rating\", \"date_created\", \"date_updated\", \"is_discountable\") VALUES ('standalone', true, '1234', NULL, 'testing', 'testing', '', NULL, NULL, 519, NULL, '2024-07-22T17:28:00.996967+00:00'::timestamptz, '2024-07-22T17:28:00.996978+00:00'::timestamptz, true) RETURNING \"catalogue_product\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_productattribute\".\"id\", \"catalogue_productattribute\".\"product_class_id\", \"catalogue_productattribute\".\"name\", \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\", \"catalogue_productattribute\".\"option_group_id\", \"catalogue_productattribute\".\"required\" FROM \"catalogue_productattribute\" WHERE \"catalogue_productattribute\".\"product_class_id\" = 519 ORDER BY \"catalogue_productattribute\".\"code\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "DECLARE \"_django_curs_8669432832_sync_207\" NO SCROLL CURSOR WITHOUT HOLD FOR SELECT \"catalogue_productattributevalue\".\"id\", \"catalogue_productattributevalue\".\"attribute_id\", \"catalogue_productattributevalue\".\"product_id\", \"catalogue_productattributevalue\".\"value_text\", \"catalogue_productattributevalue\".\"value_integer\", \"catalogue_productattributevalue\".\"value_boolean\", \"catalogue_productattributevalue\".\"value_float\", \"catalogue_productattributevalue\".\"value_richtext\", \"catalogue_productattributevalue\".\"value_date\", \"catalogue_productattributevalue\".\"value_datetime\", \"catalogue_productattributevalue\".\"value_option_id\", \"catalogue_productattributevalue\".\"value_file\", \"catalogue_productattributevalue\".\"value_image\", \"catalogue_productattributevalue\".\"entity_content_type_id\", \"catalogue_productattributevalue\".\"entity_object_id\", \"catalogue_productattribute\".\"code\" AS \"code\", \"catalogue_productattribute\".\"id\", \"catalogue_productattribute\".\"product_class_id\", \"catalogue_productattribute\".\"name\", \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\", \"catalogue_productattribute\".\"option_group_id\", \"catalogue_productattribute\".\"required\" FROM \"catalogue_productattributevalue\" INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE \"catalogue_productattributevalue\".\"product_id\" = 692"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_productattributevalue\" (\"attribute_id\", \"product_id\", \"value_text\", \"value_integer\", \"value_boolean\", \"value_float\", \"value_richtext\", \"value_date\", \"value_datetime\", \"value_option_id\", \"value_file\", \"value_image\", \"entity_content_type_id\", \"entity_object_id\") VALUES (48, 692, NULL, 100, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL) RETURNING \"catalogue_productattributevalue\".\"id\""
+        }
+      ]
+    }
+  ]
+}

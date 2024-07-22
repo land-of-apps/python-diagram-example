@@ -1,0 +1,142 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394984592,
+        "value": "<oscar.models.fields.NullCharField: proxy_class>",
+        "name": "self",
+        "class": "oscar.models.fields.NullCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "value",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.NullCharField",
+      "method_id": "get_prep_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 122
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0000019073486328125,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"offer_benefit\".\"id\", \"offer_benefit\".\"range_id\", \"offer_benefit\".\"type\", \"offer_benefit\".\"value\", \"offer_benefit\".\"max_affected_items\", \"offer_benefit\".\"proxy_class\" FROM \"offer_benefit\" WHERE NOT (\"offer_benefit\".\"proxy_class\" IS NULL)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 3,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 3,
+      "elapsed": 0.0012695410000276297,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Benefit form",
+    "recording": {
+      "defined_class": "tests.integration.dashboard.test_offer_forms.TestBenefitForm",
+      "method_id": "test_is_valid_no_data"
+    },
+    "source_location": "tests/integration/dashboard/test_offer_forms.py:45",
+    "name": "Benefit form is valid no data",
+    "feature": "Is valid no data",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "models",
+          "type": "package",
+          "children": [
+            {
+              "name": "fields",
+              "type": "package",
+              "children": [
+                {
+                  "name": "NullCharField",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "get_prep_value",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/models/fields/__init__.py:122"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"offer_benefit\".\"id\", \"offer_benefit\".\"range_id\", \"offer_benefit\".\"type\", \"offer_benefit\".\"value\", \"offer_benefit\".\"max_affected_items\", \"offer_benefit\".\"proxy_class\" FROM \"offer_benefit\" WHERE NOT (\"offer_benefit\".\"proxy_class\" IS NULL)"
+        }
+      ]
+    }
+  ]
+}

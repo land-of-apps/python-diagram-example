@@ -1,0 +1,1801 @@
+{
+  "events": [
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_attributeoptiongroup\" (\"name\") VALUES ('minte') RETURNING \"catalogue_attributeoptiongroup\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.0013296250000109922,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_attributeoption\" (\"group_id\", \"option\") VALUES (46, 'henk') RETURNING \"catalogue_attributeoption\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 3,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 3,
+      "elapsed": 0.0008053340000060416,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_attributeoption\" (\"group_id\", \"option\") VALUES (46, 'klaas') RETURNING \"catalogue_attributeoption\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.00041137499999877036,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4393905600,
+        "value": "<oscar.models.fields.autoslugfield.AutoSlugField: code>",
+        "name": "self",
+        "class": "oscar.models.fields.autoslugfield.AutoSlugField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13784876800,
+          "value": "<Option: example option>",
+          "name": "model_instance",
+          "class": "oscar.apps.catalogue.models.Option"
+        },
+        {
+          "kind": "req",
+          "object_id": 4341172976,
+          "value": "True",
+          "name": "add",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.autoslugfield.AutoSlugField",
+      "method_id": "pre_save",
+      "path": "src/oscar/models/fields/autoslugfield.py",
+      "lineno": 169
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4393905600,
+        "value": "<oscar.models.fields.autoslugfield.AutoSlugField: code>",
+        "name": "self",
+        "class": "oscar.models.fields.autoslugfield.AutoSlugField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13784876800,
+          "value": "<Option: example option>",
+          "name": "model_instance",
+          "class": "oscar.apps.catalogue.models.Option"
+        },
+        {
+          "kind": "req",
+          "object_id": 4341172976,
+          "value": "True",
+          "name": "add",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 8,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.autoslugfield.AutoSlugField",
+      "method_id": "create_slug",
+      "path": "src/oscar/models/fields/autoslugfield.py",
+      "lineno": 105
+    },
+    {
+      "return_value": {
+        "object_id": 4350138352,
+        "value": "'example'",
+        "class": "builtins.str"
+      },
+      "parent_id": 8,
+      "elapsed": 0.0000040531158447265625,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4350138352,
+        "value": "'example'",
+        "class": "builtins.str"
+      },
+      "parent_id": 7,
+      "elapsed": 0.00007390975952148438,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_option\" (\"name\", \"code\", \"type\", \"required\", \"option_group_id\", \"help_text\", \"order\") VALUES ('example option', 'example', 'checkbox', true, 46, NULL, NULL) RETURNING \"catalogue_option\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 11,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 11,
+      "elapsed": 0.001005416999987574,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_productclass_options\" (\"productclass_id\", \"option_id\") VALUES (429, 48) ON CONFLICT DO NOTHING",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 13,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 13,
+      "elapsed": 0.0006888340000159587,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784875456,
+        "value": "<AddToBasketForm bound=True, valid=Unknown, fields=(quantity)>",
+        "name": "self",
+        "class": "oscar.apps.basket.forms.AddToBasketForm"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13784952944,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 15,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.forms.AddToBasketForm",
+      "method_id": "_create_product_fields",
+      "path": "src/oscar/apps/basket/forms.py",
+      "lineno": 269
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784952944,
+        "value": "<Product: Dùｍϻϒ title>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Product"
+      },
+      "id": 16,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProduct",
+      "method_id": "get_product_class",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 703
+    },
+    {
+      "return_value": {
+        "object_id": 13784810544,
+        "value": "<ProductClass: Dùｍϻϒ item class>",
+        "class": "oscar.apps.catalogue.models.ProductClass"
+      },
+      "parent_id": 16,
+      "elapsed": 0.0000069141387939453125,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_option\".\"id\", \"catalogue_option\".\"name\", \"catalogue_option\".\"code\", \"catalogue_option\".\"type\", \"catalogue_option\".\"required\", \"catalogue_option\".\"option_group_id\", \"catalogue_option\".\"help_text\", \"catalogue_option\".\"order\" FROM \"catalogue_option\" LEFT OUTER JOIN \"catalogue_productclass_options\" ON (\"catalogue_option\".\"id\" = \"catalogue_productclass_options\".\"option_id\") LEFT OUTER JOIN \"catalogue_product_product_options\" ON (\"catalogue_option\".\"id\" = \"catalogue_product_product_options\".\"option_id\") WHERE (\"catalogue_productclass_options\".\"productclass_id\" = 429 OR \"catalogue_product_product_options\".\"product_id\" = 622) ORDER BY \"catalogue_option\".\"order\" ASC, \"catalogue_option\".\"name\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 18,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 18,
+      "elapsed": 0.001456290999982457,
+      "id": 19,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784875456,
+        "value": "<AddToBasketForm bound=True, valid=Unknown, fields=(quantity)>",
+        "name": "self",
+        "class": "oscar.apps.basket.forms.AddToBasketForm"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13784952944,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        },
+        {
+          "kind": "req",
+          "object_id": 13784876656,
+          "value": "<Option: example option>",
+          "name": "option",
+          "class": "oscar.apps.catalogue.models.Option"
+        }
+      ],
+      "id": 20,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.forms.AddToBasketForm",
+      "method_id": "_add_option_field",
+      "path": "src/oscar/apps/basket/forms.py",
+      "lineno": 276
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784876656,
+        "value": "<Option: example option>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Option"
+      },
+      "id": 21,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractOption",
+      "method_id": "get_choices",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 1434
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_attributeoptiongroup\".\"id\", \"catalogue_attributeoptiongroup\".\"name\" FROM \"catalogue_attributeoptiongroup\" WHERE \"catalogue_attributeoptiongroup\".\"id\" = 46 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 22,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 22,
+      "elapsed": 0.0004729579999889211,
+      "id": 23,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_attributeoption\".\"id\", \"catalogue_attributeoption\".\"group_id\", \"catalogue_attributeoption\".\"option\" FROM \"catalogue_attributeoption\" WHERE \"catalogue_attributeoption\".\"group_id\" = 46",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 24,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 24,
+      "elapsed": 0.0003884159999927306,
+      "id": 25,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13785024000,
+        "value": "[('henk', 'henk'), ('klaas', 'klaas')]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.tuple"
+          },
+          {
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 2
+      },
+      "parent_id": 21,
+      "elapsed": 0.001390218734741211,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 20,
+      "elapsed": 0.0014638900756835938,
+      "id": 27,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 15,
+      "elapsed": 0.003840923309326172,
+      "id": 28,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784875456,
+        "value": "<AddToBasketForm bound=True, valid=True, fields=(quantity;example)>",
+        "name": "self",
+        "class": "oscar.apps.basket.forms.AddToBasketForm"
+      },
+      "id": 29,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.forms.AddToBasketForm",
+      "method_id": "clean_quantity",
+      "path": "src/oscar/apps/basket/forms.py",
+      "lineno": 302
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784953376,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "id": 30,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "all_lines",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 13784840032,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 30,
+      "elapsed": 9.5367431640625e-7,
+      "id": 31,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\", \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\", \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"basket_line\" INNER JOIN \"catalogue_product\" ON (\"basket_line\".\"product_id\" = \"catalogue_product\".\"id\") INNER JOIN \"partner_stockrecord\" ON (\"basket_line\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE \"basket_line\".\"basket_id\" = 258 ORDER BY \"basket_line\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 32,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 32,
+      "elapsed": 0.0008827499999881638,
+      "id": 33,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341391944,
+        "value": "1",
+        "class": "builtins.int"
+      },
+      "parent_id": 29,
+      "elapsed": 0.004330873489379883,
+      "id": 34,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784875456,
+        "value": "<AddToBasketForm bound=True, valid=False, fields=(quantity;example)>",
+        "name": "self",
+        "class": "oscar.apps.basket.forms.AddToBasketForm"
+      },
+      "id": 35,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.forms.AddToBasketForm",
+      "method_id": "clean",
+      "path": "src/oscar/apps/basket/forms.py",
+      "lineno": 329
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784952992,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x335a5b0a0>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13784952944,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "stockrecord",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 36,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Structured",
+      "method_id": "fetch_for_product",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 119
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784952992,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x335a5b0a0>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13784952944,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 37,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.UseFirstStockRecord",
+      "method_id": "select_stockrecord",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 198
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 622 LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 38,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 38,
+      "elapsed": 0.0008350410000161901,
+      "id": 39,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13784891504,
+        "value": "<StockRecord: Partner: -2, product: Dùｍϻϒ title (sku_622_3421)>",
+        "class": "tests._site.apps.partner.models.StockRecord"
+      },
+      "parent_id": 37,
+      "elapsed": 0.0011861324310302734,
+      "id": 40,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784952992,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x335a5b0a0>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13784952944,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        },
+        {
+          "kind": "req",
+          "object_id": 13784891504,
+          "value": "<StockRecord: Partner: -2, product: Dùｍϻϒ title (sku_622_3421)>",
+          "name": "stockrecord",
+          "class": "tests._site.apps.partner.models.StockRecord"
+        }
+      ],
+      "id": 41,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.NoTax",
+      "method_id": "pricing_policy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 238
+    },
+    {
+      "return_value": {
+        "object_id": 13784841040,
+        "value": "FixedPrice({'currency': 'GBP', 'excl_tax': Decimal('9.99'), 'tax': Decimal('0.00'), 'tax_code': None})",
+        "class": "oscar.apps.partner.prices.FixedPrice"
+      },
+      "parent_id": 41,
+      "elapsed": 0.000003814697265625,
+      "id": 42,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784952992,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x335a5b0a0>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13784952944,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        },
+        {
+          "kind": "req",
+          "object_id": 13784891504,
+          "value": "<StockRecord: Partner: -2, product: Dùｍϻϒ title (sku_622_3421)>",
+          "name": "stockrecord",
+          "class": "tests._site.apps.partner.models.StockRecord"
+        }
+      ],
+      "id": 43,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.StockRequired",
+      "method_id": "availability_policy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 214
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784952944,
+        "value": "<Product: Dùｍϻϒ title>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Product"
+      },
+      "id": 44,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProduct",
+      "method_id": "get_product_class",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 703
+    },
+    {
+      "return_value": {
+        "object_id": 13784810544,
+        "value": "<ProductClass: Dùｍϻϒ item class>",
+        "class": "oscar.apps.catalogue.models.ProductClass"
+      },
+      "parent_id": 44,
+      "elapsed": 0.0000030994415283203125,
+      "id": 45,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13784841424,
+        "value": "<oscar.apps.partner.availability.StockRequired object at 0x335a3fcd0>",
+        "class": "oscar.apps.partner.availability.StockRequired"
+      },
+      "parent_id": 43,
+      "elapsed": 0.000047206878662109375,
+      "id": 46,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13780003232,
+        "value": "PurchaseInfo(price=FixedPrice({'currency': 'GBP', 'excl_tax': Decimal('9.99'), 'tax': Decimal('0.00'), 'tax_code': None}), availability=<oscar.apps.partner.availability.StockRequired object at 0x335a3fcd0>, stockrecord=<StockRecord: Partner: -2, product: Dùｍϻϒ title (sku_622_3421)>)",
+        "class": "oscar.apps.partner.strategy.PurchaseInfo"
+      },
+      "parent_id": 36,
+      "elapsed": 0.0021169185638427734,
+      "id": 47,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784953376,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "id": 48,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "all_lines",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 13784840032,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 48,
+      "elapsed": 0,
+      "id": 49,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784953376,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13784952944,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 50,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "product_quantity",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 631
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT SUM(\"basket_line\".\"quantity\") AS \"quantity__sum\" FROM \"basket_line\" WHERE (\"basket_line\".\"basket_id\" = 258 AND \"basket_line\".\"product_id\" = 622)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 51,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 51,
+      "elapsed": 0.0004459999999824049,
+      "id": 52,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341391912,
+        "value": "0",
+        "class": "builtins.int"
+      },
+      "parent_id": 50,
+      "elapsed": 0.0008692741394042969,
+      "id": 53,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784841424,
+        "value": "<oscar.apps.partner.availability.StockRequired object at 0x335a3fcd0>",
+        "name": "self",
+        "class": "oscar.apps.partner.availability.StockRequired"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4341391944,
+          "value": "1",
+          "name": "quantity",
+          "class": "builtins.int"
+        }
+      ],
+      "id": 54,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.availability.StockRequired",
+      "method_id": "is_purchase_permitted",
+      "path": "src/oscar/apps/partner/availability.py",
+      "lineno": 89
+    },
+    {
+      "return_value": {
+        "object_id": 4394017344,
+        "value": "(True, '')",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 54,
+      "elapsed": 0.0000021457672119140625,
+      "id": 55,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13784704064,
+        "value": "{'quantity': 1}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "quantity",
+            "class": "builtins.int"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 35,
+      "elapsed": 0.003278017044067383,
+      "id": 56,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784877136,
+        "value": "<AddToBasketForm bound=True, valid=Unknown, fields=(quantity)>",
+        "name": "self",
+        "class": "oscar.apps.basket.forms.AddToBasketForm"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13784952944,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 57,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.forms.AddToBasketForm",
+      "method_id": "_create_product_fields",
+      "path": "src/oscar/apps/basket/forms.py",
+      "lineno": 269
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784952944,
+        "value": "<Product: Dùｍϻϒ title>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Product"
+      },
+      "id": 58,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProduct",
+      "method_id": "get_product_class",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 703
+    },
+    {
+      "return_value": {
+        "object_id": 13784810544,
+        "value": "<ProductClass: Dùｍϻϒ item class>",
+        "class": "oscar.apps.catalogue.models.ProductClass"
+      },
+      "parent_id": 58,
+      "elapsed": 0.0000030994415283203125,
+      "id": 59,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_option\".\"id\", \"catalogue_option\".\"name\", \"catalogue_option\".\"code\", \"catalogue_option\".\"type\", \"catalogue_option\".\"required\", \"catalogue_option\".\"option_group_id\", \"catalogue_option\".\"help_text\", \"catalogue_option\".\"order\" FROM \"catalogue_option\" LEFT OUTER JOIN \"catalogue_productclass_options\" ON (\"catalogue_option\".\"id\" = \"catalogue_productclass_options\".\"option_id\") LEFT OUTER JOIN \"catalogue_product_product_options\" ON (\"catalogue_option\".\"id\" = \"catalogue_product_product_options\".\"option_id\") WHERE (\"catalogue_productclass_options\".\"productclass_id\" = 429 OR \"catalogue_product_product_options\".\"product_id\" = 622) ORDER BY \"catalogue_option\".\"order\" ASC, \"catalogue_option\".\"name\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 60,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 60,
+      "elapsed": 0.0007807500000183154,
+      "id": 61,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784877136,
+        "value": "<AddToBasketForm bound=True, valid=Unknown, fields=(quantity)>",
+        "name": "self",
+        "class": "oscar.apps.basket.forms.AddToBasketForm"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13784952944,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        },
+        {
+          "kind": "req",
+          "object_id": 13784811744,
+          "value": "<Option: example option>",
+          "name": "option",
+          "class": "oscar.apps.catalogue.models.Option"
+        }
+      ],
+      "id": 62,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.forms.AddToBasketForm",
+      "method_id": "_add_option_field",
+      "path": "src/oscar/apps/basket/forms.py",
+      "lineno": 276
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784811744,
+        "value": "<Option: example option>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Option"
+      },
+      "id": 63,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractOption",
+      "method_id": "get_choices",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 1434
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_attributeoptiongroup\".\"id\", \"catalogue_attributeoptiongroup\".\"name\" FROM \"catalogue_attributeoptiongroup\" WHERE \"catalogue_attributeoptiongroup\".\"id\" = 46 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 64,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 64,
+      "elapsed": 0.0006379170000059275,
+      "id": 65,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_attributeoption\".\"id\", \"catalogue_attributeoption\".\"group_id\", \"catalogue_attributeoption\".\"option\" FROM \"catalogue_attributeoption\" WHERE \"catalogue_attributeoption\".\"group_id\" = 46",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 66,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 66,
+      "elapsed": 0.001165124999999989,
+      "id": 67,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13784905024,
+        "value": "[('henk', 'henk'), ('klaas', 'klaas')]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.tuple"
+          },
+          {
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 2
+      },
+      "parent_id": 63,
+      "elapsed": 0.002255678176879883,
+      "id": 68,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 62,
+      "elapsed": 0.0023267269134521484,
+      "id": 69,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 57,
+      "elapsed": 0.0038759708404541016,
+      "id": 70,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784877136,
+        "value": "<AddToBasketForm bound=True, valid=True, fields=(quantity;example)>",
+        "name": "self",
+        "class": "oscar.apps.basket.forms.AddToBasketForm"
+      },
+      "id": 71,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.forms.AddToBasketForm",
+      "method_id": "clean_quantity",
+      "path": "src/oscar/apps/basket/forms.py",
+      "lineno": 302
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784953376,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "id": 72,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "all_lines",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 13784840032,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 72,
+      "elapsed": 0,
+      "id": 73,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341391944,
+        "value": "1",
+        "class": "builtins.int"
+      },
+      "parent_id": 71,
+      "elapsed": 0.00008797645568847656,
+      "id": 74,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784877136,
+        "value": "<AddToBasketForm bound=True, valid=True, fields=(quantity;example)>",
+        "name": "self",
+        "class": "oscar.apps.basket.forms.AddToBasketForm"
+      },
+      "id": 75,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.forms.AddToBasketForm",
+      "method_id": "clean",
+      "path": "src/oscar/apps/basket/forms.py",
+      "lineno": 329
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784952992,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x335a5b0a0>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13784952944,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "stockrecord",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 76,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Structured",
+      "method_id": "fetch_for_product",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 119
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784952992,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x335a5b0a0>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13784952944,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 77,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.UseFirstStockRecord",
+      "method_id": "select_stockrecord",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 198
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 622 LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 78,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 78,
+      "elapsed": 0.0006130419999976766,
+      "id": 79,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13784891936,
+        "value": "<StockRecord: Partner: -2, product: Dùｍϻϒ title (sku_622_3421)>",
+        "class": "tests._site.apps.partner.models.StockRecord"
+      },
+      "parent_id": 77,
+      "elapsed": 0.0009400844573974609,
+      "id": 80,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784952992,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x335a5b0a0>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13784952944,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        },
+        {
+          "kind": "req",
+          "object_id": 13784891936,
+          "value": "<StockRecord: Partner: -2, product: Dùｍϻϒ title (sku_622_3421)>",
+          "name": "stockrecord",
+          "class": "tests._site.apps.partner.models.StockRecord"
+        }
+      ],
+      "id": 81,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.NoTax",
+      "method_id": "pricing_policy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 238
+    },
+    {
+      "return_value": {
+        "object_id": 13784893904,
+        "value": "FixedPrice({'currency': 'GBP', 'excl_tax': Decimal('9.99'), 'tax': Decimal('0.00'), 'tax_code': None})",
+        "class": "oscar.apps.partner.prices.FixedPrice"
+      },
+      "parent_id": 81,
+      "elapsed": 0.0000030994415283203125,
+      "id": 82,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784952992,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x335a5b0a0>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13784952944,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        },
+        {
+          "kind": "req",
+          "object_id": 13784891936,
+          "value": "<StockRecord: Partner: -2, product: Dùｍϻϒ title (sku_622_3421)>",
+          "name": "stockrecord",
+          "class": "tests._site.apps.partner.models.StockRecord"
+        }
+      ],
+      "id": 83,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.StockRequired",
+      "method_id": "availability_policy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 214
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784952944,
+        "value": "<Product: Dùｍϻϒ title>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Product"
+      },
+      "id": 84,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProduct",
+      "method_id": "get_product_class",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 703
+    },
+    {
+      "return_value": {
+        "object_id": 13784810544,
+        "value": "<ProductClass: Dùｍϻϒ item class>",
+        "class": "oscar.apps.catalogue.models.ProductClass"
+      },
+      "parent_id": 84,
+      "elapsed": 0.00000286102294921875,
+      "id": 85,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13784893376,
+        "value": "<oscar.apps.partner.availability.StockRequired object at 0x335a4c7c0>",
+        "class": "oscar.apps.partner.availability.StockRequired"
+      },
+      "parent_id": 83,
+      "elapsed": 0.0000457763671875,
+      "id": 86,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13780075760,
+        "value": "PurchaseInfo(price=FixedPrice({'currency': 'GBP', 'excl_tax': Decimal('9.99'), 'tax': Decimal('0.00'), 'tax_code': None}), availability=<oscar.apps.partner.availability.StockRequired object at 0x335a4c7c0>, stockrecord=<StockRecord: Partner: -2, product: Dùｍϻϒ title (sku_622_3421)>)",
+        "class": "oscar.apps.partner.strategy.PurchaseInfo"
+      },
+      "parent_id": 76,
+      "elapsed": 0.0017430782318115234,
+      "id": 87,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784953376,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "id": 88,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "all_lines",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 13784840032,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 88,
+      "elapsed": 0,
+      "id": 89,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784953376,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13784952944,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 90,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "product_quantity",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 631
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT SUM(\"basket_line\".\"quantity\") AS \"quantity__sum\" FROM \"basket_line\" WHERE (\"basket_line\".\"basket_id\" = 258 AND \"basket_line\".\"product_id\" = 622)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 91,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 91,
+      "elapsed": 0.0004768330000217702,
+      "id": 92,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341391912,
+        "value": "0",
+        "class": "builtins.int"
+      },
+      "parent_id": 90,
+      "elapsed": 0.0008928775787353516,
+      "id": 93,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13784893376,
+        "value": "<oscar.apps.partner.availability.StockRequired object at 0x335a4c7c0>",
+        "name": "self",
+        "class": "oscar.apps.partner.availability.StockRequired"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4341391944,
+          "value": "1",
+          "name": "quantity",
+          "class": "builtins.int"
+        }
+      ],
+      "id": 94,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.availability.StockRequired",
+      "method_id": "is_purchase_permitted",
+      "path": "src/oscar/apps/partner/availability.py",
+      "lineno": 89
+    },
+    {
+      "return_value": {
+        "object_id": 4394017344,
+        "value": "(True, '')",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 94,
+      "elapsed": 9.5367431640625e-7,
+      "id": 95,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13785037120,
+        "value": "{'quantity': 1, 'example': ['henk', 'klaas']}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "quantity",
+            "class": "builtins.int"
+          },
+          {
+            "name": "example",
+            "class": "builtins.list",
+            "items": [
+              {
+                "class": "builtins.str"
+              },
+              {
+                "class": "builtins.str"
+              }
+            ]
+          }
+        ],
+        "size": 2
+      },
+      "parent_id": 75,
+      "elapsed": 0.0029349327087402344,
+      "id": 96,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Add to basket with option form",
+    "recording": {
+      "defined_class": "tests.integration.basket.test_forms.TestAddToBasketWithOptionForm",
+      "method_id": "test_add_to_basket_with_checkbox_option"
+    },
+    "source_location": "tests/integration/basket/test_forms.py:378",
+    "name": "Add to basket with option form add to basket with checkbox option",
+    "feature": "Add to basket with checkbox option",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "models",
+          "type": "package",
+          "children": [
+            {
+              "name": "fields",
+              "type": "package",
+              "children": [
+                {
+                  "name": "autoslugfield",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AutoSlugField",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "pre_save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/models/fields/autoslugfield.py:169"
+                        },
+                        {
+                          "name": "create_slug",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/models/fields/autoslugfield.py:105"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "basket",
+              "type": "package",
+              "children": [
+                {
+                  "name": "forms",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AddToBasketForm",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "_create_product_fields",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/forms.py:269"
+                        },
+                        {
+                          "name": "_add_option_field",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/forms.py:276"
+                        },
+                        {
+                          "name": "clean_quantity",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/forms.py:302"
+                        },
+                        {
+                          "name": "clean",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/forms.py:329"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractBasket",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "all_lines",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/abstract_models.py:130"
+                        },
+                        {
+                          "name": "product_quantity",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/abstract_models.py:631"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractProduct",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get_product_class",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:703"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "AbstractOption",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get_choices",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:1434"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "partner",
+              "type": "package",
+              "children": [
+                {
+                  "name": "strategy",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Structured",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "fetch_for_product",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/strategy.py:119"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "UseFirstStockRecord",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "select_stockrecord",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/strategy.py:198"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "NoTax",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "pricing_policy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/strategy.py:238"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "StockRequired",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "availability_policy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/strategy.py:214"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "availability",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "StockRequired",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "is_purchase_permitted",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/availability.py:89"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_attributeoptiongroup\" (\"name\") VALUES ('minte') RETURNING \"catalogue_attributeoptiongroup\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_attributeoption\" (\"group_id\", \"option\") VALUES (46, 'henk') RETURNING \"catalogue_attributeoption\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_attributeoption\" (\"group_id\", \"option\") VALUES (46, 'klaas') RETURNING \"catalogue_attributeoption\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_option\" (\"name\", \"code\", \"type\", \"required\", \"option_group_id\", \"help_text\", \"order\") VALUES ('example option', 'example', 'checkbox', true, 46, NULL, NULL) RETURNING \"catalogue_option\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_productclass_options\" (\"productclass_id\", \"option_id\") VALUES (429, 48) ON CONFLICT DO NOTHING"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_option\".\"id\", \"catalogue_option\".\"name\", \"catalogue_option\".\"code\", \"catalogue_option\".\"type\", \"catalogue_option\".\"required\", \"catalogue_option\".\"option_group_id\", \"catalogue_option\".\"help_text\", \"catalogue_option\".\"order\" FROM \"catalogue_option\" LEFT OUTER JOIN \"catalogue_productclass_options\" ON (\"catalogue_option\".\"id\" = \"catalogue_productclass_options\".\"option_id\") LEFT OUTER JOIN \"catalogue_product_product_options\" ON (\"catalogue_option\".\"id\" = \"catalogue_product_product_options\".\"option_id\") WHERE (\"catalogue_productclass_options\".\"productclass_id\" = 429 OR \"catalogue_product_product_options\".\"product_id\" = 622) ORDER BY \"catalogue_option\".\"order\" ASC, \"catalogue_option\".\"name\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_attributeoptiongroup\".\"id\", \"catalogue_attributeoptiongroup\".\"name\" FROM \"catalogue_attributeoptiongroup\" WHERE \"catalogue_attributeoptiongroup\".\"id\" = 46 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_attributeoption\".\"id\", \"catalogue_attributeoption\".\"group_id\", \"catalogue_attributeoption\".\"option\" FROM \"catalogue_attributeoption\" WHERE \"catalogue_attributeoption\".\"group_id\" = 46"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\", \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\", \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"basket_line\" INNER JOIN \"catalogue_product\" ON (\"basket_line\".\"product_id\" = \"catalogue_product\".\"id\") INNER JOIN \"partner_stockrecord\" ON (\"basket_line\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE \"basket_line\".\"basket_id\" = 258 ORDER BY \"basket_line\".\"id\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 622 LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SELECT SUM(\"basket_line\".\"quantity\") AS \"quantity__sum\" FROM \"basket_line\" WHERE (\"basket_line\".\"basket_id\" = 258 AND \"basket_line\".\"product_id\" = 622)"
+        }
+      ]
+    }
+  ]
+}

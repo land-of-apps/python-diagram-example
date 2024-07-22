@@ -1,0 +1,112 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "models",
+        "type": "package",
+        "children": [
+          {
+            "name": "fields",
+            "type": "package",
+            "children": [
+              {
+                "name": "autoslugfield",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AutoSlugField",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "pre_save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:169"
+                      },
+                      {
+                        "name": "create_slug",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:105"
+                      },
+                      {
+                        "name": "slugify_func",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:100"
+                      },
+                      {
+                        "name": "_slug_strip",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:81"
+                      },
+                      {
+                        "name": "get_queryset",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:93"
+                      },
+                      {
+                        "name": "get_internal_type",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:174"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core",
+        "type": "package",
+        "children": [
+          {
+            "name": "utils",
+            "type": "class",
+            "children": [
+              {
+                "name": "slugify",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:68"
+              },
+              {
+                "name": "default_slugifier",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:57"
+              },
+              {
+                "name": "cautious_slugify",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:20"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"slug\" = 'download' ORDER BY \"catalogue_productclass\".\"name\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"catalogue_productclass\" (\"name\", \"slug\", \"requires_shipping\", \"track_stock\") VALUES ('Download', 'download', false, true) RETURNING \"catalogue_productclass\".\"id\""
+      }
+    ]
+  }
+]

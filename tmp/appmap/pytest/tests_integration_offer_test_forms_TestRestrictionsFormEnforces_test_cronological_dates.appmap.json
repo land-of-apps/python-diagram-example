@@ -1,0 +1,171 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13965929872,
+        "value": "<RestrictionsForm bound=True, valid=False, fields=(start_datetime;end_datetime;max_basket_applications;max_user_applications;max_global_applications;max_discount;priority;exclusive;combinations)>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.forms.RestrictionsForm"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.forms.RestrictionsForm",
+      "method_id": "clean",
+      "path": "src/oscar/apps/dashboard/offers/forms.py",
+      "lineno": 73
+    },
+    {
+      "exceptions": [
+        {
+          "class": "django.core.exceptions.ValidationError",
+          "message": "['The end date must be after the start date']",
+          "object_id": 13965674816
+        }
+      ],
+      "parent_id": 1,
+      "elapsed": 0.000006198883056640625,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13965929968,
+        "value": "<ConditionalOffer: >",
+        "name": "self",
+        "class": "oscar.apps.offer.models.ConditionalOffer"
+      },
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.abstract_models.AbstractConditionalOffer",
+      "method_id": "clean",
+      "path": "src/oscar/apps/offer/abstract_models.py",
+      "lineno": 300
+    },
+    {
+      "exceptions": [
+        {
+          "class": "django.core.exceptions.ValidationError",
+          "message": "['End date should be later than start date']",
+          "object_id": 13965968480
+        }
+      ],
+      "parent_id": 3,
+      "elapsed": 0.000003814697265625,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      }
+    ],
+    "feature_group": "Restrictions form enforces",
+    "recording": {
+      "defined_class": "tests.integration.offer.test_forms.TestRestrictionsFormEnforces",
+      "method_id": "test_cronological_dates"
+    },
+    "source_location": "tests/integration/offer/test_forms.py:38",
+    "name": "Restrictions form enforces cronological dates",
+    "feature": "Cronological dates",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "dashboard",
+              "type": "package",
+              "children": [
+                {
+                  "name": "offers",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "forms",
+                      "type": "package",
+                      "children": [
+                        {
+                          "name": "RestrictionsForm",
+                          "type": "class",
+                          "children": [
+                            {
+                              "name": "clean",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/forms.py:73"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "offer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractConditionalOffer",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "clean",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/abstract_models.py:300"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

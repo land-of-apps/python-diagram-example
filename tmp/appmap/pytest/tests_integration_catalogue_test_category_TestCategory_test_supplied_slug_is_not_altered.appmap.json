@@ -1,0 +1,425 @@
+{
+  "events": [
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 2 AND \"catalogue_category\".\"path\" BETWEEN '00010000' AND '0001ZZZZ') ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.0005100410000125066,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '0001'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 3,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 3,
+      "elapsed": 0.0005010000000140735,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813045616,
+        "value": "<Category: Pröducts > Bücher>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13813066240,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('00010002', 2, 0, 'Bücher', '', NULL, NULL, '', 'bucher', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 6,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 6,
+      "elapsed": 0.0006752500000004602,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813045616,
+        "value": "<Category: Pröducts > Bücher>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 8,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813045616,
+        "value": "<Category: Pröducts > Bücher>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 9,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 13813055936,
+        "value": "<CategoryQuerySet [<Category: Pröducts > Bücher>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 9,
+      "elapsed": 0.00008082389831542969,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813058288,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813057184,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 11,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 13812923648,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 11,
+      "elapsed": 0.000008106231689453125,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13813058288,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13813057184,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 13,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 13813422144,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 13,
+      "elapsed": 0.000015020370483398438,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 277",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 15,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 15,
+      "elapsed": 0.0006143340000051012,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 277 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 17,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 17,
+      "elapsed": 0.0005937079999966954,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 8,
+      "elapsed": 0.005331754684448242,
+      "id": 19,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 5,
+      "elapsed": 0.007924079895019531,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Category",
+    "recording": {
+      "defined_class": "tests.integration.catalogue.test_category.TestCategory",
+      "method_id": "test_supplied_slug_is_not_altered"
+    },
+    "source_location": "tests/integration/catalogue/test_category.py:28",
+    "name": "Category supplied slug is not altered",
+    "feature": "Supplied slug is not altered",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractCategory",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:218"
+                        },
+                        {
+                          "name": "set_ancestors_are_public",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:230"
+                        },
+                        {
+                          "name": "get_descendants_and_self",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:275"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "ReverseStartsWith",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "process_lhs",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:71"
+                        },
+                        {
+                          "name": "process_rhs",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:68"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" = 2 AND \"catalogue_category\".\"path\" BETWEEN '00010000' AND '0001ZZZZ') ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '0001'"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('00010002', 2, 0, 'Bücher', '', NULL, NULL, '', 'bucher', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 277"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 277 LIMIT 21"
+        }
+      ]
+    }
+  ]
+}

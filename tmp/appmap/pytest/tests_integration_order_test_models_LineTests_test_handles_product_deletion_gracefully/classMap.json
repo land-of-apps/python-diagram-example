@@ -1,0 +1,138 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "models",
+        "type": "package",
+        "children": [
+          {
+            "name": "fields",
+            "type": "package",
+            "children": [
+              {
+                "name": "NullCharField",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "from_db_value",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/models/fields/__init__.py:117"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\" FROM \"catalogue_product\" WHERE \"catalogue_product\".\"id\" = 1069 LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_product\".\"id\" FROM \"catalogue_product\" WHERE \"catalogue_product\".\"parent_id\" IN (1069) ORDER BY \"catalogue_product\".\"date_created\" DESC"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_productattributevalue\".\"id\" FROM \"catalogue_productattributevalue\" WHERE \"catalogue_productattributevalue\".\"product_id\" IN (1069)"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_productimage\".\"id\", \"catalogue_productimage\".\"product_id\", \"catalogue_productimage\".\"original\", \"catalogue_productimage\".\"caption\", \"catalogue_productimage\".\"display_order\", \"catalogue_productimage\".\"date_created\" FROM \"catalogue_productimage\" WHERE \"catalogue_productimage\".\"product_id\" IN (1069) ORDER BY \"catalogue_productimage\".\"display_order\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"reviews_productreview\".\"id\" FROM \"reviews_productreview\" WHERE \"reviews_productreview\".\"product_id\" IN (1069) ORDER BY \"reviews_productreview\".\"delta_votes\" DESC, \"reviews_productreview\".\"id\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"partner_stockrecord\".\"id\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" IN (1069)"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"basket_line\".\"id\" FROM \"basket_line\" WHERE \"basket_line\".\"stockrecord_id\" IN (754) ORDER BY \"basket_line\".\"date_created\" ASC, \"basket_line\".\"id\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"basket_line\".\"id\" FROM \"basket_line\" WHERE \"basket_line\".\"product_id\" IN (1069) ORDER BY \"basket_line\".\"date_created\" ASC, \"basket_line\".\"id\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"basket_lineattribute\" WHERE \"basket_lineattribute\".\"line_id\" IN (489)"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"partner_stockalert\" WHERE \"partner_stockalert\".\"stockrecord_id\" IN (754)"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"analytics_productrecord\" WHERE \"analytics_productrecord\".\"product_id\" IN (1069)"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"analytics_userproductview\" WHERE \"analytics_userproductview\".\"product_id\" IN (1069)"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"catalogue_productcategory\" WHERE \"catalogue_productcategory\".\"product_id\" IN (1069)"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"catalogue_product_product_options\" WHERE \"catalogue_product_product_options\".\"product_id\" IN (1069)"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"catalogue_productrecommendation\" WHERE (\"catalogue_productrecommendation\".\"primary_id\" IN (1069) OR \"catalogue_productrecommendation\".\"recommendation_id\" IN (1069))"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"offer_range_excluded_products\" WHERE \"offer_range_excluded_products\".\"product_id\" IN (1069)"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"offer_rangeproduct\" WHERE \"offer_rangeproduct\".\"product_id\" IN (1069)"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"customer_productalert\" WHERE \"customer_productalert\".\"product_id\" IN (1069)"
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"order_line\" SET \"stockrecord_id\" = NULL WHERE \"order_line\".\"stockrecord_id\" IN (754)"
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"order_line\" SET \"product_id\" = NULL WHERE \"order_line\".\"product_id\" IN (1069)"
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"wishlists_line\" SET \"product_id\" = NULL WHERE \"wishlists_line\".\"product_id\" IN (1069)"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"basket_line\" WHERE \"basket_line\".\"id\" IN (489)"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"id\" IN (754)"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"catalogue_product\" WHERE \"catalogue_product\".\"id\" IN (1069)"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"order_line\".\"id\", \"order_line\".\"order_id\", \"order_line\".\"partner_id\", \"order_line\".\"partner_name\", \"order_line\".\"partner_sku\", \"order_line\".\"partner_line_reference\", \"order_line\".\"partner_line_notes\", \"order_line\".\"stockrecord_id\", \"order_line\".\"product_id\", \"order_line\".\"title\", \"order_line\".\"upc\", \"order_line\".\"quantity\", \"order_line\".\"line_price_incl_tax\", \"order_line\".\"line_price_excl_tax\", \"order_line\".\"line_price_before_discounts_incl_tax\", \"order_line\".\"line_price_before_discounts_excl_tax\", \"order_line\".\"unit_price_incl_tax\", \"order_line\".\"unit_price_excl_tax\", \"order_line\".\"tax_code\", \"order_line\".\"status\" FROM \"order_line\" WHERE \"order_line\".\"id\" = 164 LIMIT 21"
+      }
+    ]
+  }
+]

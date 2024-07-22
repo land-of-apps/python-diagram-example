@@ -1,0 +1,549 @@
+{
+  "events": [
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.0",
+        "path_info": "/checkout/thank-you/",
+        "normalized_path_info": "/checkout/thank-you/",
+        "headers": {
+          "Host": "testserver"
+        }
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4415473264,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x1072ec670>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13825984208,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "opt",
+          "object_id": 13825986128,
+          "value": "<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x3380c7040>>",
+          "name": "user",
+          "class": "django.utils.functional.SimpleLazyObject"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13825289024,
+          "value": "{'request': <WSGIRequest: GET '/checkout/thank-you/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x3380c7040>>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "user",
+              "class": "django.utils.functional.SimpleLazyObject"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "return_value": {
+        "object_id": 13825472016,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x3380ff610>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 2,
+      "elapsed": 0.000028371810913085938,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825844080,
+        "value": "<oscar.apps.checkout.views.ThankYouView object at 0x33815a370>",
+        "name": "self",
+        "class": "oscar.apps.checkout.views.ThankYouView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825984208,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13825931072,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.views.ThankYouView",
+      "method_id": "get",
+      "path": "src/oscar/apps/checkout/views.py",
+      "lineno": 721
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825844080,
+        "value": "<oscar.apps.checkout.views.ThankYouView object at 0x33815a370>",
+        "name": "self",
+        "class": "oscar.apps.checkout.views.ThankYouView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "queryset",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.views.ThankYouView",
+      "method_id": "get_object",
+      "path": "src/oscar/apps/checkout/views.py",
+      "lineno": 728
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 5,
+      "elapsed": 0.00000286102294921875,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825209968,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/catalogue/\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 4,
+      "elapsed": 0.00011181831359863281,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13826015488,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x338184100>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825984208,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13825209968,
+          "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/catalogue/\">",
+          "name": "response",
+          "class": "django.http.response.HttpResponseRedirect"
+        }
+      ],
+      "id": 8,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 63
+    },
+    {
+      "return_value": {
+        "object_id": 13825209968,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/catalogue/\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 8,
+      "elapsed": 0.0000019073486328125,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_response": {
+        "status_code": 302,
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Location": "/catalogue/",
+          "Vary": "Cookie",
+          "Content-Length": "0"
+        }
+      },
+      "parent_id": 1,
+      "elapsed": 0.0006409169999983533,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824952880,
+        "value": "<tests.integration.checkout.test_views.ThankYouViewTestCase testMethod=test_missing_order_id_in_the_session>",
+        "name": "self",
+        "class": "tests.integration.checkout.test_views.ThankYouViewTestCase"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825985696,
+          "value": "<302 Found text/html location: /catalogue/ no body>",
+          "name": "response",
+          "class": "django_webtest.response.DjangoWebtestResponse"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "expected_url",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 11,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.test.testcases.WebTestCase",
+      "method_id": "assertIsRedirect",
+      "path": "src/oscar/test/testcases.py",
+      "lineno": 70
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 11,
+      "elapsed": 0.0000040531158447265625,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824952880,
+        "value": "<tests.integration.checkout.test_views.ThankYouViewTestCase testMethod=test_missing_order_id_in_the_session>",
+        "name": "self",
+        "class": "tests.integration.checkout.test_views.ThankYouViewTestCase"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825985696,
+          "value": "<302 Found text/html location: /catalogue/ no body>",
+          "name": "response",
+          "class": "django_webtest.response.DjangoWebtestResponse"
+        },
+        {
+          "kind": "req",
+          "object_id": 4417244784,
+          "value": "'catalogue:index'",
+          "name": "url_name",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "kwargs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 13,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.test.testcases.WebTestCase",
+      "method_id": "assertRedirectsTo",
+      "path": "src/oscar/test/testcases.py",
+      "lineno": 85
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824952880,
+        "value": "<tests.integration.checkout.test_views.ThankYouViewTestCase testMethod=test_missing_order_id_in_the_session>",
+        "name": "self",
+        "class": "tests.integration.checkout.test_views.ThankYouViewTestCase"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825985696,
+          "value": "<302 Found text/html location: /catalogue/ no body>",
+          "name": "response",
+          "class": "django_webtest.response.DjangoWebtestResponse"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "expected_url",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 14,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.test.testcases.WebTestCase",
+      "method_id": "assertIsRedirect",
+      "path": "src/oscar/test/testcases.py",
+      "lineno": 70
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 14,
+      "elapsed": 0.0000021457672119140625,
+      "id": 15,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 13,
+      "elapsed": 0.00007605552673339844,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Thank you view test case",
+    "recording": {
+      "defined_class": "tests.integration.checkout.test_views.ThankYouViewTestCase",
+      "method_id": "test_missing_order_id_in_the_session"
+    },
+    "source_location": "tests/integration/checkout/test_views.py:26",
+    "name": "Thank you view test case missing order id in the session",
+    "feature": "Missing order id in the session",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "partner",
+              "type": "package",
+              "children": [
+                {
+                  "name": "strategy",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Selector",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "strategy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/strategy.py:37"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "checkout",
+              "type": "package",
+              "children": [
+                {
+                  "name": "views",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "ThankYouView",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/checkout/views.py:721"
+                        },
+                        {
+                          "name": "get_object",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/checkout/views.py:728"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "basket",
+              "type": "package",
+              "children": [
+                {
+                  "name": "middleware",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "BasketMiddleware",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "process_response",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/middleware.py:63"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "test",
+          "type": "package",
+          "children": [
+            {
+              "name": "testcases",
+              "type": "package",
+              "children": [
+                {
+                  "name": "WebTestCase",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "assertIsRedirect",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/test/testcases.py:70"
+                    },
+                    {
+                      "name": "assertRedirectsTo",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/test/testcases.py:85"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /checkout/thank-you/"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "events": [
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"offer_range_excluded_products\" (\"range_id\", \"product_id\") VALUES (511, 905) ON CONFLICT DO NOTHING",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.000778832999998258,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13973918528,
+        "value": "<Range: All products>",
+        "name": "self",
+        "class": "oscar.apps.offer.models.Range"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13973918768,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.abstract_models.AbstractRange",
+      "method_id": "contains_product",
+      "path": "src/oscar/apps/offer/abstract_models.py",
+      "lineno": 1077
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"catalogue_product\" WHERE (NOT (\"catalogue_product\".\"id\" IN (SELECT U0.\"id\" FROM \"catalogue_product\" U0 INNER JOIN \"offer_range_excluded_products\" U1 ON (U0.\"id\" = U1.\"product_id\") WHERE U1.\"range_id\" = 511)) AND \"catalogue_product\".\"id\" = 905) LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 4,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 4,
+      "elapsed": 0.0007001250000087111,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341173008,
+        "value": "False",
+        "class": "builtins.bool"
+      },
+      "parent_id": 3,
+      "elapsed": 0.0014998912811279297,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13973918528,
+        "value": "<Range: All products>",
+        "name": "self",
+        "class": "oscar.apps.offer.models.Range"
+      },
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.abstract_models.AbstractRange",
+      "method_id": "all_products",
+      "path": "src/oscar/apps/offer/abstract_models.py",
+      "lineno": 1096
+    },
+    {
+      "return_value": {
+        "object_id": 13973879920,
+        "value": "<ProductQuerySet []>",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parent_id": 7,
+      "elapsed": 0.0000011920928955078125,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\" FROM \"catalogue_product\" WHERE NOT (\"catalogue_product\".\"id\" IN (SELECT U0.\"id\" FROM \"catalogue_product\" U0 INNER JOIN \"offer_range_excluded_products\" U1 ON (U0.\"id\" = U1.\"product_id\") WHERE U1.\"range_id\" = 511)) ORDER BY \"catalogue_product\".\"date_created\" DESC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 9,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 9,
+      "elapsed": 0.0005721670000014001,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Whole site range",
+    "recording": {
+      "defined_class": "tests.integration.offer.test_range.TestWholeSiteRange",
+      "method_id": "test_blacklisting"
+    },
+    "source_location": "tests/integration/offer/test_range.py:27",
+    "name": "Whole site range blacklisting",
+    "feature": "Blacklisting",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "offer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractRange",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "contains_product",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/abstract_models.py:1077"
+                        },
+                        {
+                          "name": "all_products",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/abstract_models.py:1096"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"offer_range_excluded_products\" (\"range_id\", \"product_id\") VALUES (511, 905) ON CONFLICT DO NOTHING"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"catalogue_product\" WHERE (NOT (\"catalogue_product\".\"id\" IN (SELECT U0.\"id\" FROM \"catalogue_product\" U0 INNER JOIN \"offer_range_excluded_products\" U1 ON (U0.\"id\" = U1.\"product_id\") WHERE U1.\"range_id\" = 511)) AND \"catalogue_product\".\"id\" = 905) LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\" FROM \"catalogue_product\" WHERE NOT (\"catalogue_product\".\"id\" IN (SELECT U0.\"id\" FROM \"catalogue_product\" U0 INNER JOIN \"offer_range_excluded_products\" U1 ON (U0.\"id\" = U1.\"product_id\") WHERE U1.\"range_id\" = 511)) ORDER BY \"catalogue_product\".\"date_created\" DESC"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "DELETE FROM \"offer_benefit\" WHERE \"offer_benefit\".\"id\" IN (47)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "DELETE FROM \"offer_condition\" WHERE \"offer_condition\".\"id\" IN (47)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "DELETE FROM \"offer_conditionaloffer\" WHERE \"offer_conditionaloffer\".\"id\" IN (47)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "DELETE FROM \"offer_conditionaloffer_combinations\" WHERE (\"offer_conditionaloffer_combinations\".\"from_conditionaloffer_id\" IN (47) OR \"offer_conditionaloffer_combinations\".\"to_conditionaloffer_id\" IN (47))"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "DELETE FROM \"voucher_voucher_offers\" WHERE \"voucher_voucher_offers\".\"conditionaloffer_id\" IN (47)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"offer_conditionaloffer\" (\"name\", \"slug\", \"description\", \"offer_type\", \"exclusive\", \"status\", \"condition_id\", \"benefit_id\", \"priority\", \"start_datetime\", \"end_datetime\", \"max_global_applications\", \"max_user_applications\", \"max_basket_applications\", \"max_discount\", \"total_discount\", \"num_applications\", \"num_orders\", \"redirect_url\", \"date_created\") VALUES ('Test offer 46', 'test-offer-46', '', 'Voucher', true, 'Open', 47, 47, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0.00, 0, 0, '', '2024-07-22T17:25:27.837672+00:00'::timestamptz) RETURNING \"offer_conditionaloffer\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"offer_conditionaloffer\" WHERE \"offer_conditionaloffer\".\"benefit_id\" = 47 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"offer_conditionaloffer\" WHERE \"offer_conditionaloffer\".\"condition_id\" = 47 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" INNER JOIN \"voucher_voucher_offers\" ON (\"voucher_voucher\".\"id\" = \"voucher_voucher_offers\".\"voucher_id\") WHERE \"voucher_voucher_offers\".\"conditionaloffer_id\" = 47 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"offer_benefit\".\"id\", \"offer_benefit\".\"range_id\", \"offer_benefit\".\"type\", \"offer_benefit\".\"value\", \"offer_benefit\".\"max_affected_items\", \"offer_benefit\".\"proxy_class\" FROM \"offer_benefit\" WHERE \"offer_benefit\".\"id\" = 47 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"offer_condition\".\"id\", \"offer_condition\".\"range_id\", \"offer_condition\".\"type\", \"offer_condition\".\"value\", \"offer_condition\".\"proxy_class\" FROM \"offer_condition\" WHERE \"offer_condition\".\"id\" = 47 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\" FROM \"offer_conditionaloffer\" WHERE \"offer_conditionaloffer\".\"benefit_id\" IN (47) ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\" FROM \"offer_conditionaloffer\" WHERE \"offer_conditionaloffer\".\"condition_id\" IN (47) ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\" FROM \"offer_conditionaloffer\" WHERE \"offer_conditionaloffer\".\"id\" = 47 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\" FROM \"offer_conditionaloffer\" WHERE \"offer_conditionaloffer\".\"slug\" = 'test-offer-46' ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "oscar/core"
+  }
+]

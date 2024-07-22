@@ -1,0 +1,274 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "test",
+        "type": "package",
+        "children": [
+          {
+            "name": "testcases",
+            "type": "package",
+            "children": [
+              {
+                "name": "WebTestCase",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "get",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/test/testcases.py:60"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "customer",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractUser",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:115"
+                      },
+                      {
+                        "name": "_migrate_alerts_to_user",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:103"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "partner",
+            "type": "package",
+            "children": [
+              {
+                "name": "strategy",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "Selector",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "strategy",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/partner/strategy.py:37"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "basket",
+            "type": "package",
+            "children": [
+              {
+                "name": "middleware",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "BasketMiddleware",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "process_response",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/basket/middleware.py:63"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "views",
+        "type": "package",
+        "children": [
+          {
+            "name": "decorators",
+            "type": "class",
+            "children": [
+              {
+                "name": "check_permissions",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/views/decorators.py:10"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "django",
+    "type": "package",
+    "children": [
+      {
+        "name": "contrib",
+        "type": "package",
+        "children": [
+          {
+            "name": "auth",
+            "type": "class",
+            "children": [
+              {
+                "name": "authenticate",
+                "type": "function",
+                "labels": [
+                  "security.authentication"
+                ],
+                "static": true,
+                "location": "venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py:63"
+              },
+              {
+                "name": "backends",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "RemoteUserBackend",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "authenticate",
+                        "type": "function",
+                        "labels": [
+                          "security.authentication"
+                        ],
+                        "static": false,
+                        "location": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py:187"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "ModelBackend",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "user_can_authenticate",
+                        "type": "function",
+                        "labels": [
+                          "security.authorization"
+                        ],
+                        "static": false,
+                        "location": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py:55"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "PermissionsMixin",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "has_perms",
+                        "type": "function",
+                        "labels": [
+                          "security.authorization"
+                        ],
+                        "static": false,
+                        "location": "venv/lib/python3.8/site-packages/django/contrib/auth/models.py:313"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "GET /dashboard/users/{pk}/password-reset/"
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"email\" = 'testuser@buymore.com' LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = 'jthjypdxowte75rd3uaze4xxg7gdj2li' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "SAVEPOINT \"s8669432832_x2185\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('jthjypdxowte75rd3uaze4xxg7gdj2li', 'e30:1sVwp7:Gz41gS_Xoadv6cg8sNkDrVG47Et7bcuOIwmlEjtm9Xs', '2024-08-05T17:27:45.090543+00:00'::timestamptz)"
+      },
+      {
+        "type": "query",
+        "name": "RELEASE SAVEPOINT \"s8669432832_x2185\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"myauth_user\" SET \"last_login\" = '2024-07-22T17:27:45.093300+00:00'::timestamptz WHERE \"myauth_user\".\"id\" = 532"
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"customer_productalert\" SET \"user_id\" = 532, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'testuser@buymore.com' AND \"customer_productalert\".\"status\" = 'Active')"
+      },
+      {
+        "type": "query",
+        "name": "SAVEPOINT \"s8669432832_x2186\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"django_session\" SET \"session_data\" = '.eJxVjLEOAiEQRP-F2lwIsLBr6T8YS7LAKmpyJsLFwvjvYrxCu8mbN_NUkZde49LkHs9FbRVYoza_NHG-yvypyoXn0y0-JHVpfVqLNh2-YD_s3Sr_PVRudcyzc5gFfE76KGSDJbHCHJDQQHJe_AgiwbDWPpmhBh8ACqIDJMrq9QasPzjI:1sVwp7:W6nKXd6hajdcTaEe2ftJXQiDAoXbc7a18kTiAK7bhsA', \"expire_date\" = '2024-08-05T17:27:45.095435+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = 'jthjypdxowte75rd3uaze4xxg7gdj2li'"
+      },
+      {
+        "type": "query",
+        "name": "RELEASE SAVEPOINT \"s8669432832_x2186\""
+      }
+    ]
+  }
+]

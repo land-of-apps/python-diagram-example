@@ -1,0 +1,354 @@
+[
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarBasketMessagesAdditionHtml#render",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarBasketMessagesNew_TotalHtml#render",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"basket_line\" WHERE \"basket_line\".\"basket_id\" = 134"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarBasketMessagesNew_TotalHtml#render",
+    "callee": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\", \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\", \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"basket_line\" INNER JOIN \"catalogue_product\" ON (\"basket_line\".\"product_id\" = \"catalogue_product\".\"id\") INNER JOIN \"partner_stockrecord\" ON (\"basket_line\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE \"basket_line\".\"basket_id\" = 134 ORDER BY \"basket_line\".\"id\" ASC"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarBasketMessagesNew_TotalHtml#render",
+    "callee": "SELECT \"basket_lineattribute\".\"id\", \"basket_lineattribute\".\"line_id\", \"basket_lineattribute\".\"option_id\", \"basket_lineattribute\".\"value\" FROM \"basket_lineattribute\" WHERE \"basket_lineattribute\".\"line_id\" IN (143)"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarBasketMessagesNew_TotalHtml#render",
+    "callee": "SELECT \"catalogue_productimage\".\"id\", \"catalogue_productimage\".\"product_id\", \"catalogue_productimage\".\"original\", \"catalogue_productimage\".\"caption\", \"catalogue_productimage\".\"display_order\", \"catalogue_productimage\".\"date_created\" FROM \"catalogue_productimage\" WHERE \"catalogue_productimage\".\"product_id\" IN (290) ORDER BY \"catalogue_productimage\".\"display_order\" ASC"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarBasketMessagesNew_TotalHtml#render",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarBasketMessagesNew_TotalHtml#render",
+    "callee": "oscar/models"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueDetailHtml#render",
+    "callee": "<templates>/SrcOscarTemplatesOscarCataloguePartialsAdd_To_Basket_FormHtml#render"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueDetailHtml#render",
+    "callee": "<templates>/SrcOscarTemplatesOscarCataloguePartialsGalleryHtml#render"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueDetailHtml#render",
+    "callee": "<templates>/SrcOscarTemplatesOscarCataloguePartialsStock_RecordHtml#render"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueDetailHtml#render",
+    "callee": "<templates>/SrcOscarTemplatesOscarCustomerHistoryRecently_Viewed_ProductsHtml#render"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueDetailHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsErrorsListDefaultHtml#render"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueDetailHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsPHtml#render"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueDetailHtml#render",
+    "callee": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" <= 2 AND \"catalogue_category\".\"ancestors_are_public\" AND \"catalogue_category\".\"is_public\") ORDER BY \"catalogue_category\".\"path\" ASC"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueDetailHtml#render",
+    "callee": "SELECT \"catalogue_productattributevalue\".\"id\", \"catalogue_productattributevalue\".\"attribute_id\", \"catalogue_productattributevalue\".\"product_id\", \"catalogue_productattributevalue\".\"value_text\", \"catalogue_productattributevalue\".\"value_integer\", \"catalogue_productattributevalue\".\"value_boolean\", \"catalogue_productattributevalue\".\"value_float\", \"catalogue_productattributevalue\".\"value_richtext\", \"catalogue_productattributevalue\".\"value_date\", \"catalogue_productattributevalue\".\"value_datetime\", \"catalogue_productattributevalue\".\"value_option_id\", \"catalogue_productattributevalue\".\"value_file\", \"catalogue_productattributevalue\".\"value_image\", \"catalogue_productattributevalue\".\"entity_content_type_id\", \"catalogue_productattributevalue\".\"entity_object_id\" FROM \"catalogue_productattributevalue\" WHERE \"catalogue_productattributevalue\".\"product_id\" = 290"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueDetailHtml#render",
+    "callee": "SELECT \"catalogue_productrecommendation\".\"id\", \"catalogue_productrecommendation\".\"primary_id\", \"catalogue_productrecommendation\".\"recommendation_id\", \"catalogue_productrecommendation\".\"ranking\", T3.\"id\", T3.\"structure\", T3.\"is_public\", T3.\"upc\", T3.\"parent_id\", T3.\"title\", T3.\"slug\", T3.\"description\", T3.\"meta_title\", T3.\"meta_description\", T3.\"product_class_id\", T3.\"rating\", T3.\"date_created\", T3.\"date_updated\", T3.\"is_discountable\" FROM \"catalogue_productrecommendation\" INNER JOIN \"catalogue_product\" ON (\"catalogue_productrecommendation\".\"primary_id\" = \"catalogue_product\".\"id\") INNER JOIN \"catalogue_product\" T3 ON (\"catalogue_productrecommendation\".\"recommendation_id\" = T3.\"id\") WHERE \"catalogue_productrecommendation\".\"primary_id\" = 290 ORDER BY \"catalogue_product\".\"date_created\" DESC, \"catalogue_productrecommendation\".\"ranking\" DESC"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueDetailHtml#render",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueDetailHtml#render",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueDetailHtml#render",
+    "callee": "oscar/templatetags"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCataloguePartialsAdd_To_Basket_FormHtml#render",
+    "callee": "<templates>/SrcOscarTemplatesOscarPartialsForm_FieldsHtml#render"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCataloguePartialsAdd_To_Basket_FormHtml#render",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCataloguePartialsAdd_To_Basket_FormHtml#render",
+    "callee": "oscar/templatetags"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCataloguePartialsGalleryHtml#render",
+    "callee": "SELECT \"catalogue_productimage\".\"id\", \"catalogue_productimage\".\"product_id\", \"catalogue_productimage\".\"original\", \"catalogue_productimage\".\"caption\", \"catalogue_productimage\".\"display_order\", \"catalogue_productimage\".\"date_created\" FROM \"catalogue_productimage\" WHERE \"catalogue_productimage\".\"product_id\" = 290 ORDER BY \"catalogue_productimage\".\"display_order\" ASC"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCataloguePartialsGalleryHtml#render",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCataloguePartialsGalleryHtml#render",
+    "callee": "oscar/templatetags"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCataloguePartialsStock_RecordHtml#render",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueReviewsPartialsReview_StarsHtml#render",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarPartialsForm_FieldHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsHiddenHtml#render"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarPartialsForm_FieldsHtml#render",
+    "callee": "<templates>/SrcOscarTemplatesOscarPartialsForm_FieldHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsErrorsListDefaultHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsErrorsListUlHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsLabelHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsAttrsHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsPHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsErrorsListDefaultHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsPHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsLabelHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsPHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsPHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelectHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsHiddenHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelectHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelectHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml#render"
+  },
+  {
+    "caller": "GET /catalogue/{product_slug}_{pk}/",
+    "callee": "<templates>/SrcOscarTemplatesOscarCatalogueDetailHtml#render"
+  },
+  {
+    "caller": "GET /catalogue/{product_slug}_{pk}/",
+    "callee": "django/contrib"
+  },
+  {
+    "caller": "GET /catalogue/{product_slug}_{pk}/",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "GET /checkout/",
+    "callee": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('z6zv6bh7yjea2vk4a51siseb59cx47wh', 'eyJjaGVja291dF9kYXRhIjp7fX0:1sVwnn:aXOuMRVlb53GHewmtf68QUF22-ZfabbTHs9zoN_2LZ8', '2024-08-05T17:26:23.803395+00:00'::timestamptz)"
+  },
+  {
+    "caller": "GET /checkout/",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x828\""
+  },
+  {
+    "caller": "GET /checkout/",
+    "callee": "SAVEPOINT \"s8669432832_x828\""
+  },
+  {
+    "caller": "GET /checkout/",
+    "callee": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = 'z6zv6bh7yjea2vk4a51siseb59cx47wh' LIMIT 1"
+  },
+  {
+    "caller": "GET /checkout/",
+    "callee": "django/contrib"
+  },
+  {
+    "caller": "GET /checkout/",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "GET /checkout/shipping-address/",
+    "callee": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2024-07-22T17:26:23.806011+00:00'::timestamptz AND \"django_session\".\"session_key\" = 'z6zv6bh7yjea2vk4a51siseb59cx47wh') LIMIT 21"
+  },
+  {
+    "caller": "GET /checkout/shipping-address/",
+    "callee": "django/contrib"
+  },
+  {
+    "caller": "GET /checkout/shipping-address/",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "POST /basket/add/{pk}/",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "django/contrib",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "<templates>/SrcOscarTemplatesOscarBasketMessagesAdditionHtml#render"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "<templates>/SrcOscarTemplatesOscarBasketMessagesNew_TotalHtml#render"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"analytics_productrecord\" (\"product_id\", \"num_views\", \"num_basket_additions\", \"num_purchases\", \"score\") VALUES (290, 1, 0, 0, 0.0) RETURNING \"analytics_productrecord\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Open', '2024-07-22T17:26:23.683042+00:00'::timestamptz, NULL, NULL) RETURNING \"basket_basket\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"basket_line\" (\"basket_id\", \"line_reference\", \"product_id\", \"stockrecord_id\", \"quantity\", \"price_currency\", \"price_excl_tax\", \"price_incl_tax\", \"tax_code\", \"date_created\", \"date_updated\") VALUES (134, '290_235', 290, 235, 1, 'GBP', 9.99, 9.99, NULL, '2024-07-22T17:26:23.695516+00:00'::timestamptz, '2024-07-22T17:26:23.695531+00:00'::timestamptz) RETURNING \"basket_line\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x827\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SAVEPOINT \"s8669432832_x827\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"basket_line\" WHERE \"basket_line\".\"basket_id\" = 134"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"basket_basket\".\"id\", \"basket_basket\".\"owner_id\", \"basket_basket\".\"status\", \"basket_basket\".\"date_created\", \"basket_basket\".\"date_merged\", \"basket_basket\".\"date_submitted\" FROM \"basket_basket\" WHERE (\"basket_basket\".\"owner_id\" IS NULL AND \"basket_basket\".\"id\" = 134 AND \"basket_basket\".\"status\" = 'Open') LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\" FROM \"basket_line\" WHERE (\"basket_line\".\"basket_id\" = 134 AND \"basket_line\".\"basket_id\" = 134 AND \"basket_line\".\"line_reference\" = '290_235' AND \"basket_line\".\"product_id\" = 290 AND \"basket_line\".\"stockrecord_id\" = 235) LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\", \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\", \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"basket_line\" INNER JOIN \"catalogue_product\" ON (\"basket_line\".\"product_id\" = \"catalogue_product\".\"id\") INNER JOIN \"partner_stockrecord\" ON (\"basket_line\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE \"basket_line\".\"basket_id\" = 134 ORDER BY \"basket_line\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"basket_lineattribute\".\"id\", \"basket_lineattribute\".\"line_id\", \"basket_lineattribute\".\"option_id\", \"basket_lineattribute\".\"value\" FROM \"basket_lineattribute\" WHERE \"basket_lineattribute\".\"line_id\" IN (143)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"catalogue_option\".\"id\", \"catalogue_option\".\"name\", \"catalogue_option\".\"code\", \"catalogue_option\".\"type\", \"catalogue_option\".\"required\", \"catalogue_option\".\"option_group_id\", \"catalogue_option\".\"help_text\", \"catalogue_option\".\"order\" FROM \"catalogue_option\" LEFT OUTER JOIN \"catalogue_productclass_options\" ON (\"catalogue_option\".\"id\" = \"catalogue_productclass_options\".\"option_id\") LEFT OUTER JOIN \"catalogue_product_product_options\" ON (\"catalogue_option\".\"id\" = \"catalogue_product_product_options\".\"option_id\") WHERE (\"catalogue_productclass_options\".\"productclass_id\" = 214 OR \"catalogue_product_product_options\".\"product_id\" = 290) ORDER BY \"catalogue_option\".\"order\" ASC, \"catalogue_option\".\"name\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\" FROM \"catalogue_product\" WHERE \"catalogue_product\".\"id\" = 290 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"id\" = 214 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"catalogue_productimage\".\"id\", \"catalogue_productimage\".\"product_id\", \"catalogue_productimage\".\"original\", \"catalogue_productimage\".\"caption\", \"catalogue_productimage\".\"display_order\", \"catalogue_productimage\".\"date_created\" FROM \"catalogue_productimage\" WHERE \"catalogue_productimage\".\"product_id\" = 290 ORDER BY \"catalogue_productimage\".\"display_order\" ASC LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"catalogue_productimage\".\"id\", \"catalogue_productimage\".\"product_id\", \"catalogue_productimage\".\"original\", \"catalogue_productimage\".\"caption\", \"catalogue_productimage\".\"display_order\", \"catalogue_productimage\".\"date_created\" FROM \"catalogue_productimage\" WHERE \"catalogue_productimage\".\"product_id\" IN (290) ORDER BY \"catalogue_productimage\".\"display_order\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\", \"offer_condition\".\"id\", \"offer_condition\".\"range_id\", \"offer_condition\".\"type\", \"offer_condition\".\"value\", \"offer_condition\".\"proxy_class\", \"offer_benefit\".\"id\", \"offer_benefit\".\"range_id\", \"offer_benefit\".\"type\", \"offer_benefit\".\"value\", \"offer_benefit\".\"max_affected_items\", \"offer_benefit\".\"proxy_class\" FROM \"offer_conditionaloffer\" INNER JOIN \"offer_condition\" ON (\"offer_conditionaloffer\".\"condition_id\" = \"offer_condition\".\"id\") INNER JOIN \"offer_benefit\" ON (\"offer_conditionaloffer\".\"benefit_id\" = \"offer_benefit\".\"id\") WHERE ((\"offer_conditionaloffer\".\"end_datetime\" >= '2024-07-22T17:26:23.702005+00:00'::timestamptz OR \"offer_conditionaloffer\".\"end_datetime\" IS NULL) AND (\"offer_conditionaloffer\".\"start_datetime\" <= '2024-07-22T17:26:23.702005+00:00'::timestamptz OR \"offer_conditionaloffer\".\"start_datetime\" IS NULL) AND \"offer_conditionaloffer\".\"status\" = 'Open' AND \"offer_conditionaloffer\".\"offer_type\" = 'Site') ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\", \"offer_condition\".\"id\", \"offer_condition\".\"range_id\", \"offer_condition\".\"type\", \"offer_condition\".\"value\", \"offer_condition\".\"proxy_class\", \"offer_benefit\".\"id\", \"offer_benefit\".\"range_id\", \"offer_benefit\".\"type\", \"offer_benefit\".\"value\", \"offer_benefit\".\"max_affected_items\", \"offer_benefit\".\"proxy_class\" FROM \"offer_conditionaloffer\" INNER JOIN \"offer_condition\" ON (\"offer_conditionaloffer\".\"condition_id\" = \"offer_condition\".\"id\") INNER JOIN \"offer_benefit\" ON (\"offer_conditionaloffer\".\"benefit_id\" = \"offer_benefit\".\"id\") WHERE ((\"offer_conditionaloffer\".\"end_datetime\" >= '2024-07-22T17:26:23.765751+00:00'::timestamptz OR \"offer_conditionaloffer\".\"end_datetime\" IS NULL) AND (\"offer_conditionaloffer\".\"start_datetime\" <= '2024-07-22T17:26:23.765751+00:00'::timestamptz OR \"offer_conditionaloffer\".\"start_datetime\" IS NULL) AND \"offer_conditionaloffer\".\"status\" = 'Open' AND \"offer_conditionaloffer\".\"offer_type\" = 'Site') ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\", \"offer_condition\".\"id\", \"offer_condition\".\"range_id\", \"offer_condition\".\"type\", \"offer_condition\".\"value\", \"offer_condition\".\"proxy_class\", \"offer_benefit\".\"id\", \"offer_benefit\".\"range_id\", \"offer_benefit\".\"type\", \"offer_benefit\".\"value\", \"offer_benefit\".\"max_affected_items\", \"offer_benefit\".\"proxy_class\" FROM \"offer_conditionaloffer\" INNER JOIN \"offer_condition\" ON (\"offer_conditionaloffer\".\"condition_id\" = \"offer_condition\".\"id\") INNER JOIN \"offer_benefit\" ON (\"offer_conditionaloffer\".\"benefit_id\" = \"offer_benefit\".\"id\") WHERE ((\"offer_conditionaloffer\".\"end_datetime\" >= '2024-07-22T17:26:23.823178+00:00'::timestamptz OR \"offer_conditionaloffer\".\"end_datetime\" IS NULL) AND (\"offer_conditionaloffer\".\"start_datetime\" <= '2024-07-22T17:26:23.823178+00:00'::timestamptz OR \"offer_conditionaloffer\".\"start_datetime\" IS NULL) AND \"offer_conditionaloffer\".\"status\" = 'Open' AND \"offer_conditionaloffer\".\"offer_type\" = 'Site') ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 290 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" INNER JOIN \"basket_basket_vouchers\" ON (\"voucher_voucher\".\"id\" = \"basket_basket_vouchers\".\"voucher_id\") WHERE \"basket_basket_vouchers\".\"basket_id\" = 134 ORDER BY \"voucher_voucher\".\"date_created\" DESC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"analytics_productrecord\" SET \"num_basket_additions\" = (\"analytics_productrecord\".\"num_basket_additions\" + 1) WHERE \"analytics_productrecord\".\"product_id\" = 290"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"analytics_productrecord\" SET \"num_views\" = (\"analytics_productrecord\".\"num_views\" + 1) WHERE \"analytics_productrecord\".\"product_id\" = 290"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  },
+  {
+    "caller": "oscar/templatetags",
+    "callee": "<templates>/SrcOscarTemplatesOscarCataloguePartialsAdd_To_WishlistHtml#render"
+  },
+  {
+    "caller": "oscar/templatetags",
+    "callee": "<templates>/SrcOscarTemplatesOscarCatalogueReviewsPartialsReview_StarsHtml#render"
+  },
+  {
+    "caller": "oscar/templatetags",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"reviews_productreview\" WHERE (\"reviews_productreview\".\"product_id\" = 290 AND \"reviews_productreview\".\"status\" = 1)"
+  },
+  {
+    "caller": "oscar/templatetags",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "oscar/templatetags",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "GET /catalogue/{product_slug}_{pk}/"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "GET /checkout/"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "GET /checkout/shipping-address/"
+  }
+]

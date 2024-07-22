@@ -1,0 +1,50 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "DELETE FROM \"offer_conditionaloffer_combinations\" WHERE \"offer_conditionaloffer_combinations\".\"from_conditionaloffer_id\" = 125"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('kw1o3i326q6ia29w324qc0ofh6ecpo6b', 'eyJvZmZlcl93aXphcmQiOnt9fQ:1lZwLg:Ltx5V9BTl58WTuryegt5Bio_EfsQUmbB56s0khO_C8E', '2021-05-07T14:00:00+00:00'::timestamptz)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"offer_benefit\" (\"range_id\", \"type\", \"value\", \"max_affected_items\", \"proxy_class\") VALUES (380, 'Absolute', 2000, 2, NULL) RETURNING \"offer_benefit\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"offer_condition\" (\"range_id\", \"type\", \"value\", \"proxy_class\") VALUES (380, 'Value', 2000, NULL) RETURNING \"offer_condition\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x3047\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SAVEPOINT \"s8669432832_x3047\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = 'kw1o3i326q6ia29w324qc0ofh6ecpo6b' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT DISTINCT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\" FROM \"offer_conditionaloffer\" WHERE (\"offer_conditionaloffer\".\"id\" = 125 OR \"offer_conditionaloffer\".\"id\" IN (SELECT U0.\"id\" FROM \"offer_conditionaloffer\" U0 INNER JOIN \"offer_conditionaloffer_combinations\" U1 ON (U0.\"id\" = U1.\"to_conditionaloffer_id\") WHERE U1.\"from_conditionaloffer_id\" = 125) OR \"offer_conditionaloffer\".\"id\" IN (SELECT U0.\"id\" FROM \"offer_conditionaloffer\" U0 INNER JOIN \"offer_conditionaloffer_combinations\" U1 ON (U0.\"id\" = U1.\"from_conditionaloffer_id\") WHERE U1.\"to_conditionaloffer_id\" = 125)) ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\" FROM \"offer_conditionaloffer\" INNER JOIN \"offer_conditionaloffer_combinations\" ON (\"offer_conditionaloffer\".\"id\" = \"offer_conditionaloffer_combinations\".\"to_conditionaloffer_id\") WHERE \"offer_conditionaloffer_combinations\".\"from_conditionaloffer_id\" = 125 ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\" FROM \"offer_conditionaloffer\" WHERE \"offer_conditionaloffer\".\"id\" = 125 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"offer_conditionaloffer\" SET \"name\" = 'Test offer', \"slug\" = 'test-offer-105', \"description\" = 'Test description', \"offer_type\" = 'Voucher', \"exclusive\" = false, \"status\" = 'Open', \"condition_id\" = 145, \"benefit_id\" = 146, \"priority\" = 0, \"start_datetime\" = NULL, \"end_datetime\" = NULL, \"max_global_applications\" = NULL, \"max_user_applications\" = NULL, \"max_basket_applications\" = NULL, \"max_discount\" = NULL, \"total_discount\" = 0.00, \"num_applications\" = 0, \"num_orders\" = 0, \"redirect_url\" = '', \"date_created\" = '2021-04-23T14:00:00+00:00'::timestamptz WHERE \"offer_conditionaloffer\".\"id\" = 125"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  }
+]

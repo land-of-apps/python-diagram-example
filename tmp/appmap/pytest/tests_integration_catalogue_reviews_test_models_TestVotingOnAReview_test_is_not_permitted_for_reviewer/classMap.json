@@ -1,0 +1,74 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "catalogue",
+            "type": "package",
+            "children": [
+              {
+                "name": "reviews",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "abstract_models",
+                    "type": "package",
+                    "children": [
+                      {
+                        "name": "AbstractProductReview",
+                        "type": "class",
+                        "children": [
+                          {
+                            "name": "can_user_vote",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/catalogue/reviews/abstract_models.py:172"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "AbstractVote",
+                        "type": "class",
+                        "children": [
+                          {
+                            "name": "clean",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/catalogue/reviews/abstract_models.py:218"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"reviews_productreview\" WHERE \"reviews_productreview\".\"id\" = 63 LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"myauth_user\" WHERE \"myauth_user\".\"id\" = 635 LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"reviews_vote\" WHERE (\"reviews_vote\".\"review_id\" = 63 AND \"reviews_vote\".\"user_id\" = 635) LIMIT 1"
+      }
+    ]
+  }
+]

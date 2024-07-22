@@ -1,0 +1,319 @@
+{
+  "events": [
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "depth",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.templatetags.category_tags",
+      "method_id": "get_annotated_list",
+      "path": "src/oscar/templatetags/category_tags.py",
+      "lineno": 70
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814921920,
+        "value": "<CategoryQuerySet [<Category: Books>]>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.CategoryQuerySet",
+      "method_id": "browsable",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 139
+    },
+    {
+      "return_value": {
+        "object_id": 13814919904,
+        "value": "<CategoryQuerySet [<Category: Books>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 2,
+      "elapsed": 0.00006079673767089844,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" <= 1 AND \"catalogue_category\".\"ancestors_are_public\" AND \"catalogue_category\".\"is_public\") ORDER BY \"catalogue_category\".\"path\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 4,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 4,
+      "elapsed": 0.00043591700000433775,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814934832,
+        "value": "<Category: Books>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 6,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "_get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 288
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814934832,
+        "value": "<Category: Books>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4331234032,
+          "value": "''",
+          "name": "parent_slug",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "return_value": {
+        "object_id": 13814859440,
+        "value": "'books'",
+        "class": "builtins.str"
+      },
+      "parent_id": 7,
+      "elapsed": 9.5367431640625e-7,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814025232,
+        "value": "'/catalogue/category/books_351/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 6,
+      "elapsed": 0.00011587142944335938,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813827072,
+        "value": "[{'url': '/catalogue/category/books_351/', 'num_to_close': [], 'level': 0, 'has_children': False}]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.templatetags.category_tags.CheapCategoryInfo",
+            "properties": [
+              {
+                "name": "url",
+                "class": "builtins.str"
+              },
+              {
+                "name": "num_to_close",
+                "class": "builtins.list"
+              },
+              {
+                "name": "level",
+                "class": "builtins.int"
+              },
+              {
+                "name": "has_children",
+                "class": "builtins.bool"
+              }
+            ]
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 1,
+      "elapsed": 0.002386808395385742,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Category template tags",
+    "recording": {
+      "defined_class": "tests.integration.catalogue.test_category.TestCategoryTemplateTags",
+      "method_id": "test_categories_depth"
+    },
+    "source_location": "tests/integration/catalogue/test_category.py:265",
+    "name": "Category template tags categories depth",
+    "feature": "Categories depth",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "templatetags",
+          "type": "package",
+          "children": [
+            {
+              "name": "category_tags",
+              "type": "class",
+              "children": [
+                {
+                  "name": "get_annotated_list",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/templatetags/category_tags.py:70"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "managers",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "CategoryQuerySet",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "browsable",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/managers.py:139"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractCategory",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "_get_absolute_url",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:288"
+                        },
+                        {
+                          "name": "get_full_slug",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:184"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" <= 1 AND \"catalogue_category\".\"ancestors_are_public\" AND \"catalogue_category\".\"is_public\") ORDER BY \"catalogue_category\".\"path\" ASC"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "events": [
+    {
+      "sql_query": {
+        "sql": "SELECT \"partner_partneraddress\".\"id\", \"partner_partneraddress\".\"title\", \"partner_partneraddress\".\"first_name\", \"partner_partneraddress\".\"last_name\", \"partner_partneraddress\".\"line1\", \"partner_partneraddress\".\"line2\", \"partner_partneraddress\".\"line3\", \"partner_partneraddress\".\"line4\", \"partner_partneraddress\".\"state\", \"partner_partneraddress\".\"postcode\", \"partner_partneraddress\".\"country_id\", \"partner_partneraddress\".\"search_text\", \"partner_partneraddress\".\"partner_id\" FROM \"partner_partneraddress\" WHERE \"partner_partneraddress\".\"partner_id\" = 719",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.0007130829999937305,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394295200,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14023138416,
+          "value": "'LS1 2HA'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "rest",
+          "object_id": 14020061952,
+          "value": "(Col(partner_partneraddress, partner.PartnerAddress.postcode), <DatabaseWrapper vendor='postgresql' alias='default'>)",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14022568640,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "from_db_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 83
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394295200,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14023138416,
+          "value": "'LS1 2HA'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 14023135472,
+        "value": "'LS1 2HA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 4,
+      "elapsed": 0.0000021457672119140625,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14023135472,
+        "value": "'LS1 2HA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 3,
+      "elapsed": 0.000053882598876953125,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394295200,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14023135472,
+          "value": "'LS1 2HA'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 14024218288,
+        "value": "'LS1 2HA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 7,
+      "elapsed": 7.152557373046875e-7,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Partner address",
+    "recording": {
+      "defined_class": "tests.integration.partner.test_models.TestPartnerAddress",
+      "method_id": "test_can_get_primary_address"
+    },
+    "source_location": "tests/integration/partner/test_models.py:104",
+    "name": "Partner address can get primary address",
+    "feature": "Can get primary address",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "models",
+          "type": "package",
+          "children": [
+            {
+              "name": "fields",
+              "type": "package",
+              "children": [
+                {
+                  "name": "UppercaseCharField",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "from_db_value",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/models/fields/__init__.py:83"
+                    },
+                    {
+                      "name": "to_python",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/models/fields/__init__.py:86"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"partner_partneraddress\".\"id\", \"partner_partneraddress\".\"title\", \"partner_partneraddress\".\"first_name\", \"partner_partneraddress\".\"last_name\", \"partner_partneraddress\".\"line1\", \"partner_partneraddress\".\"line2\", \"partner_partneraddress\".\"line3\", \"partner_partneraddress\".\"line4\", \"partner_partneraddress\".\"state\", \"partner_partneraddress\".\"postcode\", \"partner_partneraddress\".\"country_id\", \"partner_partneraddress\".\"search_text\", \"partner_partneraddress\".\"partner_id\" FROM \"partner_partneraddress\" WHERE \"partner_partneraddress\".\"partner_id\" = 719"
+        }
+      ]
+    }
+  ]
+}

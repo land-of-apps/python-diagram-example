@@ -1,0 +1,247 @@
+{
+  "events": [
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4395747744,
+          "value": "<django.dispatch.dispatcher.Signal object at 0x10601c9a0>",
+          "name": "signal",
+          "class": "django.dispatch.dispatcher.Signal"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "wraps",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14014363968,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.test.contextmanagers",
+      "method_id": "mock_signal_receiver",
+      "path": "src/oscar/test/contextmanagers.py",
+      "lineno": 5
+    },
+    {
+      "return_value": {
+        "object_id": 14014417216,
+        "value": "<contextlib._GeneratorContextManager object at 0x343530940>",
+        "class": "contextlib._GeneratorContextManager"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0000019073486328125,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14014417936,
+        "value": "<Line: Product 'Dùｍϻϒ title', quantity '1'>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Line"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332164592,
+          "value": "'C'",
+          "name": "new_status",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractLine",
+      "method_id": "set_status",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 656
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14014417936,
+        "value": "<Line: Product 'Dùｍϻϒ title', quantity '1'>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Line"
+      },
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractLine",
+      "method_id": "available_statuses",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 650
+    },
+    {
+      "return_value": {
+        "object_id": 4420291328,
+        "value": "('B', 'C')",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 4,
+      "elapsed": 0.000020265579223632812,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"order_line\" SET \"order_id\" = 176, \"partner_id\" = 676, \"partner_name\" = '', \"partner_sku\" = 'sku_1083_4475', \"partner_line_reference\" = '', \"partner_line_notes\" = '', \"stockrecord_id\" = 768, \"product_id\" = 1083, \"title\" = 'Dùｍϻϒ title', \"upc\" = '', \"quantity\" = 1, \"line_price_incl_tax\" = 10.00, \"line_price_excl_tax\" = 10.00, \"line_price_before_discounts_incl_tax\" = 10.00, \"line_price_before_discounts_excl_tax\" = 10.00, \"unit_price_incl_tax\" = 10.00, \"unit_price_excl_tax\" = 10.00, \"tax_code\" = NULL, \"status\" = 'C' WHERE \"order_line\".\"id\" = 178",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 6,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 6,
+      "elapsed": 0.000896041999993713,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 3,
+      "elapsed": 0.0012900829315185547,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Line status tests",
+    "recording": {
+      "defined_class": "tests.integration.order.test_models.LineStatusTests",
+      "method_id": "test_set_status_sends_a_signal"
+    },
+    "source_location": "tests/integration/order/test_models.py:273",
+    "name": "Line status tests set status sends a signal",
+    "feature": "Set status sends a signal",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "test",
+          "type": "package",
+          "children": [
+            {
+              "name": "contextmanagers",
+              "type": "class",
+              "children": [
+                {
+                  "name": "mock_signal_receiver",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/test/contextmanagers.py:5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "order",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractLine",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "set_status",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:656"
+                        },
+                        {
+                          "name": "available_statuses",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:650"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "UPDATE \"order_line\" SET \"order_id\" = 176, \"partner_id\" = 676, \"partner_name\" = '', \"partner_sku\" = 'sku_1083_4475', \"partner_line_reference\" = '', \"partner_line_notes\" = '', \"stockrecord_id\" = 768, \"product_id\" = 1083, \"title\" = 'Dùｍϻϒ title', \"upc\" = '', \"quantity\" = 1, \"line_price_incl_tax\" = 10.00, \"line_price_excl_tax\" = 10.00, \"line_price_before_discounts_incl_tax\" = 10.00, \"line_price_before_discounts_excl_tax\" = 10.00, \"unit_price_incl_tax\" = 10.00, \"unit_price_excl_tax\" = 10.00, \"tax_code\" = NULL, \"status\" = 'C' WHERE \"order_line\".\"id\" = 178"
+        }
+      ]
+    }
+  ]
+}

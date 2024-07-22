@@ -1,0 +1,130 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "partner",
+            "type": "package",
+            "children": [
+              {
+                "name": "strategy",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "Selector",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "strategy",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/partner/strategy.py:37"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wishlists",
+            "type": "package",
+            "children": [
+              {
+                "name": "views",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "WishListView",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "dispatch",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/wishlists/views.py:19"
+                      },
+                      {
+                        "name": "get_object",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/wishlists/views.py:35"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractWishList",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "is_allowed_to_see",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/wishlists/abstract_models.py:82"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "basket",
+            "type": "package",
+            "children": [
+              {
+                "name": "middleware",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "BasketMiddleware",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "process_response",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/basket/middleware.py:63"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "GET /wishlists/{key}/"
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"wishlists_wishlist\".\"id\", \"wishlists_wishlist\".\"owner_id\", \"wishlists_wishlist\".\"name\", \"wishlists_wishlist\".\"key\", \"wishlists_wishlist\".\"visibility\", \"wishlists_wishlist\".\"date_created\" FROM \"wishlists_wishlist\" WHERE \"wishlists_wishlist\".\"key\" = 'xkxrer' LIMIT 21"
+      }
+    ]
+  }
+]

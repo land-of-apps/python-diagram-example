@@ -1,0 +1,232 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13974045072,
+        "value": "<Range: Child-specific range>",
+        "name": "self",
+        "class": "oscar.apps.offer.models.Range"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13974046224,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.abstract_models.AbstractRange",
+      "method_id": "contains_product",
+      "path": "src/oscar/apps/offer/abstract_models.py",
+      "lineno": 1077
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_product\" T2 ON (\"catalogue_product\".\"parent_id\" = T2.\"id\") INNER JOIN \"offer_rangeproduct\" ON (T2.\"id\" = \"offer_rangeproduct\".\"product_id\") WHERE \"offer_rangeproduct\".\"range_id\" = 514 LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0.001077750000007427,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"catalogue_productclass\" INNER JOIN \"offer_range_classes\" ON (\"catalogue_productclass\".\"id\" = \"offer_range_classes\".\"productclass_id\") WHERE \"offer_range_classes\".\"range_id\" = 514 LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 4,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 4,
+      "elapsed": 0.0007841249999955835,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"catalogue_category\" INNER JOIN \"offer_range_included_categories\" ON (\"catalogue_category\".\"id\" = \"offer_range_included_categories\".\"category_id\") WHERE \"offer_range_included_categories\".\"range_id\" = 514 LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 6,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 6,
+      "elapsed": 0.001065416999978197,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_product\" T2 ON (\"catalogue_product\".\"parent_id\" = T2.\"id\") INNER JOIN \"offer_range_excluded_products\" ON (T2.\"id\" = \"offer_range_excluded_products\".\"product_id\") WHERE \"offer_range_excluded_products\".\"range_id\" = 514 LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 8,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 8,
+      "elapsed": 0.000932417000001351,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT DISTINCT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"offer_rangeproduct\" ON (\"catalogue_product\".\"id\" = \"offer_rangeproduct\".\"product_id\") WHERE (\"offer_rangeproduct\".\"range_id\" = 514 AND NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"range_id\" = 514 AND U1.\"product_id\" = (\"catalogue_product\".\"id\")) LIMIT 1)) AND \"catalogue_product\".\"id\" = 912) LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 10,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 10,
+      "elapsed": 0.0015638750000164237,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341173008,
+        "value": "False",
+        "class": "builtins.bool"
+      },
+      "parent_id": 1,
+      "elapsed": 0.009087800979614258,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Child range",
+    "recording": {
+      "defined_class": "tests.integration.offer.test_range.TestChildRange",
+      "method_id": "test_does_not_include_sibling"
+    },
+    "source_location": "tests/integration/offer/test_range.py:49",
+    "name": "Child range does not include sibling",
+    "feature": "Does not include sibling",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "offer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractRange",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "contains_product",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/abstract_models.py:1077"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_product\" T2 ON (\"catalogue_product\".\"parent_id\" = T2.\"id\") INNER JOIN \"offer_rangeproduct\" ON (T2.\"id\" = \"offer_rangeproduct\".\"product_id\") WHERE \"offer_rangeproduct\".\"range_id\" = 514 LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"catalogue_productclass\" INNER JOIN \"offer_range_classes\" ON (\"catalogue_productclass\".\"id\" = \"offer_range_classes\".\"productclass_id\") WHERE \"offer_range_classes\".\"range_id\" = 514 LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"catalogue_category\" INNER JOIN \"offer_range_included_categories\" ON (\"catalogue_category\".\"id\" = \"offer_range_included_categories\".\"category_id\") WHERE \"offer_range_included_categories\".\"range_id\" = 514 LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_product\" T2 ON (\"catalogue_product\".\"parent_id\" = T2.\"id\") INNER JOIN \"offer_range_excluded_products\" ON (T2.\"id\" = \"offer_range_excluded_products\".\"product_id\") WHERE \"offer_range_excluded_products\".\"range_id\" = 514 LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SELECT DISTINCT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"offer_rangeproduct\" ON (\"catalogue_product\".\"id\" = \"offer_rangeproduct\".\"product_id\") WHERE (\"offer_rangeproduct\".\"range_id\" = 514 AND NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"range_id\" = 514 AND U1.\"product_id\" = (\"catalogue_product\".\"id\")) LIMIT 1)) AND \"catalogue_product\".\"id\" = 912) LIMIT 1"
+        }
+      ]
+    }
+  ]
+}

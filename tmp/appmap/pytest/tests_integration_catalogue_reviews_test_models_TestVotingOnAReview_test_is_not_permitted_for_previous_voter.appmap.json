@@ -1,0 +1,801 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818366560,
+        "value": "<ProductReview: This is nice>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.reviews.models.ProductReview"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13818364784,
+          "value": "<User: example_301@example.com>",
+          "name": "user",
+          "class": "tests._site.myauth.models.User"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.reviews.abstract_models.AbstractProductReview",
+      "method_id": "vote_up",
+      "path": "src/oscar/apps/catalogue/reviews/abstract_models.py",
+      "lineno": 106
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818365984,
+        "value": "<Vote: 1 vote for This is nice>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.reviews.models.Vote"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13818361344,
+          "value": "{'force_insert': True, 'using': 'default'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "force_insert",
+              "class": "builtins.bool"
+            },
+            {
+              "name": "using",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.reviews.abstract_models.AbstractVote",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/reviews/abstract_models.py",
+      "lineno": 227
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"reviews_vote\" (\"review_id\", \"user_id\", \"delta\", \"date_created\") VALUES (62, 634, 1, '2024-07-22T17:28:03.951156+00:00'::timestamptz) RETURNING \"reviews_vote\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 3,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 3,
+      "elapsed": 0.0006021659999930762,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818366560,
+        "value": "<ProductReview: This is nice>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.reviews.models.ProductReview"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.reviews.abstract_models.AbstractProductReview",
+      "method_id": "update_totals",
+      "path": "src/oscar/apps/catalogue/reviews/abstract_models.py",
+      "lineno": 163
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT SUM(\"reviews_vote\".\"delta\") AS \"score\", COUNT(\"reviews_vote\".\"id\") AS \"total_votes\" FROM \"reviews_vote\" WHERE \"reviews_vote\".\"review_id\" = 62",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 6,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 6,
+      "elapsed": 0.0003834999999980937,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818366560,
+        "value": "<ProductReview: This is nice>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.reviews.models.ProductReview"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13818234112,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 8,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.reviews.abstract_models.AbstractProductReview",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/reviews/abstract_models.py",
+      "lineno": 112
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"reviews_productreview\" SET \"product_id\" = 746, \"score\" = 3, \"title\" = 'This is nice', \"body\" = 'This is the body', \"user_id\" = 633, \"name\" = '', \"email\" = '', \"homepage\" = '', \"status\" = 1, \"total_votes\" = 1, \"delta_votes\" = 1, \"date_created\" = '2024-07-22T17:28:03.947496+00:00'::timestamptz WHERE \"reviews_productreview\".\"id\" = 62",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 9,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 9,
+      "elapsed": 0.0004720830000053411,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818370080,
+        "value": "<Product: Dùｍϻϒ title>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Product"
+      },
+      "id": 11,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProduct",
+      "method_id": "update_rating",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 784
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818370080,
+        "value": "<Product: Dùｍϻϒ title>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Product"
+      },
+      "id": 12,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProduct",
+      "method_id": "calculate_rating",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 794
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT SUM(\"reviews_productreview\".\"score\") AS \"sum\", COUNT(\"reviews_productreview\".\"id\") AS \"count\" FROM \"reviews_productreview\" WHERE (\"reviews_productreview\".\"product_id\" = 746 AND \"reviews_productreview\".\"status\" = 1)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 13,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 13,
+      "elapsed": 0.0004074169999910282,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13818350032,
+        "value": "3.0",
+        "class": "builtins.float"
+      },
+      "parent_id": 12,
+      "elapsed": 0.0009539127349853516,
+      "id": 15,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818370080,
+        "value": "<Product: Dùｍϻϒ title>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Product"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13818418944,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 16,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProduct",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 590
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4393773328,
+        "value": "<oscar.models.fields.NullCharField: upc>",
+        "name": "self",
+        "class": "oscar.models.fields.NullCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "value",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 17,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.NullCharField",
+      "method_id": "get_prep_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 122
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 17,
+      "elapsed": 0.0000019073486328125,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_product\" SET \"structure\" = 'standalone', \"is_public\" = true, \"upc\" = NULL, \"parent_id\" = NULL, \"title\" = 'Dùｍϻϒ title', \"slug\" = 'dumu03fbu03a5-title', \"description\" = '', \"meta_title\" = NULL, \"meta_description\" = NULL, \"product_class_id\" = 565, \"rating\" = 3.0, \"date_created\" = '2024-07-22T17:28:03.940695+00:00'::timestamptz, \"date_updated\" = '2024-07-22T17:28:03.954841+00:00'::timestamptz, \"is_discountable\" = true WHERE \"catalogue_product\".\"id\" = 746",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 19,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 19,
+      "elapsed": 0.0005037090000143962,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818370848,
+        "value": "<oscar.apps.catalogue.product_attributes.ProductAttributesContainer object at 0x337a39b20>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.product_attributes.ProductAttributesContainer"
+      },
+      "id": 21,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.product_attributes.ProductAttributesContainer",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/product_attributes.py",
+      "lineno": 207
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 21,
+      "elapsed": 0.0000030994415283203125,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 16,
+      "elapsed": 0.0009288787841796875,
+      "id": 23,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 11,
+      "elapsed": 0.002008676528930664,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 8,
+      "elapsed": 0.00279998779296875,
+      "id": 25,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 5,
+      "elapsed": 0.0038149356842041016,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 2,
+      "elapsed": 0.004649162292480469,
+      "id": 27,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 1,
+      "elapsed": 0.004880189895629883,
+      "id": 28,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818366560,
+        "value": "<ProductReview: This is nice>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.reviews.models.ProductReview"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13818364784,
+          "value": "<User: example_301@example.com>",
+          "name": "user",
+          "class": "tests._site.myauth.models.User"
+        }
+      ],
+      "id": 29,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.reviews.abstract_models.AbstractProductReview",
+      "method_id": "can_user_vote",
+      "path": "src/oscar/apps/catalogue/reviews/abstract_models.py",
+      "lineno": 172
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"reviews_productreview\" WHERE \"reviews_productreview\".\"id\" = 62 LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 30,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 30,
+      "elapsed": 0.0004193329999964135,
+      "id": 31,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"myauth_user\" WHERE \"myauth_user\".\"id\" = 634 LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 32,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 32,
+      "elapsed": 0.0004324580000059086,
+      "id": 33,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818367136,
+        "value": "<Vote: 1 vote for This is nice>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.reviews.models.Vote"
+      },
+      "id": 34,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.reviews.abstract_models.AbstractVote",
+      "method_id": "clean",
+      "path": "src/oscar/apps/catalogue/reviews/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"reviews_vote\".\"id\", \"reviews_vote\".\"review_id\", \"reviews_vote\".\"user_id\", \"reviews_vote\".\"delta\", \"reviews_vote\".\"date_created\" FROM \"reviews_vote\" WHERE (\"reviews_vote\".\"review_id\" = 62 AND \"reviews_vote\".\"user_id\" = 634) ORDER BY \"reviews_vote\".\"date_created\" DESC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 35,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 35,
+      "elapsed": 0.0005843330000061542,
+      "id": 36,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "exceptions": [
+        {
+          "class": "django.core.exceptions.ValidationError",
+          "message": "['You can only vote once on a review']",
+          "object_id": 13818295584
+        }
+      ],
+      "parent_id": 34,
+      "elapsed": 0.001148223876953125,
+      "id": 37,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"reviews_vote\" WHERE (\"reviews_vote\".\"review_id\" = 62 AND \"reviews_vote\".\"user_id\" = 634) LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 38,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 38,
+      "elapsed": 0.0003891670000086833,
+      "id": 39,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13817508032,
+        "value": "(False, \"{'__all__': ['You can only vote once on a review', 'Vote with this User and Review already exists.']}\")",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 29,
+      "elapsed": 0.0035331249237060547,
+      "id": 40,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Voting on a review",
+    "recording": {
+      "defined_class": "tests.integration.catalogue.reviews.test_models.TestVotingOnAReview",
+      "method_id": "test_is_not_permitted_for_previous_voter"
+    },
+    "source_location": "tests/integration/catalogue/reviews/test_models.py:158",
+    "name": "Voting on a review is not permitted for previous voter",
+    "feature": "Is not permitted for previous voter",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "reviews",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "abstract_models",
+                      "type": "package",
+                      "children": [
+                        {
+                          "name": "AbstractProductReview",
+                          "type": "class",
+                          "children": [
+                            {
+                              "name": "vote_up",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/catalogue/reviews/abstract_models.py:106"
+                            },
+                            {
+                              "name": "update_totals",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/catalogue/reviews/abstract_models.py:163"
+                            },
+                            {
+                              "name": "save",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/catalogue/reviews/abstract_models.py:112"
+                            },
+                            {
+                              "name": "can_user_vote",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/catalogue/reviews/abstract_models.py:172"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "AbstractVote",
+                          "type": "class",
+                          "children": [
+                            {
+                              "name": "save",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/catalogue/reviews/abstract_models.py:227"
+                            },
+                            {
+                              "name": "clean",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/catalogue/reviews/abstract_models.py:218"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractProduct",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "update_rating",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:784"
+                        },
+                        {
+                          "name": "calculate_rating",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:794"
+                        },
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:590"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "product_attributes",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "ProductAttributesContainer",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/product_attributes.py:207"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "models",
+          "type": "package",
+          "children": [
+            {
+              "name": "fields",
+              "type": "package",
+              "children": [
+                {
+                  "name": "NullCharField",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "get_prep_value",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/models/fields/__init__.py:122"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"reviews_vote\" (\"review_id\", \"user_id\", \"delta\", \"date_created\") VALUES (62, 634, 1, '2024-07-22T17:28:03.951156+00:00'::timestamptz) RETURNING \"reviews_vote\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT SUM(\"reviews_vote\".\"delta\") AS \"score\", COUNT(\"reviews_vote\".\"id\") AS \"total_votes\" FROM \"reviews_vote\" WHERE \"reviews_vote\".\"review_id\" = 62"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"reviews_productreview\" SET \"product_id\" = 746, \"score\" = 3, \"title\" = 'This is nice', \"body\" = 'This is the body', \"user_id\" = 633, \"name\" = '', \"email\" = '', \"homepage\" = '', \"status\" = 1, \"total_votes\" = 1, \"delta_votes\" = 1, \"date_created\" = '2024-07-22T17:28:03.947496+00:00'::timestamptz WHERE \"reviews_productreview\".\"id\" = 62"
+        },
+        {
+          "type": "query",
+          "name": "SELECT SUM(\"reviews_productreview\".\"score\") AS \"sum\", COUNT(\"reviews_productreview\".\"id\") AS \"count\" FROM \"reviews_productreview\" WHERE (\"reviews_productreview\".\"product_id\" = 746 AND \"reviews_productreview\".\"status\" = 1)"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_product\" SET \"structure\" = 'standalone', \"is_public\" = true, \"upc\" = NULL, \"parent_id\" = NULL, \"title\" = 'Dùｍϻϒ title', \"slug\" = 'dumu03fbu03a5-title', \"description\" = '', \"meta_title\" = NULL, \"meta_description\" = NULL, \"product_class_id\" = 565, \"rating\" = 3.0, \"date_created\" = '2024-07-22T17:28:03.940695+00:00'::timestamptz, \"date_updated\" = '2024-07-22T17:28:03.954841+00:00'::timestamptz, \"is_discountable\" = true WHERE \"catalogue_product\".\"id\" = 746"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"reviews_productreview\" WHERE \"reviews_productreview\".\"id\" = 62 LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"myauth_user\" WHERE \"myauth_user\".\"id\" = 634 LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"reviews_vote\".\"id\", \"reviews_vote\".\"review_id\", \"reviews_vote\".\"user_id\", \"reviews_vote\".\"delta\", \"reviews_vote\".\"date_created\" FROM \"reviews_vote\" WHERE (\"reviews_vote\".\"review_id\" = 62 AND \"reviews_vote\".\"user_id\" = 634) ORDER BY \"reviews_vote\".\"date_created\" DESC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"reviews_vote\" WHERE (\"reviews_vote\".\"review_id\" = 62 AND \"reviews_vote\".\"user_id\" = 634) LIMIT 1"
+        }
+      ]
+    }
+  ]
+}

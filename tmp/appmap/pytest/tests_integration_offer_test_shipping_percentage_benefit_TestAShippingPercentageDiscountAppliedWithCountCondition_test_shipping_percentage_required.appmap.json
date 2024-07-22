@@ -1,0 +1,147 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13981057856,
+        "value": "<Benefit: None% off of shipping cost>",
+        "name": "self",
+        "class": "oscar.apps.offer.models.Benefit"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.abstract_models.AbstractBenefit",
+      "method_id": "clean",
+      "path": "src/oscar/apps/offer/abstract_models.py",
+      "lineno": 621
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13981057856,
+        "value": "<Benefit: None% off of shipping cost>",
+        "name": "self",
+        "class": "oscar.apps.offer.models.Benefit"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.abstract_models.AbstractBenefit",
+      "method_id": "clean_shipping_percentage",
+      "path": "src/oscar/apps/offer/abstract_models.py",
+      "lineno": 679
+    },
+    {
+      "exceptions": [
+        {
+          "class": "django.core.exceptions.ValidationError",
+          "message": "['Percentage discount benefits require a value']",
+          "object_id": 13981130464
+        }
+      ],
+      "parent_id": 2,
+      "elapsed": 0.000018358230590820312,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "exceptions": [
+        {
+          "class": "django.core.exceptions.ValidationError",
+          "message": "['Percentage discount benefits require a value']",
+          "object_id": 13981130464
+        }
+      ],
+      "parent_id": 1,
+      "elapsed": 0.0005621910095214844,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      }
+    ],
+    "feature_group": "A shipping percentage discount applied with count condition",
+    "recording": {
+      "defined_class": "tests.integration.offer.test_shipping_percentage_benefit.TestAShippingPercentageDiscountAppliedWithCountCondition",
+      "method_id": "test_shipping_percentage_required"
+    },
+    "source_location": "tests/integration/offer/test_shipping_percentage_benefit.py:82",
+    "name": "A shipping percentage discount applied with count condition shipping percentage required",
+    "feature": "Shipping percentage required",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "offer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractBenefit",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "clean",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/abstract_models.py:621"
+                        },
+                        {
+                          "name": "clean_shipping_percentage",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/abstract_models.py:679"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

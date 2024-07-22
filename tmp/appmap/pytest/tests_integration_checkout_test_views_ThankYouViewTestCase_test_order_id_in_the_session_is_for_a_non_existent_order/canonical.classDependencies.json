@@ -1,0 +1,50 @@
+[
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueBrowseHtml#render",
+    "callee": "<templates>/SrcOscarTemplatesOscarPartialsAlert_MessagesHtml#render"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueBrowseHtml#render",
+    "callee": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"ancestors_are_public\" AND \"catalogue_category\".\"is_public\") ORDER BY \"catalogue_category\".\"path\" ASC"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueBrowseHtml#render",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCatalogueBrowseHtml#render",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "GET /catalogue/",
+    "callee": "<templates>/SrcOscarTemplatesOscarCatalogueBrowseHtml#render"
+  },
+  {
+    "caller": "GET /catalogue/",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "GET /checkout/thank-you/",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"catalogue_product\" WHERE (\"catalogue_product\".\"is_public\" AND \"catalogue_product\".\"parent_id\" IS NULL)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2024-07-22T17:28:05.876786+00:00'::timestamptz AND \"django_session\".\"session_key\" = '0zq6ynbcd6pmqkfdzb0mvr8o35erjzf4') LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2024-07-22T17:28:05.879880+00:00'::timestamptz AND \"django_session\".\"session_key\" = '0zq6ynbcd6pmqkfdzb0mvr8o35erjzf4') LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"order_order\".\"id\", \"order_order\".\"number\", \"order_order\".\"site_id\", \"order_order\".\"basket_id\", \"order_order\".\"user_id\", \"order_order\".\"billing_address_id\", \"order_order\".\"currency\", \"order_order\".\"total_incl_tax\", \"order_order\".\"total_excl_tax\", \"order_order\".\"shipping_incl_tax\", \"order_order\".\"shipping_excl_tax\", \"order_order\".\"shipping_tax_code\", \"order_order\".\"shipping_address_id\", \"order_order\".\"shipping_method\", \"order_order\".\"shipping_code\", \"order_order\".\"status\", \"order_order\".\"guest_email\", \"order_order\".\"date_placed\" FROM \"order_order\" WHERE \"order_order\".\"id\" = 0 ORDER BY \"order_order\".\"date_placed\" DESC LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  }
+]

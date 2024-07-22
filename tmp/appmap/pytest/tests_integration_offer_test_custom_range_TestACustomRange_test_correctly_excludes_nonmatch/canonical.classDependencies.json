@@ -1,0 +1,54 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"catalogue_product\" (\"structure\", \"is_public\", \"upc\", \"parent_id\", \"title\", \"slug\", \"description\", \"meta_title\", \"meta_description\", \"product_class_id\", \"rating\", \"date_created\", \"date_updated\", \"is_discountable\") VALUES ('standalone', true, NULL, NULL, 'B tale', 'b-tale', '', NULL, NULL, 632, NULL, '2024-07-22T17:28:18.913755+00:00'::timestamptz, '2024-07-22T17:28:18.913765+00:00'::timestamptz, true) RETURNING \"catalogue_product\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"offer_range\" (\"name\", \"slug\", \"description\", \"is_public\", \"includes_all_products\", \"proxy_class\", \"date_created\") VALUES ('Custom range', 'custom-range', '', false, false, 'tests.integration.offer.test_custom_range.CustomRange', '2024-07-22T17:28:18.908718+00:00'::timestamptz) RETURNING \"offer_range\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"slug\" = 'dumu03fbu03a5-item-class' ORDER BY \"catalogue_productclass\".\"name\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"offer_range\".\"id\", \"offer_range\".\"name\", \"offer_range\".\"slug\", \"offer_range\".\"description\", \"offer_range\".\"is_public\", \"offer_range\".\"includes_all_products\", \"offer_range\".\"proxy_class\", \"offer_range\".\"date_created\" FROM \"offer_range\" WHERE \"offer_range\".\"slug\" = 'custom-range' ORDER BY \"offer_range\".\"name\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"catalogue_productclass\" (\"name\", \"slug\", \"requires_shipping\", \"track_stock\") VALUES ('Dùｍϻϒ item class', 'dumu03fbu03a5-item-class', true, true) RETURNING \"catalogue_productclass\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x3269\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SAVEPOINT \"s8669432832_x3269\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"name\" = 'Dùｍϻϒ item class' LIMIT 21"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "oscar/models"
+  }
+]

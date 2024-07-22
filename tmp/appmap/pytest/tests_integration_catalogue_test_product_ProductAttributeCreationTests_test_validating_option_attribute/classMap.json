@@ -1,0 +1,84 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "catalogue",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractProductAttribute",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "validate_value",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/abstract_models.py:1046"
+                      },
+                      {
+                        "name": "_validate_option",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/abstract_models.py:1097"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core",
+        "type": "package",
+        "children": [
+          {
+            "name": "loading",
+            "type": "class",
+            "children": [
+              {
+                "name": "get_model",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/loading.py:225"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"catalogue_attributeoptiongroup\" (\"name\") VALUES ('Grüppchen') RETURNING \"catalogue_attributeoptiongroup\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"catalogue_attributeoption\" (\"group_id\", \"option\") VALUES (60, 'Option 46') RETURNING \"catalogue_attributeoption\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"catalogue_attributeoption\" (\"group_id\", \"option\") VALUES (60, 'Option 47') RETURNING \"catalogue_attributeoption\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_attributeoption\".\"option\" FROM \"catalogue_attributeoption\" WHERE \"catalogue_attributeoption\".\"group_id\" = 60"
+      }
+    ]
+  }
+]

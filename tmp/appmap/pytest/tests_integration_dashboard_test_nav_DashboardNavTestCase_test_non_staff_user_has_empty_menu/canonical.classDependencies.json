@@ -1,0 +1,34 @@
+[
+  {
+    "caller": "django/contrib",
+    "callee": "SELECT \"django_content_type\".\"app_label\", \"auth_permission\".\"codename\" FROM \"auth_permission\" INNER JOIN \"auth_group_permissions\" ON (\"auth_permission\".\"id\" = \"auth_group_permissions\".\"permission_id\") INNER JOIN \"auth_group\" ON (\"auth_group_permissions\".\"group_id\" = \"auth_group\".\"id\") INNER JOIN \"myauth_user_groups\" ON (\"auth_group\".\"id\" = \"myauth_user_groups\".\"group_id\") INNER JOIN \"django_content_type\" ON (\"auth_permission\".\"content_type_id\" = \"django_content_type\".\"id\") WHERE \"myauth_user_groups\".\"user_id\" = 674"
+  },
+  {
+    "caller": "django/contrib",
+    "callee": "SELECT \"django_content_type\".\"app_label\", \"auth_permission\".\"codename\" FROM \"auth_permission\" INNER JOIN \"myauth_user_user_permissions\" ON (\"auth_permission\".\"id\" = \"myauth_user_user_permissions\".\"permission_id\") INNER JOIN \"django_content_type\" ON (\"auth_permission\".\"content_type_id\" = \"django_content_type\".\"id\") WHERE \"myauth_user_user_permissions\".\"user_id\" = 674"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('', NULL, false, 'example_341@example.com', 'joseph', 'winterbottom', false, true, '2024-07-22T17:28:11.830909+00:00'::timestamptz, 'the_j_meister nummer 341', '') RETURNING \"myauth_user\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"customer_productalert\" SET \"user_id\" = 674, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_341@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"myauth_user\" SET \"password\" = 'md5$GTQijyCEuRwihSTBH5xtgd$78504dc11d29f9f93b00cb18a6c0eeb4', \"last_login\" = NULL, \"is_superuser\" = false, \"email\" = 'example_341@example.com', \"first_name\" = 'joseph', \"last_name\" = 'winterbottom', \"is_staff\" = false, \"is_active\" = true, \"date_joined\" = '2024-07-22T17:28:11.830909+00:00'::timestamptz, \"username\" = 'the_j_meister nummer 341', \"extra_field\" = '' WHERE \"myauth_user\".\"id\" = 674"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/views"
+  },
+  {
+    "caller": "oscar/views",
+    "callee": "django/contrib"
+  }
+]

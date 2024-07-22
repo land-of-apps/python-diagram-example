@@ -1,0 +1,4014 @@
+{
+  "events": [
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5359884720,
+          "value": "<class 'tests._site.model_tests_app.models.CustomBenefitModel'>",
+          "name": "benefit_class",
+          "class": "django.db.models.base.ModelBase"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13928252992,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.custom",
+      "method_id": "create_benefit",
+      "path": "src/oscar/apps/offer/custom.py",
+      "lineno": 46
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5359884720,
+          "value": "<class 'tests._site.model_tests_app.models.CustomBenefitModel'>",
+          "name": "klass",
+          "class": "django.db.models.base.ModelBase"
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.custom",
+      "method_id": "_class_path",
+      "path": "src/oscar/apps/offer/custom.py",
+      "lineno": 11
+    },
+    {
+      "return_value": {
+        "object_id": 13928525984,
+        "value": "'tests._site.model_tests_app.models.CustomBenefitModel'",
+        "class": "builtins.str"
+      },
+      "parent_id": 2,
+      "elapsed": 0.0000021457672119140625,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394984592,
+        "value": "<oscar.models.fields.NullCharField: proxy_class>",
+        "name": "self",
+        "class": "oscar.models.fields.NullCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928525984,
+          "value": "'tests._site.model_tests_app.models.CustomBenefitModel'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.NullCharField",
+      "method_id": "get_prep_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 122
+    },
+    {
+      "return_value": {
+        "object_id": 13928525984,
+        "value": "'tests._site.model_tests_app.models.CustomBenefitModel'",
+        "class": "builtins.str"
+      },
+      "parent_id": 4,
+      "elapsed": 0.0000030994415283203125,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"offer_benefit\" (\"range_id\", \"type\", \"value\", \"max_affected_items\", \"proxy_class\") VALUES (NULL, '', NULL, NULL, 'tests._site.model_tests_app.models.CustomBenefitModel') RETURNING \"offer_benefit\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 6,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 6,
+      "elapsed": 0.0007439160000046741,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928357024,
+        "value": "<Benefit: Test benefit>",
+        "class": "oscar.apps.offer.models.Benefit"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0012180805206298828,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4416120480,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x10738a6a0>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13928355152,
+          "value": "<WSGIRequest: POST '/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "opt",
+          "object_id": 13928356736,
+          "value": "<django.contrib.auth.models.AnonymousUser object at 0x33e31db80>",
+          "name": "user",
+          "class": "django.contrib.auth.models.AnonymousUser"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13928050304,
+          "value": "{'request': <WSGIRequest: POST '/'>, 'user': <django.contrib.auth.models.AnonymousUser object at 0x33e31db80>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "user",
+              "class": "django.contrib.auth.models.AnonymousUser"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 9,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "return_value": {
+        "object_id": 13928308304,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x33e311e50>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 9,
+      "elapsed": 0.0000050067901611328125,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13928307056,
+        "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x33e311970>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928355152,
+          "value": "<WSGIRequest: POST '/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13928300160,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 11,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "dispatch",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 137
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13928307056,
+        "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x33e311970>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928355152,
+          "value": "<WSGIRequest: POST '/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 12,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "is_previous_step_complete",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 148
+    },
+    {
+      "static": true,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4700227472,
+        "value": "<class 'oscar.apps.dashboard.offers.views.OfferMetaDataView'>",
+        "name": "cls",
+        "class": "builtins.type"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928307056,
+          "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x33e311970>",
+          "name": "current_view",
+          "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928355152,
+          "value": "<WSGIRequest: POST '/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 13,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "is_valid",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 308
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13928307056,
+        "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x33e311970>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332491568,
+          "value": "'metadata'",
+          "name": "step_name",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "request",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 14,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "_fetch_object",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 203
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13928307056,
+        "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x33e311970>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "step_name",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341172976,
+          "value": "True",
+          "name": "is_object",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 15,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "_key",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 153
+    },
+    {
+      "return_value": {
+        "object_id": 13928370736,
+        "value": "'metadata_obj'",
+        "class": "builtins.str"
+      },
+      "parent_id": 15,
+      "elapsed": 0.0000011920928955078125,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928379728,
+        "value": "<ConditionalOffer: Test offer>",
+        "class": "oscar.apps.offer.models.ConditionalOffer"
+      },
+      "parent_id": 14,
+      "elapsed": 0.00011968612670898438,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 13,
+      "elapsed": 0.00016570091247558594,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 12,
+      "elapsed": 0.00021409988403320312,
+      "id": 19,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13928307056,
+        "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x33e311970>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13928371648,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 20,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "get_form_kwargs",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 228
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13928307056,
+        "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x33e311970>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+      },
+      "id": 21,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "_fetch_form_kwargs",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 181
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13928307056,
+        "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x33e311970>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "step_name",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "is_object",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 22,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "_key",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 153
+    },
+    {
+      "return_value": {
+        "object_id": 4394562608,
+        "value": "'benefit'",
+        "class": "builtins.str"
+      },
+      "parent_id": 22,
+      "elapsed": 0.0000011920928955078125,
+      "id": 23,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928372160,
+        "value": "{}",
+        "class": "builtins.dict",
+        "size": 0
+      },
+      "parent_id": 21,
+      "elapsed": 0.00004100799560546875,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928320320,
+        "value": "{'initial': {}, 'prefix': None, 'data': <QueryDict: {'custom_benefit': ['137']}>, 'files': <MultiValueDict: {}>}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "initial",
+            "class": "builtins.dict"
+          },
+          {
+            "name": "prefix",
+            "class": "builtins.NoneType"
+          },
+          {
+            "name": "data",
+            "class": "django.http.request.QueryDict",
+            "properties": [
+              {
+                "name": "custom_benefit",
+                "class": "builtins.str"
+              }
+            ]
+          },
+          {
+            "name": "files",
+            "class": "django.utils.datastructures.MultiValueDict"
+          }
+        ],
+        "size": 4
+      },
+      "parent_id": 20,
+      "elapsed": 0.00022101402282714844,
+      "id": 25,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394984592,
+        "value": "<oscar.models.fields.NullCharField: proxy_class>",
+        "name": "self",
+        "class": "oscar.models.fields.NullCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "value",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 26,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.NullCharField",
+      "method_id": "get_prep_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 122
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 26,
+      "elapsed": 0.0000021457672119140625,
+      "id": 27,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"offer_benefit\".\"id\", \"offer_benefit\".\"range_id\", \"offer_benefit\".\"type\", \"offer_benefit\".\"value\", \"offer_benefit\".\"max_affected_items\", \"offer_benefit\".\"proxy_class\" FROM \"offer_benefit\" WHERE NOT (\"offer_benefit\".\"proxy_class\" IS NULL)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 28,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 28,
+      "elapsed": 0.006179124999988517,
+      "id": 29,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394984592,
+        "value": "<oscar.models.fields.NullCharField: proxy_class>",
+        "name": "self",
+        "class": "oscar.models.fields.NullCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928387952,
+          "value": "'tests._site.model_tests_app.models.CustomBenefitModel'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "rest",
+          "object_id": 13927938624,
+          "value": "(Col(offer_benefit, offer.Benefit.proxy_class), <DatabaseWrapper vendor='postgresql' alias='default'>)",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13928414016,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 30,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.NullCharField",
+      "method_id": "from_db_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 117
+    },
+    {
+      "return_value": {
+        "object_id": 13928387952,
+        "value": "'tests._site.model_tests_app.models.CustomBenefitModel'",
+        "class": "builtins.str"
+      },
+      "parent_id": 30,
+      "elapsed": 9.5367431640625e-7,
+      "id": 31,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13928395296,
+        "value": "<Benefit: Test benefit>",
+        "name": "self",
+        "class": "oscar.apps.offer.models.Benefit"
+      },
+      "id": 32,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.abstract_models.BaseOfferMixin",
+      "method_id": "proxy",
+      "path": "src/oscar/apps/offer/abstract_models.py",
+      "lineno": 36
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4394620848,
+          "value": "'PercentageDiscountBenefit'",
+          "name": "classname",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 33,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_class",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 25
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928507072,
+          "value": "['PercentageDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 34,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 48
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928507072,
+          "value": "['PercentageDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "req",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 35,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "default_class_loader",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 53
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928334560,
+          "value": "'oscar.apps.offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928507072,
+          "value": "['PercentageDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 36,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_import_module",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 135
+    },
+    {
+      "return_value": {
+        "object_id": 4395077120,
+        "value": "<module 'oscar.apps.offer.benefits' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/benefits.py'>",
+        "class": "builtins.module"
+      },
+      "parent_id": 36,
+      "elapsed": 0.0000021457672119140625,
+      "id": 37,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 38,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_find_registered_app_name",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 183
+    },
+    {
+      "return_value": {
+        "object_id": 4379841280,
+        "value": "'oscar.apps.offer'",
+        "class": "builtins.str"
+      },
+      "parent_id": 38,
+      "elapsed": 0.0000019073486328125,
+      "id": 39,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928327104,
+          "value": "[None, <module 'oscar.apps.offer.benefits' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/benefits.py'>]",
+          "name": "modules",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.NoneType"
+            },
+            {
+              "class": "builtins.module"
+            }
+          ],
+          "size": 2
+        },
+        {
+          "kind": "req",
+          "object_id": 13928507072,
+          "value": "['PercentageDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 40,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_pluck_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 161
+    },
+    {
+      "return_value": {
+        "object_id": 13928329024,
+        "value": "[<class 'oscar.apps.offer.benefits.PercentageDiscountBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 40,
+      "elapsed": 0,
+      "id": 41,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928329024,
+        "value": "[<class 'oscar.apps.offer.benefits.PercentageDiscountBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 35,
+      "elapsed": 0.00011277198791503906,
+      "id": 42,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928329024,
+        "value": "[<class 'oscar.apps.offer.benefits.PercentageDiscountBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 34,
+      "elapsed": 0.00014829635620117188,
+      "id": 43,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5359573040,
+        "value": "<class 'oscar.apps.offer.benefits.PercentageDiscountBenefit'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 33,
+      "elapsed": 0.0001862049102783203,
+      "id": 44,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4394620928,
+          "value": "'AbsoluteDiscountBenefit'",
+          "name": "classname",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 45,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_class",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 25
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928326144,
+          "value": "['AbsoluteDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 46,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 48
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928326144,
+          "value": "['AbsoluteDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "req",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 47,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "default_class_loader",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 53
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928336720,
+          "value": "'oscar.apps.offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928326144,
+          "value": "['AbsoluteDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 48,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_import_module",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 135
+    },
+    {
+      "return_value": {
+        "object_id": 4395077120,
+        "value": "<module 'oscar.apps.offer.benefits' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/benefits.py'>",
+        "class": "builtins.module"
+      },
+      "parent_id": 48,
+      "elapsed": 0.0000019073486328125,
+      "id": 49,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 50,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_find_registered_app_name",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 183
+    },
+    {
+      "return_value": {
+        "object_id": 4379841280,
+        "value": "'oscar.apps.offer'",
+        "class": "builtins.str"
+      },
+      "parent_id": 50,
+      "elapsed": 0.0000021457672119140625,
+      "id": 51,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928512192,
+          "value": "[None, <module 'oscar.apps.offer.benefits' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/benefits.py'>]",
+          "name": "modules",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.NoneType"
+            },
+            {
+              "class": "builtins.module"
+            }
+          ],
+          "size": 2
+        },
+        {
+          "kind": "req",
+          "object_id": 13928326144,
+          "value": "['AbsoluteDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 52,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_pluck_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 161
+    },
+    {
+      "return_value": {
+        "object_id": 13928512704,
+        "value": "[<class 'oscar.apps.offer.benefits.AbsoluteDiscountBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 52,
+      "elapsed": 0,
+      "id": 53,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928512704,
+        "value": "[<class 'oscar.apps.offer.benefits.AbsoluteDiscountBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 47,
+      "elapsed": 0.0001049041748046875,
+      "id": 54,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928512704,
+        "value": "[<class 'oscar.apps.offer.benefits.AbsoluteDiscountBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 46,
+      "elapsed": 0.00013899803161621094,
+      "id": 55,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5359593856,
+        "value": "<class 'oscar.apps.offer.benefits.AbsoluteDiscountBenefit'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 45,
+      "elapsed": 0.0001728534698486328,
+      "id": 56,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4394621008,
+          "value": "'FixedUnitDiscountBenefit'",
+          "name": "classname",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 57,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_class",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 25
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928427584,
+          "value": "['FixedUnitDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 58,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 48
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928427584,
+          "value": "['FixedUnitDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "req",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 59,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "default_class_loader",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 53
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928424272,
+          "value": "'oscar.apps.offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928427584,
+          "value": "['FixedUnitDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 60,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_import_module",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 135
+    },
+    {
+      "return_value": {
+        "object_id": 4395077120,
+        "value": "<module 'oscar.apps.offer.benefits' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/benefits.py'>",
+        "class": "builtins.module"
+      },
+      "parent_id": 60,
+      "elapsed": 0.0000021457672119140625,
+      "id": 61,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 62,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_find_registered_app_name",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 183
+    },
+    {
+      "return_value": {
+        "object_id": 4379841280,
+        "value": "'oscar.apps.offer'",
+        "class": "builtins.str"
+      },
+      "parent_id": 62,
+      "elapsed": 9.5367431640625e-7,
+      "id": 63,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928430592,
+          "value": "[None, <module 'oscar.apps.offer.benefits' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/benefits.py'>]",
+          "name": "modules",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.NoneType"
+            },
+            {
+              "class": "builtins.module"
+            }
+          ],
+          "size": 2
+        },
+        {
+          "kind": "req",
+          "object_id": 13928427584,
+          "value": "['FixedUnitDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 64,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_pluck_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 161
+    },
+    {
+      "return_value": {
+        "object_id": 13928431040,
+        "value": "[<class 'oscar.apps.offer.benefits.FixedUnitDiscountBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 64,
+      "elapsed": 0.0000011920928955078125,
+      "id": 65,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928431040,
+        "value": "[<class 'oscar.apps.offer.benefits.FixedUnitDiscountBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 59,
+      "elapsed": 0.0002899169921875,
+      "id": 66,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928431040,
+        "value": "[<class 'oscar.apps.offer.benefits.FixedUnitDiscountBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 58,
+      "elapsed": 0.0003249645233154297,
+      "id": 67,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5359597632,
+        "value": "<class 'oscar.apps.offer.benefits.FixedUnitDiscountBenefit'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 57,
+      "elapsed": 0.0003592967987060547,
+      "id": 68,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4394621088,
+          "value": "'MultibuyDiscountBenefit'",
+          "name": "classname",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 69,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_class",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 25
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928411584,
+          "value": "['MultibuyDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 70,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 48
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928411584,
+          "value": "['MultibuyDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "req",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 71,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "default_class_loader",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 53
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928425472,
+          "value": "'oscar.apps.offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928411584,
+          "value": "['MultibuyDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 72,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_import_module",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 135
+    },
+    {
+      "return_value": {
+        "object_id": 4395077120,
+        "value": "<module 'oscar.apps.offer.benefits' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/benefits.py'>",
+        "class": "builtins.module"
+      },
+      "parent_id": 72,
+      "elapsed": 0.0000019073486328125,
+      "id": 73,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 74,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_find_registered_app_name",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 183
+    },
+    {
+      "return_value": {
+        "object_id": 4379841280,
+        "value": "'oscar.apps.offer'",
+        "class": "builtins.str"
+      },
+      "parent_id": 74,
+      "elapsed": 0.00000286102294921875,
+      "id": 75,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928437888,
+          "value": "[None, <module 'oscar.apps.offer.benefits' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/benefits.py'>]",
+          "name": "modules",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.NoneType"
+            },
+            {
+              "class": "builtins.module"
+            }
+          ],
+          "size": 2
+        },
+        {
+          "kind": "req",
+          "object_id": 13928411584,
+          "value": "['MultibuyDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 76,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_pluck_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 161
+    },
+    {
+      "return_value": {
+        "object_id": 13928438272,
+        "value": "[<class 'oscar.apps.offer.benefits.MultibuyDiscountBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 76,
+      "elapsed": 0.0000011920928955078125,
+      "id": 77,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928438272,
+        "value": "[<class 'oscar.apps.offer.benefits.MultibuyDiscountBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 71,
+      "elapsed": 0.00010895729064941406,
+      "id": 78,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928438272,
+        "value": "[<class 'oscar.apps.offer.benefits.MultibuyDiscountBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 70,
+      "elapsed": 0.00014591217041015625,
+      "id": 79,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5359605184,
+        "value": "<class 'oscar.apps.offer.benefits.MultibuyDiscountBenefit'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 69,
+      "elapsed": 0.00018095970153808594,
+      "id": 80,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4394621168,
+          "value": "'FixedPriceBenefit'",
+          "name": "classname",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 81,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_class",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 25
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928439232,
+          "value": "['FixedPriceBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 82,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 48
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928439232,
+          "value": "['FixedPriceBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "req",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 83,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "default_class_loader",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 53
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928426912,
+          "value": "'oscar.apps.offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928439232,
+          "value": "['FixedPriceBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 84,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_import_module",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 135
+    },
+    {
+      "return_value": {
+        "object_id": 4395077120,
+        "value": "<module 'oscar.apps.offer.benefits' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/benefits.py'>",
+        "class": "builtins.module"
+      },
+      "parent_id": 84,
+      "elapsed": 0.00000286102294921875,
+      "id": 85,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 86,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_find_registered_app_name",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 183
+    },
+    {
+      "return_value": {
+        "object_id": 4379841280,
+        "value": "'oscar.apps.offer'",
+        "class": "builtins.str"
+      },
+      "parent_id": 86,
+      "elapsed": 0.0000019073486328125,
+      "id": 87,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928348672,
+          "value": "[None, <module 'oscar.apps.offer.benefits' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/benefits.py'>]",
+          "name": "modules",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.NoneType"
+            },
+            {
+              "class": "builtins.module"
+            }
+          ],
+          "size": 2
+        },
+        {
+          "kind": "req",
+          "object_id": 13928439232,
+          "value": "['FixedPriceBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 88,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_pluck_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 161
+    },
+    {
+      "return_value": {
+        "object_id": 13928450944,
+        "value": "[<class 'oscar.apps.offer.benefits.FixedPriceBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 88,
+      "elapsed": 0.0000011920928955078125,
+      "id": 89,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928450944,
+        "value": "[<class 'oscar.apps.offer.benefits.FixedPriceBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 83,
+      "elapsed": 0.0001347064971923828,
+      "id": 90,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928450944,
+        "value": "[<class 'oscar.apps.offer.benefits.FixedPriceBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 82,
+      "elapsed": 0.000186920166015625,
+      "id": 91,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5359601408,
+        "value": "<class 'oscar.apps.offer.benefits.FixedPriceBenefit'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 81,
+      "elapsed": 0.00022077560424804688,
+      "id": 92,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4394621248,
+          "value": "'ShippingAbsoluteDiscountBenefit'",
+          "name": "classname",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 93,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_class",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 25
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928464576,
+          "value": "['ShippingAbsoluteDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 94,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 48
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928464576,
+          "value": "['ShippingAbsoluteDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "req",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 95,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "default_class_loader",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 53
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928461376,
+          "value": "'oscar.apps.offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928464576,
+          "value": "['ShippingAbsoluteDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 96,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_import_module",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 135
+    },
+    {
+      "return_value": {
+        "object_id": 4395077120,
+        "value": "<module 'oscar.apps.offer.benefits' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/benefits.py'>",
+        "class": "builtins.module"
+      },
+      "parent_id": 96,
+      "elapsed": 0.0000011920928955078125,
+      "id": 97,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 98,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_find_registered_app_name",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 183
+    },
+    {
+      "return_value": {
+        "object_id": 4379841280,
+        "value": "'oscar.apps.offer'",
+        "class": "builtins.str"
+      },
+      "parent_id": 98,
+      "elapsed": 0.0000021457672119140625,
+      "id": 99,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928467648,
+          "value": "[None, <module 'oscar.apps.offer.benefits' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/benefits.py'>]",
+          "name": "modules",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.NoneType"
+            },
+            {
+              "class": "builtins.module"
+            }
+          ],
+          "size": 2
+        },
+        {
+          "kind": "req",
+          "object_id": 13928464576,
+          "value": "['ShippingAbsoluteDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 100,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_pluck_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 161
+    },
+    {
+      "return_value": {
+        "object_id": 13928468160,
+        "value": "[<class 'oscar.apps.offer.benefits.ShippingAbsoluteDiscountBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 100,
+      "elapsed": 9.5367431640625e-7,
+      "id": 101,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928468160,
+        "value": "[<class 'oscar.apps.offer.benefits.ShippingAbsoluteDiscountBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 95,
+      "elapsed": 0.00009799003601074219,
+      "id": 102,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928468160,
+        "value": "[<class 'oscar.apps.offer.benefits.ShippingAbsoluteDiscountBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 94,
+      "elapsed": 0.00013184547424316406,
+      "id": 103,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5359600464,
+        "value": "<class 'oscar.apps.offer.benefits.ShippingAbsoluteDiscountBenefit'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 93,
+      "elapsed": 0.00016617774963378906,
+      "id": 104,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4394621328,
+          "value": "'ShippingFixedPriceBenefit'",
+          "name": "classname",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 105,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_class",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 25
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928477632,
+          "value": "['ShippingFixedPriceBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 106,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 48
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928477632,
+          "value": "['ShippingFixedPriceBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "req",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 107,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "default_class_loader",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 53
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928462816,
+          "value": "'oscar.apps.offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928477632,
+          "value": "['ShippingFixedPriceBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 108,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_import_module",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 135
+    },
+    {
+      "return_value": {
+        "object_id": 4395077120,
+        "value": "<module 'oscar.apps.offer.benefits' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/benefits.py'>",
+        "class": "builtins.module"
+      },
+      "parent_id": 108,
+      "elapsed": 0.0000011920928955078125,
+      "id": 109,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 110,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_find_registered_app_name",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 183
+    },
+    {
+      "return_value": {
+        "object_id": 4379841280,
+        "value": "'oscar.apps.offer'",
+        "class": "builtins.str"
+      },
+      "parent_id": 110,
+      "elapsed": 0.0000019073486328125,
+      "id": 111,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928480704,
+          "value": "[None, <module 'oscar.apps.offer.benefits' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/benefits.py'>]",
+          "name": "modules",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.NoneType"
+            },
+            {
+              "class": "builtins.module"
+            }
+          ],
+          "size": 2
+        },
+        {
+          "kind": "req",
+          "object_id": 13928477632,
+          "value": "['ShippingFixedPriceBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 112,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_pluck_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 161
+    },
+    {
+      "return_value": {
+        "object_id": 13928497664,
+        "value": "[<class 'oscar.apps.offer.benefits.ShippingFixedPriceBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 112,
+      "elapsed": 9.5367431640625e-7,
+      "id": 113,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928497664,
+        "value": "[<class 'oscar.apps.offer.benefits.ShippingFixedPriceBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 107,
+      "elapsed": 0.00009918212890625,
+      "id": 114,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928497664,
+        "value": "[<class 'oscar.apps.offer.benefits.ShippingFixedPriceBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 106,
+      "elapsed": 0.00013113021850585938,
+      "id": 115,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5359581328,
+        "value": "<class 'oscar.apps.offer.benefits.ShippingFixedPriceBenefit'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 105,
+      "elapsed": 0.0001659393310546875,
+      "id": 116,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4394623792,
+          "value": "'ShippingPercentageDiscountBenefit'",
+          "name": "classname",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 117,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_class",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 25
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928498944,
+          "value": "['ShippingPercentageDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 118,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 48
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928498944,
+          "value": "['ShippingPercentageDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "req",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 119,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "default_class_loader",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 53
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928464176,
+          "value": "'oscar.apps.offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13928498944,
+          "value": "['ShippingPercentageDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 120,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_import_module",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 135
+    },
+    {
+      "return_value": {
+        "object_id": 4395077120,
+        "value": "<module 'oscar.apps.offer.benefits' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/benefits.py'>",
+        "class": "builtins.module"
+      },
+      "parent_id": 120,
+      "elapsed": 9.5367431640625e-7,
+      "id": 121,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394609520,
+          "value": "'offer.benefits'",
+          "name": "module_label",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 122,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_find_registered_app_name",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 183
+    },
+    {
+      "return_value": {
+        "object_id": 4379841280,
+        "value": "'oscar.apps.offer'",
+        "class": "builtins.str"
+      },
+      "parent_id": 122,
+      "elapsed": 0.0000021457672119140625,
+      "id": 123,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928518464,
+          "value": "[None, <module 'oscar.apps.offer.benefits' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/offer/benefits.py'>]",
+          "name": "modules",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.NoneType"
+            },
+            {
+              "class": "builtins.module"
+            }
+          ],
+          "size": 2
+        },
+        {
+          "kind": "req",
+          "object_id": 13928498944,
+          "value": "['ShippingPercentageDiscountBenefit']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 124,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_pluck_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 161
+    },
+    {
+      "return_value": {
+        "object_id": 13928518976,
+        "value": "[<class 'oscar.apps.offer.benefits.ShippingPercentageDiscountBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 124,
+      "elapsed": 9.5367431640625e-7,
+      "id": 125,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928518976,
+        "value": "[<class 'oscar.apps.offer.benefits.ShippingPercentageDiscountBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 119,
+      "elapsed": 0.00009584426879882812,
+      "id": 126,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928518976,
+        "value": "[<class 'oscar.apps.offer.benefits.ShippingPercentageDiscountBenefit'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "django.db.models.base.ModelBase"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 118,
+      "elapsed": 0.00013327598571777344,
+      "id": 127,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5359614240,
+        "value": "<class 'oscar.apps.offer.benefits.ShippingPercentageDiscountBenefit'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 117,
+      "elapsed": 0.00016689300537109375,
+      "id": 128,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928387952,
+          "value": "'tests._site.model_tests_app.models.CustomBenefitModel'",
+          "name": "proxy_class",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 129,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.utils",
+      "method_id": "load_proxy",
+      "path": "src/oscar/apps/offer/utils.py",
+      "lineno": 29
+    },
+    {
+      "return_value": {
+        "object_id": 5359884720,
+        "value": "<class 'tests._site.model_tests_app.models.CustomBenefitModel'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 129,
+      "elapsed": 0.000016927719116210938,
+      "id": 130,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928382224,
+        "value": "<CustomBenefitModel: Test benefit>",
+        "class": "tests._site.model_tests_app.models.CustomBenefitModel"
+      },
+      "parent_id": 32,
+      "elapsed": 0.0019519329071044922,
+      "id": 131,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13928379968,
+        "value": "<BenefitForm bound=True, valid=True, fields=(range;type;value;max_affected_items;custom_benefit)>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.forms.BenefitForm"
+      },
+      "id": 132,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.forms.BenefitForm",
+      "method_id": "clean",
+      "path": "src/oscar/apps/dashboard/offers/forms.py",
+      "lineno": 204
+    },
+    {
+      "return_value": {
+        "object_id": 13928320320,
+        "value": "{'range': None, 'type': '', 'value': None, 'max_affected_items': None, 'custom_benefit': '137'}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "range",
+            "class": "builtins.NoneType"
+          },
+          {
+            "name": "type",
+            "class": "builtins.str"
+          },
+          {
+            "name": "value",
+            "class": "builtins.NoneType"
+          },
+          {
+            "name": "max_affected_items",
+            "class": "builtins.NoneType"
+          },
+          {
+            "name": "custom_benefit",
+            "class": "builtins.str"
+          }
+        ],
+        "size": 5
+      },
+      "parent_id": 132,
+      "elapsed": 0.00000286102294921875,
+      "id": 133,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13928381072,
+        "value": "<oscar.apps.offer.models.Benefit object at 0x33e323a90>",
+        "name": "self",
+        "class": "oscar.apps.offer.models.Benefit"
+      },
+      "id": 134,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.abstract_models.AbstractBenefit",
+      "method_id": "clean",
+      "path": "src/oscar/apps/offer/abstract_models.py",
+      "lineno": 621
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 134,
+      "elapsed": 0.0000011920928955078125,
+      "id": 135,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13928307056,
+        "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x33e311970>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928379968,
+          "value": "<BenefitForm bound=True, valid=True, fields=(range;type;value;max_affected_items;custom_benefit)>",
+          "name": "form",
+          "class": "oscar.apps.dashboard.offers.forms.BenefitForm"
+        }
+      ],
+      "id": 136,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "form_valid",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 258
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13928307056,
+        "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x33e311970>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928379968,
+          "value": "<BenefitForm bound=True, valid=True, fields=(range;type;value;max_affected_items;custom_benefit)>",
+          "name": "form",
+          "class": "oscar.apps.dashboard.offers.forms.BenefitForm"
+        }
+      ],
+      "id": 137,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "_store_form_kwargs",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 161
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13928307056,
+        "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x33e311970>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "step_name",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "is_object",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 138,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "_key",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 153
+    },
+    {
+      "return_value": {
+        "object_id": 4394562608,
+        "value": "'benefit'",
+        "class": "builtins.str"
+      },
+      "parent_id": 138,
+      "elapsed": 9.5367431640625e-7,
+      "id": 139,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = 'lvq7bqumn5vyxe2vjcdf6lgrz452xsz9' LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 140,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 140,
+      "elapsed": 0.0005467909999765652,
+      "id": 141,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SAVEPOINT \"s8669432832_x3018\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 142,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 142,
+      "elapsed": 0.00021549999999592728,
+      "id": 143,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('lvq7bqumn5vyxe2vjcdf6lgrz452xsz9', '.eJylUk1PwzAM_StTztNUxAFpf4ID3CiK3MSdwvJRJc7YmPrfSZp2axkaB6RKdZ6f_eL4nZlrW_T8U32Bl2x7ZgYJJBCwLTvXLEc1265SaMFgDmv2ioFWQ13N1ukcdNyVTDlLDMKrjpSzs4IFmmlFmU7d2PZFEZYMHoWOQR2GBPmIgwoBxVCozx2OTYSzUk1KNmqdwQYttormUOeV84pOGavGdp54mg9JlcEmKlr5K27gyHfaNaA5dJ1WArJu-EmJIU11j9BA2CPdpUgVhIt2MQE5SsrzTM2qTVWVd7DR3HSspoTzEv0V8iiVR0E8er3YWxqaC4_pJyflvmfriye4az6SL96SG4yTOBYPe9xcFgF6Zo1uPx-hVahl-NNP__JP37-nG48OuDGxB7tbLPVaXpoeQMebrUNSEulReFIwi2WJGMgZPjNczR4en_I10vcNgVciCQ:1sVwpY:8FGz12gCOni86Isr60uTN8lbrK7Wl-H8O2LoFEbHX7A', '2024-08-05T17:28:12.469518+00:00'::timestamptz)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 144,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 144,
+      "elapsed": 0.00028416600000014114,
+      "id": 145,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "RELEASE SAVEPOINT \"s8669432832_x3018\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 146,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 146,
+      "elapsed": 0.00019924999998011117,
+      "id": 147,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 137,
+      "elapsed": 0.0019767284393310547,
+      "id": 148,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13928307056,
+        "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x33e311970>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928379968,
+          "value": "<BenefitForm bound=True, valid=True, fields=(range;type;value;max_affected_items;custom_benefit)>",
+          "name": "form",
+          "class": "oscar.apps.dashboard.offers.forms.BenefitForm"
+        }
+      ],
+      "id": 149,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "_store_object",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 189
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13928379968,
+        "value": "<BenefitForm bound=True, valid=True, fields=(range;type;value;max_affected_items;custom_benefit)>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.forms.BenefitForm"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13928547264,
+          "value": "{'commit': False}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "commit",
+              "class": "builtins.bool"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 150,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.forms.BenefitForm",
+      "method_id": "save",
+      "path": "src/oscar/apps/dashboard/offers/forms.py",
+      "lineno": 235
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"offer_benefit\".\"id\", \"offer_benefit\".\"range_id\", \"offer_benefit\".\"type\", \"offer_benefit\".\"value\", \"offer_benefit\".\"max_affected_items\", \"offer_benefit\".\"proxy_class\" FROM \"offer_benefit\" WHERE \"offer_benefit\".\"id\" = 137 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 151,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 151,
+      "elapsed": 0.0003406250000068667,
+      "id": 152,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394984592,
+        "value": "<oscar.models.fields.NullCharField: proxy_class>",
+        "name": "self",
+        "class": "oscar.models.fields.NullCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13928484288,
+          "value": "'tests._site.model_tests_app.models.CustomBenefitModel'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "rest",
+          "object_id": 13928412480,
+          "value": "(Col(offer_benefit, offer.Benefit.proxy_class), <DatabaseWrapper vendor='postgresql' alias='default'>)",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13928555200,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 153,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.NullCharField",
+      "method_id": "from_db_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 117
+    },
+    {
+      "return_value": {
+        "object_id": 13928484288,
+        "value": "'tests._site.model_tests_app.models.CustomBenefitModel'",
+        "class": "builtins.str"
+      },
+      "parent_id": 153,
+      "elapsed": 9.5367431640625e-7,
+      "id": 154,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928496144,
+        "value": "<Benefit: Test benefit>",
+        "class": "oscar.apps.offer.models.Benefit"
+      },
+      "parent_id": 150,
+      "elapsed": 0.0007262229919433594,
+      "id": 155,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13928307056,
+        "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x33e311970>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "step_name",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341172976,
+          "value": "True",
+          "name": "is_object",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 156,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "_key",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 153
+    },
+    {
+      "return_value": {
+        "object_id": 13928556592,
+        "value": "'benefit_obj'",
+        "class": "builtins.str"
+      },
+      "parent_id": 156,
+      "elapsed": 0.0000011920928955078125,
+      "id": 157,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SAVEPOINT \"s8669432832_x3019\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 158,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 158,
+      "elapsed": 0.00021624999999403371,
+      "id": 159,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"django_session\" SET \"session_data\" = '.eJytUz1PwzAQ_SuV5yoKYkDqCDNigI0gy7EvlaljW_a5tFT579hx0iQUlQGmnO_r3bt7ORHTNODoh_xkTpDNibSATDBkZENOFUlWRTaraGrWQjIr8gIeV31dRdbx7VXY5kh-C_DcSYvS6FnBwpvSMjIe7dD2WSLkCBy4Cl7u-wC6AD0KMgw-pz5ZGJpwo4UckXRQKjlr0NBInLusk8ZJPCZfObRzSCM_QJmJjamgxY_-lh3oVpmaKcqsVZKzhOu_pwQfWV1LqJnfAV5NEdJzE_SCARqMyPNIRcqiLPMedGgvOpZjwDgBbnI5ENIBRxqcWtwtkqbcQfyIEbnryPqsCWrq96iL16iG1ggYivs7FudDMDWTht3NKTQSlPC_6ulP-um6tzjxoIALETumt4ujTuW56Z6pcHF1FpF4XAqNCO3iWDx4NC2dCa4iN7d3aYxpimtrO1dO24r1F8v677mtM4cj5Yr54Y_CuGJfUB8zi35I2nuSpvLbFw891_s88GMmkrbddV9vonC4:1sVwpY:Pp74yqKMJv9ax6akMug8CPUMBshXC2YpnMXKqSq6Xpg', \"expire_date\" = '2024-08-05T17:28:12.471980+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = 'lvq7bqumn5vyxe2vjcdf6lgrz452xsz9'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 160,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 160,
+      "elapsed": 0.0003061669999908645,
+      "id": 161,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "RELEASE SAVEPOINT \"s8669432832_x3019\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 162,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 162,
+      "elapsed": 0.00023395900001332848,
+      "id": 163,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 149,
+      "elapsed": 0.0025899410247802734,
+      "id": 164,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13928307056,
+        "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x33e311970>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+      },
+      "id": 165,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "get_success_url",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 303
+    },
+    {
+      "return_value": {
+        "object_id": 13928470352,
+        "value": "'/dashboard/offers/new/condition/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 165,
+      "elapsed": 0.00006198883056640625,
+      "id": 166,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928496576,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/dashboard/offers/new/condition/\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 136,
+      "elapsed": 0.004878044128417969,
+      "id": 167,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13928496576,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/dashboard/offers/new/condition/\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 11,
+      "elapsed": 0.015556097030639648,
+      "id": 168,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Create offer wizard step view",
+    "recording": {
+      "defined_class": "tests.integration.dashboard.test_offer_views.TestCreateOfferWizardStepView",
+      "method_id": "test_offer_benefit_view_with_custom_benefit_type"
+    },
+    "source_location": "tests/integration/dashboard/test_offer_views.py:320",
+    "name": "Create offer wizard step view offer benefit view with custom benefit type",
+    "feature": "Offer benefit view with custom benefit type",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "offer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "custom",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "create_benefit",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/offer/custom.py:46"
+                    },
+                    {
+                      "name": "_class_path",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/offer/custom.py:11"
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "BaseOfferMixin",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "proxy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/abstract_models.py:36"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "AbstractBenefit",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "clean",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/abstract_models.py:621"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "utils",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "load_proxy",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/offer/utils.py:29"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "partner",
+              "type": "package",
+              "children": [
+                {
+                  "name": "strategy",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Selector",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "strategy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/strategy.py:37"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "dashboard",
+              "type": "package",
+              "children": [
+                {
+                  "name": "offers",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "views",
+                      "type": "package",
+                      "children": [
+                        {
+                          "name": "OfferWizardStepView",
+                          "type": "class",
+                          "children": [
+                            {
+                              "name": "dispatch",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/views.py:137"
+                            },
+                            {
+                              "name": "is_previous_step_complete",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/views.py:148"
+                            },
+                            {
+                              "name": "is_valid",
+                              "type": "function",
+                              "static": true,
+                              "location": "src/oscar/apps/dashboard/offers/views.py:308"
+                            },
+                            {
+                              "name": "_fetch_object",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/views.py:203"
+                            },
+                            {
+                              "name": "_key",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/views.py:153"
+                            },
+                            {
+                              "name": "get_form_kwargs",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/views.py:228"
+                            },
+                            {
+                              "name": "_fetch_form_kwargs",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/views.py:181"
+                            },
+                            {
+                              "name": "form_valid",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/views.py:258"
+                            },
+                            {
+                              "name": "_store_form_kwargs",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/views.py:161"
+                            },
+                            {
+                              "name": "_store_object",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/views.py:189"
+                            },
+                            {
+                              "name": "get_success_url",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/views.py:303"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "forms",
+                      "type": "package",
+                      "children": [
+                        {
+                          "name": "BenefitForm",
+                          "type": "class",
+                          "children": [
+                            {
+                              "name": "clean",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/forms.py:204"
+                            },
+                            {
+                              "name": "save",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/forms.py:235"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "models",
+          "type": "package",
+          "children": [
+            {
+              "name": "fields",
+              "type": "package",
+              "children": [
+                {
+                  "name": "NullCharField",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "get_prep_value",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/models/fields/__init__.py:122"
+                    },
+                    {
+                      "name": "from_db_value",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/models/fields/__init__.py:117"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "loading",
+              "type": "class",
+              "children": [
+                {
+                  "name": "get_class",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:25"
+                },
+                {
+                  "name": "get_classes",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:48"
+                },
+                {
+                  "name": "default_class_loader",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:53"
+                },
+                {
+                  "name": "_import_module",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:135"
+                },
+                {
+                  "name": "_find_registered_app_name",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:183"
+                },
+                {
+                  "name": "_pluck_classes",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:161"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"offer_benefit\" (\"range_id\", \"type\", \"value\", \"max_affected_items\", \"proxy_class\") VALUES (NULL, '', NULL, NULL, 'tests._site.model_tests_app.models.CustomBenefitModel') RETURNING \"offer_benefit\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"offer_benefit\".\"id\", \"offer_benefit\".\"range_id\", \"offer_benefit\".\"type\", \"offer_benefit\".\"value\", \"offer_benefit\".\"max_affected_items\", \"offer_benefit\".\"proxy_class\" FROM \"offer_benefit\" WHERE NOT (\"offer_benefit\".\"proxy_class\" IS NULL)"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = 'lvq7bqumn5vyxe2vjcdf6lgrz452xsz9' LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SAVEPOINT \"s8669432832_x3018\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('lvq7bqumn5vyxe2vjcdf6lgrz452xsz9', '.eJylUk1PwzAM_StTztNUxAFpf4ID3CiK3MSdwvJRJc7YmPrfSZp2axkaB6RKdZ6f_eL4nZlrW_T8U32Bl2x7ZgYJJBCwLTvXLEc1265SaMFgDmv2ioFWQ13N1ukcdNyVTDlLDMKrjpSzs4IFmmlFmU7d2PZFEZYMHoWOQR2GBPmIgwoBxVCozx2OTYSzUk1KNmqdwQYttormUOeV84pOGavGdp54mg9JlcEmKlr5K27gyHfaNaA5dJ1WArJu-EmJIU11j9BA2CPdpUgVhIt2MQE5SsrzTM2qTVWVd7DR3HSspoTzEv0V8iiVR0E8er3YWxqaC4_pJyflvmfriye4az6SL96SG4yTOBYPe9xcFgF6Zo1uPx-hVahl-NNP__JP37-nG48OuDGxB7tbLPVaXpoeQMebrUNSEulReFIwi2WJGMgZPjNczR4en_I10vcNgVciCQ:1sVwpY:8FGz12gCOni86Isr60uTN8lbrK7Wl-H8O2LoFEbHX7A', '2024-08-05T17:28:12.469518+00:00'::timestamptz)"
+        },
+        {
+          "type": "query",
+          "name": "RELEASE SAVEPOINT \"s8669432832_x3018\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"offer_benefit\".\"id\", \"offer_benefit\".\"range_id\", \"offer_benefit\".\"type\", \"offer_benefit\".\"value\", \"offer_benefit\".\"max_affected_items\", \"offer_benefit\".\"proxy_class\" FROM \"offer_benefit\" WHERE \"offer_benefit\".\"id\" = 137 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SAVEPOINT \"s8669432832_x3019\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"django_session\" SET \"session_data\" = '.eJytUz1PwzAQ_SuV5yoKYkDqCDNigI0gy7EvlaljW_a5tFT579hx0iQUlQGmnO_r3bt7ORHTNODoh_xkTpDNibSATDBkZENOFUlWRTaraGrWQjIr8gIeV31dRdbx7VXY5kh-C_DcSYvS6FnBwpvSMjIe7dD2WSLkCBy4Cl7u-wC6AD0KMgw-pz5ZGJpwo4UckXRQKjlr0NBInLusk8ZJPCZfObRzSCM_QJmJjamgxY_-lh3oVpmaKcqsVZKzhOu_pwQfWV1LqJnfAV5NEdJzE_SCARqMyPNIRcqiLPMedGgvOpZjwDgBbnI5ENIBRxqcWtwtkqbcQfyIEbnryPqsCWrq96iL16iG1ggYivs7FudDMDWTht3NKTQSlPC_6ulP-um6tzjxoIALETumt4ujTuW56Z6pcHF1FpF4XAqNCO3iWDx4NC2dCa4iN7d3aYxpimtrO1dO24r1F8v677mtM4cj5Yr54Y_CuGJfUB8zi35I2nuSpvLbFw891_s88GMmkrbddV9vonC4:1sVwpY:Pp74yqKMJv9ax6akMug8CPUMBshXC2YpnMXKqSq6Xpg', \"expire_date\" = '2024-08-05T17:28:12.471980+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = 'lvq7bqumn5vyxe2vjcdf6lgrz452xsz9'"
+        },
+        {
+          "type": "query",
+          "name": "RELEASE SAVEPOINT \"s8669432832_x3019\""
+        }
+      ]
+    }
+  ]
+}

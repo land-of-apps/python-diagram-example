@@ -1,0 +1,391 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13545342240,
+        "value": "<PageUpdateForm bound=True, valid=True, fields=(title;url;content)>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.pages.forms.PageUpdateForm"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.pages.forms.PageUpdateForm",
+      "method_id": "clean_url",
+      "path": "src/oscar/apps/dashboard/pages/forms.py",
+      "lineno": 40
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13545342960,
+        "value": "<oscar.core.validators.URLDoesNotExistValidator object at 0x3275d87f0>",
+        "name": "self",
+        "class": "oscar.core.validators.URLDoesNotExistValidator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4410696496,
+          "value": "'/new/url/'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.validators.ExtendedURLValidator",
+      "method_id": "validate_local_url",
+      "path": "src/oscar/core/validators.py",
+      "lineno": 49
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13545342960,
+        "value": "<oscar.core.validators.URLDoesNotExistValidator object at 0x3275d87f0>",
+        "name": "self",
+        "class": "oscar.core.validators.URLDoesNotExistValidator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4410696496,
+          "value": "'/new/url/'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.validators.ExtendedURLValidator",
+      "method_id": "clean_url",
+      "path": "src/oscar/core/validators.py",
+      "lineno": 72
+    },
+    {
+      "return_value": {
+        "object_id": 13546262576,
+        "value": "'/new/url/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 3,
+      "elapsed": 0.0000021457672119140625,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13545342960,
+        "value": "<oscar.core.validators.URLDoesNotExistValidator object at 0x3275d87f0>",
+        "name": "self",
+        "class": "oscar.core.validators.URLDoesNotExistValidator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13546262576,
+          "value": "'/new/url/'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.validators.ExtendedURLValidator",
+      "method_id": "_validate_url",
+      "path": "src/oscar/core/validators.py",
+      "lineno": 31
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4379537968,
+          "value": "'flatpages'",
+          "name": "app_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4390988080,
+          "value": "'FlatPage'",
+          "name": "model_name",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 6,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_model",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 225
+    },
+    {
+      "return_value": {
+        "object_id": 4553858544,
+        "value": "<class 'django.contrib.flatpages.models.FlatPage'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 6,
+      "elapsed": 0.000006198883056640625,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"django_flatpage\".\"id\", \"django_flatpage\".\"url\", \"django_flatpage\".\"title\", \"django_flatpage\".\"content\", \"django_flatpage\".\"enable_comments\", \"django_flatpage\".\"template_name\", \"django_flatpage\".\"registration_required\" FROM \"django_flatpage\" WHERE \"django_flatpage\".\"url\" = '/new/url/' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 8,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 8,
+      "elapsed": 0.0004881250000039472,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "exceptions": [
+        {
+          "class": "django.core.exceptions.ValidationError",
+          "message": "['The URL \"/new/url/\" does not exist']",
+          "object_id": 13545331872
+        }
+      ],
+      "parent_id": 5,
+      "elapsed": 0.0008718967437744141,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "exceptions": [
+        {
+          "class": "django.core.exceptions.ValidationError",
+          "message": "['The URL \"/new/url/\" does not exist']",
+          "object_id": 13545331872
+        }
+      ],
+      "parent_id": 2,
+      "elapsed": 0.0009951591491699219,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4410696496,
+        "value": "'/new/url/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 1,
+      "elapsed": 0.001069784164428711,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"django_flatpage\" SET \"url\" = '/new/url/', \"title\" = 'test', \"content\" = 'my content here', \"enable_comments\" = false, \"template_name\" = '', \"registration_required\" = false WHERE \"django_flatpage\".\"id\" = 29",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 13,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 13,
+      "elapsed": 0.0006718340000020362,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"django_flatpage\".\"id\", \"django_flatpage\".\"url\", \"django_flatpage\".\"title\", \"django_flatpage\".\"content\", \"django_flatpage\".\"enable_comments\", \"django_flatpage\".\"template_name\", \"django_flatpage\".\"registration_required\" FROM \"django_flatpage\" WHERE \"django_flatpage\".\"id\" = 29 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 15,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 15,
+      "elapsed": 0.0005860409999911553,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Dashboard page update form test case",
+    "recording": {
+      "defined_class": "tests.functional.dashboard.test_page.DashboardPageUpdateFormTestCase",
+      "method_id": "test_update_page_valid_url"
+    },
+    "source_location": "tests/functional/dashboard/test_page.py:117",
+    "name": "Dashboard page update form test case update page valid url",
+    "feature": "Update page valid url",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "dashboard",
+              "type": "package",
+              "children": [
+                {
+                  "name": "pages",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "forms",
+                      "type": "package",
+                      "children": [
+                        {
+                          "name": "PageUpdateForm",
+                          "type": "class",
+                          "children": [
+                            {
+                              "name": "clean_url",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/pages/forms.py:40"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "validators",
+              "type": "package",
+              "children": [
+                {
+                  "name": "ExtendedURLValidator",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "validate_local_url",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/core/validators.py:49"
+                    },
+                    {
+                      "name": "clean_url",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/core/validators.py:72"
+                    },
+                    {
+                      "name": "_validate_url",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/core/validators.py:31"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "loading",
+              "type": "class",
+              "children": [
+                {
+                  "name": "get_model",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:225"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"django_flatpage\".\"id\", \"django_flatpage\".\"url\", \"django_flatpage\".\"title\", \"django_flatpage\".\"content\", \"django_flatpage\".\"enable_comments\", \"django_flatpage\".\"template_name\", \"django_flatpage\".\"registration_required\" FROM \"django_flatpage\" WHERE \"django_flatpage\".\"url\" = '/new/url/' LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"django_flatpage\" SET \"url\" = '/new/url/', \"title\" = 'test', \"content\" = 'my content here', \"enable_comments\" = false, \"template_name\" = '', \"registration_required\" = false WHERE \"django_flatpage\".\"id\" = 29"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"django_flatpage\".\"id\", \"django_flatpage\".\"url\", \"django_flatpage\".\"title\", \"django_flatpage\".\"content\", \"django_flatpage\".\"enable_comments\", \"django_flatpage\".\"template_name\", \"django_flatpage\".\"registration_required\" FROM \"django_flatpage\" WHERE \"django_flatpage\".\"id\" = 29 LIMIT 21"
+        }
+      ]
+    }
+  ]
+}

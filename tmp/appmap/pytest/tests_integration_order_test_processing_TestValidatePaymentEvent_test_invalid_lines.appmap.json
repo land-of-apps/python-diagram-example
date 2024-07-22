@@ -1,0 +1,155 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14019573840,
+        "value": "<oscar.apps.order.processing.EventHandler object at 0x343a1b850>",
+        "name": "self",
+        "class": "oscar.apps.order.processing.EventHandler"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14019553696,
+          "value": "<Mock id='14019553696'>",
+          "name": "order",
+          "class": "unittest.mock.Mock"
+        },
+        {
+          "kind": "req",
+          "object_id": 4379827760,
+          "value": "'payment'",
+          "name": "event_type",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 14020325424,
+          "value": "Decimal('10.00')",
+          "name": "amount",
+          "class": "decimal.Decimal"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lines",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "line_quantities",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14020384768,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.processing.EventHandler",
+      "method_id": "validate_payment_event",
+      "path": "src/oscar/apps/order/processing.py",
+      "lineno": 100
+    },
+    {
+      "exceptions": [
+        {
+          "class": "oscar.apps.order.exceptions.InvalidPaymentEvent",
+          "message": "The selected quantity for line #6 is too large",
+          "object_id": 14019365472
+        }
+      ],
+      "parent_id": 1,
+      "elapsed": 0.0003161430358886719,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      }
+    ],
+    "feature_group": "Validate payment event",
+    "recording": {
+      "defined_class": "tests.integration.order.test_processing.TestValidatePaymentEvent",
+      "method_id": "test_invalid_lines"
+    },
+    "source_location": "tests/integration/order/test_processing.py:25",
+    "name": "Validate payment event invalid lines",
+    "feature": "Invalid lines",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "order",
+              "type": "package",
+              "children": [
+                {
+                  "name": "processing",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "EventHandler",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "validate_payment_event",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/processing.py:100"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

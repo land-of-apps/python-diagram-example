@@ -1,0 +1,116 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13817874272,
+        "value": "<Vote: 1 vote for This is nice>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.reviews.models.Vote"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.reviews.abstract_models.AbstractVote",
+      "method_id": "clean",
+      "path": "src/oscar/apps/catalogue/reviews/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "exceptions": [
+        {
+          "class": "django.core.exceptions.ValidationError",
+          "message": "['You cannot vote on your own reviews']",
+          "object_id": 13817757312
+        }
+      ],
+      "parent_id": 1,
+      "elapsed": 0.000013113021850585938,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      }
+    ],
+    "feature_group": "Vote form",
+    "recording": {
+      "defined_class": "tests.integration.catalogue.reviews.test_forms.TestVoteForm",
+      "method_id": "test_prevents_users_voting_on_their_own_reviews"
+    },
+    "source_location": "tests/integration/catalogue/reviews/test_forms.py:59",
+    "name": "Vote form prevents users voting on their own reviews",
+    "feature": "Prevents users voting on their own reviews",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "reviews",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "abstract_models",
+                      "type": "package",
+                      "children": [
+                        {
+                          "name": "AbstractVote",
+                          "type": "class",
+                          "children": [
+                            {
+                              "name": "clean",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/catalogue/reviews/abstract_models.py:218"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

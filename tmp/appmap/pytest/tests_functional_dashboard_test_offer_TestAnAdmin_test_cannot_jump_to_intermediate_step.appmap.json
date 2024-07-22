@@ -1,0 +1,2523 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461602608,
+        "value": "<tests.functional.dashboard.test_offer.TestAnAdmin testMethod=test_cannot_jump_to_intermediate_step>",
+        "name": "self",
+        "class": "tests.functional.dashboard.test_offer.TestAnAdmin"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13454974480,
+          "value": "'/dashboard/offers/new/condition/'",
+          "name": "url",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13462930112,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.test.testcases.WebTestCase",
+      "method_id": "get",
+      "path": "src/oscar/test/testcases.py",
+      "lineno": 60
+    },
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.0",
+        "path_info": "/dashboard/offers/new/condition/",
+        "normalized_path_info": "/dashboard/offers/new/condition/",
+        "headers": {
+          "Host": "testserver"
+        }
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13462969696,
+          "value": "<WSGIRequest: GET '/dashboard/offers/new/condition/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13461634432,
+          "value": "{'request': <WSGIRequest: GET '/dashboard/offers/new/condition/'>, 'django_webtest_user': 'testuser%40buymore.com'}",
+          "name": "credentials",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "django_webtest_user",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "django.contrib.auth",
+      "method_id": "authenticate",
+      "path": "venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py",
+      "lineno": 63
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461563232,
+        "value": "<django_webtest.backends.WebtestUserBackend object at 0x3225f2760>",
+        "name": "self",
+        "class": "django_webtest.backends.WebtestUserBackend"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13462969696,
+          "value": "<WSGIRequest: GET '/dashboard/offers/new/condition/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13451137872,
+          "value": "'testuser%40buymore.com'",
+          "name": "remote_user",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "django.contrib.auth.backends.RemoteUserBackend",
+      "method_id": "authenticate",
+      "path": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py",
+      "lineno": 187
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"email\" = 'testuser@buymore.com' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.00039424999999937427,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461563232,
+        "value": "<django_webtest.backends.WebtestUserBackend object at 0x3225f2760>",
+        "name": "self",
+        "class": "django_webtest.backends.WebtestUserBackend"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13461584144,
+          "value": "<User: testuser@buymore.com>",
+          "name": "user",
+          "class": "tests._site.myauth.models.User"
+        }
+      ],
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "django.contrib.auth.backends.ModelBackend",
+      "method_id": "user_can_authenticate",
+      "path": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py",
+      "lineno": 55
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 7,
+      "elapsed": 9.5367431640625e-7,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13461584144,
+        "value": "<User: testuser@buymore.com>",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parent_id": 4,
+      "elapsed": 0.0007472038269042969,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13461584144,
+        "value": "<User: testuser@buymore.com>",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parent_id": 3,
+      "elapsed": 0.0008440017700195312,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = '7p77ej52xzl1e64uhrpzsclstyjr7q84' LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 11,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 11,
+      "elapsed": 0.00026920899999538506,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SAVEPOINT \"s8669432832_x1730\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 13,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 13,
+      "elapsed": 0.0006314590000044973,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('7p77ej52xzl1e64uhrpzsclstyjr7q84', 'e30:1sVwog:ct3uW8kCJ77d4_cr5xdknhFty5Abu14hhUuhPr9y59o', '2024-08-05T17:27:18.055683+00:00'::timestamptz)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 15,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 15,
+      "elapsed": 0.0005052500000033433,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "RELEASE SAVEPOINT \"s8669432832_x1730\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 17,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 17,
+      "elapsed": 0.00034766599999613845,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461584144,
+        "value": "<User: testuser@buymore.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13449908544,
+          "value": "{'update_fields': ['last_login']}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "update_fields",
+              "class": "builtins.list",
+              "items": [
+                {
+                  "class": "builtins.str"
+                }
+              ]
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 19,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "save",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 115
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"myauth_user\" SET \"last_login\" = '2024-07-22T17:27:18.057405+00:00'::timestamptz WHERE \"myauth_user\".\"id\" = 300",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 20,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 20,
+      "elapsed": 0.00043949999999881584,
+      "id": 21,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461584144,
+        "value": "<User: testuser@buymore.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "id": 22,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "_migrate_alerts_to_user",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 103
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"customer_productalert\" SET \"user_id\" = 300, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'testuser@buymore.com' AND \"customer_productalert\".\"status\" = 'Active')",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 23,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 23,
+      "elapsed": 0.00045633300000247345,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 22,
+      "elapsed": 0.0006709098815917969,
+      "id": 25,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 19,
+      "elapsed": 0.0013890266418457031,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4415473264,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x1072ec670>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13462969696,
+          "value": "<WSGIRequest: GET '/dashboard/offers/new/condition/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "opt",
+          "object_id": 13461584144,
+          "value": "<User: testuser@buymore.com>",
+          "name": "user",
+          "class": "tests._site.myauth.models.User"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13449868352,
+          "value": "{'request': <WSGIRequest: GET '/dashboard/offers/new/condition/'>, 'user': <User: testuser@buymore.com>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "user",
+              "class": "tests._site.myauth.models.User"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 27,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "return_value": {
+        "object_id": 13461585728,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x3225f7f40>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 27,
+      "elapsed": 0.000005245208740234375,
+      "id": 28,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13461584144,
+          "value": "<User: testuser@buymore.com>",
+          "name": "user",
+          "class": "tests._site.myauth.models.User"
+        },
+        {
+          "kind": "req",
+          "object_id": 4380040832,
+          "value": "['is_staff']",
+          "name": "permissions",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 29,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.views.decorators",
+      "method_id": "check_permissions",
+      "path": "src/oscar/views/decorators.py",
+      "lineno": 10
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461584144,
+        "value": "<User: testuser@buymore.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13449996160,
+          "value": "[]",
+          "name": "perm_list",
+          "class": "builtins.list",
+          "size": 0
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "obj",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 30,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "django.contrib.auth.models.PermissionsMixin",
+      "method_id": "has_perms",
+      "path": "venv/lib/python3.8/site-packages/django/contrib/auth/models.py",
+      "lineno": 313
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 30,
+      "elapsed": 0.0000040531158447265625,
+      "id": 31,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 29,
+      "elapsed": 0.00005888938903808594,
+      "id": 32,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461584384,
+        "value": "<oscar.apps.dashboard.offers.views.OfferConditionView object at 0x3225f7a00>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferConditionView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13462969696,
+          "value": "<WSGIRequest: GET '/dashboard/offers/new/condition/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13461600512,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 33,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "dispatch",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 137
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461584384,
+        "value": "<oscar.apps.dashboard.offers.views.OfferConditionView object at 0x3225f7a00>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferConditionView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13462969696,
+          "value": "<WSGIRequest: GET '/dashboard/offers/new/condition/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 34,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "is_previous_step_complete",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 148
+    },
+    {
+      "static": true,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4700228416,
+        "value": "<class 'oscar.apps.dashboard.offers.views.OfferBenefitView'>",
+        "name": "cls",
+        "class": "builtins.type"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13461584384,
+          "value": "<oscar.apps.dashboard.offers.views.OfferConditionView object at 0x3225f7a00>",
+          "name": "current_view",
+          "class": "oscar.apps.dashboard.offers.views.OfferConditionView"
+        },
+        {
+          "kind": "req",
+          "object_id": 13462969696,
+          "value": "<WSGIRequest: GET '/dashboard/offers/new/condition/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 35,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "is_valid",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 308
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461584384,
+        "value": "<oscar.apps.dashboard.offers.views.OfferConditionView object at 0x3225f7a00>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferConditionView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394562608,
+          "value": "'benefit'",
+          "name": "step_name",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "request",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 36,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "_fetch_object",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 203
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461584384,
+        "value": "<oscar.apps.dashboard.offers.views.OfferConditionView object at 0x3225f7a00>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferConditionView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "step_name",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341172976,
+          "value": "True",
+          "name": "is_object",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 37,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "_key",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 153
+    },
+    {
+      "return_value": {
+        "object_id": 13452396912,
+        "value": "'benefit_obj'",
+        "class": "builtins.str"
+      },
+      "parent_id": 37,
+      "elapsed": 9.5367431640625e-7,
+      "id": 38,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 36,
+      "elapsed": 0.000047206878662109375,
+      "id": 39,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341173008,
+        "value": "False",
+        "class": "builtins.bool"
+      },
+      "parent_id": 35,
+      "elapsed": 0.00008988380432128906,
+      "id": 40,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341173008,
+        "value": "False",
+        "class": "builtins.bool"
+      },
+      "parent_id": 34,
+      "elapsed": 0.0001361370086669922,
+      "id": 41,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461584384,
+        "value": "<oscar.apps.dashboard.offers.views.OfferConditionView object at 0x3225f7a00>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferConditionView"
+      },
+      "id": 42,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "get_back_url",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 246
+    },
+    {
+      "return_value": {
+        "object_id": 13455102480,
+        "value": "'/dashboard/offers/new/incentive/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 42,
+      "elapsed": 0.00004482269287109375,
+      "id": 43,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13461583472,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/dashboard/offers/new/incentive/\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 33,
+      "elapsed": 0.00033593177795410156,
+      "id": 44,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461469120,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x3225db7c0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13462969696,
+          "value": "<WSGIRequest: GET '/dashboard/offers/new/condition/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13461583472,
+          "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/dashboard/offers/new/incentive/\">",
+          "name": "response",
+          "class": "django.http.response.HttpResponseRedirect"
+        }
+      ],
+      "id": 45,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 63
+    },
+    {
+      "return_value": {
+        "object_id": 13461583472,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/dashboard/offers/new/incentive/\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 45,
+      "elapsed": 0.0000021457672119140625,
+      "id": 46,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SAVEPOINT \"s8669432832_x1731\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 47,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 47,
+      "elapsed": 0.000419375000006994,
+      "id": 48,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"django_session\" SET \"session_data\" = '.eJxVjsEKgzAQRP8l5yJJ1pqkx_6D9Bh2s0m1BQWjCBX_vSn10F7nzTxmEx6XufNLjpPvWVwESClOvylheMbhg_iBw330a6Q55rk6QK5u36At7etR_jN0mLsyDyo2WmmQTrNNmsEml5p4DmgSabSOmMGBUQSEBqysDVFNpFir0BAW6ZhS8a39C6dyaNv3N_KGQEQ:1sVwog:TLczJXa9_XxgLoAv1GCjO4Tn34vXc7oFJO7YqbdpUqc', \"expire_date\" = '2024-08-05T17:27:18.060317+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = '7p77ej52xzl1e64uhrpzsclstyjr7q84'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 49,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 49,
+      "elapsed": 0.0007762080000048854,
+      "id": 50,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "RELEASE SAVEPOINT \"s8669432832_x1731\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 51,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 51,
+      "elapsed": 0.00037095900000849724,
+      "id": 52,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_response": {
+        "status_code": 302,
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Location": "/dashboard/offers/new/incentive/",
+          "Vary": "Cookie",
+          "Content-Length": "0"
+        }
+      },
+      "parent_id": 2,
+      "elapsed": 0.0087179579999912,
+      "id": 53,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13461590176,
+        "value": "<302 Found text/html location: /dashboard/offers/new/incentive/ no body>",
+        "class": "django_webtest.response.DjangoWebtestResponse"
+      },
+      "parent_id": 1,
+      "elapsed": 0.009242057800292969,
+      "id": 54,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461602608,
+        "value": "<tests.functional.dashboard.test_offer.TestAnAdmin testMethod=test_cannot_jump_to_intermediate_step>",
+        "name": "self",
+        "class": "tests.functional.dashboard.test_offer.TestAnAdmin"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13459788496,
+          "value": "'/dashboard/offers/new/incentive/'",
+          "name": "url",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13460832640,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 55,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.test.testcases.WebTestCase",
+      "method_id": "get",
+      "path": "src/oscar/test/testcases.py",
+      "lineno": 60
+    },
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.0",
+        "path_info": "/dashboard/offers/new/incentive/",
+        "normalized_path_info": "/dashboard/offers/new/incentive/",
+        "headers": {
+          "Host": "testserver",
+          "Cookie": "messages=W1siX19qc29uX21lc3NhZ2UiLDAsMzAsIkJlbmVmaXQgc3RlcCBub3QgY29tcGxldGUiLCIiXV0:1sVwog:YDBms_RdbgSDQHYykn8RyG_BFdhK2ywdTTEiRntNGZg; csrftoken=PJz4LHNezv7whw19LlX5FpdzfFEvZAzi; sessionid=7p77ej52xzl1e64uhrpzsclstyjr7q84"
+        }
+      },
+      "id": 56,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2024-07-22T17:27:18.063253+00:00'::timestamptz AND \"django_session\".\"session_key\" = '7p77ej52xzl1e64uhrpzsclstyjr7q84') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 57,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 57,
+      "elapsed": 0.0005304590000037024,
+      "id": 58,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"id\" = 300 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 59,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 59,
+      "elapsed": 0.0005755000000107202,
+      "id": 60,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461575280,
+        "value": "<django_webtest.backends.WebtestUserBackend object at 0x3225f5670>",
+        "name": "self",
+        "class": "django_webtest.backends.WebtestUserBackend"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13461568240,
+          "value": "<User: testuser@buymore.com>",
+          "name": "user",
+          "class": "tests._site.myauth.models.User"
+        }
+      ],
+      "id": 61,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "django.contrib.auth.backends.ModelBackend",
+      "method_id": "user_can_authenticate",
+      "path": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py",
+      "lineno": 55
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 61,
+      "elapsed": 0.0000016689300537109375,
+      "id": 62,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4415473264,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x1072ec670>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13461576672,
+          "value": "<WSGIRequest: GET '/dashboard/offers/new/incentive/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "opt",
+          "object_id": 13461575520,
+          "value": "<SimpleLazyObject: <User: testuser@buymore.com>>",
+          "name": "user",
+          "class": "django.utils.functional.SimpleLazyObject"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13452195136,
+          "value": "{'request': <WSGIRequest: GET '/dashboard/offers/new/incentive/'>, 'user': <SimpleLazyObject: <User: testuser@buymore.com>>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "user",
+              "class": "django.utils.functional.SimpleLazyObject"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 63,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "return_value": {
+        "object_id": 13461575424,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x3225f5700>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 63,
+      "elapsed": 0.0000040531158447265625,
+      "id": 64,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13461575520,
+          "value": "<SimpleLazyObject: <User: testuser@buymore.com>>",
+          "name": "user",
+          "class": "django.utils.functional.SimpleLazyObject"
+        },
+        {
+          "kind": "req",
+          "object_id": 4380040832,
+          "value": "['is_staff']",
+          "name": "permissions",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 65,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.views.decorators",
+      "method_id": "check_permissions",
+      "path": "src/oscar/views/decorators.py",
+      "lineno": 10
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461568240,
+        "value": "<User: testuser@buymore.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13454451712,
+          "value": "[]",
+          "name": "perm_list",
+          "class": "builtins.list",
+          "size": 0
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "obj",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 66,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "django.contrib.auth.models.PermissionsMixin",
+      "method_id": "has_perms",
+      "path": "venv/lib/python3.8/site-packages/django/contrib/auth/models.py",
+      "lineno": 313
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 66,
+      "elapsed": 0.00000286102294921875,
+      "id": 67,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 65,
+      "elapsed": 0.00006079673767089844,
+      "id": 68,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461568096,
+        "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x3225f3a60>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13461576672,
+          "value": "<WSGIRequest: GET '/dashboard/offers/new/incentive/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13455444800,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 69,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "dispatch",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 137
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461568096,
+        "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x3225f3a60>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13461576672,
+          "value": "<WSGIRequest: GET '/dashboard/offers/new/incentive/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 70,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "is_previous_step_complete",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 148
+    },
+    {
+      "static": true,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4700227472,
+        "value": "<class 'oscar.apps.dashboard.offers.views.OfferMetaDataView'>",
+        "name": "cls",
+        "class": "builtins.type"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13461568096,
+          "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x3225f3a60>",
+          "name": "current_view",
+          "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+        },
+        {
+          "kind": "req",
+          "object_id": 13461576672,
+          "value": "<WSGIRequest: GET '/dashboard/offers/new/incentive/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 71,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "is_valid",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 308
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461568096,
+        "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x3225f3a60>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332491568,
+          "value": "'metadata'",
+          "name": "step_name",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "request",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 72,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "_fetch_object",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 203
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461568096,
+        "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x3225f3a60>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "step_name",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341172976,
+          "value": "True",
+          "name": "is_object",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 73,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "_key",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 153
+    },
+    {
+      "return_value": {
+        "object_id": 13454593200,
+        "value": "'metadata_obj'",
+        "class": "builtins.str"
+      },
+      "parent_id": 73,
+      "elapsed": 9.5367431640625e-7,
+      "id": 74,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 72,
+      "elapsed": 0.00004982948303222656,
+      "id": 75,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341173008,
+        "value": "False",
+        "class": "builtins.bool"
+      },
+      "parent_id": 71,
+      "elapsed": 0.00009298324584960938,
+      "id": 76,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341173008,
+        "value": "False",
+        "class": "builtins.bool"
+      },
+      "parent_id": 70,
+      "elapsed": 0.0001461505889892578,
+      "id": 77,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461568096,
+        "value": "<oscar.apps.dashboard.offers.views.OfferBenefitView object at 0x3225f3a60>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferBenefitView"
+      },
+      "id": 78,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "get_back_url",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 246
+    },
+    {
+      "return_value": {
+        "object_id": 13451991600,
+        "value": "'/dashboard/offers/new/metadata/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 78,
+      "elapsed": 0.00003600120544433594,
+      "id": 79,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13461831488,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/dashboard/offers/new/metadata/\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 69,
+      "elapsed": 0.00033211708068847656,
+      "id": 80,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461469120,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x3225db7c0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13461576672,
+          "value": "<WSGIRequest: GET '/dashboard/offers/new/incentive/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13461831488,
+          "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/dashboard/offers/new/metadata/\">",
+          "name": "response",
+          "class": "django.http.response.HttpResponseRedirect"
+        }
+      ],
+      "id": 81,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 63
+    },
+    {
+      "return_value": {
+        "object_id": 13461831488,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/dashboard/offers/new/metadata/\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 81,
+      "elapsed": 0.0000030994415283203125,
+      "id": 82,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_response": {
+        "status_code": 302,
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Location": "/dashboard/offers/new/metadata/",
+          "Vary": "Cookie",
+          "Content-Length": "0"
+        }
+      },
+      "parent_id": 56,
+      "elapsed": 0.003152832999987254,
+      "id": 83,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13461576480,
+        "value": "<302 Found text/html location: /dashboard/offers/new/metadata/ no body>",
+        "class": "django_webtest.response.DjangoWebtestResponse"
+      },
+      "parent_id": 55,
+      "elapsed": 0.003612041473388672,
+      "id": 84,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461602608,
+        "value": "<tests.functional.dashboard.test_offer.TestAnAdmin testMethod=test_cannot_jump_to_intermediate_step>",
+        "name": "self",
+        "class": "tests.functional.dashboard.test_offer.TestAnAdmin"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13454973712,
+          "value": "'/dashboard/offers/new/restrictions/'",
+          "name": "url",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13453823680,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 85,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.test.testcases.WebTestCase",
+      "method_id": "get",
+      "path": "src/oscar/test/testcases.py",
+      "lineno": 60
+    },
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.0",
+        "path_info": "/dashboard/offers/new/restrictions/",
+        "normalized_path_info": "/dashboard/offers/new/restrictions/",
+        "headers": {
+          "Host": "testserver",
+          "Cookie": "messages=.eJyLjlaKj88qzs-Lz00tLk5MT1XSMdAxNtBRckrNS03LLFEoLkktUMjLL1FIzs8tyEktASpQUorVwaXNN7UkMSWxJBGHvlgAThMlVQ:1sVwog:3pN9xwu9L2QWQnI53EmQmS19Q5bLfW_xZQjfQwktD6A; csrftoken=PJz4LHNezv7whw19LlX5FpdzfFEvZAzi; sessionid=7p77ej52xzl1e64uhrpzsclstyjr7q84"
+        }
+      },
+      "id": 86,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2024-07-22T17:27:18.067282+00:00'::timestamptz AND \"django_session\".\"session_key\" = '7p77ej52xzl1e64uhrpzsclstyjr7q84') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 87,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 87,
+      "elapsed": 0.0010667500000067776,
+      "id": 88,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"id\" = 300 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 89,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 89,
+      "elapsed": 0.0005309160000024349,
+      "id": 90,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461850384,
+        "value": "<django_webtest.backends.WebtestUserBackend object at 0x322638910>",
+        "name": "self",
+        "class": "django_webtest.backends.WebtestUserBackend"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13461849904,
+          "value": "<User: testuser@buymore.com>",
+          "name": "user",
+          "class": "tests._site.myauth.models.User"
+        }
+      ],
+      "id": 91,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "django.contrib.auth.backends.ModelBackend",
+      "method_id": "user_can_authenticate",
+      "path": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py",
+      "lineno": 55
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 91,
+      "elapsed": 7.152557373046875e-7,
+      "id": 92,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4415473264,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x1072ec670>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13461582176,
+          "value": "<WSGIRequest: GET '/dashboard/offers/new/restrictions/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "opt",
+          "object_id": 13461848992,
+          "value": "<SimpleLazyObject: <User: testuser@buymore.com>>",
+          "name": "user",
+          "class": "django.utils.functional.SimpleLazyObject"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13456830656,
+          "value": "{'request': <WSGIRequest: GET '/dashboard/offers/new/restrictions/'>, 'user': <SimpleLazyObject: <User: testuser@buymore.com>>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "user",
+              "class": "django.utils.functional.SimpleLazyObject"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 93,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "return_value": {
+        "object_id": 13461850192,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x322638850>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 93,
+      "elapsed": 0.0000030994415283203125,
+      "id": 94,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13461848992,
+          "value": "<SimpleLazyObject: <User: testuser@buymore.com>>",
+          "name": "user",
+          "class": "django.utils.functional.SimpleLazyObject"
+        },
+        {
+          "kind": "req",
+          "object_id": 4380040832,
+          "value": "['is_staff']",
+          "name": "permissions",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 95,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.views.decorators",
+      "method_id": "check_permissions",
+      "path": "src/oscar/views/decorators.py",
+      "lineno": 10
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461849904,
+        "value": "<User: testuser@buymore.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13454441984,
+          "value": "[]",
+          "name": "perm_list",
+          "class": "builtins.list",
+          "size": 0
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "obj",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 96,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "django.contrib.auth.models.PermissionsMixin",
+      "method_id": "has_perms",
+      "path": "venv/lib/python3.8/site-packages/django/contrib/auth/models.py",
+      "lineno": 313
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 96,
+      "elapsed": 0.00000286102294921875,
+      "id": 97,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 95,
+      "elapsed": 0.00006127357482910156,
+      "id": 98,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461850000,
+        "value": "<oscar.apps.dashboard.offers.views.OfferRestrictionsView object at 0x322638790>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferRestrictionsView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13461582176,
+          "value": "<WSGIRequest: GET '/dashboard/offers/new/restrictions/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13456328064,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 99,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "dispatch",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 137
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461850000,
+        "value": "<oscar.apps.dashboard.offers.views.OfferRestrictionsView object at 0x322638790>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferRestrictionsView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13461582176,
+          "value": "<WSGIRequest: GET '/dashboard/offers/new/restrictions/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 100,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "is_previous_step_complete",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 148
+    },
+    {
+      "static": true,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4700229936,
+        "value": "<class 'oscar.apps.dashboard.offers.views.OfferConditionView'>",
+        "name": "cls",
+        "class": "builtins.type"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13461850000,
+          "value": "<oscar.apps.dashboard.offers.views.OfferRestrictionsView object at 0x322638790>",
+          "name": "current_view",
+          "class": "oscar.apps.dashboard.offers.views.OfferRestrictionsView"
+        },
+        {
+          "kind": "req",
+          "object_id": 13461582176,
+          "value": "<WSGIRequest: GET '/dashboard/offers/new/restrictions/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 101,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "is_valid",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 308
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461850000,
+        "value": "<oscar.apps.dashboard.offers.views.OfferRestrictionsView object at 0x322638790>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferRestrictionsView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4353244976,
+          "value": "'condition'",
+          "name": "step_name",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "request",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 102,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "_fetch_object",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 203
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461850000,
+        "value": "<oscar.apps.dashboard.offers.views.OfferRestrictionsView object at 0x322638790>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferRestrictionsView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "step_name",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341172976,
+          "value": "True",
+          "name": "is_object",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 103,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "_key",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 153
+    },
+    {
+      "return_value": {
+        "object_id": 13460569968,
+        "value": "'condition_obj'",
+        "class": "builtins.str"
+      },
+      "parent_id": 103,
+      "elapsed": 9.5367431640625e-7,
+      "id": 104,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 102,
+      "elapsed": 0.000048160552978515625,
+      "id": 105,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341173008,
+        "value": "False",
+        "class": "builtins.bool"
+      },
+      "parent_id": 101,
+      "elapsed": 0.00009012222290039062,
+      "id": 106,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341173008,
+        "value": "False",
+        "class": "builtins.bool"
+      },
+      "parent_id": 100,
+      "elapsed": 0.00013685226440429688,
+      "id": 107,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461850000,
+        "value": "<oscar.apps.dashboard.offers.views.OfferRestrictionsView object at 0x322638790>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.offers.views.OfferRestrictionsView"
+      },
+      "id": 108,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.offers.views.OfferWizardStepView",
+      "method_id": "get_back_url",
+      "path": "src/oscar/apps/dashboard/offers/views.py",
+      "lineno": 246
+    },
+    {
+      "return_value": {
+        "object_id": 13461589904,
+        "value": "'/dashboard/offers/new/condition/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 108,
+      "elapsed": 0.00004601478576660156,
+      "id": 109,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13461851680,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/dashboard/offers/new/condition/\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 99,
+      "elapsed": 0.0003414154052734375,
+      "id": 110,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13461469120,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x3225db7c0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13461582176,
+          "value": "<WSGIRequest: GET '/dashboard/offers/new/restrictions/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13461851680,
+          "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/dashboard/offers/new/condition/\">",
+          "name": "response",
+          "class": "django.http.response.HttpResponseRedirect"
+        }
+      ],
+      "id": 111,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 63
+    },
+    {
+      "return_value": {
+        "object_id": 13461851680,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/dashboard/offers/new/condition/\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 111,
+      "elapsed": 0.0000019073486328125,
+      "id": 112,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_response": {
+        "status_code": 302,
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Location": "/dashboard/offers/new/condition/",
+          "Vary": "Cookie",
+          "Content-Length": "0"
+        }
+      },
+      "parent_id": 86,
+      "elapsed": 0.0036349999999885085,
+      "id": 113,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13461831248,
+        "value": "<302 Found text/html location: /dashboard/offers/new/condition/ no body>",
+        "class": "django_webtest.response.DjangoWebtestResponse"
+      },
+      "parent_id": 85,
+      "elapsed": 0.0043621063232421875,
+      "id": 114,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "An admin",
+    "recording": {
+      "defined_class": "tests.functional.dashboard.test_offer.TestAnAdmin",
+      "method_id": "test_cannot_jump_to_intermediate_step"
+    },
+    "source_location": "tests/functional/dashboard/test_offer.py:122",
+    "name": "An admin cannot jump to intermediate step",
+    "feature": "Cannot jump to intermediate step",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "test",
+          "type": "package",
+          "children": [
+            {
+              "name": "testcases",
+              "type": "package",
+              "children": [
+                {
+                  "name": "WebTestCase",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "get",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/test/testcases.py:60"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "customer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractUser",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/abstract_models.py:115"
+                        },
+                        {
+                          "name": "_migrate_alerts_to_user",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/abstract_models.py:103"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "partner",
+              "type": "package",
+              "children": [
+                {
+                  "name": "strategy",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Selector",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "strategy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/strategy.py:37"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "dashboard",
+              "type": "package",
+              "children": [
+                {
+                  "name": "offers",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "views",
+                      "type": "package",
+                      "children": [
+                        {
+                          "name": "OfferWizardStepView",
+                          "type": "class",
+                          "children": [
+                            {
+                              "name": "dispatch",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/views.py:137"
+                            },
+                            {
+                              "name": "is_previous_step_complete",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/views.py:148"
+                            },
+                            {
+                              "name": "is_valid",
+                              "type": "function",
+                              "static": true,
+                              "location": "src/oscar/apps/dashboard/offers/views.py:308"
+                            },
+                            {
+                              "name": "_fetch_object",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/views.py:203"
+                            },
+                            {
+                              "name": "_key",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/views.py:153"
+                            },
+                            {
+                              "name": "get_back_url",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/offers/views.py:246"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "basket",
+              "type": "package",
+              "children": [
+                {
+                  "name": "middleware",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "BasketMiddleware",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "process_response",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/middleware.py:63"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "views",
+          "type": "package",
+          "children": [
+            {
+              "name": "decorators",
+              "type": "class",
+              "children": [
+                {
+                  "name": "check_permissions",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/views/decorators.py:10"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "django",
+      "type": "package",
+      "children": [
+        {
+          "name": "contrib",
+          "type": "package",
+          "children": [
+            {
+              "name": "auth",
+              "type": "class",
+              "children": [
+                {
+                  "name": "authenticate",
+                  "type": "function",
+                  "labels": [
+                    "security.authentication"
+                  ],
+                  "static": true,
+                  "location": "venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py:63"
+                },
+                {
+                  "name": "backends",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "RemoteUserBackend",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "authenticate",
+                          "type": "function",
+                          "labels": [
+                            "security.authentication"
+                          ],
+                          "static": false,
+                          "location": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py:187"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "ModelBackend",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "user_can_authenticate",
+                          "type": "function",
+                          "labels": [
+                            "security.authorization"
+                          ],
+                          "static": false,
+                          "location": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py:55"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "PermissionsMixin",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "has_perms",
+                          "type": "function",
+                          "labels": [
+                            "security.authorization"
+                          ],
+                          "static": false,
+                          "location": "venv/lib/python3.8/site-packages/django/contrib/auth/models.py:313"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /dashboard/offers/new/condition/"
+        },
+        {
+          "type": "route",
+          "name": "GET /dashboard/offers/new/incentive/"
+        },
+        {
+          "type": "route",
+          "name": "GET /dashboard/offers/new/restrictions/"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"email\" = 'testuser@buymore.com' LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = '7p77ej52xzl1e64uhrpzsclstyjr7q84' LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SAVEPOINT \"s8669432832_x1730\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('7p77ej52xzl1e64uhrpzsclstyjr7q84', 'e30:1sVwog:ct3uW8kCJ77d4_cr5xdknhFty5Abu14hhUuhPr9y59o', '2024-08-05T17:27:18.055683+00:00'::timestamptz)"
+        },
+        {
+          "type": "query",
+          "name": "RELEASE SAVEPOINT \"s8669432832_x1730\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"myauth_user\" SET \"last_login\" = '2024-07-22T17:27:18.057405+00:00'::timestamptz WHERE \"myauth_user\".\"id\" = 300"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"customer_productalert\" SET \"user_id\" = 300, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'testuser@buymore.com' AND \"customer_productalert\".\"status\" = 'Active')"
+        },
+        {
+          "type": "query",
+          "name": "SAVEPOINT \"s8669432832_x1731\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"django_session\" SET \"session_data\" = '.eJxVjsEKgzAQRP8l5yJJ1pqkx_6D9Bh2s0m1BQWjCBX_vSn10F7nzTxmEx6XufNLjpPvWVwESClOvylheMbhg_iBw330a6Q55rk6QK5u36At7etR_jN0mLsyDyo2WmmQTrNNmsEml5p4DmgSabSOmMGBUQSEBqysDVFNpFir0BAW6ZhS8a39C6dyaNv3N_KGQEQ:1sVwog:TLczJXa9_XxgLoAv1GCjO4Tn34vXc7oFJO7YqbdpUqc', \"expire_date\" = '2024-08-05T17:27:18.060317+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = '7p77ej52xzl1e64uhrpzsclstyjr7q84'"
+        },
+        {
+          "type": "query",
+          "name": "RELEASE SAVEPOINT \"s8669432832_x1731\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2024-07-22T17:27:18.063253+00:00'::timestamptz AND \"django_session\".\"session_key\" = '7p77ej52xzl1e64uhrpzsclstyjr7q84') LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"id\" = 300 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2024-07-22T17:27:18.067282+00:00'::timestamptz AND \"django_session\".\"session_key\" = '7p77ej52xzl1e64uhrpzsclstyjr7q84') LIMIT 21"
+        }
+      ]
+    }
+  ]
+}

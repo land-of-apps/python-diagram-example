@@ -1,0 +1,106 @@
+[
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarOfferDetailHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsErrorsListDefaultHtml#render"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarOfferDetailHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsPHtml#render"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarOfferDetailHtml#render",
+    "callee": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" <= 2 AND \"catalogue_category\".\"ancestors_are_public\" AND \"catalogue_category\".\"is_public\") ORDER BY \"catalogue_category\".\"path\" ASC"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarOfferDetailHtml#render",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarOfferDetailHtml#render",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsErrorsListDefaultHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsErrorsListUlHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsLabelHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsAttrsHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsPHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsErrorsListDefaultHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsPHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsLabelHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsPHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsPHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelectHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelectHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelectHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml#render"
+  },
+  {
+    "caller": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml#render",
+    "callee": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml#render"
+  },
+  {
+    "caller": "GET /offers/{slug}/",
+    "callee": "<templates>/SrcOscarTemplatesOscarOfferDetailHtml#render"
+  },
+  {
+    "caller": "GET /offers/{slug}/",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_category\" INNER JOIN \"offer_range_included_categories\" ON (\"catalogue_category\".\"id\" = \"offer_range_included_categories\".\"category_id\") WHERE \"offer_range_included_categories\".\"range_id\" = 264 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_product\" T2 ON (\"catalogue_product\".\"parent_id\" = T2.\"id\") INNER JOIN \"offer_range_excluded_products\" ON (T2.\"id\" = \"offer_range_excluded_products\".\"product_id\") WHERE \"offer_range_excluded_products\".\"range_id\" = 264 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_product\" T2 ON (\"catalogue_product\".\"parent_id\" = T2.\"id\") INNER JOIN \"offer_rangeproduct\" ON (T2.\"id\" = \"offer_rangeproduct\".\"product_id\") WHERE \"offer_rangeproduct\".\"range_id\" = 264 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_productclass\" INNER JOIN \"offer_range_classes\" ON (\"catalogue_productclass\".\"id\" = \"offer_range_classes\".\"productclass_id\") WHERE \"offer_range_classes\".\"range_id\" = 264 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) FROM (SELECT DISTINCT \"catalogue_product\".\"id\" AS \"col1\", \"catalogue_product\".\"structure\" AS \"col2\", \"catalogue_product\".\"is_public\" AS \"col3\", \"catalogue_product\".\"upc\" AS \"col4\", \"catalogue_product\".\"parent_id\" AS \"col5\", \"catalogue_product\".\"title\" AS \"col6\", \"catalogue_product\".\"slug\" AS \"col7\", \"catalogue_product\".\"description\" AS \"col8\", \"catalogue_product\".\"meta_title\" AS \"col9\", \"catalogue_product\".\"meta_description\" AS \"col10\", \"catalogue_product\".\"product_class_id\" AS \"col11\", \"catalogue_product\".\"rating\" AS \"col12\", \"catalogue_product\".\"date_created\" AS \"col13\", \"catalogue_product\".\"date_updated\" AS \"col14\", \"catalogue_product\".\"is_discountable\" AS \"col15\" FROM \"catalogue_product\" INNER JOIN \"offer_rangeproduct\" ON (\"catalogue_product\".\"id\" = \"offer_rangeproduct\".\"product_id\") WHERE (\"offer_rangeproduct\".\"range_id\" = 264 AND NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"range_id\" = 264 AND U1.\"product_id\" = (\"catalogue_product\".\"id\")) LIMIT 1)) AND \"catalogue_product\".\"is_discountable\" AND \"catalogue_product\".\"is_public\" AND \"catalogue_product\".\"parent_id\" IS NULL)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\", \"offer_condition\".\"id\", \"offer_condition\".\"range_id\", \"offer_condition\".\"type\", \"offer_condition\".\"value\", \"offer_condition\".\"proxy_class\", \"offer_benefit\".\"id\", \"offer_benefit\".\"range_id\", \"offer_benefit\".\"type\", \"offer_benefit\".\"value\", \"offer_benefit\".\"max_affected_items\", \"offer_benefit\".\"proxy_class\" FROM \"offer_conditionaloffer\" INNER JOIN \"offer_condition\" ON (\"offer_conditionaloffer\".\"condition_id\" = \"offer_condition\".\"id\") INNER JOIN \"offer_benefit\" ON (\"offer_conditionaloffer\".\"benefit_id\" = \"offer_benefit\".\"id\") WHERE ((\"offer_conditionaloffer\".\"end_datetime\" >= '2024-07-22T17:25:46.753508+00:00'::timestamptz OR \"offer_conditionaloffer\".\"end_datetime\" IS NULL) AND (\"offer_conditionaloffer\".\"start_datetime\" <= '2024-07-22T17:25:46.753508+00:00'::timestamptz OR \"offer_conditionaloffer\".\"start_datetime\" IS NULL) AND \"offer_conditionaloffer\".\"status\" = 'Open' AND \"offer_conditionaloffer\".\"slug\" = 'Ûul-wįth-weird-chars') LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"offer_range\".\"id\", \"offer_range\".\"name\", \"offer_range\".\"slug\", \"offer_range\".\"description\", \"offer_range\".\"is_public\", \"offer_range\".\"includes_all_products\", \"offer_range\".\"proxy_class\", \"offer_range\".\"date_created\" FROM \"offer_range\" WHERE \"offer_range\".\"id\" = 264 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  }
+]

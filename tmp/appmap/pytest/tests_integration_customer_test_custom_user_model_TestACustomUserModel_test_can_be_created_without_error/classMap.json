@@ -1,0 +1,58 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "customer",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractUser",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:115"
+                      },
+                      {
+                        "name": "_migrate_alerts_to_user",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:103"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('md5$WFdikB65DMGfPvo6bhgHdI$f029b0b919d47d04cf3b80b421c19335', NULL, false, 'a@a.com', '', '', false, true, '2024-07-22T17:28:11.021721+00:00'::timestamptz, '_', '') RETURNING \"myauth_user\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"customer_productalert\" SET \"user_id\" = 660, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'a@a.com' AND \"customer_productalert\".\"status\" = 'Active')"
+      }
+    ]
+  }
+]

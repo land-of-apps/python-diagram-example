@@ -1,0 +1,74 @@
+{
+  "events": [
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_shippingevent\".\"id\", \"order_shippingevent\".\"order_id\", \"order_shippingevent\".\"event_type_id\", \"order_shippingevent\".\"notes\", \"order_shippingevent\".\"date_created\" FROM \"order_shippingevent\" INNER JOIN \"order_shippingeventquantity\" ON (\"order_shippingevent\".\"id\" = \"order_shippingeventquantity\".\"event_id\") WHERE \"order_shippingeventquantity\".\"line_id\" = 174 ORDER BY \"order_shippingevent\".\"date_created\" DESC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.00044249999999124157,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Line tests",
+    "recording": {
+      "defined_class": "tests.integration.order.test_models.LineTests",
+      "method_id": "test_shipping_status_is_empty_to_start_with"
+    },
+    "source_location": "tests/integration/order/test_models.py:186",
+    "name": "Line tests shipping status is empty to start with",
+    "feature": "Shipping status is empty to start with",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"order_shippingevent\".\"id\", \"order_shippingevent\".\"order_id\", \"order_shippingevent\".\"event_type_id\", \"order_shippingevent\".\"notes\", \"order_shippingevent\".\"date_created\" FROM \"order_shippingevent\" INNER JOIN \"order_shippingeventquantity\" ON (\"order_shippingevent\".\"id\" = \"order_shippingeventquantity\".\"event_id\") WHERE \"order_shippingeventquantity\".\"line_id\" = 174 ORDER BY \"order_shippingevent\".\"date_created\" DESC"
+        }
+      ]
+    }
+  ]
+}

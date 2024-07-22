@@ -1,0 +1,953 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14043133696,
+        "value": "<ProductQuerySet [<Product: second>, <Product: serious product>, <Product: Hubble Photo>, <Product: Hermes Bikini>]>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "keyrest",
+          "object_id": 14043723392,
+          "value": "{'hypothenusa': 1.25}",
+          "name": "filter_kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "hypothenusa",
+              "class": "builtins.float"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.ProductQuerySet",
+      "method_id": "filter_by_attributes",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 74
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14040073856,
+        "value": "{'hypothenusa': (None, 1.25)}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "hypothenusa",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "field_names",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 29
+    },
+    {
+      "return_value": {
+        "object_id": 14043489760,
+        "value": "dict_keys(['hypothenusa'])",
+        "class": "builtins.dict_keys"
+      },
+      "parent_id": 2,
+      "elapsed": 9.5367431640625e-7,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14040073856,
+        "value": "{'hypothenusa': (None, 1.25)}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "hypothenusa",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14043122368,
+          "value": "<QuerySet [('hypothenusa', 'float')]>",
+          "name": "attribute_types",
+          "class": "django.db.models.query.QuerySet"
+        },
+        {
+          "kind": "req",
+          "object_id": 14043133696,
+          "value": "<ProductQuerySet [<Product: second>, <Product: serious product>, <Product: Hubble Photo>, <Product: Hermes Bikini>]>",
+          "name": "queryset",
+          "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "fast_query",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 51
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\" FROM \"catalogue_productattribute\" WHERE \"catalogue_productattribute\".\"code\" IN ('hypothenusa') ORDER BY \"catalogue_productattribute\".\"code\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.0004898330000173701,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14040073856,
+        "value": "{'hypothenusa': (None, 1.25)}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "hypothenusa",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14043165184,
+          "value": "['float']",
+          "name": "types",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "req",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lookup",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "req",
+          "object_id": 4422332592,
+          "value": "1.25",
+          "name": "value",
+          "class": "builtins.float"
+        }
+      ],
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "_select_value",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 38
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14040073856,
+        "value": "{'hypothenusa': (None, 1.25)}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "hypothenusa",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14043701168,
+          "value": "'float'",
+          "name": "attribute_type",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 8,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "_selector",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 32
+    },
+    {
+      "return_value": {
+        "object_id": 14040421760,
+        "value": "'attribute_values__value_float'",
+        "class": "builtins.str"
+      },
+      "parent_id": 8,
+      "elapsed": 9.5367431640625e-7,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14042963008,
+        "value": "<Q: (AND: ('attribute_values__value_float', 1.25))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 7,
+      "elapsed": 0.00006222724914550781,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14043012256,
+        "value": "<ProductQuerySet [<Product: second>]>",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parent_id": 4,
+      "elapsed": 0.0009751319885253906,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14043012256,
+        "value": "<ProductQuerySet [<Product: second>]>",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0061948299407958984,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_productattributevalue\" ON (\"catalogue_product\".\"id\" = \"catalogue_productattributevalue\".\"product_id\") INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE (\"catalogue_productattributevalue\".\"value_float\" = 1.25 AND \"catalogue_productattribute\".\"code\" = 'hypothenusa') LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 13,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 13,
+      "elapsed": 0.0009185840000043299,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14043012352,
+        "value": "<ProductQuerySet [<Product: second>, <Product: serious product>, <Product: Hubble Photo>, <Product: Hermes Bikini>]>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "keyrest",
+          "object_id": 14043723392,
+          "value": "{'facets': 'four'}",
+          "name": "filter_kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "facets",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 15,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.ProductQuerySet",
+      "method_id": "filter_by_attributes",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 74
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14040421776,
+        "value": "{'facets': (None, 'four')}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "facets",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "id": 16,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "field_names",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 29
+    },
+    {
+      "return_value": {
+        "object_id": 14043695136,
+        "value": "dict_keys(['facets'])",
+        "class": "builtins.dict_keys"
+      },
+      "parent_id": 16,
+      "elapsed": 0.0000011920928955078125,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14040421776,
+        "value": "{'facets': (None, 'four')}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "facets",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14043693312,
+          "value": "<QuerySet [('facets', 'integer')]>",
+          "name": "attribute_types",
+          "class": "django.db.models.query.QuerySet"
+        },
+        {
+          "kind": "req",
+          "object_id": 14043012352,
+          "value": "<ProductQuerySet [<Product: second>, <Product: serious product>, <Product: Hubble Photo>, <Product: Hermes Bikini>]>",
+          "name": "queryset",
+          "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+        }
+      ],
+      "id": 18,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "fast_query",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 51
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\" FROM \"catalogue_productattribute\" WHERE \"catalogue_productattribute\".\"code\" IN ('facets') ORDER BY \"catalogue_productattribute\".\"code\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 19,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 19,
+      "elapsed": 0.0010803330000044298,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14040421776,
+        "value": "{'facets': (None, 'four')}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "facets",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14043785920,
+          "value": "['integer']",
+          "name": "types",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "req",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lookup",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "req",
+          "object_id": 4422368368,
+          "value": "'four'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 21,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "_select_value",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 38
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14040421776,
+        "value": "{'facets': (None, 'four')}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "facets",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14043737456,
+          "value": "'integer'",
+          "name": "attribute_type",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 22,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "_selector",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 32
+    },
+    {
+      "return_value": {
+        "object_id": 14032087280,
+        "value": "'attribute_values__value_integer'",
+        "class": "builtins.str"
+      },
+      "parent_id": 22,
+      "elapsed": 0.0000011920928955078125,
+      "id": 23,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14043696432,
+        "value": "<Q: (AND: ('attribute_values__value_integer', 'four'))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 21,
+      "elapsed": 0.00008320808410644531,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "exceptions": [
+        {
+          "class": "builtins.ValueError",
+          "message": "Field 'value_integer' expected a number but got 'four'.",
+          "object_id": 14034672032
+        }
+      ],
+      "parent_id": 18,
+      "elapsed": 0.001964092254638672,
+      "id": 25,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "exceptions": [
+        {
+          "class": "builtins.ValueError",
+          "message": "Field 'value_integer' expected a number but got 'four'.",
+          "object_id": 14034672032
+        }
+      ],
+      "parent_id": 15,
+      "elapsed": 0.0045359134674072266,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14042963008,
+        "value": "<ProductQuerySet [<Product: second>, <Product: serious product>, <Product: Hubble Photo>, <Product: Hermes Bikini>]>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "keyrest",
+          "object_id": 14043552064,
+          "value": "{'hypothenusa': 1}",
+          "name": "filter_kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "hypothenusa",
+              "class": "builtins.int"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 27,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.ProductQuerySet",
+      "method_id": "filter_by_attributes",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 74
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14034672032,
+        "value": "{'hypothenusa': (None, 1)}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "hypothenusa",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "id": 28,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "field_names",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 29
+    },
+    {
+      "return_value": {
+        "object_id": 14043011056,
+        "value": "dict_keys(['hypothenusa'])",
+        "class": "builtins.dict_keys"
+      },
+      "parent_id": 28,
+      "elapsed": 9.5367431640625e-7,
+      "id": 29,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14034672032,
+        "value": "{'hypothenusa': (None, 1)}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "hypothenusa",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14043695568,
+          "value": "<QuerySet [('hypothenusa', 'float')]>",
+          "name": "attribute_types",
+          "class": "django.db.models.query.QuerySet"
+        },
+        {
+          "kind": "req",
+          "object_id": 14042963008,
+          "value": "<ProductQuerySet [<Product: second>, <Product: serious product>, <Product: Hubble Photo>, <Product: Hermes Bikini>]>",
+          "name": "queryset",
+          "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+        }
+      ],
+      "id": 30,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "fast_query",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 51
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\" FROM \"catalogue_productattribute\" WHERE \"catalogue_productattribute\".\"code\" IN ('hypothenusa') ORDER BY \"catalogue_productattribute\".\"code\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 31,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 31,
+      "elapsed": 0.0004511669999942569,
+      "id": 32,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14034672032,
+        "value": "{'hypothenusa': (None, 1)}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "hypothenusa",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14043733312,
+          "value": "['float']",
+          "name": "types",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "req",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lookup",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "req",
+          "object_id": 4341391944,
+          "value": "1",
+          "name": "value",
+          "class": "builtins.int"
+        }
+      ],
+      "id": 33,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "_select_value",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 38
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14034672032,
+        "value": "{'hypothenusa': (None, 1)}",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.AttributeFilter",
+        "properties": [
+          {
+            "name": "hypothenusa",
+            "class": "builtins.tuple"
+          }
+        ],
+        "size": 1
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14043646256,
+          "value": "'float'",
+          "name": "attribute_type",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 34,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.AttributeFilter",
+      "method_id": "_selector",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 32
+    },
+    {
+      "return_value": {
+        "object_id": 14040970544,
+        "value": "'attribute_values__value_float'",
+        "class": "builtins.str"
+      },
+      "parent_id": 34,
+      "elapsed": 9.5367431640625e-7,
+      "id": 35,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14043574128,
+        "value": "<Q: (AND: ('attribute_values__value_float', 1))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 33,
+      "elapsed": 0.00006198883056640625,
+      "id": 36,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14043694176,
+        "value": "<ProductQuerySet []>",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parent_id": 30,
+      "elapsed": 0.0009059906005859375,
+      "id": 37,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14043694176,
+        "value": "<ProductQuerySet []>",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parent_id": 27,
+      "elapsed": 0.005204916000366211,
+      "id": 38,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_productattributevalue\" ON (\"catalogue_product\".\"id\" = \"catalogue_productattributevalue\".\"product_id\") INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE (\"catalogue_productattributevalue\".\"value_float\" = 1.0 AND \"catalogue_productattribute\".\"code\" = 'hypothenusa') LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 39,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 39,
+      "elapsed": 0.001958459000007906,
+      "id": 40,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Product attribute queryset test",
+    "recording": {
+      "defined_class": "tests.unit.catalogue.test_product_attributes.ProductAttributeQuerysetTest",
+      "method_id": "test_float"
+    },
+    "source_location": "tests/unit/catalogue/test_product_attributes.py:412",
+    "name": "Product attribute queryset test float",
+    "feature": "Float",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "managers",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "ProductQuerySet",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "filter_by_attributes",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/managers.py:74"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "AttributeFilter",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "field_names",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/managers.py:29"
+                        },
+                        {
+                          "name": "fast_query",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/managers.py:51"
+                        },
+                        {
+                          "name": "_select_value",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/managers.py:38"
+                        },
+                        {
+                          "name": "_selector",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/managers.py:32"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\" FROM \"catalogue_productattribute\" WHERE \"catalogue_productattribute\".\"code\" IN ('hypothenusa') ORDER BY \"catalogue_productattribute\".\"code\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_productattributevalue\" ON (\"catalogue_product\".\"id\" = \"catalogue_productattributevalue\".\"product_id\") INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE (\"catalogue_productattributevalue\".\"value_float\" = 1.25 AND \"catalogue_productattribute\".\"code\" = 'hypothenusa') LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\" FROM \"catalogue_productattribute\" WHERE \"catalogue_productattribute\".\"code\" IN ('facets') ORDER BY \"catalogue_productattribute\".\"code\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_productattributevalue\" ON (\"catalogue_product\".\"id\" = \"catalogue_productattributevalue\".\"product_id\") INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE (\"catalogue_productattributevalue\".\"value_float\" = 1.0 AND \"catalogue_productattribute\".\"code\" = 'hypothenusa') LIMIT 1"
+        }
+      ]
+    }
+  ]
+}

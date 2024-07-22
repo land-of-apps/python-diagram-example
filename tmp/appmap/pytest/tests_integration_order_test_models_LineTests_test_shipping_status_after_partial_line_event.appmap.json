@@ -1,0 +1,416 @@
+{
+  "events": [
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"order_shippingevent\" (\"order_id\", \"event_type_id\", \"notes\", \"date_created\") VALUES (170, 39, '', '2024-07-22T17:28:42.374861+00:00'::timestamptz) RETURNING \"order_shippingevent\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.00045233299999836163,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14012827776,
+        "value": "<ShippingEventQuantity: Dùｍϻϒ title - quantity 3>",
+        "name": "self",
+        "class": "oscar.apps.order.abstract_models.ShippingEventQuantity"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14012859904,
+          "value": "{'force_insert': True, 'using': 'default'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "force_insert",
+              "class": "builtins.bool"
+            },
+            {
+              "name": "using",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.ShippingEventQuantity",
+      "method_id": "save",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 1137
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14012853312,
+        "value": "<Line: Product 'Dùｍϻϒ title', quantity '4'>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Line"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14012813568,
+          "value": "<ShippingEventType: Order placed>",
+          "name": "event_type",
+          "class": "oscar.apps.order.models.ShippingEventType"
+        },
+        {
+          "kind": "req",
+          "object_id": 4341392008,
+          "value": "3",
+          "name": "quantity",
+          "class": "builtins.int"
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractLine",
+      "method_id": "is_shipping_event_permitted",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 753
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14012853312,
+        "value": "<Line: Product 'Dùｍϻϒ title', quantity '4'>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Line"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14012813568,
+          "value": "<ShippingEventType: Order placed>",
+          "name": "event_type",
+          "class": "oscar.apps.order.models.ShippingEventType"
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractLine",
+      "method_id": "shipping_event_quantity",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 766
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT SUM(\"order_shippingeventquantity\".\"quantity\") AS \"quantity__sum\" FROM \"order_shippingeventquantity\" INNER JOIN \"order_shippingevent\" ON (\"order_shippingeventquantity\".\"event_id\" = \"order_shippingevent\".\"id\") WHERE (\"order_shippingeventquantity\".\"line_id\" = 172 AND \"order_shippingevent\".\"event_type_id\" = 39)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 6,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 6,
+      "elapsed": 0.0006132910000076208,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341391912,
+        "value": "0",
+        "class": "builtins.int"
+      },
+      "parent_id": 5,
+      "elapsed": 0.0011930465698242188,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 4,
+      "elapsed": 0.0012650489807128906,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"order_shippingeventquantity\" (\"event_id\", \"line_id\", \"quantity\") VALUES (15, 172, 3) RETURNING \"order_shippingeventquantity\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 10,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 10,
+      "elapsed": 0.0005075839999904019,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 3,
+      "elapsed": 0.001990079879760742,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_shippingevent\".\"id\", \"order_shippingevent\".\"order_id\", \"order_shippingevent\".\"event_type_id\", \"order_shippingevent\".\"notes\", \"order_shippingevent\".\"date_created\" FROM \"order_shippingevent\" INNER JOIN \"order_shippingeventquantity\" ON (\"order_shippingevent\".\"id\" = \"order_shippingeventquantity\".\"event_id\") WHERE \"order_shippingeventquantity\".\"line_id\" = 172 ORDER BY \"order_shippingevent\".\"date_created\" DESC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 13,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 13,
+      "elapsed": 0.0009465420000083213,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_shippingeventtype\".\"id\", \"order_shippingeventtype\".\"name\", \"order_shippingeventtype\".\"code\" FROM \"order_shippingeventtype\" WHERE \"order_shippingeventtype\".\"id\" = 39 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 15,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 15,
+      "elapsed": 0.0005535000000236323,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14012853312,
+        "value": "<Line: Product 'Dùｍϻϒ title', quantity '4'>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Line"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14012852592,
+          "value": "<ShippingEvent: Order #100002, type Order placed>",
+          "name": "event",
+          "class": "oscar.apps.order.models.ShippingEvent"
+        }
+      ],
+      "id": 17,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractLine",
+      "method_id": "get_event_quantity",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 787
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_shippingeventquantity\".\"id\", \"order_shippingeventquantity\".\"event_id\", \"order_shippingeventquantity\".\"line_id\", \"order_shippingeventquantity\".\"quantity\" FROM \"order_shippingeventquantity\" WHERE (\"order_shippingeventquantity\".\"event_id\" = 15 AND \"order_shippingeventquantity\".\"line_id\" = 172) LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 18,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 18,
+      "elapsed": 0.0005022089999897617,
+      "id": 19,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14012875392,
+        "value": "<ShippingEventQuantity: Dùｍϻϒ title - quantity 3>",
+        "class": "oscar.apps.order.abstract_models.ShippingEventQuantity"
+      },
+      "parent_id": 17,
+      "elapsed": 0.0009071826934814453,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Line tests",
+    "recording": {
+      "defined_class": "tests.integration.order.test_models.LineTests",
+      "method_id": "test_shipping_status_after_partial_line_event"
+    },
+    "source_location": "tests/integration/order/test_models.py:200",
+    "name": "Line tests shipping status after partial line event",
+    "feature": "Shipping status after partial line event",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "order",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "ShippingEventQuantity",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:1137"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "AbstractLine",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "is_shipping_event_permitted",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:753"
+                        },
+                        {
+                          "name": "shipping_event_quantity",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:766"
+                        },
+                        {
+                          "name": "get_event_quantity",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:787"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"order_shippingevent\" (\"order_id\", \"event_type_id\", \"notes\", \"date_created\") VALUES (170, 39, '', '2024-07-22T17:28:42.374861+00:00'::timestamptz) RETURNING \"order_shippingevent\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT SUM(\"order_shippingeventquantity\".\"quantity\") AS \"quantity__sum\" FROM \"order_shippingeventquantity\" INNER JOIN \"order_shippingevent\" ON (\"order_shippingeventquantity\".\"event_id\" = \"order_shippingevent\".\"id\") WHERE (\"order_shippingeventquantity\".\"line_id\" = 172 AND \"order_shippingevent\".\"event_type_id\" = 39)"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"order_shippingeventquantity\" (\"event_id\", \"line_id\", \"quantity\") VALUES (15, 172, 3) RETURNING \"order_shippingeventquantity\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"order_shippingevent\".\"id\", \"order_shippingevent\".\"order_id\", \"order_shippingevent\".\"event_type_id\", \"order_shippingevent\".\"notes\", \"order_shippingevent\".\"date_created\" FROM \"order_shippingevent\" INNER JOIN \"order_shippingeventquantity\" ON (\"order_shippingevent\".\"id\" = \"order_shippingeventquantity\".\"event_id\") WHERE \"order_shippingeventquantity\".\"line_id\" = 172 ORDER BY \"order_shippingevent\".\"date_created\" DESC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"order_shippingeventtype\".\"id\", \"order_shippingeventtype\".\"name\", \"order_shippingeventtype\".\"code\" FROM \"order_shippingeventtype\" WHERE \"order_shippingeventtype\".\"id\" = 39 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"order_shippingeventquantity\".\"id\", \"order_shippingeventquantity\".\"event_id\", \"order_shippingeventquantity\".\"line_id\", \"order_shippingeventquantity\".\"quantity\" FROM \"order_shippingeventquantity\" WHERE (\"order_shippingeventquantity\".\"event_id\" = 15 AND \"order_shippingeventquantity\".\"line_id\" = 172) LIMIT 21"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "partner",
+            "type": "package",
+            "children": [
+              {
+                "name": "strategy",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "Selector",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "strategy",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/partner/strategy.py:37"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "customer",
+            "type": "package",
+            "children": [
+              {
+                "name": "views",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AnonymousOrderDetailView",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "get_object",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/views.py:632"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "search",
+            "type": "package",
+            "children": [
+              {
+                "name": "context_processors",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "search_form",
+                    "type": "function",
+                    "static": true,
+                    "location": "src/oscar/apps/search/context_processors.py:6"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "communication",
+            "type": "package",
+            "children": [
+              {
+                "name": "notifications",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "context_processors",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "notifications",
+                        "type": "function",
+                        "static": true,
+                        "location": "src/oscar/apps/communication/notifications/context_processors.py:6"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "checkout",
+            "type": "package",
+            "children": [
+              {
+                "name": "context_processors",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "checkout",
+                    "type": "function",
+                    "static": true,
+                    "location": "src/oscar/apps/checkout/context_processors.py:4"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "basket",
+            "type": "package",
+            "children": [
+              {
+                "name": "middleware",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "BasketMiddleware",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "process_response",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/basket/middleware.py:63"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "views",
+        "type": "class",
+        "children": [
+          {
+            "name": "handler404",
+            "type": "function",
+            "static": true,
+            "location": "src/oscar/views/__init__.py:10"
+          }
+        ]
+      },
+      {
+        "name": "core",
+        "type": "package",
+        "children": [
+          {
+            "name": "context_processors",
+            "type": "class",
+            "children": [
+              {
+                "name": "metadata",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/context_processors.py:19"
+              },
+              {
+                "name": "strip_language_code",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/context_processors.py:6"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "GET /accounts/order-status/{order_number}/{hash}/"
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"order_order\".\"id\", \"order_order\".\"number\", \"order_order\".\"site_id\", \"order_order\".\"basket_id\", \"order_order\".\"user_id\", \"order_order\".\"billing_address_id\", \"order_order\".\"currency\", \"order_order\".\"total_incl_tax\", \"order_order\".\"total_excl_tax\", \"order_order\".\"shipping_incl_tax\", \"order_order\".\"shipping_excl_tax\", \"order_order\".\"shipping_tax_code\", \"order_order\".\"shipping_address_id\", \"order_order\".\"shipping_method\", \"order_order\".\"shipping_code\", \"order_order\".\"status\", \"order_order\".\"guest_email\", \"order_order\".\"date_placed\" FROM \"order_order\" WHERE (\"order_order\".\"number\" = '1000' AND \"order_order\".\"user_id\" IS NULL) LIMIT 21"
+      }
+    ]
+  },
+  {
+    "type": "class",
+    "name": "<templates>/SrcOscarTemplatesOscar404Html",
+    "children": [
+      {
+        "type": "function",
+        "name": "render",
+        "static": false
+      }
+    ]
+  },
+  {
+    "type": "class",
+    "name": "<templates>/SrcOscarTemplatesOscarPartialsNav_AccountsHtml",
+    "children": [
+      {
+        "type": "function",
+        "name": "render",
+        "static": false
+      }
+    ]
+  }
+]

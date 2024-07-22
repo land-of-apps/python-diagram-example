@@ -1,0 +1,54 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"catalogue_product\" (\"structure\", \"is_public\", \"upc\", \"parent_id\", \"title\", \"slug\", \"description\", \"meta_title\", \"meta_description\", \"product_class_id\", \"rating\", \"date_created\", \"date_updated\", \"is_discountable\") VALUES ('child', true, 'CHILD_UPC', 772, 'Child', 'child', '', NULL, NULL, 586, NULL, '2024-07-22T17:28:11.632162+00:00'::timestamptz, '2024-07-22T17:28:11.632173+00:00'::timestamptz, true) RETURNING \"catalogue_product\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"catalogue_product\" (\"structure\", \"is_public\", \"upc\", \"parent_id\", \"title\", \"slug\", \"description\", \"meta_title\", \"meta_description\", \"product_class_id\", \"rating\", \"date_created\", \"date_updated\", \"is_discountable\") VALUES ('parent', true, 'PARENT_UPC', NULL, 'Parent', 'parent', '', NULL, NULL, 586, NULL, '2024-07-22T17:28:11.629823+00:00'::timestamptz, '2024-07-22T17:28:11.629834+00:00'::timestamptz, true) RETURNING \"catalogue_product\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT DISTINCT 1 AS \"a\" FROM \"catalogue_product\" LEFT OUTER JOIN \"catalogue_product\" T4 ON (\"catalogue_product\".\"id\" = T4.\"parent_id\") LEFT OUTER JOIN \"partner_stockrecord\" ON (T4.\"id\" = \"partner_stockrecord\".\"product_id\") LEFT OUTER JOIN \"partner_partner\" ON (\"partner_stockrecord\".\"partner_id\" = \"partner_partner\".\"id\") LEFT OUTER JOIN \"partner_partner_users\" ON (\"partner_partner\".\"id\" = \"partner_partner_users\".\"partner_id\") LEFT OUTER JOIN \"partner_stockrecord\" T9 ON (\"catalogue_product\".\"id\" = T9.\"product_id\") LEFT OUTER JOIN \"partner_partner\" T10 ON (T9.\"partner_id\" = T10.\"id\") LEFT OUTER JOIN \"partner_partner_users\" T11 ON (T10.\"id\" = T11.\"partner_id\") WHERE (\"catalogue_product\".\"parent_id\" IS NULL AND (\"partner_partner_users\".\"user_id\" IS NULL OR T11.\"user_id\" IS NULL) AND (\"catalogue_product\".\"id\" IN (SELECT U0.\"id\" FROM \"catalogue_product\" U0 LEFT OUTER JOIN \"catalogue_product\" U1 ON (U0.\"id\" = U1.\"parent_id\") WHERE (UPPER(U0.\"upc\"::text) = UPPER('CHILD_UPC') OR UPPER(U1.\"upc\"::text) = UPPER('CHILD_UPC'))) OR \"catalogue_product\".\"id\" IN (SELECT U0.\"parent_id\" FROM \"catalogue_product\" U0 LEFT OUTER JOIN \"catalogue_product\" U1 ON (U0.\"id\" = U1.\"parent_id\") WHERE (UPPER(U0.\"upc\"::text) = UPPER('CHILD_UPC') OR UPPER(U1.\"upc\"::text) = UPPER('CHILD_UPC'))))) LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"slug\" = 'dumu03fbu03a5-item-class' ORDER BY \"catalogue_productclass\".\"name\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"catalogue_productclass\" (\"name\", \"slug\", \"requires_shipping\", \"track_stock\") VALUES ('Dùｍϻϒ item class', 'dumu03fbu03a5-item-class', true, true) RETURNING \"catalogue_productclass\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x2982\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SAVEPOINT \"s8669432832_x2982\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"name\" = 'Dùｍϻϒ item class' LIMIT 21"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "oscar/models"
+  }
+]

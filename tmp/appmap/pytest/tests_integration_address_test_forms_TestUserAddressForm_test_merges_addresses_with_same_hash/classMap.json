@@ -1,0 +1,196 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "models",
+        "type": "package",
+        "children": [
+          {
+            "name": "fields",
+            "type": "package",
+            "children": [
+              {
+                "name": "UppercaseCharField",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "to_python",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/models/fields/__init__.py:86"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "address",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractUserAddress",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:580"
+                      },
+                      {
+                        "name": "_ensure_defaults_integrity",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:593"
+                      },
+                      {
+                        "name": "validate_unique",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:611"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "AbstractAddress",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "generate_hash",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:384"
+                      },
+                      {
+                        "name": "get_address_field_values",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:377"
+                      },
+                      {
+                        "name": "get_field_values",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:359"
+                      },
+                      {
+                        "name": "join_fields",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:395"
+                      },
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:277"
+                      },
+                      {
+                        "name": "_update_search_text",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:326"
+                      },
+                      {
+                        "name": "clean",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:281"
+                      },
+                      {
+                        "name": "ensure_postcode_is_valid_for_country",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:299"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "forms",
+        "type": "package",
+        "children": [
+          {
+            "name": "mixins",
+            "type": "package",
+            "children": [
+              {
+                "name": "PhoneNumberMixin",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "clean",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/forms/mixins.py:106"
+                  },
+                  {
+                    "name": "set_country_and_region_code",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/forms/mixins.py:60"
+                  },
+                  {
+                    "name": "get_country",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/forms/mixins.py:51"
+                  },
+                  {
+                    "name": "clean_phone_number_field",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/forms/mixins.py:66"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"address_useraddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\", \"phone_number\", \"notes\", \"user_id\", \"is_default_for_shipping\", \"is_default_for_billing\", \"num_orders_as_shipping_address\", \"num_orders_as_billing_address\", \"hash\", \"date_created\") VALUES ('', 'Matus', 'Moravcik', '1 Egg Street', '', '', 'London', '', 'N12 9RE', 'GB', 'Matus Moravcik 1 Egg Street London N12 9RE', '', '', 592, false, false, 0, 0, '1388887256', '2024-07-22T17:27:50.315187+00:00'::timestamptz) RETURNING \"address_useraddress\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"address_useraddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\", \"phone_number\", \"notes\", \"user_id\", \"is_default_for_shipping\", \"is_default_for_billing\", \"num_orders_as_shipping_address\", \"num_orders_as_billing_address\", \"hash\", \"date_created\") VALUES ('', 'Izidor', 'Moravcik', '1 Egg Street', '', '', 'London', '', 'N12 9RE', 'GB', 'Izidor Moravcik 1 Egg Street London N12 9RE', '', '', 592, false, false, 0, 0, '652798375', '2024-07-22T17:27:50.318925+00:00'::timestamptz) RETURNING \"address_useraddress\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"address_country\".\"iso_3166_1_a2\", \"address_country\".\"iso_3166_1_a3\", \"address_country\".\"iso_3166_1_numeric\", \"address_country\".\"printable_name\", \"address_country\".\"name\", \"address_country\".\"display_order\", \"address_country\".\"is_shipping_country\" FROM \"address_country\" WHERE \"address_country\".\"iso_3166_1_a2\" = 'GB' LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"address_country\" WHERE \"address_country\".\"iso_3166_1_a2\" = 'GB' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"address_useraddress\" WHERE (\"address_useraddress\".\"hash\" = '1388887256' AND \"address_useraddress\".\"user_id\" = 592 AND NOT (\"address_useraddress\".\"id\" = 23)) LIMIT 1"
+      }
+    ]
+  }
+]

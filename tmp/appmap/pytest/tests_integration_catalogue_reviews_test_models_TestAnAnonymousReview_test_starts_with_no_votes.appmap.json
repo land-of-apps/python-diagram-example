@@ -1,0 +1,537 @@
+{
+  "events": [
+    {
+      "static": true,
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.reviews.utils",
+      "method_id": "get_default_review_status",
+      "path": "src/oscar/apps/catalogue/reviews/utils.py",
+      "lineno": 6
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4379759472,
+          "value": "'reviews'",
+          "name": "app_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4393954864,
+          "value": "'ProductReview'",
+          "name": "model_name",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_model",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 225
+    },
+    {
+      "return_value": {
+        "object_id": 4699023472,
+        "value": "<class 'oscar.apps.catalogue.reviews.models.ProductReview'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 2,
+      "elapsed": 0.000003814697265625,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341391944,
+        "value": "1",
+        "class": "builtins.int"
+      },
+      "parent_id": 1,
+      "elapsed": 0.00004696846008300781,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818118688,
+        "value": "<ProductReview: This product is lovely>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.reviews.models.ProductReview"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13818117312,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.reviews.abstract_models.AbstractProductReview",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/reviews/abstract_models.py",
+      "lineno": 112
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"reviews_productreview\" (\"product_id\", \"score\", \"title\", \"body\", \"user_id\", \"name\", \"email\", \"homepage\", \"status\", \"total_votes\", \"delta_votes\", \"date_created\") VALUES (738, 0, 'This product is lovely', 'I really like this cheese', NULL, 'JR Hartley', 'hartley@example.com', '', 1, 0, 0, '2024-07-22T17:28:03.771365+00:00'::timestamptz) RETURNING \"reviews_productreview\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 6,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 6,
+      "elapsed": 0.0008992500000033488,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818120176,
+        "value": "<Product: Dùｍϻϒ title>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Product"
+      },
+      "id": 8,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProduct",
+      "method_id": "update_rating",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 784
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818120176,
+        "value": "<Product: Dùｍϻϒ title>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Product"
+      },
+      "id": 9,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProduct",
+      "method_id": "calculate_rating",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 794
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT SUM(\"reviews_productreview\".\"score\") AS \"sum\", COUNT(\"reviews_productreview\".\"id\") AS \"count\" FROM \"reviews_productreview\" WHERE (\"reviews_productreview\".\"product_id\" = 738 AND \"reviews_productreview\".\"status\" = 1)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 10,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 10,
+      "elapsed": 0.0007644159999813382,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13817985744,
+        "value": "0.0",
+        "class": "builtins.float"
+      },
+      "parent_id": 9,
+      "elapsed": 0.0014300346374511719,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818120176,
+        "value": "<Product: Dùｍϻϒ title>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Product"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13818102528,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 13,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProduct",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 590
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4393773328,
+        "value": "<oscar.models.fields.NullCharField: upc>",
+        "name": "self",
+        "class": "oscar.models.fields.NullCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "value",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 14,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.NullCharField",
+      "method_id": "get_prep_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 122
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 14,
+      "elapsed": 0.0000016689300537109375,
+      "id": 15,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_product\" SET \"structure\" = 'standalone', \"is_public\" = true, \"upc\" = NULL, \"parent_id\" = NULL, \"title\" = 'Dùｍϻϒ title', \"slug\" = 'dumu03fbu03a5-title', \"description\" = '', \"meta_title\" = NULL, \"meta_description\" = NULL, \"product_class_id\" = 557, \"rating\" = 0.0, \"date_created\" = '2024-07-22T17:28:03.770247+00:00'::timestamptz, \"date_updated\" = '2024-07-22T17:28:03.774042+00:00'::timestamptz, \"is_discountable\" = true WHERE \"catalogue_product\".\"id\" = 738",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 16,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 16,
+      "elapsed": 0.0009029169999905662,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818118448,
+        "value": "<oscar.apps.catalogue.product_attributes.ProductAttributesContainer object at 0x3379fc130>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.product_attributes.ProductAttributesContainer"
+      },
+      "id": 18,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.product_attributes.ProductAttributesContainer",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/product_attributes.py",
+      "lineno": 207
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 18,
+      "elapsed": 0.000006198883056640625,
+      "id": 19,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 13,
+      "elapsed": 0.0013179779052734375,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 8,
+      "elapsed": 0.0028738975524902344,
+      "id": 21,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 5,
+      "elapsed": 0.004026889801025391,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "An anonymous review",
+    "recording": {
+      "defined_class": "tests.integration.catalogue.reviews.test_models.TestAnAnonymousReview",
+      "method_id": "test_starts_with_no_votes"
+    },
+    "source_location": "tests/integration/catalogue/reviews/test_models.py:54",
+    "name": "An anonymous review starts with no votes",
+    "feature": "Starts with no votes",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "reviews",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "utils",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get_default_review_status",
+                          "type": "function",
+                          "static": true,
+                          "location": "src/oscar/apps/catalogue/reviews/utils.py:6"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "abstract_models",
+                      "type": "package",
+                      "children": [
+                        {
+                          "name": "AbstractProductReview",
+                          "type": "class",
+                          "children": [
+                            {
+                              "name": "save",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/catalogue/reviews/abstract_models.py:112"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractProduct",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "update_rating",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:784"
+                        },
+                        {
+                          "name": "calculate_rating",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:794"
+                        },
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:590"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "product_attributes",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "ProductAttributesContainer",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/product_attributes.py:207"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "loading",
+              "type": "class",
+              "children": [
+                {
+                  "name": "get_model",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:225"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "models",
+          "type": "package",
+          "children": [
+            {
+              "name": "fields",
+              "type": "package",
+              "children": [
+                {
+                  "name": "NullCharField",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "get_prep_value",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/models/fields/__init__.py:122"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"reviews_productreview\" (\"product_id\", \"score\", \"title\", \"body\", \"user_id\", \"name\", \"email\", \"homepage\", \"status\", \"total_votes\", \"delta_votes\", \"date_created\") VALUES (738, 0, 'This product is lovely', 'I really like this cheese', NULL, 'JR Hartley', 'hartley@example.com', '', 1, 0, 0, '2024-07-22T17:28:03.771365+00:00'::timestamptz) RETURNING \"reviews_productreview\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT SUM(\"reviews_productreview\".\"score\") AS \"sum\", COUNT(\"reviews_productreview\".\"id\") AS \"count\" FROM \"reviews_productreview\" WHERE (\"reviews_productreview\".\"product_id\" = 738 AND \"reviews_productreview\".\"status\" = 1)"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_product\" SET \"structure\" = 'standalone', \"is_public\" = true, \"upc\" = NULL, \"parent_id\" = NULL, \"title\" = 'Dùｍϻϒ title', \"slug\" = 'dumu03fbu03a5-title', \"description\" = '', \"meta_title\" = NULL, \"meta_description\" = NULL, \"product_class_id\" = 557, \"rating\" = 0.0, \"date_created\" = '2024-07-22T17:28:03.770247+00:00'::timestamptz, \"date_updated\" = '2024-07-22T17:28:03.774042+00:00'::timestamptz, \"is_discountable\" = true WHERE \"catalogue_product\".\"id\" = 738"
+        }
+      ]
+    }
+  ]
+}

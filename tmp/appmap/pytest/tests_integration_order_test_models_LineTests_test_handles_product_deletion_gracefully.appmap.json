@@ -1,0 +1,661 @@
+{
+  "events": [
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\" FROM \"catalogue_product\" WHERE \"catalogue_product\".\"id\" = 1069 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.0005877090000012686,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4393773328,
+        "value": "<oscar.models.fields.NullCharField: upc>",
+        "name": "self",
+        "class": "oscar.models.fields.NullCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "value",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "rest",
+          "object_id": 14012215680,
+          "value": "(Col(catalogue_product, catalogue.Product.upc), <DatabaseWrapper vendor='postgresql' alias='default'>)",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14012217600,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.NullCharField",
+      "method_id": "from_db_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 117
+    },
+    {
+      "return_value": {
+        "object_id": 4331234032,
+        "value": "''",
+        "class": "builtins.str"
+      },
+      "parent_id": 3,
+      "elapsed": 0.0000011920928955078125,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_product\".\"id\" FROM \"catalogue_product\" WHERE \"catalogue_product\".\"parent_id\" IN (1069) ORDER BY \"catalogue_product\".\"date_created\" DESC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.0005408339999917189,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_productattributevalue\".\"id\" FROM \"catalogue_productattributevalue\" WHERE \"catalogue_productattributevalue\".\"product_id\" IN (1069)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 7,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 7,
+      "elapsed": 0.0012685829999838916,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_productimage\".\"id\", \"catalogue_productimage\".\"product_id\", \"catalogue_productimage\".\"original\", \"catalogue_productimage\".\"caption\", \"catalogue_productimage\".\"display_order\", \"catalogue_productimage\".\"date_created\" FROM \"catalogue_productimage\" WHERE \"catalogue_productimage\".\"product_id\" IN (1069) ORDER BY \"catalogue_productimage\".\"display_order\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 9,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 9,
+      "elapsed": 0.0004547080000065762,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"reviews_productreview\".\"id\" FROM \"reviews_productreview\" WHERE \"reviews_productreview\".\"product_id\" IN (1069) ORDER BY \"reviews_productreview\".\"delta_votes\" DESC, \"reviews_productreview\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 11,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 11,
+      "elapsed": 0.0009294999999838183,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"partner_stockrecord\".\"id\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" IN (1069)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 13,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 13,
+      "elapsed": 0.0005394580000199767,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"basket_line\".\"id\" FROM \"basket_line\" WHERE \"basket_line\".\"stockrecord_id\" IN (754) ORDER BY \"basket_line\".\"date_created\" ASC, \"basket_line\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 15,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 15,
+      "elapsed": 0.0006121250000035161,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"basket_line\".\"id\" FROM \"basket_line\" WHERE \"basket_line\".\"product_id\" IN (1069) ORDER BY \"basket_line\".\"date_created\" ASC, \"basket_line\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 17,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 17,
+      "elapsed": 0.0004757499999925585,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "DELETE FROM \"basket_lineattribute\" WHERE \"basket_lineattribute\".\"line_id\" IN (489)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 19,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 19,
+      "elapsed": 0.00039574999999558713,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "DELETE FROM \"partner_stockalert\" WHERE \"partner_stockalert\".\"stockrecord_id\" IN (754)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 21,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 21,
+      "elapsed": 0.000386040999984516,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "DELETE FROM \"analytics_productrecord\" WHERE \"analytics_productrecord\".\"product_id\" IN (1069)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 23,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 23,
+      "elapsed": 0.00038274999999998727,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "DELETE FROM \"analytics_userproductview\" WHERE \"analytics_userproductview\".\"product_id\" IN (1069)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 25,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 25,
+      "elapsed": 0.0007667499999968186,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "DELETE FROM \"catalogue_productcategory\" WHERE \"catalogue_productcategory\".\"product_id\" IN (1069)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 27,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 27,
+      "elapsed": 0.0006455829999936213,
+      "id": 28,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "DELETE FROM \"catalogue_product_product_options\" WHERE \"catalogue_product_product_options\".\"product_id\" IN (1069)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 29,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 29,
+      "elapsed": 0.0006356250000010277,
+      "id": 30,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "DELETE FROM \"catalogue_productrecommendation\" WHERE (\"catalogue_productrecommendation\".\"primary_id\" IN (1069) OR \"catalogue_productrecommendation\".\"recommendation_id\" IN (1069))",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 31,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 31,
+      "elapsed": 0.0007127920000016275,
+      "id": 32,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "DELETE FROM \"offer_range_excluded_products\" WHERE \"offer_range_excluded_products\".\"product_id\" IN (1069)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 33,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 33,
+      "elapsed": 0.0006720000000086657,
+      "id": 34,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "DELETE FROM \"offer_rangeproduct\" WHERE \"offer_rangeproduct\".\"product_id\" IN (1069)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 35,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 35,
+      "elapsed": 0.0006654579999860744,
+      "id": 36,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "DELETE FROM \"customer_productalert\" WHERE \"customer_productalert\".\"product_id\" IN (1069)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 37,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 37,
+      "elapsed": 0.0005017919999943388,
+      "id": 38,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"order_line\" SET \"stockrecord_id\" = NULL WHERE \"order_line\".\"stockrecord_id\" IN (754)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 39,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 39,
+      "elapsed": 0.00044037500001081753,
+      "id": 40,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"order_line\" SET \"product_id\" = NULL WHERE \"order_line\".\"product_id\" IN (1069)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 41,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 41,
+      "elapsed": 0.00030295799999180417,
+      "id": 42,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"wishlists_line\" SET \"product_id\" = NULL WHERE \"wishlists_line\".\"product_id\" IN (1069)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 43,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 43,
+      "elapsed": 0.0008640839999998207,
+      "id": 44,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "DELETE FROM \"basket_line\" WHERE \"basket_line\".\"id\" IN (489)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 45,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 45,
+      "elapsed": 0.00042666699999927005,
+      "id": 46,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "DELETE FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"id\" IN (754)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 47,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 47,
+      "elapsed": 0.0004908329999864236,
+      "id": 48,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "DELETE FROM \"catalogue_product\" WHERE \"catalogue_product\".\"id\" IN (1069)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 49,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 49,
+      "elapsed": 0.0005258330000117439,
+      "id": 50,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_line\".\"id\", \"order_line\".\"order_id\", \"order_line\".\"partner_id\", \"order_line\".\"partner_name\", \"order_line\".\"partner_sku\", \"order_line\".\"partner_line_reference\", \"order_line\".\"partner_line_notes\", \"order_line\".\"stockrecord_id\", \"order_line\".\"product_id\", \"order_line\".\"title\", \"order_line\".\"upc\", \"order_line\".\"quantity\", \"order_line\".\"line_price_incl_tax\", \"order_line\".\"line_price_excl_tax\", \"order_line\".\"line_price_before_discounts_incl_tax\", \"order_line\".\"line_price_before_discounts_excl_tax\", \"order_line\".\"unit_price_incl_tax\", \"order_line\".\"unit_price_excl_tax\", \"order_line\".\"tax_code\", \"order_line\".\"status\" FROM \"order_line\" WHERE \"order_line\".\"id\" = 164 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 51,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 51,
+      "elapsed": 0.0005481249999945703,
+      "id": 52,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Line tests",
+    "recording": {
+      "defined_class": "tests.integration.order.test_models.LineTests",
+      "method_id": "test_handles_product_deletion_gracefully"
+    },
+    "source_location": "tests/integration/order/test_models.py:241",
+    "name": "Line tests handles product deletion gracefully",
+    "feature": "Handles product deletion gracefully",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "models",
+          "type": "package",
+          "children": [
+            {
+              "name": "fields",
+              "type": "package",
+              "children": [
+                {
+                  "name": "NullCharField",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "from_db_value",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/models/fields/__init__.py:117"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\" FROM \"catalogue_product\" WHERE \"catalogue_product\".\"id\" = 1069 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_product\".\"id\" FROM \"catalogue_product\" WHERE \"catalogue_product\".\"parent_id\" IN (1069) ORDER BY \"catalogue_product\".\"date_created\" DESC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_productattributevalue\".\"id\" FROM \"catalogue_productattributevalue\" WHERE \"catalogue_productattributevalue\".\"product_id\" IN (1069)"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_productimage\".\"id\", \"catalogue_productimage\".\"product_id\", \"catalogue_productimage\".\"original\", \"catalogue_productimage\".\"caption\", \"catalogue_productimage\".\"display_order\", \"catalogue_productimage\".\"date_created\" FROM \"catalogue_productimage\" WHERE \"catalogue_productimage\".\"product_id\" IN (1069) ORDER BY \"catalogue_productimage\".\"display_order\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"reviews_productreview\".\"id\" FROM \"reviews_productreview\" WHERE \"reviews_productreview\".\"product_id\" IN (1069) ORDER BY \"reviews_productreview\".\"delta_votes\" DESC, \"reviews_productreview\".\"id\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"partner_stockrecord\".\"id\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" IN (1069)"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"basket_line\".\"id\" FROM \"basket_line\" WHERE \"basket_line\".\"stockrecord_id\" IN (754) ORDER BY \"basket_line\".\"date_created\" ASC, \"basket_line\".\"id\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"basket_line\".\"id\" FROM \"basket_line\" WHERE \"basket_line\".\"product_id\" IN (1069) ORDER BY \"basket_line\".\"date_created\" ASC, \"basket_line\".\"id\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "DELETE FROM \"basket_lineattribute\" WHERE \"basket_lineattribute\".\"line_id\" IN (489)"
+        },
+        {
+          "type": "query",
+          "name": "DELETE FROM \"partner_stockalert\" WHERE \"partner_stockalert\".\"stockrecord_id\" IN (754)"
+        },
+        {
+          "type": "query",
+          "name": "DELETE FROM \"analytics_productrecord\" WHERE \"analytics_productrecord\".\"product_id\" IN (1069)"
+        },
+        {
+          "type": "query",
+          "name": "DELETE FROM \"analytics_userproductview\" WHERE \"analytics_userproductview\".\"product_id\" IN (1069)"
+        },
+        {
+          "type": "query",
+          "name": "DELETE FROM \"catalogue_productcategory\" WHERE \"catalogue_productcategory\".\"product_id\" IN (1069)"
+        },
+        {
+          "type": "query",
+          "name": "DELETE FROM \"catalogue_product_product_options\" WHERE \"catalogue_product_product_options\".\"product_id\" IN (1069)"
+        },
+        {
+          "type": "query",
+          "name": "DELETE FROM \"catalogue_productrecommendation\" WHERE (\"catalogue_productrecommendation\".\"primary_id\" IN (1069) OR \"catalogue_productrecommendation\".\"recommendation_id\" IN (1069))"
+        },
+        {
+          "type": "query",
+          "name": "DELETE FROM \"offer_range_excluded_products\" WHERE \"offer_range_excluded_products\".\"product_id\" IN (1069)"
+        },
+        {
+          "type": "query",
+          "name": "DELETE FROM \"offer_rangeproduct\" WHERE \"offer_rangeproduct\".\"product_id\" IN (1069)"
+        },
+        {
+          "type": "query",
+          "name": "DELETE FROM \"customer_productalert\" WHERE \"customer_productalert\".\"product_id\" IN (1069)"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"order_line\" SET \"stockrecord_id\" = NULL WHERE \"order_line\".\"stockrecord_id\" IN (754)"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"order_line\" SET \"product_id\" = NULL WHERE \"order_line\".\"product_id\" IN (1069)"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"wishlists_line\" SET \"product_id\" = NULL WHERE \"wishlists_line\".\"product_id\" IN (1069)"
+        },
+        {
+          "type": "query",
+          "name": "DELETE FROM \"basket_line\" WHERE \"basket_line\".\"id\" IN (489)"
+        },
+        {
+          "type": "query",
+          "name": "DELETE FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"id\" IN (754)"
+        },
+        {
+          "type": "query",
+          "name": "DELETE FROM \"catalogue_product\" WHERE \"catalogue_product\".\"id\" IN (1069)"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"order_line\".\"id\", \"order_line\".\"order_id\", \"order_line\".\"partner_id\", \"order_line\".\"partner_name\", \"order_line\".\"partner_sku\", \"order_line\".\"partner_line_reference\", \"order_line\".\"partner_line_notes\", \"order_line\".\"stockrecord_id\", \"order_line\".\"product_id\", \"order_line\".\"title\", \"order_line\".\"upc\", \"order_line\".\"quantity\", \"order_line\".\"line_price_incl_tax\", \"order_line\".\"line_price_excl_tax\", \"order_line\".\"line_price_before_discounts_incl_tax\", \"order_line\".\"line_price_before_discounts_excl_tax\", \"order_line\".\"unit_price_incl_tax\", \"order_line\".\"unit_price_excl_tax\", \"order_line\".\"tax_code\", \"order_line\".\"status\" FROM \"order_line\" WHERE \"order_line\".\"id\" = 164 LIMIT 21"
+        }
+      ]
+    }
+  ]
+}

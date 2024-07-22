@@ -1,0 +1,86 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "DELETE FROM \"catalogue_productimage\" WHERE \"catalogue_productimage\".\"id\" IN (12)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"catalogue_product\" (\"structure\", \"is_public\", \"upc\", \"parent_id\", \"title\", \"slug\", \"description\", \"meta_title\", \"meta_description\", \"product_class_id\", \"rating\", \"date_created\", \"date_updated\", \"is_discountable\") VALUES ('standalone', true, NULL, NULL, 'Dùｍϻϒ title', 'dumu03fbu03a5-title', '', NULL, NULL, 537, NULL, '2024-07-22T17:28:01.625315+00:00'::timestamptz, '2024-07-22T17:28:01.625327+00:00'::timestamptz, true) RETURNING \"catalogue_product\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"catalogue_productimage\".\"id\", \"catalogue_productimage\".\"product_id\", \"catalogue_productimage\".\"original\", \"catalogue_productimage\".\"caption\", \"catalogue_productimage\".\"display_order\", \"catalogue_productimage\".\"date_created\" FROM \"catalogue_productimage\" WHERE \"catalogue_productimage\".\"product_id\" = 718 ORDER BY \"catalogue_productimage\".\"display_order\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"catalogue_productimage\" SET \"product_id\" = 718, \"original\" = '', \"caption\" = 'Dummy Caption', \"display_order\" = 0, \"date_created\" = '2024-07-22T17:28:01.627775+00:00'::timestamptz WHERE \"catalogue_productimage\".\"id\" = 10"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"catalogue_productimage\" SET \"product_id\" = 718, \"original\" = '', \"caption\" = 'Dummy Caption', \"display_order\" = 1, \"date_created\" = '2024-07-22T17:28:01.629501+00:00'::timestamptz WHERE \"catalogue_productimage\".\"id\" = 11"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"catalogue_productimage\" SET \"product_id\" = 718, \"original\" = '', \"caption\" = 'Dummy Caption', \"display_order\" = 2, \"date_created\" = '2024-07-22T17:28:01.632614+00:00'::timestamptz WHERE \"catalogue_productimage\".\"id\" = 13"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"slug\" = 'dumu03fbu03a5-item-class' ORDER BY \"catalogue_productclass\".\"name\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"catalogue_productclass\" (\"name\", \"slug\", \"requires_shipping\", \"track_stock\") VALUES ('Dùｍϻϒ item class', 'dumu03fbu03a5-item-class', true, true) RETURNING \"catalogue_productclass\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"catalogue_productimage\" (\"product_id\", \"original\", \"caption\", \"display_order\", \"date_created\") VALUES (718, '', 'Dummy Caption', 0, '2024-07-22T17:28:01.627775+00:00'::timestamptz) RETURNING \"catalogue_productimage\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"catalogue_productimage\" (\"product_id\", \"original\", \"caption\", \"display_order\", \"date_created\") VALUES (718, '', 'Dummy Caption', 1, '2024-07-22T17:28:01.629501+00:00'::timestamptz) RETURNING \"catalogue_productimage\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"catalogue_productimage\" (\"product_id\", \"original\", \"caption\", \"display_order\", \"date_created\") VALUES (718, '', 'Dummy Caption', 2, '2024-07-22T17:28:01.631146+00:00'::timestamptz) RETURNING \"catalogue_productimage\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"catalogue_productimage\" (\"product_id\", \"original\", \"caption\", \"display_order\", \"date_created\") VALUES (718, '', 'Dummy Caption', 3, '2024-07-22T17:28:01.632614+00:00'::timestamptz) RETURNING \"catalogue_productimage\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x2675\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SAVEPOINT \"s8669432832_x2675\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"name\" = 'Dùｍϻϒ item class' LIMIT 21"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SELECT \"catalogue_productimage\".\"id\", \"catalogue_productimage\".\"product_id\", \"catalogue_productimage\".\"original\", \"catalogue_productimage\".\"caption\", \"catalogue_productimage\".\"display_order\", \"catalogue_productimage\".\"date_created\" FROM \"catalogue_productimage\" WHERE \"catalogue_productimage\".\"product_id\" = 718 ORDER BY \"catalogue_productimage\".\"display_order\" ASC"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "oscar/models"
+  }
+]

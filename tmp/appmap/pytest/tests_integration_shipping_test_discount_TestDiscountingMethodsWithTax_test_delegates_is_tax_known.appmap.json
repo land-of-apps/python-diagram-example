@@ -1,0 +1,271 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14027137856,
+        "value": "<oscar.apps.shipping.methods.TaxInclusiveOfferDiscount object at 0x344152340>",
+        "name": "self",
+        "class": "oscar.apps.shipping.methods.TaxInclusiveOfferDiscount"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14027139152,
+          "value": "<Basket: Open basket (owner: None, lines: 0)>",
+          "name": "basket",
+          "class": "oscar.apps.basket.models.Basket"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.shipping.methods.TaxInclusiveOfferDiscount",
+      "method_id": "calculate",
+      "path": "src/oscar/apps/shipping/methods.py",
+      "lineno": 175
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14027137376,
+        "value": "<oscar.apps.shipping.methods.FixedPrice object at 0x344152160>",
+        "name": "self",
+        "class": "oscar.apps.shipping.methods.FixedPrice"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14027139152,
+          "value": "<Basket: Open basket (owner: None, lines: 0)>",
+          "name": "basket",
+          "class": "oscar.apps.basket.models.Basket"
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.shipping.methods.FixedPrice",
+      "method_id": "calculate",
+      "path": "src/oscar/apps/shipping/methods.py",
+      "lineno": 93
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14027139152,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "all_lines",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 14027139920,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 3,
+      "elapsed": 0.000015020370483398438,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14027140880,
+        "value": "Price(currency=None, excl_tax=Decimal('10.00'), incl_tax=Decimal('12.00'), tax=Decimal('2.00'))",
+        "class": "oscar.core.prices.Price"
+      },
+      "parent_id": 2,
+      "elapsed": 0.0007078647613525391,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14027137856,
+        "value": "<oscar.apps.shipping.methods.TaxInclusiveOfferDiscount object at 0x344152340>",
+        "name": "self",
+        "class": "oscar.apps.shipping.methods.TaxInclusiveOfferDiscount"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14027140880,
+          "value": "Price(currency=None, excl_tax=Decimal('10.00'), incl_tax=Decimal('12.00'), tax=Decimal('2.00'))",
+          "name": "base_charge",
+          "class": "oscar.core.prices.Price"
+        },
+        {
+          "kind": "req",
+          "object_id": 14027132016,
+          "value": "Decimal('7.00')",
+          "name": "incl_tax",
+          "class": "decimal.Decimal"
+        }
+      ],
+      "id": 6,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.shipping.methods.TaxInclusiveOfferDiscount",
+      "method_id": "calculate_excl_tax",
+      "path": "src/oscar/apps/shipping/methods.py",
+      "lineno": 186
+    },
+    {
+      "return_value": {
+        "object_id": 14027162208,
+        "value": "Decimal('5.83')",
+        "class": "decimal.Decimal"
+      },
+      "parent_id": 6,
+      "elapsed": 0.0000059604644775390625,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14027139968,
+        "value": "Price(currency=None, excl_tax=Decimal('5.83'), incl_tax=Decimal('7.00'), tax=Decimal('1.17'))",
+        "class": "oscar.core.prices.Price"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0010457038879394531,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      }
+    ],
+    "feature_group": "Discounting methods with tax",
+    "recording": {
+      "defined_class": "tests.integration.shipping.test_discount.TestDiscountingMethodsWithTax",
+      "method_id": "test_delegates_is_tax_known"
+    },
+    "source_location": "tests/integration/shipping/test_discount.py:50",
+    "name": "Discounting methods with tax delegates is tax known",
+    "feature": "Delegates is tax known",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "shipping",
+              "type": "package",
+              "children": [
+                {
+                  "name": "methods",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "TaxInclusiveOfferDiscount",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "calculate",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/shipping/methods.py:175"
+                        },
+                        {
+                          "name": "calculate_excl_tax",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/shipping/methods.py:186"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "FixedPrice",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "calculate",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/shipping/methods.py:93"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "basket",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractBasket",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "all_lines",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/abstract_models.py:130"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

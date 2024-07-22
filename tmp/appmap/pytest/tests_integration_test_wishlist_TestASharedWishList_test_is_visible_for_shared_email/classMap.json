@@ -1,0 +1,52 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "wishlists",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractWishList",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "is_allowed_to_see",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/wishlists/abstract_models.py:82"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"wishlists_wishlistsharedemail\" (\"wishlist_id\", \"email\") VALUES (30, 'test2@example.com') RETURNING \"wishlists_wishlistsharedemail\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"wishlists_wishlistsharedemail\" WHERE (\"wishlists_wishlistsharedemail\".\"wishlist_id\" = 30 AND \"wishlists_wishlistsharedemail\".\"email\" = 'test2@example.com') LIMIT 1"
+      }
+    ]
+  }
+]

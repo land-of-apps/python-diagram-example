@@ -1,0 +1,3154 @@
+{
+  "events": [
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"depth\" = 1 ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.0011067910000122083,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975569888,
+        "value": "<Category: parent>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13975631040,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975569888,
+        "value": "<Category: parent>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "generate_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 211
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4331400560,
+          "value": "'parent'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4331400560,
+          "value": "'parent'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 6,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4331400560,
+          "value": "'parent'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 13975532848,
+        "value": "'parent'",
+        "class": "builtins.str"
+      },
+      "parent_id": 7,
+      "elapsed": 0.000013828277587890625,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13975532848,
+        "value": "'parent'",
+        "class": "builtins.str"
+      },
+      "parent_id": 6,
+      "elapsed": 0.0000457763671875,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13975532848,
+        "value": "'parent'",
+        "class": "builtins.str"
+      },
+      "parent_id": 5,
+      "elapsed": 0.000087738037109375,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13975532848,
+        "value": "'parent'",
+        "class": "builtins.str"
+      },
+      "parent_id": 4,
+      "elapsed": 0.00011897087097167969,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('0001', 1, 0, 'parent', '', NULL, NULL, '', 'parent', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 12,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 12,
+      "elapsed": 0.0005261249999932716,
+      "id": 13,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975569888,
+        "value": "<Category: parent>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 14,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975569888,
+        "value": "<Category: parent>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 15,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 13975581264,
+        "value": "<CategoryQuerySet [<Category: parent>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 15,
+      "elapsed": 0.000048160552978515625,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975613888,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975583712,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 17,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 13975979904,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 17,
+      "elapsed": 0.000006198883056640625,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975613888,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975583712,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 19,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 13975978816,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 19,
+      "elapsed": 0.000013113021850585938,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 404",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 21,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 21,
+      "elapsed": 0.0005361669999786045,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 404 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 23,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 23,
+      "elapsed": 0.00041224999998235035,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 14,
+      "elapsed": 0.0027909278869628906,
+      "id": 25,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 3,
+      "elapsed": 0.0037391185760498047,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '0001'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 27,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 27,
+      "elapsed": 0.0004314580000084334,
+      "id": 28,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975571712,
+        "value": "<Category: parent > child>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13975609600,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 29,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975571712,
+        "value": "<Category: parent > child>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 30,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "generate_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 211
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332561264,
+          "value": "'child'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 31,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332561264,
+          "value": "'child'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 32,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332561264,
+          "value": "'child'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 33,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 13975627760,
+        "value": "'child'",
+        "class": "builtins.str"
+      },
+      "parent_id": 33,
+      "elapsed": 0.000016927719116210938,
+      "id": 34,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13975627760,
+        "value": "'child'",
+        "class": "builtins.str"
+      },
+      "parent_id": 32,
+      "elapsed": 0.000051021575927734375,
+      "id": 35,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13975627760,
+        "value": "'child'",
+        "class": "builtins.str"
+      },
+      "parent_id": 31,
+      "elapsed": 0.00009703636169433594,
+      "id": 36,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13975627760,
+        "value": "'child'",
+        "class": "builtins.str"
+      },
+      "parent_id": 30,
+      "elapsed": 0.00014495849609375,
+      "id": 37,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('00010001', 2, 0, 'child', '', NULL, NULL, '', 'child', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 38,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 38,
+      "elapsed": 0.0007005840000147145,
+      "id": 39,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975571712,
+        "value": "<Category: parent > child>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 40,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975571712,
+        "value": "<Category: parent > child>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 41,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 13975584336,
+        "value": "<CategoryQuerySet [<Category: parent > child>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 41,
+      "elapsed": 0.00008296966552734375,
+      "id": 42,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975615904,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975614320,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 43,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 13975953728,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 43,
+      "elapsed": 0.0000059604644775390625,
+      "id": 44,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975615904,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975614320,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 45,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 13975477632,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 45,
+      "elapsed": 0.000013828277587890625,
+      "id": 46,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 405",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 47,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 47,
+      "elapsed": 0.00041158300001598036,
+      "id": 48,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 405 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 49,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 49,
+      "elapsed": 0.0003321249999999054,
+      "id": 50,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 40,
+      "elapsed": 0.004162788391113281,
+      "id": 51,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 29,
+      "elapsed": 0.0075130462646484375,
+      "id": 52,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '00010001'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 53,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 53,
+      "elapsed": 0.000319666999985202,
+      "id": 54,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975569456,
+        "value": "<Category: parent > child > grand-child>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13975672832,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 55,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975569456,
+        "value": "<Category: parent > child > grand-child>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 56,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "generate_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 211
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4419919792,
+          "value": "'grand-child'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 57,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4419919792,
+          "value": "'grand-child'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 58,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4419919792,
+          "value": "'grand-child'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 59,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 13975978736,
+        "value": "'grand-child'",
+        "class": "builtins.str"
+      },
+      "parent_id": 59,
+      "elapsed": 0.00002193450927734375,
+      "id": 60,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13975978736,
+        "value": "'grand-child'",
+        "class": "builtins.str"
+      },
+      "parent_id": 58,
+      "elapsed": 0.00005888938903808594,
+      "id": 61,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13975978736,
+        "value": "'grand-child'",
+        "class": "builtins.str"
+      },
+      "parent_id": 57,
+      "elapsed": 0.00010800361633300781,
+      "id": 62,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13975978736,
+        "value": "'grand-child'",
+        "class": "builtins.str"
+      },
+      "parent_id": 56,
+      "elapsed": 0.00016188621520996094,
+      "id": 63,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('000100010001', 3, 0, 'grand-child', '', NULL, NULL, '', 'grand-child', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 64,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 64,
+      "elapsed": 0.0006519159999811563,
+      "id": 65,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975569456,
+        "value": "<Category: parent > child > grand-child>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 66,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975569456,
+        "value": "<Category: parent > child > grand-child>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 67,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 13975617152,
+        "value": "<CategoryQuerySet [<Category: parent > child > grand-child>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 67,
+      "elapsed": 0.00009298324584960938,
+      "id": 68,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975970048,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975615568,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 69,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 13975651456,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 69,
+      "elapsed": 0.0000069141387939453125,
+      "id": 70,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975970048,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975615568,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 71,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 13975623936,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 71,
+      "elapsed": 0.000015020370483398438,
+      "id": 72,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 406",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 73,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 73,
+      "elapsed": 0.0005075830000009773,
+      "id": 74,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 406 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 75,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 75,
+      "elapsed": 0.000516457999992781,
+      "id": 76,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 66,
+      "elapsed": 0.004728078842163086,
+      "id": 77,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 55,
+      "elapsed": 0.007853269577026367,
+      "id": 78,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_productcategory\" (\"product_id\", \"category_id\") VALUES (968, 406) RETURNING \"catalogue_productcategory\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 79,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 79,
+      "elapsed": 0.0008486669999854257,
+      "id": 80,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394985168,
+        "value": "<oscar.models.fields.autoslugfield.AutoSlugField: slug>",
+        "name": "self",
+        "class": "oscar.models.fields.autoslugfield.AutoSlugField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975581984,
+          "value": "<Range: category range>",
+          "name": "model_instance",
+          "class": "oscar.apps.offer.models.Range"
+        },
+        {
+          "kind": "req",
+          "object_id": 4341172976,
+          "value": "True",
+          "name": "add",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 81,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.autoslugfield.AutoSlugField",
+      "method_id": "pre_save",
+      "path": "src/oscar/models/fields/autoslugfield.py",
+      "lineno": 169
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394985168,
+        "value": "<oscar.models.fields.autoslugfield.AutoSlugField: slug>",
+        "name": "self",
+        "class": "oscar.models.fields.autoslugfield.AutoSlugField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975581984,
+          "value": "<Range: category range>",
+          "name": "model_instance",
+          "class": "oscar.apps.offer.models.Range"
+        },
+        {
+          "kind": "req",
+          "object_id": 4341172976,
+          "value": "True",
+          "name": "add",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 82,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.autoslugfield.AutoSlugField",
+      "method_id": "create_slug",
+      "path": "src/oscar/models/fields/autoslugfield.py",
+      "lineno": 105
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394985168,
+        "value": "<oscar.models.fields.autoslugfield.AutoSlugField: slug>",
+        "name": "self",
+        "class": "oscar.models.fields.autoslugfield.AutoSlugField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4416485488,
+          "value": "'category range'",
+          "name": "content",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 83,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.autoslugfield.AutoSlugField",
+      "method_id": "slugify_func",
+      "path": "src/oscar/models/fields/autoslugfield.py",
+      "lineno": 100
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4416485488,
+          "value": "'category range'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 84,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4416485488,
+          "value": "'category range'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 85,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4416485488,
+          "value": "'category range'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 86,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 13975590448,
+        "value": "'category-range'",
+        "class": "builtins.str"
+      },
+      "parent_id": 86,
+      "elapsed": 0.000016927719116210938,
+      "id": 87,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13975590448,
+        "value": "'category-range'",
+        "class": "builtins.str"
+      },
+      "parent_id": 85,
+      "elapsed": 0.00004792213439941406,
+      "id": 88,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13975590448,
+        "value": "'category-range'",
+        "class": "builtins.str"
+      },
+      "parent_id": 84,
+      "elapsed": 0.00008797645568847656,
+      "id": 89,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13975590448,
+        "value": "'category-range'",
+        "class": "builtins.str"
+      },
+      "parent_id": 83,
+      "elapsed": 0.00011897087097167969,
+      "id": 90,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394985168,
+        "value": "<oscar.models.fields.autoslugfield.AutoSlugField: slug>",
+        "name": "self",
+        "class": "oscar.models.fields.autoslugfield.AutoSlugField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975590448,
+          "value": "'category-range'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 91,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.autoslugfield.AutoSlugField",
+      "method_id": "_slug_strip",
+      "path": "src/oscar/models/fields/autoslugfield.py",
+      "lineno": 81
+    },
+    {
+      "return_value": {
+        "object_id": 13975948976,
+        "value": "'category-range'",
+        "class": "builtins.str"
+      },
+      "parent_id": 91,
+      "elapsed": 0.000007867813110351562,
+      "id": 92,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394985168,
+        "value": "<oscar.models.fields.autoslugfield.AutoSlugField: slug>",
+        "name": "self",
+        "class": "oscar.models.fields.autoslugfield.AutoSlugField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5359541520,
+          "value": "<class 'oscar.apps.offer.models.Range'>",
+          "name": "model_cls",
+          "class": "django.db.models.base.ModelBase"
+        },
+        {
+          "kind": "req",
+          "object_id": 4394985168,
+          "value": "<oscar.models.fields.autoslugfield.AutoSlugField: slug>",
+          "name": "slug_field",
+          "class": "oscar.models.fields.autoslugfield.AutoSlugField"
+        }
+      ],
+      "id": 93,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.autoslugfield.AutoSlugField",
+      "method_id": "get_queryset",
+      "path": "src/oscar/models/fields/autoslugfield.py",
+      "lineno": 93
+    },
+    {
+      "return_value": {
+        "object_id": 13975615424,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: Child-specific range>]>",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parent_id": 93,
+      "elapsed": 0.000015020370483398438,
+      "id": 94,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394985168,
+        "value": "<oscar.models.fields.autoslugfield.AutoSlugField: slug>",
+        "name": "self",
+        "class": "oscar.models.fields.autoslugfield.AutoSlugField"
+      },
+      "id": 95,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.autoslugfield.AutoSlugField",
+      "method_id": "get_internal_type",
+      "path": "src/oscar/models/fields/autoslugfield.py",
+      "lineno": 174
+    },
+    {
+      "return_value": {
+        "object_id": 4354738288,
+        "value": "'SlugField'",
+        "class": "builtins.str"
+      },
+      "parent_id": 95,
+      "elapsed": 9.5367431640625e-7,
+      "id": 96,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394985168,
+        "value": "<oscar.models.fields.autoslugfield.AutoSlugField: slug>",
+        "name": "self",
+        "class": "oscar.models.fields.autoslugfield.AutoSlugField"
+      },
+      "id": 97,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.autoslugfield.AutoSlugField",
+      "method_id": "get_internal_type",
+      "path": "src/oscar/models/fields/autoslugfield.py",
+      "lineno": 174
+    },
+    {
+      "return_value": {
+        "object_id": 4354738288,
+        "value": "'SlugField'",
+        "class": "builtins.str"
+      },
+      "parent_id": 97,
+      "elapsed": 9.5367431640625e-7,
+      "id": 98,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"offer_range\".\"id\", \"offer_range\".\"name\", \"offer_range\".\"slug\", \"offer_range\".\"description\", \"offer_range\".\"is_public\", \"offer_range\".\"includes_all_products\", \"offer_range\".\"proxy_class\", \"offer_range\".\"date_created\" FROM \"offer_range\" WHERE \"offer_range\".\"slug\" = 'category-range' ORDER BY \"offer_range\".\"name\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 99,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 99,
+      "elapsed": 0.00038637499997662417,
+      "id": 100,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13975948976,
+        "value": "'category-range'",
+        "class": "builtins.str"
+      },
+      "parent_id": 82,
+      "elapsed": 0.0021560192108154297,
+      "id": 101,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13975948976,
+        "value": "'category-range'",
+        "class": "builtins.str"
+      },
+      "parent_id": 81,
+      "elapsed": 0.002215862274169922,
+      "id": 102,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394985744,
+        "value": "<oscar.models.fields.NullCharField: proxy_class>",
+        "name": "self",
+        "class": "oscar.models.fields.NullCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "value",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 103,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.NullCharField",
+      "method_id": "get_prep_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 122
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 103,
+      "elapsed": 0.0000019073486328125,
+      "id": 104,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"offer_range\" (\"name\", \"slug\", \"description\", \"is_public\", \"includes_all_products\", \"proxy_class\", \"date_created\") VALUES ('category range', 'category-range', '', false, false, NULL, '2024-07-22T17:28:26.465667+00:00'::timestamptz) RETURNING \"offer_range\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 105,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 105,
+      "elapsed": 0.0005524579999871548,
+      "id": 106,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"offer_range_included_categories\" (\"range_id\", \"category_id\") VALUES (534, 404) ON CONFLICT DO NOTHING",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 107,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 107,
+      "elapsed": 0.0004310000000202763,
+      "id": 108,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975570800,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975561792,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 109,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "contains_product",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 54
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975570800,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975561792,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 110,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_excluded_products_clause",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 16
+    },
+    {
+      "return_value": {
+        "object_id": 13975614320,
+        "value": "<Q: (NOT (AND: ('excluded_products', <Product: Dùｍϻϒ title>)))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 110,
+      "elapsed": 0.000007867813110351562,
+      "id": 111,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975570800,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975561792,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 112,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_excluded_products_clause",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 16
+    },
+    {
+      "return_value": {
+        "object_id": 13975616288,
+        "value": "<Q: (NOT (AND: ('excluded_products', <Product: Dùｍϻϒ title>)))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 112,
+      "elapsed": 0.000005245208740234375,
+      "id": 113,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975570800,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975561792,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 114,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_included_products_clause",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 26
+    },
+    {
+      "return_value": {
+        "object_id": 13975615808,
+        "value": "<Q: (AND: ('included_products', <Product: Dùｍϻϒ title>))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 114,
+      "elapsed": 0.0000050067901611328125,
+      "id": 115,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975570800,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975561792,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 116,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_get_category_ids",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 43
+    },
+    {
+      "return_value": {
+        "object_id": 13975970480,
+        "value": "<CategoryQuerySet [{'id': 406}]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 116,
+      "elapsed": 0.00021409988403320312,
+      "id": 117,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975570800,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975561792,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 118,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_productclasses_clause",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 36
+    },
+    {
+      "return_value": {
+        "object_id": 13975971344,
+        "value": "<Q: (AND: ('classes__id', 705))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 118,
+      "elapsed": 0.0000069141387939453125,
+      "id": 119,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13975614752,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>]>",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parent_id": 109,
+      "elapsed": 0.006443023681640625,
+      "id": 120,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT COUNT(*) AS \"__count\" FROM \"offer_range\" LEFT OUTER JOIN \"offer_rangeproduct\" ON (\"offer_range\".\"id\" = \"offer_rangeproduct\".\"range_id\") LEFT OUTER JOIN \"offer_range_included_categories\" ON (\"offer_range\".\"id\" = \"offer_range_included_categories\".\"range_id\") LEFT OUTER JOIN \"offer_range_classes\" ON (\"offer_range\".\"id\" = \"offer_range_classes\".\"range_id\") WHERE ((NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 968 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND \"offer_range\".\"includes_all_products\") OR (NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 968 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND (\"offer_rangeproduct\".\"product_id\" = 968 OR \"offer_range_included_categories\".\"category_id\" IN (\n(SELECT \"CATALOGUE_CATEGORY_JOIN\".\"id\" FROM \"catalogue_category\" AS \"CATALOGUE_CATEGORY_BASE\"\nLEFT JOIN \"catalogue_category\" AS \"CATALOGUE_CATEGORY_JOIN\" ON (\n    \"CATALOGUE_CATEGORY_BASE\".\"path\" LIKE \"CATALOGUE_CATEGORY_JOIN\".\"path\" || '%'\n    AND \"CATALOGUE_CATEGORY_BASE\".\"depth\" >= \"CATALOGUE_CATEGORY_JOIN\".\"depth\"\n)\nWHERE \"CATALOGUE_CATEGORY_BASE\".\"id\" IN (SELECT U0.\"id\" FROM \"catalogue_category\" U0 INNER JOIN \"catalogue_productcategory\" U1 ON (U0.\"id\" = U1.\"category_id\") WHERE U1.\"product_id\" = 968 ORDER BY U0.\"path\" ASC))\n) OR \"offer_range_classes\".\"productclass_id\" = 705) AND NOT \"offer_range\".\"includes_all_products\"))",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 121,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 121,
+      "elapsed": 0.2415447080000206,
+      "id": 122,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"offer_range\".\"id\", \"offer_range\".\"name\", \"offer_range\".\"slug\", \"offer_range\".\"description\", \"offer_range\".\"is_public\", \"offer_range\".\"includes_all_products\", \"offer_range\".\"proxy_class\", \"offer_range\".\"date_created\" FROM \"offer_range\" LEFT OUTER JOIN \"offer_rangeproduct\" ON (\"offer_range\".\"id\" = \"offer_rangeproduct\".\"range_id\") LEFT OUTER JOIN \"offer_range_included_categories\" ON (\"offer_range\".\"id\" = \"offer_range_included_categories\".\"range_id\") LEFT OUTER JOIN \"offer_range_classes\" ON (\"offer_range\".\"id\" = \"offer_range_classes\".\"range_id\") WHERE ((NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 968 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND \"offer_range\".\"includes_all_products\") OR (NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 968 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND (\"offer_rangeproduct\".\"product_id\" = 968 OR \"offer_range_included_categories\".\"category_id\" IN (\n(SELECT \"CATALOGUE_CATEGORY_JOIN\".\"id\" FROM \"catalogue_category\" AS \"CATALOGUE_CATEGORY_BASE\"\nLEFT JOIN \"catalogue_category\" AS \"CATALOGUE_CATEGORY_JOIN\" ON (\n    \"CATALOGUE_CATEGORY_BASE\".\"path\" LIKE \"CATALOGUE_CATEGORY_JOIN\".\"path\" || '%'\n    AND \"CATALOGUE_CATEGORY_BASE\".\"depth\" >= \"CATALOGUE_CATEGORY_JOIN\".\"depth\"\n)\nWHERE \"CATALOGUE_CATEGORY_BASE\".\"id\" IN (SELECT U0.\"id\" FROM \"catalogue_category\" U0 INNER JOIN \"catalogue_productcategory\" U1 ON (U0.\"id\" = U1.\"category_id\") WHERE U1.\"product_id\" = 968 ORDER BY U0.\"path\" ASC))\n) OR \"offer_range_classes\".\"productclass_id\" = 705) AND NOT \"offer_range\".\"includes_all_products\")) ORDER BY \"offer_range\".\"name\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 123,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 123,
+      "elapsed": 0.1585279579999792,
+      "id": 124,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394985744,
+        "value": "<oscar.models.fields.NullCharField: proxy_class>",
+        "name": "self",
+        "class": "oscar.models.fields.NullCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "value",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "rest",
+          "object_id": 13976064384,
+          "value": "(Col(offer_range, offer.Range.proxy_class), <DatabaseWrapper vendor='postgresql' alias='default'>)",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13976051136,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 125,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.NullCharField",
+      "method_id": "from_db_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 117
+    },
+    {
+      "return_value": {
+        "object_id": 4331234032,
+        "value": "''",
+        "class": "builtins.str"
+      },
+      "parent_id": 125,
+      "elapsed": 0.00002002716064453125,
+      "id": 126,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394985744,
+        "value": "<oscar.models.fields.NullCharField: proxy_class>",
+        "name": "self",
+        "class": "oscar.models.fields.NullCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "value",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "rest",
+          "object_id": 13976049600,
+          "value": "(Col(offer_range, offer.Range.proxy_class), <DatabaseWrapper vendor='postgresql' alias='default'>)",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13976074048,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 127,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.NullCharField",
+      "method_id": "from_db_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 117
+    },
+    {
+      "return_value": {
+        "object_id": 4331234032,
+        "value": "''",
+        "class": "builtins.str"
+      },
+      "parent_id": 127,
+      "elapsed": 9.5367431640625e-7,
+      "id": 128,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975584624,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975562080,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 129,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "contains_product",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 54
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975584624,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975562080,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 130,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_excluded_products_clause",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 16
+    },
+    {
+      "return_value": {
+        "object_id": 13976027040,
+        "value": "<Q: (NOT (OR: ('excluded_products', <Product: Dùｍϻϒ title>), ('excluded_products__id', 968)))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 130,
+      "elapsed": 0.000017881393432617188,
+      "id": 131,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975584624,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975562080,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 132,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_excluded_products_clause",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 16
+    },
+    {
+      "return_value": {
+        "object_id": 13976026992,
+        "value": "<Q: (NOT (OR: ('excluded_products', <Product: Dùｍϻϒ title>), ('excluded_products__id', 968)))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 132,
+      "elapsed": 0.000010013580322265625,
+      "id": 133,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975584624,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975562080,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 134,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_included_products_clause",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 26
+    },
+    {
+      "return_value": {
+        "object_id": 13975973408,
+        "value": "<Q: (OR: ('included_products', <Product: Dùｍϻϒ title>), ('included_products__id', 968))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 134,
+      "elapsed": 0.000007152557373046875,
+      "id": 135,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975584624,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975562080,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 136,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_get_category_ids",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 43
+    },
+    {
+      "return_value": {
+        "object_id": 13976057504,
+        "value": "<QuerySet [{'category_id': 406}]>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 136,
+      "elapsed": 0.0001590251922607422,
+      "id": 137,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975584624,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975562080,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 138,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_productclasses_clause",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 36
+    },
+    {
+      "return_value": {
+        "object_id": 13976058128,
+        "value": "<Q: (AND: ('classes__products__parent_id', 968))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 138,
+      "elapsed": 0.000009059906005859375,
+      "id": 139,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13976057456,
+        "value": "<RangeQuerySet [<Range: category range>]>",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parent_id": 129,
+      "elapsed": 0.007248878479003906,
+      "id": 140,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT COUNT(*) AS \"__count\" FROM \"offer_range\" LEFT OUTER JOIN \"offer_rangeproduct\" ON (\"offer_range\".\"id\" = \"offer_rangeproduct\".\"range_id\") LEFT OUTER JOIN \"offer_range_included_categories\" ON (\"offer_range\".\"id\" = \"offer_range_included_categories\".\"range_id\") LEFT OUTER JOIN \"offer_range_classes\" ON (\"offer_range\".\"id\" = \"offer_range_classes\".\"range_id\") LEFT OUTER JOIN \"catalogue_productclass\" ON (\"offer_range_classes\".\"productclass_id\" = \"catalogue_productclass\".\"id\") LEFT OUTER JOIN \"catalogue_product\" T8 ON (\"catalogue_productclass\".\"id\" = T8.\"product_class_id\") WHERE ((NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 970 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1) OR EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 968 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND \"offer_range\".\"includes_all_products\") OR (NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 970 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1) OR EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 968 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND (\"offer_rangeproduct\".\"product_id\" = 970 OR \"offer_rangeproduct\".\"product_id\" = 968 OR \"offer_range_included_categories\".\"category_id\" IN (\n(SELECT \"CATALOGUE_CATEGORY_JOIN\".\"id\" FROM \"catalogue_category\" AS \"CATALOGUE_CATEGORY_BASE\"\nLEFT JOIN \"catalogue_category\" AS \"CATALOGUE_CATEGORY_JOIN\" ON (\n    \"CATALOGUE_CATEGORY_BASE\".\"path\" LIKE \"CATALOGUE_CATEGORY_JOIN\".\"path\" || '%'\n    AND \"CATALOGUE_CATEGORY_BASE\".\"depth\" >= \"CATALOGUE_CATEGORY_JOIN\".\"depth\"\n)\nWHERE \"CATALOGUE_CATEGORY_BASE\".\"id\" IN (SELECT U0.\"category_id\" FROM \"catalogue_productcategory\" U0 INNER JOIN \"catalogue_product\" U1 ON (U0.\"product_id\" = U1.\"id\") INNER JOIN \"catalogue_category\" U2 ON (U0.\"category_id\" = U2.\"id\") WHERE U0.\"product_id\" = 968 ORDER BY U1.\"date_created\" DESC, U2.\"path\" ASC))\n) OR T8.\"parent_id\" = 968) AND NOT \"offer_range\".\"includes_all_products\"))",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 141,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 141,
+      "elapsed": 0.26799020900000414,
+      "id": 142,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975614752,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975561504,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 143,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "contains_product",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 54
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975614752,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975561504,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 144,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_excluded_products_clause",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 16
+    },
+    {
+      "return_value": {
+        "object_id": 13976141008,
+        "value": "<Q: (NOT (OR: ('excluded_products', <Product: Dùｍϻϒ title>), ('excluded_products__id', 968)))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 144,
+      "elapsed": 0.000019788742065429688,
+      "id": 145,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975614752,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975561504,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 146,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_excluded_products_clause",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 16
+    },
+    {
+      "return_value": {
+        "object_id": 13976140816,
+        "value": "<Q: (NOT (OR: ('excluded_products', <Product: Dùｍϻϒ title>), ('excluded_products__id', 968)))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 146,
+      "elapsed": 0.000012159347534179688,
+      "id": 147,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975614752,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975561504,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 148,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_included_products_clause",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 26
+    },
+    {
+      "return_value": {
+        "object_id": 13976057312,
+        "value": "<Q: (OR: ('included_products', <Product: Dùｍϻϒ title>), ('included_products__id', 968))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 148,
+      "elapsed": 0.000011205673217773438,
+      "id": 149,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975614752,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975561504,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 150,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_get_category_ids",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 43
+    },
+    {
+      "return_value": {
+        "object_id": 13976058512,
+        "value": "<QuerySet [{'category_id': 406}]>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 150,
+      "elapsed": 0.00015592575073242188,
+      "id": 151,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13975614752,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975561504,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 152,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_productclasses_clause",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 36
+    },
+    {
+      "return_value": {
+        "object_id": 13976057312,
+        "value": "<Q: (AND: ('classes__products__parent_id', 968))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 152,
+      "elapsed": 0.000006198883056640625,
+      "id": 153,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13976056976,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parent_id": 143,
+      "elapsed": 0.006349802017211914,
+      "id": 154,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT COUNT(*) AS \"__count\" FROM \"offer_range\" LEFT OUTER JOIN \"offer_rangeproduct\" ON (\"offer_range\".\"id\" = \"offer_rangeproduct\".\"range_id\") LEFT OUTER JOIN \"offer_range_included_categories\" ON (\"offer_range\".\"id\" = \"offer_range_included_categories\".\"range_id\") LEFT OUTER JOIN \"offer_range_classes\" ON (\"offer_range\".\"id\" = \"offer_range_classes\".\"range_id\") LEFT OUTER JOIN \"catalogue_productclass\" ON (\"offer_range_classes\".\"productclass_id\" = \"catalogue_productclass\".\"id\") LEFT OUTER JOIN \"catalogue_product\" T8 ON (\"catalogue_productclass\".\"id\" = T8.\"product_class_id\") WHERE ((NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 969 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1) OR EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 968 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND \"offer_range\".\"includes_all_products\") OR (NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 969 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1) OR EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 968 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND (\"offer_rangeproduct\".\"product_id\" = 969 OR \"offer_rangeproduct\".\"product_id\" = 968 OR \"offer_range_included_categories\".\"category_id\" IN (\n(SELECT \"CATALOGUE_CATEGORY_JOIN\".\"id\" FROM \"catalogue_category\" AS \"CATALOGUE_CATEGORY_BASE\"\nLEFT JOIN \"catalogue_category\" AS \"CATALOGUE_CATEGORY_JOIN\" ON (\n    \"CATALOGUE_CATEGORY_BASE\".\"path\" LIKE \"CATALOGUE_CATEGORY_JOIN\".\"path\" || '%'\n    AND \"CATALOGUE_CATEGORY_BASE\".\"depth\" >= \"CATALOGUE_CATEGORY_JOIN\".\"depth\"\n)\nWHERE \"CATALOGUE_CATEGORY_BASE\".\"id\" IN (SELECT U0.\"category_id\" FROM \"catalogue_productcategory\" U0 INNER JOIN \"catalogue_product\" U1 ON (U0.\"product_id\" = U1.\"id\") INNER JOIN \"catalogue_category\" U2 ON (U0.\"category_id\" = U2.\"id\") WHERE U0.\"product_id\" = 968 ORDER BY U1.\"date_created\" DESC, U2.\"path\" ASC))\n) OR T8.\"parent_id\" = 968) AND NOT \"offer_range\".\"includes_all_products\"))",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 155,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 155,
+      "elapsed": 0.2539634170000227,
+      "id": 156,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"offer_range_excluded_products\" (\"range_id\", \"product_id\") VALUES (534, 970) ON CONFLICT DO NOTHING",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 157,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 157,
+      "elapsed": 0.0005562910000094234,
+      "id": 158,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13976141056,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975562080,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 159,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "contains_product",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 54
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13976141056,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975562080,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 160,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_excluded_products_clause",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 16
+    },
+    {
+      "return_value": {
+        "object_id": 13976139376,
+        "value": "<Q: (NOT (OR: ('excluded_products', <Product: Dùｍϻϒ title>), ('excluded_products__id', 968)))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 160,
+      "elapsed": 0.000014066696166992188,
+      "id": 161,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13976141056,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975562080,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 162,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_excluded_products_clause",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 16
+    },
+    {
+      "return_value": {
+        "object_id": 13976140528,
+        "value": "<Q: (NOT (OR: ('excluded_products', <Product: Dùｍϻϒ title>), ('excluded_products__id', 968)))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 162,
+      "elapsed": 0.000010967254638671875,
+      "id": 163,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13976141056,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975562080,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 164,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_included_products_clause",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 26
+    },
+    {
+      "return_value": {
+        "object_id": 13976139712,
+        "value": "<Q: (OR: ('included_products', <Product: Dùｍϻϒ title>), ('included_products__id', 968))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 164,
+      "elapsed": 0.000015020370483398438,
+      "id": 165,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13976141056,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975562080,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 166,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_get_category_ids",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 43
+    },
+    {
+      "return_value": {
+        "object_id": 13976182896,
+        "value": "<QuerySet [{'category_id': 406}]>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 166,
+      "elapsed": 0.00013017654418945312,
+      "id": 167,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13976141056,
+        "value": "<RangeQuerySet [<Range: All products>, <Range: category range>, <Range: Child-specific range>]>",
+        "name": "self",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13975562080,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 168,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.queryset.RangeQuerySet",
+      "method_id": "_productclasses_clause",
+      "path": "src/oscar/apps/offer/queryset.py",
+      "lineno": 36
+    },
+    {
+      "return_value": {
+        "object_id": 13976139712,
+        "value": "<Q: (AND: ('classes__products__parent_id', 968))>",
+        "class": "django.db.models.query_utils.Q"
+      },
+      "parent_id": 168,
+      "elapsed": 0.0000050067901611328125,
+      "id": 169,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13976140048,
+        "value": "<RangeQuerySet []>",
+        "class": "oscar.apps.offer.queryset.RangeQuerySet"
+      },
+      "parent_id": 159,
+      "elapsed": 0.006413936614990234,
+      "id": 170,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT COUNT(*) AS \"__count\" FROM \"offer_range\" LEFT OUTER JOIN \"offer_rangeproduct\" ON (\"offer_range\".\"id\" = \"offer_rangeproduct\".\"range_id\") LEFT OUTER JOIN \"offer_range_included_categories\" ON (\"offer_range\".\"id\" = \"offer_range_included_categories\".\"range_id\") LEFT OUTER JOIN \"offer_range_classes\" ON (\"offer_range\".\"id\" = \"offer_range_classes\".\"range_id\") LEFT OUTER JOIN \"catalogue_productclass\" ON (\"offer_range_classes\".\"productclass_id\" = \"catalogue_productclass\".\"id\") LEFT OUTER JOIN \"catalogue_product\" T8 ON (\"catalogue_productclass\".\"id\" = T8.\"product_class_id\") WHERE ((NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 970 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1) OR EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 968 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND \"offer_range\".\"includes_all_products\") OR (NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 970 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1) OR EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 968 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND (\"offer_rangeproduct\".\"product_id\" = 970 OR \"offer_rangeproduct\".\"product_id\" = 968 OR \"offer_range_included_categories\".\"category_id\" IN (\n(SELECT \"CATALOGUE_CATEGORY_JOIN\".\"id\" FROM \"catalogue_category\" AS \"CATALOGUE_CATEGORY_BASE\"\nLEFT JOIN \"catalogue_category\" AS \"CATALOGUE_CATEGORY_JOIN\" ON (\n    \"CATALOGUE_CATEGORY_BASE\".\"path\" LIKE \"CATALOGUE_CATEGORY_JOIN\".\"path\" || '%'\n    AND \"CATALOGUE_CATEGORY_BASE\".\"depth\" >= \"CATALOGUE_CATEGORY_JOIN\".\"depth\"\n)\nWHERE \"CATALOGUE_CATEGORY_BASE\".\"id\" IN (SELECT U0.\"category_id\" FROM \"catalogue_productcategory\" U0 INNER JOIN \"catalogue_product\" U1 ON (U0.\"product_id\" = U1.\"id\") INNER JOIN \"catalogue_category\" U2 ON (U0.\"category_id\" = U2.\"id\") WHERE U0.\"product_id\" = 968 ORDER BY U1.\"date_created\" DESC, U2.\"path\" ASC))\n) OR T8.\"parent_id\" = 968) AND NOT \"offer_range\".\"includes_all_products\"))",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 171,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 171,
+      "elapsed": 0.2661482919999969,
+      "id": 172,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Range query set",
+    "recording": {
+      "defined_class": "tests.integration.offer.test_range.TestRangeQuerySet",
+      "method_id": "test_category"
+    },
+    "source_location": "tests/integration/offer/test_range.py:313",
+    "name": "Range query set category",
+    "feature": "Category",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractCategory",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:218"
+                        },
+                        {
+                          "name": "generate_slug",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:211"
+                        },
+                        {
+                          "name": "set_ancestors_are_public",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:230"
+                        },
+                        {
+                          "name": "get_descendants_and_self",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:275"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "ReverseStartsWith",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "process_lhs",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:71"
+                        },
+                        {
+                          "name": "process_rhs",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:68"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "offer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "queryset",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "RangeQuerySet",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "contains_product",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/queryset.py:54"
+                        },
+                        {
+                          "name": "_excluded_products_clause",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/queryset.py:16"
+                        },
+                        {
+                          "name": "_included_products_clause",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/queryset.py:26"
+                        },
+                        {
+                          "name": "_get_category_ids",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/queryset.py:43"
+                        },
+                        {
+                          "name": "_productclasses_clause",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/queryset.py:36"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "utils",
+              "type": "class",
+              "children": [
+                {
+                  "name": "slugify",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:68"
+                },
+                {
+                  "name": "default_slugifier",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:57"
+                },
+                {
+                  "name": "cautious_slugify",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:20"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "models",
+          "type": "package",
+          "children": [
+            {
+              "name": "fields",
+              "type": "package",
+              "children": [
+                {
+                  "name": "autoslugfield",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AutoSlugField",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "pre_save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/models/fields/autoslugfield.py:169"
+                        },
+                        {
+                          "name": "create_slug",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/models/fields/autoslugfield.py:105"
+                        },
+                        {
+                          "name": "slugify_func",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/models/fields/autoslugfield.py:100"
+                        },
+                        {
+                          "name": "_slug_strip",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/models/fields/autoslugfield.py:81"
+                        },
+                        {
+                          "name": "get_queryset",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/models/fields/autoslugfield.py:93"
+                        },
+                        {
+                          "name": "get_internal_type",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/models/fields/autoslugfield.py:174"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "NullCharField",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "get_prep_value",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/models/fields/__init__.py:122"
+                    },
+                    {
+                      "name": "from_db_value",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/models/fields/__init__.py:117"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"depth\" = 1 ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('0001', 1, 0, 'parent', '', NULL, NULL, '', 'parent', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 404"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 404 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '0001'"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('00010001', 2, 0, 'child', '', NULL, NULL, '', 'child', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 405"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 405 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '00010001'"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('000100010001', 3, 0, 'grand-child', '', NULL, NULL, '', 'grand-child', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 406"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 406 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_productcategory\" (\"product_id\", \"category_id\") VALUES (968, 406) RETURNING \"catalogue_productcategory\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"offer_range\".\"id\", \"offer_range\".\"name\", \"offer_range\".\"slug\", \"offer_range\".\"description\", \"offer_range\".\"is_public\", \"offer_range\".\"includes_all_products\", \"offer_range\".\"proxy_class\", \"offer_range\".\"date_created\" FROM \"offer_range\" WHERE \"offer_range\".\"slug\" = 'category-range' ORDER BY \"offer_range\".\"name\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"offer_range\" (\"name\", \"slug\", \"description\", \"is_public\", \"includes_all_products\", \"proxy_class\", \"date_created\") VALUES ('category range', 'category-range', '', false, false, NULL, '2024-07-22T17:28:26.465667+00:00'::timestamptz) RETURNING \"offer_range\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"offer_range_included_categories\" (\"range_id\", \"category_id\") VALUES (534, 404) ON CONFLICT DO NOTHING"
+        },
+        {
+          "type": "query",
+          "name": "SELECT COUNT(*) AS \"__count\" FROM \"offer_range\" LEFT OUTER JOIN \"offer_rangeproduct\" ON (\"offer_range\".\"id\" = \"offer_rangeproduct\".\"range_id\") LEFT OUTER JOIN \"offer_range_included_categories\" ON (\"offer_range\".\"id\" = \"offer_range_included_categories\".\"range_id\") LEFT OUTER JOIN \"offer_range_classes\" ON (\"offer_range\".\"id\" = \"offer_range_classes\".\"range_id\") WHERE ((NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 968 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND \"offer_range\".\"includes_all_products\") OR (NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 968 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND (\"offer_rangeproduct\".\"product_id\" = 968 OR \"offer_range_included_categories\".\"category_id\" IN (\n(SELECT \"CATALOGUE_CATEGORY_JOIN\".\"id\" FROM \"catalogue_category\" AS \"CATALOGUE_CATEGORY_BASE\"\nLEFT JOIN \"catalogue_category\" AS \"CATALOGUE_CATEGORY_JOIN\" ON (\n    \"CATALOGUE_CATEGORY_BASE\".\"path\" LIKE \"CATALOGUE_CATEGORY_JOIN\".\"path\" || '%'\n    AND \"CATALOGUE_CATEGORY_BASE\".\"depth\" >= \"CATALOGUE_CATEGORY_JOIN\".\"depth\"\n)\nWHERE \"CATALOGUE_CATEGORY_BASE\".\"id\" IN (SELECT U0.\"id\" FROM \"catalogue_category\" U0 INNER JOIN \"catalogue_productcategory\" U1 ON (U0.\"id\" = U1.\"category_id\") WHERE U1.\"product_id\" = 968 ORDER BY U0.\"path\" ASC))\n) OR \"offer_range_classes\".\"productclass_id\" = 705) AND NOT \"offer_range\".\"includes_all_products\"))"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"offer_range\".\"id\", \"offer_range\".\"name\", \"offer_range\".\"slug\", \"offer_range\".\"description\", \"offer_range\".\"is_public\", \"offer_range\".\"includes_all_products\", \"offer_range\".\"proxy_class\", \"offer_range\".\"date_created\" FROM \"offer_range\" LEFT OUTER JOIN \"offer_rangeproduct\" ON (\"offer_range\".\"id\" = \"offer_rangeproduct\".\"range_id\") LEFT OUTER JOIN \"offer_range_included_categories\" ON (\"offer_range\".\"id\" = \"offer_range_included_categories\".\"range_id\") LEFT OUTER JOIN \"offer_range_classes\" ON (\"offer_range\".\"id\" = \"offer_range_classes\".\"range_id\") WHERE ((NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 968 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND \"offer_range\".\"includes_all_products\") OR (NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 968 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND (\"offer_rangeproduct\".\"product_id\" = 968 OR \"offer_range_included_categories\".\"category_id\" IN (\n(SELECT \"CATALOGUE_CATEGORY_JOIN\".\"id\" FROM \"catalogue_category\" AS \"CATALOGUE_CATEGORY_BASE\"\nLEFT JOIN \"catalogue_category\" AS \"CATALOGUE_CATEGORY_JOIN\" ON (\n    \"CATALOGUE_CATEGORY_BASE\".\"path\" LIKE \"CATALOGUE_CATEGORY_JOIN\".\"path\" || '%'\n    AND \"CATALOGUE_CATEGORY_BASE\".\"depth\" >= \"CATALOGUE_CATEGORY_JOIN\".\"depth\"\n)\nWHERE \"CATALOGUE_CATEGORY_BASE\".\"id\" IN (SELECT U0.\"id\" FROM \"catalogue_category\" U0 INNER JOIN \"catalogue_productcategory\" U1 ON (U0.\"id\" = U1.\"category_id\") WHERE U1.\"product_id\" = 968 ORDER BY U0.\"path\" ASC))\n) OR \"offer_range_classes\".\"productclass_id\" = 705) AND NOT \"offer_range\".\"includes_all_products\")) ORDER BY \"offer_range\".\"name\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT COUNT(*) AS \"__count\" FROM \"offer_range\" LEFT OUTER JOIN \"offer_rangeproduct\" ON (\"offer_range\".\"id\" = \"offer_rangeproduct\".\"range_id\") LEFT OUTER JOIN \"offer_range_included_categories\" ON (\"offer_range\".\"id\" = \"offer_range_included_categories\".\"range_id\") LEFT OUTER JOIN \"offer_range_classes\" ON (\"offer_range\".\"id\" = \"offer_range_classes\".\"range_id\") LEFT OUTER JOIN \"catalogue_productclass\" ON (\"offer_range_classes\".\"productclass_id\" = \"catalogue_productclass\".\"id\") LEFT OUTER JOIN \"catalogue_product\" T8 ON (\"catalogue_productclass\".\"id\" = T8.\"product_class_id\") WHERE ((NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 970 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1) OR EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 968 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND \"offer_range\".\"includes_all_products\") OR (NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 970 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1) OR EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 968 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND (\"offer_rangeproduct\".\"product_id\" = 970 OR \"offer_rangeproduct\".\"product_id\" = 968 OR \"offer_range_included_categories\".\"category_id\" IN (\n(SELECT \"CATALOGUE_CATEGORY_JOIN\".\"id\" FROM \"catalogue_category\" AS \"CATALOGUE_CATEGORY_BASE\"\nLEFT JOIN \"catalogue_category\" AS \"CATALOGUE_CATEGORY_JOIN\" ON (\n    \"CATALOGUE_CATEGORY_BASE\".\"path\" LIKE \"CATALOGUE_CATEGORY_JOIN\".\"path\" || '%'\n    AND \"CATALOGUE_CATEGORY_BASE\".\"depth\" >= \"CATALOGUE_CATEGORY_JOIN\".\"depth\"\n)\nWHERE \"CATALOGUE_CATEGORY_BASE\".\"id\" IN (SELECT U0.\"category_id\" FROM \"catalogue_productcategory\" U0 INNER JOIN \"catalogue_product\" U1 ON (U0.\"product_id\" = U1.\"id\") INNER JOIN \"catalogue_category\" U2 ON (U0.\"category_id\" = U2.\"id\") WHERE U0.\"product_id\" = 968 ORDER BY U1.\"date_created\" DESC, U2.\"path\" ASC))\n) OR T8.\"parent_id\" = 968) AND NOT \"offer_range\".\"includes_all_products\"))"
+        },
+        {
+          "type": "query",
+          "name": "SELECT COUNT(*) AS \"__count\" FROM \"offer_range\" LEFT OUTER JOIN \"offer_rangeproduct\" ON (\"offer_range\".\"id\" = \"offer_rangeproduct\".\"range_id\") LEFT OUTER JOIN \"offer_range_included_categories\" ON (\"offer_range\".\"id\" = \"offer_range_included_categories\".\"range_id\") LEFT OUTER JOIN \"offer_range_classes\" ON (\"offer_range\".\"id\" = \"offer_range_classes\".\"range_id\") LEFT OUTER JOIN \"catalogue_productclass\" ON (\"offer_range_classes\".\"productclass_id\" = \"catalogue_productclass\".\"id\") LEFT OUTER JOIN \"catalogue_product\" T8 ON (\"catalogue_productclass\".\"id\" = T8.\"product_class_id\") WHERE ((NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 969 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1) OR EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 968 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND \"offer_range\".\"includes_all_products\") OR (NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 969 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1) OR EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 968 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND (\"offer_rangeproduct\".\"product_id\" = 969 OR \"offer_rangeproduct\".\"product_id\" = 968 OR \"offer_range_included_categories\".\"category_id\" IN (\n(SELECT \"CATALOGUE_CATEGORY_JOIN\".\"id\" FROM \"catalogue_category\" AS \"CATALOGUE_CATEGORY_BASE\"\nLEFT JOIN \"catalogue_category\" AS \"CATALOGUE_CATEGORY_JOIN\" ON (\n    \"CATALOGUE_CATEGORY_BASE\".\"path\" LIKE \"CATALOGUE_CATEGORY_JOIN\".\"path\" || '%'\n    AND \"CATALOGUE_CATEGORY_BASE\".\"depth\" >= \"CATALOGUE_CATEGORY_JOIN\".\"depth\"\n)\nWHERE \"CATALOGUE_CATEGORY_BASE\".\"id\" IN (SELECT U0.\"category_id\" FROM \"catalogue_productcategory\" U0 INNER JOIN \"catalogue_product\" U1 ON (U0.\"product_id\" = U1.\"id\") INNER JOIN \"catalogue_category\" U2 ON (U0.\"category_id\" = U2.\"id\") WHERE U0.\"product_id\" = 968 ORDER BY U1.\"date_created\" DESC, U2.\"path\" ASC))\n) OR T8.\"parent_id\" = 968) AND NOT \"offer_range\".\"includes_all_products\"))"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"offer_range_excluded_products\" (\"range_id\", \"product_id\") VALUES (534, 970) ON CONFLICT DO NOTHING"
+        }
+      ]
+    }
+  ]
+}

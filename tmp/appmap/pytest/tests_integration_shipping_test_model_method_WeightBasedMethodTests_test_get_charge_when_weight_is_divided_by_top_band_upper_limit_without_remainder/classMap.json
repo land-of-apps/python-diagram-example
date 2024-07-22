@@ -1,0 +1,78 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "shipping",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractWeightBased",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "get_charge",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/shipping/abstract_models.py:135"
+                      },
+                      {
+                        "name": "get_band_for_weight",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/shipping/abstract_models.py:169"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"shipping_weightband\" (\"method_id\", \"upper_limit\", \"charge\") VALUES (17, 1, 2.00) RETURNING \"shipping_weightband\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"shipping_weightband\" (\"method_id\", \"upper_limit\", \"charge\") VALUES (17, 2, 6.00) RETURNING \"shipping_weightband\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"shipping_weightband\" WHERE \"shipping_weightband\".\"method_id\" = 17 LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"shipping_weightband\".\"id\", \"shipping_weightband\".\"method_id\", \"shipping_weightband\".\"upper_limit\", \"shipping_weightband\".\"charge\" FROM \"shipping_weightband\" WHERE \"shipping_weightband\".\"method_id\" = 17 ORDER BY \"shipping_weightband\".\"upper_limit\" DESC LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"shipping_weightband\".\"id\", \"shipping_weightband\".\"method_id\", \"shipping_weightband\".\"upper_limit\", \"shipping_weightband\".\"charge\" FROM \"shipping_weightband\" WHERE (\"shipping_weightband\".\"method_id\" = 17 AND \"shipping_weightband\".\"upper_limit\" >= 0.01000000000000511590769747272) ORDER BY \"shipping_weightband\".\"upper_limit\" ASC LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"shipping_weightband\".\"id\", \"shipping_weightband\".\"method_id\", \"shipping_weightband\".\"upper_limit\", \"shipping_weightband\".\"charge\" FROM \"shipping_weightband\" WHERE (\"shipping_weightband\".\"method_id\" = 17 AND \"shipping_weightband\".\"upper_limit\" >= 2) ORDER BY \"shipping_weightband\".\"upper_limit\" ASC LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"shipping_weightband\".\"id\", \"shipping_weightband\".\"method_id\", \"shipping_weightband\".\"upper_limit\", \"shipping_weightband\".\"charge\" FROM \"shipping_weightband\" WHERE (\"shipping_weightband\".\"method_id\" = 17 AND \"shipping_weightband\".\"upper_limit\" >= 0.009999999999999786837179271970) ORDER BY \"shipping_weightband\".\"upper_limit\" ASC LIMIT 1"
+      }
+    ]
+  }
+]

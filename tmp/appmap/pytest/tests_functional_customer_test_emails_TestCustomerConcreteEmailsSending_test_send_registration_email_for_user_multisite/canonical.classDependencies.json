@@ -1,0 +1,30 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "<templates>/SrcOscarTemplatesOscarCommunicationEmailsCommtype_Registration_BodyHtml#render"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "<templates>/SrcOscarTemplatesOscarCommunicationEmailsCommtype_Registration_BodyTxt#render"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "<templates>/SrcOscarTemplatesOscarCommunicationEmailsCommtype_Registration_SubjectTxt#render"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"communication_email\" (\"user_id\", \"email\", \"subject\", \"body_text\", \"body_html\", \"date_sent\") VALUES (180, 'example_71@example.com', 'Thank you for registering.', 'Thank you for registering.', '<p>Thank you for registering.</p>', '2024-07-22T17:26:58.345404+00:00'::timestamptz) RETURNING \"communication_email\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"communication_communicationeventtype\".\"id\", \"communication_communicationeventtype\".\"code\", \"communication_communicationeventtype\".\"name\", \"communication_communicationeventtype\".\"category\", \"communication_communicationeventtype\".\"email_subject_template\", \"communication_communicationeventtype\".\"email_body_template\", \"communication_communicationeventtype\".\"email_body_html_template\", \"communication_communicationeventtype\".\"sms_template\", \"communication_communicationeventtype\".\"date_created\", \"communication_communicationeventtype\".\"date_updated\" FROM \"communication_communicationeventtype\" WHERE \"communication_communicationeventtype\".\"code\" = 'REGISTRATION' LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"django_site\".\"id\", \"django_site\".\"domain\", \"django_site\".\"name\" FROM \"django_site\" WHERE UPPER(\"django_site\".\"domain\"::text) = UPPER('example.com') LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  }
+]

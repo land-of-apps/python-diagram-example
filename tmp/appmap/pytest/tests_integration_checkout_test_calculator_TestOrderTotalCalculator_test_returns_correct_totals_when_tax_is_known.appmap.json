@@ -1,0 +1,334 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818585296,
+        "value": "<tests._site.apps.checkout.applicator.SurchargeApplicator object at 0x337a6e0d0>",
+        "name": "self",
+        "class": "tests._site.apps.checkout.applicator.SurchargeApplicator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13818585152,
+          "value": "<Mock id='13818585152'>",
+          "name": "basket",
+          "class": "unittest.mock.Mock"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13818623168,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.applicator.SurchargeApplicator",
+      "method_id": "get_applicable_surcharges",
+      "path": "src/oscar/apps/checkout/applicator.py",
+      "lineno": 36
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818586256,
+        "value": "<oscar.apps.checkout.surcharges.FlatCharge object at 0x337a6e490>",
+        "name": "self",
+        "class": "oscar.apps.checkout.surcharges.FlatCharge"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13818585152,
+          "value": "<Mock id='13818585152'>",
+          "name": "basket",
+          "class": "unittest.mock.Mock"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13818541440,
+          "value": "{'basket': <Mock id='13818585152'>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "basket",
+              "class": "unittest.mock.Mock"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.surcharges.FlatCharge",
+      "method_id": "calculate",
+      "path": "src/oscar/apps/checkout/surcharges.py",
+      "lineno": 59
+    },
+    {
+      "return_value": {
+        "object_id": 13818586688,
+        "value": "Price(currency=<Mock name='mock.currency' id='13818585248'>, excl_tax=Decimal('10.0'), incl_tax=Decimal('10.0'), tax=Decimal('0.0'))",
+        "class": "oscar.core.prices.Price"
+      },
+      "parent_id": 2,
+      "elapsed": 0.0000040531158447265625,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818586208,
+        "value": "<oscar.apps.checkout.surcharges.FlatCharge object at 0x337a6e460>",
+        "name": "self",
+        "class": "oscar.apps.checkout.surcharges.FlatCharge"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13818585152,
+          "value": "<Mock id='13818585152'>",
+          "name": "basket",
+          "class": "unittest.mock.Mock"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13818541440,
+          "value": "{'basket': <Mock id='13818585152'>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "basket",
+              "class": "unittest.mock.Mock"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.surcharges.FlatCharge",
+      "method_id": "calculate",
+      "path": "src/oscar/apps/checkout/surcharges.py",
+      "lineno": 59
+    },
+    {
+      "return_value": {
+        "object_id": 13818587168,
+        "value": "Price(currency=<Mock name='mock.currency' id='13818585248'>, excl_tax=Decimal('10.0'), incl_tax=Decimal('12.0'), tax=Decimal('2.0'))",
+        "class": "oscar.core.prices.Price"
+      },
+      "parent_id": 4,
+      "elapsed": 0.0000021457672119140625,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13818657344,
+        "value": "[<oscar.apps.checkout.applicator.SurchargePrice object at 0x337a6e6d0>, <oscar.apps.checkout.applicator.SurchargePrice object at 0x337a6e850>]",
+        "class": "oscar.apps.checkout.applicator.SurchargeList",
+        "items": [
+          {
+            "class": "oscar.apps.checkout.applicator.SurchargePrice"
+          },
+          {
+            "class": "oscar.apps.checkout.applicator.SurchargePrice"
+          }
+        ],
+        "size": 2
+      },
+      "parent_id": 1,
+      "elapsed": 0.00013184547424316406,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818486688,
+        "value": "<oscar.apps.checkout.calculators.OrderTotalCalculator object at 0x337a55fa0>",
+        "name": "self",
+        "class": "oscar.apps.checkout.calculators.OrderTotalCalculator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13818585152,
+          "value": "<Mock id='13818585152'>",
+          "name": "basket",
+          "class": "unittest.mock.Mock"
+        },
+        {
+          "kind": "req",
+          "object_id": 13818427184,
+          "value": "Price(currency=<Mock name='mock.currency' id='13818585248'>, excl_tax=Decimal('5.00'), incl_tax=Decimal('5.50'), tax=Decimal('0.50'))",
+          "name": "shipping_charge",
+          "class": "oscar.core.prices.Price"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "surcharges",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13818395456,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.calculators.OrderTotalCalculator",
+      "method_id": "calculate",
+      "path": "src/oscar/apps/checkout/calculators.py",
+      "lineno": 16
+    },
+    {
+      "return_value": {
+        "object_id": 13818587360,
+        "value": "Price(currency=<Mock name='mock.currency' id='13818585248'>, excl_tax=Decimal('35.00'), incl_tax=Decimal('39.50'), tax=Decimal('4.50'))",
+        "class": "oscar.core.prices.Price"
+      },
+      "parent_id": 7,
+      "elapsed": 0.000008821487426757812,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      }
+    ],
+    "feature_group": "Order total calculator",
+    "recording": {
+      "defined_class": "tests.integration.checkout.test_calculator.TestOrderTotalCalculator",
+      "method_id": "test_returns_correct_totals_when_tax_is_known"
+    },
+    "source_location": "tests/integration/checkout/test_calculator.py:32",
+    "name": "Order total calculator returns correct totals when tax is known",
+    "feature": "Returns correct totals when tax is known",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "checkout",
+              "type": "package",
+              "children": [
+                {
+                  "name": "applicator",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "SurchargeApplicator",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get_applicable_surcharges",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/checkout/applicator.py:36"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "surcharges",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "FlatCharge",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "calculate",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/checkout/surcharges.py:59"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "calculators",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "OrderTotalCalculator",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "calculate",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/checkout/calculators.py:16"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_category\" INNER JOIN \"offer_range_included_categories\" ON (\"catalogue_category\".\"id\" = \"offer_range_included_categories\".\"category_id\") WHERE \"offer_range_included_categories\".\"range_id\" = 523 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_product\" T2 ON (\"catalogue_product\".\"parent_id\" = T2.\"id\") INNER JOIN \"offer_range_excluded_products\" ON (T2.\"id\" = \"offer_range_excluded_products\".\"product_id\") WHERE \"offer_range_excluded_products\".\"range_id\" = 523 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_product\" T2 ON (\"catalogue_product\".\"parent_id\" = T2.\"id\") INNER JOIN \"offer_rangeproduct\" ON (T2.\"id\" = \"offer_rangeproduct\".\"product_id\") WHERE \"offer_rangeproduct\".\"range_id\" = 523 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_productclass\" INNER JOIN \"offer_range_classes\" ON (\"catalogue_productclass\".\"id\" = \"offer_range_classes\".\"productclass_id\") WHERE \"offer_range_classes\".\"range_id\" = 523 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT DISTINCT 1 AS \"a\" FROM \"catalogue_product\" LEFT OUTER JOIN \"offer_rangeproduct\" ON (\"catalogue_product\".\"id\" = \"offer_rangeproduct\".\"product_id\") LEFT OUTER JOIN \"catalogue_productclass\" ON (\"catalogue_product\".\"product_class_id\" = \"catalogue_productclass\".\"id\") LEFT OUTER JOIN \"offer_range_classes\" ON (\"catalogue_productclass\".\"id\" = \"offer_range_classes\".\"productclass_id\") LEFT OUTER JOIN \"catalogue_product\" T7 ON (\"catalogue_product\".\"parent_id\" = T7.\"id\") LEFT OUTER JOIN \"catalogue_productclass\" T8 ON (T7.\"product_class_id\" = T8.\"id\") LEFT OUTER JOIN \"offer_range_classes\" T9 ON (T8.\"id\" = T9.\"productclass_id\") WHERE ((\"offer_rangeproduct\".\"range_id\" = 523 OR \"offer_range_classes\".\"range_id\" = 523 OR T9.\"range_id\" = 523) AND NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"range_id\" = 523 AND U1.\"product_id\" = (\"catalogue_product\".\"id\")) LIMIT 1)) AND \"catalogue_product\".\"id\" = 937) LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT DISTINCT 1 AS \"a\" FROM \"catalogue_product\" LEFT OUTER JOIN \"offer_rangeproduct\" ON (\"catalogue_product\".\"id\" = \"offer_rangeproduct\".\"product_id\") LEFT OUTER JOIN \"catalogue_productclass\" ON (\"catalogue_product\".\"product_class_id\" = \"catalogue_productclass\".\"id\") LEFT OUTER JOIN \"offer_range_classes\" ON (\"catalogue_productclass\".\"id\" = \"offer_range_classes\".\"productclass_id\") LEFT OUTER JOIN \"catalogue_product\" T7 ON (\"catalogue_product\".\"parent_id\" = T7.\"id\") LEFT OUTER JOIN \"catalogue_productclass\" T8 ON (T7.\"product_class_id\" = T8.\"id\") LEFT OUTER JOIN \"offer_range_classes\" T9 ON (T8.\"id\" = T9.\"productclass_id\") WHERE ((\"offer_rangeproduct\".\"range_id\" = 523 OR \"offer_range_classes\".\"range_id\" = 523 OR T9.\"range_id\" = 523) AND NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"range_id\" = 523 AND U1.\"product_id\" = (\"catalogue_product\".\"id\")) LIMIT 1)) AND \"catalogue_product\".\"id\" = 938) LIMIT 1"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "DELETE FROM \"basket_basket_vouchers\" WHERE (\"basket_basket_vouchers\".\"basket_id\" = 374 AND \"basket_basket_vouchers\".\"voucher_id\" IN (3524))"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('My voucher', 'MYVOUCHER', 'Multi-use', '2024-07-21T17:25:18.456636+00:00'::timestamptz, '2024-08-01T17:25:18.456799+00:00'::timestamptz, 5, 0, 0.00, NULL, '2024-07-22T17:27:56.260792+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" INNER JOIN \"basket_basket_vouchers\" ON (\"voucher_voucher\".\"id\" = \"basket_basket_vouchers\".\"voucher_id\") WHERE (\"basket_basket_vouchers\".\"basket_id\" = 374 AND \"voucher_voucher\".\"id\" = 3524) LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"voucher_voucher\" SET \"num_basket_additions\" = (\"voucher_voucher\".\"num_basket_additions\" - 1) WHERE \"voucher_voucher\".\"id\" = 3524"
+  }
+]

@@ -1,0 +1,245 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "customer",
+            "type": "package",
+            "children": [
+              {
+                "name": "utils",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "CustomerDispatcher",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "send_registration_email_for_user",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/utils.py:26"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "communication",
+            "type": "package",
+            "children": [
+              {
+                "name": "utils",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "Dispatcher",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "get_messages",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/communication/utils.py:176"
+                      },
+                      {
+                        "name": "get_base_context",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/communication/utils.py:169"
+                      },
+                      {
+                        "name": "dispatch_user_messages",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/communication/utils.py:43"
+                      },
+                      {
+                        "name": "send_user_email_messages",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/communication/utils.py:84"
+                      },
+                      {
+                        "name": "send_email_messages",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/communication/utils.py:102"
+                      },
+                      {
+                        "name": "prepare_attachments",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/communication/utils.py:145"
+                      },
+                      {
+                        "name": "create_email",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/communication/utils.py:71"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "managers",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "CommunicationTypeManager",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "get_and_render",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/communication/managers.py:5"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractCommunicationEventType",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "get_messages",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/communication/abstract_models.py:140"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "models",
+        "type": "package",
+        "children": [
+          {
+            "name": "fields",
+            "type": "package",
+            "children": [
+              {
+                "name": "autoslugfield",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AutoSlugField",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "get_internal_type",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:174"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "test",
+        "type": "package",
+        "children": [
+          {
+            "name": "utils",
+            "type": "package",
+            "children": [
+              {
+                "name": "EmailsMixin",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "_test_common_part",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/test/utils.py:135"
+                  },
+                  {
+                    "name": "_test_send_plain_text_and_html",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/test/utils.py:124"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"django_site\".\"id\", \"django_site\".\"domain\", \"django_site\".\"name\" FROM \"django_site\" WHERE \"django_site\".\"id\" = 1 LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"communication_communicationeventtype\".\"id\", \"communication_communicationeventtype\".\"code\", \"communication_communicationeventtype\".\"name\", \"communication_communicationeventtype\".\"category\", \"communication_communicationeventtype\".\"email_subject_template\", \"communication_communicationeventtype\".\"email_body_template\", \"communication_communicationeventtype\".\"email_body_html_template\", \"communication_communicationeventtype\".\"sms_template\", \"communication_communicationeventtype\".\"date_created\", \"communication_communicationeventtype\".\"date_updated\" FROM \"communication_communicationeventtype\" WHERE \"communication_communicationeventtype\".\"code\" = 'REGISTRATION' LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"communication_email\" (\"user_id\", \"email\", \"subject\", \"body_text\", \"body_html\", \"date_sent\") VALUES (179, 'example_70@example.com', 'Thank you for registering.', 'Thank you for registering.', '<p>Thank you for registering.</p>', '2024-07-22T17:26:58.323526+00:00'::timestamptz) RETURNING \"communication_email\".\"id\""
+      }
+    ]
+  },
+  {
+    "type": "class",
+    "name": "<templates>/SrcOscarTemplatesOscarCommunicationEmailsCommtype_Registration_SubjectTxt",
+    "children": [
+      {
+        "type": "function",
+        "name": "render",
+        "static": false
+      }
+    ]
+  },
+  {
+    "type": "class",
+    "name": "<templates>/SrcOscarTemplatesOscarCommunicationEmailsCommtype_Registration_BodyTxt",
+    "children": [
+      {
+        "type": "function",
+        "name": "render",
+        "static": false
+      }
+    ]
+  },
+  {
+    "type": "class",
+    "name": "<templates>/SrcOscarTemplatesOscarCommunicationEmailsCommtype_Registration_BodyHtml",
+    "children": [
+      {
+        "type": "function",
+        "name": "render",
+        "static": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,200 @@
+{
+  "events": [
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13827860608,
+          "value": "['email', 'first_name', 'last_name']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 3
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.compat",
+      "method_id": "existing_user_fields",
+      "path": "src/oscar/core/compat.py",
+      "lineno": 54
+    },
+    {
+      "static": true,
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.compat",
+      "method_id": "get_user_model",
+      "path": "src/oscar/core/compat.py",
+      "lineno": 20
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4391063280,
+          "value": "'myauth'",
+          "name": "app_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4391063216,
+          "value": "'User'",
+          "name": "model_name",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_model",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 225
+    },
+    {
+      "return_value": {
+        "object_id": 5359908448,
+        "value": "<class 'tests._site.myauth.models.User'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 3,
+      "elapsed": 0.000009059906005859375,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5359908448,
+        "value": "<class 'tests._site.myauth.models.User'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 2,
+      "elapsed": 0.00006794929504394531,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13827284864,
+        "value": "['email', 'first_name', 'last_name']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 3
+      },
+      "parent_id": 1,
+      "elapsed": 0.000102996826171875,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      }
+    ],
+    "feature_group": "Existing user fields",
+    "recording": {
+      "defined_class": "tests.integration.core.test_compat.TestExistingUserFields",
+      "method_id": "test_order"
+    },
+    "source_location": "tests/integration/core/test_compat.py:14",
+    "name": "Existing user fields order",
+    "feature": "Order",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "compat",
+              "type": "class",
+              "children": [
+                {
+                  "name": "existing_user_fields",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/compat.py:54"
+                },
+                {
+                  "name": "get_user_model",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/compat.py:20"
+                }
+              ]
+            },
+            {
+              "name": "loading",
+              "type": "class",
+              "children": [
+                {
+                  "name": "get_model",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:225"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

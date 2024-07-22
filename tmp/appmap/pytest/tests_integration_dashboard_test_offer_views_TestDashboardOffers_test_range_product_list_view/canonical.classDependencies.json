@@ -1,0 +1,30 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_category\" INNER JOIN \"offer_range_included_categories\" ON (\"catalogue_category\".\"id\" = \"offer_range_included_categories\".\"category_id\") WHERE \"offer_range_included_categories\".\"range_id\" = 126 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_product\" T2 ON (\"catalogue_product\".\"parent_id\" = T2.\"id\") INNER JOIN \"offer_range_excluded_products\" ON (T2.\"id\" = \"offer_range_excluded_products\".\"product_id\") WHERE \"offer_range_excluded_products\".\"range_id\" = 126 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_product\" T2 ON (\"catalogue_product\".\"parent_id\" = T2.\"id\") INNER JOIN \"offer_rangeproduct\" ON (T2.\"id\" = \"offer_rangeproduct\".\"product_id\") WHERE \"offer_rangeproduct\".\"range_id\" = 126 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_productclass\" INNER JOIN \"offer_range_classes\" ON (\"catalogue_productclass\".\"id\" = \"offer_range_classes\".\"productclass_id\") WHERE \"offer_range_classes\".\"range_id\" = 126 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) FROM (SELECT DISTINCT \"catalogue_product\".\"id\" AS \"col1\", \"catalogue_product\".\"structure\" AS \"col2\", \"catalogue_product\".\"is_public\" AS \"col3\", \"catalogue_product\".\"upc\" AS \"col4\", \"catalogue_product\".\"parent_id\" AS \"col5\", \"catalogue_product\".\"title\" AS \"col6\", \"catalogue_product\".\"slug\" AS \"col7\", \"catalogue_product\".\"description\" AS \"col8\", \"catalogue_product\".\"meta_title\" AS \"col9\", \"catalogue_product\".\"meta_description\" AS \"col10\", \"catalogue_product\".\"product_class_id\" AS \"col11\", \"catalogue_product\".\"rating\" AS \"col12\", \"catalogue_product\".\"date_created\" AS \"col13\", \"catalogue_product\".\"date_updated\" AS \"col14\", \"catalogue_product\".\"is_discountable\" AS \"col15\" FROM \"catalogue_product\" INNER JOIN \"offer_rangeproduct\" ON (\"catalogue_product\".\"id\" = \"offer_rangeproduct\".\"product_id\") WHERE (\"offer_rangeproduct\".\"range_id\" = 126 AND NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"range_id\" = 126 AND U1.\"product_id\" = (\"catalogue_product\".\"id\")) LIMIT 1)))) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"offer_range\".\"id\", \"offer_range\".\"name\", \"offer_range\".\"slug\", \"offer_range\".\"description\", \"offer_range\".\"is_public\", \"offer_range\".\"includes_all_products\", \"offer_range\".\"proxy_class\", \"offer_range\".\"date_created\" FROM \"offer_range\" WHERE \"offer_range\".\"id\" = 126 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  }
+]

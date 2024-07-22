@@ -1,0 +1,116 @@
+{
+  "events": [
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"shipping_weightband\" (\"method_id\", \"upper_limit\", \"charge\") VALUES (23, 1, 4.00) RETURNING \"shipping_weightband\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.0006272079999973812,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"shipping_weightband\" (\"method_id\", \"upper_limit\", \"charge\") VALUES (24, 2, 8.00) RETURNING \"shipping_weightband\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 3,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 3,
+      "elapsed": 0.00045716699997910837,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"shipping_weightband\".\"id\", \"shipping_weightband\".\"method_id\", \"shipping_weightband\".\"upper_limit\", \"shipping_weightband\".\"charge\" FROM \"shipping_weightband\" WHERE (\"shipping_weightband\".\"method_id\" = 24 AND \"shipping_weightband\".\"upper_limit\" < 2) ORDER BY \"shipping_weightband\".\"upper_limit\" DESC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.0005928749999952743,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Weight based method tests",
+    "recording": {
+      "defined_class": "tests.integration.shipping.test_model_method.WeightBasedMethodTests",
+      "method_id": "test_weight_from_for_multiple_bands"
+    },
+    "source_location": "tests/integration/shipping/test_model_method.py:152",
+    "name": "Weight based method tests weight from for multiple bands",
+    "feature": "Weight from for multiple bands",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"shipping_weightband\" (\"method_id\", \"upper_limit\", \"charge\") VALUES (23, 1, 4.00) RETURNING \"shipping_weightband\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"shipping_weightband\" (\"method_id\", \"upper_limit\", \"charge\") VALUES (24, 2, 8.00) RETURNING \"shipping_weightband\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"shipping_weightband\".\"id\", \"shipping_weightband\".\"method_id\", \"shipping_weightband\".\"upper_limit\", \"shipping_weightband\".\"charge\" FROM \"shipping_weightband\" WHERE (\"shipping_weightband\".\"method_id\" = 24 AND \"shipping_weightband\".\"upper_limit\" < 2) ORDER BY \"shipping_weightband\".\"upper_limit\" DESC"
+        }
+      ]
+    }
+  ]
+}

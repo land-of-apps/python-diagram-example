@@ -1,0 +1,18 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('', NULL, false, 'example_348@example.com', 'Barry', 'winterbottom', false, true, '2024-07-22T17:28:18.310874+00:00'::timestamptz, 'the_j_meister nummer 348', '') RETURNING \"myauth_user\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"customer_productalert\" SET \"user_id\" = 681, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_348@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"myauth_user\" SET \"password\" = 'md5$zaBDrNJjjoETp1FaIJJBZr$2502b0219c5ac04ed92cf2d69921dca9', \"last_login\" = NULL, \"is_superuser\" = false, \"email\" = 'example_348@example.com', \"first_name\" = 'Barry', \"last_name\" = 'winterbottom', \"is_staff\" = false, \"is_active\" = true, \"date_joined\" = '2024-07-22T17:28:18.310874+00:00'::timestamptz, \"username\" = 'the_j_meister nummer 348', \"extra_field\" = '' WHERE \"myauth_user\".\"id\" = 681"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  }
+]

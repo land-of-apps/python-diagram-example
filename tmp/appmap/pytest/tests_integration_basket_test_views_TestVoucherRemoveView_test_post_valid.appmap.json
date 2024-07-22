@@ -1,0 +1,462 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13797117520,
+        "value": "<Voucher: My voucher>",
+        "name": "self",
+        "class": "oscar.apps.voucher.models.Voucher"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13796701696,
+          "value": "{'force_insert': True, 'using': 'default'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "force_insert",
+              "class": "builtins.bool"
+            },
+            {
+              "name": "using",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.voucher.abstract_models.AbstractVoucher",
+      "method_id": "save",
+      "path": "src/oscar/apps/voucher/abstract_models.py",
+      "lineno": 180
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('My voucher', 'MYVOUCHER', 'Multi-use', '2024-07-21T17:25:18.456636+00:00'::timestamptz, '2024-08-01T17:25:18.456799+00:00'::timestamptz, 5, 0, 0.00, NULL, '2024-07-22T17:27:56.260792+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0.0013011659999904168,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0014913082122802734,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4416120480,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x10738a6a0>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13797116848,
+          "value": "<WSGIRequest: POST '/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "opt",
+          "object_id": 13797115312,
+          "value": "<django.contrib.auth.models.AnonymousUser object at 0x3365f45b0>",
+          "name": "user",
+          "class": "django.contrib.auth.models.AnonymousUser"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13796701888,
+          "value": "{'request': <WSGIRequest: POST '/'>, 'user': <django.contrib.auth.models.AnonymousUser object at 0x3365f45b0>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "user",
+              "class": "django.contrib.auth.models.AnonymousUser"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "return_value": {
+        "object_id": 13796819248,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x3365ac130>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 5,
+      "elapsed": 0.0000040531158447265625,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Open', '2024-07-22T17:27:56.262504+00:00'::timestamptz, NULL, NULL) RETURNING \"basket_basket\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 7,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 7,
+      "elapsed": 0.0005449580000060905,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"basket_basket_vouchers\" (\"basket_id\", \"voucher_id\") VALUES (374, 3524) ON CONFLICT DO NOTHING",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 9,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 9,
+      "elapsed": 0.0005616249999889078,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13797114688,
+        "value": "<oscar.apps.basket.views.VoucherRemoveView object at 0x3365f4340>",
+        "name": "self",
+        "class": "oscar.apps.basket.views.VoucherRemoveView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13797116848,
+          "value": "<WSGIRequest: POST '/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13796700736,
+          "value": "{'pk': 3524}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "pk",
+              "class": "builtins.int"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 11,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.views.VoucherRemoveView",
+      "method_id": "post",
+      "path": "src/oscar/apps/basket/views.py",
+      "lineno": 484
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" INNER JOIN \"basket_basket_vouchers\" ON (\"voucher_voucher\".\"id\" = \"basket_basket_vouchers\".\"voucher_id\") WHERE (\"basket_basket_vouchers\".\"basket_id\" = 374 AND \"voucher_voucher\".\"id\" = 3524) LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 12,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 12,
+      "elapsed": 0.0007278750000239143,
+      "id": 13,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "DELETE FROM \"basket_basket_vouchers\" WHERE (\"basket_basket_vouchers\".\"basket_id\" = 374 AND \"basket_basket_vouchers\".\"voucher_id\" IN (3524))",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 14,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 14,
+      "elapsed": 0.0005014580000022306,
+      "id": 15,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"voucher_voucher\" SET \"num_basket_additions\" = (\"voucher_voucher\".\"num_basket_additions\" - 1) WHERE \"voucher_voucher\".\"id\" = 3524",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 16,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 16,
+      "elapsed": 0.0004999580000060178,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13796820592,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/basket/\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 11,
+      "elapsed": 0.0030760765075683594,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"id\" = 3524 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 19,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 19,
+      "elapsed": 0.00035970800001905445,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Voucher remove view",
+    "recording": {
+      "defined_class": "tests.integration.basket.test_views.TestVoucherRemoveView",
+      "method_id": "test_post_valid"
+    },
+    "source_location": "tests/integration/basket/test_views.py:72",
+    "name": "Voucher remove view post valid",
+    "feature": "Post valid",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "voucher",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractVoucher",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/voucher/abstract_models.py:180"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "partner",
+              "type": "package",
+              "children": [
+                {
+                  "name": "strategy",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Selector",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "strategy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/strategy.py:37"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "basket",
+              "type": "package",
+              "children": [
+                {
+                  "name": "views",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "VoucherRemoveView",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "post",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/views.py:484"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('My voucher', 'MYVOUCHER', 'Multi-use', '2024-07-21T17:25:18.456636+00:00'::timestamptz, '2024-08-01T17:25:18.456799+00:00'::timestamptz, 5, 0, 0.00, NULL, '2024-07-22T17:27:56.260792+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Open', '2024-07-22T17:27:56.262504+00:00'::timestamptz, NULL, NULL) RETURNING \"basket_basket\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"basket_basket_vouchers\" (\"basket_id\", \"voucher_id\") VALUES (374, 3524) ON CONFLICT DO NOTHING"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" INNER JOIN \"basket_basket_vouchers\" ON (\"voucher_voucher\".\"id\" = \"basket_basket_vouchers\".\"voucher_id\") WHERE (\"basket_basket_vouchers\".\"basket_id\" = 374 AND \"voucher_voucher\".\"id\" = 3524) LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "DELETE FROM \"basket_basket_vouchers\" WHERE (\"basket_basket_vouchers\".\"basket_id\" = 374 AND \"basket_basket_vouchers\".\"voucher_id\" IN (3524))"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"voucher_voucher\" SET \"num_basket_additions\" = (\"voucher_voucher\".\"num_basket_additions\" - 1) WHERE \"voucher_voucher\".\"id\" = 3524"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"id\" = 3524 LIMIT 21"
+        }
+      ]
+    }
+  ]
+}

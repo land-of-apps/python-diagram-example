@@ -1,0 +1,18 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"offer_conditionaloffer\" (\"name\", \"slug\", \"description\", \"offer_type\", \"exclusive\", \"status\", \"condition_id\", \"benefit_id\", \"priority\", \"start_datetime\", \"end_datetime\", \"max_global_applications\", \"max_user_applications\", \"max_basket_applications\", \"max_discount\", \"total_discount\", \"num_applications\", \"num_orders\", \"redirect_url\", \"date_created\") VALUES ('Test offer 112', 'test-offer-112', '', 'Site', true, 'Open', 185, 185, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0.00, 0, 0, '', '2024-07-22T17:28:18.612496+00:00'::timestamptz) RETURNING \"offer_conditionaloffer\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\" FROM \"offer_conditionaloffer\" WHERE \"offer_conditionaloffer\".\"slug\" = 'test-offer-112' ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "oscar/core"
+  }
+]

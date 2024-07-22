@@ -1,0 +1,90 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "catalogue",
+            "type": "package",
+            "children": [
+              {
+                "name": "managers",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "ProductQuerySet",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "filter_by_attributes",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/managers.py:74"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "AttributeFilter",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "field_names",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/managers.py:29"
+                      },
+                      {
+                        "name": "fast_query",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/managers.py:51"
+                      },
+                      {
+                        "name": "_select_value",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/managers.py:38"
+                      },
+                      {
+                        "name": "_selector",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/managers.py:32"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\" FROM \"catalogue_productattribute\" WHERE \"catalogue_productattribute\".\"code\" IN ('subtitle') ORDER BY \"catalogue_productattribute\".\"code\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_productattributevalue\" ON (\"catalogue_product\".\"id\" = \"catalogue_productattributevalue\".\"product_id\") INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE (\"catalogue_productattributevalue\".\"value_text\" = 'superhenk' AND \"catalogue_productattribute\".\"code\" = 'subtitle') LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_productattributevalue\" ON (\"catalogue_product\".\"id\" = \"catalogue_productattributevalue\".\"product_id\") INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE (\"catalogue_productattributevalue\".\"value_text\" = 'kekjo' AND \"catalogue_productattribute\".\"code\" = 'subtitle') LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_productattributevalue\" ON (\"catalogue_product\".\"id\" = \"catalogue_productattributevalue\".\"product_id\") INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE (\"catalogue_productattributevalue\".\"value_text\" = 'True' AND \"catalogue_productattribute\".\"code\" = 'subtitle') LIMIT 1"
+      }
+    ]
+  }
+]

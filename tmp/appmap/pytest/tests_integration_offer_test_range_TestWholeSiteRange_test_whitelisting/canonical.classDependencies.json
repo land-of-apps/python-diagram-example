@@ -1,0 +1,26 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "DELETE FROM \"offer_range_excluded_products\" WHERE (\"offer_range_excluded_products\".\"range_id\" = 512 AND \"offer_range_excluded_products\".\"product_id\" IN (906))"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"offer_rangeproduct\" (\"range_id\", \"product_id\", \"display_order\") VALUES (512, 906, 0) RETURNING \"offer_rangeproduct\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x3541\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SAVEPOINT \"s8669432832_x3541\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_product\" WHERE (NOT (\"catalogue_product\".\"id\" IN (SELECT U0.\"id\" FROM \"catalogue_product\" U0 INNER JOIN \"offer_range_excluded_products\" U1 ON (U0.\"id\" = U1.\"product_id\") WHERE U1.\"range_id\" = 512)) AND \"catalogue_product\".\"id\" = 906) LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"offer_rangeproduct\".\"id\", \"offer_rangeproduct\".\"range_id\", \"offer_rangeproduct\".\"product_id\", \"offer_rangeproduct\".\"display_order\" FROM \"offer_rangeproduct\" WHERE (\"offer_rangeproduct\".\"product_id\" = 906 AND \"offer_rangeproduct\".\"range_id\" = 512) LIMIT 21"
+  }
+]

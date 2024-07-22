@@ -1,0 +1,238 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "customer",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractUser",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:115"
+                      },
+                      {
+                        "name": "_migrate_alerts_to_user",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:103"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "dashboard",
+            "type": "package",
+            "children": [
+              {
+                "name": "partners",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "views",
+                    "type": "package",
+                    "children": [
+                      {
+                        "name": "PartnerUserUnlinkView",
+                        "type": "class",
+                        "children": [
+                          {
+                            "name": "unlink_user",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/partners/views.py:241"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "models",
+        "type": "package",
+        "children": [
+          {
+            "name": "fields",
+            "type": "package",
+            "children": [
+              {
+                "name": "autoslugfield",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AutoSlugField",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "pre_save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:169"
+                      },
+                      {
+                        "name": "create_slug",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:105"
+                      },
+                      {
+                        "name": "slugify_func",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:100"
+                      },
+                      {
+                        "name": "_slug_strip",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:81"
+                      },
+                      {
+                        "name": "get_queryset",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:93"
+                      },
+                      {
+                        "name": "get_internal_type",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:174"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core",
+        "type": "package",
+        "children": [
+          {
+            "name": "utils",
+            "type": "class",
+            "children": [
+              {
+                "name": "slugify",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:68"
+              },
+              {
+                "name": "default_slugifier",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:57"
+              },
+              {
+                "name": "cautious_slugify",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:20"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('', NULL, false, 'example_350@example.com', 'joseph', 'winterbottom', false, true, '2024-07-22T17:28:45.019835+00:00'::timestamptz, 'the_j_meister nummer 350', '') RETURNING \"myauth_user\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"customer_productalert\" SET \"user_id\" = 685, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_350@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"myauth_user\" SET \"password\" = 'md5$lzbOp9iX8UAZ1uHgYiC9PP$92762d07f59066e187a5014e92472bea', \"last_login\" = NULL, \"is_superuser\" = false, \"email\" = 'example_350@example.com', \"first_name\" = 'joseph', \"last_name\" = 'winterbottom', \"is_staff\" = false, \"is_active\" = true, \"date_joined\" = '2024-07-22T17:28:45.019835+00:00'::timestamptz, \"username\" = 'the_j_meister nummer 350', \"extra_field\" = '' WHERE \"myauth_user\".\"id\" = 685"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"django_content_type\".\"id\", \"django_content_type\".\"app_label\", \"django_content_type\".\"model\" FROM \"django_content_type\" WHERE (\"django_content_type\".\"app_label\" = 'partner' AND \"django_content_type\".\"model\" = 'partner') LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"auth_permission\".\"id\", \"auth_permission\".\"name\", \"auth_permission\".\"content_type_id\", \"auth_permission\".\"codename\" FROM \"auth_permission\" WHERE (\"auth_permission\".\"codename\" = 'dashboard_access' AND \"auth_permission\".\"content_type_id\" = 511) LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"myauth_user_user_permissions\" (\"user_id\", \"permission_id\") VALUES (685, 2050) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"partner_partner\".\"id\", \"partner_partner\".\"code\", \"partner_partner\".\"name\" FROM \"partner_partner\" WHERE \"partner_partner\".\"code\" = 'gardners' ORDER BY \"partner_partner\".\"name\" ASC, \"partner_partner\".\"code\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"partner_partner\" (\"code\", \"name\") VALUES ('gardners', 'Gardners') RETURNING \"partner_partner\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"partner_partner\" SET \"code\" = 'gardners', \"name\" = 'Gardners' WHERE \"partner_partner\".\"id\" = 693"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"partner_partner_users\" (\"partner_id\", \"user_id\") VALUES (693, 685) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"myauth_user\" INNER JOIN \"partner_partner_users\" ON (\"myauth_user\".\"id\" = \"partner_partner_users\".\"user_id\") WHERE (\"partner_partner_users\".\"partner_id\" = 693 AND \"myauth_user\".\"id\" = 685) LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"partner_partner_users\" WHERE (\"partner_partner_users\".\"partner_id\" = 693 AND \"partner_partner_users\".\"user_id\" IN (685))"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"partner_partner\" INNER JOIN \"partner_partner_users\" ON (\"partner_partner\".\"id\" = \"partner_partner_users\".\"partner_id\") WHERE \"partner_partner_users\".\"user_id\" = 685 LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"auth_permission\".\"id\", \"auth_permission\".\"name\", \"auth_permission\".\"content_type_id\", \"auth_permission\".\"codename\" FROM \"auth_permission\" INNER JOIN \"django_content_type\" ON (\"auth_permission\".\"content_type_id\" = \"django_content_type\".\"id\") WHERE (\"auth_permission\".\"codename\" = 'dashboard_access' AND \"django_content_type\".\"app_label\" = 'partner') LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"myauth_user_user_permissions\" WHERE (\"myauth_user_user_permissions\".\"user_id\" = 685 AND \"myauth_user_user_permissions\".\"permission_id\" IN (2050))"
+      },
+      {
+        "type": "query",
+        "name": "SELECT COUNT(*) AS \"__count\" FROM \"myauth_user\" INNER JOIN \"partner_partner_users\" ON (\"myauth_user\".\"id\" = \"partner_partner_users\".\"user_id\") WHERE \"partner_partner_users\".\"partner_id\" = 693"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"auth_permission\" WHERE \"auth_permission\".\"id\" = 2050 LIMIT 1"
+      }
+    ]
+  }
+]

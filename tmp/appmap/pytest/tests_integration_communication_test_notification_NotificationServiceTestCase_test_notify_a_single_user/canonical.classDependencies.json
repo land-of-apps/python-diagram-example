@@ -1,0 +1,18 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"communication_notification\" (\"recipient_id\", \"sender_id\", \"subject\", \"body\", \"location\", \"date_sent\", \"date_read\") VALUES (654, NULL, 'Hello you!', 'This is the notification body.', 'Inbox', '2024-07-22T17:28:06.140297+00:00'::timestamptz, NULL) RETURNING \"communication_notification\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('', NULL, false, 'example_319@example.com', 'joseph', 'winterbottom', false, true, '2024-07-22T17:28:06.137128+00:00'::timestamptz, 'the_j_meister nummer 319', '') RETURNING \"myauth_user\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"customer_productalert\" SET \"user_id\" = 654, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_319@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"myauth_user\" SET \"password\" = 'md5$GsqzVXq9einTmCVSA0mmji$02c0e8443d498beaaaf9c08653c40bcf', \"last_login\" = NULL, \"is_superuser\" = false, \"email\" = 'example_319@example.com', \"first_name\" = 'joseph', \"last_name\" = 'winterbottom', \"is_staff\" = false, \"is_active\" = true, \"date_joined\" = '2024-07-22T17:28:06.137128+00:00'::timestamptz, \"username\" = 'the_j_meister nummer 319', \"extra_field\" = '' WHERE \"myauth_user\".\"id\" = 654"
+  }
+]

@@ -1,0 +1,139 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13826351696,
+        "value": "<Notification: Hello>",
+        "name": "self",
+        "class": "oscar.apps.communication.models.Notification"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.communication.abstract_models.AbstractNotification",
+      "method_id": "archive",
+      "path": "src/oscar/apps/communication/abstract_models.py",
+      "lineno": 224
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"communication_notification\" SET \"recipient_id\" = 650, \"sender_id\" = NULL, \"subject\" = 'Hello', \"body\" = '', \"location\" = 'Archive', \"date_sent\" = '2024-07-22T17:28:06.094104+00:00'::timestamptz, \"date_read\" = NULL WHERE \"communication_notification\".\"id\" = 17",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0.00044783399999914764,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0006918907165527344,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "A notification",
+    "recording": {
+      "defined_class": "tests.integration.communication.test_notification.TestANotification",
+      "method_id": "test_can_be_archived"
+    },
+    "source_location": "tests/integration/communication/test_notification.py:29",
+    "name": "A notification can be archived",
+    "feature": "Can be archived",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "communication",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractNotification",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "archive",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/communication/abstract_models.py:224"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "UPDATE \"communication_notification\" SET \"recipient_id\" = 650, \"sender_id\" = NULL, \"subject\" = 'Hello', \"body\" = '', \"location\" = 'Archive', \"date_sent\" = '2024-07-22T17:28:06.094104+00:00'::timestamptz, \"date_read\" = NULL WHERE \"communication_notification\".\"id\" = 17"
+        }
+      ]
+    }
+  ]
+}

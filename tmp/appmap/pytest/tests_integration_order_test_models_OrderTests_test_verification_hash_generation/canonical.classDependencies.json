@@ -1,0 +1,26 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"order_billingaddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\") VALUES ('', 'John', 'Doe', 'Streetname', '1a', '', 'City', '', '1000AA', 'GB', 'John Doe Streetname 1a City 1000AA UNITED KINGDOM') RETURNING \"order_billingaddress\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"order_order\" (\"number\", \"site_id\", \"basket_id\", \"user_id\", \"billing_address_id\", \"currency\", \"total_incl_tax\", \"total_excl_tax\", \"shipping_incl_tax\", \"shipping_excl_tax\", \"shipping_tax_code\", \"shipping_address_id\", \"shipping_method\", \"shipping_code\", \"status\", \"guest_email\", \"date_placed\") VALUES ('111000', 1, 608, NULL, 10, 'GBP', 0.00, 0.00, 4.95, 4.09, NULL, 26, '', 'delivery', 'A', 'j.doe@example.com', '2024-07-22T17:28:44.443215+00:00'::timestamptz) RETURNING \"order_order\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"order_shippingaddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\", \"phone_number\", \"notes\") VALUES ('', 'John', 'Doe', 'Streetname', '1a', '', 'City', '', '1000 AA', 'GB', 'John Doe Streetname 1a City 1000 AA UNITED KINGDOM', '+12125555555', '') RETURNING \"order_shippingaddress\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\", \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\", \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"basket_line\" INNER JOIN \"catalogue_product\" ON (\"basket_line\".\"product_id\" = \"catalogue_product\".\"id\") INNER JOIN \"partner_stockrecord\" ON (\"basket_line\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE \"basket_line\".\"basket_id\" = 608 ORDER BY \"basket_line\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"order_order\" SET \"number\" = '111000', \"site_id\" = 1, \"basket_id\" = 608, \"user_id\" = NULL, \"billing_address_id\" = 10, \"currency\" = 'GBP', \"total_incl_tax\" = 0.00, \"total_excl_tax\" = 0.00, \"shipping_incl_tax\" = 4.95, \"shipping_excl_tax\" = 4.09, \"shipping_tax_code\" = NULL, \"shipping_address_id\" = 26, \"shipping_method\" = '', \"shipping_code\" = 'delivery', \"status\" = 'A', \"guest_email\" = 'j.doe@example.com', \"date_placed\" = '2024-07-22T17:28:44.443215+00:00'::timestamptz WHERE \"order_order\".\"id\" = 193"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  }
+]

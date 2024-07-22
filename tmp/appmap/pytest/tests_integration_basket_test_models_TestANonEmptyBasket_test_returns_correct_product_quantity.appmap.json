@@ -1,0 +1,148 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13789967216,
+        "value": "<Basket: Open basket (owner: None, lines: 1)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13789967120,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "product_quantity",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 631
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT SUM(\"basket_line\".\"quantity\") AS \"quantity__sum\" FROM \"basket_line\" WHERE (\"basket_line\".\"basket_id\" = 285 AND \"basket_line\".\"product_id\" = 654)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0.0005236249999995835,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341392232,
+        "value": "10",
+        "class": "builtins.int"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0009818077087402344,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "A non empty basket",
+    "recording": {
+      "defined_class": "tests.integration.basket.test_models.TestANonEmptyBasket",
+      "method_id": "test_returns_correct_product_quantity"
+    },
+    "source_location": "tests/integration/basket/test_models.py:166",
+    "name": "A non empty basket returns correct product quantity",
+    "feature": "Returns correct product quantity",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "basket",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractBasket",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "product_quantity",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/abstract_models.py:631"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT SUM(\"basket_line\".\"quantity\") AS \"quantity__sum\" FROM \"basket_line\" WHERE (\"basket_line\".\"basket_id\" = 285 AND \"basket_line\".\"product_id\" = 654)"
+        }
+      ]
+    }
+  ]
+}

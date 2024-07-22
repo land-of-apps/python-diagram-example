@@ -1,0 +1,105 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "customer",
+            "type": "package",
+            "children": [
+              {
+                "name": "auth_backends",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "EmailBackend",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "authenticate",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/auth_backends.py:60"
+                      },
+                      {
+                        "name": "_authenticate",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/auth_backends.py:24"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "utils",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "normalise_email",
+                    "type": "function",
+                    "static": true,
+                    "location": "src/oscar/apps/customer/utils.py:62"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "django",
+    "type": "package",
+    "children": [
+      {
+        "name": "contrib",
+        "type": "package",
+        "children": [
+          {
+            "name": "auth",
+            "type": "package",
+            "children": [
+              {
+                "name": "backends",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "ModelBackend",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "user_can_authenticate",
+                        "type": "function",
+                        "labels": [
+                          "security.authorization"
+                        ],
+                        "static": false,
+                        "location": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py:55"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE UPPER(\"myauth_user\".\"email\"::text) = UPPER('foo@example.com')"
+      }
+    ]
+  }
+]

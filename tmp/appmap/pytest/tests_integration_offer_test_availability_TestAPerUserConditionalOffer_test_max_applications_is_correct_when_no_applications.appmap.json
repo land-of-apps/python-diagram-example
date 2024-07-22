@@ -1,0 +1,248 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13948929600,
+        "value": "<ConditionalOffer: >",
+        "name": "self",
+        "class": "oscar.apps.offer.models.ConditionalOffer"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "user",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.abstract_models.AbstractConditionalOffer",
+      "method_id": "get_max_applications",
+      "path": "src/oscar/apps/offer/abstract_models.py",
+      "lineno": 381
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13948929600,
+        "value": "<ConditionalOffer: >",
+        "name": "self",
+        "class": "oscar.apps.offer.models.ConditionalOffer"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13948925456,
+          "value": "<User: example_346@example.com>",
+          "name": "user",
+          "class": "tests._site.myauth.models.User"
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.abstract_models.AbstractConditionalOffer",
+      "method_id": "get_num_user_applications",
+      "path": "src/oscar/apps/offer/abstract_models.py",
+      "lineno": 404
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4333323440,
+          "value": "'order'",
+          "name": "app_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4394607280,
+          "value": "'OrderDiscount'",
+          "name": "model_name",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_model",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 225
+    },
+    {
+      "return_value": {
+        "object_id": 5359718464,
+        "value": "<class 'oscar.apps.order.models.OrderDiscount'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 3,
+      "elapsed": 0.000007867813110351562,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT SUM(\"order_orderdiscount\".\"frequency\") AS \"total\" FROM \"order_orderdiscount\" INNER JOIN \"order_order\" ON (\"order_orderdiscount\".\"order_id\" = \"order_order\".\"id\") WHERE (\"order_orderdiscount\".\"offer_id\" IS NULL AND \"order_order\".\"user_id\" = 679)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.0006910409999818512,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341391912,
+        "value": "0",
+        "class": "builtins.int"
+      },
+      "parent_id": 2,
+      "elapsed": 0.001241922378540039,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341391944,
+        "value": "1",
+        "class": "builtins.int"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0013048648834228516,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "A per user conditional offer",
+    "recording": {
+      "defined_class": "tests.integration.offer.test_availability.TestAPerUserConditionalOffer",
+      "method_id": "test_max_applications_is_correct_when_no_applications"
+    },
+    "source_location": "tests/integration/offer/test_availability.py:20",
+    "name": "A per user conditional offer max applications is correct when no applications",
+    "feature": "Max applications is correct when no applications",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "offer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractConditionalOffer",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get_max_applications",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/abstract_models.py:381"
+                        },
+                        {
+                          "name": "get_num_user_applications",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/abstract_models.py:404"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "loading",
+              "type": "class",
+              "children": [
+                {
+                  "name": "get_model",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:225"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT SUM(\"order_orderdiscount\".\"frequency\") AS \"total\" FROM \"order_orderdiscount\" INNER JOIN \"order_order\" ON (\"order_orderdiscount\".\"order_id\" = \"order_order\".\"id\") WHERE (\"order_orderdiscount\".\"offer_id\" IS NULL AND \"order_order\".\"user_id\" = 679)"
+        }
+      ]
+    }
+  ]
+}

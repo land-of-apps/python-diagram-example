@@ -1,0 +1,924 @@
+{
+  "events": [
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.1",
+        "path_info": "/",
+        "mime_type": "text/plain",
+        "headers": {
+          "Content-Length": "",
+          "Content-Type": "text/plain",
+          "Host": "127.0.0.1:8000",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:128.0) Gecko/20100101 Firefox/128.0",
+          "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8",
+          "Accept-Language": "en-US,en;q=0.5",
+          "Accept-Encoding": "gzip, deflate, br, zstd",
+          "Dnt": "1",
+          "Sec-Gpc": "1",
+          "Connection": "keep-alive",
+          "Upgrade-Insecure-Requests": "1",
+          "Sec-Fetch-Dest": "document",
+          "Sec-Fetch-Mode": "navigate",
+          "Sec-Fetch-Site": "none",
+          "Sec-Fetch-User": "?1",
+          "Priority": "u=0, i"
+        }
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4594341152,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x111d81520>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4606976928,
+          "value": "<WSGIRequest: GET '/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4607163072,
+          "value": "<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x112acd040>>",
+          "name": "user",
+          "class": "django.utils.functional.SimpleLazyObject"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 4608076160,
+          "value": "{'request': <WSGIRequest: GET '/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x112acd040>>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "user",
+              "class": "django.utils.functional.SimpleLazyObject"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "return_value": {
+        "object_id": 4607355872,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x1129eabe0>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 2,
+      "elapsed": 0.000026941299438476562,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4607354000,
+        "value": "<Template template_string=\"<!DOCTYPE html><htm...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "<unknown source>",
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.UnknownSource",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 4,
+      "elapsed": 0.02717908300000005,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396630656,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x1060f4280>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4606976928,
+          "value": "<WSGIRequest: GET '/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 4607480304,
+          "value": "<HttpResponseNotFound status_code=404, \"text/html; charset=utf-8\">",
+          "name": "response",
+          "class": "django.http.response.HttpResponseNotFound"
+        }
+      ],
+      "id": 6,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 63
+    },
+    {
+      "return_value": {
+        "object_id": 4607480304,
+        "value": "<HttpResponseNotFound status_code=404, \"text/html; charset=utf-8\">",
+        "class": "django.http.response.HttpResponseNotFound"
+      },
+      "parent_id": 6,
+      "elapsed": 0.0000030994415283203125,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "id": 8,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar",
+      "method_id": "get_version",
+      "path": "src/oscar/__init__.py",
+      "lineno": 9
+    },
+    {
+      "return_value": {
+        "object_id": 4610164848,
+        "value": "'3.2.2'",
+        "class": "builtins.str"
+      },
+      "parent_id": 8,
+      "elapsed": 0.0000021457672119140625,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4607506944,
+        "value": "<Template template_string=\"{% load i18n static ...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/base.html",
+      "id": 10,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarBaseHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 4610684912,
+        "value": "<Template template_string=\"{% load i18n %}<li...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_button.html",
+      "id": 11,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ButtonHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 11,
+      "elapsed": 0.00014591600000013472,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684912,
+        "value": "<Template template_string=\"{% load i18n %}<li...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_button.html",
+      "id": 13,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ButtonHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 13,
+      "elapsed": 0.0000978329999998806,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684912,
+        "value": "<Template template_string=\"{% load i18n %}<li...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_button.html",
+      "id": 15,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ButtonHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 15,
+      "elapsed": 0.0000966249999998503,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684912,
+        "value": "<Template template_string=\"{% load i18n %}<li...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_button.html",
+      "id": 17,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ButtonHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 17,
+      "elapsed": 0.00008150000000028967,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684912,
+        "value": "<Template template_string=\"{% load i18n %}<li...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_button.html",
+      "id": 19,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ButtonHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 19,
+      "elapsed": 0.0000794170000002481,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684912,
+        "value": "<Template template_string=\"{% load i18n %}<li...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_button.html",
+      "id": 21,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ButtonHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 21,
+      "elapsed": 0.00008987500000001702,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684912,
+        "value": "<Template template_string=\"{% load i18n %}<li...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_button.html",
+      "id": 23,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ButtonHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 23,
+      "elapsed": 0.00013441699999994228,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684912,
+        "value": "<Template template_string=\"{% load i18n %}<li...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_button.html",
+      "id": 25,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ButtonHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 25,
+      "elapsed": 0.000098540999999841,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684912,
+        "value": "<Template template_string=\"{% load i18n %}<li...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_button.html",
+      "id": 27,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ButtonHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 27,
+      "elapsed": 0.00008354099999996478,
+      "id": 28,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684912,
+        "value": "<Template template_string=\"{% load i18n %}<li...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_button.html",
+      "id": 29,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ButtonHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 29,
+      "elapsed": 0.00009791700000016945,
+      "id": 30,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684912,
+        "value": "<Template template_string=\"{% load i18n %}<li...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_button.html",
+      "id": 31,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ButtonHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 31,
+      "elapsed": 0.00009574999999983902,
+      "id": 32,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684912,
+        "value": "<Template template_string=\"{% load i18n %}<li...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_button.html",
+      "id": 33,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ButtonHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 33,
+      "elapsed": 0.00006862499999993332,
+      "id": 34,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684912,
+        "value": "<Template template_string=\"{% load i18n %}<li...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_button.html",
+      "id": 35,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ButtonHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 35,
+      "elapsed": 0.00006233299999980346,
+      "id": 36,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684144,
+        "value": "<Template template_string=\"{% load static %}{...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_content.html",
+      "id": 37,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ContentHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 37,
+      "elapsed": 0.000049332999999762706,
+      "id": 38,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684144,
+        "value": "<Template template_string=\"{% load static %}{...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_content.html",
+      "id": 39,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ContentHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 39,
+      "elapsed": 0.00004129200000013711,
+      "id": 40,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684144,
+        "value": "<Template template_string=\"{% load static %}{...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_content.html",
+      "id": 41,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ContentHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 41,
+      "elapsed": 0.00003424999999968037,
+      "id": 42,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684144,
+        "value": "<Template template_string=\"{% load static %}{...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_content.html",
+      "id": 43,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ContentHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 43,
+      "elapsed": 0.000038833000000071394,
+      "id": 44,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684144,
+        "value": "<Template template_string=\"{% load static %}{...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_content.html",
+      "id": 45,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ContentHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 45,
+      "elapsed": 0.00003529100000010388,
+      "id": 46,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684144,
+        "value": "<Template template_string=\"{% load static %}{...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_content.html",
+      "id": 47,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ContentHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 47,
+      "elapsed": 0.00003449999999993736,
+      "id": 48,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684144,
+        "value": "<Template template_string=\"{% load static %}{...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_content.html",
+      "id": 49,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ContentHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 49,
+      "elapsed": 0.00003895800000019989,
+      "id": 50,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684144,
+        "value": "<Template template_string=\"{% load static %}{...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_content.html",
+      "id": 51,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ContentHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 51,
+      "elapsed": 0.00003879200000023175,
+      "id": 52,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684144,
+        "value": "<Template template_string=\"{% load static %}{...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_content.html",
+      "id": 53,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ContentHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 53,
+      "elapsed": 0.000036000000000147026,
+      "id": 54,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684144,
+        "value": "<Template template_string=\"{% load static %}{...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_content.html",
+      "id": 55,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ContentHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 55,
+      "elapsed": 0.00003816599999995063,
+      "id": 56,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684144,
+        "value": "<Template template_string=\"{% load static %}{...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_content.html",
+      "id": 57,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ContentHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 57,
+      "elapsed": 0.00003741600000006784,
+      "id": 58,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684144,
+        "value": "<Template template_string=\"{% load static %}{...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_content.html",
+      "id": 59,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ContentHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 59,
+      "elapsed": 0.000014332999999755458,
+      "id": 60,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 4610684144,
+        "value": "<Template template_string=\"{% load static %}{...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/debug_toolbar/templates/debug_toolbar/includes/panel_content.html",
+      "id": 61,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ContentHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 61,
+      "elapsed": 0.000015791999999681394,
+      "id": 62,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 10,
+      "elapsed": 0.0063127920000001225,
+      "id": 63,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_response": {
+        "status_code": 302,
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Location": "/en-gb/",
+          "Vary": "Accept-Language, Cookie",
+          "X-Frame-Options": "DENY",
+          "X-Content-Type-Options": "nosniff",
+          "Referrer-Policy": "same-origin",
+          "Cross-Origin-Opener-Policy": "same-origin",
+          "djdt-store-id": "927dca4177c94f279da2dd06962548b7",
+          "Server-Timing": "TimerPanel_utime;dur=37.71400000000003;desc=\"User CPU time\", TimerPanel_stime;dur=2.4069999999999925;desc=\"System CPU time\", TimerPanel_total;dur=40.121000000000016;desc=\"Total CPU time\", TimerPanel_total_time;dur=40.306333000000194;desc=\"Elapsed time\", SQLPanel_sql_time;dur=0;desc=\"SQL 0 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+        }
+      },
+      "parent_id": 1,
+      "elapsed": 0.048669500000000365,
+      "id": 64,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "feat/add-captcha",
+      "commit": "10c12b66ee243fc4b4fbb7ea30dc8ffd66ff1595"
+    },
+    "frameworks": [
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "name": "GET / (302) - 14:49:25.104",
+    "timestamp": 1721310565.104393,
+    "recorder": {
+      "name": "record_requests",
+      "type": "requests"
+    }
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "partner",
+              "type": "package",
+              "children": [
+                {
+                  "name": "strategy",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Selector",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "strategy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/strategy.py:37"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "basket",
+              "type": "package",
+              "children": [
+                {
+                  "name": "middleware",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "BasketMiddleware",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "process_response",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/middleware.py:63"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "get_version",
+          "type": "function",
+          "static": true,
+          "location": "src/oscar/__init__.py:9"
+        }
+      ]
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /"
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/UnknownSource",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarBaseHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ButtonHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDebug_ToolbarTemplatesDebug_ToolbarIncludesPanel_ContentHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    }
+  ]
+}

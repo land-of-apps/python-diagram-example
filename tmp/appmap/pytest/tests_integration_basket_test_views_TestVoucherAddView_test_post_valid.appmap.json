@@ -1,0 +1,1470 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13795567600,
+        "value": "<Voucher: My voucher>",
+        "name": "self",
+        "class": "oscar.apps.voucher.models.Voucher"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13793874240,
+          "value": "{'force_insert': True, 'using': 'default'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "force_insert",
+              "class": "builtins.bool"
+            },
+            {
+              "name": "using",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.voucher.abstract_models.AbstractVoucher",
+      "method_id": "save",
+      "path": "src/oscar/apps/voucher/abstract_models.py",
+      "lineno": 180
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('My voucher', 'MYVOUCHER', 'Multi-use', '2024-07-21T17:25:18.456636+00:00'::timestamptz, '2024-08-01T17:25:18.456799+00:00'::timestamptz, 0, 0, 0.00, NULL, '2024-07-22T17:27:55.761224+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0.0008840000000134296,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0010988712310791016,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13795567600,
+        "value": "<Voucher: My voucher>",
+        "name": "self",
+        "class": "oscar.apps.voucher.models.Voucher"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "test_datetime",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.voucher.abstract_models.AbstractVoucher",
+      "method_id": "is_active",
+      "path": "src/oscar/apps/voucher/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 5,
+      "elapsed": 0.0000050067901611328125,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4416120480,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x10738a6a0>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13795586160,
+          "value": "<WSGIRequest: POST '/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "opt",
+          "object_id": 13795586496,
+          "value": "<django.contrib.auth.models.AnonymousUser object at 0x33647f1c0>",
+          "name": "user",
+          "class": "django.contrib.auth.models.AnonymousUser"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13795449920,
+          "value": "{'request': <WSGIRequest: POST '/'>, 'user': <django.contrib.auth.models.AnonymousUser object at 0x33647f1c0>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "user",
+              "class": "django.contrib.auth.models.AnonymousUser"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "return_value": {
+        "object_id": 13795566784,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x33647a4c0>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 7,
+      "elapsed": 0.0000040531158447265625,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Open', '2024-07-22T17:27:55.762529+00:00'::timestamptz, NULL, NULL) RETURNING \"basket_basket\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 9,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 9,
+      "elapsed": 0.000469583000011653,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13795567072,
+        "value": "<BasketVoucherForm bound=True, valid=True, fields=(code)>",
+        "name": "self",
+        "class": "oscar.apps.basket.forms.BasketVoucherForm"
+      },
+      "id": 11,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.forms.BasketVoucherForm",
+      "method_id": "clean_code",
+      "path": "src/oscar/apps/basket/forms.py",
+      "lineno": 202
+    },
+    {
+      "return_value": {
+        "object_id": 13795481200,
+        "value": "'MYVOUCHER'",
+        "class": "builtins.str"
+      },
+      "parent_id": 11,
+      "elapsed": 9.5367431640625e-7,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13795587024,
+        "value": "<oscar.apps.basket.views.VoucherAddView object at 0x33647f3d0>",
+        "name": "self",
+        "class": "oscar.apps.basket.views.VoucherAddView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13795567072,
+          "value": "<BasketVoucherForm bound=True, valid=True, fields=(code)>",
+          "name": "form",
+          "class": "oscar.apps.basket.forms.BasketVoucherForm"
+        }
+      ],
+      "id": 13,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.views.VoucherAddView",
+      "method_id": "form_valid",
+      "path": "src/oscar/apps/basket/views.py",
+      "lineno": 452
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13795567648,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13795481200,
+          "value": "'MYVOUCHER'",
+          "name": "code",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 14,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "contains_voucher",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 618
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" INNER JOIN \"basket_basket_vouchers\" ON (\"voucher_voucher\".\"id\" = \"basket_basket_vouchers\".\"voucher_id\") WHERE (\"basket_basket_vouchers\".\"basket_id\" = 372 AND \"voucher_voucher\".\"code\" = 'MYVOUCHER') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 15,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 15,
+      "elapsed": 0.0020941250000134914,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341173008,
+        "value": "False",
+        "class": "builtins.bool"
+      },
+      "parent_id": 14,
+      "elapsed": 0.0025777816772460938,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'MYVOUCHER' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 18,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 18,
+      "elapsed": 0.0005390830000067126,
+      "id": 19,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13795587024,
+        "value": "<oscar.apps.basket.views.VoucherAddView object at 0x33647f3d0>",
+        "name": "self",
+        "class": "oscar.apps.basket.views.VoucherAddView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13794665472,
+          "value": "<Voucher: My voucher>",
+          "name": "voucher",
+          "class": "oscar.apps.voucher.models.Voucher"
+        }
+      ],
+      "id": 20,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.views.VoucherAddView",
+      "method_id": "apply_voucher_to_basket",
+      "path": "src/oscar/apps/basket/views.py",
+      "lineno": 406
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13794665472,
+        "value": "<Voucher: My voucher>",
+        "name": "self",
+        "class": "oscar.apps.voucher.models.Voucher"
+      },
+      "id": 21,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.voucher.abstract_models.AbstractVoucher",
+      "method_id": "is_expired",
+      "path": "src/oscar/apps/voucher/abstract_models.py",
+      "lineno": 191
+    },
+    {
+      "return_value": {
+        "object_id": 4341173008,
+        "value": "False",
+        "class": "builtins.bool"
+      },
+      "parent_id": 21,
+      "elapsed": 0.000010013580322265625,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13794665472,
+        "value": "<Voucher: My voucher>",
+        "name": "self",
+        "class": "oscar.apps.voucher.models.Voucher"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "test_datetime",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 23,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.voucher.abstract_models.AbstractVoucher",
+      "method_id": "is_active",
+      "path": "src/oscar/apps/voucher/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 23,
+      "elapsed": 0.0000021457672119140625,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13794665472,
+        "value": "<Voucher: My voucher>",
+        "name": "self",
+        "class": "oscar.apps.voucher.models.Voucher"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "user",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 25,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.voucher.abstract_models.AbstractVoucher",
+      "method_id": "is_available_to_user",
+      "path": "src/oscar/apps/voucher/abstract_models.py",
+      "lineno": 198
+    },
+    {
+      "return_value": {
+        "object_id": 13791044864,
+        "value": "(True, '')",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 25,
+      "elapsed": 0.0000021457672119140625,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"basket_basket_vouchers\" (\"basket_id\", \"voucher_id\") VALUES (372, 3423) ON CONFLICT DO NOTHING",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 27,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 27,
+      "elapsed": 0.000515166999974781,
+      "id": 28,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"voucher_voucher\" SET \"num_basket_additions\" = (\"voucher_voucher\".\"num_basket_additions\" + 1) WHERE \"voucher_voucher\".\"id\" = 3423",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 29,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 29,
+      "elapsed": 0.0004119170000080885,
+      "id": 30,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13795457920,
+        "value": "<oscar.apps.offer.applicator.Applicator object at 0x33645fb80>",
+        "name": "self",
+        "class": "oscar.apps.offer.applicator.Applicator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13795567648,
+          "value": "<Basket: Open basket (owner: None, lines: 0)>",
+          "name": "basket",
+          "class": "oscar.apps.basket.models.Basket"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "user",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "request",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 31,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.applicator.Applicator",
+      "method_id": "apply",
+      "path": "src/oscar/apps/offer/applicator.py",
+      "lineno": 15
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13795457920,
+        "value": "<oscar.apps.offer.applicator.Applicator object at 0x33645fb80>",
+        "name": "self",
+        "class": "oscar.apps.offer.applicator.Applicator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13795567648,
+          "value": "<Basket: Open basket (owner: None, lines: 0)>",
+          "name": "basket",
+          "class": "oscar.apps.basket.models.Basket"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "user",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "request",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 32,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.applicator.Applicator",
+      "method_id": "get_offers",
+      "path": "src/oscar/apps/offer/applicator.py",
+      "lineno": 45
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13795457920,
+        "value": "<oscar.apps.offer.applicator.Applicator object at 0x33645fb80>",
+        "name": "self",
+        "class": "oscar.apps.offer.applicator.Applicator"
+      },
+      "id": 33,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.applicator.Applicator",
+      "method_id": "get_site_offers",
+      "path": "src/oscar/apps/offer/applicator.py",
+      "lineno": 66
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4369736048,
+          "value": "'offer'",
+          "name": "app_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4394532992,
+          "value": "'ConditionalOffer'",
+          "name": "model_name",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 34,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_model",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 225
+    },
+    {
+      "return_value": {
+        "object_id": 5359527600,
+        "value": "<class 'oscar.apps.offer.models.ConditionalOffer'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 34,
+      "elapsed": 0.000007152557373046875,
+      "id": 35,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5060006864,
+        "value": "<oscar.apps.offer.managers.ActiveOfferManager object at 0x12d9993d0>",
+        "name": "self",
+        "class": "oscar.apps.offer.managers.ActiveOfferManager"
+      },
+      "id": 36,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.managers.ActiveOfferManager",
+      "method_id": "get_queryset",
+      "path": "src/oscar/apps/offer/managers.py",
+      "lineno": 12
+    },
+    {
+      "return_value": {
+        "object_id": 13795582256,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 36,
+      "elapsed": 0.0002110004425048828,
+      "id": 37,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13794654288,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 33,
+      "elapsed": 0.0019040107727050781,
+      "id": 38,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13795457920,
+        "value": "<oscar.apps.offer.applicator.Applicator object at 0x33645fb80>",
+        "name": "self",
+        "class": "oscar.apps.offer.applicator.Applicator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13795567648,
+          "value": "<Basket: Open basket (owner: None, lines: 0)>",
+          "name": "basket",
+          "class": "oscar.apps.basket.models.Basket"
+        },
+        {
+          "kind": "req",
+          "object_id": 13795586496,
+          "value": "<django.contrib.auth.models.AnonymousUser object at 0x33647f1c0>",
+          "name": "user",
+          "class": "django.contrib.auth.models.AnonymousUser"
+        }
+      ],
+      "id": 39,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.applicator.Applicator",
+      "method_id": "get_basket_offers",
+      "path": "src/oscar/apps/offer/applicator.py",
+      "lineno": 77
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" INNER JOIN \"basket_basket_vouchers\" ON (\"voucher_voucher\".\"id\" = \"basket_basket_vouchers\".\"voucher_id\") WHERE \"basket_basket_vouchers\".\"basket_id\" = 372 ORDER BY \"voucher_voucher\".\"date_created\" DESC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 40,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 40,
+      "elapsed": 0.0006078330000036658,
+      "id": 41,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13794666816,
+        "value": "<Voucher: My voucher>",
+        "name": "self",
+        "class": "oscar.apps.voucher.models.Voucher"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13795586496,
+          "value": "<django.contrib.auth.models.AnonymousUser object at 0x33647f1c0>",
+          "name": "user",
+          "class": "django.contrib.auth.models.AnonymousUser"
+        }
+      ],
+      "id": 42,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.voucher.abstract_models.AbstractVoucher",
+      "method_id": "is_available_to_user",
+      "path": "src/oscar/apps/voucher/abstract_models.py",
+      "lineno": 198
+    },
+    {
+      "return_value": {
+        "object_id": 13791047808,
+        "value": "(True, '')",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 42,
+      "elapsed": 0.0000030994415283203125,
+      "id": 43,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13794666816,
+        "value": "<Voucher: My voucher>",
+        "name": "self",
+        "class": "oscar.apps.voucher.models.Voucher"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "test_datetime",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 44,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.voucher.abstract_models.AbstractVoucher",
+      "method_id": "is_active",
+      "path": "src/oscar/apps/voucher/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 44,
+      "elapsed": 0.00001621246337890625,
+      "id": 45,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\" FROM \"offer_conditionaloffer\" INNER JOIN \"voucher_voucher_offers\" ON (\"offer_conditionaloffer\".\"id\" = \"voucher_voucher_offers\".\"conditionaloffer_id\") WHERE \"voucher_voucher_offers\".\"voucher_id\" = 3423 ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 46,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 46,
+      "elapsed": 0.0007197920000123759,
+      "id": 47,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13795572160,
+        "value": "[]",
+        "class": "builtins.list",
+        "size": 0
+      },
+      "parent_id": 39,
+      "elapsed": 0.002553701400756836,
+      "id": 48,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13795457920,
+        "value": "<oscar.apps.offer.applicator.Applicator object at 0x33645fb80>",
+        "name": "self",
+        "class": "oscar.apps.offer.applicator.Applicator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13795586496,
+          "value": "<django.contrib.auth.models.AnonymousUser object at 0x33647f1c0>",
+          "name": "user",
+          "class": "django.contrib.auth.models.AnonymousUser"
+        }
+      ],
+      "id": 49,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.applicator.Applicator",
+      "method_id": "get_user_offers",
+      "path": "src/oscar/apps/offer/applicator.py",
+      "lineno": 96
+    },
+    {
+      "return_value": {
+        "object_id": 13794973376,
+        "value": "[]",
+        "class": "builtins.list",
+        "size": 0
+      },
+      "parent_id": 49,
+      "elapsed": 9.5367431640625e-7,
+      "id": 50,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13795457920,
+        "value": "<oscar.apps.offer.applicator.Applicator object at 0x33645fb80>",
+        "name": "self",
+        "class": "oscar.apps.offer.applicator.Applicator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13795586160,
+          "value": "<WSGIRequest: POST '/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 51,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.applicator.Applicator",
+      "method_id": "get_session_offers",
+      "path": "src/oscar/apps/offer/applicator.py",
+      "lineno": 104
+    },
+    {
+      "return_value": {
+        "object_id": 13794639616,
+        "value": "[]",
+        "class": "builtins.list",
+        "size": 0
+      },
+      "parent_id": 51,
+      "elapsed": 0.0000011920928955078125,
+      "id": 52,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\", \"offer_condition\".\"id\", \"offer_condition\".\"range_id\", \"offer_condition\".\"type\", \"offer_condition\".\"value\", \"offer_condition\".\"proxy_class\", \"offer_benefit\".\"id\", \"offer_benefit\".\"range_id\", \"offer_benefit\".\"type\", \"offer_benefit\".\"value\", \"offer_benefit\".\"max_affected_items\", \"offer_benefit\".\"proxy_class\" FROM \"offer_conditionaloffer\" INNER JOIN \"offer_condition\" ON (\"offer_conditionaloffer\".\"condition_id\" = \"offer_condition\".\"id\") INNER JOIN \"offer_benefit\" ON (\"offer_conditionaloffer\".\"benefit_id\" = \"offer_benefit\".\"id\") WHERE ((\"offer_conditionaloffer\".\"end_datetime\" >= '2024-07-22T17:27:55.771898+00:00'::timestamptz OR \"offer_conditionaloffer\".\"end_datetime\" IS NULL) AND (\"offer_conditionaloffer\".\"start_datetime\" <= '2024-07-22T17:27:55.771898+00:00'::timestamptz OR \"offer_conditionaloffer\".\"start_datetime\" IS NULL) AND \"offer_conditionaloffer\".\"status\" = 'Open' AND \"offer_conditionaloffer\".\"offer_type\" = 'Site') ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 53,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 53,
+      "elapsed": 0.0005631669999957012,
+      "id": 54,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13794579392,
+        "value": "[]",
+        "class": "builtins.list",
+        "size": 0
+      },
+      "parent_id": 32,
+      "elapsed": 0.008619070053100586,
+      "id": 55,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13795457920,
+        "value": "<oscar.apps.offer.applicator.Applicator object at 0x33645fb80>",
+        "name": "self",
+        "class": "oscar.apps.offer.applicator.Applicator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13795567648,
+          "value": "<Basket: Open basket (owner: None, lines: 0)>",
+          "name": "basket",
+          "class": "oscar.apps.basket.models.Basket"
+        },
+        {
+          "kind": "req",
+          "object_id": 13794579392,
+          "value": "[]",
+          "name": "offers",
+          "class": "builtins.list",
+          "size": 0
+        }
+      ],
+      "id": 56,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.applicator.Applicator",
+      "method_id": "apply_offers",
+      "path": "src/oscar/apps/offer/applicator.py",
+      "lineno": 25
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 56,
+      "elapsed": 0.0000040531158447265625,
+      "id": 57,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 31,
+      "elapsed": 0.01048898696899414,
+      "id": 58,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "DELETE FROM \"basket_basket_vouchers\" WHERE (\"basket_basket_vouchers\".\"basket_id\" = 372 AND \"basket_basket_vouchers\".\"voucher_id\" IN (3423))",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 59,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 59,
+      "elapsed": 0.0007644999999740776,
+      "id": 60,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 20,
+      "elapsed": 0.013998985290527344,
+      "id": 61,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13795586160,
+          "value": "<WSGIRequest: POST '/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 4401893552,
+          "value": "'basket:summary'",
+          "name": "default",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 62,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "redirect_to_referrer",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 149
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13795586160,
+          "value": "<WSGIRequest: POST '/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 4401893552,
+          "value": "'basket:summary'",
+          "name": "default",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 63,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "safe_referrer",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 13795578928,
+        "value": "'/basket/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 63,
+      "elapsed": 0.00005698204040527344,
+      "id": 64,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13794668160,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/basket/\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 62,
+      "elapsed": 0.0001418590545654297,
+      "id": 65,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13794668160,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/basket/\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 13,
+      "elapsed": 0.01904892921447754,
+      "id": 66,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"id\" = 3423 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 67,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 67,
+      "elapsed": 0.0025479999999902248,
+      "id": 68,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Voucher add view",
+    "recording": {
+      "defined_class": "tests.integration.basket.test_views.TestVoucherAddView",
+      "method_id": "test_post_valid"
+    },
+    "source_location": "tests/integration/basket/test_views.py:32",
+    "name": "Voucher add view post valid",
+    "feature": "Post valid",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "voucher",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractVoucher",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/voucher/abstract_models.py:180"
+                        },
+                        {
+                          "name": "is_active",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/voucher/abstract_models.py:184"
+                        },
+                        {
+                          "name": "is_expired",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/voucher/abstract_models.py:191"
+                        },
+                        {
+                          "name": "is_available_to_user",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/voucher/abstract_models.py:198"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "partner",
+              "type": "package",
+              "children": [
+                {
+                  "name": "strategy",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Selector",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "strategy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/strategy.py:37"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "basket",
+              "type": "package",
+              "children": [
+                {
+                  "name": "forms",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "BasketVoucherForm",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "clean_code",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/forms.py:202"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "views",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "VoucherAddView",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "form_valid",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/views.py:452"
+                        },
+                        {
+                          "name": "apply_voucher_to_basket",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/views.py:406"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractBasket",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "contains_voucher",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/abstract_models.py:618"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "offer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "applicator",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Applicator",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "apply",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/applicator.py:15"
+                        },
+                        {
+                          "name": "get_offers",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/applicator.py:45"
+                        },
+                        {
+                          "name": "get_site_offers",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/applicator.py:66"
+                        },
+                        {
+                          "name": "get_basket_offers",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/applicator.py:77"
+                        },
+                        {
+                          "name": "get_user_offers",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/applicator.py:96"
+                        },
+                        {
+                          "name": "get_session_offers",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/applicator.py:104"
+                        },
+                        {
+                          "name": "apply_offers",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/applicator.py:25"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "managers",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "ActiveOfferManager",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get_queryset",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/managers.py:12"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "loading",
+              "type": "class",
+              "children": [
+                {
+                  "name": "get_model",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:225"
+                }
+              ]
+            },
+            {
+              "name": "utils",
+              "type": "class",
+              "children": [
+                {
+                  "name": "redirect_to_referrer",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:149"
+                },
+                {
+                  "name": "safe_referrer",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:130"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('My voucher', 'MYVOUCHER', 'Multi-use', '2024-07-21T17:25:18.456636+00:00'::timestamptz, '2024-08-01T17:25:18.456799+00:00'::timestamptz, 0, 0, 0.00, NULL, '2024-07-22T17:27:55.761224+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Open', '2024-07-22T17:27:55.762529+00:00'::timestamptz, NULL, NULL) RETURNING \"basket_basket\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" INNER JOIN \"basket_basket_vouchers\" ON (\"voucher_voucher\".\"id\" = \"basket_basket_vouchers\".\"voucher_id\") WHERE (\"basket_basket_vouchers\".\"basket_id\" = 372 AND \"voucher_voucher\".\"code\" = 'MYVOUCHER') LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'MYVOUCHER' LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"basket_basket_vouchers\" (\"basket_id\", \"voucher_id\") VALUES (372, 3423) ON CONFLICT DO NOTHING"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"voucher_voucher\" SET \"num_basket_additions\" = (\"voucher_voucher\".\"num_basket_additions\" + 1) WHERE \"voucher_voucher\".\"id\" = 3423"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" INNER JOIN \"basket_basket_vouchers\" ON (\"voucher_voucher\".\"id\" = \"basket_basket_vouchers\".\"voucher_id\") WHERE \"basket_basket_vouchers\".\"basket_id\" = 372 ORDER BY \"voucher_voucher\".\"date_created\" DESC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\" FROM \"offer_conditionaloffer\" INNER JOIN \"voucher_voucher_offers\" ON (\"offer_conditionaloffer\".\"id\" = \"voucher_voucher_offers\".\"conditionaloffer_id\") WHERE \"voucher_voucher_offers\".\"voucher_id\" = 3423 ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\", \"offer_condition\".\"id\", \"offer_condition\".\"range_id\", \"offer_condition\".\"type\", \"offer_condition\".\"value\", \"offer_condition\".\"proxy_class\", \"offer_benefit\".\"id\", \"offer_benefit\".\"range_id\", \"offer_benefit\".\"type\", \"offer_benefit\".\"value\", \"offer_benefit\".\"max_affected_items\", \"offer_benefit\".\"proxy_class\" FROM \"offer_conditionaloffer\" INNER JOIN \"offer_condition\" ON (\"offer_conditionaloffer\".\"condition_id\" = \"offer_condition\".\"id\") INNER JOIN \"offer_benefit\" ON (\"offer_conditionaloffer\".\"benefit_id\" = \"offer_benefit\".\"id\") WHERE ((\"offer_conditionaloffer\".\"end_datetime\" >= '2024-07-22T17:27:55.771898+00:00'::timestamptz OR \"offer_conditionaloffer\".\"end_datetime\" IS NULL) AND (\"offer_conditionaloffer\".\"start_datetime\" <= '2024-07-22T17:27:55.771898+00:00'::timestamptz OR \"offer_conditionaloffer\".\"start_datetime\" IS NULL) AND \"offer_conditionaloffer\".\"status\" = 'Open' AND \"offer_conditionaloffer\".\"offer_type\" = 'Site') ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "DELETE FROM \"basket_basket_vouchers\" WHERE (\"basket_basket_vouchers\".\"basket_id\" = 372 AND \"basket_basket_vouchers\".\"voucher_id\" IN (3423))"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"id\" = 3423 LIMIT 21"
+        }
+      ]
+    }
+  ]
+}

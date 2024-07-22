@@ -1,0 +1,82 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "catalogue",
+            "type": "package",
+            "children": [
+              {
+                "name": "managers",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "ProductQuerySet",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "filter_by_attributes",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/managers.py:74"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "AttributeFilter",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "field_names",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/managers.py:29"
+                      },
+                      {
+                        "name": "fast_query",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/managers.py:51"
+                      },
+                      {
+                        "name": "_select_value",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/managers.py:38"
+                      },
+                      {
+                        "name": "_selector",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/managers.py:32"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\" FROM \"catalogue_productattribute\" WHERE \"catalogue_productattribute\".\"code\" IN ('additional_info') ORDER BY \"catalogue_productattribute\".\"code\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_productattributevalue\" ON (\"catalogue_product\".\"id\" = \"catalogue_productattributevalue\".\"product_id\") INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE (\"catalogue_productattributevalue\".\"value_richtext\" = '<p style=\"margin: 0px; font-stretch: normal; font-size: 12px; line-height: normal; font-family: Helvetica;\">Vivamus auctor leo vel dui. Aliquam erat volutpat. Phasellus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras tempor. Morbi egestas, <em>urna</em> non consequat tempus, <strong>nunc</strong> arcu mollis enim, eu aliquam erat nulla non nibh. Duis consectetuer malesuada velit. Nam ante nulla, interdum vel, tristique ac, condimentum non, tellus. Proin ornare feugiat nisl. Suspendisse dolor nisl, ultrices at, eleifend vel, consequat at, dolor.</p>' AND \"catalogue_productattribute\".\"code\" = 'additional_info') LIMIT 1"
+      }
+    ]
+  }
+]

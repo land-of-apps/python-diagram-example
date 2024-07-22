@@ -1,0 +1,697 @@
+{
+  "events": [
+    {
+      "sql_query": {
+        "sql": "SELECT \"address_country\".\"iso_3166_1_a2\", \"address_country\".\"iso_3166_1_a3\", \"address_country\".\"iso_3166_1_numeric\", \"address_country\".\"printable_name\", \"address_country\".\"name\", \"address_country\".\"display_order\", \"address_country\".\"is_shipping_country\" FROM \"address_country\" WHERE \"address_country\".\"iso_3166_1_a2\" = 'DE' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.0004317920000005415,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SAVEPOINT \"s8669432832_x2767\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 3,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 3,
+      "elapsed": 0.00031258399999956055,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"address_country\" (\"iso_3166_1_a2\", \"iso_3166_1_a3\", \"iso_3166_1_numeric\", \"printable_name\", \"name\", \"display_order\", \"is_shipping_country\") VALUES ('DE', '', '', 'UNITED KINGDOM', '', 0, true)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.0003722090000053413,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "RELEASE SAVEPOINT \"s8669432832_x2767\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 7,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 7,
+      "elapsed": 0.0003332080000006954,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396051520,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4331234032,
+          "value": "''",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 9,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 4331234032,
+        "value": "''",
+        "class": "builtins.str"
+      },
+      "parent_id": 9,
+      "elapsed": 0.0000030994415283203125,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818884880,
+        "value": "<ShippingAddressForm bound=True, valid=Unknown, fields=(first_name;last_name;line1;line2;line3;line4;state;postcode;country;phone_number;notes)>",
+        "name": "self",
+        "class": "oscar.apps.checkout.forms.ShippingAddressForm"
+      },
+      "id": 11,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.forms.ShippingAddressForm",
+      "method_id": "adjust_country_field",
+      "path": "src/oscar/apps/checkout/forms.py",
+      "lineno": 20
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"address_country\".\"iso_3166_1_a2\", \"address_country\".\"iso_3166_1_a3\", \"address_country\".\"iso_3166_1_numeric\", \"address_country\".\"printable_name\", \"address_country\".\"name\", \"address_country\".\"display_order\", \"address_country\".\"is_shipping_country\" FROM \"address_country\" WHERE \"address_country\".\"is_shipping_country\" ORDER BY \"address_country\".\"display_order\" DESC, \"address_country\".\"printable_name\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 12,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 12,
+      "elapsed": 0.0006634580000195456,
+      "id": 13,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 11,
+      "elapsed": 0.001077890396118164,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818884880,
+        "value": "<ShippingAddressForm bound=True, valid=False, fields=(first_name;last_name;line1;line2;line3;line4;state;postcode;country;phone_number;notes)>",
+        "name": "self",
+        "class": "oscar.apps.checkout.forms.ShippingAddressForm"
+      },
+      "id": 15,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.forms.mixins.PhoneNumberMixin",
+      "method_id": "clean",
+      "path": "src/oscar/forms/mixins.py",
+      "lineno": 106
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818884880,
+        "value": "<ShippingAddressForm bound=True, valid=False, fields=(first_name;last_name;line1;line2;line3;line4;state;postcode;country;phone_number;notes)>",
+        "name": "self",
+        "class": "oscar.apps.checkout.forms.ShippingAddressForm"
+      },
+      "id": 16,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.forms.mixins.PhoneNumberMixin",
+      "method_id": "set_country_and_region_code",
+      "path": "src/oscar/forms/mixins.py",
+      "lineno": 60
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818884880,
+        "value": "<ShippingAddressForm bound=True, valid=False, fields=(first_name;last_name;line1;line2;line3;line4;state;postcode;country;phone_number;notes)>",
+        "name": "self",
+        "class": "oscar.apps.checkout.forms.ShippingAddressForm"
+      },
+      "id": 17,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.forms.mixins.PhoneNumberMixin",
+      "method_id": "get_country",
+      "path": "src/oscar/forms/mixins.py",
+      "lineno": 51
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 17,
+      "elapsed": 0.0000011920928955078125,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 16,
+      "elapsed": 0.00005507469177246094,
+      "id": 19,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818884880,
+        "value": "<ShippingAddressForm bound=True, valid=False, fields=(first_name;last_name;line1;line2;line3;line4;state;postcode;country;phone_number;notes)>",
+        "name": "self",
+        "class": "oscar.apps.checkout.forms.ShippingAddressForm"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4375292016,
+          "value": "'phone_number'",
+          "name": "field_name",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 20,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.forms.mixins.PhoneNumberMixin",
+      "method_id": "clean_phone_number_field",
+      "path": "src/oscar/forms/mixins.py",
+      "lineno": 66
+    },
+    {
+      "return_value": {
+        "object_id": 4417037808,
+        "value": "'07 914721389'",
+        "class": "builtins.str"
+      },
+      "parent_id": 20,
+      "elapsed": 0.000055789947509765625,
+      "id": 21,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13818901632,
+        "value": "{'first_name': 'Bärry', 'last_name': 'Chuckle', 'line1': '1 King St', 'line2': '', 'line3': '', 'line4': 'Gothám', 'state': '', 'postcode': 'N1 7RR', 'notes': '', 'phone_number': '07 914721389'}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "first_name",
+            "class": "builtins.str"
+          },
+          {
+            "name": "last_name",
+            "class": "builtins.str"
+          },
+          {
+            "name": "line1",
+            "class": "builtins.str"
+          },
+          {
+            "name": "line2",
+            "class": "builtins.str"
+          },
+          {
+            "name": "line3",
+            "class": "builtins.str"
+          },
+          {
+            "name": "line4",
+            "class": "builtins.str"
+          },
+          {
+            "name": "state",
+            "class": "builtins.str"
+          },
+          {
+            "name": "postcode",
+            "class": "builtins.str"
+          },
+          {
+            "name": "notes",
+            "class": "builtins.str"
+          },
+          {
+            "name": "phone_number",
+            "class": "builtins.str"
+          }
+        ],
+        "size": 10
+      },
+      "parent_id": 15,
+      "elapsed": 0.0003941059112548828,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396051520,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4417037616,
+          "value": "'N1 7RR'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 23,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 13818946800,
+        "value": "'N1 7RR'",
+        "class": "builtins.str"
+      },
+      "parent_id": 23,
+      "elapsed": 0.0000021457672119140625,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396051520,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13818946800,
+          "value": "'N1 7RR'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 25,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 13818947248,
+        "value": "'N1 7RR'",
+        "class": "builtins.str"
+      },
+      "parent_id": 25,
+      "elapsed": 7.152557373046875e-7,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396051520,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13818947248,
+          "value": "'N1 7RR'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 27,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 13818947696,
+        "value": "'N1 7RR'",
+        "class": "builtins.str"
+      },
+      "parent_id": 27,
+      "elapsed": 9.5367431640625e-7,
+      "id": 28,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818885408,
+        "value": "<ShippingAddress: Bärry Chuckle, 1 King St, Gothám, N1 7RR>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "id": 29,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "clean",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 281
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818885408,
+        "value": "<ShippingAddress: Bärry Chuckle, 1 King St, Gothám, N1 7RR>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "id": 30,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "ensure_postcode_is_valid_for_country",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 299
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 30,
+      "elapsed": 9.5367431640625e-7,
+      "id": 31,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 29,
+      "elapsed": 0.0001621246337890625,
+      "id": 32,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Shipping address form",
+    "recording": {
+      "defined_class": "tests.integration.checkout.test_forms.TestShippingAddressForm",
+      "method_id": "test_local_phone_number_invalid_without_country"
+    },
+    "source_location": "tests/integration/checkout/test_forms.py:145",
+    "name": "Shipping address form local phone number invalid without country",
+    "feature": "Local phone number invalid without country",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "models",
+          "type": "package",
+          "children": [
+            {
+              "name": "fields",
+              "type": "package",
+              "children": [
+                {
+                  "name": "UppercaseCharField",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "to_python",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/models/fields/__init__.py:86"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "checkout",
+              "type": "package",
+              "children": [
+                {
+                  "name": "forms",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "ShippingAddressForm",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "adjust_country_field",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/checkout/forms.py:20"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "address",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractAddress",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "clean",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/address/abstract_models.py:281"
+                        },
+                        {
+                          "name": "ensure_postcode_is_valid_for_country",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/address/abstract_models.py:299"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "forms",
+          "type": "package",
+          "children": [
+            {
+              "name": "mixins",
+              "type": "package",
+              "children": [
+                {
+                  "name": "PhoneNumberMixin",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "clean",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/forms/mixins.py:106"
+                    },
+                    {
+                      "name": "set_country_and_region_code",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/forms/mixins.py:60"
+                    },
+                    {
+                      "name": "get_country",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/forms/mixins.py:51"
+                    },
+                    {
+                      "name": "clean_phone_number_field",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/forms/mixins.py:66"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"address_country\".\"iso_3166_1_a2\", \"address_country\".\"iso_3166_1_a3\", \"address_country\".\"iso_3166_1_numeric\", \"address_country\".\"printable_name\", \"address_country\".\"name\", \"address_country\".\"display_order\", \"address_country\".\"is_shipping_country\" FROM \"address_country\" WHERE \"address_country\".\"iso_3166_1_a2\" = 'DE' LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SAVEPOINT \"s8669432832_x2767\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"address_country\" (\"iso_3166_1_a2\", \"iso_3166_1_a3\", \"iso_3166_1_numeric\", \"printable_name\", \"name\", \"display_order\", \"is_shipping_country\") VALUES ('DE', '', '', 'UNITED KINGDOM', '', 0, true)"
+        },
+        {
+          "type": "query",
+          "name": "RELEASE SAVEPOINT \"s8669432832_x2767\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"address_country\".\"iso_3166_1_a2\", \"address_country\".\"iso_3166_1_a3\", \"address_country\".\"iso_3166_1_numeric\", \"address_country\".\"printable_name\", \"address_country\".\"name\", \"address_country\".\"display_order\", \"address_country\".\"is_shipping_country\" FROM \"address_country\" WHERE \"address_country\".\"is_shipping_country\" ORDER BY \"address_country\".\"display_order\" DESC, \"address_country\".\"printable_name\" ASC"
+        }
+      ]
+    }
+  ]
+}

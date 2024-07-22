@@ -1,0 +1,112 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "order",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "ShippingEventQuantity",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/abstract_models.py:1137"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "AbstractLine",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "is_shipping_event_permitted",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/abstract_models.py:753"
+                      },
+                      {
+                        "name": "shipping_event_quantity",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/abstract_models.py:766"
+                      },
+                      {
+                        "name": "get_event_quantity",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/abstract_models.py:787"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"order_shippingevent\" (\"order_id\", \"event_type_id\", \"notes\", \"date_created\") VALUES (168, 35, '', '2024-07-22T17:28:42.172588+00:00'::timestamptz) RETURNING \"order_shippingevent\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT SUM(\"order_shippingeventquantity\".\"quantity\") AS \"quantity__sum\" FROM \"order_shippingeventquantity\" INNER JOIN \"order_shippingevent\" ON (\"order_shippingeventquantity\".\"event_id\" = \"order_shippingevent\".\"id\") WHERE (\"order_shippingeventquantity\".\"line_id\" = 170 AND \"order_shippingevent\".\"event_type_id\" = 35)"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"order_shippingeventquantity\" (\"event_id\", \"line_id\", \"quantity\") VALUES (12, 170, 3) RETURNING \"order_shippingeventquantity\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"order_shippingevent\" (\"order_id\", \"event_type_id\", \"notes\", \"date_created\") VALUES (168, 36, '', '2024-07-22T17:28:42.180076+00:00'::timestamptz) RETURNING \"order_shippingevent\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT SUM(\"order_shippingeventquantity\".\"quantity\") AS \"quantity__sum\" FROM \"order_shippingeventquantity\" INNER JOIN \"order_shippingevent\" ON (\"order_shippingeventquantity\".\"event_id\" = \"order_shippingevent\".\"id\") WHERE (\"order_shippingeventquantity\".\"line_id\" = 170 AND \"order_shippingevent\".\"event_type_id\" = 36)"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"order_shippingeventquantity\" (\"event_id\", \"line_id\", \"quantity\") VALUES (13, 170, 1) RETURNING \"order_shippingeventquantity\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"order_shippingevent\".\"id\", \"order_shippingevent\".\"order_id\", \"order_shippingevent\".\"event_type_id\", \"order_shippingevent\".\"notes\", \"order_shippingevent\".\"date_created\" FROM \"order_shippingevent\" INNER JOIN \"order_shippingeventquantity\" ON (\"order_shippingevent\".\"id\" = \"order_shippingeventquantity\".\"event_id\") WHERE \"order_shippingeventquantity\".\"line_id\" = 170 ORDER BY \"order_shippingevent\".\"date_created\" DESC"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"order_shippingeventtype\".\"id\", \"order_shippingeventtype\".\"name\", \"order_shippingeventtype\".\"code\" FROM \"order_shippingeventtype\" WHERE \"order_shippingeventtype\".\"id\" = 36 LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"order_shippingeventquantity\".\"id\", \"order_shippingeventquantity\".\"event_id\", \"order_shippingeventquantity\".\"line_id\", \"order_shippingeventquantity\".\"quantity\" FROM \"order_shippingeventquantity\" WHERE (\"order_shippingeventquantity\".\"event_id\" = 13 AND \"order_shippingeventquantity\".\"line_id\" = 170) LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"order_shippingeventtype\".\"id\", \"order_shippingeventtype\".\"name\", \"order_shippingeventtype\".\"code\" FROM \"order_shippingeventtype\" WHERE \"order_shippingeventtype\".\"id\" = 35 LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"order_shippingeventquantity\".\"id\", \"order_shippingeventquantity\".\"event_id\", \"order_shippingeventquantity\".\"line_id\", \"order_shippingeventquantity\".\"quantity\" FROM \"order_shippingeventquantity\" WHERE (\"order_shippingeventquantity\".\"event_id\" = 12 AND \"order_shippingeventquantity\".\"line_id\" = 170) LIMIT 21"
+      }
+    ]
+  }
+]

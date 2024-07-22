@@ -1,0 +1,183 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14014369600,
+        "value": "<Line: Product 'Dùｍϻϒ title', quantity '1'>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Line"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4332164592,
+          "value": "'C'",
+          "name": "new_status",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractLine",
+      "method_id": "set_status",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 656
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14014369600,
+        "value": "<Line: Product 'Dùｍϻϒ title', quantity '1'>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Line"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractLine",
+      "method_id": "available_statuses",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 650
+    },
+    {
+      "return_value": {
+        "object_id": 4420291328,
+        "value": "('B', 'C')",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 2,
+      "elapsed": 0.0000021457672119140625,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"order_line\" SET \"order_id\" = 175, \"partner_id\" = 675, \"partner_name\" = '', \"partner_sku\" = 'sku_1082_8820', \"partner_line_reference\" = '', \"partner_line_notes\" = '', \"stockrecord_id\" = 767, \"product_id\" = 1082, \"title\" = 'Dùｍϻϒ title', \"upc\" = '', \"quantity\" = 1, \"line_price_incl_tax\" = 10.00, \"line_price_excl_tax\" = 10.00, \"line_price_before_discounts_incl_tax\" = 10.00, \"line_price_before_discounts_excl_tax\" = 10.00, \"unit_price_incl_tax\" = 10.00, \"unit_price_excl_tax\" = 10.00, \"tax_code\" = NULL, \"status\" = 'C' WHERE \"order_line\".\"id\" = 177",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 4,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 4,
+      "elapsed": 0.0005998329999954422,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 1,
+      "elapsed": 0.001032114028930664,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Line status tests",
+    "recording": {
+      "defined_class": "tests.integration.order.test_models.LineStatusTests",
+      "method_id": "test_set_status_changes_status"
+    },
+    "source_location": "tests/integration/order/test_models.py:266",
+    "name": "Line status tests set status changes status",
+    "feature": "Set status changes status",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "order",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractLine",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "set_status",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:656"
+                        },
+                        {
+                          "name": "available_statuses",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:650"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "UPDATE \"order_line\" SET \"order_id\" = 175, \"partner_id\" = 675, \"partner_name\" = '', \"partner_sku\" = 'sku_1082_8820', \"partner_line_reference\" = '', \"partner_line_notes\" = '', \"stockrecord_id\" = 767, \"product_id\" = 1082, \"title\" = 'Dùｍϻϒ title', \"upc\" = '', \"quantity\" = 1, \"line_price_incl_tax\" = 10.00, \"line_price_excl_tax\" = 10.00, \"line_price_before_discounts_incl_tax\" = 10.00, \"line_price_before_discounts_excl_tax\" = 10.00, \"unit_price_incl_tax\" = 10.00, \"unit_price_excl_tax\" = 10.00, \"tax_code\" = NULL, \"status\" = 'C' WHERE \"order_line\".\"id\" = 177"
+        }
+      ]
+    }
+  ]
+}

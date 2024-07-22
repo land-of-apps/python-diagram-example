@@ -1,0 +1,26 @@
+[
+  {
+    "caller": "django/contrib",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('md5$mclFT74yUzITy6fDSVKYFK$e4951924fb645e5faa5ffc7cff5bd8bf', NULL, false, 'person@example.com', '', '', false, true, '2024-07-22T17:27:48.893801+00:00'::timestamptz, 'user1', '') RETURNING \"myauth_user\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE UPPER(\"myauth_user\".\"email\"::text) = UPPER('Person@example.com')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE UPPER(\"myauth_user\".\"email\"::text) = UPPER('person@example.com')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"customer_productalert\" SET \"user_id\" = 583, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'person@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "django/contrib"
+  }
+]

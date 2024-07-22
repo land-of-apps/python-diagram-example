@@ -1,0 +1,1624 @@
+{
+  "events": [
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Open', '2024-07-22T17:28:44.082097+00:00'::timestamptz, NULL, NULL) RETURNING \"basket_basket\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.0004997919999993883,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14018346288,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x3438efd30>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "request",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "user",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14018305344,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "return_value": {
+        "object_id": 14018346720,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x3438efee0>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 3,
+      "elapsed": 0.0000021457672119140625,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"basket_basket\" SET \"owner_id\" = NULL, \"status\" = 'Open', \"date_created\" = '2024-07-22T17:28:44.082097+00:00'::timestamptz, \"date_merged\" = NULL, \"date_submitted\" = NULL WHERE \"basket_basket\".\"id\" = 603",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.0003350419999890164,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4395225248,
+          "value": "Decimal('4.95')",
+          "name": "price",
+          "class": "decimal.Decimal"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341392584,
+          "value": "21",
+          "name": "tax_percentage",
+          "class": "builtins.int"
+        }
+      ],
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.test.factories.utils",
+      "method_id": "tax_subtract",
+      "path": "src/oscar/test/factories/utils.py",
+      "lineno": 5
+    },
+    {
+      "return_value": {
+        "object_id": 14018229616,
+        "value": "Decimal('4.09')",
+        "class": "decimal.Decimal"
+      },
+      "parent_id": 7,
+      "elapsed": 0.0000069141387939453125,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14018346576,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394199344,
+          "value": "'line_price_incl_tax_incl_discounts'",
+          "name": "model_property",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 9,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "_get_total",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 435
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14018346576,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "id": 10,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "all_lines",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 14018344944,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 10,
+      "elapsed": 9.5367431640625e-7,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\", \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\", \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"basket_line\" INNER JOIN \"catalogue_product\" ON (\"basket_line\".\"product_id\" = \"catalogue_product\".\"id\") INNER JOIN \"partner_stockrecord\" ON (\"basket_line\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE \"basket_line\".\"basket_id\" = 603 ORDER BY \"basket_line\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 12,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 12,
+      "elapsed": 0.0007657079999887628,
+      "id": 13,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14018231072,
+        "value": "Decimal('0.00')",
+        "class": "decimal.Decimal"
+      },
+      "parent_id": 9,
+      "elapsed": 0.003612041473388672,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14018346576,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394199248,
+          "value": "'line_price_excl_tax_incl_discounts'",
+          "name": "model_property",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 15,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "_get_total",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 435
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14018346576,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "id": 16,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "all_lines",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 14018344944,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 16,
+      "elapsed": 0,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14018402768,
+        "value": "Decimal('0.00')",
+        "class": "decimal.Decimal"
+      },
+      "parent_id": 15,
+      "elapsed": 0.0000782012939453125,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"address_country\".\"iso_3166_1_a2\", \"address_country\".\"iso_3166_1_a3\", \"address_country\".\"iso_3166_1_numeric\", \"address_country\".\"printable_name\", \"address_country\".\"name\", \"address_country\".\"display_order\", \"address_country\".\"is_shipping_country\" FROM \"address_country\" WHERE \"address_country\".\"iso_3166_1_a2\" = 'GB' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 19,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 19,
+      "elapsed": 0.0005609999999762749,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SAVEPOINT \"s8669432832_x4124\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 21,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 21,
+      "elapsed": 0.00046224999999822103,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"address_country\" (\"iso_3166_1_a2\", \"iso_3166_1_a3\", \"iso_3166_1_numeric\", \"printable_name\", \"name\", \"display_order\", \"is_shipping_country\") VALUES ('GB', '', '', 'UNITED KINGDOM', '', 0, false)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 23,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 23,
+      "elapsed": 0.00043704199998728654,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "RELEASE SAVEPOINT \"s8669432832_x4124\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 25,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 25,
+      "elapsed": 0.00036758300001338284,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396075184,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4395232752,
+          "value": "'1000AA'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 27,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 14018316528,
+        "value": "'1000AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 27,
+      "elapsed": 0.0000021457672119140625,
+      "id": 28,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14018364464,
+        "value": "<BillingAddress: John Doe, Streetname, 1a, City, 1000AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.BillingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14018369280,
+          "value": "{'force_insert': True, 'using': 'default'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "force_insert",
+              "class": "builtins.bool"
+            },
+            {
+              "name": "using",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 29,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "save",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 277
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14018364464,
+        "value": "<BillingAddress: John Doe, Streetname, 1a, City, 1000AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.BillingAddress"
+      },
+      "id": 30,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "_update_search_text",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 326
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14018364464,
+        "value": "<BillingAddress: John Doe, Streetname, 1a, City, 1000AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.BillingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4392672384,
+          "value": "['first_name', 'last_name', 'line1', 'line2', 'line3', 'line4', 'state', 'postcode', 'country']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 9
+        },
+        {
+          "kind": "opt",
+          "object_id": 4332562672,
+          "value": "' '",
+          "name": "separator",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 31,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "join_fields",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 395
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14018364464,
+        "value": "<BillingAddress: John Doe, Streetname, 1a, City, 1000AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.BillingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4392672384,
+          "value": "['first_name', 'last_name', 'line1', 'line2', 'line3', 'line4', 'state', 'postcode', 'country']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 9
+        }
+      ],
+      "id": 32,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "get_field_values",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 359
+    },
+    {
+      "return_value": {
+        "object_id": 14018294080,
+        "value": "['John', 'Doe', 'Streetname', '1a', '', 'City', '', '1000AA', 'UNITED KINGDOM']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 9
+      },
+      "parent_id": 32,
+      "elapsed": 0.0000016689300537109375,
+      "id": 33,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14017370016,
+        "value": "'John Doe Streetname 1a City 1000AA UNITED KINGDOM'",
+        "class": "builtins.str"
+      },
+      "parent_id": 31,
+      "elapsed": 0.0001659393310546875,
+      "id": 34,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 30,
+      "elapsed": 0.00045990943908691406,
+      "id": 35,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396075184,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14018316528,
+          "value": "'1000AA'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 36,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 14017903600,
+        "value": "'1000AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 36,
+      "elapsed": 9.5367431640625e-7,
+      "id": 37,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"order_billingaddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\") VALUES ('', 'John', 'Doe', 'Streetname', '1a', '', 'City', '', '1000AA', 'GB', 'John Doe Streetname 1a City 1000AA UNITED KINGDOM') RETURNING \"order_billingaddress\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 38,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 38,
+      "elapsed": 0.0008340830000008737,
+      "id": 39,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 29,
+      "elapsed": 0.0016529560089111328,
+      "id": 40,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"address_country\".\"iso_3166_1_a2\", \"address_country\".\"iso_3166_1_a3\", \"address_country\".\"iso_3166_1_numeric\", \"address_country\".\"printable_name\", \"address_country\".\"name\", \"address_country\".\"display_order\", \"address_country\".\"is_shipping_country\" FROM \"address_country\" WHERE \"address_country\".\"iso_3166_1_a2\" = 'GB' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 41,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 41,
+      "elapsed": 0.0005124590000207263,
+      "id": 42,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396051520,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4395230448,
+          "value": "'1000 AA'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 43,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 14017577904,
+        "value": "'1000 AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 43,
+      "elapsed": 0.0000011920928955078125,
+      "id": 44,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14018283456,
+        "value": "<ShippingAddress: John Doe, Streetname, 1a, City, 1000 AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14017903104,
+          "value": "{'force_insert': True, 'using': 'default'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "force_insert",
+              "class": "builtins.bool"
+            },
+            {
+              "name": "using",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 45,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "save",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 277
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14018283456,
+        "value": "<ShippingAddress: John Doe, Streetname, 1a, City, 1000 AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "id": 46,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "_update_search_text",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 326
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14018283456,
+        "value": "<ShippingAddress: John Doe, Streetname, 1a, City, 1000 AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4392672384,
+          "value": "['first_name', 'last_name', 'line1', 'line2', 'line3', 'line4', 'state', 'postcode', 'country']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 9
+        },
+        {
+          "kind": "opt",
+          "object_id": 4332562672,
+          "value": "' '",
+          "name": "separator",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 47,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "join_fields",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 395
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14018283456,
+        "value": "<ShippingAddress: John Doe, Streetname, 1a, City, 1000 AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4392672384,
+          "value": "['first_name', 'last_name', 'line1', 'line2', 'line3', 'line4', 'state', 'postcode', 'country']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 9
+        }
+      ],
+      "id": 48,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "get_field_values",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 359
+    },
+    {
+      "return_value": {
+        "object_id": 14018268416,
+        "value": "['John', 'Doe', 'Streetname', '1a', '', 'City', '', '1000 AA', 'UNITED KINGDOM']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 9
+      },
+      "parent_id": 48,
+      "elapsed": 0.00000286102294921875,
+      "id": 49,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14017378320,
+        "value": "'John Doe Streetname 1a City 1000 AA UNITED KINGDOM'",
+        "class": "builtins.str"
+      },
+      "parent_id": 47,
+      "elapsed": 0.00016188621520996094,
+      "id": 50,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 46,
+      "elapsed": 0.0003159046173095703,
+      "id": 51,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396051520,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14017577904,
+          "value": "'1000 AA'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 52,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 14017576176,
+        "value": "'1000 AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 52,
+      "elapsed": 7.152557373046875e-7,
+      "id": 53,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"order_shippingaddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\", \"phone_number\", \"notes\") VALUES ('', 'John', 'Doe', 'Streetname', '1a', '', 'City', '', '1000 AA', 'GB', 'John Doe Streetname 1a City 1000 AA UNITED KINGDOM', '+12125555555', '') RETURNING \"order_shippingaddress\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 54,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 54,
+      "elapsed": 0.0004613339999934851,
+      "id": 55,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 45,
+      "elapsed": 0.0011379718780517578,
+      "id": 56,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "id": 57,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "get_default_currency",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 159
+    },
+    {
+      "return_value": {
+        "object_id": 4369856816,
+        "value": "'GBP'",
+        "class": "builtins.str"
+      },
+      "parent_id": 57,
+      "elapsed": 0.0000050067901611328125,
+      "id": 58,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14017820560,
+        "value": "<Order: #111000>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Order"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14017904320,
+          "value": "{'force_insert': True, 'using': 'default'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "force_insert",
+              "class": "builtins.bool"
+            },
+            {
+              "name": "using",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 59,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractOrder",
+      "method_id": "save",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 382
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14017820560,
+        "value": "<Order: #111000>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Order"
+      },
+      "id": 60,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractOrder",
+      "method_id": "set_date_placed_default",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 378
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 60,
+      "elapsed": 0.000008106231689453125,
+      "id": 61,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"order_order\" (\"number\", \"site_id\", \"basket_id\", \"user_id\", \"billing_address_id\", \"currency\", \"total_incl_tax\", \"total_excl_tax\", \"shipping_incl_tax\", \"shipping_excl_tax\", \"shipping_tax_code\", \"shipping_address_id\", \"shipping_method\", \"shipping_code\", \"status\", \"guest_email\", \"date_placed\") VALUES ('111000', 1, 603, NULL, 6, 'GBP', 0.00, 0.00, 4.95, 4.09, NULL, 22, '', 'delivery', 'A', 'j.doe@example.com', '2024-07-22T17:28:44.095223+00:00'::timestamptz) RETURNING \"order_order\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 62,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 62,
+      "elapsed": 0.00048820800000726194,
+      "id": 63,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 59,
+      "elapsed": 0.0007481575012207031,
+      "id": 64,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14017820560,
+        "value": "<Order: #111000>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Order"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14017614912,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 65,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractOrder",
+      "method_id": "save",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 382
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14017820560,
+        "value": "<Order: #111000>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Order"
+      },
+      "id": 66,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractOrder",
+      "method_id": "set_date_placed_default",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 378
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 66,
+      "elapsed": 9.5367431640625e-7,
+      "id": 67,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"order_order\" SET \"number\" = '111000', \"site_id\" = 1, \"basket_id\" = 603, \"user_id\" = NULL, \"billing_address_id\" = 6, \"currency\" = 'GBP', \"total_incl_tax\" = 0.00, \"total_excl_tax\" = 0.00, \"shipping_incl_tax\" = 4.95, \"shipping_excl_tax\" = 4.09, \"shipping_tax_code\" = NULL, \"shipping_address_id\" = 22, \"shipping_method\" = '', \"shipping_code\" = 'delivery', \"status\" = 'A', \"guest_email\" = 'j.doe@example.com', \"date_placed\" = '2024-07-22T17:28:44.095223+00:00'::timestamptz WHERE \"order_order\".\"id\" = 188",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 68,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 68,
+      "elapsed": 0.0006280830000093829,
+      "id": 69,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 65,
+      "elapsed": 0.0009679794311523438,
+      "id": 70,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14017820560,
+        "value": "<Order: #111000>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Order"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4420501392,
+          "value": "'111000:HKDZWNPLsq7589517c3v1Q6DHKD'",
+          "name": "hash_to_check",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 71,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractOrder",
+      "method_id": "check_verification_hash",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 345
+    },
+    {
+      "return_value": {
+        "object_id": 4341173008,
+        "value": "False",
+        "class": "builtins.bool"
+      },
+      "parent_id": 71,
+      "elapsed": 0.00005626678466796875,
+      "id": 72,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Order tests",
+    "recording": {
+      "defined_class": "tests.integration.order.test_models.OrderTests",
+      "method_id": "test_check_verification_hash_invalid_signature"
+    },
+    "source_location": "tests/integration/order/test_models.py:458",
+    "name": "Order tests check verification hash invalid signature",
+    "feature": "Check verification hash invalid signature",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "partner",
+              "type": "package",
+              "children": [
+                {
+                  "name": "strategy",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Selector",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "strategy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/strategy.py:37"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "basket",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractBasket",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "_get_total",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/abstract_models.py:435"
+                        },
+                        {
+                          "name": "all_lines",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/abstract_models.py:130"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "address",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractAddress",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/address/abstract_models.py:277"
+                        },
+                        {
+                          "name": "_update_search_text",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/address/abstract_models.py:326"
+                        },
+                        {
+                          "name": "join_fields",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/address/abstract_models.py:395"
+                        },
+                        {
+                          "name": "get_field_values",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/address/abstract_models.py:359"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "order",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractOrder",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:382"
+                        },
+                        {
+                          "name": "set_date_placed_default",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:378"
+                        },
+                        {
+                          "name": "check_verification_hash",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:345"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "test",
+          "type": "package",
+          "children": [
+            {
+              "name": "factories",
+              "type": "package",
+              "children": [
+                {
+                  "name": "utils",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "tax_subtract",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/test/factories/utils.py:5"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "models",
+          "type": "package",
+          "children": [
+            {
+              "name": "fields",
+              "type": "package",
+              "children": [
+                {
+                  "name": "UppercaseCharField",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "to_python",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/models/fields/__init__.py:86"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "utils",
+              "type": "class",
+              "children": [
+                {
+                  "name": "get_default_currency",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:159"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Open', '2024-07-22T17:28:44.082097+00:00'::timestamptz, NULL, NULL) RETURNING \"basket_basket\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"basket_basket\" SET \"owner_id\" = NULL, \"status\" = 'Open', \"date_created\" = '2024-07-22T17:28:44.082097+00:00'::timestamptz, \"date_merged\" = NULL, \"date_submitted\" = NULL WHERE \"basket_basket\".\"id\" = 603"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\", \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\", \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"basket_line\" INNER JOIN \"catalogue_product\" ON (\"basket_line\".\"product_id\" = \"catalogue_product\".\"id\") INNER JOIN \"partner_stockrecord\" ON (\"basket_line\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE \"basket_line\".\"basket_id\" = 603 ORDER BY \"basket_line\".\"id\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"address_country\".\"iso_3166_1_a2\", \"address_country\".\"iso_3166_1_a3\", \"address_country\".\"iso_3166_1_numeric\", \"address_country\".\"printable_name\", \"address_country\".\"name\", \"address_country\".\"display_order\", \"address_country\".\"is_shipping_country\" FROM \"address_country\" WHERE \"address_country\".\"iso_3166_1_a2\" = 'GB' LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SAVEPOINT \"s8669432832_x4124\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"address_country\" (\"iso_3166_1_a2\", \"iso_3166_1_a3\", \"iso_3166_1_numeric\", \"printable_name\", \"name\", \"display_order\", \"is_shipping_country\") VALUES ('GB', '', '', 'UNITED KINGDOM', '', 0, false)"
+        },
+        {
+          "type": "query",
+          "name": "RELEASE SAVEPOINT \"s8669432832_x4124\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"order_billingaddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\") VALUES ('', 'John', 'Doe', 'Streetname', '1a', '', 'City', '', '1000AA', 'GB', 'John Doe Streetname 1a City 1000AA UNITED KINGDOM') RETURNING \"order_billingaddress\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"order_shippingaddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\", \"phone_number\", \"notes\") VALUES ('', 'John', 'Doe', 'Streetname', '1a', '', 'City', '', '1000 AA', 'GB', 'John Doe Streetname 1a City 1000 AA UNITED KINGDOM', '+12125555555', '') RETURNING \"order_shippingaddress\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"order_order\" (\"number\", \"site_id\", \"basket_id\", \"user_id\", \"billing_address_id\", \"currency\", \"total_incl_tax\", \"total_excl_tax\", \"shipping_incl_tax\", \"shipping_excl_tax\", \"shipping_tax_code\", \"shipping_address_id\", \"shipping_method\", \"shipping_code\", \"status\", \"guest_email\", \"date_placed\") VALUES ('111000', 1, 603, NULL, 6, 'GBP', 0.00, 0.00, 4.95, 4.09, NULL, 22, '', 'delivery', 'A', 'j.doe@example.com', '2024-07-22T17:28:44.095223+00:00'::timestamptz) RETURNING \"order_order\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"order_order\" SET \"number\" = '111000', \"site_id\" = 1, \"basket_id\" = 603, \"user_id\" = NULL, \"billing_address_id\" = 6, \"currency\" = 'GBP', \"total_incl_tax\" = 0.00, \"total_excl_tax\" = 0.00, \"shipping_incl_tax\" = 4.95, \"shipping_excl_tax\" = 4.09, \"shipping_tax_code\" = NULL, \"shipping_address_id\" = 22, \"shipping_method\" = '', \"shipping_code\" = 'delivery', \"status\" = 'A', \"guest_email\" = 'j.doe@example.com', \"date_placed\" = '2024-07-22T17:28:44.095223+00:00'::timestamptz WHERE \"order_order\".\"id\" = 188"
+        }
+      ]
+    }
+  ]
+}

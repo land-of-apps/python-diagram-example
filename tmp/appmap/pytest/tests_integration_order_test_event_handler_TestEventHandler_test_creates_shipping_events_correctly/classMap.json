@@ -1,0 +1,116 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "order",
+            "type": "package",
+            "children": [
+              {
+                "name": "processing",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "EventHandler",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "handle_shipping_event",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/processing.py:23"
+                      },
+                      {
+                        "name": "validate_shipping_event",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/processing.py:78"
+                      },
+                      {
+                        "name": "create_shipping_event",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/processing.py:241"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractLine",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "is_shipping_event_permitted",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/abstract_models.py:753"
+                      },
+                      {
+                        "name": "shipping_event_quantity",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/abstract_models.py:766"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "ShippingEventQuantity",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/abstract_models.py:1137"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"order_line\".\"id\", \"order_line\".\"order_id\", \"order_line\".\"partner_id\", \"order_line\".\"partner_name\", \"order_line\".\"partner_sku\", \"order_line\".\"partner_line_reference\", \"order_line\".\"partner_line_notes\", \"order_line\".\"stockrecord_id\", \"order_line\".\"product_id\", \"order_line\".\"title\", \"order_line\".\"upc\", \"order_line\".\"quantity\", \"order_line\".\"line_price_incl_tax\", \"order_line\".\"line_price_excl_tax\", \"order_line\".\"line_price_before_discounts_incl_tax\", \"order_line\".\"line_price_before_discounts_excl_tax\", \"order_line\".\"unit_price_incl_tax\", \"order_line\".\"unit_price_excl_tax\", \"order_line\".\"tax_code\", \"order_line\".\"status\" FROM \"order_line\" WHERE \"order_line\".\"order_id\" = 140 ORDER BY \"order_line\".\"id\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "SELECT SUM(\"order_shippingeventquantity\".\"quantity\") AS \"quantity__sum\" FROM \"order_shippingeventquantity\" INNER JOIN \"order_shippingevent\" ON (\"order_shippingeventquantity\".\"event_id\" = \"order_shippingevent\".\"id\") WHERE (\"order_shippingeventquantity\".\"line_id\" = 142 AND \"order_shippingevent\".\"event_type_id\" = 17)"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"order_shippingevent\" (\"order_id\", \"event_type_id\", \"notes\", \"date_created\") VALUES (140, 17, '', '2024-07-22T17:28:39.603295+00:00'::timestamptz) RETURNING \"order_shippingevent\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"order_shippingeventquantity\" (\"event_id\", \"line_id\", \"quantity\") VALUES (1, 142, 1) RETURNING \"order_shippingeventquantity\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"order_shippingevent\".\"id\", \"order_shippingevent\".\"order_id\", \"order_shippingevent\".\"event_type_id\", \"order_shippingevent\".\"notes\", \"order_shippingevent\".\"date_created\" FROM \"order_shippingevent\" WHERE \"order_shippingevent\".\"order_id\" = 140 ORDER BY \"order_shippingevent\".\"date_created\" DESC"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"order_shippingeventtype\".\"id\", \"order_shippingeventtype\".\"name\", \"order_shippingeventtype\".\"code\" FROM \"order_shippingeventtype\" WHERE \"order_shippingeventtype\".\"id\" = 17 LIMIT 21"
+      }
+    ]
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "customer",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractUser",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:115"
+                      },
+                      {
+                        "name": "_migrate_alerts_to_user",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:103"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "utils",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "get_password_reset_url",
+                    "type": "function",
+                    "static": true,
+                    "location": "src/oscar/apps/customer/utils.py:51"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('md5$PyYaGqGY7EIpjuqWw6mm6e$aa931243a77778166fa74684cf0edeae', NULL, false, 'text@example.com', '', '', false, true, '2024-07-22T17:28:11.153329+00:00'::timestamptz, 'testuser', '') RETURNING \"myauth_user\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"customer_productalert\" SET \"user_id\" = 663, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'text@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+      }
+    ]
+  }
+]

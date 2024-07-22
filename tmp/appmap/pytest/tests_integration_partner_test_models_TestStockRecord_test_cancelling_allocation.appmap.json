@@ -1,0 +1,690 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14022972416,
+        "value": "<StockRecord: Partner: -2, product: Dùｍϻϒ title (sku_1213_5402)>",
+        "name": "self",
+        "class": "tests._site.apps.partner.models.StockRecord"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4341392072,
+          "value": "5",
+          "name": "quantity",
+          "class": "builtins.int"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.abstract_models.AbstractStockRecord",
+      "method_id": "allocate",
+      "path": "src/oscar/apps/partner/abstract_models.py",
+      "lineno": 191
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14022972944,
+        "value": "<Product: Dùｍϻϒ title>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Product"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProduct",
+      "method_id": "get_product_class",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 703
+    },
+    {
+      "return_value": {
+        "object_id": 14022975200,
+        "value": "<ProductClass: Dùｍϻϒ item class>",
+        "class": "oscar.apps.catalogue.models.ProductClass"
+      },
+      "parent_id": 2,
+      "elapsed": 0.0000040531158447265625,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14022972416,
+        "value": "<StockRecord: Partner: -2, product: Dùｍϻϒ title (sku_1213_5402)>",
+        "name": "self",
+        "class": "tests._site.apps.partner.models.StockRecord"
+      },
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.abstract_models.AbstractStockRecord",
+      "method_id": "pre_save_signal",
+      "path": "src/oscar/apps/partner/abstract_models.py",
+      "lineno": 281
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 4,
+      "elapsed": 0.00002002716064453125,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"partner_stockrecord\" SET \"num_allocated\" = (COALESCE(\"partner_stockrecord\".\"num_allocated\", 0) + 5) WHERE \"partner_stockrecord\".\"id\" = 887",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 6,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 6,
+      "elapsed": 0.0004859169999917867,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"num_allocated\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"id\" = 887 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 8,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 8,
+      "elapsed": 0.00045166700002141624,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14022972416,
+        "value": "<StockRecord: Partner: -2, product: Dùｍϻϒ title (sku_1213_5402)>",
+        "name": "self",
+        "class": "tests._site.apps.partner.models.StockRecord"
+      },
+      "id": 10,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.abstract_models.AbstractStockRecord",
+      "method_id": "post_save_signal",
+      "path": "src/oscar/apps/partner/abstract_models.py",
+      "lineno": 290
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"partner_stockalert\".\"id\", \"partner_stockalert\".\"stockrecord_id\", \"partner_stockalert\".\"threshold\", \"partner_stockalert\".\"status\", \"partner_stockalert\".\"date_created\", \"partner_stockalert\".\"date_closed\" FROM \"partner_stockalert\" WHERE (\"partner_stockalert\".\"status\" = 'Open' AND \"partner_stockalert\".\"stockrecord_id\" = 887) LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 11,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 11,
+      "elapsed": 0.00039129200001752906,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14022993568,
+        "value": "<oscar.apps.customer.alerts.utils.AlertsDispatcher object at 0x343d5e6a0>",
+        "name": "self",
+        "class": "oscar.apps.customer.alerts.utils.AlertsDispatcher"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14022972944,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 13,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.alerts.utils.AlertsDispatcher",
+      "method_id": "send_product_alert_email_for_user",
+      "path": "src/oscar/apps/customer/alerts/utils.py",
+      "lineno": 52
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 1213",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 14,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 14,
+      "elapsed": 0.0004472910000004049,
+      "id": 15,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT COUNT(*) AS \"__count\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" IN (1213) AND \"customer_productalert\".\"status\" = 'Active')",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 16,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 16,
+      "elapsed": 0.0006816670000091563,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"customer_productalert\".\"id\", \"customer_productalert\".\"product_id\", \"customer_productalert\".\"user_id\", \"customer_productalert\".\"email\", \"customer_productalert\".\"key\", \"customer_productalert\".\"status\", \"customer_productalert\".\"date_created\", \"customer_productalert\".\"date_confirmed\", \"customer_productalert\".\"date_cancelled\", \"customer_productalert\".\"date_closed\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" IN (1213) AND \"customer_productalert\".\"status\" = 'Active') ORDER BY \"customer_productalert\".\"date_created\" DESC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 18,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 18,
+      "elapsed": 0.0008416249999925185,
+      "id": 19,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 13,
+      "elapsed": 0.0036039352416992188,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 10,
+      "elapsed": 0.004461050033569336,
+      "id": 21,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 1,
+      "elapsed": 0.006240129470825195,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14022972416,
+        "value": "<StockRecord: Partner: -2, product: Dùｍϻϒ title (sku_1213_5402)>",
+        "name": "self",
+        "class": "tests._site.apps.partner.models.StockRecord"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4341392040,
+          "value": "4",
+          "name": "quantity",
+          "class": "builtins.int"
+        }
+      ],
+      "id": 23,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.abstract_models.AbstractStockRecord",
+      "method_id": "cancel_allocation",
+      "path": "src/oscar/apps/partner/abstract_models.py",
+      "lineno": 258
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14022972416,
+        "value": "<StockRecord: Partner: -2, product: Dùｍϻϒ title (sku_1213_5402)>",
+        "name": "self",
+        "class": "tests._site.apps.partner.models.StockRecord"
+      },
+      "id": 24,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.abstract_models.AbstractStockRecord",
+      "method_id": "pre_save_signal",
+      "path": "src/oscar/apps/partner/abstract_models.py",
+      "lineno": 281
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 24,
+      "elapsed": 0.000017881393432617188,
+      "id": 25,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"partner_stockrecord\" SET \"num_allocated\" = (COALESCE(\"partner_stockrecord\".\"num_allocated\", 0) - LEAST(COALESCE(\"partner_stockrecord\".\"num_allocated\", 0), 4)) WHERE \"partner_stockrecord\".\"id\" = 887",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 26,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 26,
+      "elapsed": 0.0007490419999953701,
+      "id": 27,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"num_allocated\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"id\" = 887 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 28,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 28,
+      "elapsed": 0.00036466599999585014,
+      "id": 29,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14022972416,
+        "value": "<StockRecord: Partner: -2, product: Dùｍϻϒ title (sku_1213_5402)>",
+        "name": "self",
+        "class": "tests._site.apps.partner.models.StockRecord"
+      },
+      "id": 30,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.abstract_models.AbstractStockRecord",
+      "method_id": "post_save_signal",
+      "path": "src/oscar/apps/partner/abstract_models.py",
+      "lineno": 290
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"partner_stockalert\".\"id\", \"partner_stockalert\".\"stockrecord_id\", \"partner_stockalert\".\"threshold\", \"partner_stockalert\".\"status\", \"partner_stockalert\".\"date_created\", \"partner_stockalert\".\"date_closed\" FROM \"partner_stockalert\" WHERE (\"partner_stockalert\".\"status\" = 'Open' AND \"partner_stockalert\".\"stockrecord_id\" = 887) LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 31,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 31,
+      "elapsed": 0.0004167079999888301,
+      "id": 32,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14022992368,
+        "value": "<oscar.apps.customer.alerts.utils.AlertsDispatcher object at 0x343d5e1f0>",
+        "name": "self",
+        "class": "oscar.apps.customer.alerts.utils.AlertsDispatcher"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14022972944,
+          "value": "<Product: Dùｍϻϒ title>",
+          "name": "product",
+          "class": "oscar.apps.catalogue.models.Product"
+        }
+      ],
+      "id": 33,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.alerts.utils.AlertsDispatcher",
+      "method_id": "send_product_alert_email_for_user",
+      "path": "src/oscar/apps/customer/alerts/utils.py",
+      "lineno": 52
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 1213",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 34,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 34,
+      "elapsed": 0.0004838750000146774,
+      "id": 35,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT COUNT(*) AS \"__count\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" IN (1213) AND \"customer_productalert\".\"status\" = 'Active')",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 36,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 36,
+      "elapsed": 0.0009187080000003789,
+      "id": 37,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"customer_productalert\".\"id\", \"customer_productalert\".\"product_id\", \"customer_productalert\".\"user_id\", \"customer_productalert\".\"email\", \"customer_productalert\".\"key\", \"customer_productalert\".\"status\", \"customer_productalert\".\"date_created\", \"customer_productalert\".\"date_confirmed\", \"customer_productalert\".\"date_cancelled\", \"customer_productalert\".\"date_closed\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" IN (1213) AND \"customer_productalert\".\"status\" = 'Active') ORDER BY \"customer_productalert\".\"date_created\" DESC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 38,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 38,
+      "elapsed": 0.00047654099998339916,
+      "id": 39,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 33,
+      "elapsed": 0.003039121627807617,
+      "id": 40,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 30,
+      "elapsed": 0.0038700103759765625,
+      "id": 41,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 23,
+      "elapsed": 0.005815982818603516,
+      "id": 42,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Stock record",
+    "recording": {
+      "defined_class": "tests.integration.partner.test_models.TestStockRecord",
+      "method_id": "test_cancelling_allocation"
+    },
+    "source_location": "tests/integration/partner/test_models.py:44",
+    "name": "Stock record cancelling allocation",
+    "feature": "Cancelling allocation",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "partner",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractStockRecord",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "allocate",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/abstract_models.py:191"
+                        },
+                        {
+                          "name": "pre_save_signal",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/abstract_models.py:281"
+                        },
+                        {
+                          "name": "post_save_signal",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/abstract_models.py:290"
+                        },
+                        {
+                          "name": "cancel_allocation",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/abstract_models.py:258"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractProduct",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get_product_class",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:703"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "customer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "alerts",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "utils",
+                      "type": "package",
+                      "children": [
+                        {
+                          "name": "AlertsDispatcher",
+                          "type": "class",
+                          "children": [
+                            {
+                              "name": "send_product_alert_email_for_user",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/customer/alerts/utils.py:52"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "UPDATE \"partner_stockrecord\" SET \"num_allocated\" = (COALESCE(\"partner_stockrecord\".\"num_allocated\", 0) + 5) WHERE \"partner_stockrecord\".\"id\" = 887"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"num_allocated\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"id\" = 887 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"partner_stockalert\".\"id\", \"partner_stockalert\".\"stockrecord_id\", \"partner_stockalert\".\"threshold\", \"partner_stockalert\".\"status\", \"partner_stockalert\".\"date_created\", \"partner_stockalert\".\"date_closed\" FROM \"partner_stockalert\" WHERE (\"partner_stockalert\".\"status\" = 'Open' AND \"partner_stockalert\".\"stockrecord_id\" = 887) LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 1213"
+        },
+        {
+          "type": "query",
+          "name": "SELECT COUNT(*) AS \"__count\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" IN (1213) AND \"customer_productalert\".\"status\" = 'Active')"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"customer_productalert\".\"id\", \"customer_productalert\".\"product_id\", \"customer_productalert\".\"user_id\", \"customer_productalert\".\"email\", \"customer_productalert\".\"key\", \"customer_productalert\".\"status\", \"customer_productalert\".\"date_created\", \"customer_productalert\".\"date_confirmed\", \"customer_productalert\".\"date_cancelled\", \"customer_productalert\".\"date_closed\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" IN (1213) AND \"customer_productalert\".\"status\" = 'Active') ORDER BY \"customer_productalert\".\"date_created\" DESC"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"partner_stockrecord\" SET \"num_allocated\" = (COALESCE(\"partner_stockrecord\".\"num_allocated\", 0) - LEAST(COALESCE(\"partner_stockrecord\".\"num_allocated\", 0), 4)) WHERE \"partner_stockrecord\".\"id\" = 887"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "customer",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractUser",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:115"
+                      },
+                      {
+                        "name": "_migrate_alerts_to_user",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:103"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "offer",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractConditionalOffer",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "is_condition_satisfied",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/offer/abstract_models.py:351"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "BaseOfferMixin",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "proxy",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/offer/abstract_models.py:36"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "utils",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "load_proxy",
+                    "type": "function",
+                    "static": true,
+                    "location": "src/oscar/apps/offer/utils.py:29"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core",
+        "type": "package",
+        "children": [
+          {
+            "name": "loading",
+            "type": "class",
+            "children": [
+              {
+                "name": "get_class",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/loading.py:25"
+              },
+              {
+                "name": "get_classes",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/loading.py:48"
+              },
+              {
+                "name": "default_class_loader",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/loading.py:53"
+              },
+              {
+                "name": "_import_module",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/loading.py:135"
+              },
+              {
+                "name": "_find_registered_app_name",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/loading.py:183"
+              },
+              {
+                "name": "_pluck_classes",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/loading.py:161"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('', NULL, false, 'example_347@example.com', 'Alan', 'winterbottom', false, true, '2024-07-22T17:28:18.291299+00:00'::timestamptz, 'the_j_meister nummer 347', '') RETURNING \"myauth_user\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"customer_productalert\" SET \"user_id\" = 680, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_347@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"myauth_user\" SET \"password\" = 'md5$R1jzEkQ68j2WSIqxCT1Cwk$9b0008b26fd187ef4d8c4ecaa4c03931', \"last_login\" = NULL, \"is_superuser\" = false, \"email\" = 'example_347@example.com', \"first_name\" = 'Alan', \"last_name\" = 'winterbottom', \"is_staff\" = false, \"is_active\" = true, \"date_joined\" = '2024-07-22T17:28:18.291299+00:00'::timestamptz, \"username\" = 'the_j_meister nummer 347', \"extra_field\" = '' WHERE \"myauth_user\".\"id\" = 680"
+      }
+    ]
+  }
+]

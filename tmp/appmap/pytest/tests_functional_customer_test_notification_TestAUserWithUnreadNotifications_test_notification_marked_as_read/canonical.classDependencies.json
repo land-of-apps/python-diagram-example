@@ -1,0 +1,90 @@
+[
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCommunicationNotificationsDetailHtml#render",
+    "callee": "<templates>/SrcOscarTemplatesOscarCustomerPartialsStandard_TabsHtml#render"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCommunicationNotificationsDetailHtml#render",
+    "callee": "<templates>/SrcOscarTemplatesOscarPartialsAlert_MessagesHtml#render"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCommunicationNotificationsDetailHtml#render",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCommunicationNotificationsDetailHtml#render",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarCustomerPartialsStandard_TabsHtml#render",
+    "callee": "oscar/templatetags"
+  },
+  {
+    "caller": "GET /accounts/notifications/{pk}/",
+    "callee": "<templates>/SrcOscarTemplatesOscarCommunicationNotificationsDetailHtml#render"
+  },
+  {
+    "caller": "GET /accounts/notifications/{pk}/",
+    "callee": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('vccguesbmh40x61ov85d6b6k1gs5zz4d', 'e30:1sVwoM:xTaqXI44iYGET05iRaKQoGaFQDTs3bH6nFBzRwyHpVQ', '2024-08-05T17:26:58.996845+00:00'::timestamptz)"
+  },
+  {
+    "caller": "GET /accounts/notifications/{pk}/",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x1253\""
+  },
+  {
+    "caller": "GET /accounts/notifications/{pk}/",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x1254\""
+  },
+  {
+    "caller": "GET /accounts/notifications/{pk}/",
+    "callee": "SAVEPOINT \"s8669432832_x1253\""
+  },
+  {
+    "caller": "GET /accounts/notifications/{pk}/",
+    "callee": "SAVEPOINT \"s8669432832_x1254\""
+  },
+  {
+    "caller": "GET /accounts/notifications/{pk}/",
+    "callee": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = 'vccguesbmh40x61ov85d6b6k1gs5zz4d' LIMIT 1"
+  },
+  {
+    "caller": "GET /accounts/notifications/{pk}/",
+    "callee": "UPDATE \"django_session\" SET \"session_data\" = '.eJxVjDEOwjAMRe-SGVW2kjYJI3dAHSM7jikgFYmkYkDcnSI6wPre-_9pEi1tSkst93QWszcYgtn9UqZ8LfNHyYXm0y09CrdSW7eJ2o1fcFzrwxb_PUxUp3Xuo3PilEAZM2YOatEiCHuyELMLPXjPqjFo7IlJbPSAgWFwgjKoeb0Bs9I5Wg:1sVwoN:GEdA9ACxLBlLuyTrRw_3oZsvfYg0yLkrKOWgZwBjGFU', \"expire_date\" = '2024-08-05T17:26:59.009042+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = 'vccguesbmh40x61ov85d6b6k1gs5zz4d'"
+  },
+  {
+    "caller": "GET /accounts/notifications/{pk}/",
+    "callee": "django/contrib"
+  },
+  {
+    "caller": "GET /accounts/notifications/{pk}/",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "django/contrib",
+    "callee": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"email\" = 'example_78@example.com' LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"communication_notification\" WHERE (\"communication_notification\".\"date_read\" IS NULL AND \"communication_notification\".\"recipient_id\" = 188)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"communication_notification\".\"id\", \"communication_notification\".\"recipient_id\", \"communication_notification\".\"sender_id\", \"communication_notification\".\"subject\", \"communication_notification\".\"body\", \"communication_notification\".\"location\", \"communication_notification\".\"date_sent\", \"communication_notification\".\"date_read\" FROM \"communication_notification\" WHERE (\"communication_notification\".\"recipient_id\" = 188 AND \"communication_notification\".\"id\" = 16) LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"communication_notification\" SET \"recipient_id\" = 188, \"sender_id\" = NULL, \"subject\" = 'Test message', \"body\" = '', \"location\" = 'Inbox', \"date_sent\" = '2024-07-22T17:26:58.991696+00:00'::timestamptz, \"date_read\" = '2024-07-22T17:26:59.003038+00:00'::timestamptz WHERE \"communication_notification\".\"id\" = 16"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"customer_productalert\" SET \"user_id\" = 188, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_78@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"myauth_user\" SET \"last_login\" = '2024-07-22T17:26:58.998749+00:00'::timestamptz WHERE \"myauth_user\".\"id\" = 188"
+  },
+  {
+    "caller": "oscar/templatetags",
+    "callee": "oscar/core"
+  }
+]

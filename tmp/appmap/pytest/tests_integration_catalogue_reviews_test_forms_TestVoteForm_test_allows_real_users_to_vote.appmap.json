@@ -1,0 +1,145 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13817769264,
+        "value": "<Vote: 1 vote for This is nice>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.reviews.models.Vote"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.reviews.abstract_models.AbstractVote",
+      "method_id": "clean",
+      "path": "src/oscar/apps/catalogue/reviews/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"reviews_vote\".\"id\", \"reviews_vote\".\"review_id\", \"reviews_vote\".\"user_id\", \"reviews_vote\".\"delta\", \"reviews_vote\".\"date_created\" FROM \"reviews_vote\" WHERE (\"reviews_vote\".\"review_id\" = 57 AND \"reviews_vote\".\"user_id\" = 621) ORDER BY \"reviews_vote\".\"date_created\" DESC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0.0005823749999933625,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 1,
+      "elapsed": 0.001184225082397461,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Vote form",
+    "recording": {
+      "defined_class": "tests.integration.catalogue.reviews.test_forms.TestVoteForm",
+      "method_id": "test_allows_real_users_to_vote"
+    },
+    "source_location": "tests/integration/catalogue/reviews/test_forms.py:49",
+    "name": "Vote form allows real users to vote",
+    "feature": "Allows real users to vote",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "reviews",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "abstract_models",
+                      "type": "package",
+                      "children": [
+                        {
+                          "name": "AbstractVote",
+                          "type": "class",
+                          "children": [
+                            {
+                              "name": "clean",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/catalogue/reviews/abstract_models.py:218"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"reviews_vote\".\"id\", \"reviews_vote\".\"review_id\", \"reviews_vote\".\"user_id\", \"reviews_vote\".\"delta\", \"reviews_vote\".\"date_created\" FROM \"reviews_vote\" WHERE (\"reviews_vote\".\"review_id\" = 57 AND \"reviews_vote\".\"user_id\" = 621) ORDER BY \"reviews_vote\".\"date_created\" DESC"
+        }
+      ]
+    }
+  ]
+}

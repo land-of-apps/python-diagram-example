@@ -1,0 +1,100 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "models",
+        "type": "package",
+        "children": [
+          {
+            "name": "fields",
+            "type": "package",
+            "children": [
+              {
+                "name": "UppercaseCharField",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "to_python",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/models/fields/__init__.py:86"
+                  },
+                  {
+                    "name": "from_db_value",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/models/fields/__init__.py:83"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "address",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractAddress",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:277"
+                      },
+                      {
+                        "name": "_update_search_text",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:326"
+                      },
+                      {
+                        "name": "join_fields",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:395"
+                      },
+                      {
+                        "name": "get_field_values",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:359"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"partner_partneraddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\", \"partner_id\") VALUES ('Mrs', 'Jane', 'Barrington', '', '', '', '', '', 'LS1 2HA', 'GB', 'Jane Barrington LS1 2HA', 720) RETURNING \"partner_partneraddress\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"partner_partneraddress\".\"id\", \"partner_partneraddress\".\"title\", \"partner_partneraddress\".\"first_name\", \"partner_partneraddress\".\"last_name\", \"partner_partneraddress\".\"line1\", \"partner_partneraddress\".\"line2\", \"partner_partneraddress\".\"line3\", \"partner_partneraddress\".\"line4\", \"partner_partneraddress\".\"state\", \"partner_partneraddress\".\"postcode\", \"partner_partneraddress\".\"country_id\", \"partner_partneraddress\".\"search_text\", \"partner_partneraddress\".\"partner_id\" FROM \"partner_partneraddress\" WHERE \"partner_partneraddress\".\"partner_id\" = 720"
+      }
+    ]
+  }
+]

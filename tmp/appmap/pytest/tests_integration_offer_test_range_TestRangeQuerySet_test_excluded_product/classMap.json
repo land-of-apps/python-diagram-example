@@ -1,0 +1,72 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "offer",
+            "type": "package",
+            "children": [
+              {
+                "name": "queryset",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "RangeQuerySet",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "contains_product",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/offer/queryset.py:54"
+                      },
+                      {
+                        "name": "_excluded_products_clause",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/offer/queryset.py:16"
+                      },
+                      {
+                        "name": "_included_products_clause",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/offer/queryset.py:26"
+                      },
+                      {
+                        "name": "_get_category_ids",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/offer/queryset.py:43"
+                      },
+                      {
+                        "name": "_productclasses_clause",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/offer/queryset.py:36"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT COUNT(*) AS \"__count\" FROM \"offer_range\" LEFT OUTER JOIN \"offer_rangeproduct\" ON (\"offer_range\".\"id\" = \"offer_rangeproduct\".\"range_id\") LEFT OUTER JOIN \"offer_range_included_categories\" ON (\"offer_range\".\"id\" = \"offer_range_included_categories\".\"range_id\") LEFT OUTER JOIN \"offer_range_classes\" ON (\"offer_range\".\"id\" = \"offer_range_classes\".\"range_id\") WHERE ((NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 992 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND \"offer_range\".\"includes_all_products\") OR (NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"product_id\" = 992 AND U1.\"range_id\" = (\"offer_range\".\"id\")) LIMIT 1)) AND (\"offer_rangeproduct\".\"product_id\" = 992 OR \"offer_range_included_categories\".\"category_id\" IN (\n(SELECT \"CATALOGUE_CATEGORY_JOIN\".\"id\" FROM \"catalogue_category\" AS \"CATALOGUE_CATEGORY_BASE\"\nLEFT JOIN \"catalogue_category\" AS \"CATALOGUE_CATEGORY_JOIN\" ON (\n    \"CATALOGUE_CATEGORY_BASE\".\"path\" LIKE \"CATALOGUE_CATEGORY_JOIN\".\"path\" || '%'\n    AND \"CATALOGUE_CATEGORY_BASE\".\"depth\" >= \"CATALOGUE_CATEGORY_JOIN\".\"depth\"\n)\nWHERE \"CATALOGUE_CATEGORY_BASE\".\"id\" IN (SELECT U0.\"id\" FROM \"catalogue_category\" U0 INNER JOIN \"catalogue_productcategory\" U1 ON (U0.\"id\" = U1.\"category_id\") WHERE U1.\"product_id\" = 992 ORDER BY U0.\"path\" ASC))\n) OR \"offer_range_classes\".\"productclass_id\" = 710) AND NOT \"offer_range\".\"includes_all_products\"))"
+      }
+    ]
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" IN (1215) AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"customer_productalert\".\"id\", \"customer_productalert\".\"product_id\", \"customer_productalert\".\"user_id\", \"customer_productalert\".\"email\", \"customer_productalert\".\"key\", \"customer_productalert\".\"status\", \"customer_productalert\".\"date_created\", \"customer_productalert\".\"date_confirmed\", \"customer_productalert\".\"date_cancelled\", \"customer_productalert\".\"date_closed\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" IN (1215) AND \"customer_productalert\".\"status\" = 'Active') ORDER BY \"customer_productalert\".\"date_created\" DESC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_stockalert\".\"id\", \"partner_stockalert\".\"stockrecord_id\", \"partner_stockalert\".\"threshold\", \"partner_stockalert\".\"status\", \"partner_stockalert\".\"date_created\", \"partner_stockalert\".\"date_closed\" FROM \"partner_stockalert\" WHERE (\"partner_stockalert\".\"status\" = 'Open' AND \"partner_stockalert\".\"stockrecord_id\" = 889) LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"num_allocated\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"id\" = 889 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"id\" = 889 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 1215"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"partner_stockrecord\" SET \"num_allocated\" = (COALESCE(\"partner_stockrecord\".\"num_allocated\", 0) + 5) WHERE \"partner_stockrecord\".\"id\" = 889"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"partner_stockrecord\" SET \"num_allocated\" = (COALESCE(\"partner_stockrecord\".\"num_allocated\", 0) - 3), \"num_in_stock\" = (COALESCE(\"partner_stockrecord\".\"num_in_stock\", 0) - 3) WHERE \"partner_stockrecord\".\"id\" = 889"
+  }
+]

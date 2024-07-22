@@ -1,0 +1,665 @@
+{
+  "events": [
+    {
+      "sql_query": {
+        "sql": "SELECT \"address_country\".\"iso_3166_1_a2\", \"address_country\".\"iso_3166_1_a3\", \"address_country\".\"iso_3166_1_numeric\", \"address_country\".\"printable_name\", \"address_country\".\"name\", \"address_country\".\"display_order\", \"address_country\".\"is_shipping_country\" FROM \"address_country\" WHERE \"address_country\".\"iso_3166_1_a2\" = 'GB' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.0011758750000012697,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SAVEPOINT \"s8669432832_x3881\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 3,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 3,
+      "elapsed": 0.0003239170000028935,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"address_country\" (\"iso_3166_1_a2\", \"iso_3166_1_a3\", \"iso_3166_1_numeric\", \"printable_name\", \"name\", \"display_order\", \"is_shipping_country\") VALUES ('GB', '', '', 'UNITED KINGDOM', '', 0, false)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.0007459589999996297,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "RELEASE SAVEPOINT \"s8669432832_x3881\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 7,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 7,
+      "elapsed": 0.00032137499999862484,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396051520,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4420458672,
+          "value": "'N4 8TY'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 9,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 14008648432,
+        "value": "'N4 8TY'",
+        "class": "builtins.str"
+      },
+      "parent_id": 9,
+      "elapsed": 0.0000019073486328125,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14008605328,
+        "value": "<ShippingAddress: Barrington, 75 Smith Road, 1a, City, N4 8TY, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14008613440,
+          "value": "{'force_insert': True, 'using': 'default'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "force_insert",
+              "class": "builtins.bool"
+            },
+            {
+              "name": "using",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 11,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "save",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 277
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14008605328,
+        "value": "<ShippingAddress: Barrington, 75 Smith Road, 1a, City, N4 8TY, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "id": 12,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "_update_search_text",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 326
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14008605328,
+        "value": "<ShippingAddress: Barrington, 75 Smith Road, 1a, City, N4 8TY, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4392672384,
+          "value": "['first_name', 'last_name', 'line1', 'line2', 'line3', 'line4', 'state', 'postcode', 'country']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 9
+        },
+        {
+          "kind": "opt",
+          "object_id": 4332562672,
+          "value": "' '",
+          "name": "separator",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 13,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "join_fields",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 395
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14008605328,
+        "value": "<ShippingAddress: Barrington, 75 Smith Road, 1a, City, N4 8TY, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4392672384,
+          "value": "['first_name', 'last_name', 'line1', 'line2', 'line3', 'line4', 'state', 'postcode', 'country']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 9
+        }
+      ],
+      "id": 14,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "get_field_values",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 359
+    },
+    {
+      "return_value": {
+        "object_id": 14008614080,
+        "value": "['', 'Barrington', '75 Smith Road', '1a', '', 'City', '', 'N4 8TY', 'UNITED KINGDOM']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 9
+      },
+      "parent_id": 14,
+      "elapsed": 0.0000021457672119140625,
+      "id": 15,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14008619952,
+        "value": "'Barrington 75 Smith Road 1a City N4 8TY UNITED KINGDOM'",
+        "class": "builtins.str"
+      },
+      "parent_id": 13,
+      "elapsed": 0.00017881393432617188,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 12,
+      "elapsed": 0.0003540515899658203,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396051520,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14008648432,
+          "value": "'N4 8TY'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 18,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 14008635952,
+        "value": "'N4 8TY'",
+        "class": "builtins.str"
+      },
+      "parent_id": 18,
+      "elapsed": 0.0000019073486328125,
+      "id": 19,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"order_shippingaddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\", \"phone_number\", \"notes\") VALUES ('', '', 'Barrington', '75 Smith Road', '1a', '', 'City', '', 'N4 8TY', 'GB', 'Barrington 75 Smith Road 1a City N4 8TY UNITED KINGDOM', '+12125555555', '') RETURNING \"order_shippingaddress\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 20,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 20,
+      "elapsed": 0.0008942089999948166,
+      "id": 21,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 11,
+      "elapsed": 0.0019073486328125,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14008605328,
+        "value": "<ShippingAddress: Barrington, 75 Smith Road, 1a, City, N4 8TY, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4390869376,
+          "value": "('title', 'first_name', 'last_name')",
+          "name": "fields",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4332562672,
+          "value": "' '",
+          "name": "separator",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 23,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "join_fields",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 395
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14008605328,
+        "value": "<ShippingAddress: Barrington, 75 Smith Road, 1a, City, N4 8TY, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4390869376,
+          "value": "('title', 'first_name', 'last_name')",
+          "name": "fields",
+          "class": "builtins.tuple"
+        }
+      ],
+      "id": 24,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "get_field_values",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 359
+    },
+    {
+      "return_value": {
+        "object_id": 14008528128,
+        "value": "['', '', 'Barrington']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 3
+      },
+      "parent_id": 24,
+      "elapsed": 0.000025987625122070312,
+      "id": 25,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4407364272,
+        "value": "'Barrington'",
+        "class": "builtins.str"
+      },
+      "parent_id": 23,
+      "elapsed": 0.00018215179443359375,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Shipping address test",
+    "recording": {
+      "defined_class": "tests.integration.order.test_models.ShippingAddressTest",
+      "method_id": "test_titleless_salutation_is_stripped"
+    },
+    "source_location": "tests/integration/order/test_models.py:42",
+    "name": "Shipping address test titleless salutation is stripped",
+    "feature": "Titleless salutation is stripped",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "models",
+          "type": "package",
+          "children": [
+            {
+              "name": "fields",
+              "type": "package",
+              "children": [
+                {
+                  "name": "UppercaseCharField",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "to_python",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/models/fields/__init__.py:86"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "address",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractAddress",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/address/abstract_models.py:277"
+                        },
+                        {
+                          "name": "_update_search_text",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/address/abstract_models.py:326"
+                        },
+                        {
+                          "name": "join_fields",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/address/abstract_models.py:395"
+                        },
+                        {
+                          "name": "get_field_values",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/address/abstract_models.py:359"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"address_country\".\"iso_3166_1_a2\", \"address_country\".\"iso_3166_1_a3\", \"address_country\".\"iso_3166_1_numeric\", \"address_country\".\"printable_name\", \"address_country\".\"name\", \"address_country\".\"display_order\", \"address_country\".\"is_shipping_country\" FROM \"address_country\" WHERE \"address_country\".\"iso_3166_1_a2\" = 'GB' LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SAVEPOINT \"s8669432832_x3881\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"address_country\" (\"iso_3166_1_a2\", \"iso_3166_1_a3\", \"iso_3166_1_numeric\", \"printable_name\", \"name\", \"display_order\", \"is_shipping_country\") VALUES ('GB', '', '', 'UNITED KINGDOM', '', 0, false)"
+        },
+        {
+          "type": "query",
+          "name": "RELEASE SAVEPOINT \"s8669432832_x3881\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"order_shippingaddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\", \"phone_number\", \"notes\") VALUES ('', '', 'Barrington', '75 Smith Road', '1a', '', 'City', '', 'N4 8TY', 'GB', 'Barrington 75 Smith Road 1a City N4 8TY UNITED KINGDOM', '+12125555555', '') RETURNING \"order_shippingaddress\".\"id\""
+        }
+      ]
+    }
+  ]
+}

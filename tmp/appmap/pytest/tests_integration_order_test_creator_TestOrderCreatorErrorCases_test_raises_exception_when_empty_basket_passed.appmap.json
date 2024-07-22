@@ -1,0 +1,614 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13995065456,
+        "value": "<oscar.apps.shipping.methods.Free object at 0x3422bc070>",
+        "name": "self",
+        "class": "oscar.apps.shipping.methods.Free"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13996920688,
+          "value": "<Basket: Open basket (owner: None, lines: 0)>",
+          "name": "basket",
+          "class": "oscar.apps.basket.models.Basket"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.shipping.methods.Free",
+      "method_id": "calculate",
+      "path": "src/oscar/apps/shipping/methods.py",
+      "lineno": 57
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13996920688,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "all_lines",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 13995074608,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 2,
+      "elapsed": 0,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13995066800,
+        "value": "Price(currency=None, excl_tax=Decimal('0.00'), incl_tax=Decimal('0.00'), tax=Decimal('0.00'))",
+        "class": "oscar.core.prices.Price"
+      },
+      "parent_id": 1,
+      "elapsed": 0.00009608268737792969,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13995066560,
+        "value": "<oscar.apps.checkout.calculators.OrderTotalCalculator object at 0x3422bc4c0>",
+        "name": "self",
+        "class": "oscar.apps.checkout.calculators.OrderTotalCalculator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13996920688,
+          "value": "<Basket: Open basket (owner: None, lines: 0)>",
+          "name": "basket",
+          "class": "oscar.apps.basket.models.Basket"
+        },
+        {
+          "kind": "req",
+          "object_id": 13995066800,
+          "value": "Price(currency=None, excl_tax=Decimal('0.00'), incl_tax=Decimal('0.00'), tax=Decimal('0.00'))",
+          "name": "shipping_charge",
+          "class": "oscar.core.prices.Price"
+        },
+        {
+          "kind": "opt",
+          "object_id": 13985609904,
+          "value": "[<oscar.apps.checkout.applicator.SurchargePrice object at 0x34243edc0>]",
+          "name": "surcharges",
+          "class": "oscar.apps.checkout.applicator.SurchargeList",
+          "items": [
+            {
+              "class": "oscar.apps.checkout.applicator.SurchargePrice"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13994743744,
+          "value": "{'basket': <Basket: Open basket (owner: None, lines: 0)>, 'shipping_charge': Price(currency=None, excl_tax=Decimal('0.00'), incl_tax=Decimal('0.00'), tax=Decimal('0.00')), 'surcharges': [<oscar.apps.checkout.applicator.SurchargePrice object at 0x34243edc0>]}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "basket",
+              "class": "oscar.apps.basket.models.Basket"
+            },
+            {
+              "name": "shipping_charge",
+              "class": "oscar.core.prices.Price"
+            },
+            {
+              "name": "surcharges",
+              "class": "oscar.apps.checkout.applicator.SurchargeList",
+              "items": [
+                {
+                  "class": "oscar.apps.checkout.applicator.SurchargePrice"
+                }
+              ]
+            }
+          ],
+          "size": 3
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.calculators.OrderTotalCalculator",
+      "method_id": "calculate",
+      "path": "src/oscar/apps/checkout/calculators.py",
+      "lineno": 16
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13996920688,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394199248,
+          "value": "'line_price_excl_tax_incl_discounts'",
+          "name": "model_property",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 6,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "_get_total",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 435
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13996920688,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "all_lines",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 13995074608,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 7,
+      "elapsed": 7.152557373046875e-7,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13996943600,
+        "value": "Decimal('0.00')",
+        "class": "decimal.Decimal"
+      },
+      "parent_id": 6,
+      "elapsed": 0.00007224082946777344,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13996920688,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "id": 10,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "all_lines",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 13995074608,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 10,
+      "elapsed": 0.0000011920928955078125,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13996920688,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "id": 12,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "all_lines",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 13995074608,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 12,
+      "elapsed": 0.0000011920928955078125,
+      "id": 13,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13995077440,
+        "value": "Price(currency=None, excl_tax=Decimal('10.00'))",
+        "class": "oscar.core.prices.Price"
+      },
+      "parent_id": 5,
+      "elapsed": 0.0003590583801269531,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13996919776,
+        "value": "<oscar.apps.order.utils.OrderCreator object at 0x342480be0>",
+        "name": "self",
+        "class": "oscar.apps.order.utils.OrderCreator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13996920688,
+          "value": "<Basket: Open basket (owner: None, lines: 0)>",
+          "name": "basket",
+          "class": "oscar.apps.basket.models.Basket"
+        },
+        {
+          "kind": "req",
+          "object_id": 13995077440,
+          "value": "Price(currency=None, excl_tax=Decimal('10.00'))",
+          "name": "total",
+          "class": "oscar.core.prices.Price"
+        },
+        {
+          "kind": "req",
+          "object_id": 13995065456,
+          "value": "<oscar.apps.shipping.methods.Free object at 0x3422bc070>",
+          "name": "shipping_method",
+          "class": "oscar.apps.shipping.methods.Free"
+        },
+        {
+          "kind": "req",
+          "object_id": 13995066800,
+          "value": "Price(currency=None, excl_tax=Decimal('0.00'), incl_tax=Decimal('0.00'), tax=Decimal('0.00'))",
+          "name": "shipping_charge",
+          "class": "oscar.core.prices.Price"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "user",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "shipping_address",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "billing_address",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "order_number",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "status",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "request",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 13985609904,
+          "value": "[<oscar.apps.checkout.applicator.SurchargePrice object at 0x34243edc0>]",
+          "name": "surcharges",
+          "class": "oscar.apps.checkout.applicator.SurchargeList",
+          "items": [
+            {
+              "class": "oscar.apps.checkout.applicator.SurchargePrice"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13994744960,
+          "value": "{'surcharges': [<oscar.apps.checkout.applicator.SurchargePrice object at 0x34243edc0>], 'basket': <Basket: Open basket (owner: None, lines: 0)>, 'shipping_method': <oscar.apps.shipping.methods.Free object at 0x3422bc070>, 'total': Price(currency=None, excl_tax=Decimal('10.00')), 'shipping_charge': Price(currency=None, excl_tax=Decimal('0.00'), incl_tax=Decimal('0.00'), tax=Decimal('0.00'))}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "surcharges",
+              "class": "oscar.apps.checkout.applicator.SurchargeList",
+              "items": [
+                {
+                  "class": "oscar.apps.checkout.applicator.SurchargePrice"
+                }
+              ]
+            },
+            {
+              "name": "basket",
+              "class": "oscar.apps.basket.models.Basket"
+            },
+            {
+              "name": "shipping_method",
+              "class": "oscar.apps.shipping.methods.Free"
+            },
+            {
+              "name": "total",
+              "class": "oscar.core.prices.Price"
+            },
+            {
+              "name": "shipping_charge",
+              "class": "oscar.core.prices.Price"
+            }
+          ],
+          "size": 5
+        }
+      ],
+      "id": 15,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.utils.OrderCreator",
+      "method_id": "place_order",
+      "path": "src/oscar/apps/order/utils.py",
+      "lineno": 43
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13996920688,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "id": 16,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "all_lines",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 13995074608,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 16,
+      "elapsed": 0.0000011920928955078125,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "exceptions": [
+        {
+          "class": "builtins.ValueError",
+          "message": "Empty baskets cannot be submitted",
+          "object_id": 13984418848
+        }
+      ],
+      "parent_id": 15,
+      "elapsed": 0.00012874603271484375,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      }
+    ],
+    "feature_group": "Order creator error cases",
+    "recording": {
+      "defined_class": "tests.integration.order.test_creator.TestOrderCreatorErrorCases",
+      "method_id": "test_raises_exception_when_empty_basket_passed"
+    },
+    "source_location": "tests/integration/order/test_creator.py:56",
+    "name": "Order creator error cases raises exception when empty basket passed",
+    "feature": "Raises exception when empty basket passed",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "shipping",
+              "type": "package",
+              "children": [
+                {
+                  "name": "methods",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Free",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "calculate",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/shipping/methods.py:57"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "basket",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractBasket",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "all_lines",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/abstract_models.py:130"
+                        },
+                        {
+                          "name": "_get_total",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/abstract_models.py:435"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "checkout",
+              "type": "package",
+              "children": [
+                {
+                  "name": "calculators",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "OrderTotalCalculator",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "calculate",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/checkout/calculators.py:16"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "order",
+              "type": "package",
+              "children": [
+                {
+                  "name": "utils",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "OrderCreator",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "place_order",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/utils.py:43"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

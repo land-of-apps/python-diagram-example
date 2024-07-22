@@ -1,0 +1,284 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13923956048,
+        "value": "<oscar.core.validators.ExtendedURLValidator object at 0x33deeb550>",
+        "name": "self",
+        "class": "oscar.core.validators.ExtendedURLValidator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4417887472,
+          "value": "'/invalid/'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.validators.ExtendedURLValidator",
+      "method_id": "validate_local_url",
+      "path": "src/oscar/core/validators.py",
+      "lineno": 49
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13923956048,
+        "value": "<oscar.core.validators.ExtendedURLValidator object at 0x33deeb550>",
+        "name": "self",
+        "class": "oscar.core.validators.ExtendedURLValidator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4417887472,
+          "value": "'/invalid/'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.validators.ExtendedURLValidator",
+      "method_id": "clean_url",
+      "path": "src/oscar/core/validators.py",
+      "lineno": 72
+    },
+    {
+      "return_value": {
+        "object_id": 13920890480,
+        "value": "'/invalid/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 2,
+      "elapsed": 0.0000030994415283203125,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13923956048,
+        "value": "<oscar.core.validators.ExtendedURLValidator object at 0x33deeb550>",
+        "name": "self",
+        "class": "oscar.core.validators.ExtendedURLValidator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13920890480,
+          "value": "'/invalid/'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.validators.ExtendedURLValidator",
+      "method_id": "_validate_url",
+      "path": "src/oscar/core/validators.py",
+      "lineno": 31
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4379537968,
+          "value": "'flatpages'",
+          "name": "app_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4390988080,
+          "value": "'FlatPage'",
+          "name": "model_name",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_model",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 225
+    },
+    {
+      "return_value": {
+        "object_id": 4553858544,
+        "value": "<class 'django.contrib.flatpages.models.FlatPage'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 5,
+      "elapsed": 0.0000069141387939453125,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"django_flatpage\".\"id\", \"django_flatpage\".\"url\", \"django_flatpage\".\"title\", \"django_flatpage\".\"content\", \"django_flatpage\".\"enable_comments\", \"django_flatpage\".\"template_name\", \"django_flatpage\".\"registration_required\" FROM \"django_flatpage\" WHERE \"django_flatpage\".\"url\" = '/invalid/' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 7,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 7,
+      "elapsed": 0.0018046250000054442,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "exceptions": [
+        {
+          "class": "django.core.exceptions.ValidationError",
+          "message": "['The URL \"/invalid/\" does not exist']",
+          "object_id": 13922552896
+        }
+      ],
+      "parent_id": 4,
+      "elapsed": 0.002329111099243164,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "exceptions": [
+        {
+          "class": "django.core.exceptions.ValidationError",
+          "message": "['The URL \"/invalid/\" does not exist']",
+          "object_id": 13922552896
+        }
+      ],
+      "parent_id": 1,
+      "elapsed": 0.002480030059814453,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Extended url validator",
+    "recording": {
+      "defined_class": "tests.integration.core.test_validator.TestExtendedURLValidator",
+      "method_id": "test_raises_validation_error_for_missing_urls"
+    },
+    "source_location": "tests/integration/core/test_validator.py:24",
+    "name": "Extended url validator raises validation error for missing urls",
+    "feature": "Raises validation error for missing urls",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "validators",
+              "type": "package",
+              "children": [
+                {
+                  "name": "ExtendedURLValidator",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "validate_local_url",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/core/validators.py:49"
+                    },
+                    {
+                      "name": "clean_url",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/core/validators.py:72"
+                    },
+                    {
+                      "name": "_validate_url",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/core/validators.py:31"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "loading",
+              "type": "class",
+              "children": [
+                {
+                  "name": "get_model",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:225"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"django_flatpage\".\"id\", \"django_flatpage\".\"url\", \"django_flatpage\".\"title\", \"django_flatpage\".\"content\", \"django_flatpage\".\"enable_comments\", \"django_flatpage\".\"template_name\", \"django_flatpage\".\"registration_required\" FROM \"django_flatpage\" WHERE \"django_flatpage\".\"url\" = '/invalid/' LIMIT 21"
+        }
+      ]
+    }
+  ]
+}

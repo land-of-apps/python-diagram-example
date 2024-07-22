@@ -1,0 +1,26 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"offer_range\" (\"name\", \"slug\", \"description\", \"is_public\", \"includes_all_products\", \"proxy_class\", \"date_created\") VALUES ('Custom range', 'custom-range', '', false, false, 'tests.integration.offer.test_custom_range.CustomRange', '2024-07-22T17:28:18.956489+00:00'::timestamptz) RETURNING \"offer_range\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"offer_range\" (\"name\", \"slug\", \"description\", \"is_public\", \"includes_all_products\", \"proxy_class\", \"date_created\") VALUES ('Custom range', 'custom-range-2', '', false, false, 'tests.integration.offer.test_custom_range.CustomRange', '2024-07-22T17:28:18.960345+00:00'::timestamptz) RETURNING \"offer_range\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"offer_range\".\"id\", \"offer_range\".\"name\", \"offer_range\".\"slug\", \"offer_range\".\"description\", \"offer_range\".\"is_public\", \"offer_range\".\"includes_all_products\", \"offer_range\".\"proxy_class\", \"offer_range\".\"date_created\" FROM \"offer_range\" WHERE \"offer_range\".\"slug\" = 'custom-range' ORDER BY \"offer_range\".\"name\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"offer_range\".\"id\", \"offer_range\".\"name\", \"offer_range\".\"slug\", \"offer_range\".\"description\", \"offer_range\".\"is_public\", \"offer_range\".\"includes_all_products\", \"offer_range\".\"proxy_class\", \"offer_range\".\"date_created\" FROM \"offer_range\" WHERE \"offer_range\".\"slug\" = 'custom-range-2' ORDER BY \"offer_range\".\"name\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "oscar/core"
+  }
+]

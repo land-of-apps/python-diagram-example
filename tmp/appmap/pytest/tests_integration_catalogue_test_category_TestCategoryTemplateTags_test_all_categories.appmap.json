@@ -1,0 +1,1698 @@
+{
+  "events": [
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "depth",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.templatetags.category_tags",
+      "method_id": "get_annotated_list",
+      "path": "src/oscar/templatetags/category_tags.py",
+      "lineno": 70
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814738704,
+        "value": "<CategoryQuerySet [<Category: Books>, <Category: Books > Fiction>, <Category: Books > Fiction > Horror>, <Category: Books > Fiction > Horror > Teen>, <Category: Books > Fiction > Horror > Gothic>, <Category: Books > Fiction > Comedy>, <Category: Books > Non-fiction>, <Category: Books > Non-fiction > Biography>, <Category: Books > Non-fiction > Programming>, <Category: Books > Children>]>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.CategoryQuerySet",
+      "method_id": "browsable",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 139
+    },
+    {
+      "return_value": {
+        "object_id": 13814793360,
+        "value": "<CategoryQuerySet [<Category: Books>, <Category: Books > Fiction>, <Category: Books > Fiction > Horror>, <Category: Books > Fiction > Horror > Teen>, <Category: Books > Fiction > Horror > Gothic>, <Category: Books > Fiction > Comedy>, <Category: Books > Non-fiction>, <Category: Books > Non-fiction > Biography>, <Category: Books > Non-fiction > Programming>, <Category: Books > Children>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 2,
+      "elapsed": 0.000080108642578125,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"ancestors_are_public\" AND \"catalogue_category\".\"is_public\") ORDER BY \"catalogue_category\".\"path\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 4,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 4,
+      "elapsed": 0.0004466249999950378,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814764640,
+        "value": "<Category: Books>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 6,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "_get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 288
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814764640,
+        "value": "<Category: Books>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4331234032,
+          "value": "''",
+          "name": "parent_slug",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "return_value": {
+        "object_id": 13814763248,
+        "value": "'books'",
+        "class": "builtins.str"
+      },
+      "parent_id": 7,
+      "elapsed": 9.5367431640625e-7,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814159920,
+        "value": "'/catalogue/category/books_341/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 6,
+      "elapsed": 0.00011897087097167969,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814764640,
+        "value": "<Category: Books>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 10,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "return_value": {
+        "object_id": 13814763248,
+        "value": "'books'",
+        "class": "builtins.str"
+      },
+      "parent_id": 10,
+      "elapsed": 0,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814792304,
+        "value": "<Category: Books > Fiction>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 12,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "_get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 288
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814792304,
+        "value": "<Category: Books > Fiction>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13814763248,
+          "value": "'books'",
+          "name": "parent_slug",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 13,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814792304,
+        "value": "<Category: Books > Fiction>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 14,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13814187312,
+        "value": "'CATEGORY_URL_en-gb_342'",
+        "class": "builtins.str"
+      },
+      "parent_id": 14,
+      "elapsed": 0.000008106231689453125,
+      "id": 15,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814279344,
+        "value": "'books/fiction'",
+        "class": "builtins.str"
+      },
+      "parent_id": 13,
+      "elapsed": 0.0007550716400146484,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814135280,
+        "value": "'/catalogue/category/books/fiction_342/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 12,
+      "elapsed": 0.0014650821685791016,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814792304,
+        "value": "<Category: Books > Fiction>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 18,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814792304,
+        "value": "<Category: Books > Fiction>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 19,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13814188672,
+        "value": "'CATEGORY_URL_en-gb_342'",
+        "class": "builtins.str"
+      },
+      "parent_id": 19,
+      "elapsed": 0.000009059906005859375,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814753712,
+        "value": "'books/fiction'",
+        "class": "builtins.str"
+      },
+      "parent_id": 18,
+      "elapsed": 0.0008599758148193359,
+      "id": 21,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814792256,
+        "value": "<Category: Books > Fiction > Horror>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 22,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "_get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 288
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814792256,
+        "value": "<Category: Books > Fiction > Horror>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13814753712,
+          "value": "'books/fiction'",
+          "name": "parent_slug",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 23,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814792256,
+        "value": "<Category: Books > Fiction > Horror>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 24,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13814379104,
+        "value": "'CATEGORY_URL_en-gb_343'",
+        "class": "builtins.str"
+      },
+      "parent_id": 24,
+      "elapsed": 0.000008821487426757812,
+      "id": 25,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814379344,
+        "value": "'books/fiction/horror'",
+        "class": "builtins.str"
+      },
+      "parent_id": 23,
+      "elapsed": 0.0008130073547363281,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813752048,
+        "value": "'/catalogue/category/books/fiction/horror_343/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 22,
+      "elapsed": 0.0016469955444335938,
+      "id": 27,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814792256,
+        "value": "<Category: Books > Fiction > Horror>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 28,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814792256,
+        "value": "<Category: Books > Fiction > Horror>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 29,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13814382064,
+        "value": "'CATEGORY_URL_en-gb_343'",
+        "class": "builtins.str"
+      },
+      "parent_id": 29,
+      "elapsed": 0.000008821487426757812,
+      "id": 30,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814382224,
+        "value": "'books/fiction/horror'",
+        "class": "builtins.str"
+      },
+      "parent_id": 28,
+      "elapsed": 0.0007841587066650391,
+      "id": 31,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814792640,
+        "value": "<Category: Books > Fiction > Horror > Teen>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 32,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "_get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 288
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814792640,
+        "value": "<Category: Books > Fiction > Horror > Teen>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13814382224,
+          "value": "'books/fiction/horror'",
+          "name": "parent_slug",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 33,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814792640,
+        "value": "<Category: Books > Fiction > Horror > Teen>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 34,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13813982432,
+        "value": "'CATEGORY_URL_en-gb_344'",
+        "class": "builtins.str"
+      },
+      "parent_id": 34,
+      "elapsed": 0.000008106231689453125,
+      "id": 35,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13813982752,
+        "value": "'books/fiction/horror/teen'",
+        "class": "builtins.str"
+      },
+      "parent_id": 33,
+      "elapsed": 0.0007460117340087891,
+      "id": 36,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814834768,
+        "value": "'/catalogue/category/books/fiction/horror/teen_344/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 32,
+      "elapsed": 0.0015709400177001953,
+      "id": 37,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814794800,
+        "value": "<Category: Books > Fiction > Horror > Gothic>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 38,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "_get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 288
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814794800,
+        "value": "<Category: Books > Fiction > Horror > Gothic>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13814382224,
+          "value": "'books/fiction/horror'",
+          "name": "parent_slug",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 39,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814794800,
+        "value": "<Category: Books > Fiction > Horror > Gothic>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 40,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13814425920,
+        "value": "'CATEGORY_URL_en-gb_345'",
+        "class": "builtins.str"
+      },
+      "parent_id": 40,
+      "elapsed": 0.000010967254638671875,
+      "id": 41,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814425360,
+        "value": "'books/fiction/horror/gothic'",
+        "class": "builtins.str"
+      },
+      "parent_id": 39,
+      "elapsed": 0.00096893310546875,
+      "id": 42,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814835776,
+        "value": "'/catalogue/category/books/fiction/horror/gothic_345/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 38,
+      "elapsed": 0.0020241737365722656,
+      "id": 43,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814792976,
+        "value": "<Category: Books > Fiction > Comedy>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 44,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "_get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 288
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814792976,
+        "value": "<Category: Books > Fiction > Comedy>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13814430320,
+          "value": "'books/fiction'",
+          "name": "parent_slug",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 45,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814792976,
+        "value": "<Category: Books > Fiction > Comedy>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 46,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13814382224,
+        "value": "'CATEGORY_URL_en-gb_346'",
+        "class": "builtins.str"
+      },
+      "parent_id": 46,
+      "elapsed": 0.000010967254638671875,
+      "id": 47,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814187712,
+        "value": "'books/fiction/comedy'",
+        "class": "builtins.str"
+      },
+      "parent_id": 45,
+      "elapsed": 0.0021209716796875,
+      "id": 48,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814370000,
+        "value": "'/catalogue/category/books/fiction/comedy_346/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 44,
+      "elapsed": 0.003196239471435547,
+      "id": 49,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814793936,
+        "value": "<Category: Books > Non-fiction>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 50,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "_get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 288
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814793936,
+        "value": "<Category: Books > Non-fiction>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13814819120,
+          "value": "'books'",
+          "name": "parent_slug",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 51,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814793936,
+        "value": "<Category: Books > Non-fiction>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 52,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13814427440,
+        "value": "'CATEGORY_URL_en-gb_347'",
+        "class": "builtins.str"
+      },
+      "parent_id": 52,
+      "elapsed": 0.000012159347534179688,
+      "id": 53,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814426320,
+        "value": "'books/non-fiction'",
+        "class": "builtins.str"
+      },
+      "parent_id": 51,
+      "elapsed": 0.0009038448333740234,
+      "id": 54,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814133552,
+        "value": "'/catalogue/category/books/non-fiction_347/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 50,
+      "elapsed": 0.0019071102142333984,
+      "id": 55,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814793936,
+        "value": "<Category: Books > Non-fiction>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 56,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814793936,
+        "value": "<Category: Books > Non-fiction>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 57,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13814846688,
+        "value": "'CATEGORY_URL_en-gb_347'",
+        "class": "builtins.str"
+      },
+      "parent_id": 57,
+      "elapsed": 0.000010013580322265625,
+      "id": 58,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814846928,
+        "value": "'books/non-fiction'",
+        "class": "builtins.str"
+      },
+      "parent_id": 56,
+      "elapsed": 0.0008149147033691406,
+      "id": 59,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814796240,
+        "value": "<Category: Books > Non-fiction > Biography>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 60,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "_get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 288
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814796240,
+        "value": "<Category: Books > Non-fiction > Biography>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13814846928,
+          "value": "'books/non-fiction'",
+          "name": "parent_slug",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 61,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814796240,
+        "value": "<Category: Books > Non-fiction > Biography>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 62,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13814847648,
+        "value": "'CATEGORY_URL_en-gb_348'",
+        "class": "builtins.str"
+      },
+      "parent_id": 62,
+      "elapsed": 0.000008821487426757812,
+      "id": 63,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814847248,
+        "value": "'books/non-fiction/biography'",
+        "class": "builtins.str"
+      },
+      "parent_id": 61,
+      "elapsed": 0.0008370876312255859,
+      "id": 64,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814854688,
+        "value": "'/catalogue/category/books/non-fiction/biography_348/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 60,
+      "elapsed": 0.001712799072265625,
+      "id": 65,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814793552,
+        "value": "<Category: Books > Non-fiction > Programming>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 66,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "_get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 288
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814793552,
+        "value": "<Category: Books > Non-fiction > Programming>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13814846928,
+          "value": "'books/non-fiction'",
+          "name": "parent_slug",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 67,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814793552,
+        "value": "<Category: Books > Non-fiction > Programming>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 68,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13814849008,
+        "value": "'CATEGORY_URL_en-gb_349'",
+        "class": "builtins.str"
+      },
+      "parent_id": 68,
+      "elapsed": 0.000008821487426757812,
+      "id": 69,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814848608,
+        "value": "'books/non-fiction/programming'",
+        "class": "builtins.str"
+      },
+      "parent_id": 67,
+      "elapsed": 0.0008442401885986328,
+      "id": 70,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814855696,
+        "value": "'/catalogue/category/books/non-fiction/programming_349/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 66,
+      "elapsed": 0.0016589164733886719,
+      "id": 71,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814795232,
+        "value": "<Category: Books > Children>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 72,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "_get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 288
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814795232,
+        "value": "<Category: Books > Children>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13814853360,
+          "value": "'books'",
+          "name": "parent_slug",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 73,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13814795232,
+        "value": "<Category: Books > Children>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 74,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_url_cache_key",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 283
+    },
+    {
+      "return_value": {
+        "object_id": 13814867008,
+        "value": "'CATEGORY_URL_en-gb_350'",
+        "class": "builtins.str"
+      },
+      "parent_id": 74,
+      "elapsed": 0.000008106231689453125,
+      "id": 75,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814832560,
+        "value": "'books/children'",
+        "class": "builtins.str"
+      },
+      "parent_id": 73,
+      "elapsed": 0.0007989406585693359,
+      "id": 76,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814862832,
+        "value": "'/catalogue/category/books/children_350/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 72,
+      "elapsed": 0.0017306804656982422,
+      "id": 77,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13814062464,
+        "value": "[{'url': '/catalogue/category/books_341/', 'num_to_close': [], 'level': 0, 'has_children': True}, {'url': '/catalogue/category/books/fiction_342/', 'num_to_close': [], 'level': 1, 'has_children': True}, {'url': '/catalogue/category/books/fiction/horror_343/', 'num_to_close': [], 'level': 2, 'has_children': True}, {'url': '/catalogue/category/books/fiction/horror/teen_344/', 'num_to_close': [], 'level': 3}, {'url': '/catalogue/category/books/fiction/horror/gothic_345/', 'num_to_close': [0], 'level': 3}, {'url': '/catalogue/category/books/fiction/comedy_346/', 'num_to_close': [0], 'level': 2}, {'url': '/catalogue/category/books/non-fiction_347/', 'num_to_close': [], 'level': 1, 'has_children': True}, {'url': '/catalogue/category/books/non-fiction/biography_348/', 'num_to_close': [], 'level': 2}, {'url': '/catalogue/category/books/non-fiction/programming_349/', 'num_to_close': [0], 'level': 2}, {'url': '/catalogue/category/books/children_350/', 'num_to_close': [0], 'level': 1, 'has_children': False}]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "oscar.templatetags.category_tags.CheapCategoryInfo",
+            "properties": [
+              {
+                "name": "url",
+                "class": "builtins.str"
+              },
+              {
+                "name": "num_to_close",
+                "class": "builtins.list"
+              },
+              {
+                "name": "level",
+                "class": "builtins.int"
+              },
+              {
+                "name": "has_children",
+                "class": "builtins.bool"
+              }
+            ]
+          },
+          {
+            "class": "oscar.templatetags.category_tags.CheapCategoryInfo",
+            "properties": [
+              {
+                "name": "url",
+                "class": "builtins.str"
+              },
+              {
+                "name": "num_to_close",
+                "class": "builtins.list"
+              },
+              {
+                "name": "level",
+                "class": "builtins.int"
+              },
+              {
+                "name": "has_children",
+                "class": "builtins.bool"
+              }
+            ]
+          },
+          {
+            "class": "oscar.templatetags.category_tags.CheapCategoryInfo",
+            "properties": [
+              {
+                "name": "url",
+                "class": "builtins.str"
+              },
+              {
+                "name": "num_to_close",
+                "class": "builtins.list"
+              },
+              {
+                "name": "level",
+                "class": "builtins.int"
+              },
+              {
+                "name": "has_children",
+                "class": "builtins.bool"
+              }
+            ]
+          },
+          {
+            "class": "oscar.templatetags.category_tags.CheapCategoryInfo",
+            "properties": [
+              {
+                "name": "url",
+                "class": "builtins.str"
+              },
+              {
+                "name": "num_to_close",
+                "class": "builtins.list"
+              },
+              {
+                "name": "level",
+                "class": "builtins.int"
+              }
+            ]
+          },
+          {
+            "class": "oscar.templatetags.category_tags.CheapCategoryInfo",
+            "properties": [
+              {
+                "name": "url",
+                "class": "builtins.str"
+              },
+              {
+                "name": "num_to_close",
+                "class": "builtins.list",
+                "items": [
+                  {
+                    "class": "builtins.int"
+                  }
+                ]
+              },
+              {
+                "name": "level",
+                "class": "builtins.int"
+              }
+            ]
+          },
+          {
+            "class": "oscar.templatetags.category_tags.CheapCategoryInfo",
+            "properties": [
+              {
+                "name": "url",
+                "class": "builtins.str"
+              },
+              {
+                "name": "num_to_close",
+                "class": "builtins.list",
+                "items": [
+                  {
+                    "class": "builtins.int"
+                  }
+                ]
+              },
+              {
+                "name": "level",
+                "class": "builtins.int"
+              }
+            ]
+          },
+          {
+            "class": "oscar.templatetags.category_tags.CheapCategoryInfo",
+            "properties": [
+              {
+                "name": "url",
+                "class": "builtins.str"
+              },
+              {
+                "name": "num_to_close",
+                "class": "builtins.list"
+              },
+              {
+                "name": "level",
+                "class": "builtins.int"
+              },
+              {
+                "name": "has_children",
+                "class": "builtins.bool"
+              }
+            ]
+          },
+          {
+            "class": "oscar.templatetags.category_tags.CheapCategoryInfo",
+            "properties": [
+              {
+                "name": "url",
+                "class": "builtins.str"
+              },
+              {
+                "name": "num_to_close",
+                "class": "builtins.list"
+              },
+              {
+                "name": "level",
+                "class": "builtins.int"
+              }
+            ]
+          },
+          {
+            "class": "oscar.templatetags.category_tags.CheapCategoryInfo",
+            "properties": [
+              {
+                "name": "url",
+                "class": "builtins.str"
+              },
+              {
+                "name": "num_to_close",
+                "class": "builtins.list",
+                "items": [
+                  {
+                    "class": "builtins.int"
+                  }
+                ]
+              },
+              {
+                "name": "level",
+                "class": "builtins.int"
+              }
+            ]
+          },
+          {
+            "class": "oscar.templatetags.category_tags.CheapCategoryInfo",
+            "properties": [
+              {
+                "name": "url",
+                "class": "builtins.str"
+              },
+              {
+                "name": "num_to_close",
+                "class": "builtins.list",
+                "items": [
+                  {
+                    "class": "builtins.int"
+                  }
+                ]
+              },
+              {
+                "name": "level",
+                "class": "builtins.int"
+              },
+              {
+                "name": "has_children",
+                "class": "builtins.bool"
+              }
+            ]
+          }
+        ],
+        "size": 10
+      },
+      "parent_id": 1,
+      "elapsed": 0.05172586441040039,
+      "id": 78,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Category template tags",
+    "recording": {
+      "defined_class": "tests.integration.catalogue.test_category.TestCategoryTemplateTags",
+      "method_id": "test_all_categories"
+    },
+    "source_location": "tests/integration/catalogue/test_category.py:249",
+    "name": "Category template tags all categories",
+    "feature": "All categories",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "templatetags",
+          "type": "package",
+          "children": [
+            {
+              "name": "category_tags",
+              "type": "class",
+              "children": [
+                {
+                  "name": "get_annotated_list",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/templatetags/category_tags.py:70"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "managers",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "CategoryQuerySet",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "browsable",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/managers.py:139"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractCategory",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "_get_absolute_url",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:288"
+                        },
+                        {
+                          "name": "get_full_slug",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:184"
+                        },
+                        {
+                          "name": "get_url_cache_key",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:283"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"ancestors_are_public\" AND \"catalogue_category\".\"is_public\") ORDER BY \"catalogue_category\".\"path\" ASC"
+        }
+      ]
+    }
+  ]
+}

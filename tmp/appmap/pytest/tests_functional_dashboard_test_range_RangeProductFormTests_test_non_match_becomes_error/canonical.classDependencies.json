@@ -1,0 +1,42 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_category\" INNER JOIN \"offer_range_included_categories\" ON (\"catalogue_category\".\"id\" = \"offer_range_included_categories\".\"category_id\") WHERE \"offer_range_included_categories\".\"range_id\" = 301 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_product\" T2 ON (\"catalogue_product\".\"parent_id\" = T2.\"id\") INNER JOIN \"offer_range_excluded_products\" ON (T2.\"id\" = \"offer_range_excluded_products\".\"product_id\") WHERE \"offer_range_excluded_products\".\"range_id\" = 301 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_product\" T2 ON (\"catalogue_product\".\"parent_id\" = T2.\"id\") INNER JOIN \"offer_rangeproduct\" ON (T2.\"id\" = \"offer_rangeproduct\".\"product_id\") WHERE \"offer_rangeproduct\".\"range_id\" = 301 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_productclass\" INNER JOIN \"offer_range_classes\" ON (\"catalogue_productclass\".\"id\" = \"offer_range_classes\".\"productclass_id\") WHERE \"offer_range_classes\".\"range_id\" = 301 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT DISTINCT \"catalogue_product\".\"upc\", \"catalogue_product\".\"date_created\" FROM \"catalogue_product\" INNER JOIN \"offer_rangeproduct\" ON (\"catalogue_product\".\"id\" = \"offer_rangeproduct\".\"product_id\") WHERE (\"offer_rangeproduct\".\"range_id\" = 301 AND NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"range_id\" = 301 AND U1.\"product_id\" = (\"catalogue_product\".\"id\")) LIMIT 1))) ORDER BY \"catalogue_product\".\"date_created\" DESC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT DISTINCT \"partner_stockrecord\".\"partner_sku\", \"catalogue_product\".\"date_created\" FROM \"catalogue_product\" INNER JOIN \"offer_rangeproduct\" ON (\"catalogue_product\".\"id\" = \"offer_rangeproduct\".\"product_id\") LEFT OUTER JOIN \"partner_stockrecord\" ON (\"catalogue_product\".\"id\" = \"partner_stockrecord\".\"product_id\") WHERE (\"offer_rangeproduct\".\"range_id\" = 301 AND NOT (EXISTS(SELECT 1 AS \"a\" FROM \"offer_range_excluded_products\" U1 WHERE (U1.\"range_id\" = 301 AND U1.\"product_id\" = (\"catalogue_product\".\"id\")) LIMIT 1))) ORDER BY \"catalogue_product\".\"date_created\" DESC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\" FROM \"catalogue_product\" LEFT OUTER JOIN \"partner_stockrecord\" ON (\"catalogue_product\".\"id\" = \"partner_stockrecord\".\"product_id\") WHERE (\"partner_stockrecord\".\"partner_sku\" IN ('123123') OR \"catalogue_product\".\"upc\" IN ('123123')) ORDER BY \"catalogue_product\".\"date_created\" DESC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"catalogue_product\".\"upc\" FROM \"catalogue_product\" LEFT OUTER JOIN \"partner_stockrecord\" ON (\"catalogue_product\".\"id\" = \"partner_stockrecord\".\"product_id\") WHERE (\"partner_stockrecord\".\"partner_sku\" IN ('123123') OR \"catalogue_product\".\"upc\" IN ('123123')) ORDER BY \"catalogue_product\".\"date_created\" DESC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_stockrecord\".\"partner_sku\" FROM \"catalogue_product\" LEFT OUTER JOIN \"partner_stockrecord\" ON (\"catalogue_product\".\"id\" = \"partner_stockrecord\".\"product_id\") WHERE (\"partner_stockrecord\".\"partner_sku\" IN ('123123') OR \"catalogue_product\".\"upc\" IN ('123123')) ORDER BY \"catalogue_product\".\"date_created\" DESC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  }
+]

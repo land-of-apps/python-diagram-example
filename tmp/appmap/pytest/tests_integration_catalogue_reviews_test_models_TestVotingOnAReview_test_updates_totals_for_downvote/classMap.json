@@ -1,0 +1,166 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "catalogue",
+            "type": "package",
+            "children": [
+              {
+                "name": "reviews",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "abstract_models",
+                    "type": "package",
+                    "children": [
+                      {
+                        "name": "AbstractProductReview",
+                        "type": "class",
+                        "children": [
+                          {
+                            "name": "vote_down",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/catalogue/reviews/abstract_models.py:109"
+                          },
+                          {
+                            "name": "update_totals",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/catalogue/reviews/abstract_models.py:163"
+                          },
+                          {
+                            "name": "save",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/catalogue/reviews/abstract_models.py:112"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "AbstractVote",
+                        "type": "class",
+                        "children": [
+                          {
+                            "name": "save",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/catalogue/reviews/abstract_models.py:227"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractProduct",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "update_rating",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/abstract_models.py:784"
+                      },
+                      {
+                        "name": "calculate_rating",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/abstract_models.py:794"
+                      },
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/abstract_models.py:590"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "product_attributes",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "ProductAttributesContainer",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/product_attributes.py:207"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "models",
+        "type": "package",
+        "children": [
+          {
+            "name": "fields",
+            "type": "package",
+            "children": [
+              {
+                "name": "NullCharField",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "get_prep_value",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/models/fields/__init__.py:122"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"reviews_vote\" (\"review_id\", \"user_id\", \"delta\", \"date_created\") VALUES (65, 640,  -1, '2024-07-22T17:28:04.013009+00:00'::timestamptz) RETURNING \"reviews_vote\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT SUM(\"reviews_vote\".\"delta\") AS \"score\", COUNT(\"reviews_vote\".\"id\") AS \"total_votes\" FROM \"reviews_vote\" WHERE \"reviews_vote\".\"review_id\" = 65"
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"reviews_productreview\" SET \"product_id\" = 749, \"score\" = 3, \"title\" = 'This is nice', \"body\" = 'This is the body', \"user_id\" = 639, \"name\" = '', \"email\" = '', \"homepage\" = '', \"status\" = 1, \"total_votes\" = 1, \"delta_votes\" =  -1, \"date_created\" = '2024-07-22T17:28:04.009714+00:00'::timestamptz WHERE \"reviews_productreview\".\"id\" = 65"
+      },
+      {
+        "type": "query",
+        "name": "SELECT SUM(\"reviews_productreview\".\"score\") AS \"sum\", COUNT(\"reviews_productreview\".\"id\") AS \"count\" FROM \"reviews_productreview\" WHERE (\"reviews_productreview\".\"product_id\" = 749 AND \"reviews_productreview\".\"status\" = 1)"
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"catalogue_product\" SET \"structure\" = 'standalone', \"is_public\" = true, \"upc\" = NULL, \"parent_id\" = NULL, \"title\" = 'Dùｍϻϒ title', \"slug\" = 'dumu03fbu03a5-title', \"description\" = '', \"meta_title\" = NULL, \"meta_description\" = NULL, \"product_class_id\" = 568, \"rating\" = 3.0, \"date_created\" = '2024-07-22T17:28:04.004355+00:00'::timestamptz, \"date_updated\" = '2024-07-22T17:28:04.016107+00:00'::timestamptz, \"is_discountable\" = true WHERE \"catalogue_product\".\"id\" = 749"
+      }
+    ]
+  }
+]

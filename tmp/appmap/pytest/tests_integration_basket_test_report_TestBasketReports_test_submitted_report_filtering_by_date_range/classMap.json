@@ -1,0 +1,110 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "partner",
+            "type": "package",
+            "children": [
+              {
+                "name": "strategy",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "Selector",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "strategy",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/partner/strategy.py:37"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "dashboard",
+            "type": "package",
+            "children": [
+              {
+                "name": "reports",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "reports",
+                    "type": "package",
+                    "children": [
+                      {
+                        "name": "ReportGenerator",
+                        "type": "class",
+                        "children": [
+                          {
+                            "name": "get_queryset",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reports/reports.py:42"
+                          },
+                          {
+                            "name": "filter_with_date_range",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reports/reports.py:68"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core",
+        "type": "package",
+        "children": [
+          {
+            "name": "utils",
+            "type": "class",
+            "children": [
+              {
+                "name": "datetime_combine",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:125"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Submitted', '2024-07-22T17:27:55.181017+00:00'::timestamptz, NULL, '2020-07-03T00:00:00+00:00'::timestamptz) RETURNING \"basket_basket\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"basket_basket\" SET \"owner_id\" = NULL, \"status\" = 'Submitted', \"date_created\" = '2024-07-22T17:27:55.181017+00:00'::timestamptz, \"date_merged\" = NULL, \"date_submitted\" = '2020-07-03T00:00:00+00:00'::timestamptz WHERE \"basket_basket\".\"id\" = 356"
+      },
+      {
+        "type": "query",
+        "name": "SELECT COUNT(*) AS \"__count\" FROM \"basket_basket\" WHERE (\"basket_basket\".\"status\" = 'Submitted' AND \"basket_basket\".\"date_submitted\" >= '2020-07-01T00:00:00-05:00'::timestamptz AND \"basket_basket\".\"date_submitted\" <= '2020-08-01T23:59:59.999999-05:00'::timestamptz)"
+      }
+    ]
+  }
+]

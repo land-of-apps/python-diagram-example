@@ -1,0 +1,163 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "templatetags",
+        "type": "package",
+        "children": [
+          {
+            "name": "image_tags",
+            "type": "package",
+            "children": [
+              {
+                "name": "ThumbnailNode",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "render",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/templatetags/image_tags.py:111"
+                  },
+                  {
+                    "name": "_render",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/templatetags/image_tags.py:121"
+                  },
+                  {
+                    "name": "get_thumbnail_options",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/templatetags/image_tags.py:108"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core",
+        "type": "package",
+        "children": [
+          {
+            "name": "thumbnails",
+            "type": "class",
+            "children": [
+              {
+                "name": "get_thumbnailer",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/thumbnails.py:61"
+              },
+              {
+                "name": "EasyThumbnails",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "generate_thumbnail",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/core/thumbnails.py:46"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "class",
+    "name": "<templates>/UnknownSource",
+    "children": [
+      {
+        "type": "function",
+        "name": "render",
+        "static": false
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"easy_thumbnails_source\".\"id\", \"easy_thumbnails_source\".\"storage_hash\", \"easy_thumbnails_source\".\"name\", \"easy_thumbnails_source\".\"modified\" FROM \"easy_thumbnails_source\" WHERE (\"easy_thumbnails_source\".\"name\" = 'images/products/2024/07/test_image_ymQOI8U.jpg' AND \"easy_thumbnails_source\".\"storage_hash\" = '0d677af76ca5bf5575d614e04932c3a4') LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SAVEPOINT \"s8669432832_x4736\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"easy_thumbnails_source\" (\"storage_hash\", \"name\", \"modified\") VALUES ('0d677af76ca5bf5575d614e04932c3a4', 'images/products/2024/07/test_image_ymQOI8U.jpg', '2024-07-22T17:28:51.142917+00:00'::timestamptz) RETURNING \"easy_thumbnails_source\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "RELEASE SAVEPOINT \"s8669432832_x4736\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"easy_thumbnails_thumbnail\".\"id\", \"easy_thumbnails_thumbnail\".\"storage_hash\", \"easy_thumbnails_thumbnail\".\"name\", \"easy_thumbnails_thumbnail\".\"modified\", \"easy_thumbnails_thumbnail\".\"source_id\" FROM \"easy_thumbnails_thumbnail\" WHERE (\"easy_thumbnails_thumbnail\".\"name\" = 'thumbnails/images/products/2024/07/test_image_ymQOI8U.jpg.50x75_q85_crop-True.jpg' AND \"easy_thumbnails_thumbnail\".\"source_id\" = 4 AND \"easy_thumbnails_thumbnail\".\"storage_hash\" = 'd26becbf46ac48eda79c7a39a13a02dd') LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SAVEPOINT \"s8669432832_x4737\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"easy_thumbnails_thumbnail\" (\"storage_hash\", \"name\", \"modified\", \"source_id\") VALUES ('d26becbf46ac48eda79c7a39a13a02dd', 'thumbnails/images/products/2024/07/test_image_ymQOI8U.jpg.50x75_q85_crop-True.jpg', '2024-07-22T17:28:51.152559+00:00'::timestamptz, 4) RETURNING \"easy_thumbnails_thumbnail\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "RELEASE SAVEPOINT \"s8669432832_x4737\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"easy_thumbnails_source\" SET \"modified\" = '2024-07-22T17:28:51.157687+00:00'::timestamptz WHERE \"easy_thumbnails_source\".\"id\" = 4"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"easy_thumbnails_thumbnail\".\"id\", \"easy_thumbnails_thumbnail\".\"storage_hash\", \"easy_thumbnails_thumbnail\".\"name\", \"easy_thumbnails_thumbnail\".\"modified\", \"easy_thumbnails_thumbnail\".\"source_id\" FROM \"easy_thumbnails_thumbnail\" WHERE (\"easy_thumbnails_thumbnail\".\"name\" = 'thumbnails/images/products/2024/07/test_image_ymQOI8U.jpg.0x150_q85_crop-True.jpg' AND \"easy_thumbnails_thumbnail\".\"source_id\" = 4 AND \"easy_thumbnails_thumbnail\".\"storage_hash\" = 'd26becbf46ac48eda79c7a39a13a02dd') LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SAVEPOINT \"s8669432832_x4738\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"easy_thumbnails_thumbnail\" (\"storage_hash\", \"name\", \"modified\", \"source_id\") VALUES ('d26becbf46ac48eda79c7a39a13a02dd', 'thumbnails/images/products/2024/07/test_image_ymQOI8U.jpg.0x150_q85_crop-True.jpg', '2024-07-22T17:28:51.159071+00:00'::timestamptz, 4) RETURNING \"easy_thumbnails_thumbnail\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "RELEASE SAVEPOINT \"s8669432832_x4738\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"easy_thumbnails_source\" SET \"modified\" = '2024-07-22T17:28:51.163299+00:00'::timestamptz WHERE \"easy_thumbnails_source\".\"id\" = 4"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"easy_thumbnails_thumbnail\".\"id\", \"easy_thumbnails_thumbnail\".\"storage_hash\", \"easy_thumbnails_thumbnail\".\"name\", \"easy_thumbnails_thumbnail\".\"modified\", \"easy_thumbnails_thumbnail\".\"source_id\" FROM \"easy_thumbnails_thumbnail\" WHERE (\"easy_thumbnails_thumbnail\".\"name\" = 'thumbnails/images/products/2024/07/test_image_ymQOI8U.jpg.50x0_q85_crop-True.jpg' AND \"easy_thumbnails_thumbnail\".\"source_id\" = 4 AND \"easy_thumbnails_thumbnail\".\"storage_hash\" = 'd26becbf46ac48eda79c7a39a13a02dd') LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SAVEPOINT \"s8669432832_x4739\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"easy_thumbnails_thumbnail\" (\"storage_hash\", \"name\", \"modified\", \"source_id\") VALUES ('d26becbf46ac48eda79c7a39a13a02dd', 'thumbnails/images/products/2024/07/test_image_ymQOI8U.jpg.50x0_q85_crop-True.jpg', '2024-07-22T17:28:51.168228+00:00'::timestamptz, 4) RETURNING \"easy_thumbnails_thumbnail\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "RELEASE SAVEPOINT \"s8669432832_x4739\""
+      }
+    ]
+  }
+]

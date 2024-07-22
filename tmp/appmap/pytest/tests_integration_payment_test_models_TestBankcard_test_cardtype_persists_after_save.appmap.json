@@ -1,0 +1,525 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14026131296,
+        "value": "<User: example_351@example.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14026156800,
+          "value": "{'force_insert': True, 'using': 'default'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "force_insert",
+              "class": "builtins.bool"
+            },
+            {
+              "name": "using",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "save",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 115
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('', NULL, false, 'example_351@example.com', 'joseph', 'winterbottom', false, true, '2024-07-22T17:28:48.409094+00:00'::timestamptz, 'the_j_meister nummer 351', '') RETURNING \"myauth_user\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0.0013035839999986365,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14026131296,
+        "value": "<User: example_351@example.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "_migrate_alerts_to_user",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 103
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"customer_productalert\" SET \"user_id\" = 687, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_351@example.com' AND \"customer_productalert\".\"status\" = 'Active')",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.0005657500000211257,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 4,
+      "elapsed": 0.0009031295776367188,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0025229454040527344,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14026131296,
+        "value": "<User: example_351@example.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14026119616,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 9,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "save",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 115
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"myauth_user\" SET \"password\" = 'md5$9UQz4VeZt7CTK9rtPo93Jx$42733729ef52c924491189afa27345aa', \"last_login\" = NULL, \"is_superuser\" = false, \"email\" = 'example_351@example.com', \"first_name\" = 'joseph', \"last_name\" = 'winterbottom', \"is_staff\" = false, \"is_active\" = true, \"date_joined\" = '2024-07-22T17:28:48.409094+00:00'::timestamptz, \"username\" = 'the_j_meister nummer 351', \"extra_field\" = '' WHERE \"myauth_user\".\"id\" = 687",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 10,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 10,
+      "elapsed": 0.0007426249999866741,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14026131296,
+        "value": "<User: example_351@example.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "id": 12,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "_migrate_alerts_to_user",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 103
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"customer_productalert\" SET \"user_id\" = 687, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_351@example.com' AND \"customer_productalert\".\"status\" = 'Active')",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 13,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 13,
+      "elapsed": 0.005028832999983024,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 12,
+      "elapsed": 0.005445957183837891,
+      "id": 15,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 9,
+      "elapsed": 0.006587028503417969,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4421292800,
+          "value": "'5500000000000004'",
+          "name": "card_number",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 17,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.payment.bankcards",
+      "method_id": "bankcard_type",
+      "path": "src/oscar/apps/payment/bankcards.py",
+      "lineno": 67
+    },
+    {
+      "return_value": {
+        "object_id": 4373112496,
+        "value": "'Mastercard'",
+        "class": "builtins.str"
+      },
+      "parent_id": 17,
+      "elapsed": 0.0001010894775390625,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14026131200,
+        "value": "<Bankcard: Mastercard 5500000000000004 (Expires: 01/10)>",
+        "name": "self",
+        "class": "oscar.apps.payment.models.Bankcard"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 14026120640,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 19,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.payment.abstract_models.AbstractBankcard",
+      "method_id": "save",
+      "path": "src/oscar/apps/payment/abstract_models.py",
+      "lineno": 316
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14026131200,
+        "value": "<Bankcard: Mastercard 5500000000000004 (Expires: 01/10)>",
+        "name": "self",
+        "class": "oscar.apps.payment.models.Bankcard"
+      },
+      "id": 20,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.payment.abstract_models.AbstractBankcard",
+      "method_id": "prepare_for_save",
+      "path": "src/oscar/apps/payment/abstract_models.py",
+      "lineno": 321
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 20,
+      "elapsed": 0.0000021457672119140625,
+      "id": 21,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"payment_bankcard\" (\"user_id\", \"card_type\", \"name\", \"number\", \"expiry_date\", \"partner_reference\") VALUES (687, 'Mastercard', '', 'XXXX-XXXX-XXXX-0004', '2010-01-01'::date, '') RETURNING \"payment_bankcard\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 22,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 22,
+      "elapsed": 0.0013082499999939046,
+      "id": 23,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 19,
+      "elapsed": 0.0016050338745117188,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"payment_bankcard\".\"id\", \"payment_bankcard\".\"user_id\", \"payment_bankcard\".\"card_type\", \"payment_bankcard\".\"name\", \"payment_bankcard\".\"number\", \"payment_bankcard\".\"expiry_date\", \"payment_bankcard\".\"partner_reference\" FROM \"payment_bankcard\" WHERE \"payment_bankcard\".\"id\" = 2 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 25,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 25,
+      "elapsed": 0.0010161669999888545,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Bankcard",
+    "recording": {
+      "defined_class": "tests.integration.payment.test_models.TestBankcard",
+      "method_id": "test_cardtype_persists_after_save"
+    },
+    "source_location": "tests/integration/payment/test_models.py:41",
+    "name": "Bankcard cardtype persists after save",
+    "feature": "Cardtype persists after save",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "customer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractUser",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/abstract_models.py:115"
+                        },
+                        {
+                          "name": "_migrate_alerts_to_user",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/abstract_models.py:103"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "payment",
+              "type": "package",
+              "children": [
+                {
+                  "name": "bankcards",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "bankcard_type",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/payment/bankcards.py:67"
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractBankcard",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/payment/abstract_models.py:316"
+                        },
+                        {
+                          "name": "prepare_for_save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/payment/abstract_models.py:321"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('', NULL, false, 'example_351@example.com', 'joseph', 'winterbottom', false, true, '2024-07-22T17:28:48.409094+00:00'::timestamptz, 'the_j_meister nummer 351', '') RETURNING \"myauth_user\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"customer_productalert\" SET \"user_id\" = 687, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_351@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"myauth_user\" SET \"password\" = 'md5$9UQz4VeZt7CTK9rtPo93Jx$42733729ef52c924491189afa27345aa', \"last_login\" = NULL, \"is_superuser\" = false, \"email\" = 'example_351@example.com', \"first_name\" = 'joseph', \"last_name\" = 'winterbottom', \"is_staff\" = false, \"is_active\" = true, \"date_joined\" = '2024-07-22T17:28:48.409094+00:00'::timestamptz, \"username\" = 'the_j_meister nummer 351', \"extra_field\" = '' WHERE \"myauth_user\".\"id\" = 687"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"payment_bankcard\" (\"user_id\", \"card_type\", \"name\", \"number\", \"expiry_date\", \"partner_reference\") VALUES (687, 'Mastercard', '', 'XXXX-XXXX-XXXX-0004', '2010-01-01'::date, '') RETURNING \"payment_bankcard\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"payment_bankcard\".\"id\", \"payment_bankcard\".\"user_id\", \"payment_bankcard\".\"card_type\", \"payment_bankcard\".\"name\", \"payment_bankcard\".\"number\", \"payment_bankcard\".\"expiry_date\", \"payment_bankcard\".\"partner_reference\" FROM \"payment_bankcard\" WHERE \"payment_bankcard\".\"id\" = 2 LIMIT 21"
+        }
+      ]
+    }
+  ]
+}

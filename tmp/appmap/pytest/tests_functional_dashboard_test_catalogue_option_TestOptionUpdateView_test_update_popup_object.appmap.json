@@ -1,0 +1,3854 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13386219472,
+        "value": "<tests.functional.dashboard.test_catalogue_option.TestOptionUpdateView testMethod=test_update_popup_object>",
+        "name": "self",
+        "class": "tests.functional.dashboard.test_catalogue_option.TestOptionUpdateView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13386627088,
+          "value": "'/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'",
+          "name": "url",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13388657280,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.test.testcases.WebTestCase",
+      "method_id": "get",
+      "path": "src/oscar/test/testcases.py",
+      "lineno": 60
+    },
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.0",
+        "path_info": "/dashboard/catalogue/option/39/update/",
+        "normalized_path_info": "/dashboard/catalogue/option/{pk}/update/",
+        "headers": {
+          "Host": "testserver"
+        }
+      },
+      "message": [
+        {
+          "object_id": 4333065392,
+          "value": "'1'",
+          "name": "_popup",
+          "class": "builtins.str"
+        },
+        {
+          "object_id": 13386331056,
+          "value": "'id'",
+          "name": "_to_field",
+          "class": "builtins.str"
+        },
+        {
+          "object_id": 13384985520,
+          "value": "'39'",
+          "name": "pk",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13388725168,
+          "value": "<WSGIRequest: GET '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13388081280,
+          "value": "{'request': <WSGIRequest: GET '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>, 'django_webtest_user': 'testuser%40buymore.com'}",
+          "name": "credentials",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "django_webtest_user",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "django.contrib.auth",
+      "method_id": "authenticate",
+      "path": "venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py",
+      "lineno": 63
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13388662096,
+        "value": "<django_webtest.backends.WebtestUserBackend object at 0x31e06c550>",
+        "name": "self",
+        "class": "django_webtest.backends.WebtestUserBackend"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13388725168,
+          "value": "<WSGIRequest: GET '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13386247504,
+          "value": "'testuser%40buymore.com'",
+          "name": "remote_user",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "django.contrib.auth.backends.RemoteUserBackend",
+      "method_id": "authenticate",
+      "path": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py",
+      "lineno": 187
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"email\" = 'testuser@buymore.com' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.0006499170000040522,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13388662096,
+        "value": "<django_webtest.backends.WebtestUserBackend object at 0x31e06c550>",
+        "name": "self",
+        "class": "django_webtest.backends.WebtestUserBackend"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13386326560,
+          "value": "<User: testuser@buymore.com>",
+          "name": "user",
+          "class": "tests._site.myauth.models.User"
+        }
+      ],
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "django.contrib.auth.backends.ModelBackend",
+      "method_id": "user_can_authenticate",
+      "path": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py",
+      "lineno": 55
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 7,
+      "elapsed": 0.0000011920928955078125,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13386326560,
+        "value": "<User: testuser@buymore.com>",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parent_id": 4,
+      "elapsed": 0.0009860992431640625,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13386326560,
+        "value": "<User: testuser@buymore.com>",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parent_id": 3,
+      "elapsed": 0.0010819435119628906,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = '38pjiu8o6pgqa4d9ucjvmt818yxhcj9o' LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 11,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 11,
+      "elapsed": 0.00046804099999064874,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SAVEPOINT \"s8669432832_x1516\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 13,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 13,
+      "elapsed": 0.00048795800000789313,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('38pjiu8o6pgqa4d9ucjvmt818yxhcj9o', 'e30:1sVwoY:UWfRhZ1H6EZOxKdFrjI-VWbwo4lY7QniPp2_GrKkNQ4', '2024-08-05T17:27:10.198578+00:00'::timestamptz)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 15,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 15,
+      "elapsed": 0.000874124999995729,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "RELEASE SAVEPOINT \"s8669432832_x1516\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 17,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 17,
+      "elapsed": 0.0008277499999991278,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13386326560,
+        "value": "<User: testuser@buymore.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13386423872,
+          "value": "{'update_fields': ['last_login']}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "update_fields",
+              "class": "builtins.list",
+              "items": [
+                {
+                  "class": "builtins.str"
+                }
+              ]
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 19,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "save",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 115
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"myauth_user\" SET \"last_login\" = '2024-07-22T17:27:10.201083+00:00'::timestamptz WHERE \"myauth_user\".\"id\" = 251",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 20,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 20,
+      "elapsed": 0.0005588329999994812,
+      "id": 21,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13386326560,
+        "value": "<User: testuser@buymore.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "id": 22,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "_migrate_alerts_to_user",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 103
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"customer_productalert\" SET \"user_id\" = 251, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'testuser@buymore.com' AND \"customer_productalert\".\"status\" = 'Active')",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 23,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 23,
+      "elapsed": 0.0005026249999957599,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 22,
+      "elapsed": 0.0006928443908691406,
+      "id": 25,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 19,
+      "elapsed": 0.0015342235565185547,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4415473264,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x1072ec670>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13388725168,
+          "value": "<WSGIRequest: GET '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "opt",
+          "object_id": 13386326560,
+          "value": "<User: testuser@buymore.com>",
+          "name": "user",
+          "class": "tests._site.myauth.models.User"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13386423040,
+          "value": "{'request': <WSGIRequest: GET '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>, 'user': <User: testuser@buymore.com>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "user",
+              "class": "tests._site.myauth.models.User"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 27,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "return_value": {
+        "object_id": 13388109280,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x31dfe55e0>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 27,
+      "elapsed": 0.000003814697265625,
+      "id": 28,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13386326560,
+          "value": "<User: testuser@buymore.com>",
+          "name": "user",
+          "class": "tests._site.myauth.models.User"
+        },
+        {
+          "kind": "req",
+          "object_id": 4380030464,
+          "value": "['is_staff']",
+          "name": "permissions",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 29,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.views.decorators",
+      "method_id": "check_permissions",
+      "path": "src/oscar/views/decorators.py",
+      "lineno": 10
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13386326560,
+        "value": "<User: testuser@buymore.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13386506880,
+          "value": "[]",
+          "name": "perm_list",
+          "class": "builtins.list",
+          "size": 0
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "obj",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 30,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "django.contrib.auth.models.PermissionsMixin",
+      "method_id": "has_perms",
+      "path": "venv/lib/python3.8/site-packages/django/contrib/auth/models.py",
+      "lineno": 313
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 30,
+      "elapsed": 0.00000286102294921875,
+      "id": 31,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 29,
+      "elapsed": 0.00005412101745605469,
+      "id": 32,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13387975504,
+        "value": "<oscar.apps.dashboard.catalogue.views.OptionUpdateView object at 0x31dfc4b50>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.catalogue.views.OptionUpdateView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "queryset",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 33,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.catalogue.views.OptionUpdateView",
+      "method_id": "get_object",
+      "path": "src/oscar/apps/dashboard/catalogue/views.py",
+      "lineno": 1025
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_option\".\"id\", \"catalogue_option\".\"name\", \"catalogue_option\".\"code\", \"catalogue_option\".\"type\", \"catalogue_option\".\"required\", \"catalogue_option\".\"option_group_id\", \"catalogue_option\".\"help_text\", \"catalogue_option\".\"order\" FROM \"catalogue_option\" WHERE \"catalogue_option\".\"id\" = 39 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 34,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 34,
+      "elapsed": 0.0005002080000053866,
+      "id": 35,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13388765744,
+        "value": "<Option: example option>",
+        "class": "oscar.apps.catalogue.models.Option"
+      },
+      "parent_id": 33,
+      "elapsed": 0.0007190704345703125,
+      "id": 36,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13387975504,
+        "value": "<oscar.apps.dashboard.catalogue.views.OptionUpdateView object at 0x31dfc4b50>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.catalogue.views.OptionUpdateView"
+      },
+      "parameters": [
+        {
+          "kind": "keyrest",
+          "object_id": 13386550400,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 37,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.views.PopUpWindowCreateUpdateMixin",
+      "method_id": "get_context_data",
+      "path": "src/oscar/apps/dashboard/views.py",
+      "lineno": 216
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13387975504,
+        "value": "<oscar.apps.dashboard.catalogue.views.OptionUpdateView object at 0x31dfc4b50>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.catalogue.views.OptionUpdateView"
+      },
+      "parameters": [
+        {
+          "kind": "keyrest",
+          "object_id": 13386617664,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 38,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.catalogue.views.OptionCreateUpdateView",
+      "method_id": "get_context_data",
+      "path": "src/oscar/apps/dashboard/catalogue/views.py",
+      "lineno": 994
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13387975504,
+        "value": "<oscar.apps.dashboard.catalogue.views.OptionUpdateView object at 0x31dfc4b50>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.catalogue.views.OptionUpdateView"
+      },
+      "id": 39,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.catalogue.views.OptionUpdateView",
+      "method_id": "get_title",
+      "path": "src/oscar/apps/dashboard/catalogue/views.py",
+      "lineno": 1029
+    },
+    {
+      "return_value": {
+        "object_id": 13386650768,
+        "value": "\"Update Option 'example option'\"",
+        "class": "builtins.str"
+      },
+      "parent_id": 39,
+      "elapsed": 0.000011920928955078125,
+      "id": 40,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13386684864,
+        "value": "{'object': <Option: example option>, 'option': <Option: example option>, 'form': <OptionForm bound=False, valid=Unknown, fields=(name;type;required;order;help_text;option_group)>, 'view': <oscar.apps.dashboard.catalogue.views.OptionUpdateView object at 0x31dfc4b50>, 'title': \"Update Option 'example option'\"}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "object",
+            "class": "oscar.apps.catalogue.models.Option"
+          },
+          {
+            "name": "option",
+            "class": "oscar.apps.catalogue.models.Option"
+          },
+          {
+            "name": "form",
+            "class": "oscar.apps.dashboard.catalogue.forms.OptionForm"
+          },
+          {
+            "name": "view",
+            "class": "oscar.apps.dashboard.catalogue.views.OptionUpdateView"
+          },
+          {
+            "name": "title",
+            "class": "builtins.str"
+          }
+        ],
+        "size": 5
+      },
+      "parent_id": 38,
+      "elapsed": 0.0002048015594482422,
+      "id": 41,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13386684864,
+        "value": "{'object': <Option: example option>, 'option': <Option: example option>, 'form': <OptionForm bound=False, valid=Unknown, fields=(name;type;required;order;help_text;option_group)>, 'view': <oscar.apps.dashboard.catalogue.views.OptionUpdateView object at 0x31dfc4b50>, 'title': \"Update Option 'example option'\", 'to_field': 'id', 'to_field_var': '_to_field', 'is_popup': '1', 'is_popup_var': '_popup'}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "object",
+            "class": "oscar.apps.catalogue.models.Option"
+          },
+          {
+            "name": "option",
+            "class": "oscar.apps.catalogue.models.Option"
+          },
+          {
+            "name": "form",
+            "class": "oscar.apps.dashboard.catalogue.forms.OptionForm"
+          },
+          {
+            "name": "view",
+            "class": "oscar.apps.dashboard.catalogue.views.OptionUpdateView"
+          },
+          {
+            "name": "title",
+            "class": "builtins.str"
+          },
+          {
+            "name": "to_field",
+            "class": "builtins.str"
+          },
+          {
+            "name": "to_field_var",
+            "class": "builtins.str"
+          },
+          {
+            "name": "is_popup",
+            "class": "builtins.str"
+          },
+          {
+            "name": "is_popup_var",
+            "class": "builtins.str"
+          }
+        ],
+        "size": 9
+      },
+      "parent_id": 37,
+      "elapsed": 0.00028586387634277344,
+      "id": 42,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13387605280,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x31df6a520>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13388725168,
+          "value": "<WSGIRequest: GET '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13388558288,
+          "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+          "name": "response",
+          "class": "django.template.response.TemplateResponse"
+        }
+      ],
+      "id": 43,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_template_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 112
+    },
+    {
+      "return_value": {
+        "object_id": 13388558288,
+        "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.template.response.TemplateResponse"
+      },
+      "parent_id": 43,
+      "elapsed": 9.5367431640625e-7,
+      "id": 44,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 13376537312,
+        "value": "<Template template_string=\"{% extends 'oscar/da...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/dashboard/catalogue/option_form.html",
+      "id": 45,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarDashboardCatalogueOption_FormHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13388725168,
+          "value": "<WSGIRequest: GET '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 46,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.search.context_processors",
+      "method_id": "search_form",
+      "path": "src/oscar/apps/search/context_processors.py",
+      "lineno": 6
+    },
+    {
+      "return_value": {
+        "object_id": 13386743872,
+        "value": "{'search_form': <SearchForm bound=True, valid=Unknown, fields=(q;sort_by)>}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "search_form",
+            "class": "oscar.apps.search.forms.SearchForm"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 46,
+      "elapsed": 0.00008487701416015625,
+      "id": 47,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13388725168,
+          "value": "<WSGIRequest: GET '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 48,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.communication.notifications.context_processors",
+      "method_id": "notifications",
+      "path": "src/oscar/apps/communication/notifications/context_processors.py",
+      "lineno": 6
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT COUNT(*) AS \"__count\" FROM \"communication_notification\" WHERE (\"communication_notification\".\"date_read\" IS NULL AND \"communication_notification\".\"recipient_id\" = 251)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 49,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 49,
+      "elapsed": 0.0009003330000041387,
+      "id": 50,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13386744512,
+        "value": "{'num_unread_notifications': 0}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "num_unread_notifications",
+            "class": "builtins.int"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 48,
+      "elapsed": 0.0013089179992675781,
+      "id": 51,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13388725168,
+          "value": "<WSGIRequest: GET '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 52,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.context_processors",
+      "method_id": "checkout",
+      "path": "src/oscar/apps/checkout/context_processors.py",
+      "lineno": 4
+    },
+    {
+      "return_value": {
+        "object_id": 13386790848,
+        "value": "{'anon_checkout_allowed': False}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "anon_checkout_allowed",
+            "class": "builtins.bool"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 52,
+      "elapsed": 0.0000019073486328125,
+      "id": 53,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13388725168,
+          "value": "<WSGIRequest: GET '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 54,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.context_processors",
+      "method_id": "metadata",
+      "path": "src/oscar/core/context_processors.py",
+      "lineno": 19
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13388725168,
+          "value": "<WSGIRequest: GET '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 55,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.context_processors",
+      "method_id": "strip_language_code",
+      "path": "src/oscar/core/context_processors.py",
+      "lineno": 6
+    },
+    {
+      "return_value": {
+        "object_id": 13386339024,
+        "value": "'/dashboard/catalogue/option/39/update/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 55,
+      "elapsed": 9.5367431640625e-7,
+      "id": 56,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13386766656,
+        "value": "{'shop_name': 'Oscar', 'shop_tagline': '', 'homepage_url': '/catalogue/', 'language_neutral_url_path': '/dashboard/catalogue/option/39/update/', 'google_analytics_id': None}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "shop_name",
+            "class": "builtins.str"
+          },
+          {
+            "name": "shop_tagline",
+            "class": "builtins.str"
+          },
+          {
+            "name": "homepage_url",
+            "class": "django.utils.functional.lazy.<locals>.__proxy__"
+          },
+          {
+            "name": "language_neutral_url_path",
+            "class": "builtins.str"
+          },
+          {
+            "name": "google_analytics_id",
+            "class": "builtins.NoneType"
+          }
+        ],
+        "size": 5
+      },
+      "parent_id": 54,
+      "elapsed": 0.00003886222839355469,
+      "id": 57,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 13312508544,
+        "value": "<Template template_string=\"{% load string_filte...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/dashboard/partials/alert_messages.html",
+      "id": 58,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarDashboardPartialsAlert_MessagesHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 58,
+      "elapsed": 0.00009904099999857863,
+      "id": 59,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 13325526928,
+        "value": "<Template template_string=\"{% load widget_tweak...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/dashboard/partials/form_field.html",
+      "id": 60,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarDashboardPartialsForm_FieldHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5267310336,
+        "value": "<Template template_string=\"{% include \"django/f...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/text.html",
+      "id": 61,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsTextHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5262956144,
+        "value": "<Template template_string=\"<input type=\"{{ widg...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/input.html",
+      "id": 62,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 63,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 63,
+      "elapsed": 0.00013874999999075044,
+      "id": 64,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 62,
+      "elapsed": 0.0002440829999983407,
+      "id": 65,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 61,
+      "elapsed": 0.00037491600001260394,
+      "id": 66,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 60,
+      "elapsed": 0.0006456250000042019,
+      "id": 67,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 13325526928,
+        "value": "<Template template_string=\"{% load widget_tweak...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/dashboard/partials/form_field.html",
+      "id": 68,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarDashboardPartialsForm_FieldHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263003120,
+        "value": "<Template template_string=\"<select name=\"{{ wid...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select.html",
+      "id": 69,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelectHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 70,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 70,
+      "elapsed": 0.00012604100000146445,
+      "id": 71,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263046880,
+        "value": "<Template template_string=\"<option value=\"{{ wi...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select_option.html",
+      "id": 72,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 73,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 73,
+      "elapsed": 0.00017633299999886276,
+      "id": 74,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 72,
+      "elapsed": 0.00028304200000661695,
+      "id": 75,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263046880,
+        "value": "<Template template_string=\"<option value=\"{{ wi...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select_option.html",
+      "id": 76,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 77,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 77,
+      "elapsed": 0.00008237499999097508,
+      "id": 78,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 76,
+      "elapsed": 0.00019483299999478731,
+      "id": 79,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263046880,
+        "value": "<Template template_string=\"<option value=\"{{ wi...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select_option.html",
+      "id": 80,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 81,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 81,
+      "elapsed": 0.00007879200001070785,
+      "id": 82,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 80,
+      "elapsed": 0.00017595899998923414,
+      "id": 83,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263046880,
+        "value": "<Template template_string=\"<option value=\"{{ wi...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select_option.html",
+      "id": 84,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 85,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 85,
+      "elapsed": 0.00007683299999428073,
+      "id": 86,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 84,
+      "elapsed": 0.00017262500000470027,
+      "id": 87,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263046880,
+        "value": "<Template template_string=\"<option value=\"{{ wi...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select_option.html",
+      "id": 88,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 89,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 89,
+      "elapsed": 0.00008125000000802629,
+      "id": 90,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 88,
+      "elapsed": 0.00020587499999180636,
+      "id": 91,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263046880,
+        "value": "<Template template_string=\"<option value=\"{{ wi...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select_option.html",
+      "id": 92,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 93,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 93,
+      "elapsed": 0.00007675000000517684,
+      "id": 94,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 92,
+      "elapsed": 0.00017041700000675064,
+      "id": 95,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263046880,
+        "value": "<Template template_string=\"<option value=\"{{ wi...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select_option.html",
+      "id": 96,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 97,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 97,
+      "elapsed": 0.00007662499999128158,
+      "id": 98,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 96,
+      "elapsed": 0.00017316699999980756,
+      "id": 99,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263046880,
+        "value": "<Template template_string=\"<option value=\"{{ wi...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select_option.html",
+      "id": 100,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 101,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 101,
+      "elapsed": 0.00010058300000537201,
+      "id": 102,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 100,
+      "elapsed": 0.00019704099999273694,
+      "id": 103,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263046880,
+        "value": "<Template template_string=\"<option value=\"{{ wi...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select_option.html",
+      "id": 104,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 105,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 105,
+      "elapsed": 0.00007875000000012733,
+      "id": 106,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 104,
+      "elapsed": 0.00017162499999301417,
+      "id": 107,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 69,
+      "elapsed": 0.0021629579999995485,
+      "id": 108,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 68,
+      "elapsed": 0.0024086250000010523,
+      "id": 109,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 13325526928,
+        "value": "<Template template_string=\"{% load widget_tweak...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/dashboard/partials/form_field.html",
+      "id": 110,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarDashboardPartialsForm_FieldHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5267160080,
+        "value": "<Template template_string=\"{% include \"django/f...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/checkbox.html",
+      "id": 111,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsCheckboxHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5262956144,
+        "value": "<Template template_string=\"<input type=\"{{ widg...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/input.html",
+      "id": 112,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 113,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 113,
+      "elapsed": 0.00014899999999329339,
+      "id": 114,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 112,
+      "elapsed": 0.0002508330000097203,
+      "id": 115,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 111,
+      "elapsed": 0.0003491659999923513,
+      "id": 116,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 110,
+      "elapsed": 0.0006113750000054097,
+      "id": 117,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 13325526928,
+        "value": "<Template template_string=\"{% load widget_tweak...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/dashboard/partials/form_field.html",
+      "id": 118,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarDashboardPartialsForm_FieldHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5267159072,
+        "value": "<Template template_string=\"{% include \"django/f...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/number.html",
+      "id": 119,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsNumberHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5262956144,
+        "value": "<Template template_string=\"<input type=\"{{ widg...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/input.html",
+      "id": 120,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 121,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 121,
+      "elapsed": 0.00010787499999764805,
+      "id": 122,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 120,
+      "elapsed": 0.00019841600000347626,
+      "id": 123,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 119,
+      "elapsed": 0.0002858750000029886,
+      "id": 124,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 118,
+      "elapsed": 0.0005205419999896321,
+      "id": 125,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 13325526928,
+        "value": "<Template template_string=\"{% load widget_tweak...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/dashboard/partials/form_field.html",
+      "id": 126,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarDashboardPartialsForm_FieldHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5267310336,
+        "value": "<Template template_string=\"{% include \"django/f...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/text.html",
+      "id": 127,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsTextHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5262956144,
+        "value": "<Template template_string=\"<input type=\"{{ widg...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/input.html",
+      "id": 128,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 129,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 129,
+      "elapsed": 0.00012133300000982672,
+      "id": 130,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 128,
+      "elapsed": 0.0002422499999994443,
+      "id": 131,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 127,
+      "elapsed": 0.00032837500000937325,
+      "id": 132,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 126,
+      "elapsed": 0.0005498329999937823,
+      "id": 133,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 13325526928,
+        "value": "<Template template_string=\"{% load widget_tweak...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/dashboard/partials/form_field.html",
+      "id": 134,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarDashboardPartialsForm_FieldHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "sql_query": {
+        "sql": "DECLARE \"_django_curs_8669432832_sync_126\" NO SCROLL CURSOR WITHOUT HOLD FOR SELECT \"catalogue_attributeoptiongroup\".\"id\", \"catalogue_attributeoptiongroup\".\"name\" FROM \"catalogue_attributeoptiongroup\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 135,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 135,
+      "elapsed": 0.0030540829999949892,
+      "id": 136,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263003120,
+        "value": "<Template template_string=\"<select name=\"{{ wid...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select.html",
+      "id": 137,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelectHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 138,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 138,
+      "elapsed": 0.00012875000000178716,
+      "id": 139,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263046880,
+        "value": "<Template template_string=\"<option value=\"{{ wi...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select_option.html",
+      "id": 140,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 141,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 141,
+      "elapsed": 0.00014883300001145017,
+      "id": 142,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 140,
+      "elapsed": 0.00024729199999740104,
+      "id": 143,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 137,
+      "elapsed": 0.0005690830000020242,
+      "id": 144,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 134,
+      "elapsed": 0.006321041999996169,
+      "id": 145,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 45,
+      "elapsed": 0.013970333000003166,
+      "id": 146,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13387605280,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x31df6a520>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13388725168,
+          "value": "<WSGIRequest: GET '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13388558288,
+          "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+          "name": "response",
+          "class": "django.template.response.TemplateResponse"
+        }
+      ],
+      "id": 147,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 63
+    },
+    {
+      "return_value": {
+        "object_id": 13388558288,
+        "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.template.response.TemplateResponse"
+      },
+      "parent_id": 147,
+      "elapsed": 0.0000030994415283203125,
+      "id": 148,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SAVEPOINT \"s8669432832_x1517\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 149,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 149,
+      "elapsed": 0.0005206249999929469,
+      "id": 150,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"django_session\" SET \"session_data\" = '.eJxVjDsOwjAQBe_iGkX-rLMOJXdAlNZ6vcGAFKTYEQXi7gSRAtqZee-pIi2txKXKHC9Z7ZX1Ru1-aSK-yfRR-UrT-R4fkprU1m2idqcvOK71YYv_HgrVss55SBZcAMqis7ALSNqLt8SG2Sewo0YSh8A98IAmYTbWcQBhDP3o1esNvIM5fw:1sVwoY:5Vt57nEFL1jSqHloHUvZkAcu4A4aoR6TrNYDCJbOmvE', \"expire_date\" = '2024-08-05T17:27:10.218625+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = '38pjiu8o6pgqa4d9ucjvmt818yxhcj9o'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 151,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 151,
+      "elapsed": 0.0007205830000032165,
+      "id": 152,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "RELEASE SAVEPOINT \"s8669432832_x1517\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 153,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 153,
+      "elapsed": 0.00032520799999247174,
+      "id": 154,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_response": {
+        "status_code": 200,
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Vary": "Cookie",
+          "Content-Length": "8353"
+        }
+      },
+      "parent_id": 2,
+      "elapsed": 0.02442679099999623,
+      "id": 155,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13388696064,
+        "value": "<200 OK text/html body=b'\\n<!DOCT...l>\\n'/8353>",
+        "class": "django_webtest.response.DjangoWebtestResponse"
+      },
+      "parent_id": 1,
+      "elapsed": 0.02493906021118164,
+      "id": 156,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_request": {
+        "request_method": "POST",
+        "protocol": "HTTP/1.0",
+        "path_info": "/dashboard/catalogue/option/39/update/",
+        "normalized_path_info": "/dashboard/catalogue/option/{pk}/update/",
+        "mime_type": "application/x-www-form-urlencoded",
+        "headers": {
+          "Host": "testserver",
+          "Referer": "http://testserver/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Length": "165",
+          "Cookie": "csrftoken=7y7WPjmtnm4F2j0IPeBnLF5ixnj4Uf6C; sessionid=38pjiu8o6pgqa4d9ucjvmt818yxhcj9o"
+        }
+      },
+      "message": [
+        {
+          "object_id": 13389012544,
+          "value": "['1', '1']",
+          "name": "_popup",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        },
+        {
+          "object_id": 13389011904,
+          "value": "['id', 'id']",
+          "name": "_to_field",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        },
+        {
+          "object_id": 13386054832,
+          "value": "'Pf5BF4qSlA1cZebcP2DodN0Qv1kFPekIMD2nkdCbyMVHRn1Ku64BOiVYSetzzjga'",
+          "name": "csrfmiddlewaretoken",
+          "class": "builtins.str"
+        },
+        {
+          "object_id": 13390811504,
+          "value": "'Test Option'",
+          "name": "name",
+          "class": "builtins.str"
+        },
+        {
+          "object_id": 13390811888,
+          "value": "'text'",
+          "name": "type",
+          "class": "builtins.str"
+        },
+        {
+          "object_id": 4331234032,
+          "value": "''",
+          "name": "order",
+          "class": "builtins.str"
+        },
+        {
+          "object_id": 4331234032,
+          "value": "''",
+          "name": "help_text",
+          "class": "builtins.str"
+        },
+        {
+          "object_id": 4331234032,
+          "value": "''",
+          "name": "option_group",
+          "class": "builtins.str"
+        },
+        {
+          "object_id": 13390814960,
+          "value": "'39'",
+          "name": "pk",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 157,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4415473264,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x1072ec670>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13390839040,
+          "value": "<WSGIRequest: POST '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "opt",
+          "object_id": 13390839184,
+          "value": "<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x31dac3a60>>",
+          "name": "user",
+          "class": "django.utils.functional.SimpleLazyObject"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13390781696,
+          "value": "{'request': <WSGIRequest: POST '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x31dac3a60>>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "user",
+              "class": "django.utils.functional.SimpleLazyObject"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 158,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2024-07-22T17:27:10.226329+00:00'::timestamptz AND \"django_session\".\"session_key\" = '38pjiu8o6pgqa4d9ucjvmt818yxhcj9o') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 159,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 159,
+      "elapsed": 0.0011823749999990696,
+      "id": 160,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"id\" = 251 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 161,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 161,
+      "elapsed": 0.0006799169999993637,
+      "id": 162,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13390839088,
+        "value": "<django_webtest.backends.WebtestUserBackend object at 0x31e27fd30>",
+        "name": "self",
+        "class": "django_webtest.backends.WebtestUserBackend"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13390791872,
+          "value": "<User: testuser@buymore.com>",
+          "name": "user",
+          "class": "tests._site.myauth.models.User"
+        }
+      ],
+      "id": 163,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "django.contrib.auth.backends.ModelBackend",
+      "method_id": "user_can_authenticate",
+      "path": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py",
+      "lineno": 55
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 163,
+      "elapsed": 9.5367431640625e-7,
+      "id": 164,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13390791008,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x31e274160>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 158,
+      "elapsed": 0.0025768280029296875,
+      "id": 165,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13390839184,
+          "value": "<SimpleLazyObject: <User: testuser@buymore.com>>",
+          "name": "user",
+          "class": "django.utils.functional.SimpleLazyObject"
+        },
+        {
+          "kind": "req",
+          "object_id": 4380030464,
+          "value": "['is_staff']",
+          "name": "permissions",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 166,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.views.decorators",
+      "method_id": "check_permissions",
+      "path": "src/oscar/views/decorators.py",
+      "lineno": 10
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13390791872,
+        "value": "<User: testuser@buymore.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13390765952,
+          "value": "[]",
+          "name": "perm_list",
+          "class": "builtins.list",
+          "size": 0
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "obj",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 167,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "django.contrib.auth.models.PermissionsMixin",
+      "method_id": "has_perms",
+      "path": "venv/lib/python3.8/site-packages/django/contrib/auth/models.py",
+      "lineno": 313
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 167,
+      "elapsed": 0.00000286102294921875,
+      "id": 168,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 166,
+      "elapsed": 0.00006127357482910156,
+      "id": 169,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13390791728,
+        "value": "<oscar.apps.dashboard.catalogue.views.OptionUpdateView object at 0x31e274430>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.catalogue.views.OptionUpdateView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "queryset",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 170,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.catalogue.views.OptionUpdateView",
+      "method_id": "get_object",
+      "path": "src/oscar/apps/dashboard/catalogue/views.py",
+      "lineno": 1025
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_option\".\"id\", \"catalogue_option\".\"name\", \"catalogue_option\".\"code\", \"catalogue_option\".\"type\", \"catalogue_option\".\"required\", \"catalogue_option\".\"option_group_id\", \"catalogue_option\".\"help_text\", \"catalogue_option\".\"order\" FROM \"catalogue_option\" WHERE \"catalogue_option\".\"id\" = 39 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 171,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 171,
+      "elapsed": 0.0007957910000016,
+      "id": 172,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13390793312,
+        "value": "<Option: example option>",
+        "class": "oscar.apps.catalogue.models.Option"
+      },
+      "parent_id": 170,
+      "elapsed": 0.0010738372802734375,
+      "id": 173,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13390793312,
+        "value": "<Option: Test Option>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Option"
+      },
+      "id": 174,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractOption",
+      "method_id": "clean",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 1447
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 174,
+      "elapsed": 0.000003814697265625,
+      "id": 175,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13390791728,
+        "value": "<oscar.apps.dashboard.catalogue.views.OptionUpdateView object at 0x31e274430>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.catalogue.views.OptionUpdateView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13390791344,
+          "value": "<OptionForm bound=True, valid=True, fields=(name;type;required;order;help_text;option_group)>",
+          "name": "form",
+          "class": "oscar.apps.dashboard.catalogue.forms.OptionForm"
+        }
+      ],
+      "id": 176,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.catalogue.views.OptionCreateUpdateView",
+      "method_id": "form_valid",
+      "path": "src/oscar/apps/dashboard/catalogue/views.py",
+      "lineno": 987
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4393905600,
+        "value": "<oscar.models.fields.autoslugfield.AutoSlugField: code>",
+        "name": "self",
+        "class": "oscar.models.fields.autoslugfield.AutoSlugField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13390793312,
+          "value": "<Option: Test Option>",
+          "name": "model_instance",
+          "class": "oscar.apps.catalogue.models.Option"
+        },
+        {
+          "kind": "req",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "add",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 177,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.autoslugfield.AutoSlugField",
+      "method_id": "pre_save",
+      "path": "src/oscar/models/fields/autoslugfield.py",
+      "lineno": 169
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4393905600,
+        "value": "<oscar.models.fields.autoslugfield.AutoSlugField: code>",
+        "name": "self",
+        "class": "oscar.models.fields.autoslugfield.AutoSlugField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13390793312,
+          "value": "<Option: Test Option>",
+          "name": "model_instance",
+          "class": "oscar.apps.catalogue.models.Option"
+        },
+        {
+          "kind": "req",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "add",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 178,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.autoslugfield.AutoSlugField",
+      "method_id": "create_slug",
+      "path": "src/oscar/models/fields/autoslugfield.py",
+      "lineno": 105
+    },
+    {
+      "return_value": {
+        "object_id": 13389014384,
+        "value": "'example'",
+        "class": "builtins.str"
+      },
+      "parent_id": 178,
+      "elapsed": 0.0000030994415283203125,
+      "id": 179,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13389014384,
+        "value": "'example'",
+        "class": "builtins.str"
+      },
+      "parent_id": 177,
+      "elapsed": 0.000048160552978515625,
+      "id": 180,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_option\" SET \"name\" = 'Test Option', \"code\" = 'example', \"type\" = 'text', \"required\" = false, \"option_group_id\" = NULL, \"help_text\" = NULL, \"order\" = NULL WHERE \"catalogue_option\".\"id\" = 39",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 181,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 181,
+      "elapsed": 0.0012534170000009226,
+      "id": 182,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13390791728,
+        "value": "<oscar.apps.dashboard.catalogue.views.OptionUpdateView object at 0x31e274430>",
+        "name": "self",
+        "class": "oscar.apps.dashboard.catalogue.views.OptionUpdateView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13390793312,
+          "value": "<Option: Test Option>",
+          "name": "obj",
+          "class": "oscar.apps.catalogue.models.Option"
+        }
+      ],
+      "id": 183,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.views.PopUpWindowUpdateMixin",
+      "method_id": "popup_response",
+      "path": "src/oscar/apps/dashboard/views.py",
+      "lineno": 251
+    },
+    {
+      "return_value": {
+        "object_id": 13390794176,
+        "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.template.response.TemplateResponse"
+      },
+      "parent_id": 183,
+      "elapsed": 0.00004506111145019531,
+      "id": 184,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13390794176,
+        "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.template.response.TemplateResponse"
+      },
+      "parent_id": 176,
+      "elapsed": 0.001680135726928711,
+      "id": 185,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13387605280,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x31df6a520>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13390839040,
+          "value": "<WSGIRequest: POST '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13390794176,
+          "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+          "name": "response",
+          "class": "django.template.response.TemplateResponse"
+        }
+      ],
+      "id": 186,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_template_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 112
+    },
+    {
+      "return_value": {
+        "object_id": 13390794176,
+        "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.template.response.TemplateResponse"
+      },
+      "parent_id": 186,
+      "elapsed": 7.152557373046875e-7,
+      "id": 187,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 13382773824,
+        "value": "<Template template_string=\"{% load i18n static ...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/dashboard/widgets/popup_response.html",
+      "id": 188,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarDashboardWidgetsPopup_ResponseHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13390839040,
+          "value": "<WSGIRequest: POST '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 189,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.search.context_processors",
+      "method_id": "search_form",
+      "path": "src/oscar/apps/search/context_processors.py",
+      "lineno": 6
+    },
+    {
+      "return_value": {
+        "object_id": 13389032384,
+        "value": "{'search_form': <SearchForm bound=True, valid=Unknown, fields=(q;sort_by)>}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "search_form",
+            "class": "oscar.apps.search.forms.SearchForm"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 189,
+      "elapsed": 0.00008797645568847656,
+      "id": 190,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13390839040,
+          "value": "<WSGIRequest: POST '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 191,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.communication.notifications.context_processors",
+      "method_id": "notifications",
+      "path": "src/oscar/apps/communication/notifications/context_processors.py",
+      "lineno": 6
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT COUNT(*) AS \"__count\" FROM \"communication_notification\" WHERE (\"communication_notification\".\"date_read\" IS NULL AND \"communication_notification\".\"recipient_id\" = 251)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 192,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 192,
+      "elapsed": 0.0010342080000071974,
+      "id": 193,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13389032256,
+        "value": "{'num_unread_notifications': 0}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "num_unread_notifications",
+            "class": "builtins.int"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 191,
+      "elapsed": 0.0014729499816894531,
+      "id": 194,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13390839040,
+          "value": "<WSGIRequest: POST '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 195,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.context_processors",
+      "method_id": "checkout",
+      "path": "src/oscar/apps/checkout/context_processors.py",
+      "lineno": 4
+    },
+    {
+      "return_value": {
+        "object_id": 13389044032,
+        "value": "{'anon_checkout_allowed': False}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "anon_checkout_allowed",
+            "class": "builtins.bool"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 195,
+      "elapsed": 0.0000019073486328125,
+      "id": 196,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13390839040,
+          "value": "<WSGIRequest: POST '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 197,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.context_processors",
+      "method_id": "metadata",
+      "path": "src/oscar/core/context_processors.py",
+      "lineno": 19
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13390839040,
+          "value": "<WSGIRequest: POST '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 198,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.context_processors",
+      "method_id": "strip_language_code",
+      "path": "src/oscar/core/context_processors.py",
+      "lineno": 6
+    },
+    {
+      "return_value": {
+        "object_id": 13388790640,
+        "value": "'/dashboard/catalogue/option/39/update/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 198,
+      "elapsed": 7.152557373046875e-7,
+      "id": 199,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13389043392,
+        "value": "{'shop_name': 'Oscar', 'shop_tagline': '', 'homepage_url': '/catalogue/', 'language_neutral_url_path': '/dashboard/catalogue/option/39/update/', 'google_analytics_id': None}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "shop_name",
+            "class": "builtins.str"
+          },
+          {
+            "name": "shop_tagline",
+            "class": "builtins.str"
+          },
+          {
+            "name": "homepage_url",
+            "class": "django.utils.functional.lazy.<locals>.__proxy__"
+          },
+          {
+            "name": "language_neutral_url_path",
+            "class": "builtins.str"
+          },
+          {
+            "name": "google_analytics_id",
+            "class": "builtins.NoneType"
+          }
+        ],
+        "size": 5
+      },
+      "parent_id": 197,
+      "elapsed": 0.00004363059997558594,
+      "id": 200,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 188,
+      "elapsed": 0.0020682080000113956,
+      "id": 201,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13387605280,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x31df6a520>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13390839040,
+          "value": "<WSGIRequest: POST '/dashboard/catalogue/option/39/update/?_popup=1&_to_field=id'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13390794176,
+          "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+          "name": "response",
+          "class": "django.template.response.TemplateResponse"
+        }
+      ],
+      "id": 202,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 63
+    },
+    {
+      "return_value": {
+        "object_id": 13390794176,
+        "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.template.response.TemplateResponse"
+      },
+      "parent_id": 202,
+      "elapsed": 0.0000026226043701171875,
+      "id": 203,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_response": {
+        "status_code": 200,
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Vary": "Cookie",
+          "Content-Length": "445"
+        }
+      },
+      "parent_id": 157,
+      "elapsed": 0.008787166000004731,
+      "id": 204,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_option\".\"id\", \"catalogue_option\".\"name\", \"catalogue_option\".\"code\", \"catalogue_option\".\"type\", \"catalogue_option\".\"required\", \"catalogue_option\".\"option_group_id\", \"catalogue_option\".\"help_text\", \"catalogue_option\".\"order\" FROM \"catalogue_option\" ORDER BY \"catalogue_option\".\"order\" ASC, \"catalogue_option\".\"name\" ASC LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 205,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 205,
+      "elapsed": 0.0011150419999950145,
+      "id": 206,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13386219472,
+        "value": "<tests.functional.dashboard.test_catalogue_option.TestOptionUpdateView testMethod=test_update_popup_object>",
+        "name": "self",
+        "class": "tests.functional.dashboard.test_catalogue_option.TestOptionUpdateView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13390794224,
+          "value": "<200 OK text/html body=b'<!DOCTYP...l>\\n'/445>",
+          "name": "response",
+          "class": "django_webtest.response.DjangoWebtestResponse"
+        },
+        {
+          "kind": "req",
+          "object_id": 4378604768,
+          "value": "'popup_response_data'",
+          "name": "key",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 207,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.test.testcases.WebTestCase",
+      "method_id": "assertInContext",
+      "path": "src/oscar/test/testcases.py",
+      "lineno": 107
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13386219472,
+        "value": "<tests.functional.dashboard.test_catalogue_option.TestOptionUpdateView testMethod=test_update_popup_object>",
+        "name": "self",
+        "class": "tests.functional.dashboard.test_catalogue_option.TestOptionUpdateView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13390794224,
+          "value": "<200 OK text/html body=b'<!DOCTYP...l>\\n'/445>",
+          "name": "response",
+          "class": "django_webtest.response.DjangoWebtestResponse"
+        }
+      ],
+      "id": 208,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.test.testcases.WebTestCase",
+      "method_id": "assertContext",
+      "path": "src/oscar/test/testcases.py",
+      "lineno": 104
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 208,
+      "elapsed": 9.5367431640625e-7,
+      "id": 209,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 207,
+      "elapsed": 0.000057220458984375,
+      "id": 210,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Option update view",
+    "recording": {
+      "defined_class": "tests.functional.dashboard.test_catalogue_option.TestOptionUpdateView",
+      "method_id": "test_update_popup_object"
+    },
+    "source_location": "tests/functional/dashboard/testcases.py:288",
+    "name": "Option update view update popup object",
+    "feature": "Update popup object",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "test",
+          "type": "package",
+          "children": [
+            {
+              "name": "testcases",
+              "type": "package",
+              "children": [
+                {
+                  "name": "WebTestCase",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "get",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/test/testcases.py:60"
+                    },
+                    {
+                      "name": "assertInContext",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/test/testcases.py:107"
+                    },
+                    {
+                      "name": "assertContext",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/test/testcases.py:104"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "customer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractUser",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/abstract_models.py:115"
+                        },
+                        {
+                          "name": "_migrate_alerts_to_user",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/abstract_models.py:103"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "partner",
+              "type": "package",
+              "children": [
+                {
+                  "name": "strategy",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Selector",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "strategy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/strategy.py:37"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "dashboard",
+              "type": "package",
+              "children": [
+                {
+                  "name": "catalogue",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "views",
+                      "type": "package",
+                      "children": [
+                        {
+                          "name": "OptionUpdateView",
+                          "type": "class",
+                          "children": [
+                            {
+                              "name": "get_object",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/catalogue/views.py:1025"
+                            },
+                            {
+                              "name": "get_title",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/catalogue/views.py:1029"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "OptionCreateUpdateView",
+                          "type": "class",
+                          "children": [
+                            {
+                              "name": "get_context_data",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/catalogue/views.py:994"
+                            },
+                            {
+                              "name": "form_valid",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/catalogue/views.py:987"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "views",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "PopUpWindowCreateUpdateMixin",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get_context_data",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/dashboard/views.py:216"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "PopUpWindowUpdateMixin",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "popup_response",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/dashboard/views.py:251"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "basket",
+              "type": "package",
+              "children": [
+                {
+                  "name": "middleware",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "BasketMiddleware",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "process_template_response",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/middleware.py:112"
+                        },
+                        {
+                          "name": "process_response",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/middleware.py:63"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "search",
+              "type": "package",
+              "children": [
+                {
+                  "name": "context_processors",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "search_form",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/search/context_processors.py:6"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "communication",
+              "type": "package",
+              "children": [
+                {
+                  "name": "notifications",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "context_processors",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "notifications",
+                          "type": "function",
+                          "static": true,
+                          "location": "src/oscar/apps/communication/notifications/context_processors.py:6"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "checkout",
+              "type": "package",
+              "children": [
+                {
+                  "name": "context_processors",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "checkout",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/checkout/context_processors.py:4"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractOption",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "clean",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:1447"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "views",
+          "type": "package",
+          "children": [
+            {
+              "name": "decorators",
+              "type": "class",
+              "children": [
+                {
+                  "name": "check_permissions",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/views/decorators.py:10"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "context_processors",
+              "type": "class",
+              "children": [
+                {
+                  "name": "metadata",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/context_processors.py:19"
+                },
+                {
+                  "name": "strip_language_code",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/context_processors.py:6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "models",
+          "type": "package",
+          "children": [
+            {
+              "name": "fields",
+              "type": "package",
+              "children": [
+                {
+                  "name": "autoslugfield",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AutoSlugField",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "pre_save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/models/fields/autoslugfield.py:169"
+                        },
+                        {
+                          "name": "create_slug",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/models/fields/autoslugfield.py:105"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "django",
+      "type": "package",
+      "children": [
+        {
+          "name": "contrib",
+          "type": "package",
+          "children": [
+            {
+              "name": "auth",
+              "type": "class",
+              "children": [
+                {
+                  "name": "authenticate",
+                  "type": "function",
+                  "labels": [
+                    "security.authentication"
+                  ],
+                  "static": true,
+                  "location": "venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py:63"
+                },
+                {
+                  "name": "backends",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "RemoteUserBackend",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "authenticate",
+                          "type": "function",
+                          "labels": [
+                            "security.authentication"
+                          ],
+                          "static": false,
+                          "location": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py:187"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "ModelBackend",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "user_can_authenticate",
+                          "type": "function",
+                          "labels": [
+                            "security.authorization"
+                          ],
+                          "static": false,
+                          "location": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py:55"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "PermissionsMixin",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "has_perms",
+                          "type": "function",
+                          "labels": [
+                            "security.authorization"
+                          ],
+                          "static": false,
+                          "location": "venv/lib/python3.8/site-packages/django/contrib/auth/models.py:313"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /dashboard/catalogue/option/{pk}/update/"
+        },
+        {
+          "type": "route",
+          "name": "POST /dashboard/catalogue/option/{pk}/update/"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"email\" = 'testuser@buymore.com' LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = '38pjiu8o6pgqa4d9ucjvmt818yxhcj9o' LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SAVEPOINT \"s8669432832_x1516\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('38pjiu8o6pgqa4d9ucjvmt818yxhcj9o', 'e30:1sVwoY:UWfRhZ1H6EZOxKdFrjI-VWbwo4lY7QniPp2_GrKkNQ4', '2024-08-05T17:27:10.198578+00:00'::timestamptz)"
+        },
+        {
+          "type": "query",
+          "name": "RELEASE SAVEPOINT \"s8669432832_x1516\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"myauth_user\" SET \"last_login\" = '2024-07-22T17:27:10.201083+00:00'::timestamptz WHERE \"myauth_user\".\"id\" = 251"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"customer_productalert\" SET \"user_id\" = 251, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'testuser@buymore.com' AND \"customer_productalert\".\"status\" = 'Active')"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_option\".\"id\", \"catalogue_option\".\"name\", \"catalogue_option\".\"code\", \"catalogue_option\".\"type\", \"catalogue_option\".\"required\", \"catalogue_option\".\"option_group_id\", \"catalogue_option\".\"help_text\", \"catalogue_option\".\"order\" FROM \"catalogue_option\" WHERE \"catalogue_option\".\"id\" = 39 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT COUNT(*) AS \"__count\" FROM \"communication_notification\" WHERE (\"communication_notification\".\"date_read\" IS NULL AND \"communication_notification\".\"recipient_id\" = 251)"
+        },
+        {
+          "type": "query",
+          "name": "DECLARE \"_django_curs_8669432832_sync_126\" NO SCROLL CURSOR WITHOUT HOLD FOR SELECT \"catalogue_attributeoptiongroup\".\"id\", \"catalogue_attributeoptiongroup\".\"name\" FROM \"catalogue_attributeoptiongroup\""
+        },
+        {
+          "type": "query",
+          "name": "SAVEPOINT \"s8669432832_x1517\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"django_session\" SET \"session_data\" = '.eJxVjDsOwjAQBe_iGkX-rLMOJXdAlNZ6vcGAFKTYEQXi7gSRAtqZee-pIi2txKXKHC9Z7ZX1Ru1-aSK-yfRR-UrT-R4fkprU1m2idqcvOK71YYv_HgrVss55SBZcAMqis7ALSNqLt8SG2Sewo0YSh8A98IAmYTbWcQBhDP3o1esNvIM5fw:1sVwoY:5Vt57nEFL1jSqHloHUvZkAcu4A4aoR6TrNYDCJbOmvE', \"expire_date\" = '2024-08-05T17:27:10.218625+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = '38pjiu8o6pgqa4d9ucjvmt818yxhcj9o'"
+        },
+        {
+          "type": "query",
+          "name": "RELEASE SAVEPOINT \"s8669432832_x1517\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2024-07-22T17:27:10.226329+00:00'::timestamptz AND \"django_session\".\"session_key\" = '38pjiu8o6pgqa4d9ucjvmt818yxhcj9o') LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"id\" = 251 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_option\" SET \"name\" = 'Test Option', \"code\" = 'example', \"type\" = 'text', \"required\" = false, \"option_group_id\" = NULL, \"help_text\" = NULL, \"order\" = NULL WHERE \"catalogue_option\".\"id\" = 39"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_option\".\"id\", \"catalogue_option\".\"name\", \"catalogue_option\".\"code\", \"catalogue_option\".\"type\", \"catalogue_option\".\"required\", \"catalogue_option\".\"option_group_id\", \"catalogue_option\".\"help_text\", \"catalogue_option\".\"order\" FROM \"catalogue_option\" ORDER BY \"catalogue_option\".\"order\" ASC, \"catalogue_option\".\"name\" ASC LIMIT 1"
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarDashboardCatalogueOption_FormHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarDashboardPartialsAlert_MessagesHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarDashboardPartialsForm_FieldHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsTextHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelectHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsCheckboxHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsNumberHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarDashboardWidgetsPopup_ResponseHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    }
+  ]
+}

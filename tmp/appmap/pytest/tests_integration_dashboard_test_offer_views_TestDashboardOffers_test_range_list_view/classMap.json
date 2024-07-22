@@ -1,0 +1,86 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "dashboard",
+            "type": "package",
+            "children": [
+              {
+                "name": "ranges",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "views",
+                    "type": "package",
+                    "children": [
+                      {
+                        "name": "RangeListView",
+                        "type": "class",
+                        "children": [
+                          {
+                            "name": "get_queryset",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/ranges/views.py:32"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "models",
+        "type": "package",
+        "children": [
+          {
+            "name": "fields",
+            "type": "package",
+            "children": [
+              {
+                "name": "NullCharField",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "from_db_value",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/models/fields/__init__.py:117"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT COUNT(*) AS \"__count\" FROM \"offer_range\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"offer_range\".\"id\", \"offer_range\".\"name\", \"offer_range\".\"slug\", \"offer_range\".\"description\", \"offer_range\".\"is_public\", \"offer_range\".\"includes_all_products\", \"offer_range\".\"proxy_class\", \"offer_range\".\"date_created\" FROM \"offer_range\" ORDER BY \"offer_range\".\"name\" ASC LIMIT 20"
+      },
+      {
+        "type": "query",
+        "name": "SELECT (\"offer_range_included_categories\".\"range_id\") AS \"_prefetch_related_val_range_id\", \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" INNER JOIN \"offer_range_included_categories\" ON (\"catalogue_category\".\"id\" = \"offer_range_included_categories\".\"category_id\") WHERE \"offer_range_included_categories\".\"range_id\" IN (32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51) ORDER BY \"catalogue_category\".\"path\" ASC"
+      }
+    ]
+  }
+]

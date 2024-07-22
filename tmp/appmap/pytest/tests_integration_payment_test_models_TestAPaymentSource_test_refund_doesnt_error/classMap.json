@@ -1,0 +1,92 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "payment",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractSource",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "allocate",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/payment/abstract_models.py:160"
+                      },
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/payment/abstract_models.py:133"
+                      },
+                      {
+                        "name": "_create_transaction",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/payment/abstract_models.py:151"
+                      },
+                      {
+                        "name": "debit",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/payment/abstract_models.py:172"
+                      },
+                      {
+                        "name": "refund",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/payment/abstract_models.py:184"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "UPDATE \"payment_source\" SET \"order_id\" = 199, \"source_type_id\" = 5, \"currency\" = 'GBP', \"amount_allocated\" = 100.00, \"amount_debited\" = 0.00, \"amount_refunded\" = 0.00, \"reference\" = '', \"label\" = '' WHERE \"payment_source\".\"id\" = 4"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"payment_transaction\" (\"source_id\", \"txn_type\", \"amount\", \"reference\", \"status\", \"date_created\") VALUES (4, 'Authorise', 100.00, '', '', '2024-07-22T17:28:48.797946+00:00'::timestamptz) RETURNING \"payment_transaction\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"payment_source\" SET \"order_id\" = 199, \"source_type_id\" = 5, \"currency\" = 'GBP', \"amount_allocated\" = 100.00, \"amount_debited\" = 80.00, \"amount_refunded\" = 0.00, \"reference\" = '', \"label\" = '' WHERE \"payment_source\".\"id\" = 4"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"payment_transaction\" (\"source_id\", \"txn_type\", \"amount\", \"reference\", \"status\", \"date_created\") VALUES (4, 'Debit', 80.00, '', '', '2024-07-22T17:28:48.800457+00:00'::timestamptz) RETURNING \"payment_transaction\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"payment_source\" SET \"order_id\" = 199, \"source_type_id\" = 5, \"currency\" = 'GBP', \"amount_allocated\" = 100.00, \"amount_debited\" = 80.00, \"amount_refunded\" = 50.00, \"reference\" = '', \"label\" = '' WHERE \"payment_source\".\"id\" = 4"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"payment_transaction\" (\"source_id\", \"txn_type\", \"amount\", \"reference\", \"status\", \"date_created\") VALUES (4, 'Refund', 50.00, '', '', '2024-07-22T17:28:48.803016+00:00'::timestamptz) RETURNING \"payment_transaction\".\"id\""
+      }
+    ]
+  }
+]

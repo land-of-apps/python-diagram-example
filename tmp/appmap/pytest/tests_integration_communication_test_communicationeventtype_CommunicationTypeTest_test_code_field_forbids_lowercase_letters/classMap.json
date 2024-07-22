@@ -1,0 +1,112 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "models",
+        "type": "package",
+        "children": [
+          {
+            "name": "fields",
+            "type": "package",
+            "children": [
+              {
+                "name": "autoslugfield",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AutoSlugField",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "pre_save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:169"
+                      },
+                      {
+                        "name": "create_slug",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:105"
+                      },
+                      {
+                        "name": "slugify_func",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:100"
+                      },
+                      {
+                        "name": "_slug_strip",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:81"
+                      },
+                      {
+                        "name": "get_queryset",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:93"
+                      },
+                      {
+                        "name": "get_internal_type",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:174"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core",
+        "type": "package",
+        "children": [
+          {
+            "name": "utils",
+            "type": "class",
+            "children": [
+              {
+                "name": "slugify",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:68"
+              },
+              {
+                "name": "default_slugifier",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:57"
+              },
+              {
+                "name": "cautious_slugify",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:20"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"communication_communicationeventtype\".\"id\", \"communication_communicationeventtype\".\"code\", \"communication_communicationeventtype\".\"name\", \"communication_communicationeventtype\".\"category\", \"communication_communicationeventtype\".\"email_subject_template\", \"communication_communicationeventtype\".\"email_body_template\", \"communication_communicationeventtype\".\"email_body_html_template\", \"communication_communicationeventtype\".\"sms_template\", \"communication_communicationeventtype\".\"date_created\", \"communication_communicationeventtype\".\"date_updated\" FROM \"communication_communicationeventtype\" WHERE \"communication_communicationeventtype\".\"code\" = 'TEST_NAME_123' ORDER BY \"communication_communicationeventtype\".\"name\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"communication_communicationeventtype\" (\"code\", \"name\", \"category\", \"email_subject_template\", \"email_body_template\", \"email_body_html_template\", \"sms_template\", \"date_created\", \"date_updated\") VALUES ('TEST_NAME_123', 'Test name *** - 123', 'Order related', NULL, NULL, NULL, NULL, '2024-07-22T17:28:05.936532+00:00'::timestamptz, '2024-07-22T17:28:05.936544+00:00'::timestamptz) RETURNING \"communication_communicationeventtype\".\"id\""
+      }
+    ]
+  }
+]

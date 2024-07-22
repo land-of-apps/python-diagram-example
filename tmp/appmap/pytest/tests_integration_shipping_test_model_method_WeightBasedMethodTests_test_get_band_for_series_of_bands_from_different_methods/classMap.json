@@ -1,0 +1,60 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "shipping",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractWeightBased",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "get_band_for_weight",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/shipping/abstract_models.py:169"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"shipping_weightband\" (\"method_id\", \"upper_limit\", \"charge\") VALUES (14, 2, 8.00) RETURNING \"shipping_weightband\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"shipping_weightband\" (\"method_id\", \"upper_limit\", \"charge\") VALUES (13, 1, 4.00) RETURNING \"shipping_weightband\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"shipping_weightband\" (\"method_id\", \"upper_limit\", \"charge\") VALUES (13, 3, 12.00) RETURNING \"shipping_weightband\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"shipping_weightband\".\"id\", \"shipping_weightband\".\"method_id\", \"shipping_weightband\".\"upper_limit\", \"shipping_weightband\".\"charge\" FROM \"shipping_weightband\" WHERE (\"shipping_weightband\".\"method_id\" = 13 AND \"shipping_weightband\".\"upper_limit\" >= 2.5) ORDER BY \"shipping_weightband\".\"upper_limit\" ASC LIMIT 1"
+      }
+    ]
+  }
+]

@@ -1,0 +1,120 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "voucher",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractVoucher",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/voucher/abstract_models.py:180"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "partner",
+            "type": "package",
+            "children": [
+              {
+                "name": "strategy",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "Selector",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "strategy",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/partner/strategy.py:37"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "basket",
+            "type": "package",
+            "children": [
+              {
+                "name": "views",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "VoucherRemoveView",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "post",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/basket/views.py:484"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('My voucher', 'MYVOUCHER', 'Multi-use', '2024-07-21T17:25:18.456636+00:00'::timestamptz, '2024-08-01T17:25:18.456799+00:00'::timestamptz, 5, 0, 0.00, NULL, '2024-07-22T17:27:56.260792+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Open', '2024-07-22T17:27:56.262504+00:00'::timestamptz, NULL, NULL) RETURNING \"basket_basket\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"basket_basket_vouchers\" (\"basket_id\", \"voucher_id\") VALUES (374, 3524) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" INNER JOIN \"basket_basket_vouchers\" ON (\"voucher_voucher\".\"id\" = \"basket_basket_vouchers\".\"voucher_id\") WHERE (\"basket_basket_vouchers\".\"basket_id\" = 374 AND \"voucher_voucher\".\"id\" = 3524) LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"basket_basket_vouchers\" WHERE (\"basket_basket_vouchers\".\"basket_id\" = 374 AND \"basket_basket_vouchers\".\"voucher_id\" IN (3524))"
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"voucher_voucher\" SET \"num_basket_additions\" = (\"voucher_voucher\".\"num_basket_additions\" - 1) WHERE \"voucher_voucher\".\"id\" = 3524"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"voucher_voucher\".\"id\", \"voucher_voucher\".\"name\", \"voucher_voucher\".\"code\", \"voucher_voucher\".\"usage\", \"voucher_voucher\".\"start_datetime\", \"voucher_voucher\".\"end_datetime\", \"voucher_voucher\".\"num_basket_additions\", \"voucher_voucher\".\"num_orders\", \"voucher_voucher\".\"total_discount\", \"voucher_voucher\".\"voucher_set_id\", \"voucher_voucher\".\"date_created\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"id\" = 3524 LIMIT 21"
+      }
+    ]
+  }
+]

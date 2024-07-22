@@ -1,0 +1,212 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "catalogue",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractProduct",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/abstract_models.py:590"
+                      },
+                      {
+                        "name": "get_product_class",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/abstract_models.py:703"
+                      },
+                      {
+                        "name": "get_attribute_values",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/abstract_models.py:735"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "AbstractProductAttribute",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "bind_value",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/abstract_models.py:1020"
+                      },
+                      {
+                        "name": "_bind_value",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/abstract_models.py:1014"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "product_attributes",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "ProductAttributesContainer",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/product_attributes.py:207"
+                      },
+                      {
+                        "name": "get_all_attributes",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/product_attributes.py:198"
+                      },
+                      {
+                        "name": "initialize",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/product_attributes.py:115"
+                      },
+                      {
+                        "name": "get_values",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/product_attributes.py:192"
+                      },
+                      {
+                        "name": "get_value_by_attribute",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/product_attributes.py:195"
+                      },
+                      {
+                        "name": "invalidate",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/product_attributes.py:122"
+                      },
+                      {
+                        "name": "validate_attributes",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/product_attributes.py:174"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "QuerysetCache",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "queryset",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/product_attributes.py:13"
+                      },
+                      {
+                        "name": "get",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/product_attributes.py:16"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "models",
+        "type": "package",
+        "children": [
+          {
+            "name": "fields",
+            "type": "package",
+            "children": [
+              {
+                "name": "NullCharField",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "get_prep_value",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/models/fields/__init__.py:122"
+                  },
+                  {
+                    "name": "from_db_value",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/models/fields/__init__.py:117"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "UPDATE \"catalogue_product\" SET \"structure\" = 'parent', \"is_public\" = true, \"upc\" = '1234', \"parent_id\" = NULL, \"title\" = 'I am your father', \"slug\" = 'i-am-your-father', \"description\" = '', \"meta_title\" = NULL, \"meta_description\" = NULL, \"product_class_id\" = 17, \"rating\" = NULL, \"date_created\" = '2024-07-22T17:28:54.014956+00:00'::timestamptz, \"date_updated\" = '2024-07-22T17:28:54.048903+00:00'::timestamptz, \"is_discountable\" = true WHERE \"catalogue_product\".\"id\" = 30"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_productattribute\".\"id\", \"catalogue_productattribute\".\"product_class_id\", \"catalogue_productattribute\".\"name\", \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\", \"catalogue_productattribute\".\"option_group_id\", \"catalogue_productattribute\".\"required\" FROM \"catalogue_productattribute\" WHERE \"catalogue_productattribute\".\"product_class_id\" = 17 ORDER BY \"catalogue_productattribute\".\"code\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_productattributevalue\".\"id\", \"catalogue_productattributevalue\".\"attribute_id\", \"catalogue_productattributevalue\".\"product_id\", \"catalogue_productattributevalue\".\"value_text\", \"catalogue_productattributevalue\".\"value_integer\", \"catalogue_productattributevalue\".\"value_boolean\", \"catalogue_productattributevalue\".\"value_float\", \"catalogue_productattributevalue\".\"value_richtext\", \"catalogue_productattributevalue\".\"value_date\", \"catalogue_productattributevalue\".\"value_datetime\", \"catalogue_productattributevalue\".\"value_option_id\", \"catalogue_productattributevalue\".\"value_file\", \"catalogue_productattributevalue\".\"value_image\", \"catalogue_productattributevalue\".\"entity_content_type_id\", \"catalogue_productattributevalue\".\"entity_object_id\", \"catalogue_productattribute\".\"code\" AS \"code\", \"catalogue_productattribute\".\"id\", \"catalogue_productattribute\".\"product_class_id\", \"catalogue_productattribute\".\"name\", \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\", \"catalogue_productattribute\".\"option_group_id\", \"catalogue_productattribute\".\"required\" FROM \"catalogue_productattributevalue\" INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE \"catalogue_productattributevalue\".\"product_id\" = 30"
+      },
+      {
+        "type": "query",
+        "name": "DECLARE \"_django_curs_8669432832_sync_241\" NO SCROLL CURSOR WITHOUT HOLD FOR SELECT \"catalogue_productattributevalue\".\"id\", \"catalogue_productattributevalue\".\"attribute_id\", \"catalogue_productattributevalue\".\"product_id\", \"catalogue_productattributevalue\".\"value_text\", \"catalogue_productattributevalue\".\"value_integer\", \"catalogue_productattributevalue\".\"value_boolean\", \"catalogue_productattributevalue\".\"value_float\", \"catalogue_productattributevalue\".\"value_richtext\", \"catalogue_productattributevalue\".\"value_date\", \"catalogue_productattributevalue\".\"value_datetime\", \"catalogue_productattributevalue\".\"value_option_id\", \"catalogue_productattributevalue\".\"value_file\", \"catalogue_productattributevalue\".\"value_image\", \"catalogue_productattributevalue\".\"entity_content_type_id\", \"catalogue_productattributevalue\".\"entity_object_id\", \"catalogue_productattribute\".\"code\" AS \"code\", \"catalogue_productattribute\".\"id\", \"catalogue_productattribute\".\"product_class_id\", \"catalogue_productattribute\".\"name\", \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\", \"catalogue_productattribute\".\"option_group_id\", \"catalogue_productattribute\".\"required\" FROM \"catalogue_productattributevalue\" INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE \"catalogue_productattributevalue\".\"product_id\" = 30"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_productattributevalue\".\"id\", \"catalogue_productattributevalue\".\"attribute_id\", \"catalogue_productattributevalue\".\"product_id\", \"catalogue_productattributevalue\".\"value_text\", \"catalogue_productattributevalue\".\"value_integer\", \"catalogue_productattributevalue\".\"value_boolean\", \"catalogue_productattributevalue\".\"value_float\", \"catalogue_productattributevalue\".\"value_richtext\", \"catalogue_productattributevalue\".\"value_date\", \"catalogue_productattributevalue\".\"value_datetime\", \"catalogue_productattributevalue\".\"value_option_id\", \"catalogue_productattributevalue\".\"value_file\", \"catalogue_productattributevalue\".\"value_image\", \"catalogue_productattributevalue\".\"entity_content_type_id\", \"catalogue_productattributevalue\".\"entity_object_id\" FROM \"catalogue_productattributevalue\" WHERE (\"catalogue_productattributevalue\".\"product_id\" = 30 AND \"catalogue_productattributevalue\".\"id\" IN (21))"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"catalogue_productattributevalue_value_multi_option\" WHERE \"catalogue_productattributevalue_value_multi_option\".\"productattributevalue_id\" IN (21)"
+      },
+      {
+        "type": "query",
+        "name": "DELETE FROM \"catalogue_productattributevalue\" WHERE \"catalogue_productattributevalue\".\"id\" IN (21)"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\" FROM \"catalogue_product\" WHERE \"catalogue_product\".\"id\" = 30 LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_productclass\".\"id\", \"catalogue_productclass\".\"name\", \"catalogue_productclass\".\"slug\", \"catalogue_productclass\".\"requires_shipping\", \"catalogue_productclass\".\"track_stock\" FROM \"catalogue_productclass\" WHERE \"catalogue_productclass\".\"id\" = 17 LIMIT 21"
+      }
+    ]
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "dashboard",
+            "type": "package",
+            "children": [
+              {
+                "name": "reports",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "reports",
+                    "type": "package",
+                    "children": [
+                      {
+                        "name": "ReportGenerator",
+                        "type": "class",
+                        "children": [
+                          {
+                            "name": "get_queryset",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reports/reports.py:42"
+                          },
+                          {
+                            "name": "filter_with_date_range",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reports/reports.py:68"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "ReportCSVFormatter",
+                        "type": "class",
+                        "children": [
+                          {
+                            "name": "generate_response",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reports/reports.py:118"
+                          },
+                          {
+                            "name": "get_csv_writer",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reports/reports.py:115"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "basket",
+            "type": "package",
+            "children": [
+              {
+                "name": "reports",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "SubmittedBasketReportGenerator",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "generate",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/basket/reports.py:132"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "SubmittedBasketReportCSVFormatter",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "filename",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/basket/reports.py:109"
+                      },
+                      {
+                        "name": "generate_csv",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/basket/reports.py:84"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core",
+        "type": "package",
+        "children": [
+          {
+            "name": "utils",
+            "type": "class",
+            "children": [
+              {
+                "name": "datetime_combine",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:125"
+              }
+            ]
+          },
+          {
+            "name": "compat",
+            "type": "package",
+            "children": [
+              {
+                "name": "UnicodeCSVWriter",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "add_bom",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/core/compat.py:114"
+                  },
+                  {
+                    "name": "writerow",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/core/compat.py:122"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"basket_basket\".\"id\", \"basket_basket\".\"owner_id\", \"basket_basket\".\"status\", \"basket_basket\".\"date_created\", \"basket_basket\".\"date_merged\", \"basket_basket\".\"date_submitted\" FROM \"basket_basket\" WHERE (\"basket_basket\".\"status\" = 'Submitted' AND \"basket_basket\".\"date_submitted\" >= '2012-05-01T00:00:00-05:00'::timestamptz AND \"basket_basket\".\"date_submitted\" <= '2012-05-17T23:59:59.999999-05:00'::timestamptz)"
+      }
+    ]
+  }
+]

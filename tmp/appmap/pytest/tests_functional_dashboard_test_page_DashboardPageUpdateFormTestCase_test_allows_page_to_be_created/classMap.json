@@ -1,0 +1,110 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "dashboard",
+            "type": "package",
+            "children": [
+              {
+                "name": "pages",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "forms",
+                    "type": "package",
+                    "children": [
+                      {
+                        "name": "PageUpdateForm",
+                        "type": "class",
+                        "children": [
+                          {
+                            "name": "clean_url",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/pages/forms.py:40"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core",
+        "type": "package",
+        "children": [
+          {
+            "name": "validators",
+            "type": "package",
+            "children": [
+              {
+                "name": "ExtendedURLValidator",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "validate_local_url",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/core/validators.py:49"
+                  },
+                  {
+                    "name": "clean_url",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/core/validators.py:72"
+                  },
+                  {
+                    "name": "_validate_url",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/core/validators.py:31"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "loading",
+            "type": "class",
+            "children": [
+              {
+                "name": "get_model",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/loading.py:225"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"django_flatpage\".\"id\", \"django_flatpage\".\"url\", \"django_flatpage\".\"title\", \"django_flatpage\".\"content\", \"django_flatpage\".\"enable_comments\", \"django_flatpage\".\"template_name\", \"django_flatpage\".\"registration_required\" FROM \"django_flatpage\" WHERE \"django_flatpage\".\"url\" = '/my-new-url/' LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"django_flatpage\" (\"url\", \"title\", \"content\", \"enable_comments\", \"template_name\", \"registration_required\") VALUES ('/my-new-url/', 'test', 'my content here', false, '', false) RETURNING \"django_flatpage\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT COUNT(*) AS \"__count\" FROM \"django_flatpage\""
+      }
+    ]
+  }
+]

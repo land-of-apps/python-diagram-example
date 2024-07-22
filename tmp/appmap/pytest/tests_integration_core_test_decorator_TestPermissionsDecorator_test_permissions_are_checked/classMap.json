@@ -1,0 +1,185 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "customer",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractUser",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:115"
+                      },
+                      {
+                        "name": "_migrate_alerts_to_user",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:103"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "views",
+        "type": "package",
+        "children": [
+          {
+            "name": "decorators",
+            "type": "class",
+            "children": [
+              {
+                "name": "check_permissions",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/views/decorators.py:10"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "django",
+    "type": "package",
+    "children": [
+      {
+        "name": "contrib",
+        "type": "package",
+        "children": [
+          {
+            "name": "auth",
+            "type": "package",
+            "children": [
+              {
+                "name": "models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "PermissionsMixin",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "has_perms",
+                        "type": "function",
+                        "labels": [
+                          "security.authorization"
+                        ],
+                        "static": false,
+                        "location": "venv/lib/python3.8/site-packages/django/contrib/auth/models.py:313"
+                      },
+                      {
+                        "name": "has_perm",
+                        "type": "function",
+                        "labels": [
+                          "security.authorization"
+                        ],
+                        "static": false,
+                        "location": "venv/lib/python3.8/site-packages/django/contrib/auth/models.py:298"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "backends",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "ModelBackend",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "has_perm",
+                        "type": "function",
+                        "labels": [
+                          "security.authorization"
+                        ],
+                        "static": false,
+                        "location": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py:112"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('', NULL, false, 'example_322@example.com', 'joseph', 'winterbottom', false, true, '2024-07-22T17:28:07.068495+00:00'::timestamptz, 'the_j_meister nummer 322', '') RETURNING \"myauth_user\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"customer_productalert\" SET \"user_id\" = 655, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_322@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"myauth_user\" SET \"password\" = 'md5$MBHc6Vb1F0QpLS3yDIDjVz$bfc10b323d5ee73d297b30ebb140a570', \"last_login\" = NULL, \"is_superuser\" = false, \"email\" = 'example_322@example.com', \"first_name\" = 'joseph', \"last_name\" = 'winterbottom', \"is_staff\" = false, \"is_active\" = true, \"date_joined\" = '2024-07-22T17:28:07.068495+00:00'::timestamptz, \"username\" = 'the_j_meister nummer 322', \"extra_field\" = '' WHERE \"myauth_user\".\"id\" = 655"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('', NULL, false, 'example_323@example.com', 'joseph', 'winterbottom', false, true, '2024-07-22T17:28:07.077000+00:00'::timestamptz, 'the_j_meister nummer 323', '') RETURNING \"myauth_user\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"customer_productalert\" SET \"user_id\" = 656, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_323@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"myauth_user\" SET \"password\" = 'md5$lWdJYFr446HTRSmjoFXX11$79f6c22f7b49d8565ac7c837826cb697', \"last_login\" = NULL, \"is_superuser\" = false, \"email\" = 'example_323@example.com', \"first_name\" = 'joseph', \"last_name\" = 'winterbottom', \"is_staff\" = false, \"is_active\" = true, \"date_joined\" = '2024-07-22T17:28:07.077000+00:00'::timestamptz, \"username\" = 'the_j_meister nummer 323', \"extra_field\" = '' WHERE \"myauth_user\".\"id\" = 656"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"auth_permission\".\"id\", \"auth_permission\".\"name\", \"auth_permission\".\"content_type_id\", \"auth_permission\".\"codename\" FROM \"auth_permission\" INNER JOIN \"django_content_type\" ON (\"auth_permission\".\"content_type_id\" = \"django_content_type\".\"id\") WHERE (\"auth_permission\".\"codename\" = 'add_country' AND \"django_content_type\".\"app_label\" = 'address') LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"myauth_user_user_permissions\" (\"user_id\", \"permission_id\") VALUES (655, 1200) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"django_content_type\".\"app_label\", \"auth_permission\".\"codename\" FROM \"auth_permission\" INNER JOIN \"myauth_user_user_permissions\" ON (\"auth_permission\".\"id\" = \"myauth_user_user_permissions\".\"permission_id\") INNER JOIN \"django_content_type\" ON (\"auth_permission\".\"content_type_id\" = \"django_content_type\".\"id\") WHERE \"myauth_user_user_permissions\".\"user_id\" = 655"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"django_content_type\".\"app_label\", \"auth_permission\".\"codename\" FROM \"auth_permission\" INNER JOIN \"auth_group_permissions\" ON (\"auth_permission\".\"id\" = \"auth_group_permissions\".\"permission_id\") INNER JOIN \"auth_group\" ON (\"auth_group_permissions\".\"group_id\" = \"auth_group\".\"id\") INNER JOIN \"myauth_user_groups\" ON (\"auth_group\".\"id\" = \"myauth_user_groups\".\"group_id\") INNER JOIN \"django_content_type\" ON (\"auth_permission\".\"content_type_id\" = \"django_content_type\".\"id\") WHERE \"myauth_user_groups\".\"user_id\" = 655"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"django_content_type\".\"app_label\", \"auth_permission\".\"codename\" FROM \"auth_permission\" INNER JOIN \"myauth_user_user_permissions\" ON (\"auth_permission\".\"id\" = \"myauth_user_user_permissions\".\"permission_id\") INNER JOIN \"django_content_type\" ON (\"auth_permission\".\"content_type_id\" = \"django_content_type\".\"id\") WHERE \"myauth_user_user_permissions\".\"user_id\" = 656"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"django_content_type\".\"app_label\", \"auth_permission\".\"codename\" FROM \"auth_permission\" INNER JOIN \"auth_group_permissions\" ON (\"auth_permission\".\"id\" = \"auth_group_permissions\".\"permission_id\") INNER JOIN \"auth_group\" ON (\"auth_group_permissions\".\"group_id\" = \"auth_group\".\"id\") INNER JOIN \"myauth_user_groups\" ON (\"auth_group\".\"id\" = \"myauth_user_groups\".\"group_id\") INNER JOIN \"django_content_type\" ON (\"auth_permission\".\"content_type_id\" = \"django_content_type\".\"id\") WHERE \"myauth_user_groups\".\"user_id\" = 656"
+      }
+    ]
+  }
+]

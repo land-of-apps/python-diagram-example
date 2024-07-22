@@ -1,0 +1,78 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"offer_conditionaloffer\" (\"name\", \"slug\", \"description\", \"offer_type\", \"exclusive\", \"status\", \"condition_id\", \"benefit_id\", \"priority\", \"start_datetime\", \"end_datetime\", \"max_global_applications\", \"max_user_applications\", \"max_basket_applications\", \"max_discount\", \"total_discount\", \"num_applications\", \"num_orders\", \"redirect_url\", \"date_created\") VALUES ('Dùｍϻϒ offer', 'dumu03fbu03a5-offer', '', 'Site', true, 'Suspended', 228, 229, 0, '2024-07-21T17:28:22.728151+00:00'::timestamptz, '2024-08-21T17:28:22.728151+00:00'::timestamptz, NULL, NULL, NULL, NULL, 0.00, 0, 0, '', '2024-07-22T17:28:22.731268+00:00'::timestamptz) RETURNING \"offer_conditionaloffer\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\" FROM \"offer_conditionaloffer\" WHERE \"offer_conditionaloffer\".\"slug\" = 'dumu03fbu03a5-offer' ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"offer_range\".\"id\", \"offer_range\".\"name\", \"offer_range\".\"slug\", \"offer_range\".\"description\", \"offer_range\".\"is_public\", \"offer_range\".\"includes_all_products\", \"offer_range\".\"proxy_class\", \"offer_range\".\"date_created\" FROM \"offer_range\" WHERE \"offer_range\".\"slug\" = 'all-products-range' ORDER BY \"offer_range\".\"name\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"offer_benefit\" (\"range_id\", \"type\", \"value\", \"max_affected_items\", \"proxy_class\") VALUES (469, 'Percentage', 20, NULL, NULL) RETURNING \"offer_benefit\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"offer_condition\" (\"range_id\", \"type\", \"value\", \"proxy_class\") VALUES (469, 'Count', 1, NULL) RETURNING \"offer_condition\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "INSERT INTO \"offer_range\" (\"name\", \"slug\", \"description\", \"is_public\", \"includes_all_products\", \"proxy_class\", \"date_created\") VALUES ('All products räñgë', 'all-products-range', '', false, true, NULL, '2024-07-22T17:28:22.720181+00:00'::timestamptz) RETURNING \"offer_range\".\"id\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x3410\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x3411\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x3412\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SAVEPOINT \"s8669432832_x3410\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SAVEPOINT \"s8669432832_x3411\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SAVEPOINT \"s8669432832_x3412\""
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SELECT \"offer_benefit\".\"id\", \"offer_benefit\".\"range_id\", \"offer_benefit\".\"type\", \"offer_benefit\".\"value\", \"offer_benefit\".\"max_affected_items\", \"offer_benefit\".\"proxy_class\" FROM \"offer_benefit\" WHERE (\"offer_benefit\".\"range_id\" = 469 AND \"offer_benefit\".\"type\" = 'Percentage' AND \"offer_benefit\".\"value\" = 20) LIMIT 21"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SELECT \"offer_condition\".\"id\", \"offer_condition\".\"range_id\", \"offer_condition\".\"type\", \"offer_condition\".\"value\", \"offer_condition\".\"proxy_class\" FROM \"offer_condition\" WHERE (\"offer_condition\".\"range_id\" = 469 AND \"offer_condition\".\"type\" = 'Count' AND \"offer_condition\".\"value\" = 1) LIMIT 21"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "SELECT \"offer_range\".\"id\", \"offer_range\".\"name\", \"offer_range\".\"slug\", \"offer_range\".\"description\", \"offer_range\".\"is_public\", \"offer_range\".\"includes_all_products\", \"offer_range\".\"proxy_class\", \"offer_range\".\"date_created\" FROM \"offer_range\" WHERE (\"offer_range\".\"includes_all_products\" AND \"offer_range\".\"name\" = 'All products räñgë') LIMIT 21"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "oscar/models"
+  }
+]

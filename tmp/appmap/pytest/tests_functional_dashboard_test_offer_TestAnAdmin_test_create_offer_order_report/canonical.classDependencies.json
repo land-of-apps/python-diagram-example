@@ -1,0 +1,78 @@
+[
+  {
+    "caller": "GET /dashboard/offers/{pk}/",
+    "callee": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('2an2wa3j65699e1ndtr7qrgdyyvtr5d7', 'e30:1sVwog:ct3uW8kCJ77d4_cr5xdknhFty5Abu14hhUuhPr9y59o', '2024-08-05T17:27:18.226599+00:00'::timestamptz)"
+  },
+  {
+    "caller": "GET /dashboard/offers/{pk}/",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x1742\""
+  },
+  {
+    "caller": "GET /dashboard/offers/{pk}/",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x1743\""
+  },
+  {
+    "caller": "GET /dashboard/offers/{pk}/",
+    "callee": "SAVEPOINT \"s8669432832_x1742\""
+  },
+  {
+    "caller": "GET /dashboard/offers/{pk}/",
+    "callee": "SAVEPOINT \"s8669432832_x1743\""
+  },
+  {
+    "caller": "GET /dashboard/offers/{pk}/",
+    "callee": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = '2an2wa3j65699e1ndtr7qrgdyyvtr5d7' LIMIT 1"
+  },
+  {
+    "caller": "GET /dashboard/offers/{pk}/",
+    "callee": "UPDATE \"django_session\" SET \"session_data\" = '.eJxVjLEOAiEQRP-F2lzYXVSw9B-MJVnYxVOTMxEuFsZ_F-MV2k3evJmniTy3Mc5V7_EsZmfIgln90sT5qtOnkgtPp1t8aGpa27AUdTh-waHb-0X-exi5jn2uwjYQrcl6AnG-UNYMDpyiw7DNxYHngJiBUt6g9FgCqbXIKJjQvN6Mpjhx:1sVwog:4Ug1VYKvZDCJsM9M3ljzWedBJp5VMlHKjIK0dZYDuOM', \"expire_date\" = '2024-08-05T17:27:18.247690+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = '2an2wa3j65699e1ndtr7qrgdyyvtr5d7'"
+  },
+  {
+    "caller": "GET /dashboard/offers/{pk}/",
+    "callee": "django/contrib"
+  },
+  {
+    "caller": "GET /dashboard/offers/{pk}/",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "GET /dashboard/offers/{pk}/",
+    "callee": "oscar/views"
+  },
+  {
+    "caller": "django/contrib",
+    "callee": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"email\" = 'testuser@buymore.com' LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"order_orderdiscount\" WHERE \"order_orderdiscount\".\"offer_id\" = 110"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\" FROM \"offer_conditionaloffer\" WHERE \"offer_conditionaloffer\".\"id\" = 110 LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"order_orderdiscount\".\"id\", \"order_orderdiscount\".\"order_id\", \"order_orderdiscount\".\"category\", \"order_orderdiscount\".\"offer_id\", \"order_orderdiscount\".\"offer_name\", \"order_orderdiscount\".\"voucher_id\", \"order_orderdiscount\".\"voucher_code\", \"order_orderdiscount\".\"frequency\", \"order_orderdiscount\".\"amount\", \"order_orderdiscount\".\"message\", \"order_order\".\"id\", \"order_order\".\"number\", \"order_order\".\"site_id\", \"order_order\".\"basket_id\", \"order_order\".\"user_id\", \"order_order\".\"billing_address_id\", \"order_order\".\"currency\", \"order_order\".\"total_incl_tax\", \"order_order\".\"total_excl_tax\", \"order_order\".\"shipping_incl_tax\", \"order_order\".\"shipping_excl_tax\", \"order_order\".\"shipping_tax_code\", \"order_order\".\"shipping_address_id\", \"order_order\".\"shipping_method\", \"order_order\".\"shipping_code\", \"order_order\".\"status\", \"order_order\".\"guest_email\", \"order_order\".\"date_placed\" FROM \"order_orderdiscount\" INNER JOIN \"order_order\" ON (\"order_orderdiscount\".\"order_id\" = \"order_order\".\"id\") WHERE \"order_orderdiscount\".\"offer_id\" = 110 ORDER BY \"order_orderdiscount\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"customer_productalert\" SET \"user_id\" = 301, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'testuser@buymore.com' AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"myauth_user\" SET \"last_login\" = '2024-07-22T17:27:18.227955+00:00'::timestamptz WHERE \"myauth_user\".\"id\" = 301"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "GET /dashboard/offers/{pk}/"
+  },
+  {
+    "caller": "oscar/views",
+    "callee": "django/contrib"
+  }
+]

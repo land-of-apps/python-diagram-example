@@ -1,0 +1,86 @@
+[
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarLogin_ForbiddenHtml#render",
+    "callee": "<templates>/SrcOscarTemplatesOscarPartialsNav_AccountsHtml#render"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarLogin_ForbiddenHtml#render",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarLogin_ForbiddenHtml#render",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarPartialsNav_AccountsHtml#render",
+    "callee": "django/contrib"
+  },
+  {
+    "caller": "GET /password-reset/",
+    "callee": "<templates>/SrcOscarTemplatesOscarLogin_ForbiddenHtml#render"
+  },
+  {
+    "caller": "GET /password-reset/",
+    "callee": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('fiuo3her2oeoe33ej2on3xv64f1cdmfv', 'e30:1sVwoL:j4e9wtkcyoLrY5VZ4ctlpSDKt_yl7sOTcUX6dy_eSRU', '2024-08-05T17:26:57.560038+00:00'::timestamptz)"
+  },
+  {
+    "caller": "GET /password-reset/",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x1187\""
+  },
+  {
+    "caller": "GET /password-reset/",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x1188\""
+  },
+  {
+    "caller": "GET /password-reset/",
+    "callee": "SAVEPOINT \"s8669432832_x1187\""
+  },
+  {
+    "caller": "GET /password-reset/",
+    "callee": "SAVEPOINT \"s8669432832_x1188\""
+  },
+  {
+    "caller": "GET /password-reset/",
+    "callee": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = 'fiuo3her2oeoe33ej2on3xv64f1cdmfv' LIMIT 1"
+  },
+  {
+    "caller": "GET /password-reset/",
+    "callee": "UPDATE \"django_session\" SET \"session_data\" = '.eJxVjDsOwjAQRO_iGkXZrL1rU3IHRGn5s8aAFKQ4EQXi7gSRAsp582aeyodlrn5pMvlLVnsFhGr3S2NINxk_Vb6G8Xz3D4mztLnbitadvuC42odN_nuoodV1zmHQ2gAmWwbDvcY1Btejo55scYU5CSfDAmJdzAIFCQbLiETEgOr1BnBnN5I:1sVwoL:sXeU82Jfd11KBV_dpVFUlOzZ7ICh1ViVyc63rFShxAA', \"expire_date\" = '2024-08-05T17:26:57.575353+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = 'fiuo3her2oeoe33ej2on3xv64f1cdmfv'"
+  },
+  {
+    "caller": "GET /password-reset/",
+    "callee": "django/contrib"
+  },
+  {
+    "caller": "GET /password-reset/",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "django/contrib",
+    "callee": "SELECT \"django_content_type\".\"app_label\", \"auth_permission\".\"codename\" FROM \"auth_permission\" INNER JOIN \"auth_group_permissions\" ON (\"auth_permission\".\"id\" = \"auth_group_permissions\".\"permission_id\") INNER JOIN \"auth_group\" ON (\"auth_group_permissions\".\"group_id\" = \"auth_group\".\"id\") INNER JOIN \"myauth_user_groups\" ON (\"auth_group\".\"id\" = \"myauth_user_groups\".\"group_id\") INNER JOIN \"django_content_type\" ON (\"auth_permission\".\"content_type_id\" = \"django_content_type\".\"id\") WHERE \"myauth_user_groups\".\"user_id\" = 163"
+  },
+  {
+    "caller": "django/contrib",
+    "callee": "SELECT \"django_content_type\".\"app_label\", \"auth_permission\".\"codename\" FROM \"auth_permission\" INNER JOIN \"myauth_user_user_permissions\" ON (\"auth_permission\".\"id\" = \"myauth_user_user_permissions\".\"permission_id\") INNER JOIN \"django_content_type\" ON (\"auth_permission\".\"content_type_id\" = \"django_content_type\".\"id\") WHERE \"myauth_user_user_permissions\".\"user_id\" = 163"
+  },
+  {
+    "caller": "django/contrib",
+    "callee": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"email\" = 'testuser@buymore.com' LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"communication_notification\" WHERE (\"communication_notification\".\"date_read\" IS NULL AND \"communication_notification\".\"recipient_id\" = 163)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"customer_productalert\" SET \"user_id\" = 163, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'testuser@buymore.com' AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"myauth_user\" SET \"last_login\" = '2024-07-22T17:26:57.562193+00:00'::timestamptz WHERE \"myauth_user\".\"id\" = 163"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "GET /password-reset/"
+  }
+]

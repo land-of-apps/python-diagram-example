@@ -1,0 +1,26 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "DECLARE \"_django_curs_8669432832_sync_225\" NO SCROLL CURSOR WITHOUT HOLD FOR SELECT \"catalogue_productattributevalue\".\"id\", \"catalogue_productattributevalue\".\"attribute_id\", \"catalogue_productattributevalue\".\"product_id\", \"catalogue_productattributevalue\".\"value_text\", \"catalogue_productattributevalue\".\"value_integer\", \"catalogue_productattributevalue\".\"value_boolean\", \"catalogue_productattributevalue\".\"value_float\", \"catalogue_productattributevalue\".\"value_richtext\", \"catalogue_productattributevalue\".\"value_date\", \"catalogue_productattributevalue\".\"value_datetime\", \"catalogue_productattributevalue\".\"value_option_id\", \"catalogue_productattributevalue\".\"value_file\", \"catalogue_productattributevalue\".\"value_image\", \"catalogue_productattributevalue\".\"entity_content_type_id\", \"catalogue_productattributevalue\".\"entity_object_id\", \"catalogue_productattribute\".\"code\" AS \"code\", \"catalogue_productattribute\".\"id\", \"catalogue_productattribute\".\"product_class_id\", \"catalogue_productattribute\".\"name\", \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\", \"catalogue_productattribute\".\"option_group_id\", \"catalogue_productattribute\".\"required\" FROM \"catalogue_productattributevalue\" INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") WHERE (\"catalogue_productattributevalue\".\"product_id\" = 15 OR (\"catalogue_productattributevalue\".\"product_id\" = 14 AND NOT (\"catalogue_productattribute\".\"code\" IN (SELECT U2.\"code\" FROM \"catalogue_productattributevalue\" U0 INNER JOIN \"catalogue_productattribute\" U2 ON (U0.\"attribute_id\" = U2.\"id\") WHERE U0.\"product_id\" = 15))))"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"catalogue_productattributevalue\" (\"attribute_id\", \"product_id\", \"value_text\", \"value_integer\", \"value_boolean\", \"value_float\", \"value_richtext\", \"value_date\", \"value_datetime\", \"value_option_id\", \"value_file\", \"value_image\", \"entity_content_type_id\", \"entity_object_id\") VALUES (12, 15, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL) RETURNING \"catalogue_productattributevalue\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_category\" INNER JOIN \"catalogue_productcategory\" ON (\"catalogue_category\".\"id\" = \"catalogue_productcategory\".\"category_id\") WHERE \"catalogue_productcategory\".\"product_id\" = 15 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"catalogue_option\" INNER JOIN \"catalogue_product_product_options\" ON (\"catalogue_option\".\"id\" = \"catalogue_product_product_options\".\"option_id\") WHERE \"catalogue_product_product_options\".\"product_id\" = 15 LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"catalogue_product\" SET \"structure\" = 'child', \"is_public\" = true, \"upc\" = 'child-1234', \"parent_id\" = 14, \"title\" = 'You are my father', \"slug\" = 'you-are-my-father', \"description\" = '', \"meta_title\" = NULL, \"meta_description\" = NULL, \"product_class_id\" = NULL, \"rating\" = NULL, \"date_created\" = '2024-07-22T17:28:53.493464+00:00'::timestamptz, \"date_updated\" = '2024-07-22T17:28:53.517730+00:00'::timestamptz, \"is_discountable\" = true WHERE \"catalogue_product\".\"id\" = 15"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  }
+]

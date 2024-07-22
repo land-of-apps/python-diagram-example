@@ -1,0 +1,165 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13812317776,
+        "value": "<ProductAttribute: weight>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.ProductAttribute"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4341391944,
+          "value": "1",
+          "name": "value",
+          "class": "builtins.int"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProductAttribute",
+      "method_id": "validate_value",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 1046
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13812317776,
+        "value": "<ProductAttribute: weight>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.ProductAttribute"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4341391944,
+          "value": "1",
+          "name": "value",
+          "class": "builtins.int"
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractProductAttribute",
+      "method_id": "_validate_date",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 1070
+    },
+    {
+      "exceptions": [
+        {
+          "class": "django.core.exceptions.ValidationError",
+          "message": "['Must be a date or datetime']",
+          "object_id": 13812257024
+        }
+      ],
+      "parent_id": 2,
+      "elapsed": 0.000007152557373046875,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "exceptions": [
+        {
+          "class": "django.core.exceptions.ValidationError",
+          "message": "['Must be a date or datetime']",
+          "object_id": 13812257024
+        }
+      ],
+      "parent_id": 1,
+      "elapsed": 0.000080108642578125,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      }
+    ],
+    "feature_group": "Date attributes",
+    "recording": {
+      "defined_class": "tests.integration.catalogue.test_attributes.TestDateAttributes",
+      "method_id": "test_validate_invalid_date_values"
+    },
+    "source_location": "tests/integration/catalogue/test_attributes.py:185",
+    "name": "Date attributes validate invalid date values",
+    "feature": "Validate invalid date values",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractProductAttribute",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "validate_value",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:1046"
+                        },
+                        {
+                          "name": "_validate_date",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:1070"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

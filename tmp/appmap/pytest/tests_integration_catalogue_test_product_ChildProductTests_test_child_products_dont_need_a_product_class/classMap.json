@@ -1,0 +1,126 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "catalogue",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractProduct",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/abstract_models.py:590"
+                      },
+                      {
+                        "name": "get_title",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/abstract_models.py:674"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "product_attributes",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "ProductAttributesContainer",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/product_attributes.py:207"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core",
+        "type": "package",
+        "children": [
+          {
+            "name": "utils",
+            "type": "class",
+            "children": [
+              {
+                "name": "slugify",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:68"
+              },
+              {
+                "name": "default_slugifier",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:57"
+              },
+              {
+                "name": "cautious_slugify",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:20"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "models",
+        "type": "package",
+        "children": [
+          {
+            "name": "fields",
+            "type": "package",
+            "children": [
+              {
+                "name": "NullCharField",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "get_prep_value",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/models/fields/__init__.py:122"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"catalogue_product\" (\"structure\", \"is_public\", \"upc\", \"parent_id\", \"title\", \"slug\", \"description\", \"meta_title\", \"meta_description\", \"product_class_id\", \"rating\", \"date_created\", \"date_updated\", \"is_discountable\") VALUES ('child', true, NULL, 703, '', 'parent-product', '', NULL, NULL, NULL, NULL, '2024-07-22T17:28:01.342833+00:00'::timestamptz, '2024-07-22T17:28:01.342845+00:00'::timestamptz, true) RETURNING \"catalogue_product\".\"id\""
+      }
+    ]
+  }
+]

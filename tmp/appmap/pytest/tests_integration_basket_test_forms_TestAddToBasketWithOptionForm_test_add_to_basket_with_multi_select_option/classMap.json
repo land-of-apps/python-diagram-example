@@ -1,0 +1,280 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "models",
+        "type": "package",
+        "children": [
+          {
+            "name": "fields",
+            "type": "package",
+            "children": [
+              {
+                "name": "autoslugfield",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AutoSlugField",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "pre_save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:169"
+                      },
+                      {
+                        "name": "create_slug",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:105"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "basket",
+            "type": "package",
+            "children": [
+              {
+                "name": "forms",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AddToBasketForm",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "_create_product_fields",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/basket/forms.py:269"
+                      },
+                      {
+                        "name": "_add_option_field",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/basket/forms.py:276"
+                      },
+                      {
+                        "name": "clean_quantity",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/basket/forms.py:302"
+                      },
+                      {
+                        "name": "clean",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/basket/forms.py:329"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractBasket",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "all_lines",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/basket/abstract_models.py:130"
+                      },
+                      {
+                        "name": "product_quantity",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/basket/abstract_models.py:631"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "catalogue",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractProduct",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "get_product_class",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/abstract_models.py:703"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "AbstractOption",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "get_choices",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/abstract_models.py:1434"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "partner",
+            "type": "package",
+            "children": [
+              {
+                "name": "strategy",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "Structured",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "fetch_for_product",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/partner/strategy.py:119"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "UseFirstStockRecord",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "select_stockrecord",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/partner/strategy.py:198"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "NoTax",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "pricing_policy",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/partner/strategy.py:238"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "StockRequired",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "availability_policy",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/partner/strategy.py:214"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "availability",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "StockRequired",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "is_purchase_permitted",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/partner/availability.py:89"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"catalogue_attributeoptiongroup\" (\"name\") VALUES ('minte') RETURNING \"catalogue_attributeoptiongroup\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"catalogue_attributeoption\" (\"group_id\", \"option\") VALUES (47, 'henk') RETURNING \"catalogue_attributeoption\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"catalogue_attributeoption\" (\"group_id\", \"option\") VALUES (47, 'klaas') RETURNING \"catalogue_attributeoption\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"catalogue_option\" (\"name\", \"code\", \"type\", \"required\", \"option_group_id\", \"help_text\", \"order\") VALUES ('example option', 'example', 'multi_select', true, 47, NULL, NULL) RETURNING \"catalogue_option\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"catalogue_productclass_options\" (\"productclass_id\", \"option_id\") VALUES (433, 52) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_option\".\"id\", \"catalogue_option\".\"name\", \"catalogue_option\".\"code\", \"catalogue_option\".\"type\", \"catalogue_option\".\"required\", \"catalogue_option\".\"option_group_id\", \"catalogue_option\".\"help_text\", \"catalogue_option\".\"order\" FROM \"catalogue_option\" LEFT OUTER JOIN \"catalogue_productclass_options\" ON (\"catalogue_option\".\"id\" = \"catalogue_productclass_options\".\"option_id\") LEFT OUTER JOIN \"catalogue_product_product_options\" ON (\"catalogue_option\".\"id\" = \"catalogue_product_product_options\".\"option_id\") WHERE (\"catalogue_productclass_options\".\"productclass_id\" = 433 OR \"catalogue_product_product_options\".\"product_id\" = 626) ORDER BY \"catalogue_option\".\"order\" ASC, \"catalogue_option\".\"name\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_attributeoptiongroup\".\"id\", \"catalogue_attributeoptiongroup\".\"name\" FROM \"catalogue_attributeoptiongroup\" WHERE \"catalogue_attributeoptiongroup\".\"id\" = 47 LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_attributeoption\".\"id\", \"catalogue_attributeoption\".\"group_id\", \"catalogue_attributeoption\".\"option\" FROM \"catalogue_attributeoption\" WHERE \"catalogue_attributeoption\".\"group_id\" = 47"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\", \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\", \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"basket_line\" INNER JOIN \"catalogue_product\" ON (\"basket_line\".\"product_id\" = \"catalogue_product\".\"id\") INNER JOIN \"partner_stockrecord\" ON (\"basket_line\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE \"basket_line\".\"basket_id\" = 262 ORDER BY \"basket_line\".\"id\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"partner_stockrecord\" WHERE \"partner_stockrecord\".\"product_id\" = 626 LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "SELECT SUM(\"basket_line\".\"quantity\") AS \"quantity__sum\" FROM \"basket_line\" WHERE (\"basket_line\".\"basket_id\" = 262 AND \"basket_line\".\"product_id\" = 626)"
+      }
+    ]
+  }
+]

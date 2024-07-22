@@ -1,0 +1,255 @@
+[
+  {
+    "name": "django",
+    "type": "package",
+    "children": [
+      {
+        "name": "contrib",
+        "type": "package",
+        "children": [
+          {
+            "name": "auth",
+            "type": "package",
+            "children": [
+              {
+                "name": "backends",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "ModelBackend",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "user_can_authenticate",
+                        "type": "function",
+                        "labels": [
+                          "security.authorization"
+                        ],
+                        "static": false,
+                        "location": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py:55"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "partner",
+            "type": "package",
+            "children": [
+              {
+                "name": "strategy",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "Selector",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "strategy",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/partner/strategy.py:37"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "customer",
+            "type": "package",
+            "children": [
+              {
+                "name": "alerts",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "views",
+                    "type": "package",
+                    "children": [
+                      {
+                        "name": "ProductAlertCancelView",
+                        "type": "class",
+                        "children": [
+                          {
+                            "name": "get",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/customer/alerts/views.py:110"
+                          },
+                          {
+                            "name": "update_alert",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/customer/alerts/views.py:122"
+                          },
+                          {
+                            "name": "get_redirect_url",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/customer/alerts/views.py:129"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractProductAlert",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "cancel",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:210"
+                      },
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:230"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "catalogue",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractProduct",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "get_absolute_url",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/abstract_models.py:514"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "basket",
+            "type": "package",
+            "children": [
+              {
+                "name": "middleware",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "BasketMiddleware",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "process_response",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/basket/middleware.py:63"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "models",
+        "type": "package",
+        "children": [
+          {
+            "name": "fields",
+            "type": "package",
+            "children": [
+              {
+                "name": "NullCharField",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "from_db_value",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/models/fields/__init__.py:117"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"customer_productalert\".\"id\", \"customer_productalert\".\"product_id\", \"customer_productalert\".\"user_id\", \"customer_productalert\".\"email\", \"customer_productalert\".\"key\", \"customer_productalert\".\"status\", \"customer_productalert\".\"date_created\", \"customer_productalert\".\"date_confirmed\", \"customer_productalert\".\"date_cancelled\", \"customer_productalert\".\"date_closed\" FROM \"customer_productalert\" WHERE \"customer_productalert\".\"user_id\" = 147 ORDER BY \"customer_productalert\".\"date_created\" DESC"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2024-07-22T17:26:56.095664+00:00'::timestamptz AND \"django_session\".\"session_key\" = 'fhofgpw7i3ts1nql16ruvevuk0x0dixt') LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"id\" = 147 LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"customer_productalert\".\"id\", \"customer_productalert\".\"product_id\", \"customer_productalert\".\"user_id\", \"customer_productalert\".\"email\", \"customer_productalert\".\"key\", \"customer_productalert\".\"status\", \"customer_productalert\".\"date_created\", \"customer_productalert\".\"date_confirmed\", \"customer_productalert\".\"date_cancelled\", \"customer_productalert\".\"date_closed\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"id\" = 3 AND \"customer_productalert\".\"user_id\" = 147) LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"customer_productalert\" SET \"product_id\" = 333, \"user_id\" = 147, \"email\" = '', \"key\" = '', \"status\" = 'Cancelled', \"date_created\" = '2024-07-22T17:26:56.092452+00:00'::timestamptz, \"date_confirmed\" = NULL, \"date_cancelled\" = '2024-07-22T17:26:56.099761+00:00'::timestamptz, \"date_closed\" = NULL WHERE \"customer_productalert\".\"id\" = 3"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\" FROM \"catalogue_product\" WHERE \"catalogue_product\".\"id\" = 333 LIMIT 21"
+      }
+    ]
+  },
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "GET /accounts/alerts/cancel/{pk}/"
+      }
+    ]
+  }
+]

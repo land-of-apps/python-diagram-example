@@ -1,0 +1,279 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818601920,
+        "value": "<tests._site.apps.checkout.applicator.SurchargeApplicator object at 0x337a721c0>",
+        "name": "self",
+        "class": "tests._site.apps.checkout.applicator.SurchargeApplicator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13818602064,
+          "value": "<Mock id='13818602064'>",
+          "name": "basket",
+          "class": "unittest.mock.Mock"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13818625792,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.applicator.SurchargeApplicator",
+      "method_id": "get_applicable_surcharges",
+      "path": "src/oscar/apps/checkout/applicator.py",
+      "lineno": 36
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818602928,
+        "value": "<oscar.apps.checkout.surcharges.FlatCharge object at 0x337a725b0>",
+        "name": "self",
+        "class": "oscar.apps.checkout.surcharges.FlatCharge"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13818602064,
+          "value": "<Mock id='13818602064'>",
+          "name": "basket",
+          "class": "unittest.mock.Mock"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13818668544,
+          "value": "{'basket': <Mock id='13818602064'>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "basket",
+              "class": "unittest.mock.Mock"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.surcharges.FlatCharge",
+      "method_id": "calculate",
+      "path": "src/oscar/apps/checkout/surcharges.py",
+      "lineno": 59
+    },
+    {
+      "return_value": {
+        "object_id": 13818603312,
+        "value": "Price(currency=<Mock name='mock.currency' id='13818601968'>, excl_tax=Decimal('10.0'), incl_tax=Decimal('10.0'), tax=Decimal('0.0'))",
+        "class": "oscar.core.prices.Price"
+      },
+      "parent_id": 2,
+      "elapsed": 0.00000476837158203125,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13818639200,
+        "value": "[<oscar.apps.checkout.applicator.SurchargePrice object at 0x337a72760>]",
+        "class": "oscar.apps.checkout.applicator.SurchargeList",
+        "items": [
+          {
+            "class": "oscar.apps.checkout.applicator.SurchargePrice"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 1,
+      "elapsed": 0.0000782012939453125,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13818587936,
+        "value": "<oscar.apps.checkout.calculators.OrderTotalCalculator object at 0x337a6eb20>",
+        "name": "self",
+        "class": "oscar.apps.checkout.calculators.OrderTotalCalculator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13818602064,
+          "value": "<Mock id='13818602064'>",
+          "name": "basket",
+          "class": "unittest.mock.Mock"
+        },
+        {
+          "kind": "req",
+          "object_id": 13818586400,
+          "value": "Price(currency=<Mock name='mock.currency' id='13818601968'>, excl_tax=Decimal('5.00'))",
+          "name": "shipping_charge",
+          "class": "oscar.core.prices.Price"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "surcharges",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13818561600,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.calculators.OrderTotalCalculator",
+      "method_id": "calculate",
+      "path": "src/oscar/apps/checkout/calculators.py",
+      "lineno": 16
+    },
+    {
+      "return_value": {
+        "object_id": 13818602832,
+        "value": "Price(currency=<Mock name='mock.currency' id='13818601968'>, excl_tax=Decimal('25.00'))",
+        "class": "oscar.core.prices.Price"
+      },
+      "parent_id": 5,
+      "elapsed": 0.0000069141387939453125,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      }
+    ],
+    "feature_group": "Order total calculator",
+    "recording": {
+      "defined_class": "tests.integration.checkout.test_calculator.TestOrderTotalCalculator",
+      "method_id": "test_returns_correct_totals_when_tax_is_not_known"
+    },
+    "source_location": "tests/integration/checkout/test_calculator.py:16",
+    "name": "Order total calculator returns correct totals when tax is not known",
+    "feature": "Returns correct totals when tax is not known",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "checkout",
+              "type": "package",
+              "children": [
+                {
+                  "name": "applicator",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "SurchargeApplicator",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get_applicable_surcharges",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/checkout/applicator.py:36"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "surcharges",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "FlatCharge",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "calculate",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/checkout/surcharges.py:59"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "calculators",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "OrderTotalCalculator",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "calculate",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/checkout/calculators.py:16"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

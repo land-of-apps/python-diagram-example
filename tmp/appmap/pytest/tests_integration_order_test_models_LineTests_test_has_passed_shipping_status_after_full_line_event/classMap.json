@@ -1,0 +1,80 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "order",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "ShippingEventQuantity",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/abstract_models.py:1137"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "AbstractLine",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "is_shipping_event_permitted",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/abstract_models.py:753"
+                      },
+                      {
+                        "name": "shipping_event_quantity",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/abstract_models.py:766"
+                      },
+                      {
+                        "name": "has_shipping_event_occurred",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/abstract_models.py:779"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"order_shippingevent\" (\"order_id\", \"event_type_id\", \"notes\", \"date_created\") VALUES (163, 25, '', '2024-07-22T17:28:41.770641+00:00'::timestamptz) RETURNING \"order_shippingevent\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT SUM(\"order_shippingeventquantity\".\"quantity\") AS \"quantity__sum\" FROM \"order_shippingeventquantity\" INNER JOIN \"order_shippingevent\" ON (\"order_shippingeventquantity\".\"event_id\" = \"order_shippingevent\".\"id\") WHERE (\"order_shippingeventquantity\".\"line_id\" = 165 AND \"order_shippingevent\".\"event_type_id\" = 25)"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"order_shippingeventquantity\" (\"event_id\", \"line_id\", \"quantity\") VALUES (4, 165, 4) RETURNING \"order_shippingeventquantity\".\"id\""
+      }
+    ]
+  }
+]

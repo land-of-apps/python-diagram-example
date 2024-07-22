@@ -1,0 +1,162 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "offer",
+            "type": "package",
+            "children": [
+              {
+                "name": "reports",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "OfferReportGenerator",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "get_queryset",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/offer/reports.py:42"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "OfferReportCSVFormatter",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "generate_csv",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/offer/reports.py:17"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "dashboard",
+            "type": "package",
+            "children": [
+              {
+                "name": "reports",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "reports",
+                    "type": "package",
+                    "children": [
+                      {
+                        "name": "ReportGenerator",
+                        "type": "class",
+                        "children": [
+                          {
+                            "name": "get_queryset",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reports/reports.py:42"
+                          },
+                          {
+                            "name": "filter_with_date_range",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reports/reports.py:68"
+                          },
+                          {
+                            "name": "generate",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reports/reports.py:53"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "ReportCSVFormatter",
+                        "type": "class",
+                        "children": [
+                          {
+                            "name": "generate_response",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reports/reports.py:118"
+                          },
+                          {
+                            "name": "get_csv_writer",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reports/reports.py:115"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "ReportFormatter",
+                        "type": "class",
+                        "children": [
+                          {
+                            "name": "filename",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reports/reports.py:109"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core",
+        "type": "package",
+        "children": [
+          {
+            "name": "compat",
+            "type": "package",
+            "children": [
+              {
+                "name": "UnicodeCSVWriter",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "add_bom",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/core/compat.py:114"
+                  },
+                  {
+                    "name": "writerow",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/core/compat.py:122"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"order_orderdiscount\".\"offer_id\", SUM(\"order_orderdiscount\".\"amount\") AS \"total_discount\", (SELECT U0.\"id\" FROM \"offer_conditionaloffer\" U0 WHERE U0.\"id\" = (\"order_orderdiscount\".\"offer_id\") ORDER BY U0.\"priority\" DESC, U0.\"id\" ASC LIMIT 1) AS \"offer\", COALESCE((SELECT U0.\"name\" FROM \"offer_conditionaloffer\" U0 WHERE U0.\"id\" = (\"order_orderdiscount\".\"offer_id\") ORDER BY U0.\"priority\" DESC, U0.\"id\" ASC LIMIT 1), (SELECT U0.\"offer_name\" FROM \"order_orderdiscount\" U0 WHERE U0.\"id\" = (\"order_orderdiscount\".\"id\") ORDER BY U0.\"id\" ASC LIMIT 1)) AS \"display_offer_name\" FROM \"order_orderdiscount\" GROUP BY \"order_orderdiscount\".\"offer_id\", 3, 4 ORDER BY 2 DESC"
+      }
+    ]
+  }
+]

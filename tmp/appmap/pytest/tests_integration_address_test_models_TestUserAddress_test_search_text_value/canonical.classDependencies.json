@@ -1,0 +1,22 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"address_useraddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\", \"phone_number\", \"notes\", \"user_id\", \"is_default_for_shipping\", \"is_default_for_billing\", \"num_orders_as_shipping_address\", \"num_orders_as_billing_address\", \"hash\", \"date_created\") VALUES ('Dr', 'Barry', 'Barrington', '1 King Road', '', '', 'London', '', 'SW1 9RE', 'GB', 'Barry Barrington 1 King Road London SW1 9RE UNITED KINGDOM', '+493513296645', '', 606, false, false, 0, 0, '2668616117', '2024-07-22T17:27:50.506998+00:00'::timestamptz) RETURNING \"address_useraddress\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('', NULL, false, 'example_275@example.com', 'joseph', 'winterbottom', false, true, '2024-07-22T17:27:50.500945+00:00'::timestamptz, 'the_j_meister nummer 275', '') RETURNING \"myauth_user\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"customer_productalert\" SET \"user_id\" = 606, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_275@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"myauth_user\" SET \"password\" = 'md5$po5ttwN05qB3u4vJCMsGtX$607b4ff8b42419e2a173b5a7dd196453', \"last_login\" = NULL, \"is_superuser\" = false, \"email\" = 'example_275@example.com', \"first_name\" = 'joseph', \"last_name\" = 'winterbottom', \"is_staff\" = false, \"is_active\" = true, \"date_joined\" = '2024-07-22T17:27:50.500945+00:00'::timestamptz, \"username\" = 'the_j_meister nummer 275', \"extra_field\" = '' WHERE \"myauth_user\".\"id\" = 606"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  }
+]

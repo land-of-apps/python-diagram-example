@@ -1,0 +1,34 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "<templates>/SrcOscarTemplatesOscarCommunicationEmailsCommtype_Registration_BodyHtml#render"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "<templates>/SrcOscarTemplatesOscarCommunicationEmailsCommtype_Registration_BodyTxt#render"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "<templates>/SrcOscarTemplatesOscarCommunicationEmailsCommtype_Registration_SubjectTxt#render"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"communication_email\" (\"user_id\", \"email\", \"subject\", \"body_text\", \"body_html\", \"date_sent\") VALUES (647, 'testuser@example.com', 'Thank you for registering.', 'Thank you for registering.', '<p>Thank you for registering.</p>', '2024-07-22T17:28:06.022092+00:00'::timestamptz) RETURNING \"communication_email\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('md5$KtcKlwjaxJ4OLKjCnOohQ8$92015c1688c594f062507059699271dd', NULL, false, 'testuser@example.com', '', '', false, true, '2024-07-22T17:28:06.009590+00:00'::timestamptz, 'testuser', '') RETURNING \"myauth_user\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"communication_communicationeventtype\".\"id\", \"communication_communicationeventtype\".\"code\", \"communication_communicationeventtype\".\"name\", \"communication_communicationeventtype\".\"category\", \"communication_communicationeventtype\".\"email_subject_template\", \"communication_communicationeventtype\".\"email_body_template\", \"communication_communicationeventtype\".\"email_body_html_template\", \"communication_communicationeventtype\".\"sms_template\", \"communication_communicationeventtype\".\"date_created\", \"communication_communicationeventtype\".\"date_updated\" FROM \"communication_communicationeventtype\" WHERE \"communication_communicationeventtype\".\"code\" = 'REGISTRATION' LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"customer_productalert\" SET \"user_id\" = 647, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'testuser@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  }
+]

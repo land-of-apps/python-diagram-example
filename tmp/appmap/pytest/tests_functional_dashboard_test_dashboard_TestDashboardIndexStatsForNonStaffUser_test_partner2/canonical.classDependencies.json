@@ -1,0 +1,206 @@
+[
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarDashboardIndexHtml#render",
+    "callee": "<templates>/SrcOscarTemplatesOscarDashboardPartialsAlert_MessagesHtml#render"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarDashboardIndexHtml#render",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "<templates>/SrcOscarTemplatesOscarDashboardIndexHtml#render",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "GET /dashboard/",
+    "callee": "<templates>/SrcOscarTemplatesOscarDashboardIndexHtml#render"
+  },
+  {
+    "caller": "GET /dashboard/",
+    "callee": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('a1wvl627bhx8qhycxeizh50w75jt0pvq', 'e30:1sVwod:9Lel_llFKdQWDh2rN8YbGR_-7ZDys3iZ_AKxqctkIxI', '2024-08-05T17:27:15.554840+00:00'::timestamptz)"
+  },
+  {
+    "caller": "GET /dashboard/",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x1664\""
+  },
+  {
+    "caller": "GET /dashboard/",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x1665\""
+  },
+  {
+    "caller": "GET /dashboard/",
+    "callee": "SAVEPOINT \"s8669432832_x1664\""
+  },
+  {
+    "caller": "GET /dashboard/",
+    "callee": "SAVEPOINT \"s8669432832_x1665\""
+  },
+  {
+    "caller": "GET /dashboard/",
+    "callee": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = 'a1wvl627bhx8qhycxeizh50w75jt0pvq' LIMIT 1"
+  },
+  {
+    "caller": "GET /dashboard/",
+    "callee": "UPDATE \"django_session\" SET \"session_data\" = '.eJxVjDEOwjAMRe-SGVVJGhybkTsgxsiJLQJIRSKpGBB3p4gOsL73_n-axHOvaW56T2cxO-PJms0vzVyuOn2UXHg63dJDc9fWh1W04fgFh6Xer_HfQ-VWl7mWELPPHInBWQtIqIHyGMlHFYziiIMFISXZIgSAAowEI7mCpYh5vQGaiTjI:1sVwod:-2s7JfO1F9kbS0kJt2MNsdKklDMr2eZkus5qV6_zQmQ', \"expire_date\" = '2024-08-05T17:27:15.616819+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = 'a1wvl627bhx8qhycxeizh50w75jt0pvq'"
+  },
+  {
+    "caller": "GET /dashboard/",
+    "callee": "django/contrib"
+  },
+  {
+    "caller": "GET /dashboard/",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "GET /dashboard/",
+    "callee": "oscar/views"
+  },
+  {
+    "caller": "django/contrib",
+    "callee": "SELECT \"django_content_type\".\"app_label\", \"auth_permission\".\"codename\" FROM \"auth_permission\" INNER JOIN \"auth_group_permissions\" ON (\"auth_permission\".\"id\" = \"auth_group_permissions\".\"permission_id\") INNER JOIN \"auth_group\" ON (\"auth_group_permissions\".\"group_id\" = \"auth_group\".\"id\") INNER JOIN \"myauth_user_groups\" ON (\"auth_group\".\"id\" = \"myauth_user_groups\".\"group_id\") INNER JOIN \"django_content_type\" ON (\"auth_permission\".\"content_type_id\" = \"django_content_type\".\"id\") WHERE \"myauth_user_groups\".\"user_id\" = 290"
+  },
+  {
+    "caller": "django/contrib",
+    "callee": "SELECT \"django_content_type\".\"app_label\", \"auth_permission\".\"codename\" FROM \"auth_permission\" INNER JOIN \"myauth_user_user_permissions\" ON (\"auth_permission\".\"id\" = \"myauth_user_user_permissions\".\"permission_id\") INNER JOIN \"django_content_type\" ON (\"auth_permission\".\"content_type_id\" = \"django_content_type\".\"id\") WHERE \"myauth_user_user_permissions\".\"user_id\" = 290"
+  },
+  {
+    "caller": "django/contrib",
+    "callee": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"email\" = 'testuser@buymore.com' LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT AVG(\"__col1\") FROM (SELECT DISTINCT \"order_order\".\"id\" AS \"col1\", \"order_order\".\"number\" AS \"col2\", \"order_order\".\"site_id\" AS \"col3\", \"order_order\".\"basket_id\" AS \"col4\", \"order_order\".\"user_id\" AS \"col5\", \"order_order\".\"billing_address_id\" AS \"col6\", \"order_order\".\"currency\" AS \"col7\", \"order_order\".\"total_incl_tax\" AS \"col8\", \"order_order\".\"total_excl_tax\" AS \"col9\", \"order_order\".\"shipping_incl_tax\" AS \"col10\", \"order_order\".\"shipping_excl_tax\" AS \"col11\", \"order_order\".\"shipping_tax_code\" AS \"col12\", \"order_order\".\"shipping_address_id\" AS \"col13\", \"order_order\".\"shipping_method\" AS \"col14\", \"order_order\".\"shipping_code\" AS \"col15\", \"order_order\".\"status\" AS \"col16\", \"order_order\".\"guest_email\" AS \"col17\", \"order_order\".\"date_placed\" AS \"col18\", \"order_order\".\"total_incl_tax\" AS \"__col1\" FROM \"order_order\" INNER JOIN \"order_line\" ON (\"order_order\".\"id\" = \"order_line\".\"order_id\") WHERE (\"order_line\".\"partner_id\" IN (339) AND \"order_order\".\"date_placed\" > '2024-07-21T17:27:15.560412+00:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"catalogue_product\" INNER JOIN \"partner_stockrecord\" ON (\"catalogue_product\".\"id\" = \"partner_stockrecord\".\"product_id\") WHERE \"partner_stockrecord\".\"partner_id\" IN (339)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"communication_notification\" WHERE (\"communication_notification\".\"date_read\" IS NULL AND \"communication_notification\".\"recipient_id\" = 290)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"order_line\" WHERE (\"order_line\".\"partner_id\" IN (339) AND \"order_line\".\"order_id\" IN (SELECT DISTINCT U0.\"id\" FROM \"order_order\" U0 INNER JOIN \"order_line\" U1 ON (U0.\"id\" = U1.\"order_id\") WHERE (U1.\"partner_id\" IN (339) AND U0.\"date_placed\" > '2024-07-21T17:27:15.560412+00:00'::timestamptz)))"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"order_line\" WHERE \"order_line\".\"partner_id\" IN (339)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"partner_stockalert\" INNER JOIN \"partner_stockrecord\" ON (\"partner_stockalert\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE (\"partner_stockrecord\".\"partner_id\" IN (339) AND \"partner_stockalert\".\"status\" = 'Closed')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"partner_stockalert\" INNER JOIN \"partner_stockrecord\" ON (\"partner_stockalert\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE (\"partner_stockrecord\".\"partner_id\" IN (339) AND \"partner_stockalert\".\"status\" = 'Open')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) FROM (SELECT DISTINCT \"basket_basket\".\"id\" AS \"col1\", \"basket_basket\".\"owner_id\" AS \"col2\", \"basket_basket\".\"status\" AS \"col3\", \"basket_basket\".\"date_created\" AS \"col4\", \"basket_basket\".\"date_merged\" AS \"col5\", \"basket_basket\".\"date_submitted\" AS \"col6\" FROM \"basket_basket\" INNER JOIN \"basket_line\" ON (\"basket_basket\".\"id\" = \"basket_line\".\"basket_id\") INNER JOIN \"partner_stockrecord\" ON (\"basket_line\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE (\"basket_basket\".\"status\" = 'Open' AND \"partner_stockrecord\".\"partner_id\" IN (339) AND \"basket_basket\".\"date_created\" > '2024-07-21T17:27:15.560412+00:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) FROM (SELECT DISTINCT \"basket_basket\".\"id\" AS \"col1\", \"basket_basket\".\"owner_id\" AS \"col2\", \"basket_basket\".\"status\" AS \"col3\", \"basket_basket\".\"date_created\" AS \"col4\", \"basket_basket\".\"date_merged\" AS \"col5\", \"basket_basket\".\"date_submitted\" AS \"col6\" FROM \"basket_basket\" INNER JOIN \"basket_line\" ON (\"basket_basket\".\"id\" = \"basket_line\".\"basket_id\") INNER JOIN \"partner_stockrecord\" ON (\"basket_line\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE (\"basket_basket\".\"status\" = 'Open' AND \"partner_stockrecord\".\"partner_id\" IN (339))) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) FROM (SELECT DISTINCT \"myauth_user\".\"id\" AS \"col1\", \"myauth_user\".\"password\" AS \"col2\", \"myauth_user\".\"last_login\" AS \"col3\", \"myauth_user\".\"is_superuser\" AS \"col4\", \"myauth_user\".\"email\" AS \"col5\", \"myauth_user\".\"first_name\" AS \"col6\", \"myauth_user\".\"last_name\" AS \"col7\", \"myauth_user\".\"is_staff\" AS \"col8\", \"myauth_user\".\"is_active\" AS \"col9\", \"myauth_user\".\"date_joined\" AS \"col10\", \"myauth_user\".\"username\" AS \"col11\", \"myauth_user\".\"extra_field\" AS \"col12\" FROM \"myauth_user\" INNER JOIN \"order_order\" ON (\"myauth_user\".\"id\" = \"order_order\".\"user_id\") INNER JOIN \"order_order\" T3 ON (\"myauth_user\".\"id\" = T3.\"user_id\") INNER JOIN \"order_line\" ON (T3.\"id\" = \"order_line\".\"order_id\") WHERE (\"order_order\".\"id\" IS NOT NULL AND \"order_line\".\"partner_id\" IN (339) AND \"myauth_user\".\"date_joined\" > '2024-07-21T17:27:15.560412+00:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) FROM (SELECT DISTINCT \"myauth_user\".\"id\" AS \"col1\", \"myauth_user\".\"password\" AS \"col2\", \"myauth_user\".\"last_login\" AS \"col3\", \"myauth_user\".\"is_superuser\" AS \"col4\", \"myauth_user\".\"email\" AS \"col5\", \"myauth_user\".\"first_name\" AS \"col6\", \"myauth_user\".\"last_name\" AS \"col7\", \"myauth_user\".\"is_staff\" AS \"col8\", \"myauth_user\".\"is_active\" AS \"col9\", \"myauth_user\".\"date_joined\" AS \"col10\", \"myauth_user\".\"username\" AS \"col11\", \"myauth_user\".\"extra_field\" AS \"col12\" FROM \"myauth_user\" INNER JOIN \"order_order\" ON (\"myauth_user\".\"id\" = \"order_order\".\"user_id\") INNER JOIN \"order_order\" T3 ON (\"myauth_user\".\"id\" = T3.\"user_id\") INNER JOIN \"order_line\" ON (T3.\"id\" = \"order_line\".\"order_id\") WHERE (\"order_order\".\"id\" IS NOT NULL AND \"order_line\".\"partner_id\" IN (339))) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) FROM (SELECT DISTINCT \"order_order\".\"id\" AS \"col1\", \"order_order\".\"number\" AS \"col2\", \"order_order\".\"site_id\" AS \"col3\", \"order_order\".\"basket_id\" AS \"col4\", \"order_order\".\"user_id\" AS \"col5\", \"order_order\".\"billing_address_id\" AS \"col6\", \"order_order\".\"currency\" AS \"col7\", \"order_order\".\"total_incl_tax\" AS \"col8\", \"order_order\".\"total_excl_tax\" AS \"col9\", \"order_order\".\"shipping_incl_tax\" AS \"col10\", \"order_order\".\"shipping_excl_tax\" AS \"col11\", \"order_order\".\"shipping_tax_code\" AS \"col12\", \"order_order\".\"shipping_address_id\" AS \"col13\", \"order_order\".\"shipping_method\" AS \"col14\", \"order_order\".\"shipping_code\" AS \"col15\", \"order_order\".\"status\" AS \"col16\", \"order_order\".\"guest_email\" AS \"col17\", \"order_order\".\"date_placed\" AS \"col18\" FROM \"order_order\" INNER JOIN \"order_line\" ON (\"order_order\".\"id\" = \"order_line\".\"order_id\") WHERE (\"order_line\".\"partner_id\" IN (339) AND \"order_order\".\"date_placed\" > '2024-07-21T17:27:15.560412+00:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) FROM (SELECT DISTINCT \"order_order\".\"id\" AS \"col1\", \"order_order\".\"number\" AS \"col2\", \"order_order\".\"site_id\" AS \"col3\", \"order_order\".\"basket_id\" AS \"col4\", \"order_order\".\"user_id\" AS \"col5\", \"order_order\".\"billing_address_id\" AS \"col6\", \"order_order\".\"currency\" AS \"col7\", \"order_order\".\"total_incl_tax\" AS \"col8\", \"order_order\".\"total_excl_tax\" AS \"col9\", \"order_order\".\"shipping_incl_tax\" AS \"col10\", \"order_order\".\"shipping_excl_tax\" AS \"col11\", \"order_order\".\"shipping_tax_code\" AS \"col12\", \"order_order\".\"shipping_address_id\" AS \"col13\", \"order_order\".\"shipping_method\" AS \"col14\", \"order_order\".\"shipping_code\" AS \"col15\", \"order_order\".\"status\" AS \"col16\", \"order_order\".\"guest_email\" AS \"col17\", \"order_order\".\"date_placed\" AS \"col18\" FROM \"order_order\" INNER JOIN \"order_line\" ON (\"order_order\".\"id\" = \"order_line\".\"order_id\") WHERE \"order_line\".\"partner_id\" IN (339)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT SUM(\"__col1\") FROM (SELECT DISTINCT \"order_order\".\"id\" AS \"col1\", \"order_order\".\"number\" AS \"col2\", \"order_order\".\"site_id\" AS \"col3\", \"order_order\".\"basket_id\" AS \"col4\", \"order_order\".\"user_id\" AS \"col5\", \"order_order\".\"billing_address_id\" AS \"col6\", \"order_order\".\"currency\" AS \"col7\", \"order_order\".\"total_incl_tax\" AS \"col8\", \"order_order\".\"total_excl_tax\" AS \"col9\", \"order_order\".\"shipping_incl_tax\" AS \"col10\", \"order_order\".\"shipping_excl_tax\" AS \"col11\", \"order_order\".\"shipping_tax_code\" AS \"col12\", \"order_order\".\"shipping_address_id\" AS \"col13\", \"order_order\".\"shipping_method\" AS \"col14\", \"order_order\".\"shipping_code\" AS \"col15\", \"order_order\".\"status\" AS \"col16\", \"order_order\".\"guest_email\" AS \"col17\", \"order_order\".\"date_placed\" AS \"col18\", \"order_order\".\"total_incl_tax\" AS \"__col1\" FROM \"order_order\" INNER JOIN \"order_line\" ON (\"order_order\".\"id\" = \"order_line\".\"order_id\") WHERE (\"order_line\".\"partner_id\" IN (339) AND \"order_order\".\"date_placed\" > '2024-07-21T17:27:15.560412+00:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT SUM(\"__col1\") FROM (SELECT DISTINCT \"order_order\".\"id\" AS \"col1\", \"order_order\".\"number\" AS \"col2\", \"order_order\".\"site_id\" AS \"col3\", \"order_order\".\"basket_id\" AS \"col4\", \"order_order\".\"user_id\" AS \"col5\", \"order_order\".\"billing_address_id\" AS \"col6\", \"order_order\".\"currency\" AS \"col7\", \"order_order\".\"total_incl_tax\" AS \"col8\", \"order_order\".\"total_excl_tax\" AS \"col9\", \"order_order\".\"shipping_incl_tax\" AS \"col10\", \"order_order\".\"shipping_excl_tax\" AS \"col11\", \"order_order\".\"shipping_tax_code\" AS \"col12\", \"order_order\".\"shipping_address_id\" AS \"col13\", \"order_order\".\"shipping_method\" AS \"col14\", \"order_order\".\"shipping_code\" AS \"col15\", \"order_order\".\"status\" AS \"col16\", \"order_order\".\"guest_email\" AS \"col17\", \"order_order\".\"date_placed\" AS \"col18\", \"order_order\".\"total_incl_tax\" AS \"__col1\" FROM \"order_order\" INNER JOIN \"order_line\" ON (\"order_order\".\"id\" = \"order_line\".\"order_id\") WHERE (\"order_line\".\"partner_id\" IN (339) AND \"order_order\".\"date_placed\" >= '2024-07-21T18:00:00.570098+00:00'::timestamptz AND \"order_order\".\"date_placed\" < '2024-07-21T20:00:00.570098+00:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT SUM(\"__col1\") FROM (SELECT DISTINCT \"order_order\".\"id\" AS \"col1\", \"order_order\".\"number\" AS \"col2\", \"order_order\".\"site_id\" AS \"col3\", \"order_order\".\"basket_id\" AS \"col4\", \"order_order\".\"user_id\" AS \"col5\", \"order_order\".\"billing_address_id\" AS \"col6\", \"order_order\".\"currency\" AS \"col7\", \"order_order\".\"total_incl_tax\" AS \"col8\", \"order_order\".\"total_excl_tax\" AS \"col9\", \"order_order\".\"shipping_incl_tax\" AS \"col10\", \"order_order\".\"shipping_excl_tax\" AS \"col11\", \"order_order\".\"shipping_tax_code\" AS \"col12\", \"order_order\".\"shipping_address_id\" AS \"col13\", \"order_order\".\"shipping_method\" AS \"col14\", \"order_order\".\"shipping_code\" AS \"col15\", \"order_order\".\"status\" AS \"col16\", \"order_order\".\"guest_email\" AS \"col17\", \"order_order\".\"date_placed\" AS \"col18\", \"order_order\".\"total_incl_tax\" AS \"__col1\" FROM \"order_order\" INNER JOIN \"order_line\" ON (\"order_order\".\"id\" = \"order_line\".\"order_id\") WHERE (\"order_line\".\"partner_id\" IN (339) AND \"order_order\".\"date_placed\" >= '2024-07-21T20:00:00.570098+00:00'::timestamptz AND \"order_order\".\"date_placed\" < '2024-07-21T22:00:00.570098+00:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT SUM(\"__col1\") FROM (SELECT DISTINCT \"order_order\".\"id\" AS \"col1\", \"order_order\".\"number\" AS \"col2\", \"order_order\".\"site_id\" AS \"col3\", \"order_order\".\"basket_id\" AS \"col4\", \"order_order\".\"user_id\" AS \"col5\", \"order_order\".\"billing_address_id\" AS \"col6\", \"order_order\".\"currency\" AS \"col7\", \"order_order\".\"total_incl_tax\" AS \"col8\", \"order_order\".\"total_excl_tax\" AS \"col9\", \"order_order\".\"shipping_incl_tax\" AS \"col10\", \"order_order\".\"shipping_excl_tax\" AS \"col11\", \"order_order\".\"shipping_tax_code\" AS \"col12\", \"order_order\".\"shipping_address_id\" AS \"col13\", \"order_order\".\"shipping_method\" AS \"col14\", \"order_order\".\"shipping_code\" AS \"col15\", \"order_order\".\"status\" AS \"col16\", \"order_order\".\"guest_email\" AS \"col17\", \"order_order\".\"date_placed\" AS \"col18\", \"order_order\".\"total_incl_tax\" AS \"__col1\" FROM \"order_order\" INNER JOIN \"order_line\" ON (\"order_order\".\"id\" = \"order_line\".\"order_id\") WHERE (\"order_line\".\"partner_id\" IN (339) AND \"order_order\".\"date_placed\" >= '2024-07-21T22:00:00.570098+00:00'::timestamptz AND \"order_order\".\"date_placed\" < '2024-07-22T00:00:00.570098+00:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT SUM(\"__col1\") FROM (SELECT DISTINCT \"order_order\".\"id\" AS \"col1\", \"order_order\".\"number\" AS \"col2\", \"order_order\".\"site_id\" AS \"col3\", \"order_order\".\"basket_id\" AS \"col4\", \"order_order\".\"user_id\" AS \"col5\", \"order_order\".\"billing_address_id\" AS \"col6\", \"order_order\".\"currency\" AS \"col7\", \"order_order\".\"total_incl_tax\" AS \"col8\", \"order_order\".\"total_excl_tax\" AS \"col9\", \"order_order\".\"shipping_incl_tax\" AS \"col10\", \"order_order\".\"shipping_excl_tax\" AS \"col11\", \"order_order\".\"shipping_tax_code\" AS \"col12\", \"order_order\".\"shipping_address_id\" AS \"col13\", \"order_order\".\"shipping_method\" AS \"col14\", \"order_order\".\"shipping_code\" AS \"col15\", \"order_order\".\"status\" AS \"col16\", \"order_order\".\"guest_email\" AS \"col17\", \"order_order\".\"date_placed\" AS \"col18\", \"order_order\".\"total_incl_tax\" AS \"__col1\" FROM \"order_order\" INNER JOIN \"order_line\" ON (\"order_order\".\"id\" = \"order_line\".\"order_id\") WHERE (\"order_line\".\"partner_id\" IN (339) AND \"order_order\".\"date_placed\" >= '2024-07-22T00:00:00.570098+00:00'::timestamptz AND \"order_order\".\"date_placed\" < '2024-07-22T02:00:00.570098+00:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT SUM(\"__col1\") FROM (SELECT DISTINCT \"order_order\".\"id\" AS \"col1\", \"order_order\".\"number\" AS \"col2\", \"order_order\".\"site_id\" AS \"col3\", \"order_order\".\"basket_id\" AS \"col4\", \"order_order\".\"user_id\" AS \"col5\", \"order_order\".\"billing_address_id\" AS \"col6\", \"order_order\".\"currency\" AS \"col7\", \"order_order\".\"total_incl_tax\" AS \"col8\", \"order_order\".\"total_excl_tax\" AS \"col9\", \"order_order\".\"shipping_incl_tax\" AS \"col10\", \"order_order\".\"shipping_excl_tax\" AS \"col11\", \"order_order\".\"shipping_tax_code\" AS \"col12\", \"order_order\".\"shipping_address_id\" AS \"col13\", \"order_order\".\"shipping_method\" AS \"col14\", \"order_order\".\"shipping_code\" AS \"col15\", \"order_order\".\"status\" AS \"col16\", \"order_order\".\"guest_email\" AS \"col17\", \"order_order\".\"date_placed\" AS \"col18\", \"order_order\".\"total_incl_tax\" AS \"__col1\" FROM \"order_order\" INNER JOIN \"order_line\" ON (\"order_order\".\"id\" = \"order_line\".\"order_id\") WHERE (\"order_line\".\"partner_id\" IN (339) AND \"order_order\".\"date_placed\" >= '2024-07-22T02:00:00.570098+00:00'::timestamptz AND \"order_order\".\"date_placed\" < '2024-07-22T04:00:00.570098+00:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT SUM(\"__col1\") FROM (SELECT DISTINCT \"order_order\".\"id\" AS \"col1\", \"order_order\".\"number\" AS \"col2\", \"order_order\".\"site_id\" AS \"col3\", \"order_order\".\"basket_id\" AS \"col4\", \"order_order\".\"user_id\" AS \"col5\", \"order_order\".\"billing_address_id\" AS \"col6\", \"order_order\".\"currency\" AS \"col7\", \"order_order\".\"total_incl_tax\" AS \"col8\", \"order_order\".\"total_excl_tax\" AS \"col9\", \"order_order\".\"shipping_incl_tax\" AS \"col10\", \"order_order\".\"shipping_excl_tax\" AS \"col11\", \"order_order\".\"shipping_tax_code\" AS \"col12\", \"order_order\".\"shipping_address_id\" AS \"col13\", \"order_order\".\"shipping_method\" AS \"col14\", \"order_order\".\"shipping_code\" AS \"col15\", \"order_order\".\"status\" AS \"col16\", \"order_order\".\"guest_email\" AS \"col17\", \"order_order\".\"date_placed\" AS \"col18\", \"order_order\".\"total_incl_tax\" AS \"__col1\" FROM \"order_order\" INNER JOIN \"order_line\" ON (\"order_order\".\"id\" = \"order_line\".\"order_id\") WHERE (\"order_line\".\"partner_id\" IN (339) AND \"order_order\".\"date_placed\" >= '2024-07-22T04:00:00.570098+00:00'::timestamptz AND \"order_order\".\"date_placed\" < '2024-07-22T06:00:00.570098+00:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT SUM(\"__col1\") FROM (SELECT DISTINCT \"order_order\".\"id\" AS \"col1\", \"order_order\".\"number\" AS \"col2\", \"order_order\".\"site_id\" AS \"col3\", \"order_order\".\"basket_id\" AS \"col4\", \"order_order\".\"user_id\" AS \"col5\", \"order_order\".\"billing_address_id\" AS \"col6\", \"order_order\".\"currency\" AS \"col7\", \"order_order\".\"total_incl_tax\" AS \"col8\", \"order_order\".\"total_excl_tax\" AS \"col9\", \"order_order\".\"shipping_incl_tax\" AS \"col10\", \"order_order\".\"shipping_excl_tax\" AS \"col11\", \"order_order\".\"shipping_tax_code\" AS \"col12\", \"order_order\".\"shipping_address_id\" AS \"col13\", \"order_order\".\"shipping_method\" AS \"col14\", \"order_order\".\"shipping_code\" AS \"col15\", \"order_order\".\"status\" AS \"col16\", \"order_order\".\"guest_email\" AS \"col17\", \"order_order\".\"date_placed\" AS \"col18\", \"order_order\".\"total_incl_tax\" AS \"__col1\" FROM \"order_order\" INNER JOIN \"order_line\" ON (\"order_order\".\"id\" = \"order_line\".\"order_id\") WHERE (\"order_line\".\"partner_id\" IN (339) AND \"order_order\".\"date_placed\" >= '2024-07-22T06:00:00.570098+00:00'::timestamptz AND \"order_order\".\"date_placed\" < '2024-07-22T08:00:00.570098+00:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT SUM(\"__col1\") FROM (SELECT DISTINCT \"order_order\".\"id\" AS \"col1\", \"order_order\".\"number\" AS \"col2\", \"order_order\".\"site_id\" AS \"col3\", \"order_order\".\"basket_id\" AS \"col4\", \"order_order\".\"user_id\" AS \"col5\", \"order_order\".\"billing_address_id\" AS \"col6\", \"order_order\".\"currency\" AS \"col7\", \"order_order\".\"total_incl_tax\" AS \"col8\", \"order_order\".\"total_excl_tax\" AS \"col9\", \"order_order\".\"shipping_incl_tax\" AS \"col10\", \"order_order\".\"shipping_excl_tax\" AS \"col11\", \"order_order\".\"shipping_tax_code\" AS \"col12\", \"order_order\".\"shipping_address_id\" AS \"col13\", \"order_order\".\"shipping_method\" AS \"col14\", \"order_order\".\"shipping_code\" AS \"col15\", \"order_order\".\"status\" AS \"col16\", \"order_order\".\"guest_email\" AS \"col17\", \"order_order\".\"date_placed\" AS \"col18\", \"order_order\".\"total_incl_tax\" AS \"__col1\" FROM \"order_order\" INNER JOIN \"order_line\" ON (\"order_order\".\"id\" = \"order_line\".\"order_id\") WHERE (\"order_line\".\"partner_id\" IN (339) AND \"order_order\".\"date_placed\" >= '2024-07-22T08:00:00.570098+00:00'::timestamptz AND \"order_order\".\"date_placed\" < '2024-07-22T10:00:00.570098+00:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT SUM(\"__col1\") FROM (SELECT DISTINCT \"order_order\".\"id\" AS \"col1\", \"order_order\".\"number\" AS \"col2\", \"order_order\".\"site_id\" AS \"col3\", \"order_order\".\"basket_id\" AS \"col4\", \"order_order\".\"user_id\" AS \"col5\", \"order_order\".\"billing_address_id\" AS \"col6\", \"order_order\".\"currency\" AS \"col7\", \"order_order\".\"total_incl_tax\" AS \"col8\", \"order_order\".\"total_excl_tax\" AS \"col9\", \"order_order\".\"shipping_incl_tax\" AS \"col10\", \"order_order\".\"shipping_excl_tax\" AS \"col11\", \"order_order\".\"shipping_tax_code\" AS \"col12\", \"order_order\".\"shipping_address_id\" AS \"col13\", \"order_order\".\"shipping_method\" AS \"col14\", \"order_order\".\"shipping_code\" AS \"col15\", \"order_order\".\"status\" AS \"col16\", \"order_order\".\"guest_email\" AS \"col17\", \"order_order\".\"date_placed\" AS \"col18\", \"order_order\".\"total_incl_tax\" AS \"__col1\" FROM \"order_order\" INNER JOIN \"order_line\" ON (\"order_order\".\"id\" = \"order_line\".\"order_id\") WHERE (\"order_line\".\"partner_id\" IN (339) AND \"order_order\".\"date_placed\" >= '2024-07-22T10:00:00.570098+00:00'::timestamptz AND \"order_order\".\"date_placed\" < '2024-07-22T12:00:00.570098+00:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT SUM(\"__col1\") FROM (SELECT DISTINCT \"order_order\".\"id\" AS \"col1\", \"order_order\".\"number\" AS \"col2\", \"order_order\".\"site_id\" AS \"col3\", \"order_order\".\"basket_id\" AS \"col4\", \"order_order\".\"user_id\" AS \"col5\", \"order_order\".\"billing_address_id\" AS \"col6\", \"order_order\".\"currency\" AS \"col7\", \"order_order\".\"total_incl_tax\" AS \"col8\", \"order_order\".\"total_excl_tax\" AS \"col9\", \"order_order\".\"shipping_incl_tax\" AS \"col10\", \"order_order\".\"shipping_excl_tax\" AS \"col11\", \"order_order\".\"shipping_tax_code\" AS \"col12\", \"order_order\".\"shipping_address_id\" AS \"col13\", \"order_order\".\"shipping_method\" AS \"col14\", \"order_order\".\"shipping_code\" AS \"col15\", \"order_order\".\"status\" AS \"col16\", \"order_order\".\"guest_email\" AS \"col17\", \"order_order\".\"date_placed\" AS \"col18\", \"order_order\".\"total_incl_tax\" AS \"__col1\" FROM \"order_order\" INNER JOIN \"order_line\" ON (\"order_order\".\"id\" = \"order_line\".\"order_id\") WHERE (\"order_line\".\"partner_id\" IN (339) AND \"order_order\".\"date_placed\" >= '2024-07-22T12:00:00.570098+00:00'::timestamptz AND \"order_order\".\"date_placed\" < '2024-07-22T14:00:00.570098+00:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT SUM(\"__col1\") FROM (SELECT DISTINCT \"order_order\".\"id\" AS \"col1\", \"order_order\".\"number\" AS \"col2\", \"order_order\".\"site_id\" AS \"col3\", \"order_order\".\"basket_id\" AS \"col4\", \"order_order\".\"user_id\" AS \"col5\", \"order_order\".\"billing_address_id\" AS \"col6\", \"order_order\".\"currency\" AS \"col7\", \"order_order\".\"total_incl_tax\" AS \"col8\", \"order_order\".\"total_excl_tax\" AS \"col9\", \"order_order\".\"shipping_incl_tax\" AS \"col10\", \"order_order\".\"shipping_excl_tax\" AS \"col11\", \"order_order\".\"shipping_tax_code\" AS \"col12\", \"order_order\".\"shipping_address_id\" AS \"col13\", \"order_order\".\"shipping_method\" AS \"col14\", \"order_order\".\"shipping_code\" AS \"col15\", \"order_order\".\"status\" AS \"col16\", \"order_order\".\"guest_email\" AS \"col17\", \"order_order\".\"date_placed\" AS \"col18\", \"order_order\".\"total_incl_tax\" AS \"__col1\" FROM \"order_order\" INNER JOIN \"order_line\" ON (\"order_order\".\"id\" = \"order_line\".\"order_id\") WHERE (\"order_line\".\"partner_id\" IN (339) AND \"order_order\".\"date_placed\" >= '2024-07-22T14:00:00.570098+00:00'::timestamptz AND \"order_order\".\"date_placed\" < '2024-07-22T16:00:00.570098+00:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT SUM(\"__col1\") FROM (SELECT DISTINCT \"order_order\".\"id\" AS \"col1\", \"order_order\".\"number\" AS \"col2\", \"order_order\".\"site_id\" AS \"col3\", \"order_order\".\"basket_id\" AS \"col4\", \"order_order\".\"user_id\" AS \"col5\", \"order_order\".\"billing_address_id\" AS \"col6\", \"order_order\".\"currency\" AS \"col7\", \"order_order\".\"total_incl_tax\" AS \"col8\", \"order_order\".\"total_excl_tax\" AS \"col9\", \"order_order\".\"shipping_incl_tax\" AS \"col10\", \"order_order\".\"shipping_excl_tax\" AS \"col11\", \"order_order\".\"shipping_tax_code\" AS \"col12\", \"order_order\".\"shipping_address_id\" AS \"col13\", \"order_order\".\"shipping_method\" AS \"col14\", \"order_order\".\"shipping_code\" AS \"col15\", \"order_order\".\"status\" AS \"col16\", \"order_order\".\"guest_email\" AS \"col17\", \"order_order\".\"date_placed\" AS \"col18\", \"order_order\".\"total_incl_tax\" AS \"__col1\" FROM \"order_order\" INNER JOIN \"order_line\" ON (\"order_order\".\"id\" = \"order_line\".\"order_id\") WHERE (\"order_line\".\"partner_id\" IN (339) AND \"order_order\".\"date_placed\" >= '2024-07-22T16:00:00.570098+00:00'::timestamptz AND \"order_order\".\"date_placed\" < '2024-07-22T18:00:00.570098+00:00'::timestamptz)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT SUM(\"__col1\") FROM (SELECT DISTINCT \"order_order\".\"id\" AS \"col1\", \"order_order\".\"number\" AS \"col2\", \"order_order\".\"site_id\" AS \"col3\", \"order_order\".\"basket_id\" AS \"col4\", \"order_order\".\"user_id\" AS \"col5\", \"order_order\".\"billing_address_id\" AS \"col6\", \"order_order\".\"currency\" AS \"col7\", \"order_order\".\"total_incl_tax\" AS \"col8\", \"order_order\".\"total_excl_tax\" AS \"col9\", \"order_order\".\"shipping_incl_tax\" AS \"col10\", \"order_order\".\"shipping_excl_tax\" AS \"col11\", \"order_order\".\"shipping_tax_code\" AS \"col12\", \"order_order\".\"shipping_address_id\" AS \"col13\", \"order_order\".\"shipping_method\" AS \"col14\", \"order_order\".\"shipping_code\" AS \"col15\", \"order_order\".\"status\" AS \"col16\", \"order_order\".\"guest_email\" AS \"col17\", \"order_order\".\"date_placed\" AS \"col18\", \"order_order\".\"total_incl_tax\" AS \"__col1\" FROM \"order_order\" INNER JOIN \"order_line\" ON (\"order_order\".\"id\" = \"order_line\".\"order_id\") WHERE \"order_line\".\"partner_id\" IN (339)) subquery"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"partner_partner\".\"id\" FROM \"partner_partner\" INNER JOIN \"partner_partner_users\" ON (\"partner_partner\".\"id\" = \"partner_partner_users\".\"partner_id\") WHERE \"partner_partner_users\".\"user_id\" = 290 ORDER BY \"partner_partner\".\"name\" ASC, \"partner_partner\".\"code\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"customer_productalert\" SET \"user_id\" = 290, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'testuser@buymore.com' AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"myauth_user\" SET \"last_login\" = '2024-07-22T17:27:15.556005+00:00'::timestamptz WHERE \"myauth_user\".\"id\" = 290"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/views"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "GET /dashboard/"
+  },
+  {
+    "caller": "oscar/views",
+    "callee": "django/contrib"
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "customer",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractProductAlert",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:230"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "forms",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "ProductAlertForm",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "clean",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/forms.py:384"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"customer_productalert\" (\"product_id\", \"user_id\", \"email\", \"key\", \"status\", \"date_created\", \"date_confirmed\", \"date_cancelled\", \"date_closed\") VALUES (332, 146, '', '', 'Active', '2024-07-22T17:26:55.996881+00:00'::timestamptz, NULL, NULL, NULL) RETURNING \"customer_productalert\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"customer_productalert\".\"id\", \"customer_productalert\".\"product_id\", \"customer_productalert\".\"user_id\", \"customer_productalert\".\"email\", \"customer_productalert\".\"key\", \"customer_productalert\".\"status\", \"customer_productalert\".\"date_created\", \"customer_productalert\".\"date_confirmed\", \"customer_productalert\".\"date_cancelled\", \"customer_productalert\".\"date_closed\" FROM \"customer_productalert\" WHERE (\"customer_productalert\".\"product_id\" = 332 AND \"customer_productalert\".\"status\" = 'Active' AND \"customer_productalert\".\"user_id\" = 146) LIMIT 21"
+      }
+    ]
+  }
+]

@@ -1,0 +1,474 @@
+{
+  "events": [
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.1",
+        "path_info": "/wishlists/xkxrer/",
+        "normalized_path_info": "/wishlists/{key}/",
+        "headers": {
+          "Cookie": ""
+        }
+      },
+      "message": [
+        {
+          "object_id": 13767870000,
+          "value": "'xkxrer'",
+          "name": "key",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4415473264,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x1072ec670>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13767866400,
+          "value": "<WSGIRequest: GET '/wishlists/xkxrer/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "opt",
+          "object_id": 13767881776,
+          "value": "<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x333832790>>",
+          "name": "user",
+          "class": "django.utils.functional.SimpleLazyObject"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13767871232,
+          "value": "{'request': <WSGIRequest: GET '/wishlists/xkxrer/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x333832790>>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "user",
+              "class": "django.utils.functional.SimpleLazyObject"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "return_value": {
+        "object_id": 13767882880,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x334a13880>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 2,
+      "elapsed": 0.000030040740966796875,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13767883360,
+        "value": "<oscar.apps.wishlists.views.WishListView object at 0x334a13a60>",
+        "name": "self",
+        "class": "oscar.apps.wishlists.views.WishListView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13767866400,
+          "value": "<WSGIRequest: GET '/wishlists/xkxrer/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13767967360,
+          "value": "{'key': 'xkxrer'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "key",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.wishlists.views.WishListView",
+      "method_id": "dispatch",
+      "path": "src/oscar/apps/wishlists/views.py",
+      "lineno": 19
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13767883360,
+        "value": "<oscar.apps.wishlists.views.WishListView object at 0x334a13a60>",
+        "name": "self",
+        "class": "oscar.apps.wishlists.views.WishListView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "queryset",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.wishlists.views.WishListView",
+      "method_id": "get_object",
+      "path": "src/oscar/apps/wishlists/views.py",
+      "lineno": 35
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"wishlists_wishlist\".\"id\", \"wishlists_wishlist\".\"owner_id\", \"wishlists_wishlist\".\"name\", \"wishlists_wishlist\".\"key\", \"wishlists_wishlist\".\"visibility\", \"wishlists_wishlist\".\"date_created\" FROM \"wishlists_wishlist\" WHERE \"wishlists_wishlist\".\"key\" = 'xkxrer' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 6,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 6,
+      "elapsed": 0.0011399579999817888,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13767889152,
+        "value": "<WishList: test@example.com's Wish List 'Wishlist 17'>",
+        "class": "oscar.apps.wishlists.models.WishList"
+      },
+      "parent_id": 5,
+      "elapsed": 0.0015387535095214844,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13767889152,
+        "value": "<WishList: test@example.com's Wish List 'Wishlist 17'>",
+        "name": "self",
+        "class": "oscar.apps.wishlists.models.WishList"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13767881776,
+          "value": "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x334a13940>>",
+          "name": "user",
+          "class": "django.utils.functional.SimpleLazyObject"
+        }
+      ],
+      "id": 9,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.wishlists.abstract_models.AbstractWishList",
+      "method_id": "is_allowed_to_see",
+      "path": "src/oscar/apps/wishlists/abstract_models.py",
+      "lineno": 82
+    },
+    {
+      "return_value": {
+        "object_id": 4341173008,
+        "value": "False",
+        "class": "builtins.bool"
+      },
+      "parent_id": 9,
+      "elapsed": 0.000007152557373046875,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13767884752,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/accounts/login/?next=/wishlists/xkxrer/\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 4,
+      "elapsed": 0.002814054489135742,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13767866352,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x334a0f7f0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13767866400,
+          "value": "<WSGIRequest: GET '/wishlists/xkxrer/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13767884752,
+          "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/accounts/login/?next=/wishlists/xkxrer/\">",
+          "name": "response",
+          "class": "django.http.response.HttpResponseRedirect"
+        }
+      ],
+      "id": 12,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 63
+    },
+    {
+      "return_value": {
+        "object_id": 13767884752,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/accounts/login/?next=/wishlists/xkxrer/\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 12,
+      "elapsed": 0.00000286102294921875,
+      "id": 13,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_response": {
+        "status_code": 302,
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Location": "/accounts/login/?next=/wishlists/xkxrer/",
+          "Vary": "Cookie",
+          "Content-Length": "0"
+        }
+      },
+      "parent_id": 1,
+      "elapsed": 0.003589415999982748,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Wish list shared test case",
+    "recording": {
+      "defined_class": "tests.functional.wishlists.test_wishlists.WishListSharedTestCase",
+      "method_id": "test_shared_wishlist_detail_logged_out_user"
+    },
+    "source_location": "tests/functional/wishlists/test_wishlists.py:89",
+    "name": "Wish list shared test case shared wishlist detail logged out user",
+    "feature": "Shared wishlist detail logged out user",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "partner",
+              "type": "package",
+              "children": [
+                {
+                  "name": "strategy",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Selector",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "strategy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/strategy.py:37"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "wishlists",
+              "type": "package",
+              "children": [
+                {
+                  "name": "views",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "WishListView",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "dispatch",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/wishlists/views.py:19"
+                        },
+                        {
+                          "name": "get_object",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/wishlists/views.py:35"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractWishList",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "is_allowed_to_see",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/wishlists/abstract_models.py:82"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "basket",
+              "type": "package",
+              "children": [
+                {
+                  "name": "middleware",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "BasketMiddleware",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "process_response",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/middleware.py:63"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /wishlists/{key}/"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"wishlists_wishlist\".\"id\", \"wishlists_wishlist\".\"owner_id\", \"wishlists_wishlist\".\"name\", \"wishlists_wishlist\".\"key\", \"wishlists_wishlist\".\"visibility\", \"wishlists_wishlist\".\"date_created\" FROM \"wishlists_wishlist\" WHERE \"wishlists_wishlist\".\"key\" = 'xkxrer' LIMIT 21"
+        }
+      ]
+    }
+  ]
+}

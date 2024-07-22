@@ -1,0 +1,90 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "catalogue",
+            "type": "package",
+            "children": [
+              {
+                "name": "managers",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "ProductQuerySet",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "filter_by_attributes",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/managers.py:74"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "AttributeFilter",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "field_names",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/managers.py:29"
+                      },
+                      {
+                        "name": "fast_query",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/managers.py:51"
+                      },
+                      {
+                        "name": "_select_value",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/managers.py:38"
+                      },
+                      {
+                        "name": "_selector",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/catalogue/managers.py:32"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\" FROM \"catalogue_productattribute\" WHERE \"catalogue_productattribute\".\"code\" IN ('subkinds', 'available') ORDER BY \"catalogue_productattribute\".\"code\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_productattributevalue\" ON (\"catalogue_product\".\"id\" = \"catalogue_productattributevalue\".\"product_id\") INNER JOIN \"catalogue_productattributevalue_value_multi_option\" ON (\"catalogue_productattributevalue\".\"id\" = \"catalogue_productattributevalue_value_multi_option\".\"productattributevalue_id\") INNER JOIN \"catalogue_attributeoption\" ON (\"catalogue_productattributevalue_value_multi_option\".\"attributeoption_id\" = \"catalogue_attributeoption\".\"id\") INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") INNER JOIN \"catalogue_productattributevalue\" T6 ON (\"catalogue_product\".\"id\" = T6.\"product_id\") INNER JOIN \"catalogue_productattribute\" T7 ON (T6.\"attribute_id\" = T7.\"id\") WHERE (\"catalogue_attributeoption\".\"option\" = 'megalomane' AND \"catalogue_productattribute\".\"code\" = 'subkinds' AND T6.\"value_boolean\" AND T7.\"code\" = 'available') LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"catalogue_productattribute\".\"code\", \"catalogue_productattribute\".\"type\" FROM \"catalogue_productattribute\" WHERE \"catalogue_productattribute\".\"code\" IN ('kind', 'hypothenusa', 'facets', 'subtitle', 'subkinds', 'available') ORDER BY \"catalogue_productattribute\".\"code\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"catalogue_product\" INNER JOIN \"catalogue_productattributevalue\" ON (\"catalogue_product\".\"id\" = \"catalogue_productattributevalue\".\"product_id\") INNER JOIN \"catalogue_attributeoption\" ON (\"catalogue_productattributevalue\".\"value_option_id\" = \"catalogue_attributeoption\".\"id\") INNER JOIN \"catalogue_productattribute\" ON (\"catalogue_productattributevalue\".\"attribute_id\" = \"catalogue_productattribute\".\"id\") INNER JOIN \"catalogue_productattributevalue\" T5 ON (\"catalogue_product\".\"id\" = T5.\"product_id\") INNER JOIN \"catalogue_productattribute\" T6 ON (T5.\"attribute_id\" = T6.\"id\") INNER JOIN \"catalogue_productattributevalue\" T7 ON (\"catalogue_product\".\"id\" = T7.\"product_id\") INNER JOIN \"catalogue_productattribute\" T8 ON (T7.\"attribute_id\" = T8.\"id\") INNER JOIN \"catalogue_productattributevalue\" T9 ON (\"catalogue_product\".\"id\" = T9.\"product_id\") INNER JOIN \"catalogue_productattribute\" T10 ON (T9.\"attribute_id\" = T10.\"id\") INNER JOIN \"catalogue_productattributevalue\" T11 ON (\"catalogue_product\".\"id\" = T11.\"product_id\") INNER JOIN \"catalogue_productattributevalue_value_multi_option\" ON (T11.\"id\" = \"catalogue_productattributevalue_value_multi_option\".\"productattributevalue_id\") INNER JOIN \"catalogue_attributeoption\" T13 ON (\"catalogue_productattributevalue_value_multi_option\".\"attributeoption_id\" = T13.\"id\") INNER JOIN \"catalogue_productattribute\" T14 ON (T11.\"attribute_id\" = T14.\"id\") INNER JOIN \"catalogue_productattributevalue\" T15 ON (\"catalogue_product\".\"id\" = T15.\"product_id\") INNER JOIN \"catalogue_productattribute\" T16 ON (T15.\"attribute_id\" = T16.\"id\") WHERE (\"catalogue_attributeoption\".\"option\" = 'totalitarian' AND \"catalogue_productattribute\".\"code\" = 'kind' AND T5.\"value_float\" = 1.25 AND T6.\"code\" = 'hypothenusa' AND T7.\"value_integer\" = 8 AND T8.\"code\" = 'facets' AND T9.\"value_text\" = 'superhenk' AND T10.\"code\" = 'subtitle' AND T13.\"option\" = 'megalomane' AND T14.\"code\" = 'subkinds' AND NOT T15.\"value_boolean\" AND T16.\"code\" = 'available') LIMIT 1"
+      }
+    ]
+  }
+]

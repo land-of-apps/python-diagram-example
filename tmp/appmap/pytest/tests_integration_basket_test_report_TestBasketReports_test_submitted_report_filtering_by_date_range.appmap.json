@@ -1,0 +1,402 @@
+{
+  "events": [
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Submitted', '2024-07-22T17:27:55.181017+00:00'::timestamptz, NULL, '2020-07-03T00:00:00+00:00'::timestamptz) RETURNING \"basket_basket\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.0003853340000148364,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13792793552,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x3361d53d0>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "request",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "user",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13792757632,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "return_value": {
+        "object_id": 13792795088,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x3361d59d0>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 3,
+      "elapsed": 9.5367431640625e-7,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"basket_basket\" SET \"owner_id\" = NULL, \"status\" = 'Submitted', \"date_created\" = '2024-07-22T17:27:55.181017+00:00'::timestamptz, \"date_merged\" = NULL, \"date_submitted\" = '2020-07-03T00:00:00+00:00'::timestamptz WHERE \"basket_basket\".\"id\" = 356",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.00033195800000385134,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13792794128,
+        "value": "<oscar.apps.basket.reports.SubmittedBasketReportGenerator object at 0x3361d5610>",
+        "name": "self",
+        "class": "oscar.apps.basket.reports.SubmittedBasketReportGenerator"
+      },
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.reports.reports.ReportGenerator",
+      "method_id": "get_queryset",
+      "path": "src/oscar/apps/dashboard/reports/reports.py",
+      "lineno": 42
+    },
+    {
+      "return_value": {
+        "object_id": 4404498048,
+        "value": "<QuerySet [<Basket: Submitted basket (owner: None, lines: 0)>, <Basket: Submitted basket (owner: None, lines: 0)>, <Basket: Submitted basket (owner: None, lines: 0)>, <Basket: Submitted basket (owner: None, lines: 0)>, <Basket: Submitted basket (owner: None, lines: 0)>, <Basket: Submitted basket (owner: None, lines: 0)>, <Basket: Submitted basket (owner: None, lines: 0)>]>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 7,
+      "elapsed": 0.0000019073486328125,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13792794128,
+        "value": "<oscar.apps.basket.reports.SubmittedBasketReportGenerator object at 0x3361d5610>",
+        "name": "self",
+        "class": "oscar.apps.basket.reports.SubmittedBasketReportGenerator"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4404498048,
+          "value": "<QuerySet [<Basket: Submitted basket (owner: None, lines: 0)>, <Basket: Submitted basket (owner: None, lines: 0)>, <Basket: Submitted basket (owner: None, lines: 0)>, <Basket: Submitted basket (owner: None, lines: 0)>, <Basket: Submitted basket (owner: None, lines: 0)>, <Basket: Submitted basket (owner: None, lines: 0)>, <Basket: Submitted basket (owner: None, lines: 0)>]>",
+          "name": "queryset",
+          "class": "django.db.models.query.QuerySet"
+        }
+      ],
+      "id": 9,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.dashboard.reports.reports.ReportGenerator",
+      "method_id": "filter_with_date_range",
+      "path": "src/oscar/apps/dashboard/reports/reports.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13792736112,
+          "value": "datetime.date(2020, 7, 1)",
+          "name": "date",
+          "class": "datetime.date"
+        },
+        {
+          "kind": "req",
+          "object_id": 4336950096,
+          "value": "datetime.time(0, 0)",
+          "name": "time",
+          "class": "datetime.time"
+        }
+      ],
+      "id": 10,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "datetime_combine",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 125
+    },
+    {
+      "return_value": {
+        "object_id": 13792793392,
+        "value": "datetime.datetime(2020, 7, 1, 0, 0, tzinfo=backports.zoneinfo.ZoneInfo(key='America/Chicago'))",
+        "class": "datetime.datetime"
+      },
+      "parent_id": 10,
+      "elapsed": 0.000028848648071289062,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13792736176,
+          "value": "datetime.date(2020, 8, 1)",
+          "name": "date",
+          "class": "datetime.date"
+        },
+        {
+          "kind": "req",
+          "object_id": 4336950128,
+          "value": "datetime.time(23, 59, 59, 999999)",
+          "name": "time",
+          "class": "datetime.time"
+        }
+      ],
+      "id": 12,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "datetime_combine",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 125
+    },
+    {
+      "return_value": {
+        "object_id": 13792779408,
+        "value": "datetime.datetime(2020, 8, 1, 23, 59, 59, 999999, tzinfo=backports.zoneinfo.ZoneInfo(key='America/Chicago'))",
+        "class": "datetime.datetime"
+      },
+      "parent_id": 12,
+      "elapsed": 0.000025033950805664062,
+      "id": 13,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13792779664,
+        "value": "<QuerySet [<Basket: Submitted basket (owner: None, lines: 0)>]>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 9,
+      "elapsed": 0.0003199577331542969,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT COUNT(*) AS \"__count\" FROM \"basket_basket\" WHERE (\"basket_basket\".\"status\" = 'Submitted' AND \"basket_basket\".\"date_submitted\" >= '2020-07-01T00:00:00-05:00'::timestamptz AND \"basket_basket\".\"date_submitted\" <= '2020-08-01T23:59:59.999999-05:00'::timestamptz)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 15,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 15,
+      "elapsed": 0.0004249589999858472,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Basket reports",
+    "recording": {
+      "defined_class": "tests.integration.basket.test_report.TestBasketReports",
+      "method_id": "test_submitted_report_filtering_by_date_range"
+    },
+    "source_location": "tests/integration/basket/test_report.py:58",
+    "name": "Basket reports submitted report filtering by date range",
+    "feature": "Submitted report filtering by date range",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "partner",
+              "type": "package",
+              "children": [
+                {
+                  "name": "strategy",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Selector",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "strategy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/strategy.py:37"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "dashboard",
+              "type": "package",
+              "children": [
+                {
+                  "name": "reports",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "reports",
+                      "type": "package",
+                      "children": [
+                        {
+                          "name": "ReportGenerator",
+                          "type": "class",
+                          "children": [
+                            {
+                              "name": "get_queryset",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/reports/reports.py:42"
+                            },
+                            {
+                              "name": "filter_with_date_range",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/oscar/apps/dashboard/reports/reports.py:68"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "utils",
+              "type": "class",
+              "children": [
+                {
+                  "name": "datetime_combine",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:125"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Submitted', '2024-07-22T17:27:55.181017+00:00'::timestamptz, NULL, '2020-07-03T00:00:00+00:00'::timestamptz) RETURNING \"basket_basket\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"basket_basket\" SET \"owner_id\" = NULL, \"status\" = 'Submitted', \"date_created\" = '2024-07-22T17:27:55.181017+00:00'::timestamptz, \"date_merged\" = NULL, \"date_submitted\" = '2020-07-03T00:00:00+00:00'::timestamptz WHERE \"basket_basket\".\"id\" = 356"
+        },
+        {
+          "type": "query",
+          "name": "SELECT COUNT(*) AS \"__count\" FROM \"basket_basket\" WHERE (\"basket_basket\".\"status\" = 'Submitted' AND \"basket_basket\".\"date_submitted\" >= '2020-07-01T00:00:00-05:00'::timestamptz AND \"basket_basket\".\"date_submitted\" <= '2020-08-01T23:59:59.999999-05:00'::timestamptz)"
+        }
+      ]
+    }
+  ]
+}

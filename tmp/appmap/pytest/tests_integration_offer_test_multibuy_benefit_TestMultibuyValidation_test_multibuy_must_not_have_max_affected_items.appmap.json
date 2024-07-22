@@ -1,0 +1,147 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13968681664,
+        "value": "<Benefit: Cheapest product from all products is free>",
+        "name": "self",
+        "class": "oscar.apps.offer.models.Benefit"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.abstract_models.AbstractBenefit",
+      "method_id": "clean",
+      "path": "src/oscar/apps/offer/abstract_models.py",
+      "lineno": 621
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13968681664,
+        "value": "<Benefit: Cheapest product from all products is free>",
+        "name": "self",
+        "class": "oscar.apps.offer.models.Benefit"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.abstract_models.AbstractBenefit",
+      "method_id": "clean_multibuy",
+      "path": "src/oscar/apps/offer/abstract_models.py",
+      "lineno": 628
+    },
+    {
+      "exceptions": [
+        {
+          "class": "django.core.exceptions.ValidationError",
+          "message": "[\"Multibuy benefits don't require a 'max affected items' attribute\"]",
+          "object_id": 13968657472
+        }
+      ],
+      "parent_id": 2,
+      "elapsed": 0.000009059906005859375,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "exceptions": [
+        {
+          "class": "django.core.exceptions.ValidationError",
+          "message": "[\"Multibuy benefits don't require a 'max affected items' attribute\"]",
+          "object_id": 13968657472
+        }
+      ],
+      "parent_id": 1,
+      "elapsed": 0.0012960433959960938,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      }
+    ],
+    "feature_group": "Multibuy validation",
+    "recording": {
+      "defined_class": "tests.integration.offer.test_multibuy_benefit.TestMultibuyValidation",
+      "method_id": "test_multibuy_must_not_have_max_affected_items"
+    },
+    "source_location": "tests/integration/offer/test_multibuy_benefit.py:133",
+    "name": "Multibuy validation multibuy must not have max affected items",
+    "feature": "Multibuy must not have max affected items",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "offer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractBenefit",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "clean",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/abstract_models.py:621"
+                        },
+                        {
+                          "name": "clean_multibuy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/abstract_models.py:628"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

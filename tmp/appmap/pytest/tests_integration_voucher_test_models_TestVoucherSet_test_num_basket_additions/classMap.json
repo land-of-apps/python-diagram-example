@@ -1,0 +1,1450 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "models",
+        "type": "package",
+        "children": [
+          {
+            "name": "fields",
+            "type": "package",
+            "children": [
+              {
+                "name": "autoslugfield",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AutoSlugField",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "pre_save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:169"
+                      },
+                      {
+                        "name": "create_slug",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:105"
+                      },
+                      {
+                        "name": "slugify_func",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:100"
+                      },
+                      {
+                        "name": "_slug_strip",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:81"
+                      },
+                      {
+                        "name": "get_queryset",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:93"
+                      },
+                      {
+                        "name": "get_internal_type",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/models/fields/autoslugfield.py:174"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "NullCharField",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "get_prep_value",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/models/fields/__init__.py:122"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "offer",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractConditionalOffer",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/offer/abstract_models.py:284"
+                      },
+                      {
+                        "name": "get_max_applications",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/offer/abstract_models.py:381"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "voucher",
+            "type": "package",
+            "children": [
+              {
+                "name": "utils",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "get_unused_code",
+                    "type": "function",
+                    "static": true,
+                    "location": "src/oscar/apps/voucher/utils.py:18"
+                  },
+                  {
+                    "name": "generate_code",
+                    "type": "function",
+                    "static": true,
+                    "location": "src/oscar/apps/voucher/utils.py:8"
+                  }
+                ]
+              },
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractVoucher",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/voucher/abstract_models.py:180"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core",
+        "type": "package",
+        "children": [
+          {
+            "name": "utils",
+            "type": "class",
+            "children": [
+              {
+                "name": "slugify",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:68"
+              },
+              {
+                "name": "default_slugifier",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:57"
+              },
+              {
+                "name": "cautious_slugify",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:20"
+              }
+            ]
+          },
+          {
+            "name": "loading",
+            "type": "class",
+            "children": [
+              {
+                "name": "get_model",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/loading.py:225"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucherset\" (\"name\", \"count\", \"code_length\", \"description\", \"date_created\", \"start_datetime\", \"end_datetime\") VALUES ('Voucher Set 40', 100, 12, 'Dummy description', '2024-07-22T17:25:39.837708+00:00'::timestamptz, '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz) RETURNING \"voucher_voucherset\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"offer_range\" (\"name\", \"slug\", \"description\", \"is_public\", \"includes_all_products\", \"proxy_class\", \"date_created\") VALUES ('Range 258', 'range-258', '', false, false, NULL, '2024-07-22T17:25:39.839741+00:00'::timestamptz) RETURNING \"offer_range\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"offer_range\" SET \"name\" = 'Range 258', \"slug\" = 'range-258', \"description\" = '', \"is_public\" = false, \"includes_all_products\" = false, \"proxy_class\" = NULL, \"date_created\" = '2024-07-22T17:25:39.839741+00:00'::timestamptz WHERE \"offer_range\".\"id\" = 260"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"offer_benefit\" (\"range_id\", \"type\", \"value\", \"max_affected_items\", \"proxy_class\") VALUES (260, 'Percentage', 10, NULL, NULL) RETURNING \"offer_benefit\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"offer_range\" (\"name\", \"slug\", \"description\", \"is_public\", \"includes_all_products\", \"proxy_class\", \"date_created\") VALUES ('Range 259', 'range-259', '', false, false, NULL, '2024-07-22T17:25:39.845042+00:00'::timestamptz) RETURNING \"offer_range\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"offer_range\" SET \"name\" = 'Range 259', \"slug\" = 'range-259', \"description\" = '', \"is_public\" = false, \"includes_all_products\" = false, \"proxy_class\" = NULL, \"date_created\" = '2024-07-22T17:25:39.845042+00:00'::timestamptz WHERE \"offer_range\".\"id\" = 261"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"offer_condition\" (\"range_id\", \"type\", \"value\", \"proxy_class\") VALUES (261, 'Count', 10, NULL) RETURNING \"offer_condition\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\" FROM \"offer_conditionaloffer\" WHERE \"offer_conditionaloffer\".\"slug\" = 'test-offer-95' ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"offer_conditionaloffer\" (\"name\", \"slug\", \"description\", \"offer_type\", \"exclusive\", \"status\", \"condition_id\", \"benefit_id\", \"priority\", \"start_datetime\", \"end_datetime\", \"max_global_applications\", \"max_user_applications\", \"max_basket_applications\", \"max_discount\", \"total_discount\", \"num_applications\", \"num_orders\", \"redirect_url\", \"date_created\") VALUES ('Test offer 95', 'test-offer-95', '', 'Voucher', true, 'Open', 96, 96, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0.00, 0, 0, '', '2024-07-22T17:25:39.851253+00:00'::timestamptz) RETURNING \"offer_conditionaloffer\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'WEMY-68DC-897M' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 1', 'WEMY-68DC-897M', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.853369+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3220, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'UMZJ-WMUF-4FBP' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 2', 'UMZJ-WMUF-4FBP', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.856514+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3221, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'TQL6-2GFK-8Z75' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 3', 'TQL6-2GFK-8Z75', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.861463+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3222, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'EHB6-CGVF-XNE3' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 4', 'EHB6-CGVF-XNE3', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.864426+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3223, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'NMU5-8LMA-84FL' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 5', 'NMU5-8LMA-84FL', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.868814+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3224, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'LUH2-P4XQ-9GWA' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 6', 'LUH2-P4XQ-9GWA', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.871282+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3225, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'RUN8-2U63-TKJM' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 7', 'RUN8-2U63-TKJM', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.875553+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3226, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'NGAD-MWAK-46M8' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 8', 'NGAD-MWAK-46M8', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.877931+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3227, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'QYXN-7NMQ-WT5B' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 9', 'QYXN-7NMQ-WT5B', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.879887+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3228, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '9ADT-SW4V-PDG4' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 10', '9ADT-SW4V-PDG4', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.882491+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3229, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'Q8WQ-ATBM-M2GM' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 11', 'Q8WQ-ATBM-M2GM', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.884797+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3230, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'Q8N7-JFYC-USQH' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 12', 'Q8N7-JFYC-USQH', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.886750+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3231, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'L95P-R8XW-T95Z' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 13', 'L95P-R8XW-T95Z', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.888959+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3232, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '96AT-8GNL-BJ4W' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 14', '96AT-8GNL-BJ4W', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.891295+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3233, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'EDRT-LFEH-3TKR' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 15', 'EDRT-LFEH-3TKR', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.893725+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3234, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'NUAX-6QJK-XAWC' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 16', 'NUAX-6QJK-XAWC', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.895825+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3235, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'PPDE-LNXP-D3CD' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 17', 'PPDE-LNXP-D3CD', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.898548+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3236, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'C4JQ-EF9U-TNBG' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 18', 'C4JQ-EF9U-TNBG', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.901691+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3237, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'PH6G-RYT7-5RA5' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 19', 'PH6G-RYT7-5RA5', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.903636+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3238, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'PV2D-6EKQ-VH8M' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 20', 'PV2D-6EKQ-VH8M', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.905490+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3239, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'KL4B-X5QM-AJ2M' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 21', 'KL4B-X5QM-AJ2M', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.907492+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3240, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'JQZ9-ZGMH-UNY8' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 22', 'JQZ9-ZGMH-UNY8', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.910381+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3241, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'YB6R-MJB6-FHE4' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 23', 'YB6R-MJB6-FHE4', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.912523+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3242, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'U9XQ-9GXA-RL2P' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 24', 'U9XQ-9GXA-RL2P', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.914544+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3243, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'YFSD-D57Z-QY7W' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 25', 'YFSD-D57Z-QY7W', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.916500+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3244, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'ANNU-DNVA-B3GN' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 26', 'ANNU-DNVA-B3GN', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.918541+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3245, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'XLNX-QF5X-LW2A' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 27', 'XLNX-QF5X-LW2A', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.920723+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3246, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'PZRJ-J53H-AYNN' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 28', 'PZRJ-J53H-AYNN', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.922887+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3247, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'PXK6-37X8-C4C9' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 29', 'PXK6-37X8-C4C9', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.924961+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3248, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '429N-GPPQ-VTHZ' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 30', '429N-GPPQ-VTHZ', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.927103+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3249, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '5A98-S42Y-U2RH' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 31', '5A98-S42Y-U2RH', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.929102+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3250, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'AWRK-KWE7-U98V' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 32', 'AWRK-KWE7-U98V', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.931056+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3251, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'D9VS-6BJX-LPYK' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 33', 'D9VS-6BJX-LPYK', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.933099+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3252, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '8EGU-FQT6-5AJ3' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 34', '8EGU-FQT6-5AJ3', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.935218+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3253, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'QFNT-F4VC-ZP5H' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 35', 'QFNT-F4VC-ZP5H', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.937157+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3254, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'BMWV-BFB4-KGZD' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 36', 'BMWV-BFB4-KGZD', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.939331+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3255, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'N6H9-B2RP-BPHP' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 37', 'N6H9-B2RP-BPHP', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.941339+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3256, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'KQ4W-WPHY-SV8Y' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 38', 'KQ4W-WPHY-SV8Y', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.943573+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3257, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'UZSZ-XE3C-X2JS' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 39', 'UZSZ-XE3C-X2JS', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.945536+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3258, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'H9FU-RCRV-GL6K' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 40', 'H9FU-RCRV-GL6K', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.947623+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3259, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'GED7-X776-92Q3' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 41', 'GED7-X776-92Q3', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.949669+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3260, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'BTG3-56PD-BCMJ' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 42', 'BTG3-56PD-BCMJ', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.951833+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3261, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'J6XD-PJGN-LRBZ' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 43', 'J6XD-PJGN-LRBZ', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.953875+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3262, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'P7ZT-S2B6-NZAX' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 44', 'P7ZT-S2B6-NZAX', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.955891+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3263, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '8DAY-32SQ-CE3P' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 45', '8DAY-32SQ-CE3P', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.957751+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3264, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '9YKE-MYWN-K7GS' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 46', '9YKE-MYWN-K7GS', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.959955+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3265, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'UFW8-MPH8-2F8V' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 47', 'UFW8-MPH8-2F8V', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.962021+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3266, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'URTV-XBC6-SFHS' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 48', 'URTV-XBC6-SFHS', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.963858+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3267, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'QYWG-2JUR-2HQL' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 49', 'QYWG-2JUR-2HQL', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.966021+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3268, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'ADZ6-4KRU-ZV4P' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 50', 'ADZ6-4KRU-ZV4P', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.968194+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3269, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '2TZ9-D9ZX-Q7FL' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 51', '2TZ9-D9ZX-Q7FL', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.970244+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3270, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '49BG-VAS6-7FRH' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 52', '49BG-VAS6-7FRH', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.972195+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3271, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'W8EF-QQ7W-Z9UV' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 53', 'W8EF-QQ7W-Z9UV', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.974155+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3272, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'UKPT-NRLY-M4JN' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 54', 'UKPT-NRLY-M4JN', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.976186+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3273, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'H9QL-T8VM-MS4W' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 55', 'H9QL-T8VM-MS4W', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.978158+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3274, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'CCTP-8TBZ-3ESN' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 56', 'CCTP-8TBZ-3ESN', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.980590+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3275, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'M6NV-76EQ-FP3F' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 57', 'M6NV-76EQ-FP3F', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.982430+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3276, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'NBHF-SZ3D-E6NW' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 58', 'NBHF-SZ3D-E6NW', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.984168+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3277, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'ELL9-6SF7-22RB' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 59', 'ELL9-6SF7-22RB', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.986185+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3278, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'L3PJ-725M-P37E' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 60', 'L3PJ-725M-P37E', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.988314+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3279, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'N9FV-CH76-WKZW' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 61', 'N9FV-CH76-WKZW', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.990312+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3280, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '5B3V-KBVF-WTR6' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 62', '5B3V-KBVF-WTR6', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.992081+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3281, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '8S3A-QF7Z-GWW6' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 63', '8S3A-QF7Z-GWW6', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.993939+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3282, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'ZFAR-CRV9-YBH4' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 64', 'ZFAR-CRV9-YBH4', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.995973+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3283, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'SFSJ-5TFX-3R8X' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 65', 'SFSJ-5TFX-3R8X', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:39.998072+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3284, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'LWHX-GR5L-MW6V' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 66', 'LWHX-GR5L-MW6V', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.000298+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3285, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'MDYM-2G46-7W3P' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 67', 'MDYM-2G46-7W3P', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.002531+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3286, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'MHPH-CUMK-REAL' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 68', 'MHPH-CUMK-REAL', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.004643+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3287, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'PSRK-NG56-3CNP' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 69', 'PSRK-NG56-3CNP', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.006532+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3288, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'Q6HB-SSNT-KN2W' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 70', 'Q6HB-SSNT-KN2W', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.008439+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3289, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'AWX5-7WZ7-PLY5' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 71', 'AWX5-7WZ7-PLY5', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.010799+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3290, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '5Q3D-U8U8-CTX6' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 72', '5Q3D-U8U8-CTX6', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.012905+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3291, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'DJHD-3BWT-NX3Q' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 73', 'DJHD-3BWT-NX3Q', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.014810+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3292, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'RC4B-D3YN-5ZUA' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 74', 'RC4B-D3YN-5ZUA', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.016687+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3293, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'F26S-JQNA-DKVD' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 75', 'F26S-JQNA-DKVD', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.018528+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3294, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'UU9G-A4P2-MMWX' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 76', 'UU9G-A4P2-MMWX', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.020898+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3295, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'VLHW-H5LG-MU22' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 77', 'VLHW-H5LG-MU22', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.022814+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3296, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'HFHZ-4NUF-9WBJ' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 78', 'HFHZ-4NUF-9WBJ', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.024673+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3297, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '7LF4-MDUX-H7ZY' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 79', '7LF4-MDUX-H7ZY', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.026504+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3298, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'PYLY-6AJR-QEUM' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 80', 'PYLY-6AJR-QEUM', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.028595+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3299, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'H8U2-YCRJ-C9V9' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 81', 'H8U2-YCRJ-C9V9', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.030688+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3300, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'ECTD-PWPU-RY3R' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 82', 'ECTD-PWPU-RY3R', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.033503+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3301, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '2BST-HM7Z-4NFL' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 83', '2BST-HM7Z-4NFL', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.035535+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3302, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '9QZY-J4GN-8YF7' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 84', '9QZY-J4GN-8YF7', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.037811+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3303, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'DYG7-D6KB-SAVC' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 85', 'DYG7-D6KB-SAVC', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.040282+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3304, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'LXMD-N4UW-A5UV' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 86', 'LXMD-N4UW-A5UV', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.042726+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3305, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '4AJ2-N6SU-ZP2U' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 87', '4AJ2-N6SU-ZP2U', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.044917+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3306, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'WSM7-6J9D-NRNQ' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 88', 'WSM7-6J9D-NRNQ', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.046978+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3307, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'STXP-YRYJ-VWXU' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 89', 'STXP-YRYJ-VWXU', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.048818+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3308, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'LDWA-W2SF-RXKR' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 90', 'LDWA-W2SF-RXKR', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.050629+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3309, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'PBF8-SBK3-7SSS' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 91', 'PBF8-SBK3-7SSS', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.052726+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3310, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'YXXM-43GE-VEDK' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 92', 'YXXM-43GE-VEDK', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.054817+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3311, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'X5HQ-KVJ4-UVVC' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 93', 'X5HQ-KVJ4-UVVC', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.057077+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3312, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '5Z79-CGRU-BX2B' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 94', '5Z79-CGRU-BX2B', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.059092+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3313, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '4JVR-BWQ6-LJAV' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 95', '4JVR-BWQ6-LJAV', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.061396+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3314, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'ZJHR-WH9Z-YXLZ' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 96', 'ZJHR-WH9Z-YXLZ', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.063503+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3315, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'VYQ2-WVNF-NRHL' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 97', 'VYQ2-WVNF-NRHL', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.065665+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3316, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '2C6P-73EG-SK7F' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 98', '2C6P-73EG-SK7F', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.067657+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3317, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'DJK7-CUHQ-52WK' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 99', 'DJK7-CUHQ-52WK', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.070001+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3318, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'M5DU-456Y-QJL4' LIMIT 1"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 40 - 100', 'M5DU-456Y-QJL4', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 43, '2024-07-22T17:25:40.071990+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"voucher_voucher_offers\" (\"voucher_id\", \"conditionaloffer_id\") VALUES (3319, 96) ON CONFLICT DO NOTHING"
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"voucher_voucherset\" SET \"name\" = 'Voucher Set 40', \"count\" = 100, \"code_length\" = 12, \"description\" = 'Dummy description', \"date_created\" = '2024-07-22T17:25:39.837708+00:00'::timestamptz, \"start_datetime\" = '2024-07-21T17:25:18.456875+00:00'::timestamptz, \"end_datetime\" = '2024-08-01T17:25:18.456877+00:00'::timestamptz WHERE \"voucher_voucherset\".\"id\" = 43"
+      },
+      {
+        "type": "query",
+        "name": "SELECT SUM(\"voucher_voucher\".\"num_basket_additions\") AS \"result\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"voucher_set_id\" = 43"
+      }
+    ]
+  }
+]

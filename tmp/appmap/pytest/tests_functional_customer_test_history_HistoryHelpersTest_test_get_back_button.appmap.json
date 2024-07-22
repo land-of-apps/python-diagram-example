@@ -1,0 +1,189 @@
+{
+  "events": [
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13280953472,
+          "value": "{'request': <HttpRequest>}",
+          "name": "context",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.http.request.HttpRequest"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.templatetags.history_tags",
+      "method_id": "get_back_button",
+      "path": "src/oscar/templatetags/history_tags.py",
+      "lineno": 29
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"django_site\".\"id\", \"django_site\".\"domain\", \"django_site\".\"name\" FROM \"django_site\" WHERE \"django_site\".\"domain\" = 'www.google.com' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0.0004432080000071892,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0007171630859375,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13280953472,
+          "value": "{'request': <HttpRequest>}",
+          "name": "context",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.http.request.HttpRequest"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.templatetags.history_tags",
+      "method_id": "get_back_button",
+      "path": "src/oscar/templatetags/history_tags.py",
+      "lineno": 29
+    },
+    {
+      "return_value": {
+        "object_id": 13281054400,
+        "value": "{'url': 'http://test:8000/search/', 'title': 'Back to search results', 'match': ResolverMatch(func=haystack.views.search_view, args=(), kwargs={}, url_name='search', app_names=['search'], namespaces=['search'], route='search/')}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "url",
+            "class": "builtins.str"
+          },
+          {
+            "name": "title",
+            "class": "builtins.str"
+          },
+          {
+            "name": "match",
+            "class": "django.urls.resolvers.ResolverMatch"
+          }
+        ],
+        "size": 3
+      },
+      "parent_id": 5,
+      "elapsed": 0.00014400482177734375,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "History helpers test",
+    "recording": {
+      "defined_class": "tests.functional.customer.test_history.HistoryHelpersTest",
+      "method_id": "test_get_back_button"
+    },
+    "source_location": "tests/functional/customer/test_history.py:31",
+    "name": "History helpers test get back button",
+    "feature": "Get back button",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "templatetags",
+          "type": "package",
+          "children": [
+            {
+              "name": "history_tags",
+              "type": "class",
+              "children": [
+                {
+                  "name": "get_back_button",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/templatetags/history_tags.py:29"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"django_site\".\"id\", \"django_site\".\"domain\", \"django_site\".\"name\" FROM \"django_site\" WHERE \"django_site\".\"domain\" = 'www.google.com' LIMIT 21"
+        }
+      ]
+    }
+  ]
+}

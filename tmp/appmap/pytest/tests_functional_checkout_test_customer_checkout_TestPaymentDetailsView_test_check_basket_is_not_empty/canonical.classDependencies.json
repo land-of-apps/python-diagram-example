@@ -1,0 +1,74 @@
+[
+  {
+    "caller": "GET /checkout/payment-details/",
+    "callee": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('93g2d9donisjo47yi7zpm11on3pevr65', 'e30:1sVwnR:H5IBqvGnB5fd8W5gUnGOp-nPkwyoFsYL42vG5RtKTwU', '2024-08-05T17:26:01.195587+00:00'::timestamptz)"
+  },
+  {
+    "caller": "GET /checkout/payment-details/",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x552\""
+  },
+  {
+    "caller": "GET /checkout/payment-details/",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x554\""
+  },
+  {
+    "caller": "GET /checkout/payment-details/",
+    "callee": "SAVEPOINT \"s8669432832_x552\""
+  },
+  {
+    "caller": "GET /checkout/payment-details/",
+    "callee": "SAVEPOINT \"s8669432832_x554\""
+  },
+  {
+    "caller": "GET /checkout/payment-details/",
+    "callee": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = '93g2d9donisjo47yi7zpm11on3pevr65' LIMIT 1"
+  },
+  {
+    "caller": "GET /checkout/payment-details/",
+    "callee": "UPDATE \"django_session\" SET \"session_data\" = '.eJxVjMEOwiAQBf-Fs2nYFij06D8Yj2RZQLRJmwjEQ9N_F2MPep2Z9zZmsZZkaw5Pe_dsYsANO_1ShzSH5aP8A5fbal_BlZBLd4jcXb_g0urzEf89JMypzaMJSopRC8EFapC9FhjBQVTCcyJEiJL3FJ0czGgM8IE4mda1CgcV2ymlQPNai_VYkE3bvr8BCRc_qQ:1sVwnR:Ftu6Bn0J8U3YnLLJfx_D9avV8PcnIRhPkH6t4IC_YrA', \"expire_date\" = '2024-08-05T17:26:01.213650+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = '93g2d9donisjo47yi7zpm11on3pevr65'"
+  },
+  {
+    "caller": "GET /checkout/payment-details/",
+    "callee": "django/contrib"
+  },
+  {
+    "caller": "GET /checkout/payment-details/",
+    "callee": "oscar/apps"
+  },
+  {
+    "caller": "django/contrib",
+    "callee": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE \"myauth_user\".\"email\" = 'testuser@buymore.com' LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (109, 'Open', '2024-07-22T17:26:01.201958+00:00'::timestamptz, NULL, NULL) RETURNING \"basket_basket\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x553\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SAVEPOINT \"s8669432832_x553\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT COUNT(*) AS \"__count\" FROM \"basket_line\" WHERE \"basket_line\".\"basket_id\" = 105"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"basket_basket\".\"id\", \"basket_basket\".\"owner_id\", \"basket_basket\".\"status\", \"basket_basket\".\"date_created\", \"basket_basket\".\"date_merged\", \"basket_basket\".\"date_submitted\" FROM \"basket_basket\" WHERE (\"basket_basket\".\"status\" = 'Open' AND \"basket_basket\".\"owner_id\" = 109 AND \"basket_basket\".\"status\" = 'Open') LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"customer_productalert\" SET \"user_id\" = 109, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'testuser@buymore.com' AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"myauth_user\" SET \"last_login\" = '2024-07-22T17:26:01.197470+00:00'::timestamptz WHERE \"myauth_user\".\"id\" = 109"
+  },
+  {
+    "caller": "oscar/test",
+    "callee": "GET /checkout/payment-details/"
+  }
+]

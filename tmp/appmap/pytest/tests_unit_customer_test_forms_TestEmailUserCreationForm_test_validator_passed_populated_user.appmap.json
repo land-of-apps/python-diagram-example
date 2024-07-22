@@ -1,0 +1,355 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14052940096,
+        "value": "<EmailUserCreationForm bound=True, valid=True, fields=(email;password1;password2;redirect_url)>",
+        "name": "self",
+        "class": "oscar.apps.customer.forms.EmailUserCreationForm"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.forms.EmailUserCreationForm",
+      "method_id": "clean_email",
+      "path": "src/oscar/apps/customer/forms.py",
+      "lineno": 130
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4422669168,
+          "value": "'terry@boom.com'",
+          "name": "email",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.utils",
+      "method_id": "normalise_email",
+      "path": "src/oscar/apps/customer/utils.py",
+      "lineno": 62
+    },
+    {
+      "return_value": {
+        "object_id": 14050823792,
+        "value": "'terry@boom.com'",
+        "class": "builtins.str"
+      },
+      "parent_id": 2,
+      "elapsed": 9.5367431640625e-7,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"myauth_user\" WHERE UPPER(\"myauth_user\".\"email\"::text) = UPPER('terry@boom.com') LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 4,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 4,
+      "elapsed": 0.0009374999999920419,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14050823792,
+        "value": "'terry@boom.com'",
+        "class": "builtins.str"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0012998580932617188,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14052940096,
+        "value": "<EmailUserCreationForm bound=True, valid=True, fields=(email;password1;password2;redirect_url)>",
+        "name": "self",
+        "class": "oscar.apps.customer.forms.EmailUserCreationForm"
+      },
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.forms.EmailUserCreationForm",
+      "method_id": "clean_password2",
+      "path": "src/oscar/apps/customer/forms.py",
+      "lineno": 141
+    },
+    {
+      "return_value": {
+        "object_id": 4422668848,
+        "value": "'terry'",
+        "class": "builtins.str"
+      },
+      "parent_id": 7,
+      "elapsed": 9.5367431640625e-7,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14052940096,
+        "value": "<EmailUserCreationForm bound=True, valid=True, fields=(email;password1;password2;redirect_url)>",
+        "name": "self",
+        "class": "oscar.apps.customer.forms.EmailUserCreationForm"
+      },
+      "id": 9,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.forms.EmailUserCreationForm",
+      "method_id": "clean_redirect_url",
+      "path": "src/oscar/apps/customer/forms.py",
+      "lineno": 148
+    },
+    {
+      "return_value": {
+        "object_id": 4366271536,
+        "value": "'/accounts/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 9,
+      "elapsed": 0.00000476837158203125,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14052940096,
+        "value": "<EmailUserCreationForm bound=True, valid=True, fields=(email;password1;password2;redirect_url)>",
+        "name": "self",
+        "class": "oscar.apps.customer.forms.EmailUserCreationForm"
+      },
+      "id": 11,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.forms.EmailUserCreationForm",
+      "method_id": "_post_clean",
+      "path": "src/oscar/apps/customer/forms.py",
+      "lineno": 118
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14052032080,
+        "value": "<User: terry@boom.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "id": 12,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "clean",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 80
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 12,
+      "elapsed": 0.000013113021850585938,
+      "id": 13,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"myauth_user\" WHERE \"myauth_user\".\"email\" = 'terry@boom.com' LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 14,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 14,
+      "elapsed": 0.0007984579999913421,
+      "id": 15,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 11,
+      "elapsed": 0.0013060569763183594,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Email user creation form",
+    "recording": {
+      "defined_class": "tests.unit.customer.test_forms.TestEmailUserCreationForm",
+      "method_id": "test_validator_passed_populated_user"
+    },
+    "source_location": "tests/unit/customer/test_forms.py:18",
+    "name": "Email user creation form validator passed populated user",
+    "feature": "Validator passed populated user",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "customer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "forms",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "EmailUserCreationForm",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "clean_email",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/forms.py:130"
+                        },
+                        {
+                          "name": "clean_password2",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/forms.py:141"
+                        },
+                        {
+                          "name": "clean_redirect_url",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/forms.py:148"
+                        },
+                        {
+                          "name": "_post_clean",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/forms.py:118"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "utils",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "normalise_email",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/customer/utils.py:62"
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractUser",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "clean",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/abstract_models.py:80"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"myauth_user\" WHERE UPPER(\"myauth_user\".\"email\"::text) = UPPER('terry@boom.com') LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"myauth_user\" WHERE \"myauth_user\".\"email\" = 'terry@boom.com' LIMIT 1"
+        }
+      ]
+    }
+  ]
+}

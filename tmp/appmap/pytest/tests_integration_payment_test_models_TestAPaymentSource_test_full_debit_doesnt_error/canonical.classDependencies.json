@@ -1,0 +1,18 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"payment_transaction\" (\"source_id\", \"txn_type\", \"amount\", \"reference\", \"status\", \"date_created\") VALUES (3, 'Authorise', 100.00, '', '', '2024-07-22T17:28:48.682045+00:00'::timestamptz) RETURNING \"payment_transaction\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"payment_transaction\" (\"source_id\", \"txn_type\", \"amount\", \"reference\", \"status\", \"date_created\") VALUES (3, 'Debit', 100.00, '', '', '2024-07-22T17:28:48.685089+00:00'::timestamptz) RETURNING \"payment_transaction\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"payment_source\" SET \"order_id\" = 198, \"source_type_id\" = 4, \"currency\" = 'GBP', \"amount_allocated\" = 100.00, \"amount_debited\" = 0.00, \"amount_refunded\" = 0.00, \"reference\" = '', \"label\" = '' WHERE \"payment_source\".\"id\" = 3"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"payment_source\" SET \"order_id\" = 198, \"source_type_id\" = 4, \"currency\" = 'GBP', \"amount_allocated\" = 100.00, \"amount_debited\" = 100.00, \"amount_refunded\" = 0.00, \"reference\" = '', \"label\" = '' WHERE \"payment_source\".\"id\" = 3"
+  }
+]

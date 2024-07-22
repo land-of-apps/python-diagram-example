@@ -1,0 +1,26 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"order_shippingeventquantity\" (\"event_id\", \"line_id\", \"quantity\") VALUES (16, 173, 4) RETURNING \"order_shippingeventquantity\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"order_shippingeventquantity\" (\"event_id\", \"line_id\", \"quantity\") VALUES (17, 173, 4) RETURNING \"order_shippingeventquantity\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT SUM(\"order_shippingeventquantity\".\"quantity\") AS \"quantity__sum\" FROM \"order_shippingeventquantity\" INNER JOIN \"order_shippingevent\" ON (\"order_shippingeventquantity\".\"event_id\" = \"order_shippingevent\".\"id\") WHERE (\"order_shippingeventquantity\".\"line_id\" = 173 AND \"order_shippingevent\".\"event_type_id\" = 41)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT SUM(\"order_shippingeventquantity\".\"quantity\") AS \"quantity__sum\" FROM \"order_shippingeventquantity\" INNER JOIN \"order_shippingevent\" ON (\"order_shippingeventquantity\".\"event_id\" = \"order_shippingevent\".\"id\") WHERE (\"order_shippingeventquantity\".\"line_id\" = 173 AND \"order_shippingevent\".\"event_type_id\" = 42)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"order_shippingeventquantity\".\"id\", \"order_shippingeventquantity\".\"event_id\", \"order_shippingeventquantity\".\"line_id\", \"order_shippingeventquantity\".\"quantity\" FROM \"order_shippingeventquantity\" WHERE (\"order_shippingeventquantity\".\"event_id\" = 16 AND \"order_shippingeventquantity\".\"line_id\" = 173) LIMIT 21"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"order_shippingeventquantity\".\"id\", \"order_shippingeventquantity\".\"event_id\", \"order_shippingeventquantity\".\"line_id\", \"order_shippingeventquantity\".\"quantity\" FROM \"order_shippingeventquantity\" WHERE (\"order_shippingeventquantity\".\"event_id\" = 17 AND \"order_shippingeventquantity\".\"line_id\" = 173) LIMIT 21"
+  }
+]

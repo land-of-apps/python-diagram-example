@@ -1,0 +1,262 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "partner",
+            "type": "package",
+            "children": [
+              {
+                "name": "strategy",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "Selector",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "strategy",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/partner/strategy.py:37"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "basket",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractBasket",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "_get_total",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/basket/abstract_models.py:435"
+                      },
+                      {
+                        "name": "all_lines",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/basket/abstract_models.py:130"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "address",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractAddress",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:277"
+                      },
+                      {
+                        "name": "_update_search_text",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:326"
+                      },
+                      {
+                        "name": "join_fields",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:395"
+                      },
+                      {
+                        "name": "get_field_values",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:359"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "order",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractOrder",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/abstract_models.py:382"
+                      },
+                      {
+                        "name": "set_date_placed_default",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/abstract_models.py:378"
+                      },
+                      {
+                        "name": "check_verification_hash",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/abstract_models.py:345"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "test",
+        "type": "package",
+        "children": [
+          {
+            "name": "factories",
+            "type": "package",
+            "children": [
+              {
+                "name": "utils",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "tax_subtract",
+                    "type": "function",
+                    "static": true,
+                    "location": "src/oscar/test/factories/utils.py:5"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "models",
+        "type": "package",
+        "children": [
+          {
+            "name": "fields",
+            "type": "package",
+            "children": [
+              {
+                "name": "UppercaseCharField",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "to_python",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/models/fields/__init__.py:86"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core",
+        "type": "package",
+        "children": [
+          {
+            "name": "utils",
+            "type": "class",
+            "children": [
+              {
+                "name": "get_default_currency",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:159"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Open', '2024-07-22T17:28:44.082097+00:00'::timestamptz, NULL, NULL) RETURNING \"basket_basket\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"basket_basket\" SET \"owner_id\" = NULL, \"status\" = 'Open', \"date_created\" = '2024-07-22T17:28:44.082097+00:00'::timestamptz, \"date_merged\" = NULL, \"date_submitted\" = NULL WHERE \"basket_basket\".\"id\" = 603"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\", \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\", \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"basket_line\" INNER JOIN \"catalogue_product\" ON (\"basket_line\".\"product_id\" = \"catalogue_product\".\"id\") INNER JOIN \"partner_stockrecord\" ON (\"basket_line\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE \"basket_line\".\"basket_id\" = 603 ORDER BY \"basket_line\".\"id\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"address_country\".\"iso_3166_1_a2\", \"address_country\".\"iso_3166_1_a3\", \"address_country\".\"iso_3166_1_numeric\", \"address_country\".\"printable_name\", \"address_country\".\"name\", \"address_country\".\"display_order\", \"address_country\".\"is_shipping_country\" FROM \"address_country\" WHERE \"address_country\".\"iso_3166_1_a2\" = 'GB' LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SAVEPOINT \"s8669432832_x4124\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"address_country\" (\"iso_3166_1_a2\", \"iso_3166_1_a3\", \"iso_3166_1_numeric\", \"printable_name\", \"name\", \"display_order\", \"is_shipping_country\") VALUES ('GB', '', '', 'UNITED KINGDOM', '', 0, false)"
+      },
+      {
+        "type": "query",
+        "name": "RELEASE SAVEPOINT \"s8669432832_x4124\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"order_billingaddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\") VALUES ('', 'John', 'Doe', 'Streetname', '1a', '', 'City', '', '1000AA', 'GB', 'John Doe Streetname 1a City 1000AA UNITED KINGDOM') RETURNING \"order_billingaddress\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"order_shippingaddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\", \"phone_number\", \"notes\") VALUES ('', 'John', 'Doe', 'Streetname', '1a', '', 'City', '', '1000 AA', 'GB', 'John Doe Streetname 1a City 1000 AA UNITED KINGDOM', '+12125555555', '') RETURNING \"order_shippingaddress\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"order_order\" (\"number\", \"site_id\", \"basket_id\", \"user_id\", \"billing_address_id\", \"currency\", \"total_incl_tax\", \"total_excl_tax\", \"shipping_incl_tax\", \"shipping_excl_tax\", \"shipping_tax_code\", \"shipping_address_id\", \"shipping_method\", \"shipping_code\", \"status\", \"guest_email\", \"date_placed\") VALUES ('111000', 1, 603, NULL, 6, 'GBP', 0.00, 0.00, 4.95, 4.09, NULL, 22, '', 'delivery', 'A', 'j.doe@example.com', '2024-07-22T17:28:44.095223+00:00'::timestamptz) RETURNING \"order_order\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"order_order\" SET \"number\" = '111000', \"site_id\" = 1, \"basket_id\" = 603, \"user_id\" = NULL, \"billing_address_id\" = 6, \"currency\" = 'GBP', \"total_incl_tax\" = 0.00, \"total_excl_tax\" = 0.00, \"shipping_incl_tax\" = 4.95, \"shipping_excl_tax\" = 4.09, \"shipping_tax_code\" = NULL, \"shipping_address_id\" = 22, \"shipping_method\" = '', \"shipping_code\" = 'delivery', \"status\" = 'A', \"guest_email\" = 'j.doe@example.com', \"date_placed\" = '2024-07-22T17:28:44.095223+00:00'::timestamptz WHERE \"order_order\".\"id\" = 188"
+      }
+    ]
+  }
+]

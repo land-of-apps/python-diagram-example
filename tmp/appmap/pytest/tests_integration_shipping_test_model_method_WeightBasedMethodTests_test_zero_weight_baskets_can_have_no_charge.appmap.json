@@ -1,0 +1,276 @@
+{
+  "events": [
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"shipping_weightband\" (\"method_id\", \"upper_limit\", \"charge\") VALUES (35, 0, 0.00) RETURNING \"shipping_weightband\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.0004423329999951875,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"shipping_weightband\" (\"method_id\", \"upper_limit\", \"charge\") VALUES (35, 1, 4.00) RETURNING \"shipping_weightband\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 3,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 3,
+      "elapsed": 0.0005830420000165759,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14030351856,
+        "value": "<WeightBased: Standard>",
+        "name": "self",
+        "class": "oscar.apps.shipping.models.WeightBased"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4341391912,
+          "value": "0",
+          "name": "weight",
+          "class": "builtins.int"
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.shipping.abstract_models.AbstractWeightBased",
+      "method_id": "get_charge",
+      "path": "src/oscar/apps/shipping/abstract_models.py",
+      "lineno": 135
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"shipping_weightband\" WHERE \"shipping_weightband\".\"method_id\" = 35 LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 6,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 6,
+      "elapsed": 0.0008652499999755037,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"shipping_weightband\".\"id\", \"shipping_weightband\".\"method_id\", \"shipping_weightband\".\"upper_limit\", \"shipping_weightband\".\"charge\" FROM \"shipping_weightband\" WHERE \"shipping_weightband\".\"method_id\" = 35 ORDER BY \"shipping_weightband\".\"upper_limit\" DESC LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 8,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 8,
+      "elapsed": 0.0006805000000156269,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14030351856,
+        "value": "<WeightBased: Standard>",
+        "name": "self",
+        "class": "oscar.apps.shipping.models.WeightBased"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14030382560,
+          "value": "Decimal('0')",
+          "name": "weight",
+          "class": "decimal.Decimal"
+        }
+      ],
+      "id": 10,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.shipping.abstract_models.AbstractWeightBased",
+      "method_id": "get_band_for_weight",
+      "path": "src/oscar/apps/shipping/abstract_models.py",
+      "lineno": 169
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"shipping_weightband\".\"id\", \"shipping_weightband\".\"method_id\", \"shipping_weightband\".\"upper_limit\", \"shipping_weightband\".\"charge\" FROM \"shipping_weightband\" WHERE (\"shipping_weightband\".\"method_id\" = 35 AND \"shipping_weightband\".\"upper_limit\" >= 0) ORDER BY \"shipping_weightband\".\"upper_limit\" ASC LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 11,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 11,
+      "elapsed": 0.0005149590000144144,
+      "id": 12,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14030248352,
+        "value": "<WeightBand: Charge for weights up to 0.000 kg>",
+        "class": "oscar.apps.shipping.models.WeightBand"
+      },
+      "parent_id": 10,
+      "elapsed": 0.001055002212524414,
+      "id": 13,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14030383680,
+        "value": "Decimal('0.00')",
+        "class": "decimal.Decimal"
+      },
+      "parent_id": 5,
+      "elapsed": 0.003555774688720703,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Weight based method tests",
+    "recording": {
+      "defined_class": "tests.integration.shipping.test_model_method.WeightBasedMethodTests",
+      "method_id": "test_zero_weight_baskets_can_have_no_charge"
+    },
+    "source_location": "tests/integration/shipping/test_model_method.py:118",
+    "name": "Weight based method tests zero weight baskets can have no charge",
+    "feature": "Zero weight baskets can have no charge",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "shipping",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractWeightBased",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get_charge",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/shipping/abstract_models.py:135"
+                        },
+                        {
+                          "name": "get_band_for_weight",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/shipping/abstract_models.py:169"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"shipping_weightband\" (\"method_id\", \"upper_limit\", \"charge\") VALUES (35, 0, 0.00) RETURNING \"shipping_weightband\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"shipping_weightband\" (\"method_id\", \"upper_limit\", \"charge\") VALUES (35, 1, 4.00) RETURNING \"shipping_weightband\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"shipping_weightband\" WHERE \"shipping_weightband\".\"method_id\" = 35 LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"shipping_weightband\".\"id\", \"shipping_weightband\".\"method_id\", \"shipping_weightband\".\"upper_limit\", \"shipping_weightband\".\"charge\" FROM \"shipping_weightband\" WHERE \"shipping_weightband\".\"method_id\" = 35 ORDER BY \"shipping_weightband\".\"upper_limit\" DESC LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"shipping_weightband\".\"id\", \"shipping_weightband\".\"method_id\", \"shipping_weightband\".\"upper_limit\", \"shipping_weightband\".\"charge\" FROM \"shipping_weightband\" WHERE (\"shipping_weightband\".\"method_id\" = 35 AND \"shipping_weightband\".\"upper_limit\" >= 0) ORDER BY \"shipping_weightband\".\"upper_limit\" ASC LIMIT 1"
+        }
+      ]
+    }
+  ]
+}

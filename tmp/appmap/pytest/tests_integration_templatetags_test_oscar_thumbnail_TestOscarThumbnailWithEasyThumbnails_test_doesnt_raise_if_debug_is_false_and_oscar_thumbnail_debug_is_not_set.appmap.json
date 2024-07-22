@@ -1,0 +1,145 @@
+{
+  "events": [
+    {
+      "receiver": {
+        "object_id": 14032630928,
+        "value": "<Template template_string=\"{% load image_tags %...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "<unknown source>",
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.UnknownSource",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14032629872,
+        "value": "<oscar.templatetags.image_tags.ThumbnailNode object at 0x34468f070>",
+        "name": "self",
+        "class": "oscar.templatetags.image_tags.ThumbnailNode"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14032600944,
+          "value": "[{'True': True, 'False': False, 'None': None}, {'image': <ProductImage: Image of 'A confederacy of dunces'>}]",
+          "name": "context",
+          "class": "django.template.context.Context"
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.templatetags.image_tags.ThumbnailNode",
+      "method_id": "render",
+      "path": "src/oscar/templatetags/image_tags.py",
+      "lineno": 111
+    },
+    {
+      "exceptions": [
+        {
+          "class": "builtins.ValueError",
+          "message": "",
+          "object_id": 14032642432
+        }
+      ],
+      "parent_id": 2,
+      "elapsed": 0.0000247955322265625,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.00025304199999709454,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      }
+    ],
+    "feature_group": "Oscar thumbnail with easy thumbnails",
+    "recording": {
+      "defined_class": "tests.integration.templatetags.test_oscar_thumbnail.TestOscarThumbnailWithEasyThumbnails",
+      "method_id": "test_doesnt_raise_if_debug_is_false_and_oscar_thumbnail_debug_is_not_set"
+    },
+    "source_location": "tests/integration/templatetags/test_oscar_thumbnail.py:79",
+    "name": "Oscar thumbnail with easy thumbnails doesnt raise if debug is false and oscar thumbnail debug is not set",
+    "feature": "Doesnt raise if debug is false and oscar thumbnail debug is not set",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "templatetags",
+          "type": "package",
+          "children": [
+            {
+              "name": "image_tags",
+              "type": "package",
+              "children": [
+                {
+                  "name": "ThumbnailNode",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "render",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/templatetags/image_tags.py:111"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/UnknownSource",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    }
+  ]
+}

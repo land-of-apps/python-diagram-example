@@ -1,0 +1,326 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13983840864,
+        "value": "<ConditionalOffer: Test offer 121>",
+        "name": "self",
+        "class": "oscar.apps.offer.models.ConditionalOffer"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13981037568,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.abstract_models.AbstractConditionalOffer",
+      "method_id": "save",
+      "path": "src/oscar/apps/offer/abstract_models.py",
+      "lineno": 284
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13983840864,
+        "value": "<ConditionalOffer: Test offer 121>",
+        "name": "self",
+        "class": "oscar.apps.offer.models.ConditionalOffer"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "user",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.offer.abstract_models.AbstractConditionalOffer",
+      "method_id": "get_max_applications",
+      "path": "src/oscar/apps/offer/abstract_models.py",
+      "lineno": 381
+    },
+    {
+      "return_value": {
+        "object_id": 4341391912,
+        "value": "0",
+        "class": "builtins.int"
+      },
+      "parent_id": 2,
+      "elapsed": 0.0000019073486328125,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394918672,
+        "value": "<oscar.models.fields.autoslugfield.AutoSlugField: slug>",
+        "name": "self",
+        "class": "oscar.models.fields.autoslugfield.AutoSlugField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13983840864,
+          "value": "<ConditionalOffer: Test offer 121>",
+          "name": "model_instance",
+          "class": "oscar.apps.offer.models.ConditionalOffer"
+        },
+        {
+          "kind": "req",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "add",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.autoslugfield.AutoSlugField",
+      "method_id": "pre_save",
+      "path": "src/oscar/models/fields/autoslugfield.py",
+      "lineno": 169
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4394918672,
+        "value": "<oscar.models.fields.autoslugfield.AutoSlugField: slug>",
+        "name": "self",
+        "class": "oscar.models.fields.autoslugfield.AutoSlugField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13983840864,
+          "value": "<ConditionalOffer: Test offer 121>",
+          "name": "model_instance",
+          "class": "oscar.apps.offer.models.ConditionalOffer"
+        },
+        {
+          "kind": "req",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "add",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.autoslugfield.AutoSlugField",
+      "method_id": "create_slug",
+      "path": "src/oscar/models/fields/autoslugfield.py",
+      "lineno": 105
+    },
+    {
+      "return_value": {
+        "object_id": 13984017200,
+        "value": "'test-offer-121'",
+        "class": "builtins.str"
+      },
+      "parent_id": 5,
+      "elapsed": 0.0000030994415283203125,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13984017200,
+        "value": "'test-offer-121'",
+        "class": "builtins.str"
+      },
+      "parent_id": 4,
+      "elapsed": 0.000046253204345703125,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"offer_conditionaloffer\" SET \"name\" = 'Test offer 121', \"slug\" = 'test-offer-121', \"description\" = '', \"offer_type\" = 'Site', \"exclusive\" = true, \"status\" = 'Consumed', \"condition_id\" = 279, \"benefit_id\" = 277, \"priority\" = 0, \"start_datetime\" = NULL, \"end_datetime\" = NULL, \"max_global_applications\" = 5, \"max_user_applications\" = NULL, \"max_basket_applications\" = NULL, \"max_discount\" = NULL, \"total_discount\" = 0.00, \"num_applications\" = 10, \"num_orders\" = 0, \"redirect_url\" = '', \"date_created\" = '2024-07-22T17:28:30.401618+00:00'::timestamptz WHERE \"offer_conditionaloffer\".\"id\" = 177",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 8,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 8,
+      "elapsed": 0.0005459999999857246,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0009908676147460938,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "An offer changes status when",
+    "recording": {
+      "defined_class": "tests.integration.offer.test_status.TestAnOfferChangesStatusWhen",
+      "method_id": "test_the_max_global_applications_is_exceeded"
+    },
+    "source_location": "tests/integration/offer/test_status.py:23",
+    "name": "An offer changes status when the max global applications is exceeded",
+    "feature": "The max global applications is exceeded",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "offer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractConditionalOffer",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/abstract_models.py:284"
+                        },
+                        {
+                          "name": "get_max_applications",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/offer/abstract_models.py:381"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "models",
+          "type": "package",
+          "children": [
+            {
+              "name": "fields",
+              "type": "package",
+              "children": [
+                {
+                  "name": "autoslugfield",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AutoSlugField",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "pre_save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/models/fields/autoslugfield.py:169"
+                        },
+                        {
+                          "name": "create_slug",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/models/fields/autoslugfield.py:105"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "UPDATE \"offer_conditionaloffer\" SET \"name\" = 'Test offer 121', \"slug\" = 'test-offer-121', \"description\" = '', \"offer_type\" = 'Site', \"exclusive\" = true, \"status\" = 'Consumed', \"condition_id\" = 279, \"benefit_id\" = 277, \"priority\" = 0, \"start_datetime\" = NULL, \"end_datetime\" = NULL, \"max_global_applications\" = 5, \"max_user_applications\" = NULL, \"max_basket_applications\" = NULL, \"max_discount\" = NULL, \"total_discount\" = 0.00, \"num_applications\" = 10, \"num_orders\" = 0, \"redirect_url\" = '', \"date_created\" = '2024-07-22T17:28:30.401618+00:00'::timestamptz WHERE \"offer_conditionaloffer\".\"id\" = 177"
+        }
+      ]
+    }
+  ]
+}

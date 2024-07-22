@@ -1,0 +1,88 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "order",
+            "type": "package",
+            "children": [
+              {
+                "name": "processing",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "EventHandler",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "calculate_payment_event_subtotal",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/processing.py:136"
+                      },
+                      {
+                        "name": "create_payment_event",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/processing.py:254"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractLine",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "payment_event_quantity",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/order/abstract_models.py:827"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"order_line\".\"id\", \"order_line\".\"order_id\", \"order_line\".\"partner_id\", \"order_line\".\"partner_name\", \"order_line\".\"partner_sku\", \"order_line\".\"partner_line_reference\", \"order_line\".\"partner_line_notes\", \"order_line\".\"stockrecord_id\", \"order_line\".\"product_id\", \"order_line\".\"title\", \"order_line\".\"upc\", \"order_line\".\"quantity\", \"order_line\".\"line_price_incl_tax\", \"order_line\".\"line_price_excl_tax\", \"order_line\".\"line_price_before_discounts_incl_tax\", \"order_line\".\"line_price_before_discounts_excl_tax\", \"order_line\".\"unit_price_incl_tax\", \"order_line\".\"unit_price_excl_tax\", \"order_line\".\"tax_code\", \"order_line\".\"status\" FROM \"order_line\" WHERE \"order_line\".\"order_id\" = 148 ORDER BY \"order_line\".\"id\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "SELECT SUM(\"order_paymenteventquantity\".\"quantity\") AS \"quantity__sum\" FROM \"order_paymenteventquantity\" INNER JOIN \"order_paymentevent\" ON (\"order_paymenteventquantity\".\"event_id\" = \"order_paymentevent\".\"id\") WHERE (\"order_paymenteventquantity\".\"line_id\" = 150 AND \"order_paymentevent\".\"event_type_id\" = 9)"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"order_lineprice\".\"id\", \"order_lineprice\".\"order_id\", \"order_lineprice\".\"line_id\", \"order_lineprice\".\"quantity\", \"order_lineprice\".\"price_incl_tax\", \"order_lineprice\".\"price_excl_tax\", \"order_lineprice\".\"shipping_incl_tax\", \"order_lineprice\".\"shipping_excl_tax\", \"order_lineprice\".\"tax_code\" FROM \"order_lineprice\" WHERE \"order_lineprice\".\"line_id\" = 150 ORDER BY \"order_lineprice\".\"id\" ASC"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"order_paymentevent\" (\"order_id\", \"amount\", \"reference\", \"event_type_id\", \"shipping_event_id\", \"date_created\") VALUES (148, 20.00, '', 9, NULL, '2024-07-22T17:28:40.154649+00:00'::timestamptz) RETURNING \"order_paymentevent\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"order_paymenteventquantity\" (\"event_id\", \"line_id\", \"quantity\") VALUES (5, 150, 2) RETURNING \"order_paymenteventquantity\".\"id\""
+      }
+    ]
+  }
+]

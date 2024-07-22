@@ -1,0 +1,18 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"address_useraddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\", \"phone_number\", \"notes\", \"user_id\", \"is_default_for_shipping\", \"is_default_for_billing\", \"num_orders_as_shipping_address\", \"num_orders_as_billing_address\", \"hash\", \"date_created\") VALUES ('Dr', 'Barry', 'Barrington', '1 King Road', '', '', 'London', '', 'SW1 9RE', 'GB', 'Barry Barrington 1 King Road London SW1 9RE UNITED KINGDOM', '+493513296645', '', 615, true, false, 0, 0, '2668616117', '2024-07-22T17:27:56.302625+00:00'::timestamptz) RETURNING \"address_useraddress\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"address_useraddress\".\"id\", \"address_useraddress\".\"title\", \"address_useraddress\".\"first_name\", \"address_useraddress\".\"last_name\", \"address_useraddress\".\"line1\", \"address_useraddress\".\"line2\", \"address_useraddress\".\"line3\", \"address_useraddress\".\"line4\", \"address_useraddress\".\"state\", \"address_useraddress\".\"postcode\", \"address_useraddress\".\"country_id\", \"address_useraddress\".\"search_text\", \"address_useraddress\".\"phone_number\", \"address_useraddress\".\"notes\", \"address_useraddress\".\"user_id\", \"address_useraddress\".\"is_default_for_shipping\", \"address_useraddress\".\"is_default_for_billing\", \"address_useraddress\".\"num_orders_as_shipping_address\", \"address_useraddress\".\"num_orders_as_billing_address\", \"address_useraddress\".\"hash\", \"address_useraddress\".\"date_created\" FROM \"address_useraddress\" WHERE (\"address_useraddress\".\"user_id\" = 615 AND \"address_useraddress\".\"is_default_for_shipping\") ORDER BY \"address_useraddress\".\"num_orders_as_shipping_address\" DESC LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"address_useraddress\" SET \"is_default_for_shipping\" = false WHERE (\"address_useraddress\".\"is_default_for_shipping\" AND \"address_useraddress\".\"user_id\" = 615)"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  }
+]

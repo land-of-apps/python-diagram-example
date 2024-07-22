@@ -1,0 +1,5725 @@
+{
+  "events": [
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Open', '2024-07-22T17:28:05.775048+00:00'::timestamptz, NULL, NULL) RETURNING \"basket_basket\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.0007221660000027441,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824929744,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x33807afd0>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "request",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "user",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13824824192,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "return_value": {
+        "object_id": 13824926960,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x33807a4f0>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 3,
+      "elapsed": 0.0000026226043701171875,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"basket_basket\" SET \"owner_id\" = NULL, \"status\" = 'Open', \"date_created\" = '2024-07-22T17:28:05.775048+00:00'::timestamptz, \"date_merged\" = NULL, \"date_submitted\" = NULL WHERE \"basket_basket\".\"id\" = 390",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.0005155000000058862,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4395225248,
+          "value": "Decimal('4.95')",
+          "name": "price",
+          "class": "decimal.Decimal"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341392584,
+          "value": "21",
+          "name": "tax_percentage",
+          "class": "builtins.int"
+        }
+      ],
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.test.factories.utils",
+      "method_id": "tax_subtract",
+      "path": "src/oscar/test/factories/utils.py",
+      "lineno": 5
+    },
+    {
+      "return_value": {
+        "object_id": 13824972368,
+        "value": "Decimal('4.09')",
+        "class": "decimal.Decimal"
+      },
+      "parent_id": 7,
+      "elapsed": 0.000008106231689453125,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824926720,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394199344,
+          "value": "'line_price_incl_tax_incl_discounts'",
+          "name": "model_property",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 9,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "_get_total",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 435
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824926720,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "id": 10,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "all_lines",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 13824925952,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 10,
+      "elapsed": 9.5367431640625e-7,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\", \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\", \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"basket_line\" INNER JOIN \"catalogue_product\" ON (\"basket_line\".\"product_id\" = \"catalogue_product\".\"id\") INNER JOIN \"partner_stockrecord\" ON (\"basket_line\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE \"basket_line\".\"basket_id\" = 390 ORDER BY \"basket_line\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 12,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 12,
+      "elapsed": 0.0005769580000105634,
+      "id": 13,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13824972480,
+        "value": "Decimal('0.00')",
+        "class": "decimal.Decimal"
+      },
+      "parent_id": 9,
+      "elapsed": 0.004584074020385742,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824926720,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394199248,
+          "value": "'line_price_excl_tax_incl_discounts'",
+          "name": "model_property",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 15,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "_get_total",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 435
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824926720,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "id": 16,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "all_lines",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 13824925952,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 16,
+      "elapsed": 9.5367431640625e-7,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13824973600,
+        "value": "Decimal('0.00')",
+        "class": "decimal.Decimal"
+      },
+      "parent_id": 15,
+      "elapsed": 0.00007009506225585938,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"address_country\".\"iso_3166_1_a2\", \"address_country\".\"iso_3166_1_a3\", \"address_country\".\"iso_3166_1_numeric\", \"address_country\".\"printable_name\", \"address_country\".\"name\", \"address_country\".\"display_order\", \"address_country\".\"is_shipping_country\" FROM \"address_country\" WHERE \"address_country\".\"iso_3166_1_a2\" = 'GB' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 19,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 19,
+      "elapsed": 0.000689042000004747,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SAVEPOINT \"s8669432832_x2846\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 21,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 21,
+      "elapsed": 0.00028462500000614455,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"address_country\" (\"iso_3166_1_a2\", \"iso_3166_1_a3\", \"iso_3166_1_numeric\", \"printable_name\", \"name\", \"display_order\", \"is_shipping_country\") VALUES ('GB', '', '', 'UNITED KINGDOM', '', 0, false)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 23,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 23,
+      "elapsed": 0.0004559169999822643,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "RELEASE SAVEPOINT \"s8669432832_x2846\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 25,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 25,
+      "elapsed": 0.0002442079999980251,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396075184,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4395232752,
+          "value": "'1000AA'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 27,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 13824912816,
+        "value": "'1000AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 27,
+      "elapsed": 0.0000019073486328125,
+      "id": 28,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824970320,
+        "value": "<BillingAddress: John Doe, Streetname, 1a, City, 1000AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.BillingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13824977984,
+          "value": "{'force_insert': True, 'using': 'default'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "force_insert",
+              "class": "builtins.bool"
+            },
+            {
+              "name": "using",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 29,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "save",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 277
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824970320,
+        "value": "<BillingAddress: John Doe, Streetname, 1a, City, 1000AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.BillingAddress"
+      },
+      "id": 30,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "_update_search_text",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 326
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824970320,
+        "value": "<BillingAddress: John Doe, Streetname, 1a, City, 1000AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.BillingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4392672384,
+          "value": "['first_name', 'last_name', 'line1', 'line2', 'line3', 'line4', 'state', 'postcode', 'country']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 9
+        },
+        {
+          "kind": "opt",
+          "object_id": 4332562672,
+          "value": "' '",
+          "name": "separator",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 31,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "join_fields",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 395
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824970320,
+        "value": "<BillingAddress: John Doe, Streetname, 1a, City, 1000AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.BillingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4392672384,
+          "value": "['first_name', 'last_name', 'line1', 'line2', 'line3', 'line4', 'state', 'postcode', 'country']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 9
+        }
+      ],
+      "id": 32,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "get_field_values",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 359
+    },
+    {
+      "return_value": {
+        "object_id": 13824828288,
+        "value": "['John', 'Doe', 'Streetname', '1a', '', 'City', '', '1000AA', 'UNITED KINGDOM']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 9
+      },
+      "parent_id": 32,
+      "elapsed": 0.0000030994415283203125,
+      "id": 33,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13824989424,
+        "value": "'John Doe Streetname 1a City 1000AA UNITED KINGDOM'",
+        "class": "builtins.str"
+      },
+      "parent_id": 31,
+      "elapsed": 0.00016498565673828125,
+      "id": 34,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 30,
+      "elapsed": 0.00032210350036621094,
+      "id": 35,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396075184,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13824912816,
+          "value": "'1000AA'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 36,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 13825275696,
+        "value": "'1000AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 36,
+      "elapsed": 9.5367431640625e-7,
+      "id": 37,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"order_billingaddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\") VALUES ('', 'John', 'Doe', 'Streetname', '1a', '', 'City', '', '1000AA', 'GB', 'John Doe Streetname 1a City 1000AA UNITED KINGDOM') RETURNING \"order_billingaddress\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 38,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 38,
+      "elapsed": 0.0004867500000216296,
+      "id": 39,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 29,
+      "elapsed": 0.0011448860168457031,
+      "id": 40,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"address_country\".\"iso_3166_1_a2\", \"address_country\".\"iso_3166_1_a3\", \"address_country\".\"iso_3166_1_numeric\", \"address_country\".\"printable_name\", \"address_country\".\"name\", \"address_country\".\"display_order\", \"address_country\".\"is_shipping_country\" FROM \"address_country\" WHERE \"address_country\".\"iso_3166_1_a2\" = 'GB' LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 41,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 41,
+      "elapsed": 0.0004908329999864236,
+      "id": 42,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396051520,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4395230448,
+          "value": "'1000 AA'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 43,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 13824991792,
+        "value": "'1000 AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 43,
+      "elapsed": 0.0000011920928955078125,
+      "id": 44,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824981552,
+        "value": "<ShippingAddress: John Doe, Streetname, 1a, City, 1000 AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13825275200,
+          "value": "{'force_insert': True, 'using': 'default'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "force_insert",
+              "class": "builtins.bool"
+            },
+            {
+              "name": "using",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 45,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "save",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 277
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824981552,
+        "value": "<ShippingAddress: John Doe, Streetname, 1a, City, 1000 AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "id": 46,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "_update_search_text",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 326
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824981552,
+        "value": "<ShippingAddress: John Doe, Streetname, 1a, City, 1000 AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4392672384,
+          "value": "['first_name', 'last_name', 'line1', 'line2', 'line3', 'line4', 'state', 'postcode', 'country']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 9
+        },
+        {
+          "kind": "opt",
+          "object_id": 4332562672,
+          "value": "' '",
+          "name": "separator",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 47,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "join_fields",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 395
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824981552,
+        "value": "<ShippingAddress: John Doe, Streetname, 1a, City, 1000 AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4392672384,
+          "value": "['first_name', 'last_name', 'line1', 'line2', 'line3', 'line4', 'state', 'postcode', 'country']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 9
+        }
+      ],
+      "id": 48,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "get_field_values",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 359
+    },
+    {
+      "return_value": {
+        "object_id": 13825106048,
+        "value": "['John', 'Doe', 'Streetname', '1a', '', 'City', '', '1000 AA', 'UNITED KINGDOM']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 9
+      },
+      "parent_id": 48,
+      "elapsed": 0.0000019073486328125,
+      "id": 49,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825001824,
+        "value": "'John Doe Streetname 1a City 1000 AA UNITED KINGDOM'",
+        "class": "builtins.str"
+      },
+      "parent_id": 47,
+      "elapsed": 0.00015687942504882812,
+      "id": 50,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 46,
+      "elapsed": 0.00030994415283203125,
+      "id": 51,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396051520,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13824991792,
+          "value": "'1000 AA'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 52,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 13825036784,
+        "value": "'1000 AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 52,
+      "elapsed": 9.5367431640625e-7,
+      "id": 53,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"order_shippingaddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\", \"phone_number\", \"notes\") VALUES ('', 'John', 'Doe', 'Streetname', '1a', '', 'City', '', '1000 AA', 'GB', 'John Doe Streetname 1a City 1000 AA UNITED KINGDOM', '+12125555555', '') RETURNING \"order_shippingaddress\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 54,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 54,
+      "elapsed": 0.00044541700000877427,
+      "id": 55,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 45,
+      "elapsed": 0.0011138916015625,
+      "id": 56,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "id": 57,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "get_default_currency",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 159
+    },
+    {
+      "return_value": {
+        "object_id": 4369856816,
+        "value": "'GBP'",
+        "class": "builtins.str"
+      },
+      "parent_id": 57,
+      "elapsed": 0.0000050067901611328125,
+      "id": 58,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824981504,
+        "value": "<Order: #100390>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Order"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13825276480,
+          "value": "{'force_insert': True, 'using': 'default'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "force_insert",
+              "class": "builtins.bool"
+            },
+            {
+              "name": "using",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 59,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractOrder",
+      "method_id": "save",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 382
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824981504,
+        "value": "<Order: #100390>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Order"
+      },
+      "id": 60,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractOrder",
+      "method_id": "set_date_placed_default",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 378
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 60,
+      "elapsed": 0.000007867813110351562,
+      "id": 61,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"order_order\" (\"number\", \"site_id\", \"basket_id\", \"user_id\", \"billing_address_id\", \"currency\", \"total_incl_tax\", \"total_excl_tax\", \"shipping_incl_tax\", \"shipping_excl_tax\", \"shipping_tax_code\", \"shipping_address_id\", \"shipping_method\", \"shipping_code\", \"status\", \"guest_email\", \"date_placed\") VALUES ('100390', 1, 390, NULL, 5, 'GBP', 0.00, 0.00, 4.95, 4.09, NULL, 20, '', 'delivery', 'A', 'j.doe@example.com', '2024-07-22T17:28:05.789070+00:00'::timestamptz) RETURNING \"order_order\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 62,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 62,
+      "elapsed": 0.00057520799998656,
+      "id": 63,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 59,
+      "elapsed": 0.0007538795471191406,
+      "id": 64,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824981504,
+        "value": "<Order: #100390>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Order"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13825039232,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 65,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractOrder",
+      "method_id": "save",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 382
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824981504,
+        "value": "<Order: #100390>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Order"
+      },
+      "id": 66,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractOrder",
+      "method_id": "set_date_placed_default",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 378
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 66,
+      "elapsed": 0.0000011920928955078125,
+      "id": 67,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"order_order\" SET \"number\" = '100390', \"site_id\" = 1, \"basket_id\" = 390, \"user_id\" = NULL, \"billing_address_id\" = 5, \"currency\" = 'GBP', \"total_incl_tax\" = 0.00, \"total_excl_tax\" = 0.00, \"shipping_incl_tax\" = 4.95, \"shipping_excl_tax\" = 4.09, \"shipping_tax_code\" = NULL, \"shipping_address_id\" = 20, \"shipping_method\" = '', \"shipping_code\" = 'delivery', \"status\" = 'A', \"guest_email\" = 'j.doe@example.com', \"date_placed\" = '2024-07-22T17:28:05.789070+00:00'::timestamptz WHERE \"order_order\".\"id\" = 86",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 68,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 68,
+      "elapsed": 0.00046120799999016526,
+      "id": 69,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 65,
+      "elapsed": 0.0007169246673583984,
+      "id": 70,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = 'f437pj06tw5cx1t8ddbwxqy29zoazfjg' LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 71,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 71,
+      "elapsed": 0.0005484579999972539,
+      "id": 72,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SAVEPOINT \"s8669432832_x2847\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 73,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 73,
+      "elapsed": 0.0002568330000087826,
+      "id": 74,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('f437pj06tw5cx1t8ddbwxqy29zoazfjg', 'e30:1sVwpR:8W3ACAUj7O8cw8JO8ehrO0o8eNp-RFTq1-gfsubhQXU', '2024-08-05T17:28:05.791514+00:00'::timestamptz)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 75,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 75,
+      "elapsed": 0.00045983299997942595,
+      "id": 76,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "RELEASE SAVEPOINT \"s8669432832_x2847\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 77,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 77,
+      "elapsed": 0.000292875000013737,
+      "id": 78,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SAVEPOINT \"s8669432832_x2848\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 79,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 79,
+      "elapsed": 0.00021949999998582825,
+      "id": 80,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"django_session\" SET \"session_data\" = 'eyJjaGVja291dF9vcmRlcl9pZCI6ODZ9:1sVwpR:zfLm1lIjs3S86AQ8wcpOutNJSQT8J5vD_qqYMAwaJRs', \"expire_date\" = '2024-08-05T17:28:05.792756+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = 'f437pj06tw5cx1t8ddbwxqy29zoazfjg'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 81,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 81,
+      "elapsed": 0.0003355000000055952,
+      "id": 82,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "RELEASE SAVEPOINT \"s8669432832_x2848\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 83,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 83,
+      "elapsed": 0.0002575000000035743,
+      "id": 84,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.1",
+        "path_info": "/checkout/thank-you/",
+        "normalized_path_info": "/checkout/thank-you/",
+        "headers": {
+          "Cookie": "sessionid=f437pj06tw5cx1t8ddbwxqy29zoazfjg"
+        }
+      },
+      "id": 85,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4415473264,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x1072ec670>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13825015040,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "opt",
+          "object_id": 13825015376,
+          "value": "<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x3380945e0>>",
+          "name": "user",
+          "class": "django.utils.functional.SimpleLazyObject"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13825109696,
+          "value": "{'request': <WSGIRequest: GET '/checkout/thank-you/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x3380945e0>>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "user",
+              "class": "django.utils.functional.SimpleLazyObject"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 86,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2024-07-22T17:28:05.794445+00:00'::timestamptz AND \"django_session\".\"session_key\" = 'f437pj06tw5cx1t8ddbwxqy29zoazfjg') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 87,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 87,
+      "elapsed": 0.0004425409999839758,
+      "id": 88,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13824929120,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x33807ad60>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 86,
+      "elapsed": 0.0007498264312744141,
+      "id": 89,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824955344,
+        "value": "<oscar.apps.checkout.views.ThankYouView object at 0x3380813d0>",
+        "name": "self",
+        "class": "oscar.apps.checkout.views.ThankYouView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825015040,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13824912320,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 90,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.views.ThankYouView",
+      "method_id": "get",
+      "path": "src/oscar/apps/checkout/views.py",
+      "lineno": 721
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824955344,
+        "value": "<oscar.apps.checkout.views.ThankYouView object at 0x3380813d0>",
+        "name": "self",
+        "class": "oscar.apps.checkout.views.ThankYouView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "queryset",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 91,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.views.ThankYouView",
+      "method_id": "get_object",
+      "path": "src/oscar/apps/checkout/views.py",
+      "lineno": 728
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_order\".\"id\", \"order_order\".\"number\", \"order_order\".\"site_id\", \"order_order\".\"basket_id\", \"order_order\".\"user_id\", \"order_order\".\"billing_address_id\", \"order_order\".\"currency\", \"order_order\".\"total_incl_tax\", \"order_order\".\"total_excl_tax\", \"order_order\".\"shipping_incl_tax\", \"order_order\".\"shipping_excl_tax\", \"order_order\".\"shipping_tax_code\", \"order_order\".\"shipping_address_id\", \"order_order\".\"shipping_method\", \"order_order\".\"shipping_code\", \"order_order\".\"status\", \"order_order\".\"guest_email\", \"order_order\".\"date_placed\" FROM \"order_order\" WHERE \"order_order\".\"id\" = 86 ORDER BY \"order_order\".\"date_placed\" DESC LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 92,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 92,
+      "elapsed": 0.0005946670000014365,
+      "id": 93,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825063472,
+        "value": "<Order: #100390>",
+        "class": "oscar.apps.order.models.Order"
+      },
+      "parent_id": 91,
+      "elapsed": 0.0010292530059814453,
+      "id": 94,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13824955344,
+        "value": "<oscar.apps.checkout.views.ThankYouView object at 0x3380813d0>",
+        "name": "self",
+        "class": "oscar.apps.checkout.views.ThankYouView"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13825058368,
+          "value": "{'object': <Order: #100390>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "object",
+              "class": "oscar.apps.order.models.Order"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 95,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.views.ThankYouView",
+      "method_id": "get_context_data",
+      "path": "src/oscar/apps/checkout/views.py",
+      "lineno": 746
+    },
+    {
+      "return_value": {
+        "object_id": 13825058624,
+        "value": "{'object': <Order: #100390>, 'order': <Order: #100390>, 'view': <oscar.apps.checkout.views.ThankYouView object at 0x3380813d0>, 'send_analytics_event': True}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "object",
+            "class": "oscar.apps.order.models.Order"
+          },
+          {
+            "name": "order",
+            "class": "oscar.apps.order.models.Order"
+          },
+          {
+            "name": "view",
+            "class": "oscar.apps.checkout.views.ThankYouView"
+          },
+          {
+            "name": "send_analytics_event",
+            "class": "builtins.bool"
+          }
+        ],
+        "size": 4
+      },
+      "parent_id": 95,
+      "elapsed": 0.000008821487426757812,
+      "id": 96,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825015616,
+        "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.template.response.TemplateResponse"
+      },
+      "parent_id": 90,
+      "elapsed": 0.0011723041534423828,
+      "id": 97,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825014176,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x33808f9a0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825015040,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13825015616,
+          "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+          "name": "response",
+          "class": "django.template.response.TemplateResponse"
+        }
+      ],
+      "id": 98,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_template_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 112
+    },
+    {
+      "return_value": {
+        "object_id": 13825015616,
+        "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.template.response.TemplateResponse"
+      },
+      "parent_id": 98,
+      "elapsed": 9.5367431640625e-7,
+      "id": 99,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5557310608,
+        "value": "<Template template_string=\"{% extends \"oscar/ch...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/checkout/thank_you.html",
+      "id": 100,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarCheckoutThank_YouHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825015040,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 101,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.search.context_processors",
+      "method_id": "search_form",
+      "path": "src/oscar/apps/search/context_processors.py",
+      "lineno": 6
+    },
+    {
+      "return_value": {
+        "object_id": 13824959424,
+        "value": "{'search_form': <SearchForm bound=True, valid=Unknown, fields=(q;sort_by)>}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "search_form",
+            "class": "oscar.apps.search.forms.SearchForm"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 101,
+      "elapsed": 0.00009608268737792969,
+      "id": 102,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825015040,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 103,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.communication.notifications.context_processors",
+      "method_id": "notifications",
+      "path": "src/oscar/apps/communication/notifications/context_processors.py",
+      "lineno": 6
+    },
+    {
+      "return_value": {
+        "object_id": 13825277440,
+        "value": "{}",
+        "class": "builtins.dict",
+        "size": 0
+      },
+      "parent_id": 103,
+      "elapsed": 0.0000040531158447265625,
+      "id": 104,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825015040,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 105,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.context_processors",
+      "method_id": "checkout",
+      "path": "src/oscar/apps/checkout/context_processors.py",
+      "lineno": 4
+    },
+    {
+      "return_value": {
+        "object_id": 13825065920,
+        "value": "{'anon_checkout_allowed': True}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "anon_checkout_allowed",
+            "class": "builtins.bool"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 105,
+      "elapsed": 0.0000030994415283203125,
+      "id": 106,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825015040,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 107,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.context_processors",
+      "method_id": "metadata",
+      "path": "src/oscar/core/context_processors.py",
+      "lineno": 19
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825015040,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 108,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.context_processors",
+      "method_id": "strip_language_code",
+      "path": "src/oscar/core/context_processors.py",
+      "lineno": 6
+    },
+    {
+      "return_value": {
+        "object_id": 13824453008,
+        "value": "'/checkout/thank-you/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 108,
+      "elapsed": 0.0000030994415283203125,
+      "id": 109,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825065472,
+        "value": "{'shop_name': 'Oscar', 'shop_tagline': '', 'homepage_url': '/catalogue/', 'language_neutral_url_path': '/checkout/thank-you/', 'google_analytics_id': None}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "shop_name",
+            "class": "builtins.str"
+          },
+          {
+            "name": "shop_tagline",
+            "class": "builtins.str"
+          },
+          {
+            "name": "homepage_url",
+            "class": "django.utils.functional.lazy.<locals>.__proxy__"
+          },
+          {
+            "name": "language_neutral_url_path",
+            "class": "builtins.str"
+          },
+          {
+            "name": "google_analytics_id",
+            "class": "builtins.NoneType"
+          }
+        ],
+        "size": 5
+      },
+      "parent_id": 107,
+      "elapsed": 0.000041961669921875,
+      "id": 110,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5333608960,
+        "value": "<Template template_string=\"<div class=\"col-sm-6...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/partials/brand.html",
+      "id": 111,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarPartialsBrandHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 111,
+      "elapsed": 0.00014325000000781074,
+      "id": 112,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5334976928,
+        "value": "<Template template_string=\"{% load i18n %}<na...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/checkout/nav.html",
+      "id": 113,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarCheckoutNavHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 113,
+      "elapsed": 0.0002076250000015989,
+      "id": 114,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5318009184,
+        "value": "<Template template_string=\"{% load string_filte...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/partials/alert_messages.html",
+      "id": 115,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarPartialsAlert_MessagesHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 115,
+      "elapsed": 0.00010291699999243065,
+      "id": 116,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"django_site\".\"id\", \"django_site\".\"domain\", \"django_site\".\"name\" FROM \"django_site\" WHERE \"django_site\".\"id\" = 1 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 117,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 117,
+      "elapsed": 0.0005846660000088377,
+      "id": 118,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"django_flatpage\".\"id\", \"django_flatpage\".\"url\", \"django_flatpage\".\"title\", \"django_flatpage\".\"content\", \"django_flatpage\".\"enable_comments\", \"django_flatpage\".\"template_name\", \"django_flatpage\".\"registration_required\" FROM \"django_flatpage\" INNER JOIN \"django_flatpage_sites\" ON (\"django_flatpage\".\"id\" = \"django_flatpage_sites\".\"flatpage_id\") WHERE (\"django_flatpage_sites\".\"site_id\" = 1 AND \"django_flatpage\".\"url\"::text LIKE '/order/%' AND NOT \"django_flatpage\".\"registration_required\") ORDER BY \"django_flatpage\".\"url\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 119,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 119,
+      "elapsed": 0.0009326670000007198,
+      "id": 120,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_shippingaddress\".\"id\", \"order_shippingaddress\".\"title\", \"order_shippingaddress\".\"first_name\", \"order_shippingaddress\".\"last_name\", \"order_shippingaddress\".\"line1\", \"order_shippingaddress\".\"line2\", \"order_shippingaddress\".\"line3\", \"order_shippingaddress\".\"line4\", \"order_shippingaddress\".\"state\", \"order_shippingaddress\".\"postcode\", \"order_shippingaddress\".\"country_id\", \"order_shippingaddress\".\"search_text\", \"order_shippingaddress\".\"phone_number\", \"order_shippingaddress\".\"notes\" FROM \"order_shippingaddress\" WHERE \"order_shippingaddress\".\"id\" = 20 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 121,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 121,
+      "elapsed": 0.0004103330000191363,
+      "id": 122,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396051520,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825222832,
+          "value": "'1000 AA'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "rest",
+          "object_id": 13824962048,
+          "value": "(Col(order_shippingaddress, order.ShippingAddress.postcode), <DatabaseWrapper vendor='postgresql' alias='default'>)",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13825044608,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 123,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "from_db_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 83
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396051520,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825222832,
+          "value": "'1000 AA'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 124,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 13825223152,
+        "value": "'1000 AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 124,
+      "elapsed": 0.0000011920928955078125,
+      "id": 125,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825223152,
+        "value": "'1000 AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 123,
+      "elapsed": 0.00004982948303222656,
+      "id": 126,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396051520,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825223152,
+          "value": "'1000 AA'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 127,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 13825224176,
+        "value": "'1000 AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 127,
+      "elapsed": 9.5367431640625e-7,
+      "id": 128,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825210256,
+        "value": "<ShippingAddress: John Doe, Streetname, 1a, City, 1000 AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "id": 129,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "active_address_fields",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 415
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825210256,
+        "value": "<ShippingAddress: John Doe, Streetname, 1a, City, 1000 AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4392672448,
+          "value": "['salutation', 'line1', 'line2', 'line3', 'line4', 'state', 'postcode', 'country']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 8
+        }
+      ],
+      "id": 130,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "get_address_field_values",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 377
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825210256,
+        "value": "<ShippingAddress: John Doe, Streetname, 1a, City, 1000 AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4392672448,
+          "value": "['salutation', 'line1', 'line2', 'line3', 'line4', 'state', 'postcode', 'country']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 8
+        }
+      ],
+      "id": 131,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "get_field_values",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 359
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825210256,
+        "value": "<ShippingAddress: John Doe, Streetname, 1a, City, 1000 AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4390869376,
+          "value": "('title', 'first_name', 'last_name')",
+          "name": "fields",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4332562672,
+          "value": "' '",
+          "name": "separator",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 132,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "join_fields",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 395
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825210256,
+        "value": "<ShippingAddress: John Doe, Streetname, 1a, City, 1000 AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4390869376,
+          "value": "('title', 'first_name', 'last_name')",
+          "name": "fields",
+          "class": "builtins.tuple"
+        }
+      ],
+      "id": 133,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "get_field_values",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 359
+    },
+    {
+      "return_value": {
+        "object_id": 13825068224,
+        "value": "['', 'John', 'Doe']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 3
+      },
+      "parent_id": 133,
+      "elapsed": 0.000027179718017578125,
+      "id": 134,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825283120,
+        "value": "'John Doe'",
+        "class": "builtins.str"
+      },
+      "parent_id": 132,
+      "elapsed": 0.00018262863159179688,
+      "id": 135,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825215552,
+        "value": "['John Doe', 'Streetname', '1a', '', 'City', '', '1000 AA', 'UNITED KINGDOM']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 8
+      },
+      "parent_id": 131,
+      "elapsed": 0.00035190582275390625,
+      "id": 136,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825230272,
+        "value": "['John Doe', 'Streetname', '1a', 'City', '1000 AA', 'UNITED KINGDOM']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 6
+      },
+      "parent_id": 130,
+      "elapsed": 0.0005199909210205078,
+      "id": 137,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825230272,
+        "value": "['John Doe', 'Streetname', '1a', 'City', '1000 AA', 'UNITED KINGDOM']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 6
+      },
+      "parent_id": 129,
+      "elapsed": 0.0007507801055908203,
+      "id": 138,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"payment_source\".\"id\", \"payment_source\".\"order_id\", \"payment_source\".\"source_type_id\", \"payment_source\".\"currency\", \"payment_source\".\"amount_allocated\", \"payment_source\".\"amount_debited\", \"payment_source\".\"amount_refunded\", \"payment_source\".\"reference\", \"payment_source\".\"label\" FROM \"payment_source\" WHERE \"payment_source\".\"order_id\" = 86 ORDER BY \"payment_source\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 139,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 139,
+      "elapsed": 0.0005580419999944297,
+      "id": 140,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_billingaddress\".\"id\", \"order_billingaddress\".\"title\", \"order_billingaddress\".\"first_name\", \"order_billingaddress\".\"last_name\", \"order_billingaddress\".\"line1\", \"order_billingaddress\".\"line2\", \"order_billingaddress\".\"line3\", \"order_billingaddress\".\"line4\", \"order_billingaddress\".\"state\", \"order_billingaddress\".\"postcode\", \"order_billingaddress\".\"country_id\", \"order_billingaddress\".\"search_text\" FROM \"order_billingaddress\" WHERE \"order_billingaddress\".\"id\" = 5 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 141,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 141,
+      "elapsed": 0.0005839160000107313,
+      "id": 142,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396075184,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825304304,
+          "value": "'1000AA'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "rest",
+          "object_id": 13825257920,
+          "value": "(Col(order_billingaddress, order.BillingAddress.postcode), <DatabaseWrapper vendor='postgresql' alias='default'>)",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13825300800,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 143,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "from_db_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 83
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396075184,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825304304,
+          "value": "'1000AA'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 144,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 13825304496,
+        "value": "'1000AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 144,
+      "elapsed": 0.0000021457672119140625,
+      "id": 145,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825304496,
+        "value": "'1000AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 143,
+      "elapsed": 0.000050067901611328125,
+      "id": 146,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396075184,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825304496,
+          "value": "'1000AA'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 147,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 13825305392,
+        "value": "'1000AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 147,
+      "elapsed": 9.5367431640625e-7,
+      "id": 148,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825234832,
+        "value": "<BillingAddress: John Doe, Streetname, 1a, City, 1000AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.BillingAddress"
+      },
+      "id": 149,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "active_address_fields",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 415
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825234832,
+        "value": "<BillingAddress: John Doe, Streetname, 1a, City, 1000AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.BillingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4392672448,
+          "value": "['salutation', 'line1', 'line2', 'line3', 'line4', 'state', 'postcode', 'country']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 8
+        }
+      ],
+      "id": 150,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "get_address_field_values",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 377
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825234832,
+        "value": "<BillingAddress: John Doe, Streetname, 1a, City, 1000AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.BillingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4392672448,
+          "value": "['salutation', 'line1', 'line2', 'line3', 'line4', 'state', 'postcode', 'country']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 8
+        }
+      ],
+      "id": 151,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "get_field_values",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 359
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825234832,
+        "value": "<BillingAddress: John Doe, Streetname, 1a, City, 1000AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.BillingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4390869376,
+          "value": "('title', 'first_name', 'last_name')",
+          "name": "fields",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4332562672,
+          "value": "' '",
+          "name": "separator",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 152,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "join_fields",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 395
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825234832,
+        "value": "<BillingAddress: John Doe, Streetname, 1a, City, 1000AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.BillingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4390869376,
+          "value": "('title', 'first_name', 'last_name')",
+          "name": "fields",
+          "class": "builtins.tuple"
+        }
+      ],
+      "id": 153,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "get_field_values",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 359
+    },
+    {
+      "return_value": {
+        "object_id": 13825214528,
+        "value": "['', 'John', 'Doe']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 3
+      },
+      "parent_id": 153,
+      "elapsed": 0.000026941299438476562,
+      "id": 154,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825294256,
+        "value": "'John Doe'",
+        "class": "builtins.str"
+      },
+      "parent_id": 152,
+      "elapsed": 0.00018596649169921875,
+      "id": 155,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825215744,
+        "value": "['John Doe', 'Streetname', '1a', '', 'City', '', '1000AA', 'UNITED KINGDOM']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 8
+      },
+      "parent_id": 151,
+      "elapsed": 0.000354766845703125,
+      "id": 156,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825319296,
+        "value": "['John Doe', 'Streetname', '1a', 'City', '1000AA', 'UNITED KINGDOM']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 6
+      },
+      "parent_id": 150,
+      "elapsed": 0.000518798828125,
+      "id": 157,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825319296,
+        "value": "['John Doe', 'Streetname', '1a', 'City', '1000AA', 'UNITED KINGDOM']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 6
+      },
+      "parent_id": 149,
+      "elapsed": 0.0007088184356689453,
+      "id": 158,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_line\".\"id\", \"order_line\".\"order_id\", \"order_line\".\"partner_id\", \"order_line\".\"partner_name\", \"order_line\".\"partner_sku\", \"order_line\".\"partner_line_reference\", \"order_line\".\"partner_line_notes\", \"order_line\".\"stockrecord_id\", \"order_line\".\"product_id\", \"order_line\".\"title\", \"order_line\".\"upc\", \"order_line\".\"quantity\", \"order_line\".\"line_price_incl_tax\", \"order_line\".\"line_price_excl_tax\", \"order_line\".\"line_price_before_discounts_incl_tax\", \"order_line\".\"line_price_before_discounts_excl_tax\", \"order_line\".\"unit_price_incl_tax\", \"order_line\".\"unit_price_excl_tax\", \"order_line\".\"tax_code\", \"order_line\".\"status\" FROM \"order_line\" WHERE \"order_line\".\"order_id\" = 86 ORDER BY \"order_line\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 159,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 159,
+      "elapsed": 0.0006240840000089065,
+      "id": 160,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5560017152,
+        "value": "<Template template_string=\"{% load i18n %}{% l...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/order/partials/basket_totals.html",
+      "id": 161,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarOrderPartialsBasket_TotalsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_orderdiscount\".\"id\", \"order_orderdiscount\".\"order_id\", \"order_orderdiscount\".\"category\", \"order_orderdiscount\".\"offer_id\", \"order_orderdiscount\".\"offer_name\", \"order_orderdiscount\".\"voucher_id\", \"order_orderdiscount\".\"voucher_code\", \"order_orderdiscount\".\"frequency\", \"order_orderdiscount\".\"amount\", \"order_orderdiscount\".\"message\" FROM \"order_orderdiscount\" WHERE (\"order_orderdiscount\".\"order_id\" = 86 AND \"order_orderdiscount\".\"category\" = 'Basket') ORDER BY \"order_orderdiscount\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 162,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 162,
+      "elapsed": 0.0005396669999981896,
+      "id": 163,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_surcharge\".\"id\", \"order_surcharge\".\"order_id\", \"order_surcharge\".\"name\", \"order_surcharge\".\"code\", \"order_surcharge\".\"incl_tax\", \"order_surcharge\".\"excl_tax\", \"order_surcharge\".\"tax_code\" FROM \"order_surcharge\" WHERE \"order_surcharge\".\"order_id\" = 86 ORDER BY \"order_surcharge\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 164,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 164,
+      "elapsed": 0.00044579100000419203,
+      "id": 165,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_orderdiscount\".\"id\", \"order_orderdiscount\".\"order_id\", \"order_orderdiscount\".\"category\", \"order_orderdiscount\".\"offer_id\", \"order_orderdiscount\".\"offer_name\", \"order_orderdiscount\".\"voucher_id\", \"order_orderdiscount\".\"voucher_code\", \"order_orderdiscount\".\"frequency\", \"order_orderdiscount\".\"amount\", \"order_orderdiscount\".\"message\" FROM \"order_orderdiscount\" WHERE (\"order_orderdiscount\".\"order_id\" = 86 AND \"order_orderdiscount\".\"category\" = 'Shipping') ORDER BY \"order_orderdiscount\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 166,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 166,
+      "elapsed": 0.002232499999990978,
+      "id": 167,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_surcharge\".\"id\", \"order_surcharge\".\"order_id\", \"order_surcharge\".\"name\", \"order_surcharge\".\"code\", \"order_surcharge\".\"incl_tax\", \"order_surcharge\".\"excl_tax\", \"order_surcharge\".\"tax_code\" FROM \"order_surcharge\" WHERE \"order_surcharge\".\"order_id\" = 86 ORDER BY \"order_surcharge\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 168,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 168,
+      "elapsed": 0.000593832999982169,
+      "id": 169,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_orderdiscount\".\"id\", \"order_orderdiscount\".\"order_id\", \"order_orderdiscount\".\"category\", \"order_orderdiscount\".\"offer_id\", \"order_orderdiscount\".\"offer_name\", \"order_orderdiscount\".\"voucher_id\", \"order_orderdiscount\".\"voucher_code\", \"order_orderdiscount\".\"frequency\", \"order_orderdiscount\".\"amount\", \"order_orderdiscount\".\"message\" FROM \"order_orderdiscount\" WHERE (\"order_orderdiscount\".\"order_id\" = 86 AND \"order_orderdiscount\".\"category\" = 'Deferred') ORDER BY \"order_orderdiscount\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 170,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 170,
+      "elapsed": 0.00043566700000496894,
+      "id": 171,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 161,
+      "elapsed": 0.007025666999993518,
+      "id": 172,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825063472,
+        "value": "<Order: #100390>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Order"
+      },
+      "id": 173,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractOrder",
+      "method_id": "verification_hash",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 341
+    },
+    {
+      "return_value": {
+        "object_id": 13825318784,
+        "value": "'100390:-bOSUqISiRhDSLpupYxWjGvIyVPIYroomnUsX4VGMfM'",
+        "class": "builtins.str"
+      },
+      "parent_id": 173,
+      "elapsed": 0.00004100799560546875,
+      "id": 174,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5336368704,
+        "value": "<Template template_string=\"<footer class=\"conta...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/partials/footer_checkout.html",
+      "id": 175,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarPartialsFooter_CheckoutHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 175,
+      "elapsed": 0.0001406670000108079,
+      "id": 176,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5561590832,
+        "value": "<Template template_string=\"{% extends \"oscar/pa...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/partials/google_analytics_transaction.html",
+      "id": 177,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarPartialsGoogle_Analytics_TransactionHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 177,
+      "elapsed": 0.0002166669999894566,
+      "id": 178,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 100,
+      "elapsed": 0.01952129099998956,
+      "id": 179,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825014176,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x33808f9a0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825015040,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13825015616,
+          "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+          "name": "response",
+          "class": "django.template.response.TemplateResponse"
+        }
+      ],
+      "id": 180,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 63
+    },
+    {
+      "return_value": {
+        "object_id": 13825015616,
+        "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.template.response.TemplateResponse"
+      },
+      "parent_id": 180,
+      "elapsed": 0.0000021457672119140625,
+      "id": 181,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SAVEPOINT \"s8669432832_x2849\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 182,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 182,
+      "elapsed": 0.00040500000000065484,
+      "id": 183,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"django_session\" SET \"session_data\" = 'eyJjaGVja291dF9vcmRlcl9pZCI6ODYsIm9yZGVyXzg2X3RoYW5reW91X3ZpZXdlZCI6dHJ1ZX0:1sVwpR:9XXREAPuKs0kI7JHrHqurGVxhLlWp4FFZR6F9Hmjl1Y', \"expire_date\" = '2024-08-05T17:28:05.816287+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = 'f437pj06tw5cx1t8ddbwxqy29zoazfjg'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 184,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 184,
+      "elapsed": 0.00042641699999990124,
+      "id": 185,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "RELEASE SAVEPOINT \"s8669432832_x2849\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 186,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 186,
+      "elapsed": 0.00026412500000105865,
+      "id": 187,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_response": {
+        "status_code": 200,
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Vary": "Cookie",
+          "Content-Length": "8150"
+        }
+      },
+      "parent_id": 85,
+      "elapsed": 0.02364595800000302,
+      "id": 188,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.1",
+        "path_info": "/checkout/thank-you/",
+        "normalized_path_info": "/checkout/thank-you/",
+        "headers": {
+          "Cookie": "sessionid=f437pj06tw5cx1t8ddbwxqy29zoazfjg"
+        }
+      },
+      "id": 189,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4415473264,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x1072ec670>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13825062464,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "opt",
+          "object_id": 13825178016,
+          "value": "<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x3380948b0>>",
+          "name": "user",
+          "class": "django.utils.functional.SimpleLazyObject"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13825411520,
+          "value": "{'request': <WSGIRequest: GET '/checkout/thank-you/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x3380948b0>>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "user",
+              "class": "django.utils.functional.SimpleLazyObject"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 190,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2024-07-22T17:28:05.818218+00:00'::timestamptz AND \"django_session\".\"session_key\" = 'f437pj06tw5cx1t8ddbwxqy29zoazfjg') LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 191,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 191,
+      "elapsed": 0.00041920900000036454,
+      "id": 192,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825408016,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x3380efc10>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 190,
+      "elapsed": 0.0007622241973876953,
+      "id": 193,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825408736,
+        "value": "<oscar.apps.checkout.views.ThankYouView object at 0x3380efee0>",
+        "name": "self",
+        "class": "oscar.apps.checkout.views.ThankYouView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825062464,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13825417536,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 194,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.views.ThankYouView",
+      "method_id": "get",
+      "path": "src/oscar/apps/checkout/views.py",
+      "lineno": 721
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825408736,
+        "value": "<oscar.apps.checkout.views.ThankYouView object at 0x3380efee0>",
+        "name": "self",
+        "class": "oscar.apps.checkout.views.ThankYouView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "queryset",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 195,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.views.ThankYouView",
+      "method_id": "get_object",
+      "path": "src/oscar/apps/checkout/views.py",
+      "lineno": 728
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_order\".\"id\", \"order_order\".\"number\", \"order_order\".\"site_id\", \"order_order\".\"basket_id\", \"order_order\".\"user_id\", \"order_order\".\"billing_address_id\", \"order_order\".\"currency\", \"order_order\".\"total_incl_tax\", \"order_order\".\"total_excl_tax\", \"order_order\".\"shipping_incl_tax\", \"order_order\".\"shipping_excl_tax\", \"order_order\".\"shipping_tax_code\", \"order_order\".\"shipping_address_id\", \"order_order\".\"shipping_method\", \"order_order\".\"shipping_code\", \"order_order\".\"status\", \"order_order\".\"guest_email\", \"order_order\".\"date_placed\" FROM \"order_order\" WHERE \"order_order\".\"id\" = 86 ORDER BY \"order_order\".\"date_placed\" DESC LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 196,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 196,
+      "elapsed": 0.00041408299998124676,
+      "id": 197,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825432208,
+        "value": "<Order: #100390>",
+        "class": "oscar.apps.order.models.Order"
+      },
+      "parent_id": 195,
+      "elapsed": 0.0008749961853027344,
+      "id": 198,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825408736,
+        "value": "<oscar.apps.checkout.views.ThankYouView object at 0x3380efee0>",
+        "name": "self",
+        "class": "oscar.apps.checkout.views.ThankYouView"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13825427968,
+          "value": "{'object': <Order: #100390>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "object",
+              "class": "oscar.apps.order.models.Order"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 199,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.views.ThankYouView",
+      "method_id": "get_context_data",
+      "path": "src/oscar/apps/checkout/views.py",
+      "lineno": 746
+    },
+    {
+      "return_value": {
+        "object_id": 13825428224,
+        "value": "{'object': <Order: #100390>, 'order': <Order: #100390>, 'view': <oscar.apps.checkout.views.ThankYouView object at 0x3380efee0>, 'send_analytics_event': False}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "object",
+            "class": "oscar.apps.order.models.Order"
+          },
+          {
+            "name": "order",
+            "class": "oscar.apps.order.models.Order"
+          },
+          {
+            "name": "view",
+            "class": "oscar.apps.checkout.views.ThankYouView"
+          },
+          {
+            "name": "send_analytics_event",
+            "class": "builtins.bool"
+          }
+        ],
+        "size": 4
+      },
+      "parent_id": 199,
+      "elapsed": 0.000009059906005859375,
+      "id": 200,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825408784,
+        "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.template.response.TemplateResponse"
+      },
+      "parent_id": 194,
+      "elapsed": 0.0010221004486083984,
+      "id": 201,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825014176,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x33808f9a0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825062464,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13825408784,
+          "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+          "name": "response",
+          "class": "django.template.response.TemplateResponse"
+        }
+      ],
+      "id": 202,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_template_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 112
+    },
+    {
+      "return_value": {
+        "object_id": 13825408784,
+        "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.template.response.TemplateResponse"
+      },
+      "parent_id": 202,
+      "elapsed": 9.5367431640625e-7,
+      "id": 203,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5557310608,
+        "value": "<Template template_string=\"{% extends \"oscar/ch...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/checkout/thank_you.html",
+      "id": 204,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarCheckoutThank_YouHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825062464,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 205,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.search.context_processors",
+      "method_id": "search_form",
+      "path": "src/oscar/apps/search/context_processors.py",
+      "lineno": 6
+    },
+    {
+      "return_value": {
+        "object_id": 13825429312,
+        "value": "{'search_form': <SearchForm bound=True, valid=Unknown, fields=(q;sort_by)>}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "search_form",
+            "class": "oscar.apps.search.forms.SearchForm"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 205,
+      "elapsed": 0.00009489059448242188,
+      "id": 206,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825062464,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 207,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.communication.notifications.context_processors",
+      "method_id": "notifications",
+      "path": "src/oscar/apps/communication/notifications/context_processors.py",
+      "lineno": 6
+    },
+    {
+      "return_value": {
+        "object_id": 13825411648,
+        "value": "{}",
+        "class": "builtins.dict",
+        "size": 0
+      },
+      "parent_id": 207,
+      "elapsed": 0.0000040531158447265625,
+      "id": 208,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825062464,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 209,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.context_processors",
+      "method_id": "checkout",
+      "path": "src/oscar/apps/checkout/context_processors.py",
+      "lineno": 4
+    },
+    {
+      "return_value": {
+        "object_id": 13825440256,
+        "value": "{'anon_checkout_allowed': True}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "anon_checkout_allowed",
+            "class": "builtins.bool"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 209,
+      "elapsed": 0.0000011920928955078125,
+      "id": 210,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825062464,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 211,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.context_processors",
+      "method_id": "metadata",
+      "path": "src/oscar/core/context_processors.py",
+      "lineno": 19
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825062464,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 212,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.context_processors",
+      "method_id": "strip_language_code",
+      "path": "src/oscar/core/context_processors.py",
+      "lineno": 6
+    },
+    {
+      "return_value": {
+        "object_id": 13825359424,
+        "value": "'/checkout/thank-you/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 212,
+      "elapsed": 9.5367431640625e-7,
+      "id": 213,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825439808,
+        "value": "{'shop_name': 'Oscar', 'shop_tagline': '', 'homepage_url': '/catalogue/', 'language_neutral_url_path': '/checkout/thank-you/', 'google_analytics_id': None}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "shop_name",
+            "class": "builtins.str"
+          },
+          {
+            "name": "shop_tagline",
+            "class": "builtins.str"
+          },
+          {
+            "name": "homepage_url",
+            "class": "django.utils.functional.lazy.<locals>.__proxy__"
+          },
+          {
+            "name": "language_neutral_url_path",
+            "class": "builtins.str"
+          },
+          {
+            "name": "google_analytics_id",
+            "class": "builtins.NoneType"
+          }
+        ],
+        "size": 5
+      },
+      "parent_id": 211,
+      "elapsed": 0.00004291534423828125,
+      "id": 214,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5333608960,
+        "value": "<Template template_string=\"<div class=\"col-sm-6...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/partials/brand.html",
+      "id": 215,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarPartialsBrandHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 215,
+      "elapsed": 0.00015087500000277032,
+      "id": 216,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5334976928,
+        "value": "<Template template_string=\"{% load i18n %}<na...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/checkout/nav.html",
+      "id": 217,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarCheckoutNavHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 217,
+      "elapsed": 0.00021504199997934847,
+      "id": 218,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5318009184,
+        "value": "<Template template_string=\"{% load string_filte...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/partials/alert_messages.html",
+      "id": 219,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarPartialsAlert_MessagesHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 219,
+      "elapsed": 0.0001384169999880669,
+      "id": 220,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"django_flatpage\".\"id\", \"django_flatpage\".\"url\", \"django_flatpage\".\"title\", \"django_flatpage\".\"content\", \"django_flatpage\".\"enable_comments\", \"django_flatpage\".\"template_name\", \"django_flatpage\".\"registration_required\" FROM \"django_flatpage\" INNER JOIN \"django_flatpage_sites\" ON (\"django_flatpage\".\"id\" = \"django_flatpage_sites\".\"flatpage_id\") WHERE (\"django_flatpage_sites\".\"site_id\" = 1 AND \"django_flatpage\".\"url\"::text LIKE '/order/%' AND NOT \"django_flatpage\".\"registration_required\") ORDER BY \"django_flatpage\".\"url\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 221,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 221,
+      "elapsed": 0.0013764999999921201,
+      "id": 222,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_shippingaddress\".\"id\", \"order_shippingaddress\".\"title\", \"order_shippingaddress\".\"first_name\", \"order_shippingaddress\".\"last_name\", \"order_shippingaddress\".\"line1\", \"order_shippingaddress\".\"line2\", \"order_shippingaddress\".\"line3\", \"order_shippingaddress\".\"line4\", \"order_shippingaddress\".\"state\", \"order_shippingaddress\".\"postcode\", \"order_shippingaddress\".\"country_id\", \"order_shippingaddress\".\"search_text\", \"order_shippingaddress\".\"phone_number\", \"order_shippingaddress\".\"notes\" FROM \"order_shippingaddress\" WHERE \"order_shippingaddress\".\"id\" = 20 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 223,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 223,
+      "elapsed": 0.0004968339999891214,
+      "id": 224,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396051520,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825863984,
+          "value": "'1000 AA'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "rest",
+          "object_id": 13824961536,
+          "value": "(Col(order_shippingaddress, order.ShippingAddress.postcode), <DatabaseWrapper vendor='postgresql' alias='default'>)",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13825821504,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 225,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "from_db_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 83
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396051520,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825863984,
+          "value": "'1000 AA'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 226,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 13825864304,
+        "value": "'1000 AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 226,
+      "elapsed": 0.0000019073486328125,
+      "id": 227,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825864304,
+        "value": "'1000 AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 225,
+      "elapsed": 0.00004410743713378906,
+      "id": 228,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396051520,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825864304,
+          "value": "'1000 AA'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 229,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 13825865328,
+        "value": "'1000 AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 229,
+      "elapsed": 9.5367431640625e-7,
+      "id": 230,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825844224,
+        "value": "<ShippingAddress: John Doe, Streetname, 1a, City, 1000 AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "id": 231,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "active_address_fields",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 415
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825844224,
+        "value": "<ShippingAddress: John Doe, Streetname, 1a, City, 1000 AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4392672448,
+          "value": "['salutation', 'line1', 'line2', 'line3', 'line4', 'state', 'postcode', 'country']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 8
+        }
+      ],
+      "id": 232,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "get_address_field_values",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 377
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825844224,
+        "value": "<ShippingAddress: John Doe, Streetname, 1a, City, 1000 AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4392672448,
+          "value": "['salutation', 'line1', 'line2', 'line3', 'line4', 'state', 'postcode', 'country']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 8
+        }
+      ],
+      "id": 233,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "get_field_values",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 359
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825844224,
+        "value": "<ShippingAddress: John Doe, Streetname, 1a, City, 1000 AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4390869376,
+          "value": "('title', 'first_name', 'last_name')",
+          "name": "fields",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4332562672,
+          "value": "' '",
+          "name": "separator",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 234,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "join_fields",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 395
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825844224,
+        "value": "<ShippingAddress: John Doe, Streetname, 1a, City, 1000 AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.ShippingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4390869376,
+          "value": "('title', 'first_name', 'last_name')",
+          "name": "fields",
+          "class": "builtins.tuple"
+        }
+      ],
+      "id": 235,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "get_field_values",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 359
+    },
+    {
+      "return_value": {
+        "object_id": 13825821248,
+        "value": "['', 'John', 'Doe']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 3
+      },
+      "parent_id": 235,
+      "elapsed": 0.000029087066650390625,
+      "id": 236,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825289392,
+        "value": "'John Doe'",
+        "class": "builtins.str"
+      },
+      "parent_id": 234,
+      "elapsed": 0.00017905235290527344,
+      "id": 237,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825856512,
+        "value": "['John Doe', 'Streetname', '1a', '', 'City', '', '1000 AA', 'UNITED KINGDOM']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 8
+      },
+      "parent_id": 233,
+      "elapsed": 0.00032901763916015625,
+      "id": 238,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825867264,
+        "value": "['John Doe', 'Streetname', '1a', 'City', '1000 AA', 'UNITED KINGDOM']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 6
+      },
+      "parent_id": 232,
+      "elapsed": 0.0004868507385253906,
+      "id": 239,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825867264,
+        "value": "['John Doe', 'Streetname', '1a', 'City', '1000 AA', 'UNITED KINGDOM']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 6
+      },
+      "parent_id": 231,
+      "elapsed": 0.0006577968597412109,
+      "id": 240,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"payment_source\".\"id\", \"payment_source\".\"order_id\", \"payment_source\".\"source_type_id\", \"payment_source\".\"currency\", \"payment_source\".\"amount_allocated\", \"payment_source\".\"amount_debited\", \"payment_source\".\"amount_refunded\", \"payment_source\".\"reference\", \"payment_source\".\"label\" FROM \"payment_source\" WHERE \"payment_source\".\"order_id\" = 86 ORDER BY \"payment_source\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 241,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 241,
+      "elapsed": 0.00046095799999079645,
+      "id": 242,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_billingaddress\".\"id\", \"order_billingaddress\".\"title\", \"order_billingaddress\".\"first_name\", \"order_billingaddress\".\"last_name\", \"order_billingaddress\".\"line1\", \"order_billingaddress\".\"line2\", \"order_billingaddress\".\"line3\", \"order_billingaddress\".\"line4\", \"order_billingaddress\".\"state\", \"order_billingaddress\".\"postcode\", \"order_billingaddress\".\"country_id\", \"order_billingaddress\".\"search_text\" FROM \"order_billingaddress\" WHERE \"order_billingaddress\".\"id\" = 5 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 243,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 243,
+      "elapsed": 0.00041070800000397867,
+      "id": 244,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396075184,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825900400,
+          "value": "'1000AA'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "rest",
+          "object_id": 13825105600,
+          "value": "(Col(order_billingaddress, order.BillingAddress.postcode), <DatabaseWrapper vendor='postgresql' alias='default'>)",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13825896896,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 245,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "from_db_value",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 83
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396075184,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825900400,
+          "value": "'1000AA'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 246,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 13825904752,
+        "value": "'1000AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 246,
+      "elapsed": 9.5367431640625e-7,
+      "id": 247,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825904752,
+        "value": "'1000AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 245,
+      "elapsed": 0.00004220008850097656,
+      "id": 248,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4396075184,
+        "value": "<oscar.models.fields.UppercaseCharField: postcode>",
+        "name": "self",
+        "class": "oscar.models.fields.UppercaseCharField"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825904752,
+          "value": "'1000AA'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 249,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.models.fields.UppercaseCharField",
+      "method_id": "to_python",
+      "path": "src/oscar/models/fields/__init__.py",
+      "lineno": 86
+    },
+    {
+      "return_value": {
+        "object_id": 13825905712,
+        "value": "'1000AA'",
+        "class": "builtins.str"
+      },
+      "parent_id": 249,
+      "elapsed": 9.5367431640625e-7,
+      "id": 250,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825880704,
+        "value": "<BillingAddress: John Doe, Streetname, 1a, City, 1000AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.BillingAddress"
+      },
+      "id": 251,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "active_address_fields",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 415
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825880704,
+        "value": "<BillingAddress: John Doe, Streetname, 1a, City, 1000AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.BillingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4392672448,
+          "value": "['salutation', 'line1', 'line2', 'line3', 'line4', 'state', 'postcode', 'country']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 8
+        }
+      ],
+      "id": 252,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "get_address_field_values",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 377
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825880704,
+        "value": "<BillingAddress: John Doe, Streetname, 1a, City, 1000AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.BillingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4392672448,
+          "value": "['salutation', 'line1', 'line2', 'line3', 'line4', 'state', 'postcode', 'country']",
+          "name": "fields",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            },
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 8
+        }
+      ],
+      "id": 253,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "get_field_values",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 359
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825880704,
+        "value": "<BillingAddress: John Doe, Streetname, 1a, City, 1000AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.BillingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4390869376,
+          "value": "('title', 'first_name', 'last_name')",
+          "name": "fields",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4332562672,
+          "value": "' '",
+          "name": "separator",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 254,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "join_fields",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 395
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825880704,
+        "value": "<BillingAddress: John Doe, Streetname, 1a, City, 1000AA, UNITED KINGDOM>",
+        "name": "self",
+        "class": "oscar.apps.order.models.BillingAddress"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4390869376,
+          "value": "('title', 'first_name', 'last_name')",
+          "name": "fields",
+          "class": "builtins.tuple"
+        }
+      ],
+      "id": 255,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.address.abstract_models.AbstractAddress",
+      "method_id": "get_field_values",
+      "path": "src/oscar/apps/address/abstract_models.py",
+      "lineno": 359
+    },
+    {
+      "return_value": {
+        "object_id": 13825822144,
+        "value": "['', 'John', 'Doe']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 3
+      },
+      "parent_id": 255,
+      "elapsed": 0.000025987625122070312,
+      "id": 256,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825931440,
+        "value": "'John Doe'",
+        "class": "builtins.str"
+      },
+      "parent_id": 254,
+      "elapsed": 0.00020503997802734375,
+      "id": 257,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825856704,
+        "value": "['John Doe', 'Streetname', '1a', '', 'City', '', '1000AA', 'UNITED KINGDOM']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 8
+      },
+      "parent_id": 253,
+      "elapsed": 0.0003528594970703125,
+      "id": 258,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825907328,
+        "value": "['John Doe', 'Streetname', '1a', 'City', '1000AA', 'UNITED KINGDOM']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 6
+      },
+      "parent_id": 252,
+      "elapsed": 0.0005090236663818359,
+      "id": 259,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13825907328,
+        "value": "['John Doe', 'Streetname', '1a', 'City', '1000AA', 'UNITED KINGDOM']",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          },
+          {
+            "class": "builtins.str"
+          }
+        ],
+        "size": 6
+      },
+      "parent_id": 251,
+      "elapsed": 0.0006809234619140625,
+      "id": 260,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_line\".\"id\", \"order_line\".\"order_id\", \"order_line\".\"partner_id\", \"order_line\".\"partner_name\", \"order_line\".\"partner_sku\", \"order_line\".\"partner_line_reference\", \"order_line\".\"partner_line_notes\", \"order_line\".\"stockrecord_id\", \"order_line\".\"product_id\", \"order_line\".\"title\", \"order_line\".\"upc\", \"order_line\".\"quantity\", \"order_line\".\"line_price_incl_tax\", \"order_line\".\"line_price_excl_tax\", \"order_line\".\"line_price_before_discounts_incl_tax\", \"order_line\".\"line_price_before_discounts_excl_tax\", \"order_line\".\"unit_price_incl_tax\", \"order_line\".\"unit_price_excl_tax\", \"order_line\".\"tax_code\", \"order_line\".\"status\" FROM \"order_line\" WHERE \"order_line\".\"order_id\" = 86 ORDER BY \"order_line\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 261,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 261,
+      "elapsed": 0.00046479200000248966,
+      "id": 262,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5560017152,
+        "value": "<Template template_string=\"{% load i18n %}{% l...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/order/partials/basket_totals.html",
+      "id": 263,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarOrderPartialsBasket_TotalsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_orderdiscount\".\"id\", \"order_orderdiscount\".\"order_id\", \"order_orderdiscount\".\"category\", \"order_orderdiscount\".\"offer_id\", \"order_orderdiscount\".\"offer_name\", \"order_orderdiscount\".\"voucher_id\", \"order_orderdiscount\".\"voucher_code\", \"order_orderdiscount\".\"frequency\", \"order_orderdiscount\".\"amount\", \"order_orderdiscount\".\"message\" FROM \"order_orderdiscount\" WHERE (\"order_orderdiscount\".\"order_id\" = 86 AND \"order_orderdiscount\".\"category\" = 'Basket') ORDER BY \"order_orderdiscount\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 264,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 264,
+      "elapsed": 0.0004899170000101094,
+      "id": 265,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_surcharge\".\"id\", \"order_surcharge\".\"order_id\", \"order_surcharge\".\"name\", \"order_surcharge\".\"code\", \"order_surcharge\".\"incl_tax\", \"order_surcharge\".\"excl_tax\", \"order_surcharge\".\"tax_code\" FROM \"order_surcharge\" WHERE \"order_surcharge\".\"order_id\" = 86 ORDER BY \"order_surcharge\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 266,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 266,
+      "elapsed": 0.0004152500000031978,
+      "id": 267,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_orderdiscount\".\"id\", \"order_orderdiscount\".\"order_id\", \"order_orderdiscount\".\"category\", \"order_orderdiscount\".\"offer_id\", \"order_orderdiscount\".\"offer_name\", \"order_orderdiscount\".\"voucher_id\", \"order_orderdiscount\".\"voucher_code\", \"order_orderdiscount\".\"frequency\", \"order_orderdiscount\".\"amount\", \"order_orderdiscount\".\"message\" FROM \"order_orderdiscount\" WHERE (\"order_orderdiscount\".\"order_id\" = 86 AND \"order_orderdiscount\".\"category\" = 'Shipping') ORDER BY \"order_orderdiscount\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 268,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 268,
+      "elapsed": 0.00048708400001373775,
+      "id": 269,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_surcharge\".\"id\", \"order_surcharge\".\"order_id\", \"order_surcharge\".\"name\", \"order_surcharge\".\"code\", \"order_surcharge\".\"incl_tax\", \"order_surcharge\".\"excl_tax\", \"order_surcharge\".\"tax_code\" FROM \"order_surcharge\" WHERE \"order_surcharge\".\"order_id\" = 86 ORDER BY \"order_surcharge\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 270,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 270,
+      "elapsed": 0.00038424999999620013,
+      "id": 271,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"order_orderdiscount\".\"id\", \"order_orderdiscount\".\"order_id\", \"order_orderdiscount\".\"category\", \"order_orderdiscount\".\"offer_id\", \"order_orderdiscount\".\"offer_name\", \"order_orderdiscount\".\"voucher_id\", \"order_orderdiscount\".\"voucher_code\", \"order_orderdiscount\".\"frequency\", \"order_orderdiscount\".\"amount\", \"order_orderdiscount\".\"message\" FROM \"order_orderdiscount\" WHERE (\"order_orderdiscount\".\"order_id\" = 86 AND \"order_orderdiscount\".\"category\" = 'Deferred') ORDER BY \"order_orderdiscount\".\"id\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 272,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 272,
+      "elapsed": 0.00044133299999771225,
+      "id": 273,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 263,
+      "elapsed": 0.004210666999995283,
+      "id": 274,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825432208,
+        "value": "<Order: #100390>",
+        "name": "self",
+        "class": "oscar.apps.order.models.Order"
+      },
+      "id": 275,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.order.abstract_models.AbstractOrder",
+      "method_id": "verification_hash",
+      "path": "src/oscar/apps/order/abstract_models.py",
+      "lineno": 341
+    },
+    {
+      "return_value": {
+        "object_id": 13825912032,
+        "value": "'100390:-bOSUqISiRhDSLpupYxWjGvIyVPIYroomnUsX4VGMfM'",
+        "class": "builtins.str"
+      },
+      "parent_id": 275,
+      "elapsed": 0.00003409385681152344,
+      "id": 276,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5336368704,
+        "value": "<Template template_string=\"<footer class=\"conta...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/partials/footer_checkout.html",
+      "id": 277,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarPartialsFooter_CheckoutHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 277,
+      "elapsed": 0.00010829199999307093,
+      "id": 278,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 204,
+      "elapsed": 0.015275833000004013,
+      "id": 279,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13825014176,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x33808f9a0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13825062464,
+          "value": "<WSGIRequest: GET '/checkout/thank-you/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13825408784,
+          "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+          "name": "response",
+          "class": "django.template.response.TemplateResponse"
+        }
+      ],
+      "id": 280,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 63
+    },
+    {
+      "return_value": {
+        "object_id": 13825408784,
+        "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.template.response.TemplateResponse"
+      },
+      "parent_id": 280,
+      "elapsed": 0.0000019073486328125,
+      "id": 281,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_response": {
+        "status_code": 200,
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Vary": "Cookie",
+          "Content-Length": "8135"
+        }
+      },
+      "parent_id": 189,
+      "elapsed": 0.017688749999990705,
+      "id": 282,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Thank you view test case",
+    "recording": {
+      "defined_class": "tests.integration.checkout.test_views.ThankYouViewTestCase",
+      "method_id": "test_analytics_event_triggered_only_on_first_view"
+    },
+    "source_location": "tests/integration/checkout/test_views.py:9",
+    "name": "Thank you view test case analytics event triggered only on first view",
+    "feature": "Analytics event triggered only on first view",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "partner",
+              "type": "package",
+              "children": [
+                {
+                  "name": "strategy",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Selector",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "strategy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/strategy.py:37"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "basket",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractBasket",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "_get_total",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/abstract_models.py:435"
+                        },
+                        {
+                          "name": "all_lines",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/abstract_models.py:130"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "middleware",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "BasketMiddleware",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "process_template_response",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/middleware.py:112"
+                        },
+                        {
+                          "name": "process_response",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/middleware.py:63"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "address",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractAddress",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/address/abstract_models.py:277"
+                        },
+                        {
+                          "name": "_update_search_text",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/address/abstract_models.py:326"
+                        },
+                        {
+                          "name": "join_fields",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/address/abstract_models.py:395"
+                        },
+                        {
+                          "name": "get_field_values",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/address/abstract_models.py:359"
+                        },
+                        {
+                          "name": "active_address_fields",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/address/abstract_models.py:415"
+                        },
+                        {
+                          "name": "get_address_field_values",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/address/abstract_models.py:377"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "order",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractOrder",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:382"
+                        },
+                        {
+                          "name": "set_date_placed_default",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:378"
+                        },
+                        {
+                          "name": "verification_hash",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/order/abstract_models.py:341"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "checkout",
+              "type": "package",
+              "children": [
+                {
+                  "name": "views",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "ThankYouView",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/checkout/views.py:721"
+                        },
+                        {
+                          "name": "get_object",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/checkout/views.py:728"
+                        },
+                        {
+                          "name": "get_context_data",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/checkout/views.py:746"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "context_processors",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "checkout",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/checkout/context_processors.py:4"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "search",
+              "type": "package",
+              "children": [
+                {
+                  "name": "context_processors",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "search_form",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/search/context_processors.py:6"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "communication",
+              "type": "package",
+              "children": [
+                {
+                  "name": "notifications",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "context_processors",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "notifications",
+                          "type": "function",
+                          "static": true,
+                          "location": "src/oscar/apps/communication/notifications/context_processors.py:6"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "test",
+          "type": "package",
+          "children": [
+            {
+              "name": "factories",
+              "type": "package",
+              "children": [
+                {
+                  "name": "utils",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "tax_subtract",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/test/factories/utils.py:5"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "models",
+          "type": "package",
+          "children": [
+            {
+              "name": "fields",
+              "type": "package",
+              "children": [
+                {
+                  "name": "UppercaseCharField",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "to_python",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/models/fields/__init__.py:86"
+                    },
+                    {
+                      "name": "from_db_value",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/models/fields/__init__.py:83"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "utils",
+              "type": "class",
+              "children": [
+                {
+                  "name": "get_default_currency",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:159"
+                }
+              ]
+            },
+            {
+              "name": "context_processors",
+              "type": "class",
+              "children": [
+                {
+                  "name": "metadata",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/context_processors.py:19"
+                },
+                {
+                  "name": "strip_language_code",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/context_processors.py:6"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"basket_basket\" (\"owner_id\", \"status\", \"date_created\", \"date_merged\", \"date_submitted\") VALUES (NULL, 'Open', '2024-07-22T17:28:05.775048+00:00'::timestamptz, NULL, NULL) RETURNING \"basket_basket\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"basket_basket\" SET \"owner_id\" = NULL, \"status\" = 'Open', \"date_created\" = '2024-07-22T17:28:05.775048+00:00'::timestamptz, \"date_merged\" = NULL, \"date_submitted\" = NULL WHERE \"basket_basket\".\"id\" = 390"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\", \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\", \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"basket_line\" INNER JOIN \"catalogue_product\" ON (\"basket_line\".\"product_id\" = \"catalogue_product\".\"id\") INNER JOIN \"partner_stockrecord\" ON (\"basket_line\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE \"basket_line\".\"basket_id\" = 390 ORDER BY \"basket_line\".\"id\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"address_country\".\"iso_3166_1_a2\", \"address_country\".\"iso_3166_1_a3\", \"address_country\".\"iso_3166_1_numeric\", \"address_country\".\"printable_name\", \"address_country\".\"name\", \"address_country\".\"display_order\", \"address_country\".\"is_shipping_country\" FROM \"address_country\" WHERE \"address_country\".\"iso_3166_1_a2\" = 'GB' LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SAVEPOINT \"s8669432832_x2846\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"address_country\" (\"iso_3166_1_a2\", \"iso_3166_1_a3\", \"iso_3166_1_numeric\", \"printable_name\", \"name\", \"display_order\", \"is_shipping_country\") VALUES ('GB', '', '', 'UNITED KINGDOM', '', 0, false)"
+        },
+        {
+          "type": "query",
+          "name": "RELEASE SAVEPOINT \"s8669432832_x2846\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"order_billingaddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\") VALUES ('', 'John', 'Doe', 'Streetname', '1a', '', 'City', '', '1000AA', 'GB', 'John Doe Streetname 1a City 1000AA UNITED KINGDOM') RETURNING \"order_billingaddress\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"order_shippingaddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\", \"phone_number\", \"notes\") VALUES ('', 'John', 'Doe', 'Streetname', '1a', '', 'City', '', '1000 AA', 'GB', 'John Doe Streetname 1a City 1000 AA UNITED KINGDOM', '+12125555555', '') RETURNING \"order_shippingaddress\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"order_order\" (\"number\", \"site_id\", \"basket_id\", \"user_id\", \"billing_address_id\", \"currency\", \"total_incl_tax\", \"total_excl_tax\", \"shipping_incl_tax\", \"shipping_excl_tax\", \"shipping_tax_code\", \"shipping_address_id\", \"shipping_method\", \"shipping_code\", \"status\", \"guest_email\", \"date_placed\") VALUES ('100390', 1, 390, NULL, 5, 'GBP', 0.00, 0.00, 4.95, 4.09, NULL, 20, '', 'delivery', 'A', 'j.doe@example.com', '2024-07-22T17:28:05.789070+00:00'::timestamptz) RETURNING \"order_order\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"order_order\" SET \"number\" = '100390', \"site_id\" = 1, \"basket_id\" = 390, \"user_id\" = NULL, \"billing_address_id\" = 5, \"currency\" = 'GBP', \"total_incl_tax\" = 0.00, \"total_excl_tax\" = 0.00, \"shipping_incl_tax\" = 4.95, \"shipping_excl_tax\" = 4.09, \"shipping_tax_code\" = NULL, \"shipping_address_id\" = 20, \"shipping_method\" = '', \"shipping_code\" = 'delivery', \"status\" = 'A', \"guest_email\" = 'j.doe@example.com', \"date_placed\" = '2024-07-22T17:28:05.789070+00:00'::timestamptz WHERE \"order_order\".\"id\" = 86"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = 'f437pj06tw5cx1t8ddbwxqy29zoazfjg' LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SAVEPOINT \"s8669432832_x2847\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('f437pj06tw5cx1t8ddbwxqy29zoazfjg', 'e30:1sVwpR:8W3ACAUj7O8cw8JO8ehrO0o8eNp-RFTq1-gfsubhQXU', '2024-08-05T17:28:05.791514+00:00'::timestamptz)"
+        },
+        {
+          "type": "query",
+          "name": "RELEASE SAVEPOINT \"s8669432832_x2847\""
+        },
+        {
+          "type": "query",
+          "name": "SAVEPOINT \"s8669432832_x2848\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"django_session\" SET \"session_data\" = 'eyJjaGVja291dF9vcmRlcl9pZCI6ODZ9:1sVwpR:zfLm1lIjs3S86AQ8wcpOutNJSQT8J5vD_qqYMAwaJRs', \"expire_date\" = '2024-08-05T17:28:05.792756+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = 'f437pj06tw5cx1t8ddbwxqy29zoazfjg'"
+        },
+        {
+          "type": "query",
+          "name": "RELEASE SAVEPOINT \"s8669432832_x2848\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2024-07-22T17:28:05.794445+00:00'::timestamptz AND \"django_session\".\"session_key\" = 'f437pj06tw5cx1t8ddbwxqy29zoazfjg') LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"order_order\".\"id\", \"order_order\".\"number\", \"order_order\".\"site_id\", \"order_order\".\"basket_id\", \"order_order\".\"user_id\", \"order_order\".\"billing_address_id\", \"order_order\".\"currency\", \"order_order\".\"total_incl_tax\", \"order_order\".\"total_excl_tax\", \"order_order\".\"shipping_incl_tax\", \"order_order\".\"shipping_excl_tax\", \"order_order\".\"shipping_tax_code\", \"order_order\".\"shipping_address_id\", \"order_order\".\"shipping_method\", \"order_order\".\"shipping_code\", \"order_order\".\"status\", \"order_order\".\"guest_email\", \"order_order\".\"date_placed\" FROM \"order_order\" WHERE \"order_order\".\"id\" = 86 ORDER BY \"order_order\".\"date_placed\" DESC LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"django_site\".\"id\", \"django_site\".\"domain\", \"django_site\".\"name\" FROM \"django_site\" WHERE \"django_site\".\"id\" = 1 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"django_flatpage\".\"id\", \"django_flatpage\".\"url\", \"django_flatpage\".\"title\", \"django_flatpage\".\"content\", \"django_flatpage\".\"enable_comments\", \"django_flatpage\".\"template_name\", \"django_flatpage\".\"registration_required\" FROM \"django_flatpage\" INNER JOIN \"django_flatpage_sites\" ON (\"django_flatpage\".\"id\" = \"django_flatpage_sites\".\"flatpage_id\") WHERE (\"django_flatpage_sites\".\"site_id\" = 1 AND \"django_flatpage\".\"url\"::text LIKE '/order/%' AND NOT \"django_flatpage\".\"registration_required\") ORDER BY \"django_flatpage\".\"url\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"order_shippingaddress\".\"id\", \"order_shippingaddress\".\"title\", \"order_shippingaddress\".\"first_name\", \"order_shippingaddress\".\"last_name\", \"order_shippingaddress\".\"line1\", \"order_shippingaddress\".\"line2\", \"order_shippingaddress\".\"line3\", \"order_shippingaddress\".\"line4\", \"order_shippingaddress\".\"state\", \"order_shippingaddress\".\"postcode\", \"order_shippingaddress\".\"country_id\", \"order_shippingaddress\".\"search_text\", \"order_shippingaddress\".\"phone_number\", \"order_shippingaddress\".\"notes\" FROM \"order_shippingaddress\" WHERE \"order_shippingaddress\".\"id\" = 20 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"payment_source\".\"id\", \"payment_source\".\"order_id\", \"payment_source\".\"source_type_id\", \"payment_source\".\"currency\", \"payment_source\".\"amount_allocated\", \"payment_source\".\"amount_debited\", \"payment_source\".\"amount_refunded\", \"payment_source\".\"reference\", \"payment_source\".\"label\" FROM \"payment_source\" WHERE \"payment_source\".\"order_id\" = 86 ORDER BY \"payment_source\".\"id\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"order_billingaddress\".\"id\", \"order_billingaddress\".\"title\", \"order_billingaddress\".\"first_name\", \"order_billingaddress\".\"last_name\", \"order_billingaddress\".\"line1\", \"order_billingaddress\".\"line2\", \"order_billingaddress\".\"line3\", \"order_billingaddress\".\"line4\", \"order_billingaddress\".\"state\", \"order_billingaddress\".\"postcode\", \"order_billingaddress\".\"country_id\", \"order_billingaddress\".\"search_text\" FROM \"order_billingaddress\" WHERE \"order_billingaddress\".\"id\" = 5 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"order_line\".\"id\", \"order_line\".\"order_id\", \"order_line\".\"partner_id\", \"order_line\".\"partner_name\", \"order_line\".\"partner_sku\", \"order_line\".\"partner_line_reference\", \"order_line\".\"partner_line_notes\", \"order_line\".\"stockrecord_id\", \"order_line\".\"product_id\", \"order_line\".\"title\", \"order_line\".\"upc\", \"order_line\".\"quantity\", \"order_line\".\"line_price_incl_tax\", \"order_line\".\"line_price_excl_tax\", \"order_line\".\"line_price_before_discounts_incl_tax\", \"order_line\".\"line_price_before_discounts_excl_tax\", \"order_line\".\"unit_price_incl_tax\", \"order_line\".\"unit_price_excl_tax\", \"order_line\".\"tax_code\", \"order_line\".\"status\" FROM \"order_line\" WHERE \"order_line\".\"order_id\" = 86 ORDER BY \"order_line\".\"id\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"order_orderdiscount\".\"id\", \"order_orderdiscount\".\"order_id\", \"order_orderdiscount\".\"category\", \"order_orderdiscount\".\"offer_id\", \"order_orderdiscount\".\"offer_name\", \"order_orderdiscount\".\"voucher_id\", \"order_orderdiscount\".\"voucher_code\", \"order_orderdiscount\".\"frequency\", \"order_orderdiscount\".\"amount\", \"order_orderdiscount\".\"message\" FROM \"order_orderdiscount\" WHERE (\"order_orderdiscount\".\"order_id\" = 86 AND \"order_orderdiscount\".\"category\" = 'Basket') ORDER BY \"order_orderdiscount\".\"id\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"order_surcharge\".\"id\", \"order_surcharge\".\"order_id\", \"order_surcharge\".\"name\", \"order_surcharge\".\"code\", \"order_surcharge\".\"incl_tax\", \"order_surcharge\".\"excl_tax\", \"order_surcharge\".\"tax_code\" FROM \"order_surcharge\" WHERE \"order_surcharge\".\"order_id\" = 86 ORDER BY \"order_surcharge\".\"id\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"order_orderdiscount\".\"id\", \"order_orderdiscount\".\"order_id\", \"order_orderdiscount\".\"category\", \"order_orderdiscount\".\"offer_id\", \"order_orderdiscount\".\"offer_name\", \"order_orderdiscount\".\"voucher_id\", \"order_orderdiscount\".\"voucher_code\", \"order_orderdiscount\".\"frequency\", \"order_orderdiscount\".\"amount\", \"order_orderdiscount\".\"message\" FROM \"order_orderdiscount\" WHERE (\"order_orderdiscount\".\"order_id\" = 86 AND \"order_orderdiscount\".\"category\" = 'Shipping') ORDER BY \"order_orderdiscount\".\"id\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"order_orderdiscount\".\"id\", \"order_orderdiscount\".\"order_id\", \"order_orderdiscount\".\"category\", \"order_orderdiscount\".\"offer_id\", \"order_orderdiscount\".\"offer_name\", \"order_orderdiscount\".\"voucher_id\", \"order_orderdiscount\".\"voucher_code\", \"order_orderdiscount\".\"frequency\", \"order_orderdiscount\".\"amount\", \"order_orderdiscount\".\"message\" FROM \"order_orderdiscount\" WHERE (\"order_orderdiscount\".\"order_id\" = 86 AND \"order_orderdiscount\".\"category\" = 'Deferred') ORDER BY \"order_orderdiscount\".\"id\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SAVEPOINT \"s8669432832_x2849\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"django_session\" SET \"session_data\" = 'eyJjaGVja291dF9vcmRlcl9pZCI6ODYsIm9yZGVyXzg2X3RoYW5reW91X3ZpZXdlZCI6dHJ1ZX0:1sVwpR:9XXREAPuKs0kI7JHrHqurGVxhLlWp4FFZR6F9Hmjl1Y', \"expire_date\" = '2024-08-05T17:28:05.816287+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = 'f437pj06tw5cx1t8ddbwxqy29zoazfjg'"
+        },
+        {
+          "type": "query",
+          "name": "RELEASE SAVEPOINT \"s8669432832_x2849\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2024-07-22T17:28:05.818218+00:00'::timestamptz AND \"django_session\".\"session_key\" = 'f437pj06tw5cx1t8ddbwxqy29zoazfjg') LIMIT 21"
+        }
+      ]
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /checkout/thank-you/"
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarCheckoutThank_YouHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarPartialsBrandHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarCheckoutNavHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarPartialsAlert_MessagesHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarOrderPartialsBasket_TotalsHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarPartialsFooter_CheckoutHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarPartialsGoogle_Analytics_TransactionHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    }
+  ]
+}

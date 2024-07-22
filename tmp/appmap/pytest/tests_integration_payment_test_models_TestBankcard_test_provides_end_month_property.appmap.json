@@ -1,0 +1,160 @@
+{
+  "events": [
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4331234032,
+          "value": "''",
+          "name": "card_number",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.payment.bankcards",
+      "method_id": "bankcard_type",
+      "path": "src/oscar/apps/payment/bankcards.py",
+      "lineno": 67
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0000069141387939453125,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 14026210800,
+        "value": "<Bankcard: Unknown card type  (Expires: 01/10)>",
+        "name": "self",
+        "class": "oscar.apps.payment.models.Bankcard"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4395503216,
+          "value": "'%m/%y'",
+          "name": "format",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.payment.abstract_models.AbstractBankcard",
+      "method_id": "expiry_month",
+      "path": "src/oscar/apps/payment/abstract_models.py",
+      "lineno": 340
+    },
+    {
+      "return_value": {
+        "object_id": 14026192560,
+        "value": "'01/10'",
+        "class": "builtins.str"
+      },
+      "parent_id": 3,
+      "elapsed": 0.0000040531158447265625,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      }
+    ],
+    "feature_group": "Bankcard",
+    "recording": {
+      "defined_class": "tests.integration.payment.test_models.TestBankcard",
+      "method_id": "test_provides_end_month_property"
+    },
+    "source_location": "tests/integration/payment/test_models.py:25",
+    "name": "Bankcard provides end month property",
+    "feature": "Provides end month property",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "payment",
+              "type": "package",
+              "children": [
+                {
+                  "name": "bankcards",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "bankcard_type",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/payment/bankcards.py:67"
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractBankcard",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "expiry_month",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/payment/abstract_models.py:340"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

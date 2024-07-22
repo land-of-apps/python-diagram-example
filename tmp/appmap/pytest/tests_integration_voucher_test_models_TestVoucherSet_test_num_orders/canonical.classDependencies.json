@@ -1,0 +1,862 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('', NULL, false, 'example_40@example.com', 'joseph', 'winterbottom', false, true, '2024-07-22T17:25:40.450323+00:00'::timestamptz, 'the_j_meister nummer 40', '') RETURNING \"myauth_user\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"offer_conditionaloffer\" (\"name\", \"slug\", \"description\", \"offer_type\", \"exclusive\", \"status\", \"condition_id\", \"benefit_id\", \"priority\", \"start_datetime\", \"end_datetime\", \"max_global_applications\", \"max_user_applications\", \"max_basket_applications\", \"max_discount\", \"total_discount\", \"num_applications\", \"num_orders\", \"redirect_url\", \"date_created\") VALUES ('Test offer 96', 'test-offer-96', '', 'Voucher', true, 'Open', 97, 97, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0.00, 0, 0, '', '2024-07-22T17:25:40.216302+00:00'::timestamptz) RETURNING \"offer_conditionaloffer\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"order_billingaddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\") VALUES ('', 'John', 'Doe', 'Streetname', '1a', '', 'City', '', '1000AA', 'GB', 'John Doe Streetname 1a City 1000AA UNITED KINGDOM') RETURNING \"order_billingaddress\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"order_order\" (\"number\", \"site_id\", \"basket_id\", \"user_id\", \"billing_address_id\", \"currency\", \"total_incl_tax\", \"total_excl_tax\", \"shipping_incl_tax\", \"shipping_excl_tax\", \"shipping_tax_code\", \"shipping_address_id\", \"shipping_method\", \"shipping_code\", \"status\", \"guest_email\", \"date_placed\") VALUES ('100045', 1, 45, NULL, 1, 'GBP', 0.00, 0.00, 4.95, 4.09, NULL, 1, '', 'delivery', 'A', 'j.doe@example.com', '2024-07-22T17:25:40.491022+00:00'::timestamptz) RETURNING \"order_order\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"order_shippingaddress\" (\"title\", \"first_name\", \"last_name\", \"line1\", \"line2\", \"line3\", \"line4\", \"state\", \"postcode\", \"country_id\", \"search_text\", \"phone_number\", \"notes\") VALUES ('', 'John', 'Doe', 'Streetname', '1a', '', 'City', '', '1000 AA', 'GB', 'John Doe Streetname 1a City 1000 AA UNITED KINGDOM', '+12125555555', '') RETURNING \"order_shippingaddress\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 1', 'JV4A-DY7U-89G7', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.219080+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 10', 'LTGQ-MWBQ-MLJG', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.242412+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 100', 'XED7-KUY7-5HWD', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.446827+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 11', 'KADK-KA8N-YCRV', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.245229+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 12', 'K6MY-Z76P-RA5F', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.247191+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 13', 'HW8N-2GZZ-4HFL', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.249183+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 14', 'MGBP-CSLP-X228', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.251309+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 15', 'GFGY-UX8Z-FVJY', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.253444+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 16', '6H5E-TW99-URTB', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.255321+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 17', 'Z5XG-G92W-Y3MN', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.257197+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 18', '52KJ-Q4TD-BMC9', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.259251+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 19', 'VEXM-E3YN-PUAU', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.264648+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 2', '4AL3-MDQX-XHTR', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.221823+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 20', 'JKNH-7BLD-7Z6P', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.267064+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 21', 'UY4R-3JE8-KS23', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.269006+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 22', 'D6JT-93VP-L386', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.270909+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 23', '5SH3-4AUH-PSAQ', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.272898+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 24', 'MM6C-ZZYG-NQSK', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.274727+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 25', 'NNW3-DLMY-ZXBC', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.276567+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 26', 'C6AA-FWCT-P9CS', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.278480+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 27', '6LDV-JTXN-3M6E', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.280160+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 28', 'K34Y-MA6G-T29G', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.281990+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 29', '8DRU-XZTG-T66T', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.283796+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 3', '6LWB-9839-83RZ', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.225066+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 30', 'RF53-8MYD-DV85', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.285434+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 31', 'FHMA-LGH4-V5ZA', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.287409+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 32', '54TT-FYGD-R5Y4', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.289072+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 33', 'XKNU-7NWK-RHSE', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.290632+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 34', 'ZFFE-KYJA-E36X', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.292503+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 35', '5HEJ-HHND-JMGZ', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.294348+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 36', 'T23F-US92-V7FR', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.296280+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 37', 'MYWG-XT32-J3BK', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.298036+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 38', 'AVBW-U7PH-G76L', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.299796+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 39', 'YHB8-87DW-BHRY', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.301527+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 4', 'E48U-Q7N7-5AR8', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.227454+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 40', 'WC9E-7YMM-3RJX', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.303990+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 41', 'G9YB-C3H5-7DYX', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.307485+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 42', '7G66-CXZX-GC2K', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.309359+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 43', 'X8DS-ZGRQ-4RK3', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.311130+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 44', 'K8SQ-X4BB-DN2A', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.312943+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 45', 'EQ9X-KQ45-748G', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.314820+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 46', '4UYC-MDRF-KC6B', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.316695+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 47', 'N996-D2B6-FQ6F', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.318441+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 48', '92Y4-RUQ3-NUTU', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.320376+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 49', '4556-87MY-NQDA', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.322118+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 5', 'LJRL-D55K-K97A', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.229841+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 50', 'JLDB-FDDL-K7UJ', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.323838+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 51', '8M24-5DLR-X5BW', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.326049+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 52', 'FKFF-MWS5-S6K6', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.328188+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 53', '3ENY-LMTB-S8JV', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.330415+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 54', 'Z3ZH-Q4EA-G8HK', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.332372+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 55', 'T5X7-NDXQ-QS5W', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.334405+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 56', 'N94R-ESWZ-PU8U', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.336508+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 57', 'R7EN-DSJE-3XSV', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.339267+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 58', 'WEY9-LWTW-4THP', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.341278+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 59', 'FBVL-5EFL-4RS5', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.343312+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 6', 'Q4VA-5YAT-RADR', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.231864+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 60', '76KC-57CQ-XZ7P', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.345609+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 61', 'JJN4-NVV4-9BXW', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.347706+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 62', '4DZC-M4A7-JRRH', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.349651+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 63', '38DM-T5GA-4ZG6', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.351727+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 64', '4F2C-69SH-RA28', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.353892+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 65', 'BA84-5LBC-WT3E', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.356424+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 66', 'S54C-JG35-RUUZ', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.358604+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 67', 'DNUQ-6Q9T-XGHL', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.360670+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 68', '2DMJ-JQ32-MN6Q', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.362831+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 69', 'EFNH-FB2K-UJFB', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.364786+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 7', 'AAKP-5GTH-T5EJ', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.235690+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 70', 'SPRX-7YXJ-ZAUB', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.367509+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 71', 'NB3E-ZNPP-RYGH', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.369711+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 72', 'TJDD-3BC8-3RFG', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.371854+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 73', '4QMR-RYZ2-AVMY', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.373954+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 74', 'T4NV-F6LW-RSL2', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.375959+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 75', 'NBJZ-JQXS-Z7XF', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.378328+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 76', '2JU6-JV6U-U3FF', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.380512+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 77', 'VKNY-FDR6-GPMJ', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.382841+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 78', 'JD9Z-BAY7-RVQV', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.384748+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 79', 'YTD9-X6LG-EY2E', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.387175+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 8', '4XZA-XC73-3A5N', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.237918+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 80', 'K7KA-5HR3-WCWW', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.389688+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 81', 'RTG2-GLH3-YW7V', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.393101+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 82', 'EETY-S9A4-6H77', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.396614+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 83', 'Y49F-4FBB-CCKX', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.399320+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 84', 'VGJ5-LVGS-9ZKD', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.402800+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 85', 'YSPG-4LGP-NPPX', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.405204+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 86', 'CBYM-VMRS-MGW5', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.407287+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 87', '35SA-VHEE-8BTB', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.409249+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 88', 'YZJ8-L4TE-5A64', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.411377+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 89', '68WW-WA9C-EFWJ', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.413736+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 9', '9PEM-LNDD-2KQY', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.240235+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 90', 'YR45-UJQ5-AGDC', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.415953+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 91', '3TR8-5H3Q-4QMH', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.417951+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 92', 'GEUQ-TV8W-742D', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.420431+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 93', 'WDQZ-E8NK-KXQB', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.422819+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 94', '3836-R9BA-KKU7', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.425621+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 95', '885S-RDYE-VZHY', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.427633+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 96', 'P3SD-TPPH-CFNJ', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.429888+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 97', 'BYQX-KA2R-Q2QU', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.432004+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 98', 'UEZE-RUGR-ZMKP', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.434437+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 41 - 99', 'QYDN-9DZC-RHAR', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 44, '2024-07-22T17:25:40.439110+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucherapplication\" (\"voucher_id\", \"user_id\", \"order_id\", \"date_created\") VALUES (3419, 41, 1, '2024-07-22T17:25:40.496735+00:00'::timestamptz) RETURNING \"voucher_voucherapplication\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '2DMJ-JQ32-MN6Q' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '2JU6-JV6U-U3FF' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '35SA-VHEE-8BTB' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '3836-R9BA-KKU7' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '38DM-T5GA-4ZG6' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '3ENY-LMTB-S8JV' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '3TR8-5H3Q-4QMH' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '4556-87MY-NQDA' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '4AL3-MDQX-XHTR' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '4DZC-M4A7-JRRH' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '4F2C-69SH-RA28' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '4QMR-RYZ2-AVMY' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '4UYC-MDRF-KC6B' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '4XZA-XC73-3A5N' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '52KJ-Q4TD-BMC9' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '54TT-FYGD-R5Y4' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '5HEJ-HHND-JMGZ' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '5SH3-4AUH-PSAQ' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '68WW-WA9C-EFWJ' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '6H5E-TW99-URTB' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '6LDV-JTXN-3M6E' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '6LWB-9839-83RZ' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '76KC-57CQ-XZ7P' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '7G66-CXZX-GC2K' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '885S-RDYE-VZHY' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '8DRU-XZTG-T66T' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '8M24-5DLR-X5BW' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '92Y4-RUQ3-NUTU' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '9PEM-LNDD-2KQY' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'AAKP-5GTH-T5EJ' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'AVBW-U7PH-G76L' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'BA84-5LBC-WT3E' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'BYQX-KA2R-Q2QU' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'C6AA-FWCT-P9CS' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'CBYM-VMRS-MGW5' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'D6JT-93VP-L386' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'DNUQ-6Q9T-XGHL' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'E48U-Q7N7-5AR8' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'EETY-S9A4-6H77' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'EFNH-FB2K-UJFB' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'EQ9X-KQ45-748G' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'FBVL-5EFL-4RS5' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'FHMA-LGH4-V5ZA' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'FKFF-MWS5-S6K6' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'G9YB-C3H5-7DYX' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'GEUQ-TV8W-742D' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'GFGY-UX8Z-FVJY' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'HW8N-2GZZ-4HFL' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'JD9Z-BAY7-RVQV' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'JJN4-NVV4-9BXW' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'JKNH-7BLD-7Z6P' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'JLDB-FDDL-K7UJ' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'JV4A-DY7U-89G7' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'K34Y-MA6G-T29G' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'K6MY-Z76P-RA5F' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'K7KA-5HR3-WCWW' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'K8SQ-X4BB-DN2A' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'KADK-KA8N-YCRV' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'LJRL-D55K-K97A' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'LTGQ-MWBQ-MLJG' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'MGBP-CSLP-X228' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'MM6C-ZZYG-NQSK' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'MYWG-XT32-J3BK' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'N94R-ESWZ-PU8U' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'N996-D2B6-FQ6F' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'NB3E-ZNPP-RYGH' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'NBJZ-JQXS-Z7XF' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'NNW3-DLMY-ZXBC' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'P3SD-TPPH-CFNJ' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'Q4VA-5YAT-RADR' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'QYDN-9DZC-RHAR' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'R7EN-DSJE-3XSV' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'RF53-8MYD-DV85' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'RTG2-GLH3-YW7V' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'S54C-JG35-RUUZ' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'SPRX-7YXJ-ZAUB' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'T23F-US92-V7FR' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'T4NV-F6LW-RSL2' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'T5X7-NDXQ-QS5W' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'TJDD-3BC8-3RFG' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'UEZE-RUGR-ZMKP' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'UY4R-3JE8-KS23' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'VEXM-E3YN-PUAU' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'VGJ5-LVGS-9ZKD' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'VKNY-FDR6-GPMJ' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'WC9E-7YMM-3RJX' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'WDQZ-E8NK-KXQB' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'WEY9-LWTW-4THP' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'X8DS-ZGRQ-4RK3' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'XED7-KUY7-5HWD' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'XKNU-7NWK-RHSE' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'Y49F-4FBB-CCKX' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'YHB8-87DW-BHRY' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'YR45-UJQ5-AGDC' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'YSPG-4LGP-NPPX' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'YTD9-X6LG-EY2E' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'YZJ8-L4TE-5A64' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'Z3ZH-Q4EA-G8HK' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'Z5XG-G92W-Y3MN' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'ZFFE-KYJA-E36X' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT \"basket_line\".\"id\", \"basket_line\".\"basket_id\", \"basket_line\".\"line_reference\", \"basket_line\".\"product_id\", \"basket_line\".\"stockrecord_id\", \"basket_line\".\"quantity\", \"basket_line\".\"price_currency\", \"basket_line\".\"price_excl_tax\", \"basket_line\".\"price_incl_tax\", \"basket_line\".\"tax_code\", \"basket_line\".\"date_created\", \"basket_line\".\"date_updated\", \"catalogue_product\".\"id\", \"catalogue_product\".\"structure\", \"catalogue_product\".\"is_public\", \"catalogue_product\".\"upc\", \"catalogue_product\".\"parent_id\", \"catalogue_product\".\"title\", \"catalogue_product\".\"slug\", \"catalogue_product\".\"description\", \"catalogue_product\".\"meta_title\", \"catalogue_product\".\"meta_description\", \"catalogue_product\".\"product_class_id\", \"catalogue_product\".\"rating\", \"catalogue_product\".\"date_created\", \"catalogue_product\".\"date_updated\", \"catalogue_product\".\"is_discountable\", \"partner_stockrecord\".\"id\", \"partner_stockrecord\".\"product_id\", \"partner_stockrecord\".\"partner_id\", \"partner_stockrecord\".\"partner_sku\", \"partner_stockrecord\".\"price_currency\", \"partner_stockrecord\".\"price\", \"partner_stockrecord\".\"num_in_stock\", \"partner_stockrecord\".\"num_allocated\", \"partner_stockrecord\".\"low_stock_threshold\", \"partner_stockrecord\".\"date_created\", \"partner_stockrecord\".\"date_updated\", \"partner_stockrecord\".\"offer_name\" FROM \"basket_line\" INNER JOIN \"catalogue_product\" ON (\"basket_line\".\"product_id\" = \"catalogue_product\".\"id\") INNER JOIN \"partner_stockrecord\" ON (\"basket_line\".\"stockrecord_id\" = \"partner_stockrecord\".\"id\") WHERE \"basket_line\".\"basket_id\" = 45 ORDER BY \"basket_line\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"customer_productalert\" SET \"user_id\" = 41, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_40@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"myauth_user\" SET \"password\" = 'md5$P3nIURvlsxC6HF1ky5fuGj$0bcd5e55c1abc0e39224a93162e449c9', \"last_login\" = NULL, \"is_superuser\" = false, \"email\" = 'example_40@example.com', \"first_name\" = 'joseph', \"last_name\" = 'winterbottom', \"is_staff\" = false, \"is_active\" = true, \"date_joined\" = '2024-07-22T17:25:40.450323+00:00'::timestamptz, \"username\" = 'the_j_meister nummer 40', \"extra_field\" = '' WHERE \"myauth_user\".\"id\" = 41"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"order_order\" SET \"number\" = '100045', \"site_id\" = 1, \"basket_id\" = 45, \"user_id\" = NULL, \"billing_address_id\" = 1, \"currency\" = 'GBP', \"total_incl_tax\" = 0.00, \"total_excl_tax\" = 0.00, \"shipping_incl_tax\" = 4.95, \"shipping_excl_tax\" = 4.09, \"shipping_tax_code\" = NULL, \"shipping_address_id\" = 1, \"shipping_method\" = '', \"shipping_code\" = 'delivery', \"status\" = 'A', \"guest_email\" = 'j.doe@example.com', \"date_placed\" = '2024-07-22T17:25:40.491022+00:00'::timestamptz WHERE \"order_order\".\"id\" = 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"voucher_voucher\" SET \"name\" = 'Voucher Set 41 - 100', \"code\" = 'XED7-KUY7-5HWD', \"usage\" = 'Multi-use', \"start_datetime\" = '2024-07-21T17:25:18.456875+00:00'::timestamptz, \"end_datetime\" = '2024-08-01T17:25:18.456877+00:00'::timestamptz, \"num_basket_additions\" = 0, \"num_orders\" = 1, \"total_discount\" = 0.00, \"voucher_set_id\" = 44, \"date_created\" = '2024-07-22T17:25:40.446827+00:00'::timestamptz WHERE \"voucher_voucher\".\"id\" = 3419"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\" FROM \"offer_conditionaloffer\" WHERE \"offer_conditionaloffer\".\"slug\" = 'test-offer-96' ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "oscar/core"
+  }
+]

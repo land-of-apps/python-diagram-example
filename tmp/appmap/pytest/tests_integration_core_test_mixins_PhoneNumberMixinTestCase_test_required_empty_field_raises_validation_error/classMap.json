@@ -1,0 +1,136 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "models",
+        "type": "package",
+        "children": [
+          {
+            "name": "fields",
+            "type": "package",
+            "children": [
+              {
+                "name": "UppercaseCharField",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "to_python",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/models/fields/__init__.py:86"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "forms",
+        "type": "package",
+        "children": [
+          {
+            "name": "mixins",
+            "type": "package",
+            "children": [
+              {
+                "name": "PhoneNumberMixin",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "clean",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/forms/mixins.py:106"
+                  },
+                  {
+                    "name": "set_country_and_region_code",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/forms/mixins.py:60"
+                  },
+                  {
+                    "name": "get_country",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/forms/mixins.py:51"
+                  },
+                  {
+                    "name": "clean_phone_number_field",
+                    "type": "function",
+                    "static": false,
+                    "location": "src/oscar/forms/mixins.py:66"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "address",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractAddress",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "clean",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:281"
+                      },
+                      {
+                        "name": "ensure_postcode_is_valid_for_country",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/address/abstract_models.py:299"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"address_country\".\"iso_3166_1_a2\", \"address_country\".\"iso_3166_1_a3\", \"address_country\".\"iso_3166_1_numeric\", \"address_country\".\"printable_name\", \"address_country\".\"name\", \"address_country\".\"display_order\", \"address_country\".\"is_shipping_country\" FROM \"address_country\" WHERE \"address_country\".\"iso_3166_1_a2\" = 'GB' LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SAVEPOINT \"s8669432832_x2928\""
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"address_country\" (\"iso_3166_1_a2\", \"iso_3166_1_a3\", \"iso_3166_1_numeric\", \"printable_name\", \"name\", \"display_order\", \"is_shipping_country\") VALUES ('GB', '', '', 'UNITED KINGDOM', '', 0, true)"
+      },
+      {
+        "type": "query",
+        "name": "RELEASE SAVEPOINT \"s8669432832_x2928\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT 1 AS \"a\" FROM \"address_country\" WHERE \"address_country\".\"iso_3166_1_a2\" = 'GB' LIMIT 1"
+      }
+    ]
+  }
+]

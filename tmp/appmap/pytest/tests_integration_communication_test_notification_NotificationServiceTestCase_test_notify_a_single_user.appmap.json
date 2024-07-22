@@ -1,0 +1,460 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13826506656,
+        "value": "<User: example_319@example.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13826402368,
+          "value": "{'force_insert': True, 'using': 'default'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "force_insert",
+              "class": "builtins.bool"
+            },
+            {
+              "name": "using",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "save",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 115
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('', NULL, false, 'example_319@example.com', 'joseph', 'winterbottom', false, true, '2024-07-22T17:28:06.137128+00:00'::timestamptz, 'the_j_meister nummer 319', '') RETURNING \"myauth_user\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0.0005809170000077302,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13826506656,
+        "value": "<User: example_319@example.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "_migrate_alerts_to_user",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 103
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"customer_productalert\" SET \"user_id\" = 654, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_319@example.com' AND \"customer_productalert\".\"status\" = 'Active')",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.000443458000006558,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 4,
+      "elapsed": 0.0006508827209472656,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 1,
+      "elapsed": 0.0014162063598632812,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13826506656,
+        "value": "<User: example_319@example.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13826461184,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 9,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "save",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 115
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"myauth_user\" SET \"password\" = 'md5$GsqzVXq9einTmCVSA0mmji$02c0e8443d498beaaaf9c08653c40bcf', \"last_login\" = NULL, \"is_superuser\" = false, \"email\" = 'example_319@example.com', \"first_name\" = 'joseph', \"last_name\" = 'winterbottom', \"is_staff\" = false, \"is_active\" = true, \"date_joined\" = '2024-07-22T17:28:06.137128+00:00'::timestamptz, \"username\" = 'the_j_meister nummer 319', \"extra_field\" = '' WHERE \"myauth_user\".\"id\" = 654",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 10,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 10,
+      "elapsed": 0.0005327920000013364,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13826506656,
+        "value": "<User: example_319@example.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "id": 12,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "_migrate_alerts_to_user",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 103
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"customer_productalert\" SET \"user_id\" = 654, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_319@example.com' AND \"customer_productalert\".\"status\" = 'Active')",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 13,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 13,
+      "elapsed": 0.0005344170000114445,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 12,
+      "elapsed": 0.0006849765777587891,
+      "id": 15,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 9,
+      "elapsed": 0.0014271736145019531,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13826506560,
+        "value": "<oscar.apps.communication.utils.Dispatcher object at 0x3381fbf40>",
+        "name": "self",
+        "class": "oscar.apps.communication.utils.Dispatcher"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13826506656,
+          "value": "<User: example_319@example.com>",
+          "name": "user",
+          "class": "tests._site.myauth.models.User"
+        },
+        {
+          "kind": "req",
+          "object_id": 4417340272,
+          "value": "'Hello you!'",
+          "name": "subject",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13826461376,
+          "value": "{'body': 'This is the notification body.'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "body",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 17,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.communication.utils.Dispatcher",
+      "method_id": "notify_user",
+      "path": "src/oscar/apps/communication/utils.py",
+      "lineno": 56
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"communication_notification\" (\"recipient_id\", \"sender_id\", \"subject\", \"body\", \"location\", \"date_sent\", \"date_read\") VALUES (654, NULL, 'Hello you!', 'This is the notification body.', 'Inbox', '2024-07-22T17:28:06.140297+00:00'::timestamptz, NULL) RETURNING \"communication_notification\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 18,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 18,
+      "elapsed": 0.000436917000001813,
+      "id": 19,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 17,
+      "elapsed": 0.0005681514739990234,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"communication_notification\".\"id\", \"communication_notification\".\"recipient_id\", \"communication_notification\".\"sender_id\", \"communication_notification\".\"subject\", \"communication_notification\".\"body\", \"communication_notification\".\"location\", \"communication_notification\".\"date_sent\", \"communication_notification\".\"date_read\" FROM \"communication_notification\" WHERE \"communication_notification\".\"recipient_id\" = 654 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 21,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 21,
+      "elapsed": 0.0008795420000069498,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Notification service test case",
+    "recording": {
+      "defined_class": "tests.integration.communication.test_notification.NotificationServiceTestCase",
+      "method_id": "test_notify_a_single_user"
+    },
+    "source_location": "tests/integration/communication/test_notification.py:35",
+    "name": "Notification service test case notify a single user",
+    "feature": "Notify a single user",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "customer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractUser",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/abstract_models.py:115"
+                        },
+                        {
+                          "name": "_migrate_alerts_to_user",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/abstract_models.py:103"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "communication",
+              "type": "package",
+              "children": [
+                {
+                  "name": "utils",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Dispatcher",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "notify_user",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/communication/utils.py:56"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('', NULL, false, 'example_319@example.com', 'joseph', 'winterbottom', false, true, '2024-07-22T17:28:06.137128+00:00'::timestamptz, 'the_j_meister nummer 319', '') RETURNING \"myauth_user\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"customer_productalert\" SET \"user_id\" = 654, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_319@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"myauth_user\" SET \"password\" = 'md5$GsqzVXq9einTmCVSA0mmji$02c0e8443d498beaaaf9c08653c40bcf', \"last_login\" = NULL, \"is_superuser\" = false, \"email\" = 'example_319@example.com', \"first_name\" = 'joseph', \"last_name\" = 'winterbottom', \"is_staff\" = false, \"is_active\" = true, \"date_joined\" = '2024-07-22T17:28:06.137128+00:00'::timestamptz, \"username\" = 'the_j_meister nummer 319', \"extra_field\" = '' WHERE \"myauth_user\".\"id\" = 654"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"communication_notification\" (\"recipient_id\", \"sender_id\", \"subject\", \"body\", \"location\", \"date_sent\", \"date_read\") VALUES (654, NULL, 'Hello you!', 'This is the notification body.', 'Inbox', '2024-07-22T17:28:06.140297+00:00'::timestamptz, NULL) RETURNING \"communication_notification\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"communication_notification\".\"id\", \"communication_notification\".\"recipient_id\", \"communication_notification\".\"sender_id\", \"communication_notification\".\"subject\", \"communication_notification\".\"body\", \"communication_notification\".\"location\", \"communication_notification\".\"date_sent\", \"communication_notification\".\"date_read\" FROM \"communication_notification\" WHERE \"communication_notification\".\"recipient_id\" = 654 LIMIT 21"
+        }
+      ]
+    }
+  ]
+}

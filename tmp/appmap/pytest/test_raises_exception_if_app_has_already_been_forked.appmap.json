@@ -1,0 +1,155 @@
+{
+  "events": [
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4379793328,
+          "value": "'partner'",
+          "name": "label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4417499264,
+          "value": "'tests/_site/apps'",
+          "name": "local_folder_path",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "local_app_subpackage",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "logger",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.customisation",
+      "method_id": "fork_app",
+      "path": "src/oscar/core/customisation.py",
+      "lineno": 56
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13828024320,
+          "value": "'tests/_site/apps/partner'",
+          "name": "local_app_path",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.customisation",
+      "method_id": "create_local_app_folder",
+      "path": "src/oscar/core/customisation.py",
+      "lineno": 11
+    },
+    {
+      "exceptions": [
+        {
+          "class": "builtins.ValueError",
+          "message": "There is already a 'tests/_site/apps/partner' folder! Aborting!",
+          "object_id": 13828024496
+        }
+      ],
+      "parent_id": 2,
+      "elapsed": 0.0000069141387939453125,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "exceptions": [
+        {
+          "class": "builtins.ValueError",
+          "message": "There is already a 'tests/_site/apps/partner' folder! Aborting!",
+          "object_id": 13828024496
+        }
+      ],
+      "parent_id": 1,
+      "elapsed": 0.00005507469177246094,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      }
+    ],
+    "source_location": "tests/integration/core/test_customisation.py:26",
+    "name": "raises exception if app has already been forked",
+    "feature": "Raises exception if app has already been forked",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "customisation",
+              "type": "class",
+              "children": [
+                {
+                  "name": "fork_app",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/customisation.py:56"
+                },
+                {
+                  "name": "create_local_app_folder",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/customisation.py:11"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4221 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267358576,
+        "value": "<User: Andrew.Smith@test.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13266853248,
+          "value": "{'using': None}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "using",
+              "class": "builtins.NoneType"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "save",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 115
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('md5$DRYyjkHx5qC7qJaD6FG8U0$cc3ebabbc3da05ead7091131503e1758', NULL, false, 'Andrew.Smith@test.com', '', '', false, true, '2024-07-22T17:26:57.831992+00:00'::timestamptz, '_', '') RETURNING \"myauth_user\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0.0010991249999960928,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267358576,
+        "value": "<User: Andrew.Smith@test.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "_migrate_alerts_to_user",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 103
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"customer_productalert\" SET \"user_id\" = 168, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'Andrew.Smith@test.com' AND \"customer_productalert\".\"status\" = 'Active')",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0.0005525420000083159,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 4,
+      "elapsed": 0.000843048095703125,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 1,
+      "elapsed": 0.002228975296020508,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.0",
+        "path_info": "/accounts/login/",
+        "normalized_path_info": "/accounts/login/",
+        "headers": {
+          "Host": "testserver"
+        }
+      },
+      "id": 9,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4415473264,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x1072ec670>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13267392352,
+          "value": "<WSGIRequest: GET '/accounts/login/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "opt",
+          "object_id": 13267386272,
+          "value": "<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x316bad5e0>>",
+          "name": "user",
+          "class": "django.utils.functional.SimpleLazyObject"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13267285568,
+          "value": "{'request': <WSGIRequest: GET '/accounts/login/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x316bad5e0>>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "user",
+              "class": "django.utils.functional.SimpleLazyObject"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 10,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "return_value": {
+        "object_id": 13267317136,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x316cb3190>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 10,
+      "elapsed": 0.000029087066650390625,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267319008,
+        "value": "<oscar.apps.customer.views.AccountAuthView object at 0x316cb38e0>",
+        "name": "self",
+        "class": "oscar.apps.customer.views.AccountAuthView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267392352,
+          "value": "<WSGIRequest: GET '/accounts/login/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13267321088,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 12,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.views.AccountAuthView",
+      "method_id": "get",
+      "path": "src/oscar/apps/customer/views.py",
+      "lineno": 107
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267319008,
+        "value": "<oscar.apps.customer.views.AccountAuthView object at 0x316cb38e0>",
+        "name": "self",
+        "class": "oscar.apps.customer.views.AccountAuthView"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13266057664,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 13,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.views.AccountAuthView",
+      "method_id": "get_context_data",
+      "path": "src/oscar/apps/customer/views.py",
+      "lineno": 112
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267319008,
+        "value": "<oscar.apps.customer.views.AccountAuthView object at 0x316cb38e0>",
+        "name": "self",
+        "class": "oscar.apps.customer.views.AccountAuthView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "bind_data",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 14,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.views.AccountAuthView",
+      "method_id": "get_login_form",
+      "path": "src/oscar/apps/customer/views.py",
+      "lineno": 130
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267319008,
+        "value": "<oscar.apps.customer.views.AccountAuthView object at 0x316cb38e0>",
+        "name": "self",
+        "class": "oscar.apps.customer.views.AccountAuthView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "bind_data",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 15,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.views.AccountAuthView",
+      "method_id": "get_login_form_kwargs",
+      "path": "src/oscar/apps/customer/views.py",
+      "lineno": 133
+    },
+    {
+      "return_value": {
+        "object_id": 13267262656,
+        "value": "{'request': <WSGIRequest: GET '/accounts/login/'>, 'host': 'testserver', 'prefix': 'login', 'initial': {'redirect_url': ''}}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "request",
+            "class": "django.core.handlers.wsgi.WSGIRequest"
+          },
+          {
+            "name": "host",
+            "class": "builtins.str"
+          },
+          {
+            "name": "prefix",
+            "class": "builtins.str"
+          },
+          {
+            "name": "initial",
+            "class": "builtins.dict",
+            "properties": [
+              {
+                "name": "redirect_url",
+                "class": "builtins.str"
+              }
+            ]
+          }
+        ],
+        "size": 4
+      },
+      "parent_id": 15,
+      "elapsed": 0.000011682510375976562,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13267319632,
+        "value": "<EmailAuthenticationForm bound=False, valid=Unknown, fields=(username;password;redirect_url)>",
+        "class": "oscar.apps.customer.forms.EmailAuthenticationForm"
+      },
+      "parent_id": 14,
+      "elapsed": 0.00012993812561035156,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267319008,
+        "value": "<oscar.apps.customer.views.AccountAuthView object at 0x316cb38e0>",
+        "name": "self",
+        "class": "oscar.apps.customer.views.AccountAuthView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "bind_data",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 18,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.views.AccountAuthView",
+      "method_id": "get_registration_form",
+      "path": "src/oscar/apps/customer/views.py",
+      "lineno": 197
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267319008,
+        "value": "<oscar.apps.customer.views.AccountAuthView object at 0x316cb38e0>",
+        "name": "self",
+        "class": "oscar.apps.customer.views.AccountAuthView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "bind_data",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 19,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.views.AccountAuthView",
+      "method_id": "get_registration_form_kwargs",
+      "path": "src/oscar/apps/customer/views.py",
+      "lineno": 202
+    },
+    {
+      "return_value": {
+        "object_id": 13265691840,
+        "value": "{'host': 'testserver', 'prefix': 'registration', 'initial': {'redirect_url': ''}}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "host",
+            "class": "builtins.str"
+          },
+          {
+            "name": "prefix",
+            "class": "builtins.str"
+          },
+          {
+            "name": "initial",
+            "class": "builtins.dict",
+            "properties": [
+              {
+                "name": "redirect_url",
+                "class": "builtins.str"
+              }
+            ]
+          }
+        ],
+        "size": 3
+      },
+      "parent_id": 19,
+      "elapsed": 0.00003981590270996094,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13267318480,
+        "value": "<EmailUserCreationForm bound=False, valid=Unknown, fields=(email;password1;password2;redirect_url)>",
+        "class": "oscar.apps.customer.forms.EmailUserCreationForm"
+      },
+      "parent_id": 18,
+      "elapsed": 0.00021004676818847656,
+      "id": 21,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13265596672,
+        "value": "{'view': <oscar.apps.customer.views.AccountAuthView object at 0x316cb38e0>, 'login_form': <EmailAuthenticationForm bound=False, valid=Unknown, fields=(username;password;redirect_url)>, 'registration_form': <EmailUserCreationForm bound=False, valid=Unknown, fields=(email;password1;password2;redirect_url)>}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "view",
+            "class": "oscar.apps.customer.views.AccountAuthView"
+          },
+          {
+            "name": "login_form",
+            "class": "oscar.apps.customer.forms.EmailAuthenticationForm"
+          },
+          {
+            "name": "registration_form",
+            "class": "oscar.apps.customer.forms.EmailUserCreationForm"
+          }
+        ],
+        "size": 3
+      },
+      "parent_id": 13,
+      "elapsed": 0.0005228519439697266,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13267317904,
+        "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.template.response.TemplateResponse"
+      },
+      "parent_id": 12,
+      "elapsed": 0.0006189346313476562,
+      "id": 23,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267373216,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x316cc0ca0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267392352,
+          "value": "<WSGIRequest: GET '/accounts/login/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13267317904,
+          "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+          "name": "response",
+          "class": "django.template.response.TemplateResponse"
+        }
+      ],
+      "id": 24,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_template_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 112
+    },
+    {
+      "return_value": {
+        "object_id": 13267317904,
+        "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.template.response.TemplateResponse"
+      },
+      "parent_id": 24,
+      "elapsed": 0.0000016689300537109375,
+      "id": 25,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5332169632,
+        "value": "<Template template_string=\"{% extends \"oscar/la...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/customer/login_registration.html",
+      "id": 26,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarCustomerLogin_RegistrationHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267392352,
+          "value": "<WSGIRequest: GET '/accounts/login/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 27,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.search.context_processors",
+      "method_id": "search_form",
+      "path": "src/oscar/apps/search/context_processors.py",
+      "lineno": 6
+    },
+    {
+      "return_value": {
+        "object_id": 13267390400,
+        "value": "{'search_form': <SearchForm bound=True, valid=Unknown, fields=(q;sort_by)>}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "search_form",
+            "class": "oscar.apps.search.forms.SearchForm"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 27,
+      "elapsed": 0.00009202957153320312,
+      "id": 28,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267392352,
+          "value": "<WSGIRequest: GET '/accounts/login/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 29,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.communication.notifications.context_processors",
+      "method_id": "notifications",
+      "path": "src/oscar/apps/communication/notifications/context_processors.py",
+      "lineno": 6
+    },
+    {
+      "return_value": {
+        "object_id": 13267388032,
+        "value": "{}",
+        "class": "builtins.dict",
+        "size": 0
+      },
+      "parent_id": 29,
+      "elapsed": 0.00000476837158203125,
+      "id": 30,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267392352,
+          "value": "<WSGIRequest: GET '/accounts/login/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 31,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.context_processors",
+      "method_id": "checkout",
+      "path": "src/oscar/apps/checkout/context_processors.py",
+      "lineno": 4
+    },
+    {
+      "return_value": {
+        "object_id": 13267351104,
+        "value": "{'anon_checkout_allowed': False}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "anon_checkout_allowed",
+            "class": "builtins.bool"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 31,
+      "elapsed": 0.0000011920928955078125,
+      "id": 32,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267392352,
+          "value": "<WSGIRequest: GET '/accounts/login/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 33,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.context_processors",
+      "method_id": "metadata",
+      "path": "src/oscar/core/context_processors.py",
+      "lineno": 19
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267392352,
+          "value": "<WSGIRequest: GET '/accounts/login/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 34,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.context_processors",
+      "method_id": "strip_language_code",
+      "path": "src/oscar/core/context_processors.py",
+      "lineno": 6
+    },
+    {
+      "return_value": {
+        "object_id": 13266342816,
+        "value": "'/accounts/login/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 34,
+      "elapsed": 0.0000011920928955078125,
+      "id": 35,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13267350592,
+        "value": "{'shop_name': 'Oscar', 'shop_tagline': '', 'homepage_url': '/catalogue/', 'language_neutral_url_path': '/accounts/login/', 'google_analytics_id': None}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "shop_name",
+            "class": "builtins.str"
+          },
+          {
+            "name": "shop_tagline",
+            "class": "builtins.str"
+          },
+          {
+            "name": "homepage_url",
+            "class": "django.utils.functional.lazy.<locals>.__proxy__"
+          },
+          {
+            "name": "language_neutral_url_path",
+            "class": "builtins.str"
+          },
+          {
+            "name": "google_analytics_id",
+            "class": "builtins.NoneType"
+          }
+        ],
+        "size": 5
+      },
+      "parent_id": 33,
+      "elapsed": 0.00004076957702636719,
+      "id": 36,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5262903712,
+        "value": "<Template template_string=\"{% include \"django/f...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/errors/list/default.html",
+      "id": 37,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsErrorsListDefaultHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5262905008,
+        "value": "<Template template_string=\"{% if errors %}<ul c...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/errors/list/ul.html",
+      "id": 38,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsErrorsListUlHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 38,
+      "elapsed": 0.00007733299999301835,
+      "id": 39,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 37,
+      "elapsed": 0.00018150000001071476,
+      "id": 40,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5262903712,
+        "value": "<Template template_string=\"{% include \"django/f...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/errors/list/default.html",
+      "id": 41,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsErrorsListDefaultHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5262905008,
+        "value": "<Template template_string=\"{% if errors %}<ul c...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/errors/list/ul.html",
+      "id": 42,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsErrorsListUlHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 42,
+      "elapsed": 0.00006491699998889544,
+      "id": 43,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 41,
+      "elapsed": 0.0001429579999978614,
+      "id": 44,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5262904624,
+        "value": "<Template template_string=\"{{ errors }}{% if e...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/p.html",
+      "id": 45,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsPHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5262903712,
+        "value": "<Template template_string=\"{% include \"django/f...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/errors/list/default.html",
+      "id": 46,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsErrorsListDefaultHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5262905008,
+        "value": "<Template template_string=\"{% if errors %}<ul c...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/errors/list/ul.html",
+      "id": 47,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsErrorsListUlHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 47,
+      "elapsed": 0.0000642500000083146,
+      "id": 48,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 46,
+      "elapsed": 0.00013704100000211383,
+      "id": 49,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5262955952,
+        "value": "<Template template_string=\"{% if use_tag %}<{{ ...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/label.html",
+      "id": 50,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsLabelHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5262980192,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/attrs.html",
+      "id": 51,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 51,
+      "elapsed": 0.00012000000000966793,
+      "id": 52,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 50,
+      "elapsed": 0.0010638749999998254,
+      "id": 53,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5262956144,
+        "value": "<Template template_string=\"<input type=\"{{ widg...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/input.html",
+      "id": 54,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 55,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 55,
+      "elapsed": 0.00014600000000086766,
+      "id": 56,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 54,
+      "elapsed": 0.00023958399999912672,
+      "id": 57,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5262955952,
+        "value": "<Template template_string=\"{% if use_tag %}<{{ ...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/label.html",
+      "id": 58,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsLabelHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5262980192,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/attrs.html",
+      "id": 59,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 59,
+      "elapsed": 0.00008958400000835809,
+      "id": 60,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 58,
+      "elapsed": 0.00018166699999255798,
+      "id": 61,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263003120,
+        "value": "<Template template_string=\"<select name=\"{{ wid...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select.html",
+      "id": 62,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelectHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 63,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 63,
+      "elapsed": 0.00008774999999161537,
+      "id": 64,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263046880,
+        "value": "<Template template_string=\"<option value=\"{{ wi...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select_option.html",
+      "id": 65,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 66,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 66,
+      "elapsed": 0.00011504100000081507,
+      "id": 67,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 65,
+      "elapsed": 0.00021387500000003,
+      "id": 68,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263046880,
+        "value": "<Template template_string=\"<option value=\"{{ wi...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select_option.html",
+      "id": 69,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 70,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 70,
+      "elapsed": 0.00006958300001258522,
+      "id": 71,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 69,
+      "elapsed": 0.00016145899999742142,
+      "id": 72,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263046880,
+        "value": "<Template template_string=\"<option value=\"{{ wi...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select_option.html",
+      "id": 73,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 74,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 74,
+      "elapsed": 0.00006766699999616321,
+      "id": 75,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 73,
+      "elapsed": 0.00015495799999598603,
+      "id": 76,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263046880,
+        "value": "<Template template_string=\"<option value=\"{{ wi...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select_option.html",
+      "id": 77,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 78,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 78,
+      "elapsed": 0.00006729099999347454,
+      "id": 79,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 77,
+      "elapsed": 0.00015462499999330248,
+      "id": 80,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263046880,
+        "value": "<Template template_string=\"<option value=\"{{ wi...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select_option.html",
+      "id": 81,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 82,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 82,
+      "elapsed": 0.00009645800000157578,
+      "id": 83,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 81,
+      "elapsed": 0.00018358399999840458,
+      "id": 84,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263046880,
+        "value": "<Template template_string=\"<option value=\"{{ wi...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select_option.html",
+      "id": 85,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 86,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 86,
+      "elapsed": 0.00006504099999915525,
+      "id": 87,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 85,
+      "elapsed": 0.00014987500000529508,
+      "id": 88,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5263046880,
+        "value": "<Template template_string=\"<option value=\"{{ wi...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/select_option.html",
+      "id": 89,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 90,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 90,
+      "elapsed": 0.0000641250000086302,
+      "id": 91,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 89,
+      "elapsed": 0.00014570800000512918,
+      "id": 92,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 62,
+      "elapsed": 0.00147875000000397,
+      "id": 93,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 45,
+      "elapsed": 0.0034674160000065513,
+      "id": 94,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267373216,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x316cc0ca0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267392352,
+          "value": "<WSGIRequest: GET '/accounts/login/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 95,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "get_basket",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 132
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267373216,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x316cc0ca0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267392352,
+          "value": "<WSGIRequest: GET '/accounts/login/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 96,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "get_cookie_key",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 103
+    },
+    {
+      "return_value": {
+        "object_id": 4377963776,
+        "value": "'oscar_open_basket'",
+        "class": "builtins.str"
+      },
+      "parent_id": 96,
+      "elapsed": 0.0000019073486328125,
+      "id": 97,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267373216,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x316cc0ca0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4377963776,
+          "value": "'oscar_open_basket'",
+          "name": "cookie_key",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 13267392352,
+          "value": "<WSGIRequest: GET '/accounts/login/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 5057954816,
+          "value": "<oscar.apps.basket.managers.OpenBasketManager object at 0x12d7a4400>",
+          "name": "manager",
+          "class": "oscar.apps.basket.managers.OpenBasketManager"
+        }
+      ],
+      "id": 98,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "get_cookie_basket",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 200
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 98,
+      "elapsed": 9.5367431640625e-7,
+      "id": 99,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13267452208,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "parent_id": 95,
+      "elapsed": 0.00013899803161621094,
+      "id": 100,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267373216,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x316cc0ca0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267392352,
+          "value": "<WSGIRequest: GET '/accounts/login/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13267452208,
+          "value": "<Basket: Open basket (owner: None, lines: 0)>",
+          "name": "basket",
+          "class": "oscar.apps.basket.models.Basket"
+        }
+      ],
+      "id": 101,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "apply_offers_to_basket",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 219
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 101,
+      "elapsed": 0.0000019073486328125,
+      "id": 102,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267452208,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4394199344,
+          "value": "'line_price_incl_tax_incl_discounts'",
+          "name": "model_property",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 103,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "_get_total",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 435
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267452208,
+        "value": "<Basket: Open basket (owner: None, lines: 0)>",
+        "name": "self",
+        "class": "oscar.apps.basket.models.Basket"
+      },
+      "id": 104,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.abstract_models.AbstractBasket",
+      "method_id": "all_lines",
+      "path": "src/oscar/apps/basket/abstract_models.py",
+      "lineno": 130
+    },
+    {
+      "return_value": {
+        "object_id": 13267143552,
+        "value": "<QuerySet []>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 104,
+      "elapsed": 0.000015974044799804688,
+      "id": 105,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13265592592,
+        "value": "Decimal('0.00')",
+        "class": "decimal.Decimal"
+      },
+      "parent_id": 103,
+      "elapsed": 0.0007112026214599609,
+      "id": 106,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13265554016,
+        "value": "<CategoryQuerySet []>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "id": 107,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.CategoryQuerySet",
+      "method_id": "browsable",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 139
+    },
+    {
+      "return_value": {
+        "object_id": 13267143456,
+        "value": "<CategoryQuerySet []>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 107,
+      "elapsed": 0.00009965896606445312,
+      "id": 108,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" <= 2 AND \"catalogue_category\".\"ancestors_are_public\" AND \"catalogue_category\".\"is_public\") ORDER BY \"catalogue_category\".\"path\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 109,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 109,
+      "elapsed": 0.0006329590000007101,
+      "id": 110,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5266431952,
+        "value": "<Template template_string=\"{% load i18n %}{% ...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/partials/form_fields.html",
+      "id": 111,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarPartialsForm_FieldsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5267309280,
+        "value": "<Template template_string=\"{% load widget_tweak...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/partials/form_field.html",
+      "id": 112,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarPartialsForm_FieldHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5327119792,
+        "value": "<Template template_string=\"{% include \"django/f...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/email.html",
+      "id": 113,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsEmailHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5262956144,
+        "value": "<Template template_string=\"<input type=\"{{ widg...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/input.html",
+      "id": 114,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 115,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 115,
+      "elapsed": 0.0001267089999998916,
+      "id": 116,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 114,
+      "elapsed": 0.0002102499999949714,
+      "id": 117,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 113,
+      "elapsed": 0.0003378749999995989,
+      "id": 118,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 112,
+      "elapsed": 0.0005572909999926878,
+      "id": 119,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5267309280,
+        "value": "<Template template_string=\"{% load widget_tweak...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/partials/form_field.html",
+      "id": 120,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarPartialsForm_FieldHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5332845520,
+        "value": "<Template template_string=\"{% include \"django/f...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/password.html",
+      "id": 121,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsPasswordHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5262956144,
+        "value": "<Template template_string=\"<input type=\"{{ widg...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/input.html",
+      "id": 122,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 123,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 123,
+      "elapsed": 0.00011570799999560677,
+      "id": 124,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 122,
+      "elapsed": 0.00019308299999920564,
+      "id": 125,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 121,
+      "elapsed": 0.000268458000007854,
+      "id": 126,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 120,
+      "elapsed": 0.00044287500000450564,
+      "id": 127,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5267309280,
+        "value": "<Template template_string=\"{% load widget_tweak...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/partials/form_field.html",
+      "id": 128,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarPartialsForm_FieldHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5266275680,
+        "value": "<Template template_string=\"{% include \"django/f...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/hidden.html",
+      "id": 129,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsHiddenHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5262956144,
+        "value": "<Template template_string=\"<input type=\"{{ widg...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/input.html",
+      "id": 130,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 131,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 131,
+      "elapsed": 0.00008120800001165662,
+      "id": 132,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 130,
+      "elapsed": 0.00015829100000530616,
+      "id": 133,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 129,
+      "elapsed": 0.0002580419999986816,
+      "id": 134,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 128,
+      "elapsed": 0.00034683300000892814,
+      "id": 135,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 111,
+      "elapsed": 0.001555041999992568,
+      "id": 136,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5266431952,
+        "value": "<Template template_string=\"{% load i18n %}{% ...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/partials/form_fields.html",
+      "id": 137,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarPartialsForm_FieldsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5267309280,
+        "value": "<Template template_string=\"{% load widget_tweak...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/partials/form_field.html",
+      "id": 138,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarPartialsForm_FieldHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5327119792,
+        "value": "<Template template_string=\"{% include \"django/f...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/email.html",
+      "id": 139,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsEmailHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5262956144,
+        "value": "<Template template_string=\"<input type=\"{{ widg...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/input.html",
+      "id": 140,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 141,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 141,
+      "elapsed": 0.000118125000000191,
+      "id": 142,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 140,
+      "elapsed": 0.0001957909999958929,
+      "id": 143,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 139,
+      "elapsed": 0.0002694169999983842,
+      "id": 144,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 138,
+      "elapsed": 0.0004372089999975515,
+      "id": 145,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5267309280,
+        "value": "<Template template_string=\"{% load widget_tweak...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/partials/form_field.html",
+      "id": 146,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarPartialsForm_FieldHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5332845520,
+        "value": "<Template template_string=\"{% include \"django/f...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/password.html",
+      "id": 147,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsPasswordHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5262956144,
+        "value": "<Template template_string=\"<input type=\"{{ widg...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/input.html",
+      "id": 148,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 149,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 149,
+      "elapsed": 0.00010220800000126928,
+      "id": 150,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 148,
+      "elapsed": 0.0001808330000017122,
+      "id": 151,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 147,
+      "elapsed": 0.00025420800000119925,
+      "id": 152,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 146,
+      "elapsed": 0.00044650000000956425,
+      "id": 153,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5267309280,
+        "value": "<Template template_string=\"{% load widget_tweak...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/partials/form_field.html",
+      "id": 154,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarPartialsForm_FieldHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5332845520,
+        "value": "<Template template_string=\"{% include \"django/f...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/password.html",
+      "id": 155,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsPasswordHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5262956144,
+        "value": "<Template template_string=\"<input type=\"{{ widg...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/input.html",
+      "id": 156,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 157,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 157,
+      "elapsed": 0.00010254200000758829,
+      "id": 158,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 156,
+      "elapsed": 0.0001808339999911368,
+      "id": 159,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 155,
+      "elapsed": 0.0002570829999939406,
+      "id": 160,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 154,
+      "elapsed": 0.0004267080000062151,
+      "id": 161,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5267309280,
+        "value": "<Template template_string=\"{% load widget_tweak...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/partials/form_field.html",
+      "id": 162,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarPartialsForm_FieldHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5266275680,
+        "value": "<Template template_string=\"{% include \"django/f...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/hidden.html",
+      "id": 163,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsHiddenHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5262956144,
+        "value": "<Template template_string=\"<input type=\"{{ widg...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/input.html",
+      "id": 164,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "receiver": {
+        "object_id": 5263002112,
+        "value": "<Template template_string=\"{% for name, value i...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "venv/lib/python3.8/site-packages/django/forms/templates/django/forms/widgets/attrs.html",
+      "id": 165,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 165,
+      "elapsed": 0.0000837500000017144,
+      "id": 166,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 164,
+      "elapsed": 0.00016458300000010695,
+      "id": 167,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 163,
+      "elapsed": 0.00026408400000832444,
+      "id": 168,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 162,
+      "elapsed": 0.00035295800000767485,
+      "id": 169,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 137,
+      "elapsed": 0.0018174589999944146,
+      "id": 170,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 26,
+      "elapsed": 0.016695167000008837,
+      "id": 171,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267373216,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x316cc0ca0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267392352,
+          "value": "<WSGIRequest: GET '/accounts/login/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13267317904,
+          "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+          "name": "response",
+          "class": "django.template.response.TemplateResponse"
+        }
+      ],
+      "id": 172,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 63
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267373216,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x316cc0ca0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267392352,
+          "value": "<WSGIRequest: GET '/accounts/login/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 173,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "get_cookie_key",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 103
+    },
+    {
+      "return_value": {
+        "object_id": 4377963776,
+        "value": "'oscar_open_basket'",
+        "class": "builtins.str"
+      },
+      "parent_id": 173,
+      "elapsed": 0.0000019073486328125,
+      "id": 174,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13267317904,
+        "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.template.response.TemplateResponse"
+      },
+      "parent_id": 172,
+      "elapsed": 0.00005412101745605469,
+      "id": 175,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_response": {
+        "status_code": 200,
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Vary": "Cookie",
+          "Content-Length": "7057"
+        }
+      },
+      "parent_id": 9,
+      "elapsed": 0.018131124999996473,
+      "id": 176,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_request": {
+        "request_method": "POST",
+        "protocol": "HTTP/1.0",
+        "path_info": "/accounts/login/",
+        "normalized_path_info": "/accounts/login/",
+        "mime_type": "application/x-www-form-urlencoded",
+        "headers": {
+          "Host": "testserver",
+          "Referer": "http://testserver/accounts/login/",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Length": "189",
+          "Cookie": "csrftoken=sp8SldIDwgIjWfeb4J7xywkY4Up0wROK"
+        }
+      },
+      "message": [
+        {
+          "object_id": 13265747504,
+          "value": "'vWKzVCHdyHIfXYLDuK0IFw3QppYg99uENbIh6FfGUNgoJ3PEojX53SdEj9d6vQ8e'",
+          "name": "csrfmiddlewaretoken",
+          "class": "builtins.str"
+        },
+        {
+          "object_id": 13267941936,
+          "value": "'Andrew.Smith@teSt.com'",
+          "name": "login-username",
+          "class": "builtins.str"
+        },
+        {
+          "object_id": 13267957744,
+          "value": "'mypassword'",
+          "name": "login-password",
+          "class": "builtins.str"
+        },
+        {
+          "object_id": 4331234032,
+          "value": "''",
+          "name": "login-redirect_url",
+          "class": "builtins.str"
+        },
+        {
+          "object_id": 13267958192,
+          "value": "'Log In'",
+          "name": "login_submit",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 177,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4415473264,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x1072ec670>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 13267945408,
+          "value": "<WSGIRequest: POST '/accounts/login/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "opt",
+          "object_id": 13267945504,
+          "value": "<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x316b101f0>>",
+          "name": "user",
+          "class": "django.utils.functional.SimpleLazyObject"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13267965312,
+          "value": "{'request': <WSGIRequest: POST '/accounts/login/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x316b101f0>>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "user",
+              "class": "django.utils.functional.SimpleLazyObject"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 178,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "return_value": {
+        "object_id": 13267946464,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x316d4cbe0>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 178,
+      "elapsed": 0.000024080276489257812,
+      "id": 179,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267946944,
+        "value": "<oscar.apps.customer.views.AccountAuthView object at 0x316d4cdc0>",
+        "name": "self",
+        "class": "oscar.apps.customer.views.AccountAuthView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267945408,
+          "value": "<WSGIRequest: POST '/accounts/login/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13267976320,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 180,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.views.AccountAuthView",
+      "method_id": "post",
+      "path": "src/oscar/apps/customer/views.py",
+      "lineno": 120
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267946944,
+        "value": "<oscar.apps.customer.views.AccountAuthView object at 0x316d4cdc0>",
+        "name": "self",
+        "class": "oscar.apps.customer.views.AccountAuthView"
+      },
+      "id": 181,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.views.AccountAuthView",
+      "method_id": "validate_login_form",
+      "path": "src/oscar/apps/customer/views.py",
+      "lineno": 150
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267946944,
+        "value": "<oscar.apps.customer.views.AccountAuthView object at 0x316d4cdc0>",
+        "name": "self",
+        "class": "oscar.apps.customer.views.AccountAuthView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341172976,
+          "value": "True",
+          "name": "bind_data",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 182,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.views.AccountAuthView",
+      "method_id": "get_login_form",
+      "path": "src/oscar/apps/customer/views.py",
+      "lineno": 130
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267946944,
+        "value": "<oscar.apps.customer.views.AccountAuthView object at 0x316d4cdc0>",
+        "name": "self",
+        "class": "oscar.apps.customer.views.AccountAuthView"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "bind_data",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 183,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.views.AccountAuthView",
+      "method_id": "get_login_form_kwargs",
+      "path": "src/oscar/apps/customer/views.py",
+      "lineno": 133
+    },
+    {
+      "return_value": {
+        "object_id": 13267978880,
+        "value": "{'request': <WSGIRequest: POST '/accounts/login/'>, 'host': 'testserver', 'prefix': 'login', 'initial': {'redirect_url': ''}, 'data': <QueryDict: {'csrfmiddlewaretoken': ['vWKzVCHdyHIfXYLDuK0IFw3QppYg99uENbIh6FfGUNgoJ3PEojX53SdEj9d6vQ8e'], 'login-username': ['Andrew.Smith@teSt.com'], 'login-password': ['mypassword'], 'login-redirect_url': [''], 'login_submit': ['Log In']}>, 'files': <MultiValueDict: {}>}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "request",
+            "class": "django.core.handlers.wsgi.WSGIRequest"
+          },
+          {
+            "name": "host",
+            "class": "builtins.str"
+          },
+          {
+            "name": "prefix",
+            "class": "builtins.str"
+          },
+          {
+            "name": "initial",
+            "class": "builtins.dict",
+            "properties": [
+              {
+                "name": "redirect_url",
+                "class": "builtins.str"
+              }
+            ]
+          },
+          {
+            "name": "data",
+            "class": "django.http.request.QueryDict",
+            "properties": [
+              {
+                "name": "csrfmiddlewaretoken",
+                "class": "builtins.str"
+              },
+              {
+                "name": "login-username",
+                "class": "builtins.str"
+              },
+              {
+                "name": "login-password",
+                "class": "builtins.str"
+              },
+              {
+                "name": "login-redirect_url",
+                "class": "builtins.str"
+              },
+              {
+                "name": "login_submit",
+                "class": "builtins.str"
+              }
+            ]
+          },
+          {
+            "name": "files",
+            "class": "django.utils.datastructures.MultiValueDict"
+          }
+        ],
+        "size": 6
+      },
+      "parent_id": 183,
+      "elapsed": 0.000010967254638671875,
+      "id": 184,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13267988832,
+        "value": "<EmailAuthenticationForm bound=True, valid=Unknown, fields=(username;password;redirect_url)>",
+        "class": "oscar.apps.customer.forms.EmailAuthenticationForm"
+      },
+      "parent_id": 182,
+      "elapsed": 0.0001289844512939453,
+      "id": 185,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267988832,
+        "value": "<EmailAuthenticationForm bound=True, valid=True, fields=(username;password;redirect_url)>",
+        "name": "self",
+        "class": "oscar.apps.customer.forms.EmailAuthenticationForm"
+      },
+      "id": 186,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.forms.EmailAuthenticationForm",
+      "method_id": "clean_redirect_url",
+      "path": "src/oscar/apps/customer/forms.py",
+      "lineno": 78
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 186,
+      "elapsed": 0,
+      "id": 187,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "request",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13268003136,
+          "value": "{'username': 'Andrew.Smith@teSt.com', 'password': 'mypassword'}",
+          "name": "credentials",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "username",
+              "class": "builtins.str"
+            },
+            {
+              "name": "password",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 188,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "django.contrib.auth",
+      "method_id": "authenticate",
+      "path": "venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py",
+      "lineno": 63
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267989696,
+        "value": "<oscar.apps.customer.auth_backends.EmailBackend object at 0x316d574c0>",
+        "name": "self",
+        "class": "oscar.apps.customer.auth_backends.EmailBackend"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 13266997888,
+          "value": "(<WSGIRequest: POST '/accounts/login/'>,)",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13268004608,
+          "value": "{'username': 'Andrew.Smith@teSt.com', 'password': 'mypassword'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "username",
+              "class": "builtins.str"
+            },
+            {
+              "name": "password",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 189,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.auth_backends.EmailBackend",
+      "method_id": "authenticate",
+      "path": "src/oscar/apps/customer/auth_backends.py",
+      "lineno": 60
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267989696,
+        "value": "<oscar.apps.customer.auth_backends.EmailBackend object at 0x316d574c0>",
+        "name": "self",
+        "class": "oscar.apps.customer.auth_backends.EmailBackend"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267945408,
+          "value": "<WSGIRequest: POST '/accounts/login/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "email",
+          "class": "builtins.NoneType"
+        },
+        {
+          "kind": "opt",
+          "object_id": 13267957744,
+          "value": "'mypassword'",
+          "name": "password",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13268017792,
+          "value": "{'username': 'Andrew.Smith@teSt.com', 'password': 'mypassword'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "username",
+              "class": "builtins.str"
+            },
+            {
+              "name": "password",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 190,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.auth_backends.EmailBackend",
+      "method_id": "_authenticate",
+      "path": "src/oscar/apps/customer/auth_backends.py",
+      "lineno": 24
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267941936,
+          "value": "'Andrew.Smith@teSt.com'",
+          "name": "email",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 191,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.utils",
+      "method_id": "normalise_email",
+      "path": "src/oscar/apps/customer/utils.py",
+      "lineno": 62
+    },
+    {
+      "return_value": {
+        "object_id": 13268009088,
+        "value": "'Andrew.Smith@test.com'",
+        "class": "builtins.str"
+      },
+      "parent_id": 191,
+      "elapsed": 9.5367431640625e-7,
+      "id": 192,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE UPPER(\"myauth_user\".\"email\"::text) = UPPER('Andrew.Smith@test.com')",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 193,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 193,
+      "elapsed": 0.0009962920000106124,
+      "id": 194,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267989696,
+        "value": "<oscar.apps.customer.auth_backends.EmailBackend object at 0x316d574c0>",
+        "name": "self",
+        "class": "oscar.apps.customer.auth_backends.EmailBackend"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267990992,
+          "value": "<User: Andrew.Smith@test.com>",
+          "name": "user",
+          "class": "tests._site.myauth.models.User"
+        }
+      ],
+      "id": 195,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "django.contrib.auth.backends.ModelBackend",
+      "method_id": "user_can_authenticate",
+      "path": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py",
+      "lineno": 55
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 195,
+      "elapsed": 0.0000021457672119140625,
+      "id": 196,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13267990992,
+        "value": "<User: Andrew.Smith@test.com>",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parent_id": 190,
+      "elapsed": 0.0014829635620117188,
+      "id": 197,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13267990992,
+        "value": "<User: Andrew.Smith@test.com>",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parent_id": 189,
+      "elapsed": 0.0015380382537841797,
+      "id": 198,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13267990992,
+        "value": "<User: Andrew.Smith@test.com>",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parent_id": 188,
+      "elapsed": 0.001661062240600586,
+      "id": 199,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = 'cj74v7f7b7ymgawn8i6a3m0lvew14lz3' LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 200,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 200,
+      "elapsed": 0.0005176250000005211,
+      "id": 201,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SAVEPOINT \"s8669432832_x1204\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 202,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 202,
+      "elapsed": 0.00033929100000307244,
+      "id": 203,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('cj74v7f7b7ymgawn8i6a3m0lvew14lz3', 'e30:1sVwoL:j4e9wtkcyoLrY5VZ4ctlpSDKt_yl7sOTcUX6dy_eSRU', '2024-08-05T17:26:57.860416+00:00'::timestamptz)",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 204,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 204,
+      "elapsed": 0.0004539170000015247,
+      "id": 205,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "RELEASE SAVEPOINT \"s8669432832_x1204\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 206,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 206,
+      "elapsed": 0.00057541600000377,
+      "id": 207,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267990992,
+        "value": "<User: Andrew.Smith@test.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 13268022400,
+          "value": "{'update_fields': ['last_login']}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "update_fields",
+              "class": "builtins.list",
+              "items": [
+                {
+                  "class": "builtins.str"
+                }
+              ]
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 208,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "save",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 115
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"myauth_user\" SET \"last_login\" = '2024-07-22T17:26:57.862112+00:00'::timestamptz WHERE \"myauth_user\".\"id\" = 168",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 209,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 209,
+      "elapsed": 0.0004962910000045895,
+      "id": 210,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267990992,
+        "value": "<User: Andrew.Smith@test.com>",
+        "name": "self",
+        "class": "tests._site.myauth.models.User"
+      },
+      "id": 211,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.abstract_models.AbstractUser",
+      "method_id": "_migrate_alerts_to_user",
+      "path": "src/oscar/apps/customer/abstract_models.py",
+      "lineno": 103
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"customer_productalert\" SET \"user_id\" = 168, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'Andrew.Smith@test.com' AND \"customer_productalert\".\"status\" = 'Active')",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 212,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 212,
+      "elapsed": 0.0005352080000022852,
+      "id": 213,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 211,
+      "elapsed": 0.0007822513580322266,
+      "id": 214,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 208,
+      "elapsed": 0.0015807151794433594,
+      "id": 215,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267946944,
+        "value": "<oscar.apps.customer.views.AccountAuthView object at 0x316d4cdc0>",
+        "name": "self",
+        "class": "oscar.apps.customer.views.AccountAuthView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267988832,
+          "value": "<EmailAuthenticationForm bound=True, valid=True, fields=(username;password;redirect_url)>",
+          "name": "form",
+          "class": "oscar.apps.customer.forms.EmailAuthenticationForm"
+        }
+      ],
+      "id": 216,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.views.AccountAuthView",
+      "method_id": "get_login_success_message",
+      "path": "src/oscar/apps/customer/views.py",
+      "lineno": 180
+    },
+    {
+      "return_value": {
+        "object_id": 13267945504,
+        "value": "'Welcome back'",
+        "class": "django.utils.functional.lazy.<locals>.__proxy__"
+      },
+      "parent_id": 216,
+      "elapsed": 0.0000040531158447265625,
+      "id": 217,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267946944,
+        "value": "<oscar.apps.customer.views.AccountAuthView object at 0x316d4cdc0>",
+        "name": "self",
+        "class": "oscar.apps.customer.views.AccountAuthView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267988832,
+          "value": "<EmailAuthenticationForm bound=True, valid=True, fields=(username;password;redirect_url)>",
+          "name": "form",
+          "class": "oscar.apps.customer.forms.EmailAuthenticationForm"
+        }
+      ],
+      "id": 218,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.views.AccountAuthView",
+      "method_id": "get_login_success_url",
+      "path": "src/oscar/apps/customer/views.py",
+      "lineno": 183
+    },
+    {
+      "return_value": {
+        "object_id": 4366271536,
+        "value": "'/accounts/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 218,
+      "elapsed": 0.0000019073486328125,
+      "id": 219,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13267991568,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/accounts/\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 181,
+      "elapsed": 0.006541252136230469,
+      "id": 220,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 13267991568,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/accounts/\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 180,
+      "elapsed": 0.0065882205963134766,
+      "id": 221,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13267373216,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x316cc0ca0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267945408,
+          "value": "<WSGIRequest: POST '/accounts/login/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 13267991568,
+          "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/accounts/\">",
+          "name": "response",
+          "class": "django.http.response.HttpResponseRedirect"
+        }
+      ],
+      "id": 222,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 63
+    },
+    {
+      "return_value": {
+        "object_id": 13267991568,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/accounts/\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 222,
+      "elapsed": 0.0000021457672119140625,
+      "id": 223,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SAVEPOINT \"s8669432832_x1205\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 224,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 224,
+      "elapsed": 0.0004032909999978074,
+      "id": 225,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"django_session\" SET \"session_data\" = '.eJxVjcsOwiAURP-FtSG8Hy5N_A5ygUtotLYpZWX8d0vShS5n5szMmwToew294RamTK6EG0cuv26E9MDXiJaWYKOwro2m3vZlxkMN7kQavc8wPW9n4W-lQqtjHdABE1kh88xobqJliFJakXMp6F0pUkelslXJoOHKJiM8d8eDdLog-XwBm606rA:1sVwoL:8rnATNvFrS5p_HDvpgkxUpaH5bTpoP3Kgz-gGiblv10', \"expire_date\" = '2024-08-05T17:26:57.864299+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = 'cj74v7f7b7ymgawn8i6a3m0lvew14lz3'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 226,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 226,
+      "elapsed": 0.0006380409999877656,
+      "id": 227,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "RELEASE SAVEPOINT \"s8669432832_x1205\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 228,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 228,
+      "elapsed": 0.0003146659999941903,
+      "id": 229,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_response": {
+        "status_code": 302,
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Location": "/accounts/",
+          "Vary": "Cookie",
+          "Content-Length": "0"
+        }
+      },
+      "parent_id": 177,
+      "elapsed": 0.009096375000012813,
+      "id": 230,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13266729136,
+        "value": "<tests.functional.customer.test_auth.TestAnAnonymousUser testMethod=test_can_login_with_email_containing_capitals_in_host>",
+        "name": "self",
+        "class": "tests.functional.customer.test_auth.TestAnAnonymousUser"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267944928,
+          "value": "<302 Found text/html location: /accounts/ no body>",
+          "name": "response",
+          "class": "django_webtest.response.DjangoWebtestResponse"
+        },
+        {
+          "kind": "req",
+          "object_id": 4409336336,
+          "value": "'customer:summary'",
+          "name": "url_name",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "kwargs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 231,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.test.testcases.WebTestCase",
+      "method_id": "assertRedirectsTo",
+      "path": "src/oscar/test/testcases.py",
+      "lineno": 85
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 13266729136,
+        "value": "<tests.functional.customer.test_auth.TestAnAnonymousUser testMethod=test_can_login_with_email_containing_capitals_in_host>",
+        "name": "self",
+        "class": "tests.functional.customer.test_auth.TestAnAnonymousUser"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 13267944928,
+          "value": "<302 Found text/html location: /accounts/ no body>",
+          "name": "response",
+          "class": "django_webtest.response.DjangoWebtestResponse"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "expected_url",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 232,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.test.testcases.WebTestCase",
+      "method_id": "assertIsRedirect",
+      "path": "src/oscar/test/testcases.py",
+      "lineno": 70
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 232,
+      "elapsed": 0.000003814697265625,
+      "id": 233,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 231,
+      "elapsed": 0.00011706352233886719,
+      "id": 234,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "An anonymous user",
+    "recording": {
+      "defined_class": "tests.functional.customer.test_auth.TestAnAnonymousUser",
+      "method_id": "test_can_login_with_email_containing_capitals_in_host"
+    },
+    "source_location": "tests/functional/customer/test_auth.py:116",
+    "name": "An anonymous user can login with email containing capitals in host",
+    "feature": "Can login with email containing capitals in host",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "customer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractUser",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/abstract_models.py:115"
+                        },
+                        {
+                          "name": "_migrate_alerts_to_user",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/abstract_models.py:103"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "views",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AccountAuthView",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/views.py:107"
+                        },
+                        {
+                          "name": "get_context_data",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/views.py:112"
+                        },
+                        {
+                          "name": "get_login_form",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/views.py:130"
+                        },
+                        {
+                          "name": "get_login_form_kwargs",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/views.py:133"
+                        },
+                        {
+                          "name": "get_registration_form",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/views.py:197"
+                        },
+                        {
+                          "name": "get_registration_form_kwargs",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/views.py:202"
+                        },
+                        {
+                          "name": "post",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/views.py:120"
+                        },
+                        {
+                          "name": "validate_login_form",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/views.py:150"
+                        },
+                        {
+                          "name": "get_login_success_message",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/views.py:180"
+                        },
+                        {
+                          "name": "get_login_success_url",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/views.py:183"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "forms",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "EmailAuthenticationForm",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "clean_redirect_url",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/forms.py:78"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "auth_backends",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "EmailBackend",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "authenticate",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/auth_backends.py:60"
+                        },
+                        {
+                          "name": "_authenticate",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/auth_backends.py:24"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "utils",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "normalise_email",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/customer/utils.py:62"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "partner",
+              "type": "package",
+              "children": [
+                {
+                  "name": "strategy",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Selector",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "strategy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/strategy.py:37"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "basket",
+              "type": "package",
+              "children": [
+                {
+                  "name": "middleware",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "BasketMiddleware",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "process_template_response",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/middleware.py:112"
+                        },
+                        {
+                          "name": "get_basket",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/middleware.py:132"
+                        },
+                        {
+                          "name": "get_cookie_key",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/middleware.py:103"
+                        },
+                        {
+                          "name": "get_cookie_basket",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/middleware.py:200"
+                        },
+                        {
+                          "name": "apply_offers_to_basket",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/middleware.py:219"
+                        },
+                        {
+                          "name": "process_response",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/middleware.py:63"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractBasket",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "_get_total",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/abstract_models.py:435"
+                        },
+                        {
+                          "name": "all_lines",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/abstract_models.py:130"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "search",
+              "type": "package",
+              "children": [
+                {
+                  "name": "context_processors",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "search_form",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/search/context_processors.py:6"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "communication",
+              "type": "package",
+              "children": [
+                {
+                  "name": "notifications",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "context_processors",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "notifications",
+                          "type": "function",
+                          "static": true,
+                          "location": "src/oscar/apps/communication/notifications/context_processors.py:6"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "checkout",
+              "type": "package",
+              "children": [
+                {
+                  "name": "context_processors",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "checkout",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/checkout/context_processors.py:4"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "managers",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "CategoryQuerySet",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "browsable",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/managers.py:139"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "context_processors",
+              "type": "class",
+              "children": [
+                {
+                  "name": "metadata",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/context_processors.py:19"
+                },
+                {
+                  "name": "strip_language_code",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/context_processors.py:6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "test",
+          "type": "package",
+          "children": [
+            {
+              "name": "testcases",
+              "type": "package",
+              "children": [
+                {
+                  "name": "WebTestCase",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "assertRedirectsTo",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/test/testcases.py:85"
+                    },
+                    {
+                      "name": "assertIsRedirect",
+                      "type": "function",
+                      "static": false,
+                      "location": "src/oscar/test/testcases.py:70"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "django",
+      "type": "package",
+      "children": [
+        {
+          "name": "contrib",
+          "type": "package",
+          "children": [
+            {
+              "name": "auth",
+              "type": "class",
+              "children": [
+                {
+                  "name": "authenticate",
+                  "type": "function",
+                  "labels": [
+                    "security.authentication"
+                  ],
+                  "static": true,
+                  "location": "venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py:63"
+                },
+                {
+                  "name": "backends",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "ModelBackend",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "user_can_authenticate",
+                          "type": "function",
+                          "labels": [
+                            "security.authorization"
+                          ],
+                          "static": false,
+                          "location": "venv/lib/python3.8/site-packages/django/contrib/auth/backends.py:55"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('md5$DRYyjkHx5qC7qJaD6FG8U0$cc3ebabbc3da05ead7091131503e1758', NULL, false, 'Andrew.Smith@test.com', '', '', false, true, '2024-07-22T17:26:57.831992+00:00'::timestamptz, '_', '') RETURNING \"myauth_user\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"customer_productalert\" SET \"user_id\" = 168, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'Andrew.Smith@test.com' AND \"customer_productalert\".\"status\" = 'Active')"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"depth\" <= 2 AND \"catalogue_category\".\"ancestors_are_public\" AND \"catalogue_category\".\"is_public\") ORDER BY \"catalogue_category\".\"path\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"myauth_user\".\"id\", \"myauth_user\".\"password\", \"myauth_user\".\"last_login\", \"myauth_user\".\"is_superuser\", \"myauth_user\".\"email\", \"myauth_user\".\"first_name\", \"myauth_user\".\"last_name\", \"myauth_user\".\"is_staff\", \"myauth_user\".\"is_active\", \"myauth_user\".\"date_joined\", \"myauth_user\".\"username\", \"myauth_user\".\"extra_field\" FROM \"myauth_user\" WHERE UPPER(\"myauth_user\".\"email\"::text) = UPPER('Andrew.Smith@test.com')"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = 'cj74v7f7b7ymgawn8i6a3m0lvew14lz3' LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "SAVEPOINT \"s8669432832_x1204\""
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('cj74v7f7b7ymgawn8i6a3m0lvew14lz3', 'e30:1sVwoL:j4e9wtkcyoLrY5VZ4ctlpSDKt_yl7sOTcUX6dy_eSRU', '2024-08-05T17:26:57.860416+00:00'::timestamptz)"
+        },
+        {
+          "type": "query",
+          "name": "RELEASE SAVEPOINT \"s8669432832_x1204\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"myauth_user\" SET \"last_login\" = '2024-07-22T17:26:57.862112+00:00'::timestamptz WHERE \"myauth_user\".\"id\" = 168"
+        },
+        {
+          "type": "query",
+          "name": "SAVEPOINT \"s8669432832_x1205\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"django_session\" SET \"session_data\" = '.eJxVjcsOwiAURP-FtSG8Hy5N_A5ygUtotLYpZWX8d0vShS5n5szMmwToew294RamTK6EG0cuv26E9MDXiJaWYKOwro2m3vZlxkMN7kQavc8wPW9n4W-lQqtjHdABE1kh88xobqJliFJakXMp6F0pUkelslXJoOHKJiM8d8eDdLog-XwBm606rA:1sVwoL:8rnATNvFrS5p_HDvpgkxUpaH5bTpoP3Kgz-gGiblv10', \"expire_date\" = '2024-08-05T17:26:57.864299+00:00'::timestamptz WHERE \"django_session\".\"session_key\" = 'cj74v7f7b7ymgawn8i6a3m0lvew14lz3'"
+        },
+        {
+          "type": "query",
+          "name": "RELEASE SAVEPOINT \"s8669432832_x1205\""
+        }
+      ]
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /accounts/login/"
+        },
+        {
+          "type": "route",
+          "name": "POST /accounts/login/"
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarCustomerLogin_RegistrationHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsErrorsListDefaultHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsErrorsListUlHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsPHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsLabelHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsAttrsHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsInputHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsAttrsHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelectHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsSelect_OptionHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarPartialsForm_FieldsHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarPartialsForm_FieldHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsEmailHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsPasswordHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/VenvLibPython38SitePackagesDjangoFormsTemplatesDjangoFormsWidgetsHiddenHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    }
+  ]
+}

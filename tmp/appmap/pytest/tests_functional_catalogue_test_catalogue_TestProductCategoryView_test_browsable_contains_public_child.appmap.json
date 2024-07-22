@@ -1,0 +1,3753 @@
+{
+  "events": [
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"depth\" = 1 ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 1,
+      "elapsed": 0.0004074160000016036,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5322934928,
+        "value": "<Category: Barfoos>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 5322938048,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5322934928,
+        "value": "<Category: Barfoos>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "generate_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 211
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4408193328,
+          "value": "'Barfoos'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 5,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4408193328,
+          "value": "'Barfoos'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 6,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4408193328,
+          "value": "'Barfoos'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 7,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 5318919408,
+        "value": "'barfoos'",
+        "class": "builtins.str"
+      },
+      "parent_id": 7,
+      "elapsed": 0.000014066696166992188,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5318919408,
+        "value": "'barfoos'",
+        "class": "builtins.str"
+      },
+      "parent_id": 6,
+      "elapsed": 0.00004696846008300781,
+      "id": 9,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5318919408,
+        "value": "'barfoos'",
+        "class": "builtins.str"
+      },
+      "parent_id": 5,
+      "elapsed": 0.00008702278137207031,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5318919408,
+        "value": "'barfoos'",
+        "class": "builtins.str"
+      },
+      "parent_id": 4,
+      "elapsed": 0.00012063980102539062,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('0002', 1, 0, 'Barfoos', '', NULL, NULL, '', 'barfoos', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 12,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 12,
+      "elapsed": 0.0004996659999960684,
+      "id": 13,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5322934928,
+        "value": "<Category: Barfoos>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 14,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5322934928,
+        "value": "<Category: Barfoos>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 15,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 5322946784,
+        "value": "<CategoryQuerySet [<Category: Barfoos>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 15,
+      "elapsed": 0.00005602836608886719,
+      "id": 16,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5322878160,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5322893440,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 17,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 5318992576,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 17,
+      "elapsed": 0.000005245208740234375,
+      "id": 18,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5322878160,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5322893440,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 19,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 5318994880,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 19,
+      "elapsed": 0.000014066696166992188,
+      "id": 20,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 100",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 21,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 21,
+      "elapsed": 0.0009511669999966443,
+      "id": 22,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 100 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 23,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 23,
+      "elapsed": 0.0004539170000015247,
+      "id": 24,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 14,
+      "elapsed": 0.0035278797149658203,
+      "id": 25,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 3,
+      "elapsed": 0.0044329166412353516,
+      "id": 26,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5322934928,
+        "value": "<Category: Barfoos>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 27,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 305
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5322934928,
+        "value": "<Category: Barfoos>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 28,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "_get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 288
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5322934928,
+        "value": "<Category: Barfoos>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 29,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "return_value": {
+        "object_id": 5319453296,
+        "value": "'barfoos'",
+        "class": "builtins.str"
+      },
+      "parent_id": 29,
+      "elapsed": 9.5367431640625e-7,
+      "id": 30,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5319360848,
+        "value": "'/catalogue/category/barfoos_100/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 28,
+      "elapsed": 0.00010323524475097656,
+      "id": 31,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5319360848,
+        "value": "'/catalogue/category/barfoos_100/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 27,
+      "elapsed": 0.00015425682067871094,
+      "id": 32,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.0",
+        "path_info": "/catalogue/category/barfoos_100/",
+        "normalized_path_info": "/catalogue/category/{category_slug}_100{pk}/",
+        "headers": {
+          "Host": "testserver"
+        }
+      },
+      "message": [
+        {
+          "object_id": 5320498800,
+          "value": "'barfoos'",
+          "name": "category_slug",
+          "class": "builtins.str"
+        },
+        {
+          "object_id": 5322937776,
+          "value": "'100'",
+          "name": "pk",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 33,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4415473264,
+        "value": "<oscar.apps.partner.strategy.Selector object at 0x1072ec670>",
+        "name": "self",
+        "class": "oscar.apps.partner.strategy.Selector"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 5322896864,
+          "value": "<WSGIRequest: GET '/catalogue/category/barfoos_100/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "opt",
+          "object_id": 5322896960,
+          "value": "<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x13d3601f0>>",
+          "name": "user",
+          "class": "django.utils.functional.SimpleLazyObject"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 5319456960,
+          "value": "{'request': <WSGIRequest: GET '/catalogue/category/barfoos_100/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x13d3601f0>>}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "request",
+              "class": "django.core.handlers.wsgi.WSGIRequest"
+            },
+            {
+              "name": "user",
+              "class": "django.utils.functional.SimpleLazyObject"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 34,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.partner.strategy.Selector",
+      "method_id": "strategy",
+      "path": "src/oscar/apps/partner/strategy.py",
+      "lineno": 37
+    },
+    {
+      "return_value": {
+        "object_id": 5322893440,
+        "value": "<oscar.apps.partner.strategy.Default object at 0x13d44e880>",
+        "class": "oscar.apps.partner.strategy.Default"
+      },
+      "parent_id": 34,
+      "elapsed": 0.000028133392333984375,
+      "id": 35,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5322877152,
+        "value": "<oscar.apps.catalogue.views.ProductCategoryView object at 0x13d44a8e0>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.views.ProductCategoryView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5322896864,
+          "value": "<WSGIRequest: GET '/catalogue/category/barfoos_100/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 5319486656,
+          "value": "{'category_slug': 'barfoos', 'pk': '100'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "category_slug",
+              "class": "builtins.str"
+            },
+            {
+              "name": "pk",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 36,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.views.ProductCategoryView",
+      "method_id": "get",
+      "path": "src/oscar/apps/catalogue/views.py",
+      "lineno": 168
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5322877152,
+        "value": "<oscar.apps.catalogue.views.ProductCategoryView object at 0x13d44a8e0>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.views.ProductCategoryView"
+      },
+      "id": 37,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.views.ProductCategoryView",
+      "method_id": "get_category",
+      "path": "src/oscar/apps/catalogue/views.py",
+      "lineno": 196
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 100 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 38,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 38,
+      "elapsed": 0.00048624999999447027,
+      "id": 39,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5321568656,
+        "value": "<Category: Barfoos>",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parent_id": 37,
+      "elapsed": 0.0007550716400146484,
+      "id": 40,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5322877152,
+        "value": "<oscar.apps.catalogue.views.ProductCategoryView object at 0x13d44a8e0>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.views.ProductCategoryView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5321568656,
+          "value": "<Category: Barfoos>",
+          "name": "category",
+          "class": "oscar.apps.catalogue.models.Category"
+        },
+        {
+          "kind": "req",
+          "object_id": 5322896864,
+          "value": "<WSGIRequest: GET '/catalogue/category/barfoos_100/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 41,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.views.ProductCategoryView",
+      "method_id": "is_viewable",
+      "path": "src/oscar/apps/catalogue/views.py",
+      "lineno": 193
+    },
+    {
+      "return_value": {
+        "object_id": 4341172976,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 41,
+      "elapsed": 0.0000011920928955078125,
+      "id": 42,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5322877152,
+        "value": "<oscar.apps.catalogue.views.ProductCategoryView object at 0x13d44a8e0>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.views.ProductCategoryView"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5319363536,
+          "value": "'/catalogue/category/barfoos_100/'",
+          "name": "current_path",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 5321568656,
+          "value": "<Category: Barfoos>",
+          "name": "category",
+          "class": "oscar.apps.catalogue.models.Category"
+        }
+      ],
+      "id": 43,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.views.ProductCategoryView",
+      "method_id": "redirect_if_necessary",
+      "path": "src/oscar/apps/catalogue/views.py",
+      "lineno": 199
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5321568656,
+        "value": "<Category: Barfoos>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 44,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 305
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5321568656,
+        "value": "<Category: Barfoos>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 45,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "_get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 288
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5321568656,
+        "value": "<Category: Barfoos>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 46,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "return_value": {
+        "object_id": 5319518256,
+        "value": "'barfoos'",
+        "class": "builtins.str"
+      },
+      "parent_id": 46,
+      "elapsed": 0.0000011920928955078125,
+      "id": 47,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5321588144,
+        "value": "'/catalogue/category/barfoos_100/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 45,
+      "elapsed": 0.00007796287536621094,
+      "id": 48,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5321588144,
+        "value": "'/catalogue/category/barfoos_100/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 44,
+      "elapsed": 0.0001201629638671875,
+      "id": 49,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 43,
+      "elapsed": 0.0001590251922607422,
+      "id": 50,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5322877152,
+        "value": "<oscar.apps.catalogue.views.ProductCategoryView object at 0x13d44a8e0>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.views.ProductCategoryView"
+      },
+      "id": 51,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.views.ProductCategoryView",
+      "method_id": "get_categories",
+      "path": "src/oscar/apps/catalogue/views.py",
+      "lineno": 210
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5321568656,
+        "value": "<Category: Barfoos>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 52,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 5321420864,
+        "value": "<CategoryQuerySet [<Category: Barfoos>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 52,
+      "elapsed": 0.00008893013000488281,
+      "id": 53,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5321420864,
+        "value": "<CategoryQuerySet [<Category: Barfoos>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 51,
+      "elapsed": 0.0010478496551513672,
+      "id": 54,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5322877152,
+        "value": "<oscar.apps.catalogue.views.ProductCategoryView object at 0x13d44a8e0>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.views.ProductCategoryView"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 5317702016,
+          "value": "(<QueryDict: {}>, '/catalogue/category/barfoos_100/', <CategoryQuerySet [<Category: Barfoos>]>)",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 5319514432,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 55,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.views.ProductCategoryView",
+      "method_id": "get_search_handler",
+      "path": "src/oscar/apps/catalogue/views.py",
+      "lineno": 207
+    },
+    {
+      "static": true,
+      "id": 56,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.search_handlers",
+      "method_id": "get_product_search_handler_class",
+      "path": "src/oscar/apps/catalogue/search_handlers.py",
+      "lineno": 16
+    },
+    {
+      "static": true,
+      "id": 57,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.search.features",
+      "method_id": "is_solr_supported",
+      "path": "src/oscar/apps/search/features.py",
+      "lineno": 4
+    },
+    {
+      "return_value": {
+        "object_id": 4341173008,
+        "value": "False",
+        "class": "builtins.bool"
+      },
+      "parent_id": 57,
+      "elapsed": 0.0000030994415283203125,
+      "id": 58,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "id": 59,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.search.features",
+      "method_id": "is_elasticsearch_supported",
+      "path": "src/oscar/apps/search/features.py",
+      "lineno": 11
+    },
+    {
+      "return_value": {
+        "object_id": 4341173008,
+        "value": "False",
+        "class": "builtins.bool"
+      },
+      "parent_id": 59,
+      "elapsed": 0.0000019073486328125,
+      "id": 60,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4402877424,
+          "value": "'catalogue.search_handlers'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4402877664,
+          "value": "'SimpleProductSearchHandler'",
+          "name": "classname",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 61,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_class",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 25
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4402877424,
+          "value": "'catalogue.search_handlers'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 5319563648,
+          "value": "['SimpleProductSearchHandler']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "opt",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 62,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 48
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4402877424,
+          "value": "'catalogue.search_handlers'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 5319563648,
+          "value": "['SimpleProductSearchHandler']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        },
+        {
+          "kind": "req",
+          "object_id": 4379579376,
+          "value": "'oscar.apps'",
+          "name": "module_prefix",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 63,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "default_class_loader",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 53
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5321746064,
+          "value": "'oscar.apps.catalogue.search_handlers'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 5319563648,
+          "value": "['SimpleProductSearchHandler']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 64,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_import_module",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 135
+    },
+    {
+      "return_value": {
+        "object_id": 4402876880,
+        "value": "<module 'oscar.apps.catalogue.search_handlers' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/catalogue/search_handlers.py'>",
+        "class": "builtins.module"
+      },
+      "parent_id": 64,
+      "elapsed": 0.0000026226043701171875,
+      "id": 65,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4402877424,
+          "value": "'catalogue.search_handlers'",
+          "name": "module_label",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 66,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_find_registered_app_name",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 183
+    },
+    {
+      "return_value": {
+        "object_id": 4379742336,
+        "value": "'tests._site.apps.catalogue'",
+        "class": "builtins.str"
+      },
+      "parent_id": 66,
+      "elapsed": 0.0000069141387939453125,
+      "id": 67,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5321830448,
+          "value": "'tests._site.apps.catalogue.search_handlers'",
+          "name": "module_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 5319563648,
+          "value": "['SimpleProductSearchHandler']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 68,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_import_module",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 135
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 68,
+      "elapsed": 0.0002129077911376953,
+      "id": 69,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5322900032,
+          "value": "[None, <module 'oscar.apps.catalogue.search_handlers' from '/Users/petecheslock/repos/django-oscar/src/oscar/apps/catalogue/search_handlers.py'>]",
+          "name": "modules",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.NoneType"
+            },
+            {
+              "class": "builtins.module"
+            }
+          ],
+          "size": 2
+        },
+        {
+          "kind": "req",
+          "object_id": 5319563648,
+          "value": "['SimpleProductSearchHandler']",
+          "name": "classnames",
+          "class": "builtins.list",
+          "items": [
+            {
+              "class": "builtins.str"
+            }
+          ],
+          "size": 1
+        }
+      ],
+      "id": 70,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "_pluck_classes",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 161
+    },
+    {
+      "return_value": {
+        "object_id": 5319609664,
+        "value": "[<class 'oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.type"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 70,
+      "elapsed": 9.5367431640625e-7,
+      "id": 71,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5319609664,
+        "value": "[<class 'oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.type"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 63,
+      "elapsed": 0.0003790855407714844,
+      "id": 72,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5319609664,
+        "value": "[<class 'oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler'>]",
+        "class": "builtins.list",
+        "items": [
+          {
+            "class": "builtins.type"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 62,
+      "elapsed": 0.0004172325134277344,
+      "id": 73,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5360304320,
+        "value": "<class 'oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler'>",
+        "class": "builtins.type"
+      },
+      "parent_id": 61,
+      "elapsed": 0.00045490264892578125,
+      "id": 74,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5360304320,
+        "value": "<class 'oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler'>",
+        "class": "builtins.type"
+      },
+      "parent_id": 56,
+      "elapsed": 0.0005548000335693359,
+      "id": 75,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5321667056,
+        "value": "<oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler object at 0x13d3231f0>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler"
+      },
+      "id": 76,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler",
+      "method_id": "get_queryset",
+      "path": "src/oscar/apps/catalogue/search_handlers.py",
+      "lineno": 104
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5321506624,
+        "value": "<ProductQuerySet []>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "id": 77,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.ProductQuerySet",
+      "method_id": "browsable",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 117
+    },
+    {
+      "return_value": {
+        "object_id": 5323322944,
+        "value": "<ProductQuerySet []>",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parent_id": 77,
+      "elapsed": 0.00012612342834472656,
+      "id": 78,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5323322944,
+        "value": "<ProductQuerySet []>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "id": 79,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.ProductQuerySet",
+      "method_id": "base_queryset",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 92
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4379546672,
+          "value": "'catalogue'",
+          "name": "app_label",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "req",
+          "object_id": 4392975088,
+          "value": "'Option'",
+          "name": "model_name",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 80,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.loading",
+      "method_id": "get_model",
+      "path": "src/oscar/core/loading.py",
+      "lineno": 225
+    },
+    {
+      "return_value": {
+        "object_id": 4699001136,
+        "value": "<class 'oscar.apps.catalogue.models.Option'>",
+        "class": "django.db.models.base.ModelBase"
+      },
+      "parent_id": 80,
+      "elapsed": 0.000007867813110351562,
+      "id": 81,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5323324672,
+        "value": "<ProductQuerySet []>",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parent_id": 79,
+      "elapsed": 0.0004718303680419922,
+      "id": 82,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 100 ORDER BY \"catalogue_category\".\"path\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 83,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 83,
+      "elapsed": 0.0005945830000015917,
+      "id": 84,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5323324864,
+        "value": "<ProductQuerySet []>",
+        "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+      },
+      "parent_id": 76,
+      "elapsed": 0.009629964828491211,
+      "id": 85,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5321667056,
+        "value": "<oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler object at 0x13d3231f0>",
+        "class": "oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler"
+      },
+      "parent_id": 55,
+      "elapsed": 0.013700008392333984,
+      "id": 86,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5322877152,
+        "value": "<oscar.apps.catalogue.views.ProductCategoryView object at 0x13d44a8e0>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.views.ProductCategoryView"
+      },
+      "parameters": [
+        {
+          "kind": "keyrest",
+          "object_id": 5319507904,
+          "value": "{'category_slug': 'barfoos', 'pk': '100'}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "properties": [
+            {
+              "name": "category_slug",
+              "class": "builtins.str"
+            },
+            {
+              "name": "pk",
+              "class": "builtins.str"
+            }
+          ],
+          "size": 2
+        }
+      ],
+      "id": 87,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.views.ProductCategoryView",
+      "method_id": "get_context_data",
+      "path": "src/oscar/apps/catalogue/views.py",
+      "lineno": 216
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5321667056,
+        "value": "<oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler object at 0x13d3231f0>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4393002864,
+          "value": "'products'",
+          "name": "context_object_name",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 88,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler",
+      "method_id": "get_search_context_data",
+      "path": "src/oscar/apps/catalogue/search_handlers.py",
+      "lineno": 110
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5321667056,
+        "value": "<oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler object at 0x13d3231f0>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5323324864,
+          "value": "<ProductQuerySet []>",
+          "name": "queryset",
+          "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+        },
+        {
+          "kind": "req",
+          "object_id": 4341392552,
+          "value": "20",
+          "name": "page_size",
+          "class": "builtins.int"
+        }
+      ],
+      "id": 89,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.search.search_handlers.SearchResultsPaginationMixin",
+      "method_id": "paginate_queryset",
+      "path": "src/oscar/apps/search/search_handlers.py",
+      "lineno": 16
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5321667056,
+        "value": "<oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler object at 0x13d3231f0>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5323324864,
+          "value": "<ProductQuerySet []>",
+          "name": "queryset",
+          "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "per_page",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 90,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.search.search_handlers.SearchResultsPaginationMixin",
+      "method_id": "get_paginator",
+      "path": "src/oscar/apps/search/search_handlers.py",
+      "lineno": 35
+    },
+    {
+      "return_value": {
+        "object_id": 5323324384,
+        "value": "<django.core.paginator.Paginator object at 0x13d4b7be0>",
+        "class": "django.core.paginator.Paginator"
+      },
+      "parent_id": 90,
+      "elapsed": 0.000012159347534179688,
+      "id": 91,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT COUNT(*) FROM (SELECT DISTINCT \"catalogue_product\".\"id\" AS \"col1\", \"catalogue_product\".\"structure\" AS \"col2\", \"catalogue_product\".\"is_public\" AS \"col3\", \"catalogue_product\".\"upc\" AS \"col4\", \"catalogue_product\".\"parent_id\" AS \"col5\", \"catalogue_product\".\"title\" AS \"col6\", \"catalogue_product\".\"slug\" AS \"col7\", \"catalogue_product\".\"description\" AS \"col8\", \"catalogue_product\".\"meta_title\" AS \"col9\", \"catalogue_product\".\"meta_description\" AS \"col10\", \"catalogue_product\".\"product_class_id\" AS \"col11\", \"catalogue_product\".\"rating\" AS \"col12\", \"catalogue_product\".\"date_created\" AS \"col13\", \"catalogue_product\".\"date_updated\" AS \"col14\", \"catalogue_product\".\"is_discountable\" AS \"col15\", EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_option\" U0 INNER JOIN \"catalogue_productclass_options\" U1 ON (U0.\"id\" = U1.\"option_id\") WHERE U1.\"productclass_id\" = (\"catalogue_product\".\"product_class_id\") LIMIT 1) AS \"has_product_class_options\", EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_option\" U0 INNER JOIN \"catalogue_product_product_options\" U1 ON (U0.\"id\" = U1.\"option_id\") WHERE U1.\"product_id\" = (\"catalogue_product\".\"id\") LIMIT 1) AS \"has_product_options\" FROM \"catalogue_product\" INNER JOIN \"catalogue_productcategory\" ON (\"catalogue_product\".\"id\" = \"catalogue_productcategory\".\"product_id\") WHERE (\"catalogue_product\".\"is_public\" AND \"catalogue_product\".\"parent_id\" IS NULL AND \"catalogue_productcategory\".\"category_id\" IN (SELECT U0.\"id\" FROM \"catalogue_category\" U0 WHERE U0.\"id\" = 100))) subquery",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 92,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 92,
+      "elapsed": 0.0015410829999993325,
+      "id": 93,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5318912576,
+        "value": "(<django.core.paginator.Paginator object at 0x13d4b7be0>, <Page 1 of 1>, <ProductQuerySet []>, False)",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 89,
+      "elapsed": 0.004419803619384766,
+      "id": 94,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5319381696,
+        "value": "{'paginator': <django.core.paginator.Paginator object at 0x13d4b7be0>, 'page_obj': <Page 1 of 1>, 'is_paginated': False, 'object_list': <ProductQuerySet []>, 'products': <ProductQuerySet []>, 'view': <oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler object at 0x13d3231f0>}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "paginator",
+            "class": "django.core.paginator.Paginator"
+          },
+          {
+            "name": "page_obj",
+            "class": "django.core.paginator.Page"
+          },
+          {
+            "name": "is_paginated",
+            "class": "builtins.bool"
+          },
+          {
+            "name": "object_list",
+            "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+          },
+          {
+            "name": "products",
+            "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+          },
+          {
+            "name": "view",
+            "class": "oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler"
+          }
+        ],
+        "size": 6
+      },
+      "parent_id": 88,
+      "elapsed": 0.008117914199829102,
+      "id": 95,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5319180480,
+        "value": "{'category_slug': 'barfoos', 'pk': '100', 'view': <oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler object at 0x13d3231f0>, 'category': <Category: Barfoos>, 'paginator': <django.core.paginator.Paginator object at 0x13d4b7be0>, 'page_obj': <Page 1 of 1>, 'is_paginated': False, 'object_list': <ProductQuerySet []>, 'products': <ProductQuerySet []>}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "category_slug",
+            "class": "builtins.str"
+          },
+          {
+            "name": "pk",
+            "class": "builtins.str"
+          },
+          {
+            "name": "view",
+            "class": "oscar.apps.catalogue.search_handlers.SimpleProductSearchHandler"
+          },
+          {
+            "name": "category",
+            "class": "oscar.apps.catalogue.models.Category"
+          },
+          {
+            "name": "paginator",
+            "class": "django.core.paginator.Paginator"
+          },
+          {
+            "name": "page_obj",
+            "class": "django.core.paginator.Page"
+          },
+          {
+            "name": "is_paginated",
+            "class": "builtins.bool"
+          },
+          {
+            "name": "object_list",
+            "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+          },
+          {
+            "name": "products",
+            "class": "oscar.apps.catalogue.managers.ProductQuerySet"
+          }
+        ],
+        "size": 9
+      },
+      "parent_id": 87,
+      "elapsed": 0.009224176406860352,
+      "id": 96,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5321504272,
+        "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.template.response.TemplateResponse"
+      },
+      "parent_id": 36,
+      "elapsed": 0.028066158294677734,
+      "id": 97,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5322864816,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x13d4478b0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5322896864,
+          "value": "<WSGIRequest: GET '/catalogue/category/barfoos_100/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 5321504272,
+          "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+          "name": "response",
+          "class": "django.template.response.TemplateResponse"
+        }
+      ],
+      "id": 98,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_template_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 112
+    },
+    {
+      "return_value": {
+        "object_id": 5321504272,
+        "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.template.response.TemplateResponse"
+      },
+      "parent_id": 98,
+      "elapsed": 9.5367431640625e-7,
+      "id": 99,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5321825920,
+        "value": "<Template template_string=\"{% extends \"oscar/ca...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/catalogue/category.html",
+      "id": 100,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarCatalogueCategoryHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5322896864,
+          "value": "<WSGIRequest: GET '/catalogue/category/barfoos_100/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 101,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.search.context_processors",
+      "method_id": "search_form",
+      "path": "src/oscar/apps/search/context_processors.py",
+      "lineno": 6
+    },
+    {
+      "return_value": {
+        "object_id": 5321530112,
+        "value": "{'search_form': <SearchForm bound=True, valid=Unknown, fields=(q;sort_by)>}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "search_form",
+            "class": "oscar.apps.search.forms.SearchForm"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 101,
+      "elapsed": 0.00011706352233886719,
+      "id": 102,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5322896864,
+          "value": "<WSGIRequest: GET '/catalogue/category/barfoos_100/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 103,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.communication.notifications.context_processors",
+      "method_id": "notifications",
+      "path": "src/oscar/apps/communication/notifications/context_processors.py",
+      "lineno": 6
+    },
+    {
+      "return_value": {
+        "object_id": 5321441920,
+        "value": "{}",
+        "class": "builtins.dict",
+        "size": 0
+      },
+      "parent_id": 103,
+      "elapsed": 0.0000050067901611328125,
+      "id": 104,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5322896864,
+          "value": "<WSGIRequest: GET '/catalogue/category/barfoos_100/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 105,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.checkout.context_processors",
+      "method_id": "checkout",
+      "path": "src/oscar/apps/checkout/context_processors.py",
+      "lineno": 4
+    },
+    {
+      "return_value": {
+        "object_id": 5321704448,
+        "value": "{'anon_checkout_allowed': False}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "anon_checkout_allowed",
+            "class": "builtins.bool"
+          }
+        ],
+        "size": 1
+      },
+      "parent_id": 105,
+      "elapsed": 0.0000021457672119140625,
+      "id": 106,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5322896864,
+          "value": "<WSGIRequest: GET '/catalogue/category/barfoos_100/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 107,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.context_processors",
+      "method_id": "metadata",
+      "path": "src/oscar/core/context_processors.py",
+      "lineno": 19
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5322896864,
+          "value": "<WSGIRequest: GET '/catalogue/category/barfoos_100/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 108,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.context_processors",
+      "method_id": "strip_language_code",
+      "path": "src/oscar/core/context_processors.py",
+      "lineno": 6
+    },
+    {
+      "return_value": {
+        "object_id": 5319363536,
+        "value": "'/catalogue/category/barfoos_100/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 108,
+      "elapsed": 7.152557373046875e-7,
+      "id": 109,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5321706688,
+        "value": "{'shop_name': 'Oscar', 'shop_tagline': '', 'homepage_url': '/catalogue/', 'language_neutral_url_path': '/catalogue/category/barfoos_100/', 'google_analytics_id': None}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "shop_name",
+            "class": "builtins.str"
+          },
+          {
+            "name": "shop_tagline",
+            "class": "builtins.str"
+          },
+          {
+            "name": "homepage_url",
+            "class": "django.utils.functional.lazy.<locals>.__proxy__"
+          },
+          {
+            "name": "language_neutral_url_path",
+            "class": "builtins.str"
+          },
+          {
+            "name": "google_analytics_id",
+            "class": "builtins.NoneType"
+          }
+        ],
+        "size": 5
+      },
+      "parent_id": 107,
+      "elapsed": 0.00004506111145019531,
+      "id": 110,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5321568656,
+        "value": "<Category: Barfoos>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 111,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_meta_title",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 258
+    },
+    {
+      "return_value": {
+        "object_id": 5319517424,
+        "value": "'Barfoos'",
+        "class": "builtins.str"
+      },
+      "parent_id": 111,
+      "elapsed": 0.0000011920928955078125,
+      "id": 112,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5321568656,
+        "value": "<Category: Barfoos>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 113,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_meta_description",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 261
+    },
+    {
+      "return_value": {
+        "object_id": 4331234032,
+        "value": "''",
+        "class": "builtins.str"
+      },
+      "parent_id": 113,
+      "elapsed": 0.000003814697265625,
+      "id": 114,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5323394496,
+        "value": "<CategoryQuerySet [<Category: Products>, <Category: Barfoos>]>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "id": 115,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.CategoryQuerySet",
+      "method_id": "browsable",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 139
+    },
+    {
+      "return_value": {
+        "object_id": 5323403616,
+        "value": "<CategoryQuerySet [<Category: Products>, <Category: Barfoos>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 115,
+      "elapsed": 0.00009202957153320312,
+      "id": 116,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"ancestors_are_public\" AND \"catalogue_category\".\"is_public\") ORDER BY \"catalogue_category\".\"path\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 117,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 117,
+      "elapsed": 0.0006091249999968795,
+      "id": 118,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5323404144,
+        "value": "<Category: Products>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 119,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "_get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 288
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5323404144,
+        "value": "<Category: Products>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4331234032,
+          "value": "''",
+          "name": "parent_slug",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 120,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "return_value": {
+        "object_id": 5322139440,
+        "value": "'products'",
+        "class": "builtins.str"
+      },
+      "parent_id": 120,
+      "elapsed": 0.0000030994415283203125,
+      "id": 121,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5322395440,
+        "value": "'/catalogue/category/products_99/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 119,
+      "elapsed": 0.00013828277587890625,
+      "id": 122,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5323404432,
+        "value": "<Category: Barfoos>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "parent_slug",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 123,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "_get_absolute_url",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 288
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5323404432,
+        "value": "<Category: Barfoos>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "opt",
+          "object_id": 4331234032,
+          "value": "''",
+          "name": "parent_slug",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 124,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_full_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 184
+    },
+    {
+      "return_value": {
+        "object_id": 5322139952,
+        "value": "'barfoos'",
+        "class": "builtins.str"
+      },
+      "parent_id": 124,
+      "elapsed": 9.5367431640625e-7,
+      "id": 125,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5322556112,
+        "value": "'/catalogue/category/barfoos_100/'",
+        "class": "builtins.str"
+      },
+      "parent_id": 123,
+      "elapsed": 0.00006914138793945312,
+      "id": 126,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 5318009184,
+        "value": "<Template template_string=\"{% load string_filte...\">",
+        "class": "django.template.base.Template"
+      },
+      "path": "src/oscar/templates/oscar/partials/alert_messages.html",
+      "id": 127,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.SrcOscarTemplatesOscarPartialsAlert_MessagesHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 127,
+      "elapsed": 0.00009179199999920229,
+      "id": 128,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 100,
+      "elapsed": 0.005538291000000584,
+      "id": 129,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5322864816,
+        "value": "<oscar.apps.basket.middleware.BasketMiddleware object at 0x13d4478b0>",
+        "name": "self",
+        "class": "oscar.apps.basket.middleware.BasketMiddleware"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5322896864,
+          "value": "<WSGIRequest: GET '/catalogue/category/barfoos_100/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 5321504272,
+          "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+          "name": "response",
+          "class": "django.template.response.TemplateResponse"
+        }
+      ],
+      "id": 130,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.basket.middleware.BasketMiddleware",
+      "method_id": "process_response",
+      "path": "src/oscar/apps/basket/middleware.py",
+      "lineno": 63
+    },
+    {
+      "return_value": {
+        "object_id": 5321504272,
+        "value": "<TemplateResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.template.response.TemplateResponse"
+      },
+      "parent_id": 130,
+      "elapsed": 0.0000019073486328125,
+      "id": 131,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_response": {
+        "status_code": 200,
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Vary": "Cookie",
+          "Content-Length": "2520"
+        }
+      },
+      "parent_id": 33,
+      "elapsed": 0.03557579200000305,
+      "id": 132,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '0002'",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 133,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 133,
+      "elapsed": 0.0012322090000012054,
+      "id": 134,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5321504272,
+        "value": "<Category: Barfoos > Koe>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 5321560384,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 135,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5321504272,
+        "value": "<Category: Barfoos > Koe>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 136,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "generate_slug",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 211
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4408193392,
+          "value": "'Koe'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 137,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 68
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4408193392,
+          "value": "'Koe'",
+          "name": "value",
+          "class": "builtins.str"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341173008,
+          "value": "False",
+          "name": "allow_unicode",
+          "class": "builtins.bool"
+        }
+      ],
+      "id": 138,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "default_slugifier",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 57
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4408193392,
+          "value": "'Koe'",
+          "name": "value",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 139,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "cautious_slugify",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 20
+    },
+    {
+      "return_value": {
+        "object_id": 5322266288,
+        "value": "'koe'",
+        "class": "builtins.str"
+      },
+      "parent_id": 139,
+      "elapsed": 0.000016927719116210938,
+      "id": 140,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5322266288,
+        "value": "'koe'",
+        "class": "builtins.str"
+      },
+      "parent_id": 138,
+      "elapsed": 0.00005412101745605469,
+      "id": 141,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5322266288,
+        "value": "'koe'",
+        "class": "builtins.str"
+      },
+      "parent_id": 137,
+      "elapsed": 0.00009965896606445312,
+      "id": 142,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 5322266288,
+        "value": "'koe'",
+        "class": "builtins.str"
+      },
+      "parent_id": 136,
+      "elapsed": 0.00015115737915039062,
+      "id": 143,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('00020001', 2, 0, 'Koe', '', NULL, NULL, '', 'koe', true, true) RETURNING \"catalogue_category\".\"id\"",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 144,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 144,
+      "elapsed": 0.0005202920000044742,
+      "id": 145,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5321504272,
+        "value": "<Category: Barfoos > Koe>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 146,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5321504272,
+        "value": "<Category: Barfoos > Koe>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 147,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 5323368624,
+        "value": "<CategoryQuerySet [<Category: Barfoos > Koe>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 147,
+      "elapsed": 0.00009608268737792969,
+      "id": 148,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5323412000,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5323406592,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 149,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 5318971008,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 149,
+      "elapsed": 0.000006198883056640625,
+      "id": 150,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5323412000,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5323406592,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 151,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 5318967744,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 151,
+      "elapsed": 0.000015020370483398438,
+      "id": 152,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 101",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 153,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 153,
+      "elapsed": 0.0006558749999996394,
+      "id": 154,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 101 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 155,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 155,
+      "elapsed": 0.00046487499999869897,
+      "id": 156,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 146,
+      "elapsed": 0.005381107330322266,
+      "id": 157,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 135,
+      "elapsed": 0.008224964141845703,
+      "id": 158,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5323361152,
+        "value": "<CategoryQuerySet [<Category: Products>, <Category: Barfoos>, <Category: Barfoos > Koe>]>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "id": 159,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.CategoryQuerySet",
+      "method_id": "browsable",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 139
+    },
+    {
+      "return_value": {
+        "object_id": 5323407216,
+        "value": "<CategoryQuerySet [<Category: Products>, <Category: Barfoos>, <Category: Barfoos > Koe>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 159,
+      "elapsed": 0.00007224082946777344,
+      "id": 160,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"ancestors_are_public\" AND \"catalogue_category\".\"is_public\") ORDER BY \"catalogue_category\".\"path\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 161,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 161,
+      "elapsed": 0.00046854200000012725,
+      "id": 162,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5321504272,
+        "value": "<Category: Barfoos > Koe>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "parameters": [
+        {
+          "kind": "rest",
+          "object_id": 4331028544,
+          "value": "()",
+          "name": "args",
+          "class": "builtins.tuple"
+        },
+        {
+          "kind": "keyrest",
+          "object_id": 5319307904,
+          "value": "{}",
+          "name": "kwargs",
+          "class": "builtins.dict",
+          "size": 0
+        }
+      ],
+      "id": 163,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "save",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 218
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"path\" = '00020001', \"depth\" = 2, \"numchild\" = 0, \"name\" = 'Koe', \"description\" = '', \"meta_title\" = NULL, \"meta_description\" = NULL, \"image\" = '', \"slug\" = 'koe', \"is_public\" = false, \"ancestors_are_public\" = true WHERE \"catalogue_category\".\"id\" = 101",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 164,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 164,
+      "elapsed": 0.001174292000001742,
+      "id": 165,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5321504272,
+        "value": "<Category: Barfoos > Koe>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 166,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "set_ancestors_are_public",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 230
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5321504272,
+        "value": "<Category: Barfoos > Koe>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.models.Category"
+      },
+      "id": 167,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.AbstractCategory",
+      "method_id": "get_descendants_and_self",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 275
+    },
+    {
+      "return_value": {
+        "object_id": 5323407216,
+        "value": "<CategoryQuerySet [<Category: Barfoos > Koe>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 167,
+      "elapsed": 0.00007104873657226562,
+      "id": 168,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5323413392,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5323412528,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "compiler",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        },
+        {
+          "kind": "opt",
+          "object_id": 4341250928,
+          "value": "None",
+          "name": "lhs",
+          "class": "builtins.NoneType"
+        }
+      ],
+      "id": 169,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_lhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 71
+    },
+    {
+      "return_value": {
+        "object_id": 5319170176,
+        "value": "('(\"catalogue_category\".\"path\")', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 169,
+      "elapsed": 0.0000057220458984375,
+      "id": 170,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5323413392,
+        "value": "ReverseStartsWith(Col(U0, catalogue.Category.path), Col(catalogue_category, catalogue.Category.path))",
+        "name": "self",
+        "class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 5323412528,
+          "value": "<SQLCompiler model=Category connection=<DatabaseWrapper vendor='postgresql' alias='default'> using=None>",
+          "name": "qn",
+          "class": "django.db.models.sql.compiler.SQLCompiler"
+        },
+        {
+          "kind": "req",
+          "object_id": 4385983600,
+          "value": "<DatabaseWrapper vendor='postgresql' alias='default'>",
+          "name": "connection",
+          "class": "django.db.backends.postgresql.base.DatabaseWrapper"
+        }
+      ],
+      "id": 171,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.abstract_models.ReverseStartsWith",
+      "method_id": "process_rhs",
+      "path": "src/oscar/apps/catalogue/abstract_models.py",
+      "lineno": 68
+    },
+    {
+      "return_value": {
+        "object_id": 5319224896,
+        "value": "('U0.\"path\"::text', [])",
+        "class": "builtins.tuple"
+      },
+      "parent_id": 171,
+      "elapsed": 0.000013828277587890625,
+      "id": 172,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 101",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 173,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 173,
+      "elapsed": 0.001389999999993563,
+      "id": 174,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 101 LIMIT 21",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 175,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 175,
+      "elapsed": 0.0007811669999995274,
+      "id": 176,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 166,
+      "elapsed": 0.00642704963684082,
+      "id": 177,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 4341250928,
+        "value": "None",
+        "class": "builtins.NoneType"
+      },
+      "parent_id": 163,
+      "elapsed": 0.009023189544677734,
+      "id": 178,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 5323394736,
+        "value": "<CategoryQuerySet [<Category: Products>, <Category: Barfoos>, <Category: Barfoos > Koe>]>",
+        "name": "self",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "id": 179,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.catalogue.managers.CategoryQuerySet",
+      "method_id": "browsable",
+      "path": "src/oscar/apps/catalogue/managers.py",
+      "lineno": 139
+    },
+    {
+      "return_value": {
+        "object_id": 5323406832,
+        "value": "<CategoryQuerySet [<Category: Products>, <Category: Barfoos>]>",
+        "class": "oscar.apps.catalogue.managers.CategoryQuerySet"
+      },
+      "parent_id": 179,
+      "elapsed": 0.00006866455078125,
+      "id": 180,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"ancestors_are_public\" AND \"catalogue_category\".\"is_public\") ORDER BY \"catalogue_category\".\"path\" ASC",
+        "database_type": "postgresql",
+        "server_version": "14.0.12"
+      },
+      "id": 181,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 181,
+      "elapsed": 0.0007444579999997814,
+      "id": 182,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      },
+      {
+        "name": "Django",
+        "version": "4.2.13"
+      }
+    ],
+    "feature_group": "Product category view",
+    "recording": {
+      "defined_class": "tests.functional.catalogue.test_catalogue.TestProductCategoryView",
+      "method_id": "test_browsable_contains_public_child"
+    },
+    "source_location": "tests/functional/catalogue/test_catalogue.py:149",
+    "name": "Product category view browsable contains public child",
+    "feature": "Browsable contains public child",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "catalogue",
+              "type": "package",
+              "children": [
+                {
+                  "name": "abstract_models",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "AbstractCategory",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "save",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:218"
+                        },
+                        {
+                          "name": "generate_slug",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:211"
+                        },
+                        {
+                          "name": "set_ancestors_are_public",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:230"
+                        },
+                        {
+                          "name": "get_descendants_and_self",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:275"
+                        },
+                        {
+                          "name": "get_absolute_url",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:305"
+                        },
+                        {
+                          "name": "_get_absolute_url",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:288"
+                        },
+                        {
+                          "name": "get_full_slug",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:184"
+                        },
+                        {
+                          "name": "get_meta_title",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:258"
+                        },
+                        {
+                          "name": "get_meta_description",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:261"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "ReverseStartsWith",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "process_lhs",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:71"
+                        },
+                        {
+                          "name": "process_rhs",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/abstract_models.py:68"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "views",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "ProductCategoryView",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/views.py:168"
+                        },
+                        {
+                          "name": "get_category",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/views.py:196"
+                        },
+                        {
+                          "name": "is_viewable",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/views.py:193"
+                        },
+                        {
+                          "name": "redirect_if_necessary",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/views.py:199"
+                        },
+                        {
+                          "name": "get_categories",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/views.py:210"
+                        },
+                        {
+                          "name": "get_search_handler",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/views.py:207"
+                        },
+                        {
+                          "name": "get_context_data",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/views.py:216"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "search_handlers",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "get_product_search_handler_class",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/catalogue/search_handlers.py:16"
+                    },
+                    {
+                      "name": "SimpleProductSearchHandler",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "get_queryset",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/search_handlers.py:104"
+                        },
+                        {
+                          "name": "get_search_context_data",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/search_handlers.py:110"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "managers",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "ProductQuerySet",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "browsable",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/managers.py:117"
+                        },
+                        {
+                          "name": "base_queryset",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/managers.py:92"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "CategoryQuerySet",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "browsable",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/catalogue/managers.py:139"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "partner",
+              "type": "package",
+              "children": [
+                {
+                  "name": "strategy",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "Selector",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "strategy",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/partner/strategy.py:37"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "search",
+              "type": "package",
+              "children": [
+                {
+                  "name": "features",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "is_solr_supported",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/search/features.py:4"
+                    },
+                    {
+                      "name": "is_elasticsearch_supported",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/search/features.py:11"
+                    }
+                  ]
+                },
+                {
+                  "name": "search_handlers",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "SearchResultsPaginationMixin",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "paginate_queryset",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/search/search_handlers.py:16"
+                        },
+                        {
+                          "name": "get_paginator",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/search/search_handlers.py:35"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "context_processors",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "search_form",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/search/context_processors.py:6"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "basket",
+              "type": "package",
+              "children": [
+                {
+                  "name": "middleware",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "BasketMiddleware",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "process_template_response",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/middleware.py:112"
+                        },
+                        {
+                          "name": "process_response",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/basket/middleware.py:63"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "communication",
+              "type": "package",
+              "children": [
+                {
+                  "name": "notifications",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "context_processors",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "notifications",
+                          "type": "function",
+                          "static": true,
+                          "location": "src/oscar/apps/communication/notifications/context_processors.py:6"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "checkout",
+              "type": "package",
+              "children": [
+                {
+                  "name": "context_processors",
+                  "type": "class",
+                  "children": [
+                    {
+                      "name": "checkout",
+                      "type": "function",
+                      "static": true,
+                      "location": "src/oscar/apps/checkout/context_processors.py:4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "utils",
+              "type": "class",
+              "children": [
+                {
+                  "name": "slugify",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:68"
+                },
+                {
+                  "name": "default_slugifier",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:57"
+                },
+                {
+                  "name": "cautious_slugify",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:20"
+                }
+              ]
+            },
+            {
+              "name": "loading",
+              "type": "class",
+              "children": [
+                {
+                  "name": "get_class",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:25"
+                },
+                {
+                  "name": "get_classes",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:48"
+                },
+                {
+                  "name": "default_class_loader",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:53"
+                },
+                {
+                  "name": "_import_module",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:135"
+                },
+                {
+                  "name": "_find_registered_app_name",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:183"
+                },
+                {
+                  "name": "_pluck_classes",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:161"
+                },
+                {
+                  "name": "get_model",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/loading.py:225"
+                }
+              ]
+            },
+            {
+              "name": "context_processors",
+              "type": "class",
+              "children": [
+                {
+                  "name": "metadata",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/context_processors.py:19"
+                },
+                {
+                  "name": "strip_language_code",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/context_processors.py:6"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"depth\" = 1 ORDER BY \"catalogue_category\".\"path\" DESC LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('0002', 1, 0, 'Barfoos', '', NULL, NULL, '', 'barfoos', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 100"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 100 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 100 ORDER BY \"catalogue_category\".\"path\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "SELECT COUNT(*) FROM (SELECT DISTINCT \"catalogue_product\".\"id\" AS \"col1\", \"catalogue_product\".\"structure\" AS \"col2\", \"catalogue_product\".\"is_public\" AS \"col3\", \"catalogue_product\".\"upc\" AS \"col4\", \"catalogue_product\".\"parent_id\" AS \"col5\", \"catalogue_product\".\"title\" AS \"col6\", \"catalogue_product\".\"slug\" AS \"col7\", \"catalogue_product\".\"description\" AS \"col8\", \"catalogue_product\".\"meta_title\" AS \"col9\", \"catalogue_product\".\"meta_description\" AS \"col10\", \"catalogue_product\".\"product_class_id\" AS \"col11\", \"catalogue_product\".\"rating\" AS \"col12\", \"catalogue_product\".\"date_created\" AS \"col13\", \"catalogue_product\".\"date_updated\" AS \"col14\", \"catalogue_product\".\"is_discountable\" AS \"col15\", EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_option\" U0 INNER JOIN \"catalogue_productclass_options\" U1 ON (U0.\"id\" = U1.\"option_id\") WHERE U1.\"productclass_id\" = (\"catalogue_product\".\"product_class_id\") LIMIT 1) AS \"has_product_class_options\", EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_option\" U0 INNER JOIN \"catalogue_product_product_options\" U1 ON (U0.\"id\" = U1.\"option_id\") WHERE U1.\"product_id\" = (\"catalogue_product\".\"id\") LIMIT 1) AS \"has_product_options\" FROM \"catalogue_product\" INNER JOIN \"catalogue_productcategory\" ON (\"catalogue_product\".\"id\" = \"catalogue_productcategory\".\"product_id\") WHERE (\"catalogue_product\".\"is_public\" AND \"catalogue_product\".\"parent_id\" IS NULL AND \"catalogue_productcategory\".\"category_id\" IN (SELECT U0.\"id\" FROM \"catalogue_category\" U0 WHERE U0.\"id\" = 100))) subquery"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE (\"catalogue_category\".\"ancestors_are_public\" AND \"catalogue_category\".\"is_public\") ORDER BY \"catalogue_category\".\"path\" ASC"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"numchild\" = (\"catalogue_category\".\"numchild\" + 1) WHERE \"catalogue_category\".\"path\" = '0002'"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"catalogue_category\" (\"path\", \"depth\", \"numchild\", \"name\", \"description\", \"meta_title\", \"meta_description\", \"image\", \"slug\", \"is_public\", \"ancestors_are_public\") VALUES ('00020001', 2, 0, 'Koe', '', NULL, NULL, '', 'koe', true, true) RETURNING \"catalogue_category\".\"id\""
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"ancestors_are_public\" = NOT EXISTS(SELECT 1 AS \"a\" FROM \"catalogue_category\" U0 WHERE (U0.\"depth\" < (\"catalogue_category\".\"depth\") AND NOT U0.\"is_public\" AND (\"catalogue_category\".\"path\") LIKE REPLACE(REPLACE(REPLACE(U0.\"path\"::text, E'\\\\', E'\\\\\\\\'), E'%', E'\\\\%'), E'_', E'\\\\_') || '%') LIMIT 1) WHERE \"catalogue_category\".\"id\" = 101"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"catalogue_category\".\"id\", \"catalogue_category\".\"path\", \"catalogue_category\".\"depth\", \"catalogue_category\".\"numchild\", \"catalogue_category\".\"name\", \"catalogue_category\".\"description\", \"catalogue_category\".\"meta_title\", \"catalogue_category\".\"meta_description\", \"catalogue_category\".\"image\", \"catalogue_category\".\"slug\", \"catalogue_category\".\"is_public\", \"catalogue_category\".\"ancestors_are_public\" FROM \"catalogue_category\" WHERE \"catalogue_category\".\"id\" = 101 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"catalogue_category\" SET \"path\" = '00020001', \"depth\" = 2, \"numchild\" = 0, \"name\" = 'Koe', \"description\" = '', \"meta_title\" = NULL, \"meta_description\" = NULL, \"image\" = '', \"slug\" = 'koe', \"is_public\" = false, \"ancestors_are_public\" = true WHERE \"catalogue_category\".\"id\" = 101"
+        }
+      ]
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /catalogue/category/{category_slug}_100{pk}/"
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarCatalogueCategoryHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/SrcOscarTemplatesOscarPartialsAlert_MessagesHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    }
+  ]
+}

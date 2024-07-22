@@ -1,0 +1,62 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"offer_conditionaloffer\" (\"name\", \"slug\", \"description\", \"offer_type\", \"exclusive\", \"status\", \"condition_id\", \"benefit_id\", \"priority\", \"start_datetime\", \"end_datetime\", \"max_global_applications\", \"max_user_applications\", \"max_basket_applications\", \"max_discount\", \"total_discount\", \"num_applications\", \"num_orders\", \"redirect_url\", \"date_created\") VALUES ('Test offer 49', 'test-offer-49', '', 'Voucher', true, 'Open', 50, 50, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0.00, 0, 0, '', '2024-07-22T17:25:30.655154+00:00'::timestamptz) RETURNING \"offer_conditionaloffer\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 0 - 1', 'MCY8-4WE6-N3F3', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 2, '2024-07-22T17:25:30.658732+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 0 - 2', 'W8RT-8NFV-HXDC', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 2, '2024-07-22T17:25:30.660820+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 0 - 3', 'F6PE-P8MW-ZD8Z', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 2, '2024-07-22T17:25:30.662765+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 0 - 4', 'T88M-WXLF-TJL5', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 2, '2024-07-22T17:25:30.664394+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"voucher_voucher\" (\"name\", \"code\", \"usage\", \"start_datetime\", \"end_datetime\", \"num_basket_additions\", \"num_orders\", \"total_discount\", \"voucher_set_id\", \"date_created\") VALUES ('Voucher Set 0 - 5', '9F5D-7VXA-ZDT3', 'Multi-use', '2024-07-21T17:25:18.456875+00:00'::timestamptz, '2024-08-01T17:25:18.456877+00:00'::timestamptz, 0, 0, 0.00, 2, '2024-07-22T17:25:30.666093+00:00'::timestamptz) RETURNING \"voucher_voucher\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = '9F5D-7VXA-ZDT3' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'F6PE-P8MW-ZD8Z' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'MCY8-4WE6-N3F3' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'T88M-WXLF-TJL5' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "SELECT 1 AS \"a\" FROM \"voucher_voucher\" WHERE \"voucher_voucher\".\"code\" = 'W8RT-8NFV-HXDC' LIMIT 1"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/models"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "SELECT \"offer_conditionaloffer\".\"id\", \"offer_conditionaloffer\".\"name\", \"offer_conditionaloffer\".\"slug\", \"offer_conditionaloffer\".\"description\", \"offer_conditionaloffer\".\"offer_type\", \"offer_conditionaloffer\".\"exclusive\", \"offer_conditionaloffer\".\"status\", \"offer_conditionaloffer\".\"condition_id\", \"offer_conditionaloffer\".\"benefit_id\", \"offer_conditionaloffer\".\"priority\", \"offer_conditionaloffer\".\"start_datetime\", \"offer_conditionaloffer\".\"end_datetime\", \"offer_conditionaloffer\".\"max_global_applications\", \"offer_conditionaloffer\".\"max_user_applications\", \"offer_conditionaloffer\".\"max_basket_applications\", \"offer_conditionaloffer\".\"max_discount\", \"offer_conditionaloffer\".\"total_discount\", \"offer_conditionaloffer\".\"num_applications\", \"offer_conditionaloffer\".\"num_orders\", \"offer_conditionaloffer\".\"redirect_url\", \"offer_conditionaloffer\".\"date_created\" FROM \"offer_conditionaloffer\" WHERE \"offer_conditionaloffer\".\"slug\" = 'test-offer-49' ORDER BY \"offer_conditionaloffer\".\"priority\" DESC, \"offer_conditionaloffer\".\"id\" ASC"
+  },
+  {
+    "caller": "oscar/models",
+    "callee": "oscar/core"
+  }
+]

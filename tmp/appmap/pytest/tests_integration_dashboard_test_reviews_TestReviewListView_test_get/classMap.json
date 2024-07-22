@@ -1,0 +1,198 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "dashboard",
+            "type": "package",
+            "children": [
+              {
+                "name": "reviews",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "views",
+                    "type": "package",
+                    "children": [
+                      {
+                        "name": "ReviewListView",
+                        "type": "class",
+                        "children": [
+                          {
+                            "name": "get",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reviews/views.py:36"
+                          },
+                          {
+                            "name": "get_queryset",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reviews/views.py:76"
+                          },
+                          {
+                            "name": "add_filter_status",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reviews/views.py:108"
+                          },
+                          {
+                            "name": "add_filter_keyword",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reviews/views.py:120"
+                          },
+                          {
+                            "name": "add_filter_name",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reviews/views.py:128"
+                          },
+                          {
+                            "name": "get_date_from_to_queryset",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reviews/views.py:41"
+                          },
+                          {
+                            "name": "get_context_data",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reviews/views.py:147"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "forms",
+                    "type": "package",
+                    "children": [
+                      {
+                        "name": "ProductReviewSearchForm",
+                        "type": "class",
+                        "children": [
+                          {
+                            "name": "get_friendly_status",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/oscar/apps/dashboard/reviews/forms.py:34"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "catalogue",
+            "type": "package",
+            "children": [
+              {
+                "name": "reviews",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "utils",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "get_default_review_status",
+                        "type": "function",
+                        "static": true,
+                        "location": "src/oscar/apps/catalogue/reviews/utils.py:6"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "views",
+        "type": "class",
+        "children": [
+          {
+            "name": "sort_queryset",
+            "type": "function",
+            "static": true,
+            "location": "src/oscar/views/__init__.py:18"
+          }
+        ]
+      },
+      {
+        "name": "core",
+        "type": "package",
+        "children": [
+          {
+            "name": "loading",
+            "type": "class",
+            "children": [
+              {
+                "name": "get_model",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/loading.py:225"
+              }
+            ]
+          },
+          {
+            "name": "utils",
+            "type": "class",
+            "children": [
+              {
+                "name": "format_datetime",
+                "type": "function",
+                "static": true,
+                "location": "src/oscar/core/utils.py:107"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT COUNT(*) AS \"__count\" FROM \"reviews_productreview\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT COUNT(*) FROM (SELECT DISTINCT \"reviews_productreview\".\"id\" AS \"col1\", \"reviews_productreview\".\"product_id\" AS \"col2\", \"reviews_productreview\".\"score\" AS \"col3\", \"reviews_productreview\".\"title\" AS \"col4\", \"reviews_productreview\".\"body\" AS \"col5\", \"reviews_productreview\".\"user_id\" AS \"col6\", \"reviews_productreview\".\"name\" AS \"col7\", \"reviews_productreview\".\"email\" AS \"col8\", \"reviews_productreview\".\"homepage\" AS \"col9\", \"reviews_productreview\".\"status\" AS \"col10\", \"reviews_productreview\".\"total_votes\" AS \"col11\", \"reviews_productreview\".\"delta_votes\" AS \"col12\", \"reviews_productreview\".\"date_created\" AS \"col13\" FROM \"reviews_productreview\" WHERE (UPPER(\"reviews_productreview\".\"title\"::text) LIKE UPPER('%test%') OR UPPER(\"reviews_productreview\".\"body\"::text) LIKE UPPER('%test%'))) subquery"
+      },
+      {
+        "type": "query",
+        "name": "SELECT COUNT(*) FROM (SELECT DISTINCT \"reviews_productreview\".\"id\" AS \"col1\", \"reviews_productreview\".\"product_id\" AS \"col2\", \"reviews_productreview\".\"score\" AS \"col3\", \"reviews_productreview\".\"title\" AS \"col4\", \"reviews_productreview\".\"body\" AS \"col5\", \"reviews_productreview\".\"user_id\" AS \"col6\", \"reviews_productreview\".\"name\" AS \"col7\", \"reviews_productreview\".\"email\" AS \"col8\", \"reviews_productreview\".\"homepage\" AS \"col9\", \"reviews_productreview\".\"status\" AS \"col10\", \"reviews_productreview\".\"total_votes\" AS \"col11\", \"reviews_productreview\".\"delta_votes\" AS \"col12\", \"reviews_productreview\".\"date_created\" AS \"col13\" FROM \"reviews_productreview\" WHERE \"reviews_productreview\".\"status\" = 0) subquery"
+      },
+      {
+        "type": "query",
+        "name": "SELECT COUNT(*) FROM (SELECT DISTINCT \"reviews_productreview\".\"id\" AS \"col1\", \"reviews_productreview\".\"product_id\" AS \"col2\", \"reviews_productreview\".\"score\" AS \"col3\", \"reviews_productreview\".\"title\" AS \"col4\", \"reviews_productreview\".\"body\" AS \"col5\", \"reviews_productreview\".\"user_id\" AS \"col6\", \"reviews_productreview\".\"name\" AS \"col7\", \"reviews_productreview\".\"email\" AS \"col8\", \"reviews_productreview\".\"homepage\" AS \"col9\", \"reviews_productreview\".\"status\" AS \"col10\", \"reviews_productreview\".\"total_votes\" AS \"col11\", \"reviews_productreview\".\"delta_votes\" AS \"col12\", \"reviews_productreview\".\"date_created\" AS \"col13\" FROM \"reviews_productreview\" WHERE ((UPPER(\"reviews_productreview\".\"title\"::text) LIKE UPPER('%test%') OR UPPER(\"reviews_productreview\".\"body\"::text) LIKE UPPER('%test%')) AND \"reviews_productreview\".\"date_created\" >= '2017-01-01T00:00:00-06:00'::timestamptz)) subquery"
+      },
+      {
+        "type": "query",
+        "name": "SELECT COUNT(*) FROM (SELECT DISTINCT \"reviews_productreview\".\"id\" AS \"col1\", \"reviews_productreview\".\"product_id\" AS \"col2\", \"reviews_productreview\".\"score\" AS \"col3\", \"reviews_productreview\".\"title\" AS \"col4\", \"reviews_productreview\".\"body\" AS \"col5\", \"reviews_productreview\".\"user_id\" AS \"col6\", \"reviews_productreview\".\"name\" AS \"col7\", \"reviews_productreview\".\"email\" AS \"col8\", \"reviews_productreview\".\"homepage\" AS \"col9\", \"reviews_productreview\".\"status\" AS \"col10\", \"reviews_productreview\".\"total_votes\" AS \"col11\", \"reviews_productreview\".\"delta_votes\" AS \"col12\", \"reviews_productreview\".\"date_created\" AS \"col13\" FROM \"reviews_productreview\" WHERE ((UPPER(\"reviews_productreview\".\"title\"::text) LIKE UPPER('%test%') OR UPPER(\"reviews_productreview\".\"body\"::text) LIKE UPPER('%test%')) AND \"reviews_productreview\".\"date_created\" < '2017-01-02T00:00:00-06:00'::timestamptz)) subquery"
+      },
+      {
+        "type": "query",
+        "name": "SELECT COUNT(*) FROM (SELECT DISTINCT \"reviews_productreview\".\"id\" AS \"col1\", \"reviews_productreview\".\"product_id\" AS \"col2\", \"reviews_productreview\".\"score\" AS \"col3\", \"reviews_productreview\".\"title\" AS \"col4\", \"reviews_productreview\".\"body\" AS \"col5\", \"reviews_productreview\".\"user_id\" AS \"col6\", \"reviews_productreview\".\"name\" AS \"col7\", \"reviews_productreview\".\"email\" AS \"col8\", \"reviews_productreview\".\"homepage\" AS \"col9\", \"reviews_productreview\".\"status\" AS \"col10\", \"reviews_productreview\".\"total_votes\" AS \"col11\", \"reviews_productreview\".\"delta_votes\" AS \"col12\", \"reviews_productreview\".\"date_created\" AS \"col13\" FROM \"reviews_productreview\" WHERE ((UPPER(\"reviews_productreview\".\"title\"::text) LIKE UPPER('%test%') OR UPPER(\"reviews_productreview\".\"body\"::text) LIKE UPPER('%test%')) AND \"reviews_productreview\".\"date_created\" >= '2017-01-01T00:00:00-06:00'::timestamptz AND \"reviews_productreview\".\"date_created\" < '2018-01-01T00:00:00-06:00'::timestamptz)) subquery"
+      },
+      {
+        "type": "query",
+        "name": "SELECT COUNT(*) FROM (SELECT DISTINCT \"reviews_productreview\".\"id\" AS \"col1\", \"reviews_productreview\".\"product_id\" AS \"col2\", \"reviews_productreview\".\"score\" AS \"col3\", \"reviews_productreview\".\"title\" AS \"col4\", \"reviews_productreview\".\"body\" AS \"col5\", \"reviews_productreview\".\"user_id\" AS \"col6\", \"reviews_productreview\".\"name\" AS \"col7\", \"reviews_productreview\".\"email\" AS \"col8\", \"reviews_productreview\".\"homepage\" AS \"col9\", \"reviews_productreview\".\"status\" AS \"col10\", \"reviews_productreview\".\"total_votes\" AS \"col11\", \"reviews_productreview\".\"delta_votes\" AS \"col12\", \"reviews_productreview\".\"date_created\" AS \"col13\" FROM \"reviews_productreview\" INNER JOIN \"myauth_user\" ON (\"reviews_productreview\".\"user_id\" = \"myauth_user\".\"id\") WHERE (UPPER(\"myauth_user\".\"first_name\"::text) LIKE UPPER('test%') OR UPPER(\"myauth_user\".\"last_name\"::text) LIKE UPPER('test%'))) subquery"
+      }
+    ]
+  }
+]

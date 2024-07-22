@@ -1,0 +1,42 @@
+[
+  {
+    "caller": "<templates>/UnknownSource#render",
+    "callee": "oscar/templatetags"
+  },
+  {
+    "caller": "oscar/core",
+    "callee": "INSERT INTO \"easy_thumbnails_source\" (\"storage_hash\", \"name\", \"modified\") VALUES ('0d677af76ca5bf5575d614e04932c3a4', 'images/products/2024/07/test_image_oSzSYfQ.jpg', '2024-07-22T17:28:51.216308+00:00'::timestamptz) RETURNING \"easy_thumbnails_source\".\"id\""
+  },
+  {
+    "caller": "oscar/core",
+    "callee": "INSERT INTO \"easy_thumbnails_thumbnail\" (\"storage_hash\", \"name\", \"modified\", \"source_id\") VALUES ('d26becbf46ac48eda79c7a39a13a02dd', 'thumbnails/images/products/2024/07/test_image_oSzSYfQ.jpg.0x155_q85.jpg', '2024-07-22T17:28:51.218749+00:00'::timestamptz, 6) RETURNING \"easy_thumbnails_thumbnail\".\"id\""
+  },
+  {
+    "caller": "oscar/core",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x4744\""
+  },
+  {
+    "caller": "oscar/core",
+    "callee": "RELEASE SAVEPOINT \"s8669432832_x4745\""
+  },
+  {
+    "caller": "oscar/core",
+    "callee": "SAVEPOINT \"s8669432832_x4744\""
+  },
+  {
+    "caller": "oscar/core",
+    "callee": "SAVEPOINT \"s8669432832_x4745\""
+  },
+  {
+    "caller": "oscar/core",
+    "callee": "SELECT \"easy_thumbnails_source\".\"id\", \"easy_thumbnails_source\".\"storage_hash\", \"easy_thumbnails_source\".\"name\", \"easy_thumbnails_source\".\"modified\" FROM \"easy_thumbnails_source\" WHERE (\"easy_thumbnails_source\".\"name\" = 'images/products/2024/07/test_image_oSzSYfQ.jpg' AND \"easy_thumbnails_source\".\"storage_hash\" = '0d677af76ca5bf5575d614e04932c3a4') LIMIT 21"
+  },
+  {
+    "caller": "oscar/core",
+    "callee": "SELECT \"easy_thumbnails_thumbnail\".\"id\", \"easy_thumbnails_thumbnail\".\"storage_hash\", \"easy_thumbnails_thumbnail\".\"name\", \"easy_thumbnails_thumbnail\".\"modified\", \"easy_thumbnails_thumbnail\".\"source_id\" FROM \"easy_thumbnails_thumbnail\" WHERE (\"easy_thumbnails_thumbnail\".\"name\" = 'thumbnails/images/products/2024/07/test_image_oSzSYfQ.jpg.0x155_q85.jpg' AND \"easy_thumbnails_thumbnail\".\"source_id\" = 6 AND \"easy_thumbnails_thumbnail\".\"storage_hash\" = 'd26becbf46ac48eda79c7a39a13a02dd') LIMIT 21"
+  },
+  {
+    "caller": "oscar/templatetags",
+    "callee": "oscar/core"
+  }
+]

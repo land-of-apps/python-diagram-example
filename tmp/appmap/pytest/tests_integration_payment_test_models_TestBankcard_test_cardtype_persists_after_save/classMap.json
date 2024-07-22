@@ -1,0 +1,112 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "customer",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractUser",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:115"
+                      },
+                      {
+                        "name": "_migrate_alerts_to_user",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/customer/abstract_models.py:103"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "payment",
+            "type": "package",
+            "children": [
+              {
+                "name": "bankcards",
+                "type": "class",
+                "children": [
+                  {
+                    "name": "bankcard_type",
+                    "type": "function",
+                    "static": true,
+                    "location": "src/oscar/apps/payment/bankcards.py:67"
+                  }
+                ]
+              },
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractBankcard",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/payment/abstract_models.py:316"
+                      },
+                      {
+                        "name": "prepare_for_save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/payment/abstract_models.py:321"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('', NULL, false, 'example_351@example.com', 'joseph', 'winterbottom', false, true, '2024-07-22T17:28:48.409094+00:00'::timestamptz, 'the_j_meister nummer 351', '') RETURNING \"myauth_user\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"customer_productalert\" SET \"user_id\" = 687, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_351@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"myauth_user\" SET \"password\" = 'md5$9UQz4VeZt7CTK9rtPo93Jx$42733729ef52c924491189afa27345aa', \"last_login\" = NULL, \"is_superuser\" = false, \"email\" = 'example_351@example.com', \"first_name\" = 'joseph', \"last_name\" = 'winterbottom', \"is_staff\" = false, \"is_active\" = true, \"date_joined\" = '2024-07-22T17:28:48.409094+00:00'::timestamptz, \"username\" = 'the_j_meister nummer 351', \"extra_field\" = '' WHERE \"myauth_user\".\"id\" = 687"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"payment_bankcard\" (\"user_id\", \"card_type\", \"name\", \"number\", \"expiry_date\", \"partner_reference\") VALUES (687, 'Mastercard', '', 'XXXX-XXXX-XXXX-0004', '2010-01-01'::date, '') RETURNING \"payment_bankcard\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"payment_bankcard\".\"id\", \"payment_bankcard\".\"user_id\", \"payment_bankcard\".\"card_type\", \"payment_bankcard\".\"name\", \"payment_bankcard\".\"number\", \"payment_bankcard\".\"expiry_date\", \"payment_bankcard\".\"partner_reference\" FROM \"payment_bankcard\" WHERE \"payment_bankcard\".\"id\" = 2 LIMIT 21"
+      }
+    ]
+  }
+]

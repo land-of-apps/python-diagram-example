@@ -1,0 +1,267 @@
+{
+  "events": [
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4366089712,
+        "value": "<OrderSearchForm bound=True, valid=True, fields=(date_from;date_to;order_number)>",
+        "name": "self",
+        "class": "oscar.apps.customer.forms.OrderSearchForm"
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.forms.OrderSearchForm",
+      "method_id": "clean",
+      "path": "src/oscar/apps/customer/forms.py",
+      "lineno": 178
+    },
+    {
+      "return_value": {
+        "object_id": 14052187456,
+        "value": "{'date_from': datetime.date(2021, 1, 1), 'date_to': datetime.date(2021, 1, 10), 'order_number': '100'}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "date_from",
+            "class": "datetime.date"
+          },
+          {
+            "name": "date_to",
+            "class": "datetime.date"
+          },
+          {
+            "name": "order_number",
+            "class": "builtins.str"
+          }
+        ],
+        "size": 3
+      },
+      "parent_id": 1,
+      "elapsed": 0.00000286102294921875,
+      "id": 2,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 4366089712,
+        "value": "<OrderSearchForm bound=True, valid=True, fields=(date_from;date_to;order_number)>",
+        "name": "self",
+        "class": "oscar.apps.customer.forms.OrderSearchForm"
+      },
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.apps.customer.forms.OrderSearchForm",
+      "method_id": "get_filters",
+      "path": "src/oscar/apps/customer/forms.py",
+      "lineno": 239
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 4377406288,
+          "value": "datetime.date(2021, 1, 1)",
+          "name": "date",
+          "class": "datetime.date"
+        },
+        {
+          "kind": "req",
+          "object_id": 4336950096,
+          "value": "datetime.time(0, 0)",
+          "name": "time",
+          "class": "datetime.time"
+        }
+      ],
+      "id": 4,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "datetime_combine",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 125
+    },
+    {
+      "return_value": {
+        "object_id": 14052426736,
+        "value": "datetime.datetime(2021, 1, 1, 0, 0, tzinfo=backports.zoneinfo.ZoneInfo(key='Africa/Nairobi'))",
+        "class": "datetime.datetime"
+      },
+      "parent_id": 4,
+      "elapsed": 0.00019598007202148438,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 14050612464,
+          "value": "datetime.date(2021, 1, 10)",
+          "name": "date",
+          "class": "datetime.date"
+        },
+        {
+          "kind": "req",
+          "object_id": 4336950128,
+          "value": "datetime.time(23, 59, 59, 999999)",
+          "name": "time",
+          "class": "datetime.time"
+        }
+      ],
+      "id": 6,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "oscar.core.utils",
+      "method_id": "datetime_combine",
+      "path": "src/oscar/core/utils.py",
+      "lineno": 125
+    },
+    {
+      "return_value": {
+        "object_id": 14052428896,
+        "value": "datetime.datetime(2021, 1, 10, 23, 59, 59, 999999, tzinfo=backports.zoneinfo.ZoneInfo(key='Africa/Nairobi'))",
+        "class": "datetime.datetime"
+      },
+      "parent_id": 6,
+      "elapsed": 0.000009298324584960938,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 14050605184,
+        "value": "{'date_placed__gte': datetime.datetime(2021, 1, 1, 0, 0, tzinfo=backports.zoneinfo.ZoneInfo(key='Africa/Nairobi')), 'date_placed__lte': datetime.datetime(2021, 1, 10, 23, 59, 59, 999999, tzinfo=backports.zoneinfo.ZoneInfo(key='Africa/Nairobi')), 'number__contains': '100'}",
+        "class": "builtins.dict",
+        "properties": [
+          {
+            "name": "date_placed__gte",
+            "class": "datetime.datetime"
+          },
+          {
+            "name": "date_placed__lte",
+            "class": "datetime.datetime"
+          },
+          {
+            "name": "number__contains",
+            "class": "builtins.str"
+          }
+        ],
+        "size": 3
+      },
+      "parent_id": 3,
+      "elapsed": 0.00028514862060546875,
+      "id": 8,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.8.19"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/land-of-apps/django-oscar.git",
+      "branch": "master",
+      "commit": "01aa57720e1e703bdc166b20350eff665be60dad"
+    },
+    "frameworks": [
+      {
+        "name": "pytest",
+        "version": "7.4.4"
+      }
+    ],
+    "feature_group": "Order search form",
+    "recording": {
+      "defined_class": "tests.unit.customer.test_forms.TestOrderSearchForm",
+      "method_id": "test_get_filters"
+    },
+    "source_location": "tests/unit/customer/test_forms.py:46",
+    "name": "Order search form get filters",
+    "feature": "Get filters",
+    "app": "django-oscar",
+    "recorder": {
+      "name": "pytest",
+      "type": "tests"
+    },
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "name": "oscar",
+      "type": "package",
+      "children": [
+        {
+          "name": "apps",
+          "type": "package",
+          "children": [
+            {
+              "name": "customer",
+              "type": "package",
+              "children": [
+                {
+                  "name": "forms",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "OrderSearchForm",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "clean",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/forms.py:178"
+                        },
+                        {
+                          "name": "get_filters",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/oscar/apps/customer/forms.py:239"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "package",
+          "children": [
+            {
+              "name": "utils",
+              "type": "class",
+              "children": [
+                {
+                  "name": "datetime_combine",
+                  "type": "function",
+                  "static": true,
+                  "location": "src/oscar/core/utils.py:125"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

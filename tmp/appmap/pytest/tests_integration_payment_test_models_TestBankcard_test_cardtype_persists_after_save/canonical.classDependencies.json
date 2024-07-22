@@ -1,0 +1,18 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('', NULL, false, 'example_351@example.com', 'joseph', 'winterbottom', false, true, '2024-07-22T17:28:48.409094+00:00'::timestamptz, 'the_j_meister nummer 351', '') RETURNING \"myauth_user\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"payment_bankcard\" (\"user_id\", \"card_type\", \"name\", \"number\", \"expiry_date\", \"partner_reference\") VALUES (687, 'Mastercard', '', 'XXXX-XXXX-XXXX-0004', '2010-01-01'::date, '') RETURNING \"payment_bankcard\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"customer_productalert\" SET \"user_id\" = 687, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_351@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"myauth_user\" SET \"password\" = 'md5$9UQz4VeZt7CTK9rtPo93Jx$42733729ef52c924491189afa27345aa', \"last_login\" = NULL, \"is_superuser\" = false, \"email\" = 'example_351@example.com', \"first_name\" = 'joseph', \"last_name\" = 'winterbottom', \"is_staff\" = false, \"is_active\" = true, \"date_joined\" = '2024-07-22T17:28:48.409094+00:00'::timestamptz, \"username\" = 'the_j_meister nummer 351', \"extra_field\" = '' WHERE \"myauth_user\".\"id\" = 687"
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "name": "oscar",
+    "type": "package",
+    "children": [
+      {
+        "name": "apps",
+        "type": "package",
+        "children": [
+          {
+            "name": "payment",
+            "type": "package",
+            "children": [
+              {
+                "name": "abstract_models",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "AbstractSource",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "allocate",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/payment/abstract_models.py:160"
+                      },
+                      {
+                        "name": "save",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/payment/abstract_models.py:133"
+                      },
+                      {
+                        "name": "_create_transaction",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/payment/abstract_models.py:151"
+                      },
+                      {
+                        "name": "debit",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/oscar/apps/payment/abstract_models.py:172"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "UPDATE \"payment_source\" SET \"order_id\" = 198, \"source_type_id\" = 4, \"currency\" = 'GBP', \"amount_allocated\" = 100.00, \"amount_debited\" = 0.00, \"amount_refunded\" = 0.00, \"reference\" = '', \"label\" = '' WHERE \"payment_source\".\"id\" = 3"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"payment_transaction\" (\"source_id\", \"txn_type\", \"amount\", \"reference\", \"status\", \"date_created\") VALUES (3, 'Authorise', 100.00, '', '', '2024-07-22T17:28:48.682045+00:00'::timestamptz) RETURNING \"payment_transaction\".\"id\""
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"payment_source\" SET \"order_id\" = 198, \"source_type_id\" = 4, \"currency\" = 'GBP', \"amount_allocated\" = 100.00, \"amount_debited\" = 100.00, \"amount_refunded\" = 0.00, \"reference\" = '', \"label\" = '' WHERE \"payment_source\".\"id\" = 3"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"payment_transaction\" (\"source_id\", \"txn_type\", \"amount\", \"reference\", \"status\", \"date_created\") VALUES (3, 'Debit', 100.00, '', '', '2024-07-22T17:28:48.685089+00:00'::timestamptz) RETURNING \"payment_transaction\".\"id\""
+      }
+    ]
+  }
+]

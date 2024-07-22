@@ -1,0 +1,26 @@
+[
+  {
+    "caller": "oscar/apps",
+    "callee": "INSERT INTO \"myauth_user\" (\"password\", \"last_login\", \"is_superuser\", \"email\", \"first_name\", \"last_name\", \"is_staff\", \"is_active\", \"date_joined\", \"username\", \"extra_field\") VALUES ('', NULL, false, 'example_342@example.com', 'joseph', 'winterbottom', true, true, '2024-07-22T17:28:11.888391+00:00'::timestamptz, 'the_j_meister nummer 342', '') RETURNING \"myauth_user\".\"id\""
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"customer_productalert\" SET \"user_id\" = 675, \"key\" = '', \"email\" = '' WHERE (\"customer_productalert\".\"email\" = 'example_342@example.com' AND \"customer_productalert\".\"status\" = 'Active')"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "UPDATE \"myauth_user\" SET \"password\" = 'md5$7uMg3Y2GApP1TzSMXCVqPO$a7e04af0dd6318ba172f040003f26b87', \"last_login\" = NULL, \"is_superuser\" = false, \"email\" = 'example_342@example.com', \"first_name\" = 'joseph', \"last_name\" = 'winterbottom', \"is_staff\" = true, \"is_active\" = true, \"date_joined\" = '2024-07-22T17:28:11.888391+00:00'::timestamptz, \"username\" = 'the_j_meister nummer 342', \"extra_field\" = '' WHERE \"myauth_user\".\"id\" = 675"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/core"
+  },
+  {
+    "caller": "oscar/apps",
+    "callee": "oscar/views"
+  },
+  {
+    "caller": "oscar/views",
+    "callee": "django/contrib"
+  }
+]
