@@ -224,3 +224,5 @@ classDiagram
 ```
 
 ![Navie Class Map](navie-class-map.png)
+
+Adding a demo for inserting a sequence diagram into a pull request
